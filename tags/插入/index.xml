@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>插入 on Hello Friend</title>
+    <link>/tags/%E6%8F%92%E5%85%A5/</link>
+    <description>Recent content in 插入 on Hello Friend</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 06 Sep 2014 12:30:36 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/%E6%8F%92%E5%85%A5/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Wordpress插入代码失效</title>
+      <link>/posts/wordpress-cha-ru-dai-ma-shi-xiao/</link>
+      <pubDate>Sat, 06 Sep 2014 12:30:36 +0000</pubDate>
+      
+      <guid>/posts/wordpress-cha-ru-dai-ma-shi-xiao/</guid>
+      <description>貌似Wordpress自带的[xml]&amp;lt;code&amp;gt;[/xml]标签很弱啊。。。面对html的小箭头压力很大啊。。。 选择一个靠谱的插件吧，例如SyntaxHighlighter～
+插入代码无压力：
+PHP： &amp;gt;[php]phpinfo();[/php]
+HTML： &amp;gt;[xml]&amp;lt;code&amp;gt;我是代码&amp;lt;/code&amp;gt;&amp;lt;a&amp;gt;我是链接&amp;lt;/a&amp;gt;[/xml]
+Tada~</description>
+    </item>
+    
+  </channel>
+</rss>

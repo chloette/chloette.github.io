@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>Android docs (OpenGLES) :: Hello Friend — A simple theme for Hugo</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="最近在看OpenGLES，一直没机会系统的学习，算是补补以前的遗漏；结果发现了Android对应的官方文档。
+也不知道什么时候慢慢补全完善的Android文档，终于可以看得入眼，并且有一些确实不错的内容了。
+Training不那么鸡肋了。
+Guide也比以前好多了。
+推荐一下Android关于OpenGLES的Training和Guide。
+尤其是这一段开头：
+ Being able to define shapes to be drawn in the context of an OpenGL ES view is the first step in creating your high-end graphics masterpiece. Drawing with OpenGL ES can be a little tricky without knowing a few basic things about how OpenGL ES expects you to define graphic objects.
+ 对，我相信初碰FFmpeg或者类似复杂框架时候，也必然会遇到这些“Tricky”但须遵循的逻辑和规则；深究下去后，自然会明白这么设计的初衷；OpenGLES也不例外。
+而熟悉这些框架的过程就像驯服野兽：先适应它（强迫接受这概念），然后彼此获得信任（哦这样的代码(Sample)确实可以如它所说工作；按照这样的修改后它的表现也确实更好了），最后才能驾驭它（原来这样设计是基于底层这样那样的限制啊）
+尝试去了解那些当初铺垫整个虚拟世界基石的先驱设计者们，他们面对这样那样的限制和难题，如何想出并实现各种精妙的方案；这会让每次的深入探索都像在翻一段无人知晓的历史，那种对无尽知识的感慨和对自身所学的匮乏之间的冲突会让人欲罢不能。
+换个角度看，这欠的，也是醉了。
+话说回来，Android也越来越像样子了~ 哈哈哈～"/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="/posts/android-docs-opengles/" />
+
+
+<link rel="stylesheet" href="/assets/style.css">
+
+
+<link rel="stylesheet" href="/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Android docs (OpenGLES)"/>
+<meta name="twitter:description" content="最近在看OpenGLES，一直没机会系统的学习，算是补补以前的遗漏；结果发现了Android对应的官方文档。
+也不知道什么时候慢慢补全完善的Android文档，终于可以看得入眼，并且有一些确实不错的内容了。
+Training不那么鸡肋了。
+Guide也比以前好多了。
+推荐一下Android关于OpenGLES的Training和Guide。
+尤其是这一段开头：
+ Being able to define shapes to be drawn in the context of an OpenGL ES view is the first step in creating your high-end graphics masterpiece. Drawing with OpenGL ES can be a little tricky without knowing a few basic things about how OpenGL ES expects you to define graphic objects.
+ 对，我相信初碰FFmpeg或者类似复杂框架时候，也必然会遇到这些“Tricky”但须遵循的逻辑和规则；深究下去后，自然会明白这么设计的初衷；OpenGLES也不例外。
+而熟悉这些框架的过程就像驯服野兽：先适应它（强迫接受这概念），然后彼此获得信任（哦这样的代码(Sample)确实可以如它所说工作；按照这样的修改后它的表现也确实更好了），最后才能驾驭它（原来这样设计是基于底层这样那样的限制啊）
+尝试去了解那些当初铺垫整个虚拟世界基石的先驱设计者们，他们面对这样那样的限制和难题，如何想出并实现各种精妙的方案；这会让每次的深入探索都像在翻一段无人知晓的历史，那种对无尽知识的感慨和对自身所学的匮乏之间的冲突会让人欲罢不能。
+换个角度看，这欠的，也是醉了。
+话说回来，Android也越来越像样子了~ 哈哈哈～"/>
+
+
+
+<meta property="og:title" content="Android docs (OpenGLES)" />
+<meta property="og:description" content="最近在看OpenGLES，一直没机会系统的学习，算是补补以前的遗漏；结果发现了Android对应的官方文档。
+也不知道什么时候慢慢补全完善的Android文档，终于可以看得入眼，并且有一些确实不错的内容了。
+Training不那么鸡肋了。
+Guide也比以前好多了。
+推荐一下Android关于OpenGLES的Training和Guide。
+尤其是这一段开头：
+ Being able to define shapes to be drawn in the context of an OpenGL ES view is the first step in creating your high-end graphics masterpiece. Drawing with OpenGL ES can be a little tricky without knowing a few basic things about how OpenGL ES expects you to define graphic objects.
+ 对，我相信初碰FFmpeg或者类似复杂框架时候，也必然会遇到这些“Tricky”但须遵循的逻辑和规则；深究下去后，自然会明白这么设计的初衷；OpenGLES也不例外。
+而熟悉这些框架的过程就像驯服野兽：先适应它（强迫接受这概念），然后彼此获得信任（哦这样的代码(Sample)确实可以如它所说工作；按照这样的修改后它的表现也确实更好了），最后才能驾驭它（原来这样设计是基于底层这样那样的限制啊）
+尝试去了解那些当初铺垫整个虚拟世界基石的先驱设计者们，他们面对这样那样的限制和难题，如何想出并实现各种精妙的方案；这会让每次的深入探索都像在翻一段无人知晓的历史，那种对无尽知识的感慨和对自身所学的匮乏之间的冲突会让人欲罢不能。
+换个角度看，这欠的，也是醉了。
+话说回来，Android也越来越像样子了~ 哈哈哈～" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/android-docs-opengles/" />
+<meta property="article:published_time" content="2014-12-25T08:39:37&#43;00:00"/>
+<meta property="article:modified_time" content="2014-12-25T08:39:37&#43;00:00"/><meta property="og:site_name" content="Hello Friend" />
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">hello friend</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/showcase">Showcase</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  <div class="post">
+    <h2 class="post-title"><a href="/posts/android-docs-opengles/">Android docs (OpenGLES)</a></h2>
+    <div class="post-meta">
+      
+        <span class="post-date">
+            2014-12-25
+        </span>
+      
+      <span class="post-author">— Written by Guo Yi</span>
+      
+    </div>
+
+    
+      <span class="post-tags">
+        
+          #<a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
+        
+          #<a href="/tags/%E8%AE%B0%E5%BD%95/">记录</a>&nbsp;
+        
+      </span>
+    
+
+    
+
+    <div class="post-content">
+      <p>最近在看OpenGLES，一直没机会系统的学习，算是补补以前的遗漏；结果发现了Android对应的官方文档。</p>
+
+<p>也不知道什么时候慢慢补全完善的Android文档，终于可以看得入眼，并且有一些确实不错的内容了。</p>
+
+<p><a href="http://developer.android.com/training/index.html">Training</a>不那么鸡肋了。</p>
+
+<p><a href="http://developer.android.com/guide/index.html">Guide</a>也比以前好多了。</p>
+
+<p>推荐一下Android关于OpenGLES的<a href="http://developer.android.com/training/graphics/opengl/environment.html#touch.html">Training</a>和<a href="http://developer.android.com/guide/topics/graphics/opengl.html">Guide</a>。</p>
+
+<p>尤其是这一段开头：</p>
+
+<blockquote>
+<p>Being able to define shapes to be drawn in the context of an OpenGL ES view is the first step in creating your high-end graphics masterpiece. <em>Drawing with OpenGL ES can be a little tricky without knowing a few basic things about how OpenGL ES expects you to define graphic objects.</em></p>
+</blockquote>
+
+<p>对，我相信初碰FFmpeg或者类似复杂框架时候，也必然会遇到这些“Tricky”但须遵循的逻辑和规则；深究下去后，自然会明白这么设计的初衷；OpenGLES也不例外。</p>
+
+<p>而熟悉这些框架的过程就像驯服野兽：先适应它（强迫接受这概念），然后彼此获得信任（哦这样的代码(Sample)确实可以如它所说工作；按照这样的修改后它的表现也确实更好了），最后才能驾驭它（原来这样设计是基于底层这样那样的限制啊）</p>
+
+<p>尝试去了解那些当初铺垫整个虚拟世界基石的先驱设计者们，他们面对这样那样的限制和难题，如何想出并实现各种精妙的方案；这会让每次的深入探索都像在翻一段无人知晓的历史，那种对无尽知识的感慨和对自身所学的匮乏之间的冲突会让人欲罢不能。</p>
+
+<p>换个角度看，这欠的，也是醉了。</p>
+
+<p>话说回来，Android也越来越像样子了~ 哈哈哈～</p>
+
+    </div>
+    
+      <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h">Read other posts</span>
+          <hr />
+        </div>
+        <div class="pagination__buttons">
+          
+            <span class="button previous">
+              <a href="/posts/about-data-leak-from-12306/">
+                <span class="button__icon">←</span>
+                <span class="button__text">谈谈12306的数据泄露</span>
+              </a>
+            </span>
+          
+          
+            <span class="button next">
+              <a href="/posts/about-ffmpeg-advance/">
+                <span class="button__text">关于FFmpeg（进阶）</span>
+                <span class="button__icon">→</span>
+              </a>
+            </span>
+          
+        </div>
+      </div>
+    
+
+    
+
+    </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">hello friend</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span>© 2019 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

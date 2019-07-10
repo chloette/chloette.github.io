@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>动态加载资源 on Hello Friend</title>
+    <link>/tags/%E5%8A%A8%E6%80%81%E5%8A%A0%E8%BD%BD%E8%B5%84%E6%BA%90/</link>
+    <description>Recent content in 动态加载资源 on Hello Friend</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 07 Nov 2014 03:15:58 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/%E5%8A%A8%E6%80%81%E5%8A%A0%E8%BD%BD%E8%B5%84%E6%BA%90/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>关于Android如何动态加载res</title>
+      <link>/posts/about-loading-res-from-apk-directly/</link>
+      <pubDate>Fri, 07 Nov 2014 03:15:58 +0000</pubDate>
+      
+      <guid>/posts/about-loading-res-from-apk-directly/</guid>
+      <description>最近抽时间看了一下android插件化的东西。
+也稍微研究了一下。总结一下权当记录。
+同时也把研究过程中的testbed上传到github了，造福后人吧。
+####为什么需要插件化？
+最简单的原因大概就是为了避免过大的体积（rom size），以加速下载和安装。
+更多的原因例如插件化后可以单独升级避免每次一个小改动就app体量的升级，为了针对不同区域不同用户做不同的适配，为了市场更高的单app评分（插件的差评不算主app中）等等。
+####哪些可以插件化？
+大部分的功能性代码/资源及非自定义的布局
+####可用插件化方案： 这里仅讨论：以apk（在插件化的前提下，相比较jar，apk要灵活的多）的形式插件化的方案。
+这里不讨论：自行定义数据格式，并自行实现解析器（parser或LayoutInflater）的方案。（因为造这种轮子总让我想起曾经一个叫XXUI的垃圾框架。。。）
+ 已安装插件apk的情况下：
+ 读取静态资源（如png/jpg等） 可以通过AIDL的方式直接获取，这里不赘述。
+ 读取并执行功能函数： 同上。参数不可序列化的情况，可参考下面“不安装插件apk的情况”
+ 读取布局 简单布局同上，自定义布局不确定是否可行（不过已经安装了，这就不重要了）。
+ 直接启动activity 因为已安装，所以直接intent去start acitivty即可。
+  未安装插件apk的情况下：
+ 读取静态资源（如png/jpg等）
+例如从包名com.example.plugin里，读取名为test的drawable资源
+String libPath = Environment.getExternalStorageDirectory() + &amp;quot;/Plugin.apk&amp;quot;; try { AssetManager assetManager = AssetManager.class.newInstance(); Method addAssetPath = assetManager.getClass().getMethod( &amp;quot;addAssetPath&amp;quot;, String.class); addAssetPath.invoke(assetManager, libPath); mAssetManager = assetManager; } catch (Exception e) { e.printStackTrace(); } Resources superRes = super.getResources(); mResources = new Resources(mAssetManager, superRes.</description>
+    </item>
+    
+  </channel>
+</rss>

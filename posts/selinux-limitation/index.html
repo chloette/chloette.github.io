@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>用Selinux遇到的限制 :: Hello Friend — A simple theme for Hugo</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="（一停手就是若干年啊。。。）
+在做一个有趣的小功能，具体什么就不说了。中途遇到了一个问题，media进程直接写文件的时候无权限：
+fopen后strerrno(errno)是：permission denied.
+翻了翻，应该是sepolicy（selinux）的限制导致的。
+找到篇文章大概介绍了selinux和sepolicy设置（android L开始是建议厂商强制使用的）
+还有一篇更偏实用。
+打开/external/sepolicy/mediaserver.te
+（其实还有一个device/qcom/sepolicy/common/mediaserver.te，暂未确认是用哪个，还是做了一个交集）
+但可以确认的是camera_data_file应该是可写的：
+allow mediaserver camera_data_file:dir rw_dir_perms; allow mediaserver camera_data_file:file create_file_perms;
+那具体camera_data_file是哪里那？继续翻：
+在/external/sepolicy/file_contexts里面：
+/data/misc/camera(/.*)? u:object_r:camera_data_file:s0
+既然这样，那就直接往这个目录下面写吧~
+改完测试，一切OK~"/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="/posts/selinux-limitation/" />
+
+
+<link rel="stylesheet" href="/assets/style.css">
+
+
+<link rel="stylesheet" href="/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="用Selinux遇到的限制"/>
+<meta name="twitter:description" content="（一停手就是若干年啊。。。）
+在做一个有趣的小功能，具体什么就不说了。中途遇到了一个问题，media进程直接写文件的时候无权限：
+fopen后strerrno(errno)是：permission denied.
+翻了翻，应该是sepolicy（selinux）的限制导致的。
+找到篇文章大概介绍了selinux和sepolicy设置（android L开始是建议厂商强制使用的）
+还有一篇更偏实用。
+打开/external/sepolicy/mediaserver.te
+（其实还有一个device/qcom/sepolicy/common/mediaserver.te，暂未确认是用哪个，还是做了一个交集）
+但可以确认的是camera_data_file应该是可写的：
+allow mediaserver camera_data_file:dir rw_dir_perms; allow mediaserver camera_data_file:file create_file_perms;
+那具体camera_data_file是哪里那？继续翻：
+在/external/sepolicy/file_contexts里面：
+/data/misc/camera(/.*)? u:object_r:camera_data_file:s0
+既然这样，那就直接往这个目录下面写吧~
+改完测试，一切OK~"/>
+
+
+
+<meta property="og:title" content="用Selinux遇到的限制" />
+<meta property="og:description" content="（一停手就是若干年啊。。。）
+在做一个有趣的小功能，具体什么就不说了。中途遇到了一个问题，media进程直接写文件的时候无权限：
+fopen后strerrno(errno)是：permission denied.
+翻了翻，应该是sepolicy（selinux）的限制导致的。
+找到篇文章大概介绍了selinux和sepolicy设置（android L开始是建议厂商强制使用的）
+还有一篇更偏实用。
+打开/external/sepolicy/mediaserver.te
+（其实还有一个device/qcom/sepolicy/common/mediaserver.te，暂未确认是用哪个，还是做了一个交集）
+但可以确认的是camera_data_file应该是可写的：
+allow mediaserver camera_data_file:dir rw_dir_perms; allow mediaserver camera_data_file:file create_file_perms;
+那具体camera_data_file是哪里那？继续翻：
+在/external/sepolicy/file_contexts里面：
+/data/misc/camera(/.*)? u:object_r:camera_data_file:s0
+既然这样，那就直接往这个目录下面写吧~
+改完测试，一切OK~" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/selinux-limitation/" />
+<meta property="article:published_time" content="2015-06-20T06:58:44&#43;00:00"/>
+<meta property="article:modified_time" content="2015-06-20T06:58:44&#43;00:00"/><meta property="og:site_name" content="Hello Friend" />
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">hello friend</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/showcase">Showcase</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  <div class="post">
+    <h2 class="post-title"><a href="/posts/selinux-limitation/">用Selinux遇到的限制</a></h2>
+    <div class="post-meta">
+      
+        <span class="post-date">
+            2015-06-20
+        </span>
+      
+      <span class="post-author">— Written by Guo Yi</span>
+      
+    </div>
+
+    
+      <span class="post-tags">
+        
+          #<a href="/tags/android/">Android</a>&nbsp;
+        
+          #<a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
+        
+          #<a href="/tags/selinux/">Selinux</a>&nbsp;
+        
+          #<a href="/tags/sepolicy/">Sepolicy</a>&nbsp;
+        
+      </span>
+    
+
+    
+
+    <div class="post-content">
+      <p>（一停手就是若干年啊。。。）</p>
+
+<p>在做一个有趣的小功能，具体什么就不说了。中途遇到了一个问题，media进程直接写文件的时候无权限：</p>
+
+<p>fopen后strerrno(errno)是：permission denied.</p>
+
+<p>翻了翻，应该是sepolicy（selinux）的限制导致的。</p>
+
+<p>找到篇<a href="http://blog.csdn.net/innost/article/details/19299937">文章</a>大概介绍了selinux和sepolicy设置（android L开始是建议厂商强制使用的）</p>
+
+<p>还有<a href="http://www.2cto.com/kf/201504/390742.html">一篇</a>更偏实用。</p>
+
+<p>打开/external/sepolicy/mediaserver.te</p>
+
+<p>（其实还有一个device/qcom/sepolicy/common/mediaserver.te，暂未确认是用哪个，还是做了一个交集）</p>
+
+<p>但可以确认的是<code>camera_data_file</code>应该是可写的：</p>
+
+<p><code>allow mediaserver camera_data_file:dir rw_dir_perms;
+allow mediaserver camera_data_file:file create_file_perms;</code></p>
+
+<p>那具体<code>camera_data_file</code>是哪里那？继续翻：</p>
+
+<p>在/external/sepolicy/file_contexts里面：</p>
+
+<p><code>/data/misc/camera(/.*)?         u:object_r:camera_data_file:s0</code></p>
+
+<p>既然这样，那就直接往这个目录下面写吧~</p>
+
+<p>改完测试，一切OK~</p>
+
+    </div>
+    
+      <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h">Read other posts</span>
+          <hr />
+        </div>
+        <div class="pagination__buttons">
+          
+            <span class="button previous">
+              <a href="/posts/android-support-double-tap/">
+                <span class="button__icon">←</span>
+                <span class="button__text">Android支持按键双击事件</span>
+              </a>
+            </span>
+          
+          
+            <span class="button next">
+              <a href="/posts/about-camera-sensor-1/">
+                <span class="button__text">关于Camera（成像）</span>
+                <span class="button__icon">→</span>
+              </a>
+            </span>
+          
+        </div>
+      </div>
+    
+
+    
+
+    </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">hello friend</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span>© 2019 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

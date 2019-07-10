@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Selinux on Hello Friend</title>
+    <link>/categories/selinux/</link>
+    <description>Recent content in Selinux on Hello Friend</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 20 Jun 2015 06:58:44 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/selinux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>用Selinux遇到的限制</title>
+      <link>/posts/selinux-limitation/</link>
+      <pubDate>Sat, 20 Jun 2015 06:58:44 +0000</pubDate>
+      
+      <guid>/posts/selinux-limitation/</guid>
+      <description>（一停手就是若干年啊。。。）
+在做一个有趣的小功能，具体什么就不说了。中途遇到了一个问题，media进程直接写文件的时候无权限：
+fopen后strerrno(errno)是：permission denied.
+翻了翻，应该是sepolicy（selinux）的限制导致的。
+找到篇文章大概介绍了selinux和sepolicy设置（android L开始是建议厂商强制使用的）
+还有一篇更偏实用。
+打开/external/sepolicy/mediaserver.te
+（其实还有一个device/qcom/sepolicy/common/mediaserver.te，暂未确认是用哪个，还是做了一个交集）
+但可以确认的是camera_data_file应该是可写的：
+allow mediaserver camera_data_file:dir rw_dir_perms; allow mediaserver camera_data_file:file create_file_perms;
+那具体camera_data_file是哪里那？继续翻：
+在/external/sepolicy/file_contexts里面：
+/data/misc/camera(/.*)? u:object_r:camera_data_file:s0
+既然这样，那就直接往这个目录下面写吧~
+改完测试，一切OK~</description>
+    </item>
+    
+  </channel>
+</rss>

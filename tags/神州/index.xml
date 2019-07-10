@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>神州 on Hello Friend</title>
+    <link>/tags/%E7%A5%9E%E5%B7%9E/</link>
+    <description>Recent content in 神州 on Hello Friend</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 29 May 2013 22:37:38 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/%E7%A5%9E%E5%B7%9E/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>神州租车的数据安全问题(secure problem of ZuChe.com)</title>
+      <link>/posts/shen-zhou-zu-che-de-shu-ju-an-quan-wen-ti-secure-problem-of-zuche-com/</link>
+      <pubDate>Wed, 29 May 2013 22:37:38 +0000</pubDate>
+      
+      <guid>/posts/shen-zhou-zu-che-de-shu-ju-an-quan-wen-ti-secure-problem-of-zuche-com/</guid>
+      <description>说实话我不知道从何开始写，我发现了神州租车的一些，问题；而且非常严重。
+我曾经试图联系他们，但是没有得到任何反馈，所以我决定写出来，作为一个记录。
+当然，通过我的分析及实践，可以进一步得到它的用户数据，甚至进行修改或破坏，但这不是我的初衷，所以这里会做一些模糊处理（相信官方补丁会跑在那些有心者前面）。
+直接拆开它的apk【其实如果用sniffer之类的，会比我这么做来的更直接；我这么做的原因就是顺手而已。】
+可以得到对应的源文件，通过一些简单的代码和逻辑分析（几乎没有混淆），可以得到两个很霸道的接口，一个接口是通过user id来获取对应该用户所有订单信息的，获取到的内容可能如下：
+&amp;lt;soap:Envelope xmlns:soap=&amp;quot;http://schemas.xmlsoap.org/soap/envelope/&amp;quot; xmlns:xsd=&amp;quot;http://www.w3.org/2001/XMLSchema&amp;quot; xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot;&amp;gt;; &amp;lt;;soap:Body&amp;gt;; &amp;lt;;OrderListQueryResponse xmlns=&amp;quot;http://tempuri.org/&amp;quot;&amp;gt;; &amp;lt;;OrderListQueryResult xmlns=&amp;quot;http://tempuri.org/&amp;quot;&amp;gt;; &amp;lt;;CurrentPage xmlns=&amp;quot;OrderListQueryResult&amp;quot;&amp;gt;;1&amp;lt;;/CurrentPage&amp;gt;; &amp;lt;;OrderList xmlns=&amp;quot;OrderListQueryResult&amp;quot;&amp;gt;;&amp;lt;;ns1:OrderValue xmlns:ns1=&amp;quot;OrderValue&amp;quot;&amp;gt;; &amp;lt;;Address xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;; &amp;lt;span style=&amp;quot;color: #ff0000;&amp;quot;&amp;gt; &amp;lt;strong&amp;gt;南宁市西乡塘区北湖路西三里20号【模糊】401号房&amp;lt;/strong&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;;/Address&amp;gt;; &amp;lt;;CarType xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;标致207/三厢/1.4手动&amp;lt;;/CarType&amp;gt;; &amp;lt;;Comments xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;&amp;lt;;/Comments&amp;gt;; &amp;lt;;DrivingLicenceNo xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;null&amp;lt;;/DrivingLicenceNo&amp;gt;; &amp;lt;;Email xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;&amp;lt;;/Email&amp;gt;; &amp;lt;;FromAddr xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;null&amp;lt;;/FromAddr&amp;gt;;&amp;lt;;FromCity xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;南宁&amp;lt;;/FromCity&amp;gt;; &amp;lt;;FromDate xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;2013-04-08 12:00 &amp;lt;;/FromDate&amp;gt;; &amp;lt;;FromProvince xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;广西壮族自治区&amp;lt;;/FromProvince&amp;gt;; &amp;lt;;FromStore xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;广西体育馆店&amp;lt;;/FromStore&amp;gt;; &amp;lt;;IdCardNo xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;; &amp;lt;span style=&amp;quot;color: #ff0000;&amp;quot;&amp;gt;&amp;lt;strong&amp;gt;450104【模糊】0510&amp;lt;/strong&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;;/IdCardNo&amp;gt;; &amp;lt;;IdCardType xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;10&amp;lt;;/IdCardType&amp;gt;; &amp;lt;;InsuranceFee xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;30.0&amp;lt;;/InsuranceFee&amp;gt;; &amp;lt;;Mobile xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;; &amp;lt;strong&amp;gt;&amp;lt;span style=&amp;quot;color: #ff0000;&amp;quot;&amp;gt;158【模糊】1523&amp;lt;/span&amp;gt;&amp;lt;/strong&amp;gt;&amp;lt;;/Mobile&amp;gt;; &amp;lt;;OrderNo xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;13653269673220 ? ? ?&amp;lt;;/OrderNo&amp;gt;; &amp;lt;;OrderStatus xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;已完成&amp;lt;;/OrderStatus&amp;gt;; &amp;lt;;Picture xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;http://static.zuchecdn.com/images/terminal/bj207.jpg&amp;lt;;/Picture&amp;gt;; &amp;lt;;ReturnAddr xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;广西壮族自治区南宁市江南区星光大道3号广西体育馆&amp;lt;;/ReturnAddr&amp;gt;; &amp;lt;;ServiceFee xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;20.</description>
+    </item>
+    
+  </channel>
+</rss>

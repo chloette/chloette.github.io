@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>wordpress on Hello Friend</title>
+    <link>/categories/wordpress/</link>
+    <description>Recent content in wordpress on Hello Friend</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 14 Sep 2014 16:27:10 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/wordpress/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>从Wordpress迁移到Ghost</title>
+      <link>/posts/from-wordpress-to-ghost/</link>
+      <pubDate>Sun, 14 Sep 2014 16:27:10 +0000</pubDate>
+      
+      <guid>/posts/from-wordpress-to-ghost/</guid>
+      <description>纠结了很久，一开始考虑是不是折腾一下jekyll（毕竟有github撑腰不断更新）；或者成熟一些的octopress；亦或者是台湾同胞的hexo；不过最后还是选择了Ghost
+不想用WP的原因说白了就是。。。那玩意儿不太像是码农用的啊。。。（速度太慢体积太大不容易迁移这些明摆着的事情就不讨论了吧～）
+不用Jekyll和octopress的原因其就是太麻烦了，想象一下，应该需要一个online的编辑器（而且算是比较好的选择了吧），然后用github（方便些）或者自己开一个shell去commit &amp;amp; generate
+不用hexo的原因是，既然都已经上node.js了，干脆找个靠谱点的好了啊。
+另外最后选择ghost还是看到了一篇老外的文章，也是面临类似的选择，其中一句话我觉得很对： &amp;gt;I chose Ghost over Jekyll because I wanted to minimize the amount of work spent on the blog outside of writing actual content. Quote
+说的很对！
+这次迁移中遇到了不少问题，因为没有什么好的工具可以从wordpress无缝迁移到ghost
+尽管有一个ghost的wp插件，可以export content成json形式（然后在/ghost/debug页面可以去import），但是，这玩意儿真没那么好用。
+迁移的时候有以下几个坑要注意：
+ Slug是中文的（转码后是%E6%88这种），是无法导入ghost的，必须用英文或拼音代替（目测没有好工具。。。） ghost是没有分类（category）的，只有tag；所以WP的分类都会被转为tag的形式。 上传到wp的图片，一般是放在/wp-content/uploads/；ghost的话，一般是放置在/content/images/；找文本替换工具来替换吧，然后把图片copy过去就好了。 ghost没有像wp一样自动生成小尺寸的预览图，而是提供原图，所以页面上如果有很多图，那就真的是多图杀猫了。。。 html形式的高亮/斜体/颜色/超链接等等，都可以识别，但为了统一（其实是简化），最好还是改成markdown的形式 上传到wp的文件，例如xx.zip或者xx.pdf这一类的，ghost是玩不转的，需要自行处理。 模板一般放置在/content/theme/，自己下载解压缩后重启ghost即可使用了。不过免费的模板的质量确实不敢恭维啊。。。 ghost默认start的是development模式，而不是production模式；  有遗漏再补充，暂时就这些。</description>
+    </item>
+    
+    <item>
+      <title>Wordpress插入代码失效</title>
+      <link>/posts/wordpress-cha-ru-dai-ma-shi-xiao/</link>
+      <pubDate>Sat, 06 Sep 2014 12:30:36 +0000</pubDate>
+      
+      <guid>/posts/wordpress-cha-ru-dai-ma-shi-xiao/</guid>
+      <description>貌似Wordpress自带的[xml]&amp;lt;code&amp;gt;[/xml]标签很弱啊。。。面对html的小箭头压力很大啊。。。 选择一个靠谱的插件吧，例如SyntaxHighlighter～
+插入代码无压力：
+PHP： &amp;gt;[php]phpinfo();[/php]
+HTML： &amp;gt;[xml]&amp;lt;code&amp;gt;我是代码&amp;lt;/code&amp;gt;&amp;lt;a&amp;gt;我是链接&amp;lt;/a&amp;gt;[/xml]
+Tada~</description>
+    </item>
+    
+    <item>
+      <title>Wordpress插入链接无效或者不显示标题</title>
+      <link>/posts/wordpress-cha-ru-lian-jie-wu-xiao-huo-zhe-bu-xian-shi-biao-ti/</link>
+      <pubDate>Sat, 06 Sep 2014 11:51:57 +0000</pubDate>
+      
+      <guid>/posts/wordpress-cha-ru-lian-jie-wu-xiao-huo-zhe-bu-xian-shi-biao-ti/</guid>
+      <description>刚刚。。遇到了使用link插入链接后页面不显示，或者明明写了链接的标题但是显示的还是url的问题。。。 看了下代码，发现貌似html代码不太对：
+现在用link标签插入的link如下：
+&amp;lt;a title=&amp;quot;本文啊本文&amp;quot; href=&amp;quot;https://xxxx/&amp;quot; target=&amp;quot;_blank&amp;quot;&amp;gt;&amp;lt;/a&amp;gt;  正常的link应该如下：
+&amp;lt;a title=&amp;quot;本文啊本文&amp;quot; href=&amp;quot;https://xxxx/&amp;quot; target=&amp;quot;_blank&amp;quot;&amp;gt;本文啊本文&amp;lt;/a&amp;gt;  注意&amp;lt;a&amp;gt;&amp;lt;/a&amp;gt;之间的标题哦，更新一下～ Tada～ 链接好啦～ （难道是升级版本搞出来的问题。。？懒得管啦～）</description>
+    </item>
+    
+    <item>
+      <title>WP新版本如何切换语言到中文</title>
+      <link>/posts/wp-xin-ban-ben-ru-he-qie-huan-yu-yan-dao-zhong-wen/</link>
+      <pubDate>Fri, 05 Sep 2014 22:08:36 +0000</pubDate>
+      
+      <guid>/posts/wp-xin-ban-ben-ru-he-qie-huan-yu-yan-dao-zhong-wen/</guid>
+      <description>WP新版本，自3.X（X貌似大于8吧）以后，直接修改wp-config.php里面的WPLANG就没有效果了。。。算是出于对用户体验的考虑，不过你们太不考虑非英语为母语国家的用户了吧。。。
+现在的切换方式和之前相比，多了一步：
+ 修改wp-config.php中的WPLANG为目标语言，例如中文zh_CN 进入setting，会发现最下面多了一个设置项：（这就是那多出来的一步，曾经的曾经，这个选项也是存在的。。。） 果断选择语言（其实就多了一个对应的“中文”而已），然后老样子，去Update刷新一下就好啦～  Tada～</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gpl on Hello Friend</title>
+    <link>/tags/gpl/</link>
+    <description>Recent content in gpl on Hello Friend</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 24 Sep 2014 02:28:22 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/gpl/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>关于GPL</title>
+      <link>/posts/about-gpl/</link>
+      <pubDate>Wed, 24 Sep 2014 02:28:22 +0000</pubDate>
+      
+      <guid>/posts/about-gpl/</guid>
+      <description>因为最近在做ffmpeg相关的东西，所以GPL/LGPL还是要了解一下的。
+GPL的WIKI： GPL WIKI
+FFmpeg主要代码遵循的是LGPL；简单来说，静态库调用的话必须同样遵循LGPL（被传染），而动态库调用就没关系：FFmpeg legal
+ The following is a checklist for LGPL compliance when linking against the FFmpeg libraries. It is not the only way to comply with the license, but we think it is the easiest. There are also a few items that are not really related to LGPL compliance but are good ideas anyway.
+1.Compile FFmpeg without &amp;ldquo;&amp;ndash;enable-gpl&amp;rdquo; and without &amp;ldquo;&amp;ndash;enable-nonfree&amp;rdquo;.
+2.Use dynamic linking (on windows, this means linking to dlls) for linking with FFmpeg libraries.</description>
+    </item>
+    
+  </channel>
+</rss>

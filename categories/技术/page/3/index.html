@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>技术 :: Hello Friend — A simple theme for Hugo</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="/categories/%E6%8A%80%E6%9C%AF/" />
+
+
+<link rel="stylesheet" href="/assets/style.css">
+
+
+<link rel="stylesheet" href="/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="技术"/>
+<meta name="twitter:description" content=""/>
+
+
+
+<meta property="og:title" content="技术" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/categories/%E6%8A%80%E6%9C%AF/" />
+
+<meta property="og:updated_time" content="2015-06-20T08:35:16&#43;00:00"/><meta property="og:site_name" content="Hello Friend" />
+
+
+
+<link rel="alternate" type="application/rss+xml" href="/categories/%E6%8A%80%E6%9C%AF/index.xml" title="Hello Friend" />
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">hello friend</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/showcase">Showcase</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  <div class="posts">
+    
+    
+    
+
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/script-to-modify-ghost-screen-css/">Ghost修改screen.css的脚本</a></h1>
+      <div class="post-meta">
+        <span class="post-date">
+          2015-01-21
+        </span>
+        <span class="post-author">— Written by Guo Yi</span>
+        
+      </div>
+
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/ghost/">ghost</a>&nbsp;
+          
+            #<a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
+          
+            #<a href="/tags/script/">script</a>&nbsp;
+          
+            #<a href="/tags/python/">python</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            Ghost更新越来越频繁，每次都要手动更新css实在伤不起。。。
+反正改动的地方也不多，干脆做成一键脚本好了，把之前upgrade的脚本再扩展一下：
+首先更改#7，改动如下，增加了change logo position：
+#change post page what to show&hellip; echo &lsquo;7. replace &quot;excerpt&quot; with &quot;content&quot; &mdash;&mdash;&mdash;&mdash;&mdash;&rsquo; #excerpt -&gt; content #read more -&gt; &gt;&gt; sed -i &quot;s#&lt;p&gt;{{excerpt words=&amp;quot;26&amp;quot;}} &lt;a class=&amp;quot;read-more&amp;quot; href=&amp;quot;{{url}}&amp;quot;&gt;&amp;raquo;#&lt;p&gt;{{content words=&amp;quot;32&amp;quot;}} &lt;a class=&amp;quot;read-more&amp;quot; href=&amp;quot;{{url}}&amp;quot;&gt;&amp;amp;raquo;&amp;amp;raquo;#g&quot; ./content/themes/casper/partials/loop.hbs #change logo position sed -i &rsquo;s~{{#if @blog.logo}}&lt;a class=&quot;blog-logo&quot; href=&quot;{{@blog.url}}&quot;&gt;&lt;img src=&quot;{{@blog.logo}}&quot; alt=&quot;Blog Logo&quot; /&gt;&lt;/a&gt;{{/if}}~~g&rsquo; ./content/themes/casper/index.hbs sed -i &rsquo;s~&lt;h1 class=&quot;page-title&quot;&gt;{{@blog.title}}&lt;/h1&gt;~{{#if @blog.logo}}&lt;a class=&quot;blog-logo&quot; href=&quot;{{@blog.url}}/about&quot;&gt;&lt;img src=&quot;{{@blog.logo}}&quot; alt=&quot;Blog Logo&quot; /&gt;&lt;/a&gt;{{/if}}&lt;h1 class=&quot;page-title&quot;&gt;{{@blog.title}}&lt;/h1&gt;~g&rsquo; ./content/themes/casper/index.hbs  再就是考虑到自己智商太低，难以驾驭sed的多行匹配，所以祭出Python；脚本中加上这句：
+#call python to do multiple lines replacement python ~/ghost_css_adjustment.
+          
+        
+      </div>
+      <div><a class="read-more button" href="/posts/script-to-modify-ghost-screen-css/">Read more →</a></div>
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/android-imagefetcher/">Android ImageFetcher</a></h1>
+      <div class="post-meta">
+        <span class="post-date">
+          2015-01-21
+        </span>
+        <span class="post-author">— Written by Guo Yi</span>
+        
+      </div>
+
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/android/">Android</a>&nbsp;
+          
+            #<a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
+          
+            #<a href="/tags/imagefetcher/">ImageFetcher</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            Google完善文档后，也提供了一大批优秀的源代码。
+ImageFetcher就是其中之一，这货非常简洁的实现了用ImageView来异步加载网页图片，同时对图片进行二级缓存的功能。
+稍微改改就可以轻松适配任何图片资源（例如本地，例如需特殊条件（如宽高，比例，透明度等）等）了。
+主体代码构成： 外部调用如下：
+ New：
+ImageFetcher imageFetcher = new ImageFetcher(context, width, height);  就可以了。
+当然这里一般都会改动；
+例如为了区分cache目录，会把unique folder name作为参数传入进去）。
+例如为了替换默认图，把图标传进去。
+例如为了适配任何图片资源，增加自定义的ImageProvider，也在初始化的时候传进去。
+ Load bitmap：   imageFetcher.loadImage(pathString, (ImageView) view.findViewById(R.id.thumbnail));   这样这个ImageView就会在图片通过异步下载好（并缓存）以后，自己加载显示出来了～
+ Close cache：  imageFetcher.setPauseWork(false); imageFetcher.closeCache();  就是这么简单任性～
+内部逻辑重点的几个：
+ 对Download下来的图片，使用DiskLruCache来本地缓存，使用LruCache作为内存缓存；
+ 使用AsyncTask（WeakReference）来异步download图片；结束后对ImageView（WeakReference）进行setImageDrawable（AsyncDrawable）；这里的AsyncDrawable内部有正在处理自身的AsyncTask的WeakReference，所以可以避免重复execute的情况；每次都会先cancel之前的。
+ AsyncTask跑在Executor（线程池）中。
+  主要原理就是这样，其中一些细节可以自己翻源码～～ 非常方便使用和扩展～ 基本已经成为搭项目时必备库之一。
+但是这里有一点，需要注意！
+谨慎使用ImageFetcher.setPauseWork
+官方Sample给出了两个用法，看起来前后有一点矛盾：
+一个是在Grid滑动的时候：
+public void onScrollStateChanged(AbsListView absListView, int scrollState) { // Pause fetcher to ensure smoother scrolling when flinging if (scrollState == AbsListView.
+          
+        
+      </div>
+      <div><a class="read-more button" href="/posts/android-imagefetcher/">Read more →</a></div>
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/ec2-devxvda1-should-be-checked-for-errors/">EC2 /dev/xvda1 should be checked for errors</a></h1>
+      <div class="post-meta">
+        <span class="post-date">
+          2015-01-20
+        </span>
+        <span class="post-author">— Written by Guo Yi</span>
+        
+      </div>
+
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
+          
+            #<a href="/tags/ec2/">EC2</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      <div><a class="read-more button" href="/posts/ec2-devxvda1-should-be-checked-for-errors/">Read more →</a></div>
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/proguard-obfuscation/">Proguard混淆</a></h1>
+      <div class="post-meta">
+        <span class="post-date">
+          2015-01-17
+        </span>
+        <span class="post-author">— Written by Guo Yi</span>
+        
+      </div>
+
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
+          
+            #<a href="/tags/proguard/">proguard</a>&nbsp;
+          
+            #<a href="/tags/%E6%B7%B7%E6%B7%86/">混淆</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            这里仅仅说Android的混淆，其他平台基本相同。
+不同的IDE有不同的配置方法。
+Android Studio的配置略有差异，可以参考前文
+混淆的大致原理就是rename class（所以混淆的过程比较慢），混淆的初衷，并不是为了不让人看源码，毕竟java的虚拟机机制就决定了，源码肯定是可以反编译出来的；其主要目的是让反编译后的代码“难以”看懂。
+例如打开一个混淆后输出的mapping文件，可以看到：
+（某代码片段，请无视。）
+这样一来，反编译后的代码里面，基本就是a.b.c(d.e)这种代码（也许原来只是Util.isNetworkAvailable(context)），大大增加了阅读难度；也就达到了防止反编译的目的。
+但经常会误伤，因为是rename，所以对name敏感（依赖name）的方法或者库就会无法正常工作。例如反射，例如JNI的接口class（依赖class name来找context object），例如GSON这些常用工具库。
+解决办法就是修改proguard的配置文件，将这些敏感class置为例外。
+常用方法如下：
+ 排除指定类A
+-keepclassmembers class com.xxx.xxx.A { *; }   将类A的子类全部排除 language-bash -keepclassmembers class * extends com.xxx.xxx.A { <em>; }   将包P内的class全部排除
+-keep public class com.xxx.P.</em> { *; }   将包P内的class及subclass全部排除 language-bash -keep public class com.xxx.P.** { *; }     注意*和**的差别；
+注意最后的{ *; }，用法很多，可以指定仅排除public/protected，如：
+{ public protected *;}  当然还可以直接更直接一些：
+{ &lt;fields&gt;; &lt;methods&gt;; }  如果是使用Gson的话，还可以直接如下使用方式来避免混淆问题：
+          
+        
+      </div>
+      <div><a class="read-more button" href="/posts/proguard-obfuscation/">Read more →</a></div>
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/jenkins-github-gradle-android/">Jenkins+Github+Gradle+Android</a></h1>
+      <div class="post-meta">
+        <span class="post-date">
+          2015-01-15
+        </span>
+        <span class="post-author">— Written by Guo Yi</span>
+        
+      </div>
+
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
+          
+            #<a href="/tags/jenkins/">Jenkins</a>&nbsp;
+          
+            #<a href="/tags/gradle/">Gradle</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            也许题目换成《配置以Github作为源码仓库并用Gradle编译Android的Jenkins时遇到的坑》更恰当~ LOL~
+网上教学贴很多，不一一列举了。也可以参考前一篇（BTW，我想说Subversion Release Plugin比自带的Subversion Plugin好用多了）。本文主要补充配置Github和Gradle容易遇到的问题。
+重要的plugin：
+ Git plugin
+ Gradle plugin
+  至于Github plugin之类的插件，自己看着办吧。
+这里有几个容易出问题的地方
+ 如何用Jenkins从Github获取代码：  建议使用Deploy keys
+怎么用那？最好用.ssh/config，可以参考这里。
+需要注意的是，在创建ssh key的时候，需要
+sudo -u jenkins ssh-keygen -t rsa -f &hellip;/jenkins/.ssh/id_rsa_project  加-u来指定以jenkins身份创建key，加-f就是为了方便多个ssh key（例如多repository）的时候好管理。
+同时，创建出来的ssh key不要设置密码，因为jenkins对ssh key密码的支持不是特别好，会报public key permission错误（非访问权限问题）。BTW，虽然github提到deploy keys缺点时有说，这货一般为了方便不加密码；但通过command方式，用带密码的ssh key去访问github是没问题的。
+当然Github还提供了一套更华丽的方式，叫Machine user，简单说就是单独申请一个账户（类似一个代理），把这个账户加到不同的repository里面作为只读的collaborator，再直接在这个账户里面加ssh key（而不用每个repository一个deploy key了），这样通过这一个machine user（代理）就可以访问多个repository了。
+最后，这里去clone/pull代码的时候，有时候出报timeout的错误，解决方法有两种，一种是在该目录下，手动git clone &ndash;bare一个repository出来；再一种就是增加timeout时间：源码管理 -&gt; Git -&gt; Additional Behaviours -&gt; Advanced clone behaviours
+ 如何用Jenkins来run Gradle：  需要手动匹配gradle版本。在系统设置里面新增Gradle安装即可，不然在Invoke Gradle script的时候，除了default就没得选了。
+JAVA_HOME和ANDROID_HOME这两个环境变量需要提前设置好（可以在/etc/profile里面export，然后source /etc/profile即可）；修改环境变量后需要重启jenkins；同时注意对应的目录，jenkins是否有访问权限；
+          
+        
+      </div>
+      <div><a class="read-more button" href="/posts/jenkins-github-gradle-android/">Read more →</a></div>
+    </div>
+    
+    <div class="pagination">
+  <div class="pagination__buttons">
+    
+      <span class="button previous">
+        <a href="/categories/%E6%8A%80%E6%9C%AF/page/2/">
+          <span class="button__icon">←</span>
+          <span class="button__text">Newer posts</span>
+        </a>
+      </span>
+    
+    
+      <span class="button next">
+        <a href="/categories/%E6%8A%80%E6%9C%AF/page/4/">
+          <span class="button__text">Older posts</span>
+          <span class="button__icon">→</span>
+        </a>
+      </span>
+    
+  </div>
+</div>
+
+  </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">hello friend</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span>© 2019 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

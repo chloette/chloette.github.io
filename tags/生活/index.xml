@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>生活 on Hello Friend</title>
+    <link>/tags/%E7%94%9F%E6%B4%BB/</link>
+    <description>Recent content in 生活 on Hello Friend</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 09 Mar 2015 12:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/%E7%94%9F%E6%B4%BB/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Working holiday visa of NewZealand</title>
+      <link>/posts/working-holiday-visa-of-newzealand/</link>
+      <pubDate>Mon, 09 Mar 2015 12:00:00 +0000</pubDate>
+      
+      <guid>/posts/working-holiday-visa-of-newzealand/</guid>
+      <description>新西兰给国内18-30岁的小伙伴们提供了为期一年的打工旅行签证；
+完美间隔年的节奏；
+15/16年的网申将于5月19号开始；
+有兴趣的请关注官网。
+上一个新西兰热心小伙伴Jack的主页，貌似他一直在关注新西兰留学/移民等相关事宜。本文也是在看过他的这篇后，顺便分享一下~
+同时附上纪录片（土豆网），记录新西兰打工旅行的他她它：
+
+Youtube链接
+用里面的两句话来收尾吧：
+ “我只想说，人只活一次，选择自己喜欢的，怎么选都不会错”
+“旅行只是一片阿司匹林，不要期待通过一次长途旅行解决生活的问题”
+ </description>
+    </item>
+    
+    <item>
+      <title>将离（我要滚犊子啦）</title>
+      <link>/posts/leaving-cm/</link>
+      <pubDate>Sat, 28 Feb 2015 07:49:03 +0000</pubDate>
+      
+      <guid>/posts/leaving-cm/</guid>
+      <description>离职提上日程了啊，邮箱已经被关掉了。。。
+动作够迅速，确认了下可能是IT部门弄错了时间；考虑到反正要关掉的，也就不用再开了吧 ：）
+该交接的东西不多，大部分都文档化了。
+直接留了一个索引表，想干什么事情找对应文档，即可。
+服务器相关的事情也交接完了，张老师还是很给力的~
+剩下来的时间虽然无聊却也弥足珍贵~
+回顾这一年，虽然偶尔忙碌，偶尔清闲，但一直工作的轻松愉快~（公司虽小，氛围却相当赞啊！）
+这一路走来，感触颇多，实在不知从何说起。流水账般的记录一下吧：
+若干新技能get√：
+ FFmpeg for Android FFmpeg对音视频的编码/解码 FFmpeg + GpuImage 实现美拍（Android）[待整理] Jenkins部署Ant/Gradle编译环境 本站（aws/nginx/ghost/python）  有爱的小伙伴们：
+ 张莉：张老师被我忽悠过来结果我跑路子了。。不要怪我~ 哈哈哈~ 敬你是条汉子！ 严隐：严导被我忽悠去滑雪然后果断上瘾。。不要怪我~ 哈哈哈~ 相当NB的全栈码农~ 郑良亮：Lake，leader，脾气很好，版本递交控制的很到位，值得学习！ 樊平：Boss，装备党！ 平乾：同装备党！ 王萌：大逗比！ 杨文杰：不说了，一图毁终生！ 包立：节操粉碎机！ 李波：会秒杀的90后！ 陈龙：大哥太低调！ 曾立：半半！ 乐敏飞：测试姐妹团的头目 程萍：测试姐妹团的小太妹 樊银：测试姐妹团的军火库 张冰洁：测试姐妹团中，被波波拒绝了的妹纸（波波你注孤生！） 黄平平：从测试姐妹团消失很久了。。。 王宝福：多国语言帝！ 郑XX：浙初兄，对，我忘记你叫啥了，但他们叫你快枪手。。。 张玉清：哈哈哈你想清楚再给我说好么~ 陈成：碉堡的优秀新人~ 张静：你的造型那么精致你让妹纸们情何以堪~ 张健：你一定是某VPN的代理商！ 李世珍：你知道每次别人喊Roy的时候我都会抬头么。。。 俞旻康：名字好难打，爆料王 T_T 龚敏慧：啥都会的HR~ 周璐：啥都会的前台~ 王萌说这是他在公司唯一信任的人，所以我觉得她和王萌有故事。 杨小乐：嗓门很大的IOS头目 郑楠：设计头目，但一定很缺钱！因为他居然还兼职牛丼（食其家）服务员~ 朱静凯：你们三个我不熟啊啊啊啊（0）！ 何宝泳：你们三个我不熟啊啊啊啊（1）！ 王璐：你们三个我不熟啊啊啊啊（2）！ 钟久祥：我真的不会教别人滑雪。。。 吴晓军：走得晚来的早！所以为了照顾你，公司就不提供加班费了~ 王文思：双鱼座！麦当劳走起！ 魏伟：你和大哥一样低调~ 胡锡舟：胡小墨！昵称当真名也是醉了。。。隐姓埋名藏这么深还偷偷练功夫一定是有原因的！欠别人钱记得早点还哦！ 蔡良建：你就是China Joy，就是那不一样的花火~  依然记得你们滑雪的英姿~</description>
+    </item>
+    
+    <item>
+      <title>大年三十</title>
+      <link>/posts/last-day-of-year/</link>
+      <pubDate>Wed, 18 Feb 2015 06:55:12 +0000</pubDate>
+      
+      <guid>/posts/last-day-of-year/</guid>
+      <description>过了今天，就是羊年了。
+发小建了微信群（之前的QQ群似乎好久没动静了，这是桌面IM的没落表象么？不好意思偏题了）
+吵吵嚷嚷的在谈论新年聚会，谁谁谁嫁哪里去了，谁谁谁开车也要接回来聚，云云。
+突然觉得这么不合群似乎不太好啊。随便找了个理由说实在回不去啊，就再也没在群里说话。
+不过听着熟悉略多沙哑的声音，心里多少还是会纠结一下。
+“家里”似乎一切都好。
+老人那边好几年没见了，只听说依然健朗。
+本应给他们拜个年，想了很久，还是没拿起电话。
+既然在经历这样非主流的生活，那何必还遵循那些主流的繁琐。
+该担心的，光担心也无用；不该担心的，又何必浪费时间。
+最后的结果就是：不如强大自己。
+新的一年，就利用这个长假开始第一次充电吧。
+BTW，年夜饭就KFC的新年来一（益）桶，就这么愉快的决定了！
+这个时候开始单曲循环《漫步人生路》真的好么？</description>
+    </item>
+    
+  </channel>
+</rss>

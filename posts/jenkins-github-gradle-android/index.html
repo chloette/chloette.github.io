@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>Jenkins&#43;Github&#43;Gradle&#43;Android :: Hello Friend — A simple theme for Hugo</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="也许题目换成《配置以Github作为源码仓库并用Gradle编译Android的Jenkins时遇到的坑》更恰当~ LOL~
+网上教学贴很多，不一一列举了。也可以参考前一篇（BTW，我想说Subversion Release Plugin比自带的Subversion Plugin好用多了）。本文主要补充配置Github和Gradle容易遇到的问题。
+重要的plugin：
+ Git plugin
+ Gradle plugin
+  至于Github plugin之类的插件，自己看着办吧。
+这里有几个容易出问题的地方
+ 如何用Jenkins从Github获取代码：  建议使用Deploy keys
+怎么用那？最好用.ssh/config，可以参考这里。
+需要注意的是，在创建ssh key的时候，需要
+sudo -u jenkins ssh-keygen -t rsa -f .../jenkins/.ssh/id_rsa_project  加-u来指定以jenkins身份创建key，加-f就是为了方便多个ssh key（例如多repository）的时候好管理。
+同时，创建出来的ssh key不要设置密码，因为jenkins对ssh key密码的支持不是特别好，会报public key permission错误（非访问权限问题）。BTW，虽然github提到deploy keys缺点时有说，这货一般为了方便不加密码；但通过command方式，用带密码的ssh key去访问github是没问题的。
+当然Github还提供了一套更华丽的方式，叫Machine user，简单说就是单独申请一个账户（类似一个代理），把这个账户加到不同的repository里面作为只读的collaborator，再直接在这个账户里面加ssh key（而不用每个repository一个deploy key了），这样通过这一个machine user（代理）就可以访问多个repository了。
+最后，这里去clone/pull代码的时候，有时候出报timeout的错误，解决方法有两种，一种是在该目录下，手动git clone &amp;ndash;bare一个repository出来；再一种就是增加timeout时间：源码管理 -&amp;gt; Git -&amp;gt; Additional Behaviours -&amp;gt; Advanced clone behaviours
+ 如何用Jenkins来run Gradle：  需要手动匹配gradle版本。在系统设置里面新增Gradle安装即可，不然在Invoke Gradle script的时候，除了default就没得选了。
+JAVA_HOME和ANDROID_HOME这两个环境变量需要提前设置好（可以在/etc/profile里面export，然后source /etc/profile即可）；修改环境变量后需要重启jenkins；同时注意对应的目录，jenkins是否有访问权限；"/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="/posts/jenkins-github-gradle-android/" />
+
+
+<link rel="stylesheet" href="/assets/style.css">
+
+
+<link rel="stylesheet" href="/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Jenkins&#43;Github&#43;Gradle&#43;Android"/>
+<meta name="twitter:description" content="也许题目换成《配置以Github作为源码仓库并用Gradle编译Android的Jenkins时遇到的坑》更恰当~ LOL~
+网上教学贴很多，不一一列举了。也可以参考前一篇（BTW，我想说Subversion Release Plugin比自带的Subversion Plugin好用多了）。本文主要补充配置Github和Gradle容易遇到的问题。
+重要的plugin：
+ Git plugin
+ Gradle plugin
+  至于Github plugin之类的插件，自己看着办吧。
+这里有几个容易出问题的地方
+ 如何用Jenkins从Github获取代码：  建议使用Deploy keys
+怎么用那？最好用.ssh/config，可以参考这里。
+需要注意的是，在创建ssh key的时候，需要
+sudo -u jenkins ssh-keygen -t rsa -f .../jenkins/.ssh/id_rsa_project  加-u来指定以jenkins身份创建key，加-f就是为了方便多个ssh key（例如多repository）的时候好管理。
+同时，创建出来的ssh key不要设置密码，因为jenkins对ssh key密码的支持不是特别好，会报public key permission错误（非访问权限问题）。BTW，虽然github提到deploy keys缺点时有说，这货一般为了方便不加密码；但通过command方式，用带密码的ssh key去访问github是没问题的。
+当然Github还提供了一套更华丽的方式，叫Machine user，简单说就是单独申请一个账户（类似一个代理），把这个账户加到不同的repository里面作为只读的collaborator，再直接在这个账户里面加ssh key（而不用每个repository一个deploy key了），这样通过这一个machine user（代理）就可以访问多个repository了。
+最后，这里去clone/pull代码的时候，有时候出报timeout的错误，解决方法有两种，一种是在该目录下，手动git clone &ndash;bare一个repository出来；再一种就是增加timeout时间：源码管理 -&gt; Git -&gt; Additional Behaviours -&gt; Advanced clone behaviours
+ 如何用Jenkins来run Gradle：  需要手动匹配gradle版本。在系统设置里面新增Gradle安装即可，不然在Invoke Gradle script的时候，除了default就没得选了。
+JAVA_HOME和ANDROID_HOME这两个环境变量需要提前设置好（可以在/etc/profile里面export，然后source /etc/profile即可）；修改环境变量后需要重启jenkins；同时注意对应的目录，jenkins是否有访问权限；"/>
+
+
+
+<meta property="og:title" content="Jenkins&#43;Github&#43;Gradle&#43;Android" />
+<meta property="og:description" content="也许题目换成《配置以Github作为源码仓库并用Gradle编译Android的Jenkins时遇到的坑》更恰当~ LOL~
+网上教学贴很多，不一一列举了。也可以参考前一篇（BTW，我想说Subversion Release Plugin比自带的Subversion Plugin好用多了）。本文主要补充配置Github和Gradle容易遇到的问题。
+重要的plugin：
+ Git plugin
+ Gradle plugin
+  至于Github plugin之类的插件，自己看着办吧。
+这里有几个容易出问题的地方
+ 如何用Jenkins从Github获取代码：  建议使用Deploy keys
+怎么用那？最好用.ssh/config，可以参考这里。
+需要注意的是，在创建ssh key的时候，需要
+sudo -u jenkins ssh-keygen -t rsa -f .../jenkins/.ssh/id_rsa_project  加-u来指定以jenkins身份创建key，加-f就是为了方便多个ssh key（例如多repository）的时候好管理。
+同时，创建出来的ssh key不要设置密码，因为jenkins对ssh key密码的支持不是特别好，会报public key permission错误（非访问权限问题）。BTW，虽然github提到deploy keys缺点时有说，这货一般为了方便不加密码；但通过command方式，用带密码的ssh key去访问github是没问题的。
+当然Github还提供了一套更华丽的方式，叫Machine user，简单说就是单独申请一个账户（类似一个代理），把这个账户加到不同的repository里面作为只读的collaborator，再直接在这个账户里面加ssh key（而不用每个repository一个deploy key了），这样通过这一个machine user（代理）就可以访问多个repository了。
+最后，这里去clone/pull代码的时候，有时候出报timeout的错误，解决方法有两种，一种是在该目录下，手动git clone &ndash;bare一个repository出来；再一种就是增加timeout时间：源码管理 -&gt; Git -&gt; Additional Behaviours -&gt; Advanced clone behaviours
+ 如何用Jenkins来run Gradle：  需要手动匹配gradle版本。在系统设置里面新增Gradle安装即可，不然在Invoke Gradle script的时候，除了default就没得选了。
+JAVA_HOME和ANDROID_HOME这两个环境变量需要提前设置好（可以在/etc/profile里面export，然后source /etc/profile即可）；修改环境变量后需要重启jenkins；同时注意对应的目录，jenkins是否有访问权限；" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/jenkins-github-gradle-android/" />
+<meta property="article:published_time" content="2015-01-15T13:17:06&#43;00:00"/>
+<meta property="article:modified_time" content="2015-01-15T13:17:06&#43;00:00"/><meta property="og:site_name" content="Hello Friend" />
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">hello friend</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/showcase">Showcase</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  <div class="post">
+    <h2 class="post-title"><a href="/posts/jenkins-github-gradle-android/">Jenkins+Github+Gradle+Android</a></h2>
+    <div class="post-meta">
+      
+        <span class="post-date">
+            2015-01-15
+        </span>
+      
+      <span class="post-author">— Written by Guo Yi</span>
+      
+    </div>
+
+    
+      <span class="post-tags">
+        
+          #<a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
+        
+          #<a href="/tags/jenkins/">Jenkins</a>&nbsp;
+        
+          #<a href="/tags/gradle/">Gradle</a>&nbsp;
+        
+      </span>
+    
+
+    
+
+    <div class="post-content">
+      <p>也许题目换成《配置以Github作为源码仓库并用Gradle编译Android的Jenkins时遇到的坑》更恰当~ LOL~</p>
+
+<p>网上<a href="https://www.digitalocean.com/community/tutorials/how-to-build-android-apps-with-jenkins">教学贴</a>很多，不一一列举了。也可以参考<a href="http://nobodycare.me/2014/09/19/jenkins-android-auto-build-problems/">前一篇</a>（BTW，我想说<a href="http://wiki.hudson-ci.org/display/HUDSON/Subversion+Release+Manager">Subversion Release Plugin</a>比自带的Subversion Plugin好用多了）。本文主要补充配置Github和Gradle容易遇到的问题。</p>
+
+<p>重要的plugin：</p>
+
+<ol>
+<li><p><a href="https://wiki.jenkins-ci.org/display/JENKINS/Git+Plugin">Git plugin</a></p></li>
+
+<li><p><a href="http://wiki.jenkins-ci.org/display/JENKINS/Gradle+Plugin">Gradle plugin</a></p></li>
+</ol>
+
+<p>至于Github plugin之类的插件，自己看着办吧。</p>
+
+<p>这里有几个容易出问题的地方</p>
+
+<ul>
+<li>如何用Jenkins从Github获取代码：</li>
+</ul>
+
+<p>建议使用<a href="https://developer.github.com/guides/managing-deploy-keys/">Deploy keys</a></p>
+
+<p>怎么用那？最好用<code>.ssh/config</code>，可以参考<a href="http://stackoverflow.com/questions/5212304/authenticate-jenkins-ci-for-github-private-repository">这里</a>。</p>
+
+<p>需要注意的是，在创建ssh key的时候，需要</p>
+
+<pre><code class="language-language-bash">sudo -u jenkins ssh-keygen -t rsa -f .../jenkins/.ssh/id_rsa_project
+</code></pre>
+
+<p>加<code>-u</code>来指定以jenkins身份创建key，加<code>-f</code>就是为了方便多个ssh key（例如多repository）的时候好管理。</p>
+
+<p>同时，创建出来的ssh key不要设置密码，因为jenkins对ssh key密码的支持不是特别好，会报public key permission错误（非访问权限问题）。BTW，虽然github提到deploy keys缺点时有说，这货一般为了方便不加密码；但通过command方式，用带密码的ssh key去访问github是没问题的。</p>
+
+<p>当然Github还提供了一套更华丽的方式，叫<a href="https://developer.github.com/guides/managing-deploy-keys/#machine-users">Machine user</a>，简单说就是单独申请一个账户（类似一个代理），把这个账户加到不同的repository里面作为只读的collaborator，再直接在这个账户里面加ssh key（而不用每个repository一个deploy key了），这样通过这一个machine user（代理）就可以访问多个repository了。</p>
+
+<p>最后，这里去clone/pull代码的时候，有时候出报timeout的错误，解决方法有两种，一种是在该目录下，手动git clone &ndash;bare一个repository出来；再一种就是增加timeout时间：<code>源码管理</code> -&gt; <code>Git</code> -&gt; <code>Additional Behaviours</code> -&gt; <code>Advanced clone behaviours</code></p>
+
+<ul>
+<li>如何用Jenkins来run Gradle：</li>
+</ul>
+
+<p>需要手动匹配gradle版本。在<code>系统设置</code>里面<code>新增Gradle安装</code>即可，不然在<code>Invoke Gradle script</code>的时候，除了<code>default</code>就没得选了。</p>
+
+<p><code>JAVA_HOME</code>和<code>ANDROID_HOME</code>这两个环境变量需要提前设置好（可以在<code>/etc/profile</code>里面export，然后<code>source /etc/profile</code>即可）；修改环境变量后需要重启jenkins；同时注意对应的目录，jenkins是否有访问权限；</p>
+
+<ul>
+<li><a href="http://tools.android.com/tech-docs/new-build-system/user-guide#TOC-Signing-Configurations">gradle增加签名</a>用的key的方式如下：
+<br /></li>
+</ul>
+
+<p>增加<code>signingConfigs</code>，注意路径：</p>
+
+<pre><code class="language-language-groovy">android {
+  signingConfigs {
+    releaseSignConfig {
+    storeFile file(&quot;../../../xxx/android.key&quot;)
+    storePassword &quot;xxx&quot;
+    keyAlias &quot;xxx&quot;
+    keyPassword &quot;xxx&quot;
+  }
+}
+
+buildTypes {
+  debug {
+    minifyEnabled false
+    signingConfig signingConfigs.releaseSignConfig
+  } 
+  ...
+}
+</code></pre>
+
+<p>如果不希望把key/password直接写在gradle中（太直接了好么）；可以换个方式（对，就是通过环境变量）：</p>
+
+<pre><code class="language-language-groovy">signingConfigs {
+  release {
+    storeFile file(System.getenv(&quot;KEYSTORE&quot;))
+    storePassword System.getenv(&quot;KEYSTORE_PASSWORD&quot;)
+    keyAlias System.getenv(&quot;KEY_ALIAS&quot;)
+    keyPassword System.getenv(&quot;KEY_PASSWORD&quot;)
+  }
+}
+</code></pre>
+
+<ul>
+<li><a href="http://tools.android.com/tech-docs/new-build-system/user-guide#TOC-Running-ProGuard">gradle增加proguard</a></li>
+</ul>
+
+<p>之前版本是用<code>runProguard true</code>来作为proguard的开关，
+但是，自从android gradle plugin升到<a href="http://tools.android.com/tech-docs/new-build-system/migrating-to-1-0-0">1.0</a>以后，就要换成<code>minifyEnabled true</code>了。如：</p>
+
+<pre><code class="language-language-bash">android {
+  buildTypes {
+    release {
+      minifyEnabled true
+      proguardFile getDefaultProguardFile('proguard-android.txt')， 'proguard-rules.txt'
+    }
+  }
+}
+</code></pre>
+
+<ul>
+<li>仅编译release版本</li>
+</ul>
+
+<p>Build Task填：</p>
+
+<pre><code class="language-language-bash">clean check assembleRelease
+</code></pre>
+
+<p><a href="http://tools.android.com/tech-docs/new-build-system/user-guide#TOC-Android-tasks">因为</a>：</p>
+
+<pre><code class="language-language-bash">build = check + assemble
+assemble = assembleRelease + assembleDebug
+</code></pre>
+
+<p>如果对于proguard的结果有疑问的话，可以祭出<code>dex2jar</code>反编译看看效果。</p>
+
+<hr />
+
+<p>基本上就这些了。</p>
+
+<p>现在就差。。一个能正常运行Jenkins又价格可接受的Server了。。。</p>
+
+    </div>
+    
+      <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h">Read other posts</span>
+          <hr />
+        </div>
+        <div class="pagination__buttons">
+          
+            <span class="button previous">
+              <a href="/posts/proguard-obfuscation/">
+                <span class="button__icon">←</span>
+                <span class="button__text">Proguard混淆</span>
+              </a>
+            </span>
+          
+          
+            <span class="button next">
+              <a href="/posts/android-sparsearray-indexofvalue-return-negative-1/">
+                <span class="button__text">Android SparseArray中indexOfValue返回-1</span>
+                <span class="button__icon">→</span>
+              </a>
+            </span>
+          
+        </div>
+      </div>
+    
+
+    
+
+    </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">hello friend</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span>© 2019 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>神州租车的数据安全问题(secure problem of ZuChe.com) :: Hello Friend — A simple theme for Hugo</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="说实话我不知道从何开始写，我发现了神州租车的一些，问题；而且非常严重。
+我曾经试图联系他们，但是没有得到任何反馈，所以我决定写出来，作为一个记录。
+当然，通过我的分析及实践，可以进一步得到它的用户数据，甚至进行修改或破坏，但这不是我的初衷，所以这里会做一些模糊处理（相信官方补丁会跑在那些有心者前面）。
+直接拆开它的apk【其实如果用sniffer之类的，会比我这么做来的更直接；我这么做的原因就是顺手而已。】
+可以得到对应的源文件，通过一些简单的代码和逻辑分析（几乎没有混淆），可以得到两个很霸道的接口，一个接口是通过user id来获取对应该用户所有订单信息的，获取到的内容可能如下：
+&amp;lt;soap:Envelope xmlns:soap=&amp;quot;http://schemas.xmlsoap.org/soap/envelope/&amp;quot; xmlns:xsd=&amp;quot;http://www.w3.org/2001/XMLSchema&amp;quot; xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot;&amp;gt;; &amp;lt;;soap:Body&amp;gt;; &amp;lt;;OrderListQueryResponse xmlns=&amp;quot;http://tempuri.org/&amp;quot;&amp;gt;; &amp;lt;;OrderListQueryResult xmlns=&amp;quot;http://tempuri.org/&amp;quot;&amp;gt;; &amp;lt;;CurrentPage xmlns=&amp;quot;OrderListQueryResult&amp;quot;&amp;gt;;1&amp;lt;;/CurrentPage&amp;gt;; &amp;lt;;OrderList xmlns=&amp;quot;OrderListQueryResult&amp;quot;&amp;gt;;&amp;lt;;ns1:OrderValue xmlns:ns1=&amp;quot;OrderValue&amp;quot;&amp;gt;; &amp;lt;;Address xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;; &amp;lt;span style=&amp;quot;color: #ff0000;&amp;quot;&amp;gt; &amp;lt;strong&amp;gt;南宁市西乡塘区北湖路西三里20号【模糊】401号房&amp;lt;/strong&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;;/Address&amp;gt;; &amp;lt;;CarType xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;标致207/三厢/1.4手动&amp;lt;;/CarType&amp;gt;; &amp;lt;;Comments xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;&amp;lt;;/Comments&amp;gt;; &amp;lt;;DrivingLicenceNo xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;null&amp;lt;;/DrivingLicenceNo&amp;gt;; &amp;lt;;Email xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;&amp;lt;;/Email&amp;gt;; &amp;lt;;FromAddr xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;null&amp;lt;;/FromAddr&amp;gt;;&amp;lt;;FromCity xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;南宁&amp;lt;;/FromCity&amp;gt;; &amp;lt;;FromDate xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;2013-04-08 12:00 &amp;lt;;/FromDate&amp;gt;; &amp;lt;;FromProvince xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;广西壮族自治区&amp;lt;;/FromProvince&amp;gt;; &amp;lt;;FromStore xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;广西体育馆店&amp;lt;;/FromStore&amp;gt;; &amp;lt;;IdCardNo xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;; &amp;lt;span style=&amp;quot;color: #ff0000;&amp;quot;&amp;gt;&amp;lt;strong&amp;gt;450104【模糊】0510&amp;lt;/strong&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;;/IdCardNo&amp;gt;; &amp;lt;;IdCardType xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;10&amp;lt;;/IdCardType&amp;gt;; &amp;lt;;InsuranceFee xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;30.0&amp;lt;;/InsuranceFee&amp;gt;; &amp;lt;;Mobile xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;; &amp;lt;strong&amp;gt;&amp;lt;span style=&amp;quot;color: #ff0000;&amp;quot;&amp;gt;158【模糊】1523&amp;lt;/span&amp;gt;&amp;lt;/strong&amp;gt;&amp;lt;;/Mobile&amp;gt;; &amp;lt;;OrderNo xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;13653269673220 ? ? ?&amp;lt;;/OrderNo&amp;gt;; &amp;lt;;OrderStatus xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;已完成&amp;lt;;/OrderStatus&amp;gt;; &amp;lt;;Picture xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;http://static.zuchecdn.com/images/terminal/bj207.jpg&amp;lt;;/Picture&amp;gt;; &amp;lt;;ReturnAddr xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;广西壮族自治区南宁市江南区星光大道3号广西体育馆&amp;lt;;/ReturnAddr&amp;gt;; &amp;lt;;ServiceFee xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;20."/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="/posts/shen-zhou-zu-che-de-shu-ju-an-quan-wen-ti-secure-problem-of-zuche-com/" />
+
+
+<link rel="stylesheet" href="/assets/style.css">
+
+
+<link rel="stylesheet" href="/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="神州租车的数据安全问题(secure problem of ZuChe.com)"/>
+<meta name="twitter:description" content="说实话我不知道从何开始写，我发现了神州租车的一些，问题；而且非常严重。
+我曾经试图联系他们，但是没有得到任何反馈，所以我决定写出来，作为一个记录。
+当然，通过我的分析及实践，可以进一步得到它的用户数据，甚至进行修改或破坏，但这不是我的初衷，所以这里会做一些模糊处理（相信官方补丁会跑在那些有心者前面）。
+直接拆开它的apk【其实如果用sniffer之类的，会比我这么做来的更直接；我这么做的原因就是顺手而已。】
+可以得到对应的源文件，通过一些简单的代码和逻辑分析（几乎没有混淆），可以得到两个很霸道的接口，一个接口是通过user id来获取对应该用户所有订单信息的，获取到的内容可能如下：
+&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;; &lt;;soap:Body&gt;; &lt;;OrderListQueryResponse xmlns=&quot;http://tempuri.org/&quot;&gt;; &lt;;OrderListQueryResult xmlns=&quot;http://tempuri.org/&quot;&gt;; &lt;;CurrentPage xmlns=&quot;OrderListQueryResult&quot;&gt;;1&lt;;/CurrentPage&gt;; &lt;;OrderList xmlns=&quot;OrderListQueryResult&quot;&gt;;&lt;;ns1:OrderValue xmlns:ns1=&quot;OrderValue&quot;&gt;; &lt;;Address xmlns=&quot;OrderValue&quot;&gt;; &lt;span style=&quot;color: #ff0000;&quot;&gt; &lt;strong&gt;南宁市西乡塘区北湖路西三里20号【模糊】401号房&lt;/strong&gt;&lt;/span&gt;&lt;;/Address&gt;; &lt;;CarType xmlns=&quot;OrderValue&quot;&gt;;标致207/三厢/1.4手动&lt;;/CarType&gt;; &lt;;Comments xmlns=&quot;OrderValue&quot;&gt;;&lt;;/Comments&gt;; &lt;;DrivingLicenceNo xmlns=&quot;OrderValue&quot;&gt;;null&lt;;/DrivingLicenceNo&gt;; &lt;;Email xmlns=&quot;OrderValue&quot;&gt;;&lt;;/Email&gt;; &lt;;FromAddr xmlns=&quot;OrderValue&quot;&gt;;null&lt;;/FromAddr&gt;;&lt;;FromCity xmlns=&quot;OrderValue&quot;&gt;;南宁&lt;;/FromCity&gt;; &lt;;FromDate xmlns=&quot;OrderValue&quot;&gt;;2013-04-08 12:00 &lt;;/FromDate&gt;; &lt;;FromProvince xmlns=&quot;OrderValue&quot;&gt;;广西壮族自治区&lt;;/FromProvince&gt;; &lt;;FromStore xmlns=&quot;OrderValue&quot;&gt;;广西体育馆店&lt;;/FromStore&gt;; &lt;;IdCardNo xmlns=&quot;OrderValue&quot;&gt;; &lt;span style=&quot;color: #ff0000;&quot;&gt;&lt;strong&gt;450104【模糊】0510&lt;/strong&gt;&lt;/span&gt;&lt;;/IdCardNo&gt;; &lt;;IdCardType xmlns=&quot;OrderValue&quot;&gt;;10&lt;;/IdCardType&gt;; &lt;;InsuranceFee xmlns=&quot;OrderValue&quot;&gt;;30.0&lt;;/InsuranceFee&gt;; &lt;;Mobile xmlns=&quot;OrderValue&quot;&gt;; &lt;strong&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;158【模糊】1523&lt;/span&gt;&lt;/strong&gt;&lt;;/Mobile&gt;; &lt;;OrderNo xmlns=&quot;OrderValue&quot;&gt;;13653269673220 ? ? ?&lt;;/OrderNo&gt;; &lt;;OrderStatus xmlns=&quot;OrderValue&quot;&gt;;已完成&lt;;/OrderStatus&gt;; &lt;;Picture xmlns=&quot;OrderValue&quot;&gt;;http://static.zuchecdn.com/images/terminal/bj207.jpg&lt;;/Picture&gt;; &lt;;ReturnAddr xmlns=&quot;OrderValue&quot;&gt;;广西壮族自治区南宁市江南区星光大道3号广西体育馆&lt;;/ReturnAddr&gt;; &lt;;ServiceFee xmlns=&quot;OrderValue&quot;&gt;;20."/>
+
+
+
+<meta property="og:title" content="神州租车的数据安全问题(secure problem of ZuChe.com)" />
+<meta property="og:description" content="说实话我不知道从何开始写，我发现了神州租车的一些，问题；而且非常严重。
+我曾经试图联系他们，但是没有得到任何反馈，所以我决定写出来，作为一个记录。
+当然，通过我的分析及实践，可以进一步得到它的用户数据，甚至进行修改或破坏，但这不是我的初衷，所以这里会做一些模糊处理（相信官方补丁会跑在那些有心者前面）。
+直接拆开它的apk【其实如果用sniffer之类的，会比我这么做来的更直接；我这么做的原因就是顺手而已。】
+可以得到对应的源文件，通过一些简单的代码和逻辑分析（几乎没有混淆），可以得到两个很霸道的接口，一个接口是通过user id来获取对应该用户所有订单信息的，获取到的内容可能如下：
+&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;; &lt;;soap:Body&gt;; &lt;;OrderListQueryResponse xmlns=&quot;http://tempuri.org/&quot;&gt;; &lt;;OrderListQueryResult xmlns=&quot;http://tempuri.org/&quot;&gt;; &lt;;CurrentPage xmlns=&quot;OrderListQueryResult&quot;&gt;;1&lt;;/CurrentPage&gt;; &lt;;OrderList xmlns=&quot;OrderListQueryResult&quot;&gt;;&lt;;ns1:OrderValue xmlns:ns1=&quot;OrderValue&quot;&gt;; &lt;;Address xmlns=&quot;OrderValue&quot;&gt;; &lt;span style=&quot;color: #ff0000;&quot;&gt; &lt;strong&gt;南宁市西乡塘区北湖路西三里20号【模糊】401号房&lt;/strong&gt;&lt;/span&gt;&lt;;/Address&gt;; &lt;;CarType xmlns=&quot;OrderValue&quot;&gt;;标致207/三厢/1.4手动&lt;;/CarType&gt;; &lt;;Comments xmlns=&quot;OrderValue&quot;&gt;;&lt;;/Comments&gt;; &lt;;DrivingLicenceNo xmlns=&quot;OrderValue&quot;&gt;;null&lt;;/DrivingLicenceNo&gt;; &lt;;Email xmlns=&quot;OrderValue&quot;&gt;;&lt;;/Email&gt;; &lt;;FromAddr xmlns=&quot;OrderValue&quot;&gt;;null&lt;;/FromAddr&gt;;&lt;;FromCity xmlns=&quot;OrderValue&quot;&gt;;南宁&lt;;/FromCity&gt;; &lt;;FromDate xmlns=&quot;OrderValue&quot;&gt;;2013-04-08 12:00 &lt;;/FromDate&gt;; &lt;;FromProvince xmlns=&quot;OrderValue&quot;&gt;;广西壮族自治区&lt;;/FromProvince&gt;; &lt;;FromStore xmlns=&quot;OrderValue&quot;&gt;;广西体育馆店&lt;;/FromStore&gt;; &lt;;IdCardNo xmlns=&quot;OrderValue&quot;&gt;; &lt;span style=&quot;color: #ff0000;&quot;&gt;&lt;strong&gt;450104【模糊】0510&lt;/strong&gt;&lt;/span&gt;&lt;;/IdCardNo&gt;; &lt;;IdCardType xmlns=&quot;OrderValue&quot;&gt;;10&lt;;/IdCardType&gt;; &lt;;InsuranceFee xmlns=&quot;OrderValue&quot;&gt;;30.0&lt;;/InsuranceFee&gt;; &lt;;Mobile xmlns=&quot;OrderValue&quot;&gt;; &lt;strong&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;158【模糊】1523&lt;/span&gt;&lt;/strong&gt;&lt;;/Mobile&gt;; &lt;;OrderNo xmlns=&quot;OrderValue&quot;&gt;;13653269673220 ? ? ?&lt;;/OrderNo&gt;; &lt;;OrderStatus xmlns=&quot;OrderValue&quot;&gt;;已完成&lt;;/OrderStatus&gt;; &lt;;Picture xmlns=&quot;OrderValue&quot;&gt;;http://static.zuchecdn.com/images/terminal/bj207.jpg&lt;;/Picture&gt;; &lt;;ReturnAddr xmlns=&quot;OrderValue&quot;&gt;;广西壮族自治区南宁市江南区星光大道3号广西体育馆&lt;;/ReturnAddr&gt;; &lt;;ServiceFee xmlns=&quot;OrderValue&quot;&gt;;20." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/shen-zhou-zu-che-de-shu-ju-an-quan-wen-ti-secure-problem-of-zuche-com/" />
+<meta property="article:published_time" content="2013-05-29T22:37:38&#43;00:00"/>
+<meta property="article:modified_time" content="2013-05-29T22:37:38&#43;00:00"/><meta property="og:site_name" content="Hello Friend" />
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">hello friend</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/showcase">Showcase</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  <div class="post">
+    <h2 class="post-title"><a href="/posts/shen-zhou-zu-che-de-shu-ju-an-quan-wen-ti-secure-problem-of-zuche-com/">神州租车的数据安全问题(secure problem of ZuChe.com)</a></h2>
+    <div class="post-meta">
+      
+        <span class="post-date">
+            2013-05-29
+        </span>
+      
+      <span class="post-author">— Written by Guo Yi</span>
+      
+    </div>
+
+    
+      <span class="post-tags">
+        
+          #<a href="/tags/%E5%AE%89%E5%85%A8/">安全</a>&nbsp;
+        
+          #<a href="/tags/%E6%95%B0%E6%8D%AE/">数据</a>&nbsp;
+        
+          #<a href="/tags/%E6%B3%84%E6%BC%8F/">泄漏</a>&nbsp;
+        
+          #<a href="/tags/%E7%A5%9E%E5%B7%9E/">神州</a>&nbsp;
+        
+          #<a href="/tags/%E7%A7%9F%E8%BD%A6/">租车</a>&nbsp;
+        
+      </span>
+    
+
+    
+
+    <div class="post-content">
+      <p>说实话我不知道从何开始写，我发现了神州租车的一些，问题；而且非常严重。</p>
+
+<p>我曾经试图联系他们，但是没有得到任何反馈，所以我决定写出来，作为一个记录。</p>
+
+<p>当然，通过我的分析及实践，可以进一步得到它的用户数据，甚至进行修改或破坏，但这不是我的初衷，所以这里会做一些模糊处理（相信官方补丁会跑在那些有心者前面）。</p>
+
+<p>直接拆开它的apk【其实如果用sniffer之类的，会比我这么做来的更直接；我这么做的原因就是顺手而已。】</p>
+
+<p>可以得到对应的源文件，通过一些简单的代码和逻辑分析（几乎没有混淆），可以得到两个很霸道的接口，一个接口是通过user id来获取对应该用户所有订单信息的，获取到的内容可能如下：</p>
+
+<pre><code class="language-language-markup">&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;;
+&lt;;soap:Body&gt;;
+&lt;;OrderListQueryResponse xmlns=&quot;http://tempuri.org/&quot;&gt;;
+&lt;;OrderListQueryResult xmlns=&quot;http://tempuri.org/&quot;&gt;;
+&lt;;CurrentPage xmlns=&quot;OrderListQueryResult&quot;&gt;;1&lt;;/CurrentPage&gt;;
+&lt;;OrderList xmlns=&quot;OrderListQueryResult&quot;&gt;;&lt;;ns1:OrderValue xmlns:ns1=&quot;OrderValue&quot;&gt;;
+&lt;;Address xmlns=&quot;OrderValue&quot;&gt;;
+&lt;span style=&quot;color: #ff0000;&quot;&gt;
+&lt;strong&gt;南宁市西乡塘区北湖路西三里20号【模糊】401号房&lt;/strong&gt;&lt;/span&gt;&lt;;/Address&gt;;
+&lt;;CarType xmlns=&quot;OrderValue&quot;&gt;;标致207/三厢/1.4手动&lt;;/CarType&gt;;
+&lt;;Comments xmlns=&quot;OrderValue&quot;&gt;;&lt;;/Comments&gt;;
+&lt;;DrivingLicenceNo xmlns=&quot;OrderValue&quot;&gt;;null&lt;;/DrivingLicenceNo&gt;;
+&lt;;Email xmlns=&quot;OrderValue&quot;&gt;;&lt;;/Email&gt;;
+&lt;;FromAddr xmlns=&quot;OrderValue&quot;&gt;;null&lt;;/FromAddr&gt;;&lt;;FromCity
+xmlns=&quot;OrderValue&quot;&gt;;南宁&lt;;/FromCity&gt;;
+&lt;;FromDate xmlns=&quot;OrderValue&quot;&gt;;2013-04-08 12:00
+&lt;;/FromDate&gt;;
+&lt;;FromProvince xmlns=&quot;OrderValue&quot;&gt;;广西壮族自治区&lt;;/FromProvince&gt;;
+&lt;;FromStore xmlns=&quot;OrderValue&quot;&gt;;广西体育馆店&lt;;/FromStore&gt;;
+&lt;;IdCardNo xmlns=&quot;OrderValue&quot;&gt;;
+&lt;span style=&quot;color: #ff0000;&quot;&gt;&lt;strong&gt;450104【模糊】0510&lt;/strong&gt;&lt;/span&gt;&lt;;/IdCardNo&gt;;
+&lt;;IdCardType xmlns=&quot;OrderValue&quot;&gt;;10&lt;;/IdCardType&gt;;
+&lt;;InsuranceFee xmlns=&quot;OrderValue&quot;&gt;;30.0&lt;;/InsuranceFee&gt;;
+&lt;;Mobile xmlns=&quot;OrderValue&quot;&gt;;
+&lt;strong&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;158【模糊】1523&lt;/span&gt;&lt;/strong&gt;&lt;;/Mobile&gt;;
+&lt;;OrderNo xmlns=&quot;OrderValue&quot;&gt;;13653269673220 ? ? ?&lt;;/OrderNo&gt;;
+&lt;;OrderStatus xmlns=&quot;OrderValue&quot;&gt;;已完成&lt;;/OrderStatus&gt;;
+&lt;;Picture xmlns=&quot;OrderValue&quot;&gt;;http://static.zuchecdn.com/images/terminal/bj207.jpg&lt;;/Picture&gt;;
+&lt;;ReturnAddr xmlns=&quot;OrderValue&quot;&gt;;广西壮族自治区南宁市江南区星光大道3号广西体育馆&lt;;/ReturnAddr&gt;;
+&lt;;ServiceFee xmlns=&quot;OrderValue&quot;&gt;;20.0&lt;;/ServiceFee&gt;;
+&lt;;ToCity xmlns=&quot;OrderValue&quot;&gt;;南宁&lt;;/ToCity&gt;;
+&lt;;ToDate xmlns=&quot;OrderValue&quot;&gt;;2013-04-09 12:00&lt;;/ToDate&gt;;
+&lt;;ToProvince xmlns=&quot;OrderValue&quot;&gt;;广西壮族自治区&lt;;/ToProvince&gt;;
+&lt;;ToStore xmlns=&quot;OrderValue&quot;&gt;;广西体育馆店&lt;;/ToStore&gt;;
+&lt;;TotalCarRentMoney xmlns=&quot;OrderValue&quot;&gt;;98&lt;;/TotalCarRentMoney&gt;;
+&lt;;TotalOrderPrice xmlns=&quot;OrderValue&quot;&gt;;148&lt;;/TotalOrderPrice&gt;;
+&lt;;UserName xmlns=&quot;OrderValue&quot;&gt;;
+&lt;span style=&quot;color: #ff0000;&quot;&gt;&lt;strong&gt;赖【模糊】&lt;/strong&gt;&lt;/span&gt;&lt;;/UserName&gt;;
+&lt;;VehicleNo xmlns=&quot;OrderValue&quot;&gt;;粤BF1U47&lt;;/VehicleNo&gt;;
+&lt;;/ns1:OrderValue&gt;;&lt;;/OrderList&gt;;
+&lt;;PageCount xmlns=&quot;OrderListQueryResult&quot;&gt;;1&lt;;/PageCount&gt;;
+&lt;;PageSize xmlns=&quot;OrderListQueryResult&quot;&gt;;999&lt;;/PageSize&gt;;
+&lt;;RowCount xmlns=&quot;OrderListQueryResult&quot;&gt;;1&lt;;/RowCount&gt;;
+&lt;;StateValues xmlns=&quot;OrderListQueryResult&quot;&gt;;&lt;;Code xmlns=&quot;StateValues&quot;&gt;;ACK&lt;;/Code&gt;;
+&lt;;Description xmlns=&quot;StateValues&quot;&gt;;成功&lt;;/Description&gt;;
+&lt;;/StateValues&gt;;&lt;;/OrderListQueryResult&gt;;
+&lt;;/OrderListQueryResponse&gt;;&lt;;/soap:Body&gt;;&lt;;/soap:Envelope&gt;;
+
+</code></pre>
+
+<p>注意看，应该猜的到这些都是什么。</p>
+
+<p>另外一个接口就更隐晦一些，是通过<strong><em>user id</em></strong>和<strong><em>身份证</em></strong>来直接<strong><em>修改用户密码</em></strong>，甚至不需要提供之前的密码。而通过上面的接口去获取订单信息，可以得到身份证等信息。所以，这是一个钥匙挂外面的锁。</p>
+
+<p>还有一些小漏洞的接口，这里就不表了。相信官方更了解。</p>
+
+<p>至此只能说，神州你上上心吧。</p>
+
+<p>作为你们的用户之一，深表伤心和失望。</p>
+
+<p>BTW，我会在10日后更新更多的细节。</p>
+
+<p>后文：<a href="http://www.nobodycare.me/2013/06/14/shen-zhou-zu-che-de-shu-ju-an-quan-wen-ti-xu-secure-problem-of-zuche-com-end/">神州租车的数据安全问题<a href="secure problem of ZuChe.com [End]">续</a></a></p>
+
+    </div>
+    
+      <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h">Read other posts</span>
+          <hr />
+        </div>
+        <div class="pagination__buttons">
+          
+            <span class="button previous">
+              <a href="/posts/about-putty-auto-close/">
+                <span class="button__icon">←</span>
+                <span class="button__text">about putty auto close</span>
+              </a>
+            </span>
+          
+          
+            <span class="button next">
+              <a href="/posts/kai-fang-xin-xi-jian-die-de-quan-bu-yuan-ma-bing-ting-zhi-fu-wu/">
+                <span class="button__text">开放信息间谍的全部源码并停止服务</span>
+                <span class="button__icon">→</span>
+              </a>
+            </span>
+          
+        </div>
+      </div>
+    
+
+    
+
+    </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">hello friend</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span>© 2019 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

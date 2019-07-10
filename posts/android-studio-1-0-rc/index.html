@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>Android studio 1.0 RC (更新) :: Hello Friend — A simple theme for Hugo</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="终于等到Release了。。。
+算是canary尝鲜版吧。
+不易啊，跟进！
+补充一个严重issue：[2014/11/24]
+使用1.0RC版本，Close工程的话，再次进入会自动下载ADK而不去检查已经存在的ADK。。。
+解决方法：
+关闭Android Studio后删除该目录：
+ 系统盘/User/你自己啊/.AndroidStudio
+ 然后重新启动Android Studio并重新导入以下目录的配置文件：
+ 系统盘/User/你自己啊/.AndroidStudioBeta
+ 一切正常了。。。（还有一个大招是启动之前拔网线，然后就可以Skip了。。。）
+路漫漫其修远兮啊。。。
+T_T
+继续补充。出去度假回来，结果都已经RC4.0了。。。你这版本号升级规则改的有点高调吧亲。
+放羊两天（刷5.0。。。）居然已经1.0.0咯。。。这版本号真是随意啊～
+打开ADK页面
+发现Android studio居然转正（Official）了！而ADT bundle连下载链接都没了（动作真快）。。。
+看来跟上的步伐不算慢，哈哈哈～"/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="/posts/android-studio-1-0-rc/" />
+
+
+<link rel="stylesheet" href="/assets/style.css">
+
+
+<link rel="stylesheet" href="/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Android studio 1.0 RC (更新)"/>
+<meta name="twitter:description" content="终于等到Release了。。。
+算是canary尝鲜版吧。
+不易啊，跟进！
+补充一个严重issue：[2014/11/24]
+使用1.0RC版本，Close工程的话，再次进入会自动下载ADK而不去检查已经存在的ADK。。。
+解决方法：
+关闭Android Studio后删除该目录：
+ 系统盘/User/你自己啊/.AndroidStudio
+ 然后重新启动Android Studio并重新导入以下目录的配置文件：
+ 系统盘/User/你自己啊/.AndroidStudioBeta
+ 一切正常了。。。（还有一个大招是启动之前拔网线，然后就可以Skip了。。。）
+路漫漫其修远兮啊。。。
+T_T
+继续补充。出去度假回来，结果都已经RC4.0了。。。你这版本号升级规则改的有点高调吧亲。
+放羊两天（刷5.0。。。）居然已经1.0.0咯。。。这版本号真是随意啊～
+打开ADK页面
+发现Android studio居然转正（Official）了！而ADT bundle连下载链接都没了（动作真快）。。。
+看来跟上的步伐不算慢，哈哈哈～"/>
+
+
+
+<meta property="og:title" content="Android studio 1.0 RC (更新)" />
+<meta property="og:description" content="终于等到Release了。。。
+算是canary尝鲜版吧。
+不易啊，跟进！
+补充一个严重issue：[2014/11/24]
+使用1.0RC版本，Close工程的话，再次进入会自动下载ADK而不去检查已经存在的ADK。。。
+解决方法：
+关闭Android Studio后删除该目录：
+ 系统盘/User/你自己啊/.AndroidStudio
+ 然后重新启动Android Studio并重新导入以下目录的配置文件：
+ 系统盘/User/你自己啊/.AndroidStudioBeta
+ 一切正常了。。。（还有一个大招是启动之前拔网线，然后就可以Skip了。。。）
+路漫漫其修远兮啊。。。
+T_T
+继续补充。出去度假回来，结果都已经RC4.0了。。。你这版本号升级规则改的有点高调吧亲。
+放羊两天（刷5.0。。。）居然已经1.0.0咯。。。这版本号真是随意啊～
+打开ADK页面
+发现Android studio居然转正（Official）了！而ADT bundle连下载链接都没了（动作真快）。。。
+看来跟上的步伐不算慢，哈哈哈～" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/android-studio-1-0-rc/" />
+<meta property="article:published_time" content="2014-11-21T07:00:33&#43;00:00"/>
+<meta property="article:modified_time" content="2014-11-21T07:00:33&#43;00:00"/><meta property="og:site_name" content="Hello Friend" />
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">hello friend</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/showcase">Showcase</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  <div class="post">
+    <h2 class="post-title"><a href="/posts/android-studio-1-0-rc/">Android studio 1.0 RC (更新)</a></h2>
+    <div class="post-meta">
+      
+        <span class="post-date">
+            2014-11-21
+        </span>
+      
+      <span class="post-author">— Written by Guo Yi</span>
+      
+    </div>
+
+    
+      <span class="post-tags">
+        
+          #<a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
+        
+          #<a href="/tags/%E8%AE%B0%E5%BD%95/">记录</a>&nbsp;
+        
+      </span>
+    
+
+    
+
+    <div class="post-content">
+      <p>终于等到Release了。。。</p>
+
+<p><img src="/content/images/2014/11/android_studio_1-0rc.png" alt="" /></p>
+
+<p>算是<a href="http://tools.android.com/download/studio/canary/latest">canary尝鲜版</a>吧。</p>
+
+<p>不易啊，跟进！</p>
+
+<hr />
+
+<p>补充一个严重issue：[2014/11/24]</p>
+
+<p>使用1.0RC版本，Close工程的话，再次进入会自动下载ADK而不去检查已经存在的ADK。。。</p>
+
+<p><img src="/content/images/2014/11/android_studio_issue.png" alt="" /></p>
+
+<p>解决方法：</p>
+
+<p>关闭Android Studio后删除该目录：</p>
+
+<blockquote>
+<p>系统盘/User/你自己啊/.AndroidStudio</p>
+</blockquote>
+
+<p>然后重新启动Android Studio并重新导入以下目录的配置文件：</p>
+
+<blockquote>
+<p>系统盘/User/你自己啊/.AndroidStudioBeta</p>
+</blockquote>
+
+<p>一切正常了。。。（还有一个大招是启动之前<strong><em>拔网线</em></strong>，然后就可以Skip了。。。）</p>
+
+<p>路漫漫其修远兮啊。。。</p>
+
+<p>T_T</p>
+
+<hr />
+
+<p>继续补充。出去度假回来，结果都已经RC4.0了。。。你这版本号升级规则改的有点高调吧亲。</p>
+
+<p>放羊两天（刷5.0。。。）居然已经1.0.0咯。。。这版本号真是随意啊～</p>
+
+<hr />
+
+<p>打开<a href="http://developer.android.com/sdk/index.html">ADK</a>页面</p>
+
+<p>发现Android studio居然转正（Official）了！而ADT bundle连下载链接都没了（动作真快）。。。</p>
+
+<p>看来跟上的步伐不算慢，哈哈哈～</p>
+
+<p><img src="/content/images/2014/12/android_studio_official_ide.png" alt="" /></p>
+
+    </div>
+    
+      <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h">Read other posts</span>
+          <hr />
+        </div>
+        <div class="pagination__buttons">
+          
+            <span class="button previous">
+              <a href="/posts/nexus5-manually-ota-to-lollipop/">
+                <span class="button__icon">←</span>
+                <span class="button__text">等不到OTA的Nexus5</span>
+              </a>
+            </span>
+          
+          
+            <span class="button next">
+              <a href="/posts/android-java-lang-classnotfoundexception/">
+                <span class="button__text">Android java.lang.ClassNotFoundException</span>
+                <span class="button__icon">→</span>
+              </a>
+            </span>
+          
+        </div>
+      </div>
+    
+
+    
+
+    </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">hello friend</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span>© 2019 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

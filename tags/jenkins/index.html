@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>Jenkins :: Hello Friend — A simple theme for Hugo</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="/tags/jenkins/" />
+
+
+<link rel="stylesheet" href="/assets/style.css">
+
+
+<link rel="stylesheet" href="/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Jenkins"/>
+<meta name="twitter:description" content=""/>
+
+
+
+<meta property="og:title" content="Jenkins" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/tags/jenkins/" />
+
+<meta property="og:updated_time" content="2015-01-15T13:17:06&#43;00:00"/><meta property="og:site_name" content="Hello Friend" />
+
+
+
+<link rel="alternate" type="application/rss+xml" href="/tags/jenkins/index.xml" title="Hello Friend" />
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">hello friend</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/showcase">Showcase</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  <div class="posts">
+    
+    
+    
+
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/jenkins-github-gradle-android/">Jenkins+Github+Gradle+Android</a></h1>
+      <div class="post-meta">
+        <span class="post-date">
+          2015-01-15
+        </span>
+        <span class="post-author">— Written by Guo Yi</span>
+        
+      </div>
+
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
+          
+            #<a href="/tags/jenkins/">Jenkins</a>&nbsp;
+          
+            #<a href="/tags/gradle/">Gradle</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            也许题目换成《配置以Github作为源码仓库并用Gradle编译Android的Jenkins时遇到的坑》更恰当~ LOL~
+网上教学贴很多，不一一列举了。也可以参考前一篇（BTW，我想说Subversion Release Plugin比自带的Subversion Plugin好用多了）。本文主要补充配置Github和Gradle容易遇到的问题。
+重要的plugin：
+ Git plugin
+ Gradle plugin
+  至于Github plugin之类的插件，自己看着办吧。
+这里有几个容易出问题的地方
+ 如何用Jenkins从Github获取代码：  建议使用Deploy keys
+怎么用那？最好用.ssh/config，可以参考这里。
+需要注意的是，在创建ssh key的时候，需要
+sudo -u jenkins ssh-keygen -t rsa -f &hellip;/jenkins/.ssh/id_rsa_project  加-u来指定以jenkins身份创建key，加-f就是为了方便多个ssh key（例如多repository）的时候好管理。
+同时，创建出来的ssh key不要设置密码，因为jenkins对ssh key密码的支持不是特别好，会报public key permission错误（非访问权限问题）。BTW，虽然github提到deploy keys缺点时有说，这货一般为了方便不加密码；但通过command方式，用带密码的ssh key去访问github是没问题的。
+当然Github还提供了一套更华丽的方式，叫Machine user，简单说就是单独申请一个账户（类似一个代理），把这个账户加到不同的repository里面作为只读的collaborator，再直接在这个账户里面加ssh key（而不用每个repository一个deploy key了），这样通过这一个machine user（代理）就可以访问多个repository了。
+最后，这里去clone/pull代码的时候，有时候出报timeout的错误，解决方法有两种，一种是在该目录下，手动git clone &ndash;bare一个repository出来；再一种就是增加timeout时间：源码管理 -&gt; Git -&gt; Additional Behaviours -&gt; Advanced clone behaviours
+ 如何用Jenkins来run Gradle：  需要手动匹配gradle版本。在系统设置里面新增Gradle安装即可，不然在Invoke Gradle script的时候，除了default就没得选了。
+JAVA_HOME和ANDROID_HOME这两个环境变量需要提前设置好（可以在/etc/profile里面export，然后source /etc/profile即可）；修改环境变量后需要重启jenkins；同时注意对应的目录，jenkins是否有访问权限；
+          
+        
+      </div>
+      <div><a class="read-more button" href="/posts/jenkins-github-gradle-android/">Read more →</a></div>
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/jenkins-with-multi-svn-paths/">Jenkins单工程跨多代码目录</a></h1>
+      <div class="post-meta">
+        <span class="post-date">
+          2014-11-13
+        </span>
+        <span class="post-author">— Written by Guo Yi</span>
+        
+      </div>
+
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
+          
+            #<a href="/tags/jenkins/">Jenkins</a>&nbsp;
+          
+            #<a href="/tags/multi-path/">multi-path</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            偶尔会遇到这种情况，例如工程A，工程B，同时依赖工程C（公共库）
+而一般情况下，如果代码结构管理的好，工程C的svn（git）路径和工程A/B是完全分开的。
+编译的时候正常导入（其实Android studio这里是有坑的，index无法排除目录）就好了。而Jenkins就需要特别配置一下。
+增加对应的工程（这里使用的svn module是Subversion Release），如下：
+（BTW，注意Local module directory，最好和本地代码路径保持一致，不然按照工程目录下的project.properties找不到对应工程就呵呵了）
+这时候会发现，环境变量$SVN_REVISION很可能不干活了。
+翻了下文档：
+ Subversion Revision and URL information as Environment Variables
+The Subversion SCM plugin exports the svn revisions and URLs of the build&rsquo;s subversion modules as environment variables. These are $SVN_REVISION_n and $SVN_URL_n, where n is the 1-based index of the module in the configuration.
+For backwards compatibility if there&rsquo;s only a single module, its values are also exported as $SVN_REVISION and $SVN_URL.
+          
+        
+      </div>
+      <div><a class="read-more button" href="/posts/jenkins-with-multi-svn-paths/">Read more →</a></div>
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/jenkins-out-of-memory/">Jenkins会OOM</a></h1>
+      <div class="post-meta">
+        <span class="post-date">
+          2014-11-04
+        </span>
+        <span class="post-author">— Written by Guo Yi</span>
+        
+      </div>
+
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/jenkins/">Jenkins</a>&nbsp;
+          
+            #<a href="/tags/hardware-requirement/">hardware requirement</a>&nbsp;
+          
+            #<a href="/tags/out-of-memory/">out of memory</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            本来还打算在AWS的服务器上搭个jenkins来自动化编译的。
+配置都配置好了，但是跑着跑着就会报502（nginx倒是很直白）
+后来才发现，服务直接被关掉了（
+sudo service jenkins status  ）
+估计是内存不够（主目录已经转移到了单独的硬盘上，空间肯定够的）导致了一系列问题后挂掉了吧。毕竟是AWS的最低配的EC2（VPS） T_T
+网上一查，官网没找到有最低硬件配置要求，但还真有维护人员指出了这一点：
+ CPU : n/a (bye bye plain old school CPU at least ;) )
+RAM : 1GB (I prefer 2)
+HDD : depends on the needs. For my use, a 8 modules j2ee maven project + db scripts (6500 lines of code) represents less of 50 MB. I configured Jenkins to store 10 builds (500 MB)
+ 报着也许我搞错了吧的心态（其实是死马当活马医了。。），double check了/var/log/jenkins/jenkins.
+          
+        
+      </div>
+      <div><a class="read-more button" href="/posts/jenkins-out-of-memory/">Read more →</a></div>
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/jenkins-android-auto-build-problems/">Jenkins android 自动化编译的一些坑</a></h1>
+      <div class="post-meta">
+        <span class="post-date">
+          2014-09-19
+        </span>
+        <span class="post-author">— Written by Guo Yi</span>
+        
+      </div>
+
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/android/">Android</a>&nbsp;
+          
+            #<a href="/tags/jenkins/">Jenkins</a>&nbsp;
+          
+            #<a href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E7%BC%96%E8%AF%91/">自动化编译</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            Jenkins就是Hudson的元老们，对Oracle注册Hudson商标（Sun被吃了嘛）并且打算将其私有商业化表示不满后，另起炉灶的产物（所以和hudson不仅看起来像，连插件基本都通用。。。） 更具体的细节请移步Wiki
+[本文非科普/教程贴，仅供尝试使用Jenkins/Hudson但遇到问题的同学们，填平几个脚下的坑。]
+###基本教程：
+直接安装运行install jenkins就可以了，然后访问localhost:8080就可以看到基本页面。
+<a href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu">https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu</a> <a href="https://wiki.jenkins-ci.org/display/JENKINS/GMail">https://wiki.jenkins-ci.org/display/JENKINS/GMail</a>
+一般安装插件如下：
+<a href="https://wiki.jenkins-ci.org/display/JENKINS/Ant+Plugin">https://wiki.jenkins-ci.org/display/JENKINS/Ant+Plugin</a> <a href="https://wiki.jenkins-ci.org/display/JENKINS/Android+Lint+Plugin">https://wiki.jenkins-ci.org/display/JENKINS/Android+Lint+Plugin</a> <a href="https://wiki.jenkins-ci.org/display/JENKINS/Android+Emulator+Plugin">https://wiki.jenkins-ci.org/display/JENKINS/Android+Emulator+Plugin</a> <a href="http://wiki.hudson-ci.org/display/HUDSON/Subversion+Release+Manager">http://wiki.hudson-ci.org/display/HUDSON/Subversion+Release+Manager</a>
+配置参考如下即可：
+<a href="http://java.dzone.com/articles/automating-continuous">http://java.dzone.com/articles/automating-continuous</a> <a href="https://wiki.jenkins-ci.org/display/JENKINS/Building+an+Android+app+and+test+project">https://wiki.jenkins-ci.org/display/JENKINS/Building+an+Android+app+and+test+project</a>
+###注意事项：
+一般如上操作，就差不多可以去“build”了。但很可能是荆棘遍野的，这里罗列一些遇到的坑：
+ 多工程依赖 如工程A，有两个依赖的library工程B和C，这时候除了需要在工程A下面生成build.xml和project.properties，还需要在工程B和C下面同样生成（android update project）；然后编译的时候在Ant的Build File里面使用工程A的build.xml即可
+ 路径问题 如果出现明明project.properties里面有注明android.library.reference.1=xxx的依赖项，编译时依然找不到；请确认路径是../../xxx的格式而不是..\..\xxx的格式。（反斜杠不兼容）
+ native库（.so）问题 如果出现库无法链接，或者没有打包到apk中的情况；请确认是否是target版本不对，目前android-20是存在一些问题的（例如安装后不能运行等。。。），暂不建议使用（2014/9/11）
+ 环境变量问题
+如出现环境变量找不到，可以直接加在Ant的Properties里面，如：
+sdk.dir=/xxx/xxx/xxx/sdk   签名问题   把key找个位置放好，然后在Ant的Properties里面加入：
+key.store=/xxx/xxx/xxx.key key.alias=xxx key.store.password=xxx key.alias.password=xxx  提示空间不足
+多次编译后如空间不足，最好将JENKINS_HOME（主要是改这个环境变量）迁移到其他盘（默认是/var/lib/jenkins）; 如果遇到了503的话，一般是权限不对，把新目录的owner改为jenkins:jenkins，权限改为755即可。
+ 多文件打包
+不支持多个文件同时输出（除非有name上的关联，如<strong>/*.apk这种），这里可以用shell命令来打包；如tar；这里可以使用全局变量方便命名，如$JOB_NAME或者$WORKSPACE等等，举个栗子：
+cd $WORKSPACE/code/XXX/bin/ tar zcvf $JOB_NAME.tar.gz proguard/mapping.txt xxx.apk  最后Archive the artifaces填</strong>/*.tar.gz就好了
+ 如何删除SVN的登录信息   登录服务器（界面上没找到修改的地方），Edit your HUDSON_HOME/hudson.scm.SubversionSCM.xml file and delete your /credentials/entry matching with your realm (and having your given username).
+          
+        
+      </div>
+      <div><a class="read-more button" href="/posts/jenkins-android-auto-build-problems/">Read more →</a></div>
+    </div>
+    
+    <div class="pagination">
+  <div class="pagination__buttons">
+    
+    
+  </div>
+</div>
+
+  </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">hello friend</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span>© 2019 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

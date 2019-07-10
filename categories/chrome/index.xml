@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>chrome on Hello Friend</title>
+    <link>/categories/chrome/</link>
+    <description>Recent content in chrome on Hello Friend</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 19 Dec 2014 14:57:26 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/chrome/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Chrome cannot open profile correctly</title>
+      <link>/posts/chrome-cannot-open-profile-correctly/</link>
+      <pubDate>Fri, 19 Dec 2014 14:57:26 +0000</pubDate>
+      
+      <guid>/posts/chrome-cannot-open-profile-correctly/</guid>
+      <description>Ubuntu版本的Chrome，很容易出现Profile cannot be opened correctly的错误。
+结果就是无法正常使用账户同步功能（不能多设备同步我还用你干嘛！？！）
+翻了翻资料，看了看log，发现这种时候新启动的chrome尝试去打开一个已经lock住的数据库（这不科学），然后就报错了。
+继续翻，貌似每次第一次启动的chrome没有正常关闭，依然占用数据库（单例真的好么）。结果就是后面再启动的chrome尝试open，然后失败。
+官方解决方法目前未找到。。。土方法就是 language-bash ps -A | grep &#39;chrome&#39;  然后kill吧。
+Chrome现在也略不靠谱啊。T_T</description>
+    </item>
+    
+  </channel>
+</rss>

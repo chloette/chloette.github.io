@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>关于Camera（成像） :: Hello Friend — A simple theme for Hugo</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="其实早就想写，但这种题目会让模电考试作弊才堪堪及格的我压力山大。。。
+注意：这里的camera，基本指目前绝大多数的电子成像设备。
+本文从一个有基本理科知识的角度，来科普性质的讲讲图像传感器都干了些什么（才助力陈老师造福全人类的）。当然也一定会有遗漏缺失错误的地方（不吝指出~）
+本文很多内容，是基于《CMOS图像传感器集成电路原理、设计和应用》（罗昕 编著），这本书不错，让我重新梳理所学，值得看一看~
+#####小孔成像
+在说到图像传感器前，先说说小孔成像；这是目前所有成像技术的光学基础 &amp;ndash; 光是直线传播的（在忽略引力作用的前提下）：
+尽管我不喜欢baidu，但是这篇百科中，墨子如是说：
+ “景。光之人，煦若射，下者之人也高；高者之人也下。足蔽下光，故成景于上；首蔽上光，故成景于下。在远近有端，与于光，故景库内也。”
+ 用通俗的话说，就是说照射在人身上的光线，（反射出去）就像射出去的箭；下面的光也会（反）射向上方，上部的光也会（反）射向下方，（通过小孔时），小孔下半部分挡住了下面的光，所以足部成像在上面；小孔上半部分挡住了上面的光，所以头部成像在下面。
+墨子居然就这么轻描淡写的，阐述了：光是直线传播的。
+######有个疑问是，那小孔变成大孔那？为何不能成像了？
+因为。。。假设大孔无限大，这样反射光就全无遮拦无过滤的混在一起了，光线们都没羞没躁的混在一起，就是白色（总觉得哪里不太对啊嘿嘿嘿）了嘛。
+基于此，人类有了真实记录自己的理论依据。
+再之后，通过对感光材料的研究，人类发明了照片。
+#####既然已经知道了成像的原理，那camera如何成像的？
+分三步：
+ 把冰箱门打开 把大象推进去 把冰箱门关上  。。。好吧其实是这么几步：
+ 光，打到sensor（像素阵列每个像素的）光电二极管上，激发电荷  &amp;mdash;如果是CCD
+ 逐行逐列的读取 电荷信号经过电荷-电压转换电路转换成模拟电压信号 电压信号通过常规模拟电子电路实现放大  &amp;mdash;如果是CMOS
+ 激发后的电荷通过像素上的电路转换为电压并放大 逐行逐列的读取  &amp;mdash;结束如果
+ 通过模数转换将模拟电压信号转换为数字信号 通过差分传输将数据从sensor传输到isp ISP将sensor传出的数据（根据pattern不同，目前主流是bayer的GRGB结构）进行整帧组装 ISP开始对这一帧进行处理（如lens shading，color enhancement, crop等），最终输出YUV（或其他常规格式）的整帧数据。（这里先忽略3A） Jpeg encoder（目前主流均已hw化了）将整帧数据写入jpeg文件（因为上面忽略了3A，这里的exif也顺带忽略~） 恩，可以上传照片到朋友圈了  似乎有点复杂，简化下：
+光 -&amp;gt; 1.光电二极管 -&amp;gt; 2.生成电荷 -&amp;gt; 3.转换到电压并放大信号 -&amp;gt; 4.阵列化逐行逐列输出 -&amp;gt; 5.电压信号模数转换到数字信号 -&amp;gt; 6.传输给ISP -&amp;gt; 7.ISP处理成YUV -&amp;gt; 8."/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="/posts/about-camera-sensor-1/" />
+
+
+<link rel="stylesheet" href="/assets/style.css">
+
+
+<link rel="stylesheet" href="/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="关于Camera（成像）"/>
+<meta name="twitter:description" content="其实早就想写，但这种题目会让模电考试作弊才堪堪及格的我压力山大。。。
+注意：这里的camera，基本指目前绝大多数的电子成像设备。
+本文从一个有基本理科知识的角度，来科普性质的讲讲图像传感器都干了些什么（才助力陈老师造福全人类的）。当然也一定会有遗漏缺失错误的地方（不吝指出~）
+本文很多内容，是基于《CMOS图像传感器集成电路原理、设计和应用》（罗昕 编著），这本书不错，让我重新梳理所学，值得看一看~
+#####小孔成像
+在说到图像传感器前，先说说小孔成像；这是目前所有成像技术的光学基础 &ndash; 光是直线传播的（在忽略引力作用的前提下）：
+尽管我不喜欢baidu，但是这篇百科中，墨子如是说：
+ “景。光之人，煦若射，下者之人也高；高者之人也下。足蔽下光，故成景于上；首蔽上光，故成景于下。在远近有端，与于光，故景库内也。”
+ 用通俗的话说，就是说照射在人身上的光线，（反射出去）就像射出去的箭；下面的光也会（反）射向上方，上部的光也会（反）射向下方，（通过小孔时），小孔下半部分挡住了下面的光，所以足部成像在上面；小孔上半部分挡住了上面的光，所以头部成像在下面。
+墨子居然就这么轻描淡写的，阐述了：光是直线传播的。
+######有个疑问是，那小孔变成大孔那？为何不能成像了？
+因为。。。假设大孔无限大，这样反射光就全无遮拦无过滤的混在一起了，光线们都没羞没躁的混在一起，就是白色（总觉得哪里不太对啊嘿嘿嘿）了嘛。
+基于此，人类有了真实记录自己的理论依据。
+再之后，通过对感光材料的研究，人类发明了照片。
+#####既然已经知道了成像的原理，那camera如何成像的？
+分三步：
+ 把冰箱门打开 把大象推进去 把冰箱门关上  。。。好吧其实是这么几步：
+ 光，打到sensor（像素阵列每个像素的）光电二极管上，激发电荷  &mdash;如果是CCD
+ 逐行逐列的读取 电荷信号经过电荷-电压转换电路转换成模拟电压信号 电压信号通过常规模拟电子电路实现放大  &mdash;如果是CMOS
+ 激发后的电荷通过像素上的电路转换为电压并放大 逐行逐列的读取  &mdash;结束如果
+ 通过模数转换将模拟电压信号转换为数字信号 通过差分传输将数据从sensor传输到isp ISP将sensor传出的数据（根据pattern不同，目前主流是bayer的GRGB结构）进行整帧组装 ISP开始对这一帧进行处理（如lens shading，color enhancement, crop等），最终输出YUV（或其他常规格式）的整帧数据。（这里先忽略3A） Jpeg encoder（目前主流均已hw化了）将整帧数据写入jpeg文件（因为上面忽略了3A，这里的exif也顺带忽略~） 恩，可以上传照片到朋友圈了  似乎有点复杂，简化下：
+光 -&gt; 1.光电二极管 -&gt; 2.生成电荷 -&gt; 3.转换到电压并放大信号 -&gt; 4.阵列化逐行逐列输出 -&gt; 5.电压信号模数转换到数字信号 -&gt; 6.传输给ISP -&gt; 7.ISP处理成YUV -&gt; 8."/>
+
+
+
+<meta property="og:title" content="关于Camera（成像）" />
+<meta property="og:description" content="其实早就想写，但这种题目会让模电考试作弊才堪堪及格的我压力山大。。。
+注意：这里的camera，基本指目前绝大多数的电子成像设备。
+本文从一个有基本理科知识的角度，来科普性质的讲讲图像传感器都干了些什么（才助力陈老师造福全人类的）。当然也一定会有遗漏缺失错误的地方（不吝指出~）
+本文很多内容，是基于《CMOS图像传感器集成电路原理、设计和应用》（罗昕 编著），这本书不错，让我重新梳理所学，值得看一看~
+#####小孔成像
+在说到图像传感器前，先说说小孔成像；这是目前所有成像技术的光学基础 &ndash; 光是直线传播的（在忽略引力作用的前提下）：
+尽管我不喜欢baidu，但是这篇百科中，墨子如是说：
+ “景。光之人，煦若射，下者之人也高；高者之人也下。足蔽下光，故成景于上；首蔽上光，故成景于下。在远近有端，与于光，故景库内也。”
+ 用通俗的话说，就是说照射在人身上的光线，（反射出去）就像射出去的箭；下面的光也会（反）射向上方，上部的光也会（反）射向下方，（通过小孔时），小孔下半部分挡住了下面的光，所以足部成像在上面；小孔上半部分挡住了上面的光，所以头部成像在下面。
+墨子居然就这么轻描淡写的，阐述了：光是直线传播的。
+######有个疑问是，那小孔变成大孔那？为何不能成像了？
+因为。。。假设大孔无限大，这样反射光就全无遮拦无过滤的混在一起了，光线们都没羞没躁的混在一起，就是白色（总觉得哪里不太对啊嘿嘿嘿）了嘛。
+基于此，人类有了真实记录自己的理论依据。
+再之后，通过对感光材料的研究，人类发明了照片。
+#####既然已经知道了成像的原理，那camera如何成像的？
+分三步：
+ 把冰箱门打开 把大象推进去 把冰箱门关上  。。。好吧其实是这么几步：
+ 光，打到sensor（像素阵列每个像素的）光电二极管上，激发电荷  &mdash;如果是CCD
+ 逐行逐列的读取 电荷信号经过电荷-电压转换电路转换成模拟电压信号 电压信号通过常规模拟电子电路实现放大  &mdash;如果是CMOS
+ 激发后的电荷通过像素上的电路转换为电压并放大 逐行逐列的读取  &mdash;结束如果
+ 通过模数转换将模拟电压信号转换为数字信号 通过差分传输将数据从sensor传输到isp ISP将sensor传出的数据（根据pattern不同，目前主流是bayer的GRGB结构）进行整帧组装 ISP开始对这一帧进行处理（如lens shading，color enhancement, crop等），最终输出YUV（或其他常规格式）的整帧数据。（这里先忽略3A） Jpeg encoder（目前主流均已hw化了）将整帧数据写入jpeg文件（因为上面忽略了3A，这里的exif也顺带忽略~） 恩，可以上传照片到朋友圈了  似乎有点复杂，简化下：
+光 -&gt; 1.光电二极管 -&gt; 2.生成电荷 -&gt; 3.转换到电压并放大信号 -&gt; 4.阵列化逐行逐列输出 -&gt; 5.电压信号模数转换到数字信号 -&gt; 6.传输给ISP -&gt; 7.ISP处理成YUV -&gt; 8." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/about-camera-sensor-1/" />
+<meta property="article:published_time" content="2015-05-03T14:23:04&#43;00:00"/>
+<meta property="article:modified_time" content="2015-05-03T14:23:04&#43;00:00"/><meta property="og:site_name" content="Hello Friend" />
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">hello friend</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/showcase">Showcase</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  <div class="post">
+    <h2 class="post-title"><a href="/posts/about-camera-sensor-1/">关于Camera（成像）</a></h2>
+    <div class="post-meta">
+      
+        <span class="post-date">
+            2015-05-03
+        </span>
+      
+      <span class="post-author">— Written by Guo Yi</span>
+      
+    </div>
+
+    
+      <span class="post-tags">
+        
+          #<a href="/tags/camera/">Camera</a>&nbsp;
+        
+          #<a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
+        
+          #<a href="/tags/%E6%88%90%E5%83%8F/">成像</a>&nbsp;
+        
+          #<a href="/tags/sensor/">sensor</a>&nbsp;
+        
+      </span>
+    
+
+    
+
+    <div class="post-content">
+      <p>其实早就想写，但这种题目会让模电考试作弊才堪堪及格的我压力山大。。。</p>
+
+<p>注意：这里的camera，基本指目前绝大多数的电子成像设备。</p>
+
+<p>本文从一个有基本理科知识的角度，来科普性质的讲讲图像传感器都干了些什么（才助力陈老师造福全人类的）。当然也一定会有遗漏缺失错误的地方（不吝指出~）</p>
+
+<p>本文很多内容，是基于<a href="http://item.jd.com/11550611.html">《CMOS图像传感器集成电路原理、设计和应用》</a>（罗昕 编著），这本书不错，让我重新梳理所学，值得看一看~</p>
+
+<p>#####小孔成像</p>
+
+<p>在说到图像传感器前，先说说小孔成像；这是目前所有成像技术的光学基础 &ndash; <strong>光是直线传播的</strong>（在忽略引力作用的前提下）：</p>
+
+<p><img src="/content/images/2015/04/xiaokongchengxiang.jpg" alt="" /></p>
+
+<p>尽管我不喜欢baidu，但是这篇<a href="http://baike.baidu.com/link?url=wwu2oWUJrJiEUEsUWewBk7b4dd2GHPJt7DinXGOMbYHohoXCWOq5FPXgYbDppNVL0sxE2-4Zr0cXNXKJg8aDrq">百科</a>中，墨子如是说：</p>
+
+<blockquote>
+<p>“景。光之人，煦若射，下者之人也高；高者之人也下。足蔽下光，故成景于上；首蔽上光，故成景于下。在远近有端，与于光，故景库内也。”</p>
+</blockquote>
+
+<p>用通俗的话说，就是说照射在人身上的光线，（反射出去）就像射出去的箭；下面的光也会（反）射向上方，上部的光也会（反）射向下方，（通过小孔时），小孔下半部分挡住了下面的光，所以足部成像在上面；小孔上半部分挡住了上面的光，所以头部成像在下面。</p>
+
+<p>墨子居然就这么轻描淡写的，阐述了：光是直线传播的。</p>
+
+<p>######有个疑问是，那小孔变成大孔那？为何不能成像了？</p>
+
+<p>因为。。。假设大孔无限大，这样反射光就全无遮拦无过滤的混在一起了，光线们都没羞没躁的混在一起，就是白色（总觉得哪里不太对啊嘿嘿嘿）了嘛。</p>
+
+<p>基于此，人类有了真实记录自己的理论依据。</p>
+
+<p>再之后，通过对感光材料的研究，人类发明了<a href="http://zh.wikipedia.org/wiki/%E7%9B%B8%E7%89%87">照片</a>。</p>
+
+<hr />
+
+<p>#####既然已经知道了成像的原理，那camera如何成像的？</p>
+
+<p>分三步：</p>
+
+<ul>
+<li>把冰箱门打开</li>
+<li>把大象推进去</li>
+<li>把冰箱门关上</li>
+</ul>
+
+<p>。。。好吧其实是这么几步：</p>
+
+<ul>
+<li>光，打到sensor（像素阵列每个像素的）光电二极管上，激发电荷</li>
+</ul>
+
+<p>&mdash;如果是CCD</p>
+
+<ul>
+<li>逐行逐列的读取</li>
+<li>电荷信号经过电荷-电压转换电路转换成模拟电压信号</li>
+<li>电压信号通过常规模拟电子电路实现放大</li>
+</ul>
+
+<p>&mdash;如果是CMOS</p>
+
+<ul>
+<li>激发后的电荷通过像素上的电路转换为电压并放大</li>
+<li>逐行逐列的读取</li>
+</ul>
+
+<p>&mdash;结束如果</p>
+
+<ul>
+<li>通过模数转换将模拟电压信号转换为数字信号</li>
+<li>通过差分传输将数据从sensor传输到isp</li>
+<li>ISP将sensor传出的数据（根据pattern不同，目前主流是bayer的GRGB结构）进行整帧组装</li>
+<li>ISP开始对这一帧进行处理（如lens shading，color enhancement, crop等），最终输出YUV（或其他常规格式）的整帧数据。（这里先忽略3A）</li>
+<li>Jpeg encoder（目前主流均已hw化了）将整帧数据写入jpeg文件（因为上面忽略了3A，这里的exif也顺带忽略~）</li>
+<li>恩，可以上传照片到朋友圈了</li>
+</ul>
+
+<p>似乎有点复杂，简化下：</p>
+
+<p>光 -&gt; 1.光电二极管 -&gt; 2.生成电荷 -&gt; 3.转换到电压并放大信号 -&gt; 4.阵列化逐行逐列输出 -&gt; 5.电压信号模数转换到数字信号 -&gt; 6.传输给ISP -&gt; 7.ISP处理成YUV -&gt; 8.Encoder编码写入文件 -&gt; 0.发朋友圈!</p>
+
+<p>其中先3再4，是CMOS；
+先4再3，是CCD；
+下面会详细说它们的差别；</p>
+
+<p>#####什么是图像传感器？</p>
+
+<p>把“光”（准确的说，指自然光照射到物体上再反射后，通过小孔成像，来成的“像”），变成数字信号并传输给ISP（1-6）的小家伙。</p>
+
+<p>一般结构如下图：</p>
+
+<p><img src="/content/images/2015/05/pixels.jpg" alt="" /></p>
+
+<p>（像素阵列图，那本书中的图2.1）</p>
+
+<p>#####主流图像传感器有哪些？</p>
+
+<p>图像传感器目前主流分为两种，CCD和CMOS（因为制作工艺和市场导向等原因，CCD已经势微了）</p>
+
+<p>#####像素阵列的像素(PIXEL)是什么？</p>
+
+<p>即CCD或CMOS</p>
+
+<p>其本质都是本身包含一个光电二极管，用来捕获光信号，并输出电信号的单个像素结构（为什么称为pixel？因为这玩意儿真心不好单个制作，都是整版光刻来实现）；</p>
+
+<p>#####这样复杂的结构如何设计？</p>
+
+<p>CMOS超大规模集成的设计方法学！</p>
+
+<p>基本就是设计，仿真（SPICE）；再设计、再仿真的不断上升迭代；</p>
+
+<p>全部设计好并仿真通过，就可以交给Silicon Foundry（晶元代工）厂投片了！</p>
+
+<p>#####这样密集的结构，晶圆代工厂又是如何制作的？</p>
+
+<p>上个IMX214镇楼！</p>
+
+<p><img src="/content/images/2015/05/imx214.jpg" alt="" /></p>
+
+<p>【这个已经拆开了，上半部分是镜头（中间透明部分）+马达（在镜头周围）；下面是MIPI接口线，连接到ISP；中间幽幽泛着绿光的就是像素阵列了】</p>
+
+<p>CMOS目前的商用技术都是纳米级的，所以传统制造业那种单构件制作再组合的方式肯定是不现实的；</p>
+
+<p>制作基本靠光刻和离子注入；</p>
+
+<p>如图：</p>
+
+<p><img src="/content/images/2015/05/guangke.jpg" alt="" /></p>
+
+<p>简单说，</p>
+
+<p>就像多层蛋糕的制作过程一样，铺一层，加工并修饰一层；再铺一层，再加工；如此往复。</p>
+
+<p>#####光电二极管是神马？</p>
+
+<p>直接上<a href="http://zh.wikipedia.org/wiki/%E5%85%89%E7%94%B5%E4%BA%8C%E6%9E%81%E7%AE%A1">wiki</a></p>
+
+<p>简单说，就是对光敏感的半导体（同其他二极管没有本质区别），光线打到这这面会激发出来电子，这样就产生了电荷；</p>
+
+<p>更深入的原理我还在研究ING~ 答应我别问了好么！</p>
+
+<p>#####什么是CCD？</p>
+
+<p>CCD全称是Charge Couple Device，即电荷耦合器件；</p>
+
+<p>何谓电荷耦合？</p>
+
+<p><img src="/content/images/2015/05/dianheouhe.jpg" alt="" /></p>
+
+<p>非常直观（连我这种差学生都看懂了），交错的时钟信号，把电荷一点一点的从左边“吸”到右边；恰好3条就够了，真是够赞~</p>
+
+<p>所以CCD其实只有一个光电二极管就够了；也叫做无源像素传感器（Passive Pixel Sensor）</p>
+
+<p>回到光电传感器阵列图（无视“有源像素传感器”部分），这样，通过电荷耦合，就可以完成逐行逐列的电荷输出，再统一经过电荷-&gt;电压转换，再通过放大电路和模数转换，最后得到方便使用的数字信号；</p>
+
+<p>如下图：</p>
+
+<p><img src="/content/images/2015/05/ccdzhenlie.jpg" alt="" /></p>
+
+<p>#####什么是CMOS？和CCD的差别是什么？</p>
+
+<p>全称是Complementary Metal Oxide Semiconductor，即互补金属氧化物半导体</p>
+
+<p>和CCD最大的差别就是 &mdash; 单像素是否有放大电路；</p>
+
+<p>CMOS单像素即一个个有源像素传感器（Active Pixel Sensor），内部有额外电路，来完成电荷-&gt;电压的转换和放大（电路和光电二极管之间不需要一个特殊的绝缘层了）；然后和CCD一样，逐行逐列输出并经过模数转换来得到数字信号；</p>
+
+<p>【插句话：据说CMOS的兴起是因为制作工艺和市场等因素，当初诸多做内存的厂商，本身的设备转做CMOS很方便，而CCD需要特殊的设备（还记得那层绝缘层么）】</p>
+
+<p>想一下CCD，这种结构设计和电荷耦合，带来的好处是，信号更纯净（不经过放大），但是也意味着更脆弱；当曝光过长时，光电二极管激发的电荷过多，可能会造成电荷击穿或串扰；这样可能出现某一行或若干行数据完全错掉的问题（信息完全丢失/错误）；</p>
+
+<p>所以一般CCD的单像素尺寸不会特别小（越小越容易串扰）；也因此普遍认为CCD并不适合低光的情况，因为低光带来的长曝光，更容易产生坏点。</p>
+
+<p>#####那对单像素而言，不管是CCD还是CMOD，电路都会挡到光，怎么办？</p>
+
+<p>其实有个系数，叫像素填充系数；即光电二极管实际受光面积和像素总面积的比例，可以想象，该比例越高，则信号越能反映真实的像；</p>
+
+<p>但显然的是，因为电路的存在，所以需要阻光层来仅仅遮罩电路，避免长期光照对电路本身性能的改变；所以如何增加像素填充系数，又避免电路过于密集带来的串扰，成了一个需要权衡的点；</p>
+
+<p>一般情况下，基本的单像素的结构侧剖面如下图左边：
+<img src="/content/images/2015/05/weitoujing.jpg" alt="" /></p>
+
+<p>可以看到光线会被环绕光电二极管的电路层层叠加后形成的“井”挡住，而通过增加一个微透镜（右边的设计），可以让光线更多的射进去；也就间接增加了像素填充系数。</p>
+
+<p>但是显然的是，这种设计为了保证井不能太深（否则微透镜也无力折射），电路层层数就被限制了；</p>
+
+<p>#####当然会有人想到，为什么不把电路板放到光电二极管下面？</p>
+
+<p>好问题，因为那需要一个特殊的技术，即如何让光电二极管上面的硅层尽量薄，薄到可以透光。</p>
+
+<p>也就是背照式（Backside Illuminated）；如图：</p>
+
+<p><img src="/content/images/2015/05/beizhaoshi.jpg" alt="" /></p>
+
+<p>仅仅光刻是不足够的，这需要按照非背照式的方式，光刻完成后，阵列反转，然后对背面进行打磨，打磨到透光需要多薄那？</p>
+
+<p><strong>5nm</strong></p>
+
+<p>一开始这种技术只是设想，现在，已经是随处可见了（例如Sony家的堆栈背照式，也是在此背照式基础上把更多电路板放到“背部”而已）</p>
+
+<p>#####那为何还需要快门？</p>
+
+<p>sensor的成像和人眼不同，完全不是一个机理；（这又是另外一个晦涩却有趣的话题了）</p>
+
+<p>如果让像素阵列长时间曝光的话，带来的问题就是，整幅图像的所有像素都过曝了；</p>
+
+<p>所以需要限定一个曝光时长，来获取一个相对合理的数据帧；从开始曝光，到结束曝光，然后输出整幅图像数据；</p>
+
+<p>而快门，就是用来给出个一个开始曝光信号的玩意儿；</p>
+
+<p>#####什么是电子快门？（机械快门这里不讨论了）</p>
+
+<p>其实就是用来控制曝光的一个特殊信号，一般分为滚动快门和全局快门；</p>
+
+<p>#####什么是滚动快门？</p>
+
+<p>Rolling-shutter；</p>
+
+<p>如图：</p>
+
+<p><img src="/content/images/2015/05/rolling-shutter.jpg" alt="" /></p>
+
+<p>因为阵列数据只能一行一行输出，所以只能做成如上结构来尽快逐行曝光，并尽快逐行输出；</p>
+
+<p>但这样带来一个严重的问题；就是运动失真和闪光失真；简单来说，某一行的时间段，和其下一行曝光的时间段是有一个时间差（要长到足以用来输出一行数据）的，所以在这个时间差内，如果希望捕捉的“像”发生了变化，那么就出现了失真的情况；在运动场景下尤为明显。</p>
+
+<p>这时候就需要用到全局快门了。</p>
+
+<p>一般3T-APS，即3个晶体管和一个光电二极管组成的像素（这里要说到PN结，鉴于我不太擅长就略过吧~）只能实现滚动快门。</p>
+
+<p>#####什么是全局快门？</p>
+
+<p>想象一下，如何在逐行输出的基础上，避免逐行曝光的时间差？</p>
+
+<p>回答是：那就一起曝光，再一起结束曝光；然后把像素的曝光信息存储在像素的一个“Cache”中；接着再逐行输出就好了。</p>
+
+<p>也确实是这样做的：通过4T-APS，比3T-APS多了一个悬浮的N扩散区（Floating Diffusion, FD），可以作为像素上的第二个电荷存储器件；这样一个电荷存储器件足以担当“Cache”的角色。</p>
+
+<p>4T-APS的全局快门曝光时序如下：</p>
+
+<p><img src="/content/images/2015/05/global-shutter.jpg" alt="" /></p>
+
+<p>但也可以看到，4T-APS有个缺点，就是曝光结束后，下次曝光开始前，必须等待所有行输出完毕；不然直接重置就会丢失“Cache”数据；</p>
+
+<p>#####那没有办法连续曝光了么？</p>
+
+<p>当然有，使用5T-APS，增加对光电二极管的重置，而不影响“Cache”；如此一来，只要曝光时长 &gt; 逐行输出的时间（不然“Cache”也被重置了），就可以连续曝光了。</p>
+
+<p>#####逐行输出有办法提高速度么？</p>
+
+<p>有。</p>
+
+<p>单路输出确实太慢了；</p>
+
+<p>哪怕增加一路也可以提升一倍的输出速度；</p>
+
+<p>电压信号是逐行逐列输出的，假设是M x N的阵列，那么每读取N的一行，则有M个数据需要传输出去；这里可以做优化，例如对M进行并行多路输出（这只需要增加一侧的管脚即可）</p>
+
+<p>如下图的六组并行图像信号读出：</p>
+
+<p><img src="/content/images/2015/05/6zubingxing.jpg" alt="" /></p>
+
+<p>#####那是否入射到两个不同像素的光完全相同，则两个像素的输出电压信号就完全一致？</p>
+
+<p>这也显然不可能完全一致~</p>
+
+<p>因为固定图案噪声（Fixed Pattern Noise, FPN）；这是由制造工艺决定的转换阵列表面不均匀而产生；</p>
+
+<p>也因此，即使完全没有光照，也会收FPN影响，输出一个固定不变的图案信号；而在有光照的情况下，这个固定不变的图案信号会叠加到真实图像信号上。</p>
+
+<p>#####那如何消除FPN？</p>
+
+<p>一般的解决方法，用相关双取样（Correlated Double Sampling, CDS）：测量两次（而非一次）输出电压，一次是曝光开始时的，一次是曝光结束时的，然后其差值，就是去掉了FPN的有效值；</p>
+
+<p>#####电压信号如何转变为数字信号？</p>
+
+<p>这就是我最不擅长的模电内容啊：模数转换</p>
+
+<p>通过逐次逼近（体积小但性能差）或直接比较（体积大但性能好）</p>
+
+<p>一般是两者的结合</p>
+
+<p><strong>逐次逼近</strong>的原理有点像二分查找的过程；不过一个是查找，一个是累加；</p>
+
+<p><strong>直接比较</strong>就不废话了，就是做了个N位比较器，上图：</p>
+
+<p><img src="/content/images/2015/05/zhijiebijiao.jpg" alt="" /></p>
+
+<p>#####什么是差分传输？</p>
+
+<p>可以直接参考<a href="http://zh.wikipedia.org/wiki/%E5%B7%AE%E5%88%86%E4%BF%A1%E5%8F%B7">WIKI</a>，简单直接。</p>
+
+<p>经过了差分传输，就到ISP了；这就已经超出了Sensor的范畴~</p>
+
+<hr />
+
+<p>到这里，成像部分基本就结束了（Bayer这些pattern，放到ISP部分吧~）。</p>
+
+<p>肯定有不少纰漏，等我慢慢补全吧~</p>
+
+    </div>
+    
+      <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h">Read other posts</span>
+          <hr />
+        </div>
+        <div class="pagination__buttons">
+          
+            <span class="button previous">
+              <a href="/posts/selinux-limitation/">
+                <span class="button__icon">←</span>
+                <span class="button__text">用Selinux遇到的限制</span>
+              </a>
+            </span>
+          
+          
+            <span class="button next">
+              <a href="/posts/chai-chai-bu-bu-you-san-nian/">
+                <span class="button__text">拆拆补补又三年</span>
+                <span class="button__icon">→</span>
+              </a>
+            </span>
+          
+        </div>
+      </div>
+    
+
+    
+
+    </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">hello friend</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span>© 2019 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>关于Shellshock bash bug :: Hello Friend — A simple theme for Hugo</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="“不小心”看到了shellshock bash bug
+不明觉厉，按图索骥：
+$env x=&#39;() { :;}; echo vulnerable&#39; bash -c &#39;echo this is a test&#39;   If you see the word &amp;ldquo;vulnerable&amp;rdquo; as an answer, your system is, well&amp;hellip; vulnerable.
+ 中枪。。。
+立刻update&#43;upgrade，再回过头看看到底啥情况：
+ Your Bash shell is simply running more code after a function (the &amp;ldquo;() { :;};&amp;rdquo; part), and that shouldn&amp;rsquo;t be happening. The function is the &amp;ldquo;allowed&amp;rdquo; code, while everything after it is where the potentially &amp;ldquo;malicious&amp;rdquo; code could be installed."/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="/posts/about-shellshock-bash-bug/" />
+
+
+<link rel="stylesheet" href="/assets/style.css">
+
+
+<link rel="stylesheet" href="/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="关于Shellshock bash bug"/>
+<meta name="twitter:description" content="“不小心”看到了shellshock bash bug
+不明觉厉，按图索骥：
+$env x=&#39;() { :;}; echo vulnerable&#39; bash -c &#39;echo this is a test&#39;   If you see the word &ldquo;vulnerable&rdquo; as an answer, your system is, well&hellip; vulnerable.
+ 中枪。。。
+立刻update&#43;upgrade，再回过头看看到底啥情况：
+ Your Bash shell is simply running more code after a function (the &ldquo;() { :;};&rdquo; part), and that shouldn&rsquo;t be happening. The function is the &ldquo;allowed&rdquo; code, while everything after it is where the potentially &ldquo;malicious&rdquo; code could be installed."/>
+
+
+
+<meta property="og:title" content="关于Shellshock bash bug" />
+<meta property="og:description" content="“不小心”看到了shellshock bash bug
+不明觉厉，按图索骥：
+$env x=&#39;() { :;}; echo vulnerable&#39; bash -c &#39;echo this is a test&#39;   If you see the word &ldquo;vulnerable&rdquo; as an answer, your system is, well&hellip; vulnerable.
+ 中枪。。。
+立刻update&#43;upgrade，再回过头看看到底啥情况：
+ Your Bash shell is simply running more code after a function (the &ldquo;() { :;};&rdquo; part), and that shouldn&rsquo;t be happening. The function is the &ldquo;allowed&rdquo; code, while everything after it is where the potentially &ldquo;malicious&rdquo; code could be installed." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/about-shellshock-bash-bug/" />
+<meta property="article:published_time" content="2014-09-26T07:05:44&#43;00:00"/>
+<meta property="article:modified_time" content="2014-09-26T07:05:44&#43;00:00"/><meta property="og:site_name" content="Hello Friend" />
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">hello friend</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/showcase">Showcase</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  <div class="post">
+    <h2 class="post-title"><a href="/posts/about-shellshock-bash-bug/">关于Shellshock bash bug</a></h2>
+    <div class="post-meta">
+      
+        <span class="post-date">
+            2014-09-26
+        </span>
+      
+      <span class="post-author">— Written by Guo Yi</span>
+      
+    </div>
+
+    
+      <span class="post-tags">
+        
+          #<a href="/tags/%E5%AE%89%E5%85%A8/">安全</a>&nbsp;
+        
+          #<a href="/tags/shellshock/">Shellshock</a>&nbsp;
+        
+          #<a href="/tags/bash/">bash</a>&nbsp;
+        
+      </span>
+    
+
+    
+
+    <div class="post-content">
+      <p>“不小心”看到了<a href="What is the Shellshock Bash bug and why does it matter?">shellshock bash bug</a></p>
+
+<p>不明觉厉，按图索骥：</p>
+
+<pre><code class="language-language-bash">$env x='() { :;}; echo vulnerable' bash -c 'echo this is a test'
+</code></pre>
+
+<blockquote>
+<p>If you see the word &ldquo;vulnerable&rdquo; as an answer, your system is, well&hellip; vulnerable.</p>
+</blockquote>
+
+<p>中枪。。。</p>
+
+<p>立刻update+upgrade，再回过头看看到底啥情况：</p>
+
+<blockquote>
+<p>Your Bash shell is simply <strong><em>running more code after a function (the &ldquo;() { :;};&rdquo; part)</em></strong>, and that shouldn&rsquo;t be happening. The function is the &ldquo;allowed&rdquo; code, while everything after it is where the potentially &ldquo;malicious&rdquo; code could be installed.</p>
+</blockquote>
+
+<p>这，SQL注入的即视感啊。</p>
+
+<blockquote>
+<p>##WHAT CAN AN ATTACKER DO?</p>
+
+<p>The remote execution (over the internet or a network) of extra code could <strong><em>let an attacker load malware on a system and steal private information, delete files, activate your camera, open a lock and, well, do pretty much anything with a little know-how.</em></strong> However, as we mentioned, this is not something that should matter much on a user&rsquo;s computer with a working firewall, because it hasn&rsquo;t been proven possible to take advantage of the bug under that scenario.</p>
+
+<p>A server, well, that&rsquo;s a completely different story, because a server has to listen to requests in order to &ldquo;serve&rdquo; (pun intended) its purpose. This means that by requesting almost any data and running malicious code, an attacker can infect any affected server, which is about 60 percent of web servers out on the internet, most routers (even your home router) and many consumer devices (including security cameras and &ldquo;smart&rdquo; appliances &ndash; which don&rsquo;t seem so smart right about now). This is because smart appliances are a form of servers.</p>
+</blockquote>
+
+<p>基本上个人计算机（一般都自带防火墙）是不受影响的，而服务器就呵呵了；只要可以远程shell上去（很多VPS都支持吧），或者服务器本身用bash解析脚本/服务，那就可以轻松加载malware了，然后就是脚本小子们的发挥时间。。。</p>
+
+<blockquote>
+<p>The bottom line is: this is a serious bug, but patches are available and should be installed promptly. But, there&rsquo;s no doubt we&rsquo;ll be hearing plenty more about Shellshock and the problems it can cause in the coming days and weeks &ndash; <strong><em>especially since it&rsquo;s gone unnoticed for around 25 years.</em></strong> There&rsquo;s a lot of holes out there to patch.</p>
+</blockquote>
+
+<p>这一个藏了25年的bug，可算被Windows抓住小辫子了。</p>
+
+<p>一句话总结：安全是永恒的话题啊。</p>
+
+    </div>
+    
+      <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h">Read other posts</span>
+          <hr />
+        </div>
+        <div class="pagination__buttons">
+          
+            <span class="button previous">
+              <a href="/posts/ghost-upgrade-to-0-5-2/">
+                <span class="button__icon">←</span>
+                <span class="button__text">Ghost upgrade to 0.5.2</span>
+              </a>
+            </span>
+          
+          
+            <span class="button next">
+              <a href="/posts/about-gpl/">
+                <span class="button__text">关于GPL</span>
+                <span class="button__icon">→</span>
+              </a>
+            </span>
+          
+        </div>
+      </div>
+    
+
+    
+
+    </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">hello friend</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span>© 2019 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

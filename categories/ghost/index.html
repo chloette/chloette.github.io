@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>ghost :: Hello Friend — A simple theme for Hugo</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="/categories/ghost/" />
+
+
+<link rel="stylesheet" href="/assets/style.css">
+
+
+<link rel="stylesheet" href="/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ghost"/>
+<meta name="twitter:description" content=""/>
+
+
+
+<meta property="og:title" content="ghost" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/categories/ghost/" />
+
+<meta property="og:updated_time" content="2015-03-06T05:09:09&#43;00:00"/><meta property="og:site_name" content="Hello Friend" />
+
+
+
+<link rel="alternate" type="application/rss+xml" href="/categories/ghost/index.xml" title="Hello Friend" />
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">hello friend</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/showcase">Showcase</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  <div class="posts">
+    
+    
+    
+
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/my-ghost-upgrade-script/">My ghost upgrade script</a></h1>
+      <div class="post-meta">
+        <span class="post-date">
+          2015-03-06
+        </span>
+        <span class="post-author">— Written by Guo Yi</span>
+        
+      </div>
+
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/ghost/">ghost</a>&nbsp;
+          
+            #<a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            最后的最后，还是写了一个： 一行命令就升级ghost的脚本（包括：ghost升级、google font cdn优化、首页摘要显示优化、logo优化、首页图片显示优化、prism高亮code、disqus评论）。
+ghostUpgrade
+io page
+####Environment before using:
+ Ubuntu 14.04 (or similar) ghost0.5.x npm/nodejs/forever  ####How to use:
+ clone to folder-of-code add executable permission to upgrade_ghost.sh and start_ghost.sh like this: chmod a+x folder-of-code/*.sh change folder-of-ghost in start_ghost.sh to actual ghost folder If you need comments (Disqus only), upgrade like this: folder-of-code/upgrade_ghost.sh folder-of-ghost folder-of-code Disqus_forum_shortname, otherwise: folder-of-code/upgrade_ghost.sh folder-of-ghost folder-of-code Waiting&hellip;  LOL~ Enjoy your ghost~
+####What&rsquo;s upgrade_ghost.sh doing：
+          
+        
+      </div>
+      <div><a class="read-more button" href="/posts/my-ghost-upgrade-script/">Read more →</a></div>
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/ghost-highlight-syntax/">Ghost代码高亮</a></h1>
+      <div class="post-meta">
+        <span class="post-date">
+          2015-03-04
+        </span>
+        <span class="post-author">— Written by Guo Yi</span>
+        
+      </div>
+
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/ghost/">ghost</a>&nbsp;
+          
+            #<a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
+          
+            #<a href="/tags/%E8%AE%B0%E5%BD%95/">记录</a>&nbsp;
+          
+            #<a href="/tags/highlight-syntax/">highlight syntax</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            Ghost本身的代码高亮是很粗糙的，如下：
+//This is code sample int x = 0; int y = 1; x = y++; &hellip;  但是代码至少应该像下面这样才好看啊！
+//This is code sample int x = 0; int y = 1; x = y++; &hellip;  翻了翻ghost的论坛，发现了prism，使用可以参考这里
+下载css/js的时候可以选择自己需要的高亮语言等。
+这样就又需要修改server上用来更新ghost的bash了：
+#copy prism js/css to content and use it (to highlight codes) cp ~/prism/prism.js ./content/themes/casper/assets/js/ cp ~/prism/prism.css ./cotent/themes/casper/assets/css/ sed -i &rsquo;s~&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;{{asset &quot;css/screen.css&quot;}}&quot; /&gt;~&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;{{asset &quot;css/screen.css&quot;}}&quot; /&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;{{asset &quot;css/prism.
+          
+        
+      </div>
+      <div><a class="read-more button" href="/posts/ghost-highlight-syntax/">Read more →</a></div>
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/script-to-modify-ghost-screen-css/">Ghost修改screen.css的脚本</a></h1>
+      <div class="post-meta">
+        <span class="post-date">
+          2015-01-21
+        </span>
+        <span class="post-author">— Written by Guo Yi</span>
+        
+      </div>
+
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/ghost/">ghost</a>&nbsp;
+          
+            #<a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
+          
+            #<a href="/tags/script/">script</a>&nbsp;
+          
+            #<a href="/tags/python/">python</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            Ghost更新越来越频繁，每次都要手动更新css实在伤不起。。。
+反正改动的地方也不多，干脆做成一键脚本好了，把之前upgrade的脚本再扩展一下：
+首先更改#7，改动如下，增加了change logo position：
+#change post page what to show&hellip; echo &lsquo;7. replace &quot;excerpt&quot; with &quot;content&quot; &mdash;&mdash;&mdash;&mdash;&mdash;&rsquo; #excerpt -&gt; content #read more -&gt; &gt;&gt; sed -i &quot;s#&lt;p&gt;{{excerpt words=&amp;quot;26&amp;quot;}} &lt;a class=&amp;quot;read-more&amp;quot; href=&amp;quot;{{url}}&amp;quot;&gt;&amp;raquo;#&lt;p&gt;{{content words=&amp;quot;32&amp;quot;}} &lt;a class=&amp;quot;read-more&amp;quot; href=&amp;quot;{{url}}&amp;quot;&gt;&amp;amp;raquo;&amp;amp;raquo;#g&quot; ./content/themes/casper/partials/loop.hbs #change logo position sed -i &rsquo;s~{{#if @blog.logo}}&lt;a class=&quot;blog-logo&quot; href=&quot;{{@blog.url}}&quot;&gt;&lt;img src=&quot;{{@blog.logo}}&quot; alt=&quot;Blog Logo&quot; /&gt;&lt;/a&gt;{{/if}}~~g&rsquo; ./content/themes/casper/index.hbs sed -i &rsquo;s~&lt;h1 class=&quot;page-title&quot;&gt;{{@blog.title}}&lt;/h1&gt;~{{#if @blog.logo}}&lt;a class=&quot;blog-logo&quot; href=&quot;{{@blog.url}}/about&quot;&gt;&lt;img src=&quot;{{@blog.logo}}&quot; alt=&quot;Blog Logo&quot; /&gt;&lt;/a&gt;{{/if}}&lt;h1 class=&quot;page-title&quot;&gt;{{@blog.title}}&lt;/h1&gt;~g&rsquo; ./content/themes/casper/index.hbs  再就是考虑到自己智商太低，难以驾驭sed的多行匹配，所以祭出Python；脚本中加上这句：
+#call python to do multiple lines replacement python ~/ghost_css_adjustment.
+          
+        
+      </div>
+      <div><a class="read-more button" href="/posts/script-to-modify-ghost-screen-css/">Read more →</a></div>
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/ghost-boot-up/">Ghost开机启动</a></h1>
+      <div class="post-meta">
+        <span class="post-date">
+          2015-01-08
+        </span>
+        <span class="post-author">— Written by Guo Yi</span>
+        
+      </div>
+
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/ghost/">ghost</a>&nbsp;
+          
+            #<a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
+          
+            #<a href="/tags/%E8%AE%B0%E5%BD%95/">记录</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            Ghost本身是基于node.js的，这意味着 &ndash; 常驻后台需要用到其他方式，例如&amp;或者forever（官网建议）
+但这样也需要使用类似sudo start_ghost.sh这种方式来启动，想开机启动的话还是需要使用update-rc.d或者cron
+前者官网提供了一个说明，相当于自己写一个service
+后者比较强大，用在这里有点大材小用。
+简单点的做法就直接参考stackoverflow
+sudo mv /filename /etc/init.d/ sudo chmod +x /etc/init.d/filename sudo update-rc.d filename defaults   Script should now start on boot. Note that this method also works with both hard links and symbolic links (ln).
+Edit
+At this point in the boot process PATH isn&rsquo;t set yet, so it is critical that absolute paths are used throughout. BUT, as pointed out in the comments by Steve HHH, explicitly declaring the full file path (/etc/init.
+          
+        
+      </div>
+      <div><a class="read-more button" href="/posts/ghost-boot-up/">Read more →</a></div>
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/ghost-limit-image-width/">Ghost首页图片限制宽高</a></h1>
+      <div class="post-meta">
+        <span class="post-date">
+          2015-01-06
+        </span>
+        <span class="post-author">— Written by Guo Yi</span>
+        
+      </div>
+
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/ghost/">ghost</a>&nbsp;
+          
+            #<a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
+          
+            #<a href="/tags/%E5%9B%BE%E7%89%87/">图片</a>&nbsp;
+          
+            #<a href="/tags/%E5%AE%BD%E9%AB%98/">宽高</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      <div><a class="read-more button" href="/posts/ghost-limit-image-width/">Read more →</a></div>
+    </div>
+    
+    <div class="pagination">
+  <div class="pagination__buttons">
+    
+    
+      <span class="button next">
+        <a href="/categories/ghost/page/2/">
+          <span class="button__text">Older posts</span>
+          <span class="button__icon">→</span>
+        </a>
+      </span>
+    
+  </div>
+</div>
+
+  </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">hello friend</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span>© 2019 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>图片 on Hello Friend</title>
+    <link>/tags/%E5%9B%BE%E7%89%87/</link>
+    <description>Recent content in 图片 on Hello Friend</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 06 Jan 2015 03:26:26 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/%E5%9B%BE%E7%89%87/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ghost首页图片限制宽高</title>
+      <link>/posts/ghost-limit-image-width/</link>
+      <pubDate>Tue, 06 Jan 2015 03:26:26 +0000</pubDate>
+      
+      <guid>/posts/ghost-limit-image-width/</guid>
+      <description>还是默认Theme。
+如何显示图片可以参考[Ghost在首页显示图片而非摘要]
+但是这样修改有一个地方漏掉了。就是图片的宽高，普通图片还好，但到了大图，就坑爹了。在首页显示比较大的图片，会直接撑破侧边。。。
+本来以为Ghost应该支持类似![](xxx.jpg =500x)（以500 x auto的宽高来显示xxx.jpg）这种语法，结果不支持。。。
+搜一搜，可以发现Ghost讨论组对于支持image的复杂操作（例如resize，旋转等）的呼声还是很高的，而且专门列了一贴来讨论，并且给出了若干可能的解决方案（都有各自的优缺点）。
+这里先不考虑多size来适配的case，这交给Ghost的大神们吧～
+我只是希望首页显示图片后，图片宽高可控。
+解决方法有两种：
+一种是直接把./partials/loop.hbs里，post-excerpt项的class直接修改为post-content～
+&amp;lt;section class=&amp;quot;post-content&amp;quot;&amp;gt; ... &amp;lt;/section&amp;gt;  这样的好处是方便，坏处（我觉得蛮好的）就是首页的文字风格和page页完全一样（例如字体大小，行间距等），没区别了。
+还有一种就是增加post-excerpt img的css，直接copy post-content img然后改一下名字即可：
+/* Keep images centred and within the bounds of the post-width */ .post-excerpt img { display: block; max-width: 100%; height: auto; margin: 0 auto; padding: 0.6em 0; }  好处是首页风格保持和之前一致，坏处嘛，稍微麻烦一点点。哈哈～
+暂时先这么处理吧（BTW，我选择的是后者）。
+按照Ghost的说法，Image Process已经放入Road map，坐等版本更新吧～</description>
+    </item>
+    
+  </channel>
+</rss>

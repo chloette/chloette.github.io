@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ghost on Hello Friend</title>
+    <link>/categories/ghost/</link>
+    <description>Recent content in ghost on Hello Friend</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 06 Mar 2015 05:09:09 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/ghost/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>My ghost upgrade script</title>
+      <link>/posts/my-ghost-upgrade-script/</link>
+      <pubDate>Fri, 06 Mar 2015 05:09:09 +0000</pubDate>
+      
+      <guid>/posts/my-ghost-upgrade-script/</guid>
+      <description>最后的最后，还是写了一个： 一行命令就升级ghost的脚本（包括：ghost升级、google font cdn优化、首页摘要显示优化、logo优化、首页图片显示优化、prism高亮code、disqus评论）。
+ghostUpgrade
+io page
+####Environment before using:
+ Ubuntu 14.04 (or similar) ghost0.5.x npm/nodejs/forever  ####How to use:
+ clone to folder-of-code add executable permission to upgrade_ghost.sh and start_ghost.sh like this: chmod a+x folder-of-code/*.sh change folder-of-ghost in start_ghost.sh to actual ghost folder If you need comments (Disqus only), upgrade like this: folder-of-code/upgrade_ghost.sh folder-of-ghost folder-of-code Disqus_forum_shortname, otherwise: folder-of-code/upgrade_ghost.sh folder-of-ghost folder-of-code Waiting&amp;hellip;  LOL~ Enjoy your ghost~
+####What&amp;rsquo;s upgrade_ghost.sh doing：</description>
+    </item>
+    
+    <item>
+      <title>Ghost代码高亮</title>
+      <link>/posts/ghost-highlight-syntax/</link>
+      <pubDate>Wed, 04 Mar 2015 03:15:57 +0000</pubDate>
+      
+      <guid>/posts/ghost-highlight-syntax/</guid>
+      <description>Ghost本身的代码高亮是很粗糙的，如下：
+//This is code sample int x = 0; int y = 1; x = y++; ...  但是代码至少应该像下面这样才好看啊！
+//This is code sample int x = 0; int y = 1; x = y++; ...  翻了翻ghost的论坛，发现了prism，使用可以参考这里
+下载css/js的时候可以选择自己需要的高亮语言等。
+这样就又需要修改server上用来更新ghost的bash了：
+#copy prism js/css to content and use it (to highlight codes) cp ~/prism/prism.js ./content/themes/casper/assets/js/ cp ~/prism/prism.css ./cotent/themes/casper/assets/css/ sed -i &#39;s~&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; type=&amp;quot;text/css&amp;quot; href=&amp;quot;{{asset &amp;quot;css/screen.css&amp;quot;}}&amp;quot; /&amp;gt;~&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; type=&amp;quot;text/css&amp;quot; href=&amp;quot;{{asset &amp;quot;css/screen.css&amp;quot;}}&amp;quot; /&amp;gt;&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; type=&amp;quot;text/css&amp;quot; href=&amp;quot;{{asset &amp;quot;css/prism.</description>
+    </item>
+    
+    <item>
+      <title>Ghost修改screen.css的脚本</title>
+      <link>/posts/script-to-modify-ghost-screen-css/</link>
+      <pubDate>Wed, 21 Jan 2015 12:07:06 +0000</pubDate>
+      
+      <guid>/posts/script-to-modify-ghost-screen-css/</guid>
+      <description>Ghost更新越来越频繁，每次都要手动更新css实在伤不起。。。
+反正改动的地方也不多，干脆做成一键脚本好了，把之前upgrade的脚本再扩展一下：
+首先更改#7，改动如下，增加了change logo position：
+#change post page what to show... echo &#39;7. replace &amp;quot;excerpt&amp;quot; with &amp;quot;content&amp;quot; ---------------&#39; #excerpt -&amp;gt; content #read more -&amp;gt; &amp;gt;&amp;gt; sed -i &amp;quot;s#&amp;lt;p&amp;gt;{{excerpt words=\&amp;quot;26\&amp;quot;}} &amp;lt;a class=\&amp;quot;read-more\&amp;quot; href=\&amp;quot;{{url}}\&amp;quot;&amp;gt;&amp;amp;raquo;#&amp;lt;p&amp;gt;{{content words=\&amp;quot;32\&amp;quot;}} &amp;lt;a class=\&amp;quot;read-more\&amp;quot; href=\&amp;quot;{{url}}\&amp;quot;&amp;gt;\&amp;amp;raquo;\&amp;amp;raquo;#g&amp;quot; ./content/themes/casper/partials/loop.hbs #change logo position sed -i &#39;s~{{#if @blog.logo}}&amp;lt;a class=&amp;quot;blog-logo&amp;quot; href=&amp;quot;{{@blog.url}}&amp;quot;&amp;gt;&amp;lt;img src=&amp;quot;{{@blog.logo}}&amp;quot; alt=&amp;quot;Blog Logo&amp;quot; /&amp;gt;&amp;lt;/a&amp;gt;{{/if}}~~g&#39; ./content/themes/casper/index.hbs sed -i &#39;s~&amp;lt;h1 class=&amp;quot;page-title&amp;quot;&amp;gt;{{@blog.title}}&amp;lt;/h1&amp;gt;~{{#if @blog.logo}}&amp;lt;a class=&amp;quot;blog-logo&amp;quot; href=&amp;quot;{{@blog.url}}/about&amp;quot;&amp;gt;&amp;lt;img src=&amp;quot;{{@blog.logo}}&amp;quot; alt=&amp;quot;Blog Logo&amp;quot; /&amp;gt;&amp;lt;/a&amp;gt;{{/if}}&amp;lt;h1 class=&amp;quot;page-title&amp;quot;&amp;gt;{{@blog.title}}&amp;lt;/h1&amp;gt;~g&#39; ./content/themes/casper/index.hbs  再就是考虑到自己智商太低，难以驾驭sed的多行匹配，所以祭出Python；脚本中加上这句：
+#call python to do multiple lines replacement python ~/ghost_css_adjustment.</description>
+    </item>
+    
+    <item>
+      <title>Ghost开机启动</title>
+      <link>/posts/ghost-boot-up/</link>
+      <pubDate>Thu, 08 Jan 2015 02:30:07 +0000</pubDate>
+      
+      <guid>/posts/ghost-boot-up/</guid>
+      <description>Ghost本身是基于node.js的，这意味着 &amp;ndash; 常驻后台需要用到其他方式，例如&amp;amp;或者forever（官网建议）
+但这样也需要使用类似sudo start_ghost.sh这种方式来启动，想开机启动的话还是需要使用update-rc.d或者cron
+前者官网提供了一个说明，相当于自己写一个service
+后者比较强大，用在这里有点大材小用。
+简单点的做法就直接参考stackoverflow
+sudo mv /filename /etc/init.d/ sudo chmod +x /etc/init.d/filename sudo update-rc.d filename defaults   Script should now start on boot. Note that this method also works with both hard links and symbolic links (ln).
+Edit
+At this point in the boot process PATH isn&amp;rsquo;t set yet, so it is critical that absolute paths are used throughout. BUT, as pointed out in the comments by Steve HHH, explicitly declaring the full file path (/etc/init.</description>
+    </item>
+    
+    <item>
+      <title>Ghost首页图片限制宽高</title>
+      <link>/posts/ghost-limit-image-width/</link>
+      <pubDate>Tue, 06 Jan 2015 03:26:26 +0000</pubDate>
+      
+      <guid>/posts/ghost-limit-image-width/</guid>
+      <description>还是默认Theme。
+如何显示图片可以参考[Ghost在首页显示图片而非摘要]
+但是这样修改有一个地方漏掉了。就是图片的宽高，普通图片还好，但到了大图，就坑爹了。在首页显示比较大的图片，会直接撑破侧边。。。
+本来以为Ghost应该支持类似![](xxx.jpg =500x)（以500 x auto的宽高来显示xxx.jpg）这种语法，结果不支持。。。
+搜一搜，可以发现Ghost讨论组对于支持image的复杂操作（例如resize，旋转等）的呼声还是很高的，而且专门列了一贴来讨论，并且给出了若干可能的解决方案（都有各自的优缺点）。
+这里先不考虑多size来适配的case，这交给Ghost的大神们吧～
+我只是希望首页显示图片后，图片宽高可控。
+解决方法有两种：
+一种是直接把./partials/loop.hbs里，post-excerpt项的class直接修改为post-content～
+&amp;lt;section class=&amp;quot;post-content&amp;quot;&amp;gt; ... &amp;lt;/section&amp;gt;  这样的好处是方便，坏处（我觉得蛮好的）就是首页的文字风格和page页完全一样（例如字体大小，行间距等），没区别了。
+还有一种就是增加post-excerpt img的css，直接copy post-content img然后改一下名字即可：
+/* Keep images centred and within the bounds of the post-width */ .post-excerpt img { display: block; max-width: 100%; height: auto; margin: 0 auto; padding: 0.6em 0; }  好处是首页风格保持和之前一致，坏处嘛，稍微麻烦一点点。哈哈～
+暂时先这么处理吧（BTW，我选择的是后者）。
+按照Ghost的说法，Image Process已经放入Road map，坐等版本更新吧～</description>
+    </item>
+    
+    <item>
+      <title>Ghost upgrade to 0.5.3</title>
+      <link>/posts/ghost-upgrade-to-0-5-3/</link>
+      <pubDate>Wed, 22 Oct 2014 03:52:40 +0000</pubDate>
+      
+      <guid>/posts/ghost-upgrade-to-0-5-3/</guid>
+      <description>改动不大，不过主题的css改动了一些。
+参考0.5.2的升级，一个命令就搞定。
+然后再手动更新一下logo的布局。
+Tada~~</description>
+    </item>
+    
+    <item>
+      <title>Ghost图片上传大小限制</title>
+      <link>/posts/ghost-image-upload-limitation/</link>
+      <pubDate>Thu, 09 Oct 2014 06:37:34 +0000</pubDate>
+      
+      <guid>/posts/ghost-image-upload-limitation/</guid>
+      <description>Ghost通过ctrl+shift+i的华丽方式上传图片，会遇到一些问题。例如较大的图片上传，会报错。（大于1M）
+由于一般架在VPS上的ghost都不是直接监听80端口，而是用nginx做前端转发；
+所以推测八成被nginx限制住了。（可以参考ghost论坛）
+nginx这边可以如下修改（老版本是在nginx.conf里面修改，那个波及面太广）：
+直接修改site-enabled目录下面对应的站点config文件，在location /下面增加
+ client_max_body_size 5m;
+ 即可（这里限制为最大5M，土豪随便改哈）。
+重启nginx再试试～
+Tada～</description>
+    </item>
+    
+    <item>
+      <title>Ghost修改圆框logo</title>
+      <link>/posts/optimize-layout-of-ghost-logo/</link>
+      <pubDate>Tue, 30 Sep 2014 04:22:52 +0000</pubDate>
+      
+      <guid>/posts/optimize-layout-of-ghost-logo/</guid>
+      <description>我一直觉得Casper主题（就是默认的！LOL~）什么都不错，就是logo位置如果可以居中。。然后可以做一个圆形的效果。。。 就更好啦～～～
+找了一个有类似实现的主题（ichi），对比了一下css（其实是搜了一下&amp;rdquo;logo&amp;rdquo;的css不同），然后用下面的方式解决：
+.blog-logo img { width: 100px; height: 100px; border: 2px solid white; -webkit-border-radius: 100px; -moz-border-radius: 100px; -ms-border-radius: 100px; -o-border-radius: 100px; border-radius: 100px; }  替换完以后瞬间高大上了～
+试一下分辨率发现几个小问题，把assets/css/screen.css中对应blog-logo的其他项清(delete)一下～
+为了居中的话，修改blog-logo的float：left改为center即可
+至于位置的话，修改index.hbs就可以了（把blog-logo移到page-title前面即可～）
+最后就是主页的效果啦～
+Tada～</description>
+    </item>
+    
+    <item>
+      <title>Ghost upgrade to 0.5.2</title>
+      <link>/posts/ghost-upgrade-to-0-5-2/</link>
+      <pubDate>Mon, 29 Sep 2014 02:22:45 +0000</pubDate>
+      
+      <guid>/posts/ghost-upgrade-to-0-5-2/</guid>
+      <description>不小心看到更新了，所以就去更新了（确实有新功能，如侧边栏和主题图片等，默认模板的字体也有修改），结果掉到自己给自己挖的坑里面去了。。。（手贱是病不治不行啊。。。）
+参考How to upgrade self-installed Ghost来升级即可。不过我又加上了修改fonts来源（通过sed），并修改excerpt（也是通过sed。。。）
+由于Ghost用的sqlite是不加密的（还是因为我用的是dev版本？），所以sed替换的时候会把sqlite数据库（content/data/sqlite-dev）里面的数据一并替换掉（还记得我之前写过Ghost访问比Wordpress还慢？么？真是自掘坟墓啊）
+结果启动Ghost就报sql corruption 500的错误。。。（这么“写”数据，基本的MD5校验都过不了啊）
+真是一失足成千古恨啊。折腾了蛮久才发现是这个问题。 T_T
+附上修改后的脚本，运行
+sudo ./upgrade_ghost.sh TARGET_DIR_PATH ```即可： ```language-bash #stop all echo &#39;1. stop all -----------------&#39; forever stopall #download latest build echo &#39;2. download latest package -------------------&#39; rm ghost-latest.zip wget http://ghost.org/zip/ghost-latest.zip #rm core echo &#39;3. delete core dir ---------------&#39; rm -rf $1/core #unzip echo &#39;4. unzip and merge code ----------------&#39; unzip -uo ghost-latest.zip -d $1/ #install rm ghost-latest.zip cd $1/ echo &#39;5.</description>
+    </item>
+    
+    <item>
+      <title>Ghost在首页显示图片而非摘要</title>
+      <link>/posts/ghost-display-post-images-on-home-page/</link>
+      <pubDate>Mon, 22 Sep 2014 04:07:00 +0000</pubDate>
+      
+      <guid>/posts/ghost-display-post-images-on-home-page/</guid>
+      <description>我就拿默认的Casper来说事吧。
+老版本应该参考Display Post Images on home page就够了。but我在目前的版本0.5.1中，index.hbs中没发现对应项。。。
+看了一下，发现换地儿了，在./partials/loop.hbs里，把post-excerpt项如下修改即可～
+&amp;lt;section class=&amp;quot;post-excerpt&amp;quot;&amp;gt; &amp;lt;p&amp;gt;{{content words=&amp;quot;30&amp;quot;}} &amp;lt;a class=&amp;quot;read-more&amp;quot; href=&amp;quot;{{url}}&amp;quot;&amp;gt;more &amp;amp;raquo;&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/section&amp;gt;  修改后接着restart ghost（*我用的forever， 随手写个shell重启所有ghost～ 简单易用O Yeah*）就好啦
+最新版修改hbs后，貌似不用重启ghost就可以生效了～页面刷新即可～
+Tada~
+[更新 2015/1/6]
+现在更新的版本可以直接使用{{image}}了，直接参考Display Post Images on home page即可 &amp;ndash; 这个页面更新啦～ 哈哈～</description>
+    </item>
+    
+    <item>
+      <title>Ghost访问比Wordpress还慢？</title>
+      <link>/posts/ghost-slower-than-wordpress/</link>
+      <pubDate>Tue, 16 Sep 2014 07:49:08 +0000</pubDate>
+      
+      <guid>/posts/ghost-slower-than-wordpress/</guid>
+      <description>可能么？回答是当然，不考虑极端情况和不同条件下的比较，目前就遇到了本站在某些情况下访问慢的情况。。。
+这不科学啊，这是ghost啊！ 不是臃肿的Wordpress啊，何况还是直接nginx重定向的啊，不是apache啊！
+抱着一丝对人生的怀疑，祭出大杀器fiddler： 额，访问google字库没反应了啊，然后看一下耗时（估计超时了吧）。。。果然，21S。。。
+也不熟悉ghost，上服务器搜一下，结果所有的模板，甚至server都在用google字库。。。
+T_T
+这咋办。。。天朝大国服对此表示确实压力很大啊。。。
+~~先mark，想想咋解决。[TODO] ~~
+貌似也没特别好的解决方案啊，罗列几个可用的吧：
+ 直接comment掉font那行，结果是：（BTW,发现在ghost论坛有人提一样的问题，哈哈～how to disable fonts）  访问速度瞬间翻N倍（因为本来就是秒开才对的嘛） 字体全部变默认了。。。（废话）  不用google remote的font，全部cache在server上（我去，还是有人捷足先登啊ghost local fonts）：  访问速度保持翻N倍的节奏 但是第一次访问该页面，理论上速度不快哦，因为浏览器要下载字体 有点麻烦的是以后万一字体更新或者ghost更新。。。每次替换或者merge很无奈啊。  这问题大家都遇到，难道没有mirror站么？（还真有。。。这里默默给360点个赞360 CDN）  好处同2 缺点嘛。。。首先是安全方面，这个真不好说。再就是貌似从国外访问这个cdn的速度很扯淡。。。    现在暂时用方案3，以后应该会改成方案2。LOL~
+至于方案3，主题多的话总不能一个一个替换过去吧，那得累死啊。直接SSH上去，两句话（2014/09/29更新，参见Ghost upgrade to 0.5.2）命令：
+sed -i &amp;quot;s/fonts.googleapis.com/fonts.useso.com/g&amp;quot; `grep fonts.googleapis.com -rl ./content/themes/` sed -i &amp;quot;s/fonts.googleapis.com/fonts.useso.com/g&amp;quot; `grep fonts.googleapis.com -rl ./core/server/views/`  Tada~</description>
+    </item>
+    
+    <item>
+      <title>从Wordpress迁移到Ghost</title>
+      <link>/posts/from-wordpress-to-ghost/</link>
+      <pubDate>Sun, 14 Sep 2014 16:27:10 +0000</pubDate>
+      
+      <guid>/posts/from-wordpress-to-ghost/</guid>
+      <description>纠结了很久，一开始考虑是不是折腾一下jekyll（毕竟有github撑腰不断更新）；或者成熟一些的octopress；亦或者是台湾同胞的hexo；不过最后还是选择了Ghost
+不想用WP的原因说白了就是。。。那玩意儿不太像是码农用的啊。。。（速度太慢体积太大不容易迁移这些明摆着的事情就不讨论了吧～）
+不用Jekyll和octopress的原因其就是太麻烦了，想象一下，应该需要一个online的编辑器（而且算是比较好的选择了吧），然后用github（方便些）或者自己开一个shell去commit &amp;amp; generate
+不用hexo的原因是，既然都已经上node.js了，干脆找个靠谱点的好了啊。
+另外最后选择ghost还是看到了一篇老外的文章，也是面临类似的选择，其中一句话我觉得很对： &amp;gt;I chose Ghost over Jekyll because I wanted to minimize the amount of work spent on the blog outside of writing actual content. Quote
+说的很对！
+这次迁移中遇到了不少问题，因为没有什么好的工具可以从wordpress无缝迁移到ghost
+尽管有一个ghost的wp插件，可以export content成json形式（然后在/ghost/debug页面可以去import），但是，这玩意儿真没那么好用。
+迁移的时候有以下几个坑要注意：
+ Slug是中文的（转码后是%E6%88这种），是无法导入ghost的，必须用英文或拼音代替（目测没有好工具。。。） ghost是没有分类（category）的，只有tag；所以WP的分类都会被转为tag的形式。 上传到wp的图片，一般是放在/wp-content/uploads/；ghost的话，一般是放置在/content/images/；找文本替换工具来替换吧，然后把图片copy过去就好了。 ghost没有像wp一样自动生成小尺寸的预览图，而是提供原图，所以页面上如果有很多图，那就真的是多图杀猫了。。。 html形式的高亮/斜体/颜色/超链接等等，都可以识别，但为了统一（其实是简化），最好还是改成markdown的形式 上传到wp的文件，例如xx.zip或者xx.pdf这一类的，ghost是玩不转的，需要自行处理。 模板一般放置在/content/theme/，自己下载解压缩后重启ghost即可使用了。不过免费的模板的质量确实不敢恭维啊。。。 ghost默认start的是development模式，而不是production模式；  有遗漏再补充，暂时就这些。</description>
+    </item>
+    
+  </channel>
+</rss>

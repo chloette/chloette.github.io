@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gallery on Hello Friend</title>
+    <link>/tags/gallery/</link>
+    <description>Recent content in Gallery on Hello Friend</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 09 Feb 2015 07:26:01 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/gallery/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Photo gallery from folder</title>
+      <link>/posts/photo-gallery-from-folder/</link>
+      <pubDate>Mon, 09 Feb 2015 07:26:01 +0000</pubDate>
+      
+      <guid>/posts/photo-gallery-from-folder/</guid>
+      <description>当有大量图片需要快速分享出去的时候（例如出去玩，拍了大量照片，分享就变成了大麻烦；如果可以有一个简单的server（或其他机制）来快速分享，那就好多了）
+目前搬砖的公司就遇到这个情况，年会有照片，但是因为共享机制的差异（mac访问windows共享），导致公司有不少同学无法拿到照片。
+工作机之前搭过amp的环境，所以为了省时省力，就去搜了php gallery from folder
+Google前两位分别是UberGallery和FolioGallery
+都蛮不错。我选择了后者（因为后者天生支持multi-directory listing！）
+搭建起来很容易：
+ 下载并解压缩放到web目录下 图片放到albums目录下 albums目录为www-data增加可写权限（因为需要在子目录下生成thumbnail） 浏览器打开foliogallery.php（点击对应目录生成thumbnail）  这就OK了！简单吧~ 效果如下：
+点击会popup一个大图预览；
+大图点击可以左右切换图片；
+而且自带slideshow；
+基本功能都满足了~
+可能会遇到的问题就是图片显示不出来（例如我T_T）：
+ Requirements：
+A server running PHP 5+.
+PHP GD library (for automatc thumbnail creation).
+jQuery JavaScript library.
+ 安装一下：
+sudo apt-get install php5-gd &amp;amp;&amp;amp; sudo service apache2 restart  Tada~~
+BTW，这看起来可以做一个很有趣的小玩意儿啊~
+快速上传，然后用类似Gallery的方式分享，然后大家都可以互相编辑，点赞，加评论等~
+很有意思~</description>
+    </item>
+    
+  </channel>
+</rss>

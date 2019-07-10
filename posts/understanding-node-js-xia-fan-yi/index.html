@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>Understanding node.js 瞎翻译 :: Hello Friend — A simple theme for Hugo</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="原文在此
+结果翻译完了。。发现了译言
+当初在挑用哪个platform的时候，为了了解啥是node.js，恰好看到了此文，觉得不错。所以翻译一下，加深下印象。（就当是免责声明吧）
+我介绍给别人Node.js时，一般他们有两种反应；一种是马上“哦！我懂了！”，一种是“哦。。。到底啥玩意儿啊？”
+如果你到现在还是后者，那先简单给你介绍一下：
+ 它一个命令行工具，下载tarball，编译然后安装即可； 可以直接在terminal中敲node my_app.js就跑起来一个Javascript的程序； Node里的JS是靠V8引擎（chrome为啥那么快？因为有V8）来解析执行的； Node提供了一套JavaScript的API来访问网络和文件系统；  “但是我可以用ruby、python、php、java等等一大坨工具来做一样甚至更多的事情啊”
+对，你说的一点儿也没错！Node并不是万能钥匙。它只是一个工具，至少现在，它没办法完全替代你在用的常规工具。
+“说重点！”
+来了！Node非常适合一种情况：同时处理多个事情。你是否写过一些代码然后嘀咕“我希望可以并行的跑这些代码”？重点来了！在Node里，所有东西都是并行的，除了你的代码！
+“啥？”
+没错，everything runs in parallel, except your code. 要理解这句话，想象一下，你的代码是老大，而Node是小弟。
+每天，小弟会叫醒嗜睡的老大（*这尼玛被砍死的节奏*），问他今天有没有啥事儿。老大就会给小弟一堆任务然后继续去睡觉了。小弟拿到任务就去找小小弟们分发任务并且开始愉快地干活了。
+一旦某个小弟完成了任务，就会去给老大报告。老大每次只见一个小弟（秘密嘛）并听报告。有时候老大会再给小弟安排后续任务。
+这样的生活多美好啊，小弟们并行的把所有事情都做完了，只要报告给老大一个结果就好了。 &amp;gt;注：以上显然只是一个简单隐约，毕竟在现实生活中很难找到“非阻塞”的例子。
+“碉堡了！别扯淡了，上代码！！！”
+额，来了！一个简单的node程序如下：
+var fs = require(&#39;fs&#39;) , sys = require(&#39;sys&#39;); fs.readFile(&#39;treasure-chamber-report.txt&#39;, function(report) { sys.puts(&amp;quot;oh, look at all my money: &amp;quot;&#43;report); }); fs.writeFile(&#39;letter-to-princess.txt&#39;, &#39;...&#39;, function() { sys.puts(&amp;quot;can&#39;t wait to hear back from her!&amp;quot;); });  代码里给了node两个任务，分别是读和写一个文件，然后sleep（睡觉。。。呵呵）。一旦node完成任务，就callback。但是每次只能有一个callback被执行（小弟报告要排队啊！）。前一个callback结束前，其他的必须排队。顺便说一句，callback被执行的顺序是不保证的。
+“所以，我不用担心代码同时访问同一数据结构的问题？”
+你说对了！那就是JavaScript单线程/事件循环设计的美妙所在！
+“非常好，但是我为什么要用它？”
+一个理由是，高效。在web应用中，响应时间一般是所有数据库查询的时间之和*【类似sum（Q1，Q2，Q3，Q4）】*。但是用了Node，可以马上同时执行所有查询，把响应时间降到和最慢的那次查询一样。【类似max（Q1，Q2，Q3，Q4）】
+另一个原因是JavaScript。你可以用Node从浏览器一直跑到后端了。JavaScript一直在进步啊。尽管你以前一直在用python、ruby、java、php等等等等，你应该也用过一点点JS对嘛？
+最后一个原因就是速度，V8在成为最快动态语言解析器的道路上越走越远（*原文楼下有人砸场子，说V8不是最快的，死忠粉速去喷！*）。我无法想象有任何一种语言有如此快的进步速度。另外，node的I/O非常轻巧，可以让你最大程度的利用系统I/O。"/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="/posts/understanding-node-js-xia-fan-yi/" />
+
+
+<link rel="stylesheet" href="/assets/style.css">
+
+
+<link rel="stylesheet" href="/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Understanding node.js 瞎翻译"/>
+<meta name="twitter:description" content="原文在此
+结果翻译完了。。发现了译言
+当初在挑用哪个platform的时候，为了了解啥是node.js，恰好看到了此文，觉得不错。所以翻译一下，加深下印象。（就当是免责声明吧）
+我介绍给别人Node.js时，一般他们有两种反应；一种是马上“哦！我懂了！”，一种是“哦。。。到底啥玩意儿啊？”
+如果你到现在还是后者，那先简单给你介绍一下：
+ 它一个命令行工具，下载tarball，编译然后安装即可； 可以直接在terminal中敲node my_app.js就跑起来一个Javascript的程序； Node里的JS是靠V8引擎（chrome为啥那么快？因为有V8）来解析执行的； Node提供了一套JavaScript的API来访问网络和文件系统；  “但是我可以用ruby、python、php、java等等一大坨工具来做一样甚至更多的事情啊”
+对，你说的一点儿也没错！Node并不是万能钥匙。它只是一个工具，至少现在，它没办法完全替代你在用的常规工具。
+“说重点！”
+来了！Node非常适合一种情况：同时处理多个事情。你是否写过一些代码然后嘀咕“我希望可以并行的跑这些代码”？重点来了！在Node里，所有东西都是并行的，除了你的代码！
+“啥？”
+没错，everything runs in parallel, except your code. 要理解这句话，想象一下，你的代码是老大，而Node是小弟。
+每天，小弟会叫醒嗜睡的老大（*这尼玛被砍死的节奏*），问他今天有没有啥事儿。老大就会给小弟一堆任务然后继续去睡觉了。小弟拿到任务就去找小小弟们分发任务并且开始愉快地干活了。
+一旦某个小弟完成了任务，就会去给老大报告。老大每次只见一个小弟（秘密嘛）并听报告。有时候老大会再给小弟安排后续任务。
+这样的生活多美好啊，小弟们并行的把所有事情都做完了，只要报告给老大一个结果就好了。 &gt;注：以上显然只是一个简单隐约，毕竟在现实生活中很难找到“非阻塞”的例子。
+“碉堡了！别扯淡了，上代码！！！”
+额，来了！一个简单的node程序如下：
+var fs = require(&#39;fs&#39;) , sys = require(&#39;sys&#39;); fs.readFile(&#39;treasure-chamber-report.txt&#39;, function(report) { sys.puts(&quot;oh, look at all my money: &quot;&#43;report); }); fs.writeFile(&#39;letter-to-princess.txt&#39;, &#39;...&#39;, function() { sys.puts(&quot;can&#39;t wait to hear back from her!&quot;); });  代码里给了node两个任务，分别是读和写一个文件，然后sleep（睡觉。。。呵呵）。一旦node完成任务，就callback。但是每次只能有一个callback被执行（小弟报告要排队啊！）。前一个callback结束前，其他的必须排队。顺便说一句，callback被执行的顺序是不保证的。
+“所以，我不用担心代码同时访问同一数据结构的问题？”
+你说对了！那就是JavaScript单线程/事件循环设计的美妙所在！
+“非常好，但是我为什么要用它？”
+一个理由是，高效。在web应用中，响应时间一般是所有数据库查询的时间之和*【类似sum（Q1，Q2，Q3，Q4）】*。但是用了Node，可以马上同时执行所有查询，把响应时间降到和最慢的那次查询一样。【类似max（Q1，Q2，Q3，Q4）】
+另一个原因是JavaScript。你可以用Node从浏览器一直跑到后端了。JavaScript一直在进步啊。尽管你以前一直在用python、ruby、java、php等等等等，你应该也用过一点点JS对嘛？
+最后一个原因就是速度，V8在成为最快动态语言解析器的道路上越走越远（*原文楼下有人砸场子，说V8不是最快的，死忠粉速去喷！*）。我无法想象有任何一种语言有如此快的进步速度。另外，node的I/O非常轻巧，可以让你最大程度的利用系统I/O。"/>
+
+
+
+<meta property="og:title" content="Understanding node.js 瞎翻译" />
+<meta property="og:description" content="原文在此
+结果翻译完了。。发现了译言
+当初在挑用哪个platform的时候，为了了解啥是node.js，恰好看到了此文，觉得不错。所以翻译一下，加深下印象。（就当是免责声明吧）
+我介绍给别人Node.js时，一般他们有两种反应；一种是马上“哦！我懂了！”，一种是“哦。。。到底啥玩意儿啊？”
+如果你到现在还是后者，那先简单给你介绍一下：
+ 它一个命令行工具，下载tarball，编译然后安装即可； 可以直接在terminal中敲node my_app.js就跑起来一个Javascript的程序； Node里的JS是靠V8引擎（chrome为啥那么快？因为有V8）来解析执行的； Node提供了一套JavaScript的API来访问网络和文件系统；  “但是我可以用ruby、python、php、java等等一大坨工具来做一样甚至更多的事情啊”
+对，你说的一点儿也没错！Node并不是万能钥匙。它只是一个工具，至少现在，它没办法完全替代你在用的常规工具。
+“说重点！”
+来了！Node非常适合一种情况：同时处理多个事情。你是否写过一些代码然后嘀咕“我希望可以并行的跑这些代码”？重点来了！在Node里，所有东西都是并行的，除了你的代码！
+“啥？”
+没错，everything runs in parallel, except your code. 要理解这句话，想象一下，你的代码是老大，而Node是小弟。
+每天，小弟会叫醒嗜睡的老大（*这尼玛被砍死的节奏*），问他今天有没有啥事儿。老大就会给小弟一堆任务然后继续去睡觉了。小弟拿到任务就去找小小弟们分发任务并且开始愉快地干活了。
+一旦某个小弟完成了任务，就会去给老大报告。老大每次只见一个小弟（秘密嘛）并听报告。有时候老大会再给小弟安排后续任务。
+这样的生活多美好啊，小弟们并行的把所有事情都做完了，只要报告给老大一个结果就好了。 &gt;注：以上显然只是一个简单隐约，毕竟在现实生活中很难找到“非阻塞”的例子。
+“碉堡了！别扯淡了，上代码！！！”
+额，来了！一个简单的node程序如下：
+var fs = require(&#39;fs&#39;) , sys = require(&#39;sys&#39;); fs.readFile(&#39;treasure-chamber-report.txt&#39;, function(report) { sys.puts(&quot;oh, look at all my money: &quot;&#43;report); }); fs.writeFile(&#39;letter-to-princess.txt&#39;, &#39;...&#39;, function() { sys.puts(&quot;can&#39;t wait to hear back from her!&quot;); });  代码里给了node两个任务，分别是读和写一个文件，然后sleep（睡觉。。。呵呵）。一旦node完成任务，就callback。但是每次只能有一个callback被执行（小弟报告要排队啊！）。前一个callback结束前，其他的必须排队。顺便说一句，callback被执行的顺序是不保证的。
+“所以，我不用担心代码同时访问同一数据结构的问题？”
+你说对了！那就是JavaScript单线程/事件循环设计的美妙所在！
+“非常好，但是我为什么要用它？”
+一个理由是，高效。在web应用中，响应时间一般是所有数据库查询的时间之和*【类似sum（Q1，Q2，Q3，Q4）】*。但是用了Node，可以马上同时执行所有查询，把响应时间降到和最慢的那次查询一样。【类似max（Q1，Q2，Q3，Q4）】
+另一个原因是JavaScript。你可以用Node从浏览器一直跑到后端了。JavaScript一直在进步啊。尽管你以前一直在用python、ruby、java、php等等等等，你应该也用过一点点JS对嘛？
+最后一个原因就是速度，V8在成为最快动态语言解析器的道路上越走越远（*原文楼下有人砸场子，说V8不是最快的，死忠粉速去喷！*）。我无法想象有任何一种语言有如此快的进步速度。另外，node的I/O非常轻巧，可以让你最大程度的利用系统I/O。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/understanding-node-js-xia-fan-yi/" />
+<meta property="article:published_time" content="2014-09-17T05:21:54&#43;00:00"/>
+<meta property="article:modified_time" content="2014-09-17T05:21:54&#43;00:00"/><meta property="og:site_name" content="Hello Friend" />
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">hello friend</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/showcase">Showcase</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  <div class="post">
+    <h2 class="post-title"><a href="/posts/understanding-node-js-xia-fan-yi/">Understanding node.js 瞎翻译</a></h2>
+    <div class="post-meta">
+      
+        <span class="post-date">
+            2014-09-17
+        </span>
+      
+      <span class="post-author">— Written by Guo Yi</span>
+      
+    </div>
+
+    
+      <span class="post-tags">
+        
+          #<a href="/tags/%E7%BF%BB%E8%AF%91/">翻译</a>&nbsp;
+        
+          #<a href="/tags/understanding-node.js/">Understanding node.js</a>&nbsp;
+        
+          #<a href="/tags/node.js/">node.js</a>&nbsp;
+        
+      </span>
+    
+
+    
+
+    <div class="post-content">
+      <p><a href="http://debuggable.com/posts/understanding-node-js:4bd98440-45e4-4a9a-8ef7-0f7ecbdd56cb">原文在此</a></p>
+
+<p>结果翻译完了。。发现了<a href="http://article.yeeyan.org/view/91891/108258/">译言</a></p>
+
+<p>当初在挑用哪个platform的时候，为了了解啥是node.js，恰好看到了此文，觉得不错。所以翻译一下，加深下印象。（就当是免责声明吧）</p>
+
+<hr />
+
+<p>我介绍给别人Node.js时，一般他们有两种反应；一种是马上“哦！我懂了！”，一种是“哦。。。到底啥玩意儿啊？”</p>
+
+<p>如果你到现在还是后者，那先简单给你介绍一下：</p>
+
+<ul>
+<li>它一个命令行工具，下载tarball，编译然后安装即可；</li>
+<li>可以直接在terminal中敲<code>node my_app.js</code>就跑起来一个Javascript的程序；</li>
+<li>Node里的JS是靠V8引擎（chrome为啥那么快？因为有V8）来解析执行的；</li>
+<li>Node提供了一套JavaScript的API来访问网络和文件系统；</li>
+</ul>
+
+<p><strong><em>“但是我可以用ruby、python、php、java等等一大坨工具来做一样甚至更多的事情啊”</em></strong></p>
+
+<p>对，你说的一点儿也没错！Node并不是万能钥匙。它只是一个工具，至少现在，它没办法完全替代你在用的常规工具。</p>
+
+<p><strong><em>“说重点！”</em></strong></p>
+
+<p>来了！Node非常适合一种情况：同时处理多个事情。你是否写过一些代码然后嘀咕“我希望可以并行的跑这些代码”？重点来了！在Node里，所有东西都是并行的，除了你的代码！</p>
+
+<p><strong><em>“啥？”</em></strong></p>
+
+<p>没错，everything runs in parallel, except your code. 要理解这句话，想象一下，你的代码是老大，而Node是小弟。</p>
+
+<p>每天，小弟会叫醒嗜睡的老大（*这尼玛被砍死的节奏*），问他今天有没有啥事儿。老大就会给小弟一堆任务然后继续去睡觉了。小弟拿到任务就去找小小弟们分发任务并且开始愉快地干活了。</p>
+
+<p>一旦某个小弟完成了任务，就会去给老大报告。老大每次只见一个小弟（秘密嘛）并听报告。有时候老大会再给小弟安排后续任务。</p>
+
+<p>这样的生活多美好啊，小弟们并行的把所有事情都做完了，只要报告给老大一个结果就好了。
+&gt;注：以上显然只是一个简单隐约，毕竟在现实生活中很难找到“非阻塞”的例子。</p>
+
+<p><strong><em>“碉堡了！别扯淡了，上代码！！！”</em></strong></p>
+
+<p>额，来了！一个简单的node程序如下：</p>
+
+<pre><code class="language-language-javascript">var fs = require('fs')
+  , sys = require('sys');
+
+fs.readFile('treasure-chamber-report.txt', function(report) {
+  sys.puts(&quot;oh, look at all my money: &quot;+report);
+});
+
+fs.writeFile('letter-to-princess.txt', '...', function() {
+  sys.puts(&quot;can't wait to hear back from her!&quot;);
+});
+</code></pre>
+
+<p>代码里给了node两个任务，分别是读和写一个文件，然后sleep（睡觉。。。呵呵）。一旦node完成任务，就callback。但是每次只能有一个callback被执行（小弟报告要排队啊！）。前一个callback结束前，其他的必须排队。顺便说一句，callback被执行的顺序是不保证的。</p>
+
+<p><strong><em>“所以，我不用担心代码同时访问同一数据结构的问题？”</em></strong></p>
+
+<p>你说对了！那就是JavaScript单线程/事件循环设计的美妙所在！</p>
+
+<p><strong><em>“非常好，但是我为什么要用它？”</em></strong></p>
+
+<p>一个理由是，高效。在web应用中，响应时间一般是所有数据库查询的时间之和*【类似sum（Q1，Q2，Q3，Q4）】*。但是用了Node，可以马上同时执行所有查询，把响应时间降到和最慢的那次查询一样。<em>【类似max（Q1，Q2，Q3，Q4）】</em></p>
+
+<p>另一个原因是JavaScript。你可以用Node从浏览器一直跑到后端了。JavaScript一直在进步啊。尽管你以前一直在用python、ruby、java、php等等等等，你应该也用过一点点JS对嘛？</p>
+
+<p>最后一个原因就是速度，V8在成为最快动态语言解析器的道路上越走越远（*原文楼下有人砸场子，说V8不是最快的，死忠粉速去喷！*）。我无法想象有任何一种语言有如此快的进步速度。另外，node的I/O非常轻巧，可以让你最大程度的利用系统I/O。</p>
+
+<p><strong><em>“所以你是说从现在开始我应该用node写所有的app？”</em></strong></p>
+
+<p>是也不是。毕竟手里拿着锤子，眼里就只剩钉子。但是如果你在做一个有明确时间点的玩意儿，也许你可以考虑一下：</p>
+
+<ul>
+<li>低响应时间/高并发重要嘛？Node很擅长哦！</li>
+<li>工程大嘛？小工程Node无压力。大工程就应该仔细评估了（可用库，改bug的人力或者两条上升流*（？不太对的感觉）*等等）</li>
+</ul>
+
+<p><strong><em>“Node可以在Windows上跑么？”</em></strong></p>
+
+<p>不能（其实现在可以了，那时候还不能）。如果你在用Windows，你需要跑一台虚拟机来运行Linux（作者个人推荐VirtualBox，我个人推荐VM）。其实<code>在Windows上运行node</code>正在计划中，但是别等了，上手吧！</p>
+
+<p><strong><em>“我能通过node直接访问DOM么？”</em></strong></p>
+
+<p>好问题！不能！DOM是浏览器的玩意儿，谢天谢地的是node用的JS（V8）引擎和那一坨玩意儿没关系。但是，还真有人在这条道路上尝试哦，<a href="http://www.yuiblog.com/blog/2010/04/09/node-js-yui-3-dom-manipulation-oh-my/">把DOM做成node模块</a> &ndash; 让单元测试客户端代码成为可能啊！</p>
+
+<p><strong><em>“事件驱动编程不是很难么？”</em></strong></p>
+
+<p>这个要看你牛不牛B！如果你已经轻松搞定AJAX回调和用户在浏览器里面乱点这类事件之间的冲突，那用node一点儿问题也没有。</p>
+
+<p>另外，测试驱动开发，真的可以帮助你做出可维护的设计哦！</p>
+
+<p><strong><em>“有人先吃螃蟹了么？”</em></strong></p>
+
+<p>有一个小的/未完成列表，在<a href="http://wiki.github.com/ry/node">Node百科</a>（请滑动到“在用Node的公司”）。Yahoo正在用node实验YUI；Plurk正在用它来处理大量的comet*（彗星？）*；Paul Bakaus（jQuery UI框架）在实现一个NB的游戏引擎，其中部分后端用node实现；Joyent则直接雇了Ryan Dahl（Node创始人）并全力投入node开发。</p>
+
+<p>对了，Heroku刚刚宣布（实验性）支持托管node.js咯。</p>
+
+<p><strong><em>“我从哪里可以学到更多？”</em></strong></p>
+
+<p>Tim Caswell维护着“如何Node”博客；或者在twitter上粉#node.js；订阅一下邮件列表；到IRC转转并#node.js（对，名字里面带个点）！我不会告诉你我们马上要集到200个赞啦！！</p>
+
+<p>同时我会在<a href="http://debuggable.com">debuggable.com</a>持续更新相关文章。</p>
+
+<p>基本就这些吧，差不多了，有疑问尽管提吧！</p>
+
+<p>&ndash;fg</p>
+
+    </div>
+    
+      <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h">Read other posts</span>
+          <hr />
+        </div>
+        <div class="pagination__buttons">
+          
+            <span class="button previous">
+              <a href="/posts/jenkins-android-auto-build-problems/">
+                <span class="button__icon">←</span>
+                <span class="button__text">Jenkins android 自动化编译的一些坑</span>
+              </a>
+            </span>
+          
+          
+            <span class="button next">
+              <a href="/posts/hexo/">
+                <span class="button__text">Hexo&#43; !!!</span>
+                <span class="button__icon">→</span>
+              </a>
+            </span>
+          
+        </div>
+      </div>
+    
+
+    
+
+    </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">hello friend</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span>© 2019 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

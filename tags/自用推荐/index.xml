@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>自用推荐 on Hello Friend</title>
+    <link>/tags/%E8%87%AA%E7%94%A8%E6%8E%A8%E8%8D%90/</link>
+    <description>Recent content in 自用推荐 on Hello Friend</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 23 Dec 2014 13:21:48 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/%E8%87%AA%E7%94%A8%E6%8E%A8%E8%8D%90/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Astrill VPN</title>
+      <link>/posts/astrill-vpn/</link>
+      <pubDate>Tue, 23 Dec 2014 13:21:48 +0000</pubDate>
+      
+      <guid>/posts/astrill-vpn/</guid>
+      <description>自用推荐：值得花钱系列
+VPN，在大天朝生活的必备工具。一个好的翻墙工具可以显著提升生活品质。（这里应省略1000字的溢美之词和1000字对GFW的“溢美之词”）
+Astrill是自己一直在用的VPN。当然还有一个免费的翻墙利器goagent，除了偶尔抽风也没其他坏处了（这真的不是补刀）。
+Astrill的最大优势在于 &amp;mdash; 稳定。对，不管是连接速度，还是服务器数量，甚至他们的年费价格，都相当稳定。。。
+使用非常方便，几乎是全系统支持。Android/IOS/MAC/Windows/Linux/OpenWRT（WP, sorry），客户端界面也很友好。
+另外有针对性的反GFW方案（额外收费），这段介绍如此经典，必须截图留念：
+ 霸气外露： As a response to Great Firewall of China VPN blocking events, we decided to create a new VPN protocol that is not detectable as VPN protocol and which works in China.
+ 缺点也有一点（价格就不继续吐槽了），就是这玩意儿在某些地方表现的并不接地气（这本来也不是本地的。。），例如奇怪的smart模式，简单说，不需要翻墙的站点也会翻墙再翻回来。。。
+官网在此
+报价在此[据说安装IOS客户端，应用内付费，在天朝内购买只要25RMB/月，258RMB/年，这尼玛算是特殊优惠么。]
+顺便记录一下Astrill android版本的APK下载链接，也save到云端一份，免得又忘记了（不然又陷入先有鸡还是先有蛋的破逻辑）。
+最后，说回到安全性。
+有人爆料说Astrill依然会记录logs（例如访问记录等等），并且还抄袭等等。
+至于用不用那，见仁见智。
+附上Astrill的隐私协议。</description>
+    </item>
+    
+  </channel>
+</rss>

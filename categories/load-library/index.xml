@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>load library on Hello Friend</title>
+    <link>/categories/load-library/</link>
+    <description>Recent content in load library on Hello Friend</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 12 Feb 2015 04:27:27 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/load-library/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Android library loading limitation</title>
+      <link>/posts/android-library-loading-limitation/</link>
+      <pubDate>Thu, 12 Feb 2015 04:27:27 +0000</pubDate>
+      
+      <guid>/posts/android-library-loading-limitation/</guid>
+      <description>Android上想调用native算法库（so的形式），只能走JNI的路（用NDK来编译）；
+加载so的时候一般是用System.loadLibrary或System.load；
+使用前者，则so只能提前push到系统目录或app对应目录下（不然找不到）；
+使用后者，一般情况下无路径的特别限制；这样便于控制app size（so可以单独下载到特定目录）；
+但是自从某个os版本后（确实不知道哪个版本后），sdcard卡上的so，也有了加载的限制。
+例如报错：Android load library error — failed to map segment
+该问题其实算是设备相关，某些内置卡的设备就不存在该问题；也正如stackoverflow上的回答，是权限问题；
+出现该问题的设备：
+正常的设备：
+可以明显看到权限差异。
+把so目录改到context.getPackageManager().getApplicationInfo(context.getPackageName(), 0).dataDir后，就OK了。
+记录一下，小坑怡情。</description>
+    </item>
+    
+  </channel>
+</rss>

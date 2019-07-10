@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>Android library loading limitation :: Hello Friend — A simple theme for Hugo</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="Android上想调用native算法库（so的形式），只能走JNI的路（用NDK来编译）；
+加载so的时候一般是用System.loadLibrary或System.load；
+使用前者，则so只能提前push到系统目录或app对应目录下（不然找不到）；
+使用后者，一般情况下无路径的特别限制；这样便于控制app size（so可以单独下载到特定目录）；
+但是自从某个os版本后（确实不知道哪个版本后），sdcard卡上的so，也有了加载的限制。
+例如报错：Android load library error — failed to map segment
+该问题其实算是设备相关，某些内置卡的设备就不存在该问题；也正如stackoverflow上的回答，是权限问题；
+出现该问题的设备：
+正常的设备：
+可以明显看到权限差异。
+把so目录改到context.getPackageManager().getApplicationInfo(context.getPackageName(), 0).dataDir后，就OK了。
+记录一下，小坑怡情。"/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="/posts/android-library-loading-limitation/" />
+
+
+<link rel="stylesheet" href="/assets/style.css">
+
+
+<link rel="stylesheet" href="/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Android library loading limitation"/>
+<meta name="twitter:description" content="Android上想调用native算法库（so的形式），只能走JNI的路（用NDK来编译）；
+加载so的时候一般是用System.loadLibrary或System.load；
+使用前者，则so只能提前push到系统目录或app对应目录下（不然找不到）；
+使用后者，一般情况下无路径的特别限制；这样便于控制app size（so可以单独下载到特定目录）；
+但是自从某个os版本后（确实不知道哪个版本后），sdcard卡上的so，也有了加载的限制。
+例如报错：Android load library error — failed to map segment
+该问题其实算是设备相关，某些内置卡的设备就不存在该问题；也正如stackoverflow上的回答，是权限问题；
+出现该问题的设备：
+正常的设备：
+可以明显看到权限差异。
+把so目录改到context.getPackageManager().getApplicationInfo(context.getPackageName(), 0).dataDir后，就OK了。
+记录一下，小坑怡情。"/>
+
+
+
+<meta property="og:title" content="Android library loading limitation" />
+<meta property="og:description" content="Android上想调用native算法库（so的形式），只能走JNI的路（用NDK来编译）；
+加载so的时候一般是用System.loadLibrary或System.load；
+使用前者，则so只能提前push到系统目录或app对应目录下（不然找不到）；
+使用后者，一般情况下无路径的特别限制；这样便于控制app size（so可以单独下载到特定目录）；
+但是自从某个os版本后（确实不知道哪个版本后），sdcard卡上的so，也有了加载的限制。
+例如报错：Android load library error — failed to map segment
+该问题其实算是设备相关，某些内置卡的设备就不存在该问题；也正如stackoverflow上的回答，是权限问题；
+出现该问题的设备：
+正常的设备：
+可以明显看到权限差异。
+把so目录改到context.getPackageManager().getApplicationInfo(context.getPackageName(), 0).dataDir后，就OK了。
+记录一下，小坑怡情。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/android-library-loading-limitation/" />
+<meta property="article:published_time" content="2015-02-12T04:27:27&#43;00:00"/>
+<meta property="article:modified_time" content="2015-02-12T04:27:27&#43;00:00"/><meta property="og:site_name" content="Hello Friend" />
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">hello friend</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/showcase">Showcase</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  <div class="post">
+    <h2 class="post-title"><a href="/posts/android-library-loading-limitation/">Android library loading limitation</a></h2>
+    <div class="post-meta">
+      
+        <span class="post-date">
+            2015-02-12
+        </span>
+      
+      <span class="post-author">— Written by Guo Yi</span>
+      
+    </div>
+
+    
+      <span class="post-tags">
+        
+          #<a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
+        
+          #<a href="/tags/%E8%AE%B0%E5%BD%95/">记录</a>&nbsp;
+        
+          #<a href="/tags/load-library/">load library</a>&nbsp;
+        
+      </span>
+    
+
+    
+
+    <div class="post-content">
+      <p>Android上想调用native算法库（so的形式），只能走JNI的路（用NDK来编译）；</p>
+
+<p>加载so的时候一般是用<code>System.loadLibrary</code>或<code>System.load</code>；</p>
+
+<p>使用前者，则so只能提前push到系统目录或app对应目录下（不然找不到）；</p>
+
+<p>使用后者，一般情况下无路径的特别限制；这样便于控制app size（so可以单独下载到特定目录）；</p>
+
+<p>但是自从某个os版本后（确实不知道哪个版本后），sdcard卡上的so，也有了加载的限制。</p>
+
+<p>例如报错：<a href="http://stackoverflow.com/questions/6291087/android-load-library-error-failed-to-map-segment">Android load library error — failed to map segment</a></p>
+
+<p>该问题其实算是设备相关，某些内置卡的设备就不存在该问题；也正如stackoverflow上的回答，是权限问题；</p>
+
+<p>出现该问题的设备：</p>
+
+<p><img src="/content/images/2015/02/load-library-failed.png" alt="" /></p>
+
+<p>正常的设备：</p>
+
+<p><img src="/content/images/2015/02/load-library-succ.png" alt="" /></p>
+
+<p>可以明显看到权限差异。</p>
+
+<p>把so目录改到<code>context.getPackageManager().getApplicationInfo(context.getPackageName(), 0).dataDir</code>后，就OK了。</p>
+
+<p>记录一下，小坑怡情。</p>
+
+    </div>
+    
+      <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h">Read other posts</span>
+          <hr />
+        </div>
+        <div class="pagination__buttons">
+          
+            <span class="button previous">
+              <a href="/posts/amazon-speed/">
+                <span class="button__icon">←</span>
+                <span class="button__text">美亚速度</span>
+              </a>
+            </span>
+          
+          
+            <span class="button next">
+              <a href="/posts/2015-birthday/">
+                <span class="button__text">新年目标</span>
+                <span class="button__icon">→</span>
+              </a>
+            </span>
+          
+        </div>
+      </div>
+    
+
+    
+
+    </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">hello friend</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span>© 2019 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

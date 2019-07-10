@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>sync on Hello Friend</title>
+    <link>/tags/sync/</link>
+    <description>Recent content in sync on Hello Friend</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 03 Nov 2014 03:13:29 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/sync/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Android Studio升级后无法完成sync</title>
+      <link>/posts/android-studio-cannot-sync-after-upgrade/</link>
+      <pubDate>Mon, 03 Nov 2014 03:13:29 +0000</pubDate>
+      
+      <guid>/posts/android-studio-cannot-sync-after-upgrade/</guid>
+      <description>表现就是一旦sync，就下载gradle-all-2.1.zip的包，而且下载进度不动。地址是：https://services.gradle.org/distributions/gradle-2.1-all.zip
+推测是android studio升级后（从0.8.x-&amp;gt;0.9.0），新旧文件有冲突。 如果目录C:\Users\XXXX.gradle\wrapper\dists\gradle-2.1-all\xxxxxx下面有2个0KB的文件，分别是gradle-2.1-all.lck和gradle-2.1-all.part，那这个基本就是出现不能sync情况的那个工程（一般一个xxxxxx目录对应一个工程）了。
+解决方法就是：
+  关掉android studio 删掉目录下的两个文件（.lck和.part） 将下载好的gradle-2.1-all.zip和解压后的gradle-2.1目录放到新目录下 运行android studio   Tada~~~
+这时候应该就可以正常Sync啦～（正常的目录下会有gradle-x.x-all.zip.ok的文件，后缀很直白～）</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>kickstarter on Hello Friend</title>
+    <link>/categories/kickstarter/</link>
+    <description>Recent content in kickstarter on Hello Friend</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 16 Sep 2014 12:12:41 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/kickstarter/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hexo&#43; !!!</title>
+      <link>/posts/hexo/</link>
+      <pubDate>Tue, 16 Sep 2014 12:12:41 +0000</pubDate>
+      
+      <guid>/posts/hexo/</guid>
+      <description>当初设想过（说来也就是13年年初时候的事情，滑完雪觉得有这么一个东西得多方便啊）的玩意儿，Kickstarter上居然有了： Hexo+
+Your browser does not support the video tag.  
+Your browser does not support the video tag.  </description>
+    </item>
+    
+  </channel>
+</rss>

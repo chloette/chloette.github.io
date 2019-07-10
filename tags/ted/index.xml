@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TED on Hello Friend</title>
+    <link>/tags/ted/</link>
+    <description>Recent content in TED on Hello Friend</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 03 Mar 2015 05:35:47 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/ted/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>计算 -- 万物理论</title>
+      <link>/posts/computing-a-theory-of-everything/</link>
+      <pubDate>Tue, 03 Mar 2015 05:35:47 +0000</pubDate>
+      
+      <guid>/posts/computing-a-theory-of-everything/</guid>
+      <description>TED链接
+此人生平在此，更直接的是Mathematica（理工科的同学应该很熟悉）的作者，也被称为是地球上最聪明的人 之一。
+演讲从一开始的Wolfram Alpha就惊喜不断（Google“们”做的更多的是“找到”正确答案，而Alpha做的是“算出”正确答案）；到后面得出的“计算”通用理论 &amp;ndash; 通过简单公式的不断“计算”来找到复杂问题的答案（当然包括各种物理理论）。
+贴出来，看看别人2010年在干嘛，我又在干嘛。刺激自己一下。 T_T</description>
+    </item>
+    
+  </channel>
+</rss>

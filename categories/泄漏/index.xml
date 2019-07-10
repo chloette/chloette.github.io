@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>泄漏 on Hello Friend</title>
+    <link>/categories/%E6%B3%84%E6%BC%8F/</link>
+    <description>Recent content in 泄漏 on Hello Friend</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 14 Jun 2013 16:07:18 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/%E6%B3%84%E6%BC%8F/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>神州租车的数据安全问题[续](secure problem of ZuChe.com [End])</title>
+      <link>/posts/shen-zhou-zu-che-de-shu-ju-an-quan-wen-ti-xu-secure-problem-of-zuche-com-end/</link>
+      <pubDate>Fri, 14 Jun 2013 16:07:18 +0000</pubDate>
+      
+      <guid>/posts/shen-zhou-zu-che-de-shu-ju-an-quan-wen-ti-xu-secure-problem-of-zuche-com-end/</guid>
+      <description>前文：神州租车的数据安全问题(secure problem of ZuChe.com)
+说实话我还有傻乎乎的担心了一下我这么写出来会不会被社会报复的问题，后来想了想，本为无名小卒，何足大家挂齿，更何况我也不在国内，难不成还引渡么？（扯远了。。。）。遂继续写写，说说我对神州这个泄漏的一点看法。
+这个leak的根源是：万能钥匙的问题（当然我才疏学浅，不知道这么说对不对），就是一把钥匙可以开N把锁；换言之，就是越权的问题。
+在这里，仅仅通过用户ID（钥匙），就可以得到这个用户的全部订单信息（锁A），本身就是很危险的（但其实很多很多service，都有一样的问题，不一一列举）
+而这里更过分的是不仅仅有订单信息，还有用户敏感信息（锁B），如身份证/手机号码/住宅地址等；
+当然如果你觉得这就是结束，那就高估这不给力的service了。
+神州还有一个本身逻辑存在严重缺陷的设计：通过用户ID+身份证+新密码 即可修改掉用户原有密码（而且貌似是不会通知用户的 T_T）。
+而神州是有推出过VIP充值服务的（额，尽管有很多负面报道），所以这意味着，你可以改掉某个VIP的密码，然后免费租车。。。（什么？你说驾照要复印？你开玩笑的吧，这种hack就像小时候学家长签字一样，毫无技术含量啊。。。）
+当我看到这里的时候我开始有点担心这设计者的前途了，万一被别人知道就是你设计出来这么渣的系统。。。唉。。。你以后怎么办啊。。。
+好吧，换个角度，其实可以发起一次这样的数据扫描+毁灭性打击：
+ 遍历所有的用户id（你累加id就好了，目测神州用户不超过300W，额，目测，别问我怎么知道的。。。），可以得到所有的用户身份信息（而且基本都是真实靠谱可用的） == 数据扫描，done；该干嘛干嘛。。。
+ 遍历修改所有用户的密码（ID+身份证+新密码） == 打击，done；神州彻底废了。。。
+  对于神州来说，针对这个问题，改动其实会很大，原因是这涉及到应用架构的改变，换言之，要彻底改掉这个问题，神州需要要求所有的用户进行至少一次APP升级，而其内部进行若干次service升级。
+OK，就这样吧。给神州一点时间好好修改，毕竟是打算上市的公司，给点后路。
+具体到代码层面的东西明眼人都明白，太细的就不说了。
+另外这次神州中枪完全是我个人一时好奇，绝无针对性和恶意（我甚至还用神州租过车，唉，悔不当初）。
+后来我又顺路去看了看一嗨和安飞士（这两个名字都是哪路神仙想出来的。。？）也有问题，但是相比较神州，轻微很多，以后再表。
+BTW，如果神州愿意出点小钱让我帮忙改改，OY～ 我是会考虑的～ 哈哈哈～</description>
+    </item>
+    
+    <item>
+      <title>神州租车的数据安全问题(secure problem of ZuChe.com)</title>
+      <link>/posts/shen-zhou-zu-che-de-shu-ju-an-quan-wen-ti-secure-problem-of-zuche-com/</link>
+      <pubDate>Wed, 29 May 2013 22:37:38 +0000</pubDate>
+      
+      <guid>/posts/shen-zhou-zu-che-de-shu-ju-an-quan-wen-ti-secure-problem-of-zuche-com/</guid>
+      <description>说实话我不知道从何开始写，我发现了神州租车的一些，问题；而且非常严重。
+我曾经试图联系他们，但是没有得到任何反馈，所以我决定写出来，作为一个记录。
+当然，通过我的分析及实践，可以进一步得到它的用户数据，甚至进行修改或破坏，但这不是我的初衷，所以这里会做一些模糊处理（相信官方补丁会跑在那些有心者前面）。
+直接拆开它的apk【其实如果用sniffer之类的，会比我这么做来的更直接；我这么做的原因就是顺手而已。】
+可以得到对应的源文件，通过一些简单的代码和逻辑分析（几乎没有混淆），可以得到两个很霸道的接口，一个接口是通过user id来获取对应该用户所有订单信息的，获取到的内容可能如下：
+&amp;lt;soap:Envelope xmlns:soap=&amp;quot;http://schemas.xmlsoap.org/soap/envelope/&amp;quot; xmlns:xsd=&amp;quot;http://www.w3.org/2001/XMLSchema&amp;quot; xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot;&amp;gt;; &amp;lt;;soap:Body&amp;gt;; &amp;lt;;OrderListQueryResponse xmlns=&amp;quot;http://tempuri.org/&amp;quot;&amp;gt;; &amp;lt;;OrderListQueryResult xmlns=&amp;quot;http://tempuri.org/&amp;quot;&amp;gt;; &amp;lt;;CurrentPage xmlns=&amp;quot;OrderListQueryResult&amp;quot;&amp;gt;;1&amp;lt;;/CurrentPage&amp;gt;; &amp;lt;;OrderList xmlns=&amp;quot;OrderListQueryResult&amp;quot;&amp;gt;;&amp;lt;;ns1:OrderValue xmlns:ns1=&amp;quot;OrderValue&amp;quot;&amp;gt;; &amp;lt;;Address xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;; &amp;lt;span style=&amp;quot;color: #ff0000;&amp;quot;&amp;gt; &amp;lt;strong&amp;gt;南宁市西乡塘区北湖路西三里20号【模糊】401号房&amp;lt;/strong&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;;/Address&amp;gt;; &amp;lt;;CarType xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;标致207/三厢/1.4手动&amp;lt;;/CarType&amp;gt;; &amp;lt;;Comments xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;&amp;lt;;/Comments&amp;gt;; &amp;lt;;DrivingLicenceNo xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;null&amp;lt;;/DrivingLicenceNo&amp;gt;; &amp;lt;;Email xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;&amp;lt;;/Email&amp;gt;; &amp;lt;;FromAddr xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;null&amp;lt;;/FromAddr&amp;gt;;&amp;lt;;FromCity xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;南宁&amp;lt;;/FromCity&amp;gt;; &amp;lt;;FromDate xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;2013-04-08 12:00 &amp;lt;;/FromDate&amp;gt;; &amp;lt;;FromProvince xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;广西壮族自治区&amp;lt;;/FromProvince&amp;gt;; &amp;lt;;FromStore xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;广西体育馆店&amp;lt;;/FromStore&amp;gt;; &amp;lt;;IdCardNo xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;; &amp;lt;span style=&amp;quot;color: #ff0000;&amp;quot;&amp;gt;&amp;lt;strong&amp;gt;450104【模糊】0510&amp;lt;/strong&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;;/IdCardNo&amp;gt;; &amp;lt;;IdCardType xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;10&amp;lt;;/IdCardType&amp;gt;; &amp;lt;;InsuranceFee xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;30.0&amp;lt;;/InsuranceFee&amp;gt;; &amp;lt;;Mobile xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;; &amp;lt;strong&amp;gt;&amp;lt;span style=&amp;quot;color: #ff0000;&amp;quot;&amp;gt;158【模糊】1523&amp;lt;/span&amp;gt;&amp;lt;/strong&amp;gt;&amp;lt;;/Mobile&amp;gt;; &amp;lt;;OrderNo xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;13653269673220 ? ? ?&amp;lt;;/OrderNo&amp;gt;; &amp;lt;;OrderStatus xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;已完成&amp;lt;;/OrderStatus&amp;gt;; &amp;lt;;Picture xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;http://static.zuchecdn.com/images/terminal/bj207.jpg&amp;lt;;/Picture&amp;gt;; &amp;lt;;ReturnAddr xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;广西壮族自治区南宁市江南区星光大道3号广西体育馆&amp;lt;;/ReturnAddr&amp;gt;; &amp;lt;;ServiceFee xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;20.</description>
+    </item>
+    
+  </channel>
+</rss>

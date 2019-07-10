@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>out of memory on Hello Friend</title>
+    <link>/tags/out-of-memory/</link>
+    <description>Recent content in out of memory on Hello Friend</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 04 Nov 2014 02:51:39 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/out-of-memory/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Jenkins会OOM</title>
+      <link>/posts/jenkins-out-of-memory/</link>
+      <pubDate>Tue, 04 Nov 2014 02:51:39 +0000</pubDate>
+      
+      <guid>/posts/jenkins-out-of-memory/</guid>
+      <description>本来还打算在AWS的服务器上搭个jenkins来自动化编译的。
+配置都配置好了，但是跑着跑着就会报502（nginx倒是很直白）
+后来才发现，服务直接被关掉了（
+sudo service jenkins status  ）
+估计是内存不够（主目录已经转移到了单独的硬盘上，空间肯定够的）导致了一系列问题后挂掉了吧。毕竟是AWS的最低配的EC2（VPS） T_T
+网上一查，官网没找到有最低硬件配置要求，但还真有维护人员指出了这一点：
+ CPU : n/a (bye bye plain old school CPU at least ;) )
+RAM : 1GB (I prefer 2)
+HDD : depends on the needs. For my use, a 8 modules j2ee maven project + db scripts (6500 lines of code) represents less of 50 MB. I configured Jenkins to store 10 builds (500 MB)
+ 报着也许我搞错了吧的心态（其实是死马当活马医了。。），double check了/var/log/jenkins/jenkins.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>密码和指纹 哪个身份识别方式更安全？ :: Hello Friend — A simple theme for Hugo</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="当初入TP的时候，就有过这个思考，是不是要带指纹识别；
+不过后来仔细想了一下，这会是一个很有意思的事情；
+依稀记得之前有电影片段，是某个机密的场所，进门需要指纹&#43;掌纹，结果若干反派人物就直接把那位有指纹同学的手给砍了下来，淡定的进门了。。。
+这个片段一次一次的让我对于指纹识别抱有一定的戒心，因为那就好像在告诉别人，嘿，我这里有一些小秘密，但是只有我的手可以打开哦～
+。。。
+言归正传，这就需要先回到身份识别方式的选择上。
+最原始的识别方式就是传统的文本型密码（再往前咱们就不追究了吧）
+后来有了动态识别码，或者硬件辅助（U盾）的手段；
+再后来有了人脸识别，指纹识别，等等。
+但哪个更安全？恐怕没办法立刻下结论，这就要扯到密码学里面的一个概念 &amp;ndash; 相对安全性
+不管多长的密码都只是相对安全的（其实指纹也好人脸识别也好，都可以抽象理解为一种密码）
+无非是需要5分钟还是5000年才能“理论上”破译的差别，这就是相对安全；因为随着硬件性能的不断提高，当初认为是5000年才能破译的密码，可能现在只需要5分钟都不到就搞定了；同样，现在号称5000年才能破译的密码，在若干年后，随着计算能力的不断提高（尤其是更大规模更普及的云计算/分布式计算），指不定10年后就把这个在10年前认为需要5000年的计算量的事情在短短5分钟之内搞定了（当然这里说的略有夸张，毕竟5000年和5分钟相差了9个数量级）。
+&amp;nbsp;
+而密码的破译，或者说成功破译，几乎很少会依赖于计算能力，而更多的是依赖于 &amp;ndash; 方法（砍手就是一个不错的方法～）
+对于纯文本型的传统密码，也许只有按键记录器或者“偷窥”会靠谱一些；
+而动态识别码和U盾，你只要“偷”到了这个硬件，就搞定了；
+至于人脸识别和指纹识别，就更简单了，直接拿照片或者复制一下指纹（透明胶带或者玻璃杯子即可）就可以了；至于因为拿照片就可以搞定解锁这件事情。。。google表示压力略大（[图]谷歌建议用户吐舌头、歪脖子 设置高安全性能面部解锁密码），毕竟android4.x系统有一个“给力”的功能就是人脸解锁。。。
+所以看起来，似乎安全性上，是传统密码 &amp;gt; 动态识别码及U盾（你需要随身携带） &amp;gt; 人脸识别和指纹识别
+而从“用户需要记录的数据量/使用简易程度”来看，传统密码&amp;gt; 动态识别码及U盾（你需要随身携带）&amp;gt; 人脸识别和指纹识别
+这很有意思，因为似乎，用户体验越高，安全性就越差（less is more，really？）
+那到底该选择哪一种？
+这很难说，其实这是一个因人而异的问题；
+如果用户是一个“所有密码都一样”的“纯粹”的人，那么他真心需要“非传统密码”的保护，因为从某个角度来说，即使是他的照片都要比他的传统密码安全。
+如果用户是一个自我保护意识很强的“杞人”，那么还是传统密码更适合他，而且是需要分级（根据信息安全级别的不同来分级密码）的。毕竟天天担心着自己的手被别人砍掉是压力很大的～ 因为“杞人”认为，内在的“存储”要比外在的“皮肤”靠谱的多～
+当然，最好的办法，其实各个银行的网银已经给出了答案，就是多次不同类型的验证。毕竟现在连outlook都开始支持二次验证了（google是最先全线支持的么？）
+而至于我，说实话我其实是一个蛮“纯粹”的人～"/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="/posts/mi-ma-he-zhi-wen-na-ge-shen-fen-shi-bie-fang-shi-geng-an-quan/" />
+
+
+<link rel="stylesheet" href="/assets/style.css">
+
+
+<link rel="stylesheet" href="/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="密码和指纹 哪个身份识别方式更安全？"/>
+<meta name="twitter:description" content="当初入TP的时候，就有过这个思考，是不是要带指纹识别；
+不过后来仔细想了一下，这会是一个很有意思的事情；
+依稀记得之前有电影片段，是某个机密的场所，进门需要指纹&#43;掌纹，结果若干反派人物就直接把那位有指纹同学的手给砍了下来，淡定的进门了。。。
+这个片段一次一次的让我对于指纹识别抱有一定的戒心，因为那就好像在告诉别人，嘿，我这里有一些小秘密，但是只有我的手可以打开哦～
+。。。
+言归正传，这就需要先回到身份识别方式的选择上。
+最原始的识别方式就是传统的文本型密码（再往前咱们就不追究了吧）
+后来有了动态识别码，或者硬件辅助（U盾）的手段；
+再后来有了人脸识别，指纹识别，等等。
+但哪个更安全？恐怕没办法立刻下结论，这就要扯到密码学里面的一个概念 &ndash; 相对安全性
+不管多长的密码都只是相对安全的（其实指纹也好人脸识别也好，都可以抽象理解为一种密码）
+无非是需要5分钟还是5000年才能“理论上”破译的差别，这就是相对安全；因为随着硬件性能的不断提高，当初认为是5000年才能破译的密码，可能现在只需要5分钟都不到就搞定了；同样，现在号称5000年才能破译的密码，在若干年后，随着计算能力的不断提高（尤其是更大规模更普及的云计算/分布式计算），指不定10年后就把这个在10年前认为需要5000年的计算量的事情在短短5分钟之内搞定了（当然这里说的略有夸张，毕竟5000年和5分钟相差了9个数量级）。
+&nbsp;
+而密码的破译，或者说成功破译，几乎很少会依赖于计算能力，而更多的是依赖于 &ndash; 方法（砍手就是一个不错的方法～）
+对于纯文本型的传统密码，也许只有按键记录器或者“偷窥”会靠谱一些；
+而动态识别码和U盾，你只要“偷”到了这个硬件，就搞定了；
+至于人脸识别和指纹识别，就更简单了，直接拿照片或者复制一下指纹（透明胶带或者玻璃杯子即可）就可以了；至于因为拿照片就可以搞定解锁这件事情。。。google表示压力略大（[图]谷歌建议用户吐舌头、歪脖子 设置高安全性能面部解锁密码），毕竟android4.x系统有一个“给力”的功能就是人脸解锁。。。
+所以看起来，似乎安全性上，是传统密码 &gt; 动态识别码及U盾（你需要随身携带） &gt; 人脸识别和指纹识别
+而从“用户需要记录的数据量/使用简易程度”来看，传统密码&gt; 动态识别码及U盾（你需要随身携带）&gt; 人脸识别和指纹识别
+这很有意思，因为似乎，用户体验越高，安全性就越差（less is more，really？）
+那到底该选择哪一种？
+这很难说，其实这是一个因人而异的问题；
+如果用户是一个“所有密码都一样”的“纯粹”的人，那么他真心需要“非传统密码”的保护，因为从某个角度来说，即使是他的照片都要比他的传统密码安全。
+如果用户是一个自我保护意识很强的“杞人”，那么还是传统密码更适合他，而且是需要分级（根据信息安全级别的不同来分级密码）的。毕竟天天担心着自己的手被别人砍掉是压力很大的～ 因为“杞人”认为，内在的“存储”要比外在的“皮肤”靠谱的多～
+当然，最好的办法，其实各个银行的网银已经给出了答案，就是多次不同类型的验证。毕竟现在连outlook都开始支持二次验证了（google是最先全线支持的么？）
+而至于我，说实话我其实是一个蛮“纯粹”的人～"/>
+
+
+
+<meta property="og:title" content="密码和指纹 哪个身份识别方式更安全？" />
+<meta property="og:description" content="当初入TP的时候，就有过这个思考，是不是要带指纹识别；
+不过后来仔细想了一下，这会是一个很有意思的事情；
+依稀记得之前有电影片段，是某个机密的场所，进门需要指纹&#43;掌纹，结果若干反派人物就直接把那位有指纹同学的手给砍了下来，淡定的进门了。。。
+这个片段一次一次的让我对于指纹识别抱有一定的戒心，因为那就好像在告诉别人，嘿，我这里有一些小秘密，但是只有我的手可以打开哦～
+。。。
+言归正传，这就需要先回到身份识别方式的选择上。
+最原始的识别方式就是传统的文本型密码（再往前咱们就不追究了吧）
+后来有了动态识别码，或者硬件辅助（U盾）的手段；
+再后来有了人脸识别，指纹识别，等等。
+但哪个更安全？恐怕没办法立刻下结论，这就要扯到密码学里面的一个概念 &ndash; 相对安全性
+不管多长的密码都只是相对安全的（其实指纹也好人脸识别也好，都可以抽象理解为一种密码）
+无非是需要5分钟还是5000年才能“理论上”破译的差别，这就是相对安全；因为随着硬件性能的不断提高，当初认为是5000年才能破译的密码，可能现在只需要5分钟都不到就搞定了；同样，现在号称5000年才能破译的密码，在若干年后，随着计算能力的不断提高（尤其是更大规模更普及的云计算/分布式计算），指不定10年后就把这个在10年前认为需要5000年的计算量的事情在短短5分钟之内搞定了（当然这里说的略有夸张，毕竟5000年和5分钟相差了9个数量级）。
+&nbsp;
+而密码的破译，或者说成功破译，几乎很少会依赖于计算能力，而更多的是依赖于 &ndash; 方法（砍手就是一个不错的方法～）
+对于纯文本型的传统密码，也许只有按键记录器或者“偷窥”会靠谱一些；
+而动态识别码和U盾，你只要“偷”到了这个硬件，就搞定了；
+至于人脸识别和指纹识别，就更简单了，直接拿照片或者复制一下指纹（透明胶带或者玻璃杯子即可）就可以了；至于因为拿照片就可以搞定解锁这件事情。。。google表示压力略大（[图]谷歌建议用户吐舌头、歪脖子 设置高安全性能面部解锁密码），毕竟android4.x系统有一个“给力”的功能就是人脸解锁。。。
+所以看起来，似乎安全性上，是传统密码 &gt; 动态识别码及U盾（你需要随身携带） &gt; 人脸识别和指纹识别
+而从“用户需要记录的数据量/使用简易程度”来看，传统密码&gt; 动态识别码及U盾（你需要随身携带）&gt; 人脸识别和指纹识别
+这很有意思，因为似乎，用户体验越高，安全性就越差（less is more，really？）
+那到底该选择哪一种？
+这很难说，其实这是一个因人而异的问题；
+如果用户是一个“所有密码都一样”的“纯粹”的人，那么他真心需要“非传统密码”的保护，因为从某个角度来说，即使是他的照片都要比他的传统密码安全。
+如果用户是一个自我保护意识很强的“杞人”，那么还是传统密码更适合他，而且是需要分级（根据信息安全级别的不同来分级密码）的。毕竟天天担心着自己的手被别人砍掉是压力很大的～ 因为“杞人”认为，内在的“存储”要比外在的“皮肤”靠谱的多～
+当然，最好的办法，其实各个银行的网银已经给出了答案，就是多次不同类型的验证。毕竟现在连outlook都开始支持二次验证了（google是最先全线支持的么？）
+而至于我，说实话我其实是一个蛮“纯粹”的人～" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/mi-ma-he-zhi-wen-na-ge-shen-fen-shi-bie-fang-shi-geng-an-quan/" />
+<meta property="article:published_time" content="2013-06-15T18:36:42&#43;00:00"/>
+<meta property="article:modified_time" content="2013-06-15T18:36:42&#43;00:00"/><meta property="og:site_name" content="Hello Friend" />
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">hello friend</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/showcase">Showcase</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  <div class="post">
+    <h2 class="post-title"><a href="/posts/mi-ma-he-zhi-wen-na-ge-shen-fen-shi-bie-fang-shi-geng-an-quan/">密码和指纹 哪个身份识别方式更安全？</a></h2>
+    <div class="post-meta">
+      
+        <span class="post-date">
+            2013-06-15
+        </span>
+      
+      <span class="post-author">— Written by Guo Yi</span>
+      
+    </div>
+
+    
+      <span class="post-tags">
+        
+          #<a href="/tags/%E5%AE%89%E5%85%A8/">安全</a>&nbsp;
+        
+          #<a href="/tags/%E5%AF%86%E7%A0%81/">密码</a>&nbsp;
+        
+          #<a href="/tags/%E6%8C%87%E7%BA%B9/">指纹</a>&nbsp;
+        
+      </span>
+    
+
+    
+
+    <div class="post-content">
+      <p>当初入TP的时候，就有过这个思考，是不是要带指纹识别；</p>
+
+<p>不过后来仔细想了一下，这会是一个很有意思的事情；</p>
+
+<p>依稀记得之前有电影片段，是某个机密的场所，进门需要指纹+掌纹，结果若干反派人物就直接把那位有指纹同学的手给砍了下来，淡定的进门了。。。</p>
+
+<p>这个片段一次一次的让我对于指纹识别抱有一定的戒心，因为那就好像在告诉别人，嘿，我这里有一些小秘密，但是只有我的手可以打开哦～</p>
+
+<p>。。。</p>
+
+<p>言归正传，这就需要先回到<strong><em>身份识别方式</em></strong>的选择上。</p>
+
+<p>最原始的识别方式就是传统的文本型密码（再往前咱们就不追究了吧）</p>
+
+<p>后来有了动态识别码，或者硬件辅助（U盾）的手段；</p>
+
+<p>再后来有了人脸识别，指纹识别，等等。</p>
+
+<p>但哪个更安全？恐怕没办法立刻下结论，这就要扯到密码学里面的一个概念 &ndash; 相对安全性</p>
+
+<p>不管多长的密码都只是相对安全的（其实指纹也好人脸识别也好，都可以抽象理解为一种密码）</p>
+
+<p>无非是需要5分钟还是5000年才能“理论上”破译的差别，这就是<strong>相对安全</strong>；因为随着硬件性能的不断提高，当初认为是5000年才能破译的密码，可能现在只需要5分钟都不到就搞定了；同样，现在号称5000年才能破译的密码，在若干年后，随着计算能力的不断提高（尤其是更大规模更普及的云计算/分布式计算），指不定10年后就把这个在10年前认为需要5000年的计算量的事情在短短5分钟之内搞定了（当然这里说的略有夸张，毕竟5000年和5分钟相差了9个数量级）。</p>
+
+<p>&nbsp;</p>
+
+<p>而密码的破译，或者说成功破译，几乎很少会依赖于计算能力，而更多的是依赖于 &ndash; 方法（砍手就是一个不错的方法～）</p>
+
+<p>对于纯文本型的传统密码，也许只有按键记录器或者“偷窥”会靠谱一些；</p>
+
+<p>而动态识别码和U盾，你只要“偷”到了这个硬件，就搞定了；</p>
+
+<p>至于人脸识别和指纹识别，就更简单了，直接拿照片或者复制一下指纹（透明胶带或者玻璃杯子即可）就可以了；至于因为拿照片就可以搞定解锁这件事情。。。google表示压力略大（<a href="http://www.cnbeta.com/articles/240274.htm">[图]谷歌建议用户吐舌头、歪脖子 设置高安全性能面部解锁密码</a>），毕竟android4.x系统有一个“给力”的功能就是人脸解锁。。。</p>
+
+<p>所以看起来，似乎安全性上，是传统密码 &gt; 动态识别码及U盾（你需要随身携带） &gt; 人脸识别和指纹识别</p>
+
+<p>而从“用户需要记录的数据量/使用简易程度”来看，传统密码&gt; 动态识别码及U盾（你需要随身携带）&gt; 人脸识别和指纹识别</p>
+
+<p>这很有意思，因为似乎，<strong><em>用户体验越高，安全性就越差</em></strong>（less is more，really？）</p>
+
+<p>那到底该选择哪一种？</p>
+
+<p>这很难说，其实这是一个因人而异的问题；</p>
+
+<p>如果用户是一个“所有密码都一样”的“纯粹”的人，那么他真心需要“非传统密码”的保护，因为从某个角度来说，即使是他的照片都要比他的传统密码安全。</p>
+
+<p>如果用户是一个自我保护意识很强的“杞人”，那么还是传统密码更适合他，而且是需要分级（根据信息安全级别的不同来分级密码）的。毕竟天天担心着自己的手被别人砍掉是压力很大的～ 因为“杞人”认为，内在的“存储”要比外在的“皮肤”靠谱的多～</p>
+
+<p>当然，最好的办法，其实各个银行的网银已经给出了答案，就是<strong>多次不同类型的验证</strong>。毕竟现在连outlook都开始支持二次验证了（google是最先全线支持的么？）</p>
+
+<p>而至于我，说实话我其实是一个蛮“纯粹”的人～</p>
+
+    </div>
+    
+      <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h">Read other posts</span>
+          <hr />
+        </div>
+        <div class="pagination__buttons">
+          
+            <span class="button previous">
+              <a href="/posts/cloud-atlas/">
+                <span class="button__icon">←</span>
+                <span class="button__text">Cloud Atlas</span>
+              </a>
+            </span>
+          
+          
+            <span class="button next">
+              <a href="/posts/shen-zhou-zu-che-de-shu-ju-an-quan-wen-ti-xu-secure-problem-of-zuche-com-end/">
+                <span class="button__text">神州租车的数据安全问题[续](secure problem of ZuChe.com [End])</span>
+                <span class="button__icon">→</span>
+              </a>
+            </span>
+          
+        </div>
+      </div>
+    
+
+    
+
+    </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">hello friend</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span>© 2019 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

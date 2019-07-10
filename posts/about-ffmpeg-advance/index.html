@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>关于FFmpeg（进阶） :: Hello Friend — A simple theme for Hugo</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="基本篇在此。
+目前仅使用到了ffmpeg的读写文件/编解码功能，并未使用其去直接渲染。
+这里说是进阶，其实也只能算浮于表面。因此主要记录使用ffmpeg以来遇到的坑，版本差异，android版本编译等。So，这里就不继续采用Q&amp;amp;A的方式了。
+（本文并非通过ffmpeg.exe\bin传递command来进行处理，而是直接调用ffmpeg相关libraries中的api）
+####FFmpeg libraries FFmpeg有以下库：（2014/12/24 ffmpeg 2.5.2），主要功能列在About中有基本介绍，这里不再赘述。
+ libavutil 54. 15.100 libavcodec 56. 13.100 libavformat 56. 15.102 libavdevice 56. 3.100 &amp;mdash; 未使用 libavfilter 5. 2.103 &amp;mdash; 未使用 libavresample 2. 1. 0 &amp;mdash; 未使用 libswscale 3. 1.101 libswresample 1. 1.100 libpostproc 53. 3.100 &amp;mdash; 未使用   ####FFmpeg基本 首先，官方文档为第一参考文档；其次就是源码（这里把*源码*放到这么靠前的原因下文会提到）。
+FFmpeg的官方文档算是比较全的。 一些常见case的testbed都可以找得到；例如2.5版本，编解码的sample
+同时官方的例子并非浅显易懂，但是因为层次简单，所以调用逻辑很清楚；参考着这些文档/Sample就可以按需设计一个简化版Adapter了。
+####FFmpeg基本调用逻辑 还记得Decode/Encode和Muxer/Demuxer吧，如果还记得那就很好理解了。下面截选了部分代码（不要在意细节），有一些重要关键但非流程相关的步骤这里先省略（例如FIFO等），下文再提。
+#####Encoding（Based on 2.x） - Register all codec //应该是plugin的机制
+av_register_all(); avcodec_register_all();   Find encoder -&amp;gt; create stream -&amp;gt; open encoder  /* find the audio encoder */ p_audio_codec = avcodec_find_encoder(m_p_fmt_ctx-&amp;gt;oformat-&amp;gt;audio_codec); if (!"/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="/posts/about-ffmpeg-advance/" />
+
+
+<link rel="stylesheet" href="/assets/style.css">
+
+
+<link rel="stylesheet" href="/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="关于FFmpeg（进阶）"/>
+<meta name="twitter:description" content="基本篇在此。
+目前仅使用到了ffmpeg的读写文件/编解码功能，并未使用其去直接渲染。
+这里说是进阶，其实也只能算浮于表面。因此主要记录使用ffmpeg以来遇到的坑，版本差异，android版本编译等。So，这里就不继续采用Q&amp;A的方式了。
+（本文并非通过ffmpeg.exe\bin传递command来进行处理，而是直接调用ffmpeg相关libraries中的api）
+####FFmpeg libraries FFmpeg有以下库：（2014/12/24 ffmpeg 2.5.2），主要功能列在About中有基本介绍，这里不再赘述。
+ libavutil 54. 15.100 libavcodec 56. 13.100 libavformat 56. 15.102 libavdevice 56. 3.100 &mdash; 未使用 libavfilter 5. 2.103 &mdash; 未使用 libavresample 2. 1. 0 &mdash; 未使用 libswscale 3. 1.101 libswresample 1. 1.100 libpostproc 53. 3.100 &mdash; 未使用   ####FFmpeg基本 首先，官方文档为第一参考文档；其次就是源码（这里把*源码*放到这么靠前的原因下文会提到）。
+FFmpeg的官方文档算是比较全的。 一些常见case的testbed都可以找得到；例如2.5版本，编解码的sample
+同时官方的例子并非浅显易懂，但是因为层次简单，所以调用逻辑很清楚；参考着这些文档/Sample就可以按需设计一个简化版Adapter了。
+####FFmpeg基本调用逻辑 还记得Decode/Encode和Muxer/Demuxer吧，如果还记得那就很好理解了。下面截选了部分代码（不要在意细节），有一些重要关键但非流程相关的步骤这里先省略（例如FIFO等），下文再提。
+#####Encoding（Based on 2.x） - Register all codec //应该是plugin的机制
+av_register_all(); avcodec_register_all();   Find encoder -&gt; create stream -&gt; open encoder  /* find the audio encoder */ p_audio_codec = avcodec_find_encoder(m_p_fmt_ctx-&gt;oformat-&gt;audio_codec); if (!"/>
+
+
+
+<meta property="og:title" content="关于FFmpeg（进阶）" />
+<meta property="og:description" content="基本篇在此。
+目前仅使用到了ffmpeg的读写文件/编解码功能，并未使用其去直接渲染。
+这里说是进阶，其实也只能算浮于表面。因此主要记录使用ffmpeg以来遇到的坑，版本差异，android版本编译等。So，这里就不继续采用Q&amp;A的方式了。
+（本文并非通过ffmpeg.exe\bin传递command来进行处理，而是直接调用ffmpeg相关libraries中的api）
+####FFmpeg libraries FFmpeg有以下库：（2014/12/24 ffmpeg 2.5.2），主要功能列在About中有基本介绍，这里不再赘述。
+ libavutil 54. 15.100 libavcodec 56. 13.100 libavformat 56. 15.102 libavdevice 56. 3.100 &mdash; 未使用 libavfilter 5. 2.103 &mdash; 未使用 libavresample 2. 1. 0 &mdash; 未使用 libswscale 3. 1.101 libswresample 1. 1.100 libpostproc 53. 3.100 &mdash; 未使用   ####FFmpeg基本 首先，官方文档为第一参考文档；其次就是源码（这里把*源码*放到这么靠前的原因下文会提到）。
+FFmpeg的官方文档算是比较全的。 一些常见case的testbed都可以找得到；例如2.5版本，编解码的sample
+同时官方的例子并非浅显易懂，但是因为层次简单，所以调用逻辑很清楚；参考着这些文档/Sample就可以按需设计一个简化版Adapter了。
+####FFmpeg基本调用逻辑 还记得Decode/Encode和Muxer/Demuxer吧，如果还记得那就很好理解了。下面截选了部分代码（不要在意细节），有一些重要关键但非流程相关的步骤这里先省略（例如FIFO等），下文再提。
+#####Encoding（Based on 2.x） - Register all codec //应该是plugin的机制
+av_register_all(); avcodec_register_all();   Find encoder -&gt; create stream -&gt; open encoder  /* find the audio encoder */ p_audio_codec = avcodec_find_encoder(m_p_fmt_ctx-&gt;oformat-&gt;audio_codec); if (!" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/about-ffmpeg-advance/" />
+<meta property="article:published_time" content="2014-12-24T09:11:09&#43;00:00"/>
+<meta property="article:modified_time" content="2014-12-24T09:11:09&#43;00:00"/><meta property="og:site_name" content="Hello Friend" />
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">hello friend</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/showcase">Showcase</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  <div class="post">
+    <h2 class="post-title"><a href="/posts/about-ffmpeg-advance/">关于FFmpeg（进阶）</a></h2>
+    <div class="post-meta">
+      
+        <span class="post-date">
+            2014-12-24
+        </span>
+      
+      <span class="post-author">— Written by Guo Yi</span>
+      
+    </div>
+
+    
+      <span class="post-tags">
+        
+          #<a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
+        
+          #<a href="/tags/ffmpeg/">ffmpeg</a>&nbsp;
+        
+      </span>
+    
+
+    
+
+    <div class="post-content">
+      <p>基本篇<a href="http://nobodycare.me/2014/09/29/about-ffmpeg-basic/">在此</a>。</p>
+
+<p>目前仅使用到了ffmpeg的读写文件/编解码功能，并未使用其去直接渲染。</p>
+
+<p>这里说是进阶，其实也只能算浮于表面。因此主要记录使用ffmpeg以来遇到的坑，版本差异，android版本编译等。So，这里就不继续采用Q&amp;A的方式了。</p>
+
+<p>（本文并非通过ffmpeg.exe\bin传递command来进行处理，而是直接调用ffmpeg相关libraries中的api）</p>
+
+<p>####FFmpeg libraries
+FFmpeg有以下库：（2014/12/24 ffmpeg 2.5.2），主要功能列在<a href="http://ffmpeg.org/about.html">About</a>中有基本介绍，这里不再赘述。</p>
+
+<ul>
+<li>libavutil      54. 15.100</li>
+<li>libavcodec     56. 13.100</li>
+<li>libavformat    56. 15.102</li>
+<li>libavdevice    56.  3.100 &mdash; 未使用</li>
+<li>libavfilter     5.  2.103 &mdash; 未使用</li>
+<li>libavresample   2.  1.  0 &mdash; 未使用</li>
+<li>libswscale      3.  1.101</li>
+<li>libswresample   1.  1.100</li>
+<li>libpostproc    53.  3.100 &mdash; 未使用
+<br /></li>
+</ul>
+
+<p>####FFmpeg基本
+首先，官方文档为第一参考文档；其次就是源码（这里把*源码*放到这么靠前的原因下文会提到）。</p>
+
+<p>FFmpeg的<a href="http://ffmpeg.org/doxygen/">官方文档</a>算是比较全的。
+一些常见case的testbed都可以找得到；例如2.5版本，编解码的<a href="http://ffmpeg.org/doxygen/2.5/decoding_encoding_8c-example.html">sample</a></p>
+
+<p>同时官方的例子并非浅显易懂，但是因为层次简单，所以调用逻辑很清楚；参考着这些文档/Sample就可以按需设计一个简化版Adapter了。</p>
+
+<p>####FFmpeg基本调用逻辑
+还记得Decode/Encode和Muxer/Demuxer吧，如果还记得那就很好理解了。下面截选了部分代码（不要在意细节），有一些重要关键但非流程相关的步骤这里先省略（例如FIFO等），下文再提。</p>
+
+<hr />
+
+<p>#####Encoding（Based on 2.x）
+- <strong>Register all codec</strong> //应该是plugin的机制</p>
+
+<pre><code class="language-language-cpp">av_register_all();
+avcodec_register_all();
+</code></pre>
+
+<ul>
+<li><strong>Find encoder -&gt; create stream -&gt; open encoder</strong></li>
+</ul>
+
+<pre><code class="language-language-cpp">/* find the audio encoder */
+p_audio_codec = avcodec_find_encoder(m_p_fmt_ctx-&gt;oformat-&gt;audio_codec);
+if (!p_audio_codec) {
+  res = ErrorNoEncoderFound;
+  goto EXIT;
+}
+
+// Try create stream.
+m_p_audio_stream = avformat_new_stream(m_p_fmt_ctx, p_audio_codec);
+if (!m_p_audio_stream) {
+  LOGE(&quot;Cannot add new audio stream\n&quot;);
+  res = ErrorNoStreamFound;
+  goto EXIT;
+}
+
+p_codec_ctx = m_p_audio_stream-&gt;codec;
+... //some regular configurations on encoder
+
+// open the codec.
+res = avcodec_open2(p_codec_ctx, p_audio_codec, &amp;p_options);
+CHK_RES(res);
+</code></pre>
+
+<ul>
+<li><strong>Open File -&gt; write header</strong></li>
+</ul>
+
+<pre><code class="language-language-c">res = avio_open(&amp;m_p_fmt_ctx-&gt;pb, m_p_file_path, AVIO_FLAG_WRITE);
+...
+res = avformat_write_header(m_p_fmt_ctx, NULL);
+...
+</code></pre>
+
+<ul>
+<li><strong>Encode</strong></li>
+</ul>
+
+<pre><code class="language-language-cpp">av_init_packet(&amp;output_packet);
+ ...
+res = avcodec_encode_audio2(output_audio_stream-&gt;codec, &amp;output_packet, frame, data_present);
+...
+res = av_interleaved_write_frame(output_format_context, &amp;output_packet);
+</code></pre>
+
+<ul>
+<li><strong>Write trailer</strong></li>
+</ul>
+
+<pre><code class="language-language-cpp">av_write_trailer(m_p_fmt_ctx);
+</code></pre>
+
+<ul>
+<li><strong>Release</strong></li>
+</ul>
+
+<pre><code class="language-language-cpp">avcodec_close(m_p_audio_stream-&gt;codec);
+avio_close(m_p_fmt_ctx-&gt;pb);
+avformat_free_context(m_p_fmt_ctx);
+</code></pre>
+
+<hr />
+
+<p>#####Decoding（Based on 2.x）
+- <strong>Register all codec</strong></p>
+
+<pre><code class="language-language-cpp">av_register_all();
+avcodec_register_all();
+</code></pre>
+
+<ul>
+<li><strong>Open File -&gt; find stream -&gt; find decoder -&gt; open decoder</strong></li>
+</ul>
+
+<pre><code class="language-language-cpp">res = avformat_open_input(&amp;m_p_fmt_ctx, filename, NULL, NULL);
+if (res &lt; 0) {
+  LOGE(&quot;Could not open find stream info (error '%s')\n&quot;,
+  get_error_text(res));
+  goto EXIT;
+}
+
+/** Get information on the input file (number of streams etc.). */
+res = avformat_find_stream_info(m_p_fmt_ctx, NULL);
+if (res &lt; 0) {
+  LOGE(&quot;Could not open find stream info (error '%s')\n&quot;, get_error_text(res));
+  goto EXIT;
+}
+
+...//match stream via stream-&gt;codec-&gt;codec_type
+
+if (m_p_video_stream) {
+// Find the decoder for the video stream
+  p_video_codec = avcodec_find_decoder(p_video_ctx-&gt;codec_id);
+  if (!p_video_codec) {
+    LOGE(&quot;avcodec_find_decoder() error: Unsupported video format or codec not found: %d. &quot;, p_video_ctx-&gt;codec_id);
+}
+
+// Open video codec
+if (p_video_codec &amp;&amp; (res = avcodec_open2(p_video_ctx, p_video_codec, NULL)) &lt; 0) {
+  LOGE(&quot;avcodec_open2() error %d: Could not open video codec.&quot;, res);
+}
+</code></pre>
+
+<ul>
+<li><strong>Decode</strong> //考虑到视频编码的特殊性（前后帧参考），所以这里一般是需要do-while的。</li>
+</ul>
+
+<pre><code class="language-language-cpp">av_init_packet(&amp;pkt);
+
+res = av_read_frame(m_p_fmt_ctx, &amp;pkt);
+if (res &lt; 0) {
+  av_free_packet(&amp;pkt);
+  break;
+}
+
+...
+
+// Decode frame
+decoded_length = avcodec_decode_video2(m_p_video_stream-&gt;codec, temp_frame, &amp;got_frame, &amp;pkt);
+
+av_free_packet(&amp;pkt);
+</code></pre>
+
+<ul>
+<li><strong>Release</strong></li>
+</ul>
+
+<pre><code class="language-language-cpp">avcodec_close(m_p_audio_stream-&gt;codec);
+avformat_close_input(&amp;m_p_fmt_ctx);
+</code></pre>
+
+<hr />
+
+<p>####Video/Audio格式转换（对齐）
+不管是audio还是video，编码前/解码后都需要做格式转换，来保持数据格式的一致性。不然拿RGBA的数据直接送给等待NV12的encoder也不太好吧～</p>
+
+<p>Video做格式转换是通过<code>sws_scale</code>（scale）；需要注意的是，*decoder/encoder需要对数据做一次对齐（为了XX位对齐做的buffer填充）*，换言之，即使是640 x 640的视频，decode出来的数据也不可以直接用，而需要scale一次来消除“渐隐区”（文档貌似没写，翻源码吧亲）。</p>
+
+<p>Audio做格式转换是通过<code>swr_convert</code>（resample），用法类似<code>sws_scale</code>。</p>
+
+<p>但audio有一点不同在于，video是一帧一帧的，而audio，就是一段连续数据而已。所以一帧video frame在scale以后还是一帧video frame；但一段长度为A（表示对应时长为Ta）的audio buffer在resample之后很可能就变成了长度为B（表示对应时长依然为Ta）的audio buffer。</p>
+
+<p>举个简单例子，其他格式都一样，格式为8位（<code>AV_SAMPLE_FMT_S8</code>）的audio buffer，转换为16位（<code>AV_SAMPLE_FMT_S16</code>）后buffer长度会翻倍。这个“转换公式”很好理解吧，当然格式差异很多的时候，这个转换公式也跟着会复杂的多。（当然如果无视buffer格式差异，某些case下也是可以正常encode/decode的，但声音就不对了～）</p>
+
+<p>长度的不同，导致了在decode/encode时需要一个额外的机制，来配合“对齐”（这里用对齐似乎更合适吧）buffer。</p>
+
+<p>也就有了下文的FIFO（2.x版本后提供了<code>av_audio_fifo_xxx</code>的一系列接口，在这之前，audio接口调用逻辑和video接口差别很多，FIFO直接被整合在audio接口中而并未独立出来；听起来有点像是为了框架清晰而增加调用复杂度的故事 ^_^）</p>
+
+<p>####Audio FIFO
+在编码前/解码后，audio buffer为了保持格式（这里的格式包括采样率等）上的一致性，需要先通过FIFO进行一次buffer的重整。</p>
+
+<p>即：</p>
+
+<blockquote>
+<p>解码：Decode -&gt; FIFO -&gt; Resample-&gt; audio buffer expected</p>
+
+<p>编码：audio buffer expected -&gt; Resample -&gt; FIFO -&gt; Encode</p>
+</blockquote>
+
+<p>举个例子，假设一段待Encode的audio buffer格式为8位，长度（framesize）为4096；encoder期望的格式是16位，长度为4096；处理流程为：</p>
+
+<ol>
+<li><p>audio buffer A在通过Resample后会先被转换为长度为<strong><em>8192</em></strong>的16位buffer B；</p></li>
+
+<li><p>write buffer B到FIFO中</p></li>
+
+<li><p>从FIFO中read出长度为4096的buffer C</p></li>
+
+<li><p>Encode buffer C</p></li>
+
+<li><p>3-4循环</p></li>
+</ol>
+
+<p>调用起来和一般的fifo队列基本一致，EOF的时候注意对剩余buffer进行处理（一般是少的部分填空白）就好了。</p>
+
+<p>####内存泄露
+（版本2.4.3）对，就是内存泄露。更准确的说，是一些ffmpeg内部api的“特殊”逻辑，导致了内存泄露。</p>
+
+<p>还记得前面提到的，用sws_scale来处理的“渐隐区”么？ 如果存在渐隐区，就意味着，每次ffmpeg都需要一块额外的buffer，来作为实际encode之前的一个缓冲区。</p>
+
+<p>比较好的方案是一开始create一个temporary buffer，最后释放掉；差一点的方案，即使每次都申请，那么至少每次call <code>av_free_packet</code>的时候也应该释放掉；当然我们每次都“臆测”ffmpeg已经做了至少差一点的方案吧。</p>
+
+<p>但FFmpeg采用的方案是。。。<strong>不 去 释 放</strong> 。。。（好吧，很难说这就是ffmpeg的issue，也可以被解释成调用逻辑不合理T_T）</p>
+
+<p>所以如果发现app（想象一下：android工程，jni调用挂起so，用Monkeyrunner跑压力测试，通过排除法来看哪里出了内存泄露。。。也是醉了）有OOM，不妨往这个方向试试看。</p>
+
+<p>（目前不确定最新的（2014/12/24,版本2.5.2）是否还存在这个情况，待补充）</p>
+
+<p>####版本差异（尤其是老版本与2.x的差异）
+研究不多，个人面对的最大的差异体现在audio部分（其他部分都是参数数量/类型的细微调整，无关调用逻辑）；</p>
+
+<p>为了保持audio/video的decode/encode接口基本一致（洁癖嘛？），FIFO被剥离，导致audio调用逻辑相比较之前要复杂一些；</p>
+
+<p>好处嘛，首先代码看起来舒服多了，其次就是可以“跟”上ffmpeg平均两周一更的步伐（这算好事吧？）</p>
+
+<p>####Android版本编译
+直接参考<a href="http://www.roman10.net/how-to-build-ffmpeg-with-ndk-r9/">Roman的文章</a>即可。
+NDK R10类似。</p>
+
+<p>当然也可以直接用这个<a href="http://chloette.github.io/ffmpeg4android/">ffmpeg4android@github</a>（也是我在维护）</p>
+
+<p>####FFmpegAdapter
+源码上传到<a href="http://chloette.github.io/FFmpegAdapter/">FFmpegAdapter@github</a>，草草上传（疏漏甚多，以后会尽量保持更新）。</p>
+
+<p>最简单的用法就是直接inherit，这样load-library，jni接口映射（这里使用的是ndk默认映射机制，不是manual那套），error-code等都不需要单独写，至少我是这么直接用的。</p>
+
+<p>主要目的是规避GPL开源风险，副产品是清晰了框架。试试看吧。</p>
+
+    </div>
+    
+      <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h">Read other posts</span>
+          <hr />
+        </div>
+        <div class="pagination__buttons">
+          
+            <span class="button previous">
+              <a href="/posts/android-docs-opengles/">
+                <span class="button__icon">←</span>
+                <span class="button__text">Android docs (OpenGLES)</span>
+              </a>
+            </span>
+          
+          
+            <span class="button next">
+              <a href="/posts/astrill-vpn/">
+                <span class="button__text">Astrill VPN</span>
+                <span class="button__icon">→</span>
+              </a>
+            </span>
+          
+        </div>
+      </div>
+    
+
+    
+
+    </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">hello friend</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span>© 2019 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>优化RGB-&gt;YUV :: Hello Friend — A simple theme for Hugo</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="网上随处可见YUV到RGB的优化，其中被借鉴最多的应该就是VP8的源码了吧：
+// Copyright 2010 Google Inc. // // This code is licensed under the same terms as WebM: // Software License Agreement: http://www.webmproject.org/license/software/ // Additional IP Rights Grant: http://www.webmproject.org/license/additional/ // ----------------------------------------------------------------------------- // // YUV-&amp;gt;RGB conversion function // // Author: Skal (pascal.massimino@gmail.com) #include &amp;quot;yuv.h&amp;quot; #if defined(__cplusplus) || defined(c_plusplus) extern &amp;quot;C&amp;quot; { #endif enum { YUV_HALF = 1 &amp;lt;&amp;lt; (YUV_FIX - 1) }; int16_t VP8kVToR[256], VP8kUToB[256]; int32_t VP8kVToG[256], VP8kUToG[256]; uint8_t VP8kClip[YUV_RANGE_MAX - YUV_RANGE_MIN]; static int done = 0; void VP8YUVInit() { int i; if (done) { return; } for (i = 0; i &amp;lt; 256; &#43;&#43;i) { VP8kVToR[i] = (89858 * (i - 128) &#43; YUV_HALF) &amp;gt;&amp;gt; YUV_FIX; VP8kUToG[i] = -22014 * (i - 128) &#43; YUV_HALF; VP8kVToG[i] = -45773 * (i - 128); VP8kUToB[i] = (113618 * (i - 128) &#43; YUV_HALF) &amp;gt;&amp;gt; YUV_FIX; } for (i = YUV_RANGE_MIN; i &amp;lt; YUV_RANGE_MAX; &#43;&#43;i) { const int k = ((i - 16) * 76283 &#43; YUV_HALF) &amp;gt;&amp;gt; YUV_FIX; VP8kClip[i - YUV_RANGE_MIN] = (k &amp;lt; 0) ?"/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="/posts/optimize-rgb-to-yuv/" />
+
+
+<link rel="stylesheet" href="/assets/style.css">
+
+
+<link rel="stylesheet" href="/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="优化RGB-&gt;YUV"/>
+<meta name="twitter:description" content="网上随处可见YUV到RGB的优化，其中被借鉴最多的应该就是VP8的源码了吧：
+// Copyright 2010 Google Inc. // // This code is licensed under the same terms as WebM: // Software License Agreement: http://www.webmproject.org/license/software/ // Additional IP Rights Grant: http://www.webmproject.org/license/additional/ // ----------------------------------------------------------------------------- // // YUV-&gt;RGB conversion function // // Author: Skal (pascal.massimino@gmail.com) #include &quot;yuv.h&quot; #if defined(__cplusplus) || defined(c_plusplus) extern &quot;C&quot; { #endif enum { YUV_HALF = 1 &lt;&lt; (YUV_FIX - 1) }; int16_t VP8kVToR[256], VP8kUToB[256]; int32_t VP8kVToG[256], VP8kUToG[256]; uint8_t VP8kClip[YUV_RANGE_MAX - YUV_RANGE_MIN]; static int done = 0; void VP8YUVInit() { int i; if (done) { return; } for (i = 0; i &lt; 256; &#43;&#43;i) { VP8kVToR[i] = (89858 * (i - 128) &#43; YUV_HALF) &gt;&gt; YUV_FIX; VP8kUToG[i] = -22014 * (i - 128) &#43; YUV_HALF; VP8kVToG[i] = -45773 * (i - 128); VP8kUToB[i] = (113618 * (i - 128) &#43; YUV_HALF) &gt;&gt; YUV_FIX; } for (i = YUV_RANGE_MIN; i &lt; YUV_RANGE_MAX; &#43;&#43;i) { const int k = ((i - 16) * 76283 &#43; YUV_HALF) &gt;&gt; YUV_FIX; VP8kClip[i - YUV_RANGE_MIN] = (k &lt; 0) ?"/>
+
+
+
+<meta property="og:title" content="优化RGB-&gt;YUV" />
+<meta property="og:description" content="网上随处可见YUV到RGB的优化，其中被借鉴最多的应该就是VP8的源码了吧：
+// Copyright 2010 Google Inc. // // This code is licensed under the same terms as WebM: // Software License Agreement: http://www.webmproject.org/license/software/ // Additional IP Rights Grant: http://www.webmproject.org/license/additional/ // ----------------------------------------------------------------------------- // // YUV-&gt;RGB conversion function // // Author: Skal (pascal.massimino@gmail.com) #include &quot;yuv.h&quot; #if defined(__cplusplus) || defined(c_plusplus) extern &quot;C&quot; { #endif enum { YUV_HALF = 1 &lt;&lt; (YUV_FIX - 1) }; int16_t VP8kVToR[256], VP8kUToB[256]; int32_t VP8kVToG[256], VP8kUToG[256]; uint8_t VP8kClip[YUV_RANGE_MAX - YUV_RANGE_MIN]; static int done = 0; void VP8YUVInit() { int i; if (done) { return; } for (i = 0; i &lt; 256; &#43;&#43;i) { VP8kVToR[i] = (89858 * (i - 128) &#43; YUV_HALF) &gt;&gt; YUV_FIX; VP8kUToG[i] = -22014 * (i - 128) &#43; YUV_HALF; VP8kVToG[i] = -45773 * (i - 128); VP8kUToB[i] = (113618 * (i - 128) &#43; YUV_HALF) &gt;&gt; YUV_FIX; } for (i = YUV_RANGE_MIN; i &lt; YUV_RANGE_MAX; &#43;&#43;i) { const int k = ((i - 16) * 76283 &#43; YUV_HALF) &gt;&gt; YUV_FIX; VP8kClip[i - YUV_RANGE_MIN] = (k &lt; 0) ?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/optimize-rgb-to-yuv/" />
+<meta property="article:published_time" content="2014-10-11T09:27:07&#43;00:00"/>
+<meta property="article:modified_time" content="2014-10-11T09:27:07&#43;00:00"/><meta property="og:site_name" content="Hello Friend" />
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">hello friend</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/showcase">Showcase</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  <div class="post">
+    <h2 class="post-title"><a href="/posts/optimize-rgb-to-yuv/">优化RGB-&gt;YUV</a></h2>
+    <div class="post-meta">
+      
+        <span class="post-date">
+            2014-10-11
+        </span>
+      
+      <span class="post-author">— Written by Guo Yi</span>
+      
+    </div>
+
+    
+      <span class="post-tags">
+        
+          #<a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
+        
+          #<a href="/tags/%E4%BC%98%E5%8C%96/">优化</a>&nbsp;
+        
+          #<a href="/tags/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/">色彩空间</a>&nbsp;
+        
+      </span>
+    
+
+    
+
+    <div class="post-content">
+      <p>网上随处可见YUV到RGB的优化，其中被借鉴最多的应该就是<a href="https://code.google.com/p/webm/source/browse/src/libwebp/dec/yuv.c?repo=webp-wic-codec&amp;r=125e890972c0b3a86c592c345f93f15568d8b40c">VP8的源码</a>了吧：</p>
+
+<pre><code class="language-language-c">// Copyright 2010 Google Inc.
+//
+// This code is licensed under the same terms as WebM:
+//  Software License Agreement:  http://www.webmproject.org/license/software/
+//  Additional IP Rights Grant:  http://www.webmproject.org/license/additional/
+// -----------------------------------------------------------------------------
+//
+// YUV-&gt;RGB conversion function
+//
+// Author: Skal (pascal.massimino@gmail.com)
+
+#include &quot;yuv.h&quot;
+
+#if defined(__cplusplus) || defined(c_plusplus)
+extern &quot;C&quot; {
+#endif
+
+enum { YUV_HALF = 1 &lt;&lt; (YUV_FIX - 1) };
+
+int16_t VP8kVToR[256], VP8kUToB[256];
+int32_t VP8kVToG[256], VP8kUToG[256];
+uint8_t VP8kClip[YUV_RANGE_MAX - YUV_RANGE_MIN];
+
+static int done = 0;
+
+void VP8YUVInit() {
+  int i;
+  if (done) {
+    return;
+  }
+  for (i = 0; i &lt; 256; ++i) {
+    VP8kVToR[i] = (89858 * (i - 128) + YUV_HALF) &gt;&gt; YUV_FIX;
+    VP8kUToG[i] = -22014 * (i - 128) + YUV_HALF;
+    VP8kVToG[i] = -45773 * (i - 128);
+    VP8kUToB[i] = (113618 * (i - 128) + YUV_HALF) &gt;&gt; YUV_FIX;
+  }
+  for (i = YUV_RANGE_MIN; i &lt; YUV_RANGE_MAX; ++i) {
+    const int k = ((i - 16) * 76283 + YUV_HALF) &gt;&gt; YUV_FIX;
+    VP8kClip[i - YUV_RANGE_MIN] = (k &lt; 0) ? 0 : (k &gt; 255) ? 255 : k;
+  }
+  done = 1;
+}
+
+#if defined(__cplusplus) || defined(c_plusplus)
+}    // extern &quot;C&quot;
+#endif
+</code></pre>
+
+<p>但罕见RGB到YUV的转换（太冷门了么亲。。。）</p>
+
+<p>移位（浮点转整型）建表后通过查表法来加速转换的代码有这么复杂么。。。</p>
+
+<hr />
+
+<p>做回好人吧。</p>
+
+<p>在上面代码的基础上，增加：（对，我为了看得懂还特意把对应的转换公式（包括YUV-&gt;RGB的）放上去了，这公式见仁见智，有特殊需要的自行替换修改）</p>
+
+<pre><code class="language-language-c">  int16_t Itable257[I_TABLE_SIZE], Itable504[I_TABLE_SIZE], Itable098[I_TABLE_SIZE], Itable148[I_TABLE_SIZE], Itable291[I_TABLE_SIZE], Itable439[I_TABLE_SIZE], Itable368[I_TABLE_SIZE], Itable071[I_TABLE_SIZE];
+
+  static int done = 0;
+
+  /*
+  Y' = 0.257*R' + 0.504*G' + 0.098*B' + 16
+  Cb' = -0.148*R' - 0.291*G' + 0.439*B' + 128
+  Cr' = 0.439*R' - 0.368*G' - 0.071*B' + 128
+  R' = 1.164*(Y'-16) + 1.596*(Cr' - 128) = 1.164*(Y'-16 + 1.371*(Cr'-128) //vise versa
+  G' = 1.164*(Y'-16) - 0.813*(Cr' - 128) - 0.392*(Cb'-128)
+  B' = 1.164*(Y'-16) + 2.017*(Cb' - 128)
+  */
+
+  void TransformTableInit() {
+    int i;
+    if (done) {
+      return;
+    }
+    for (i = 0; i &lt; I_TABLE_SIZE; ++i) {
+      Itable257[i] = (16842 * i + YUV_HALF) &gt;&gt; YUV_FIX;
+      Itable504[i] = (33030 * i + YUV_HALF) &gt;&gt; YUV_FIX;
+      Itable098[i] = (6422 * i + YUV_HALF) &gt;&gt; YUV_FIX;
+      Itable148[i] = (-9699 * i + YUV_HALF) &gt;&gt; YUV_FIX;
+      Itable291[i] = (-19070 * i + YUV_HALF) &gt;&gt; YUV_FIX;
+      Itable439[i] = (28770 * i + YUV_HALF) &gt;&gt; YUV_FIX;
+      Itable368[i] = (-24117 * i + YUV_HALF) &gt;&gt; YUV_FIX;
+      Itable071[i] = (-4653 * i + YUV_HALF) &gt;&gt; YUV_FIX;
+    }
+    done = 1;
+  }
+</code></pre>
+
+<p>还是熟悉的用法，还是熟悉的味道：</p>
+
+<pre><code class="language-language-c">  inline static void RgbToY(uint8_t* rgb, uint8_t* const y) {
+    *y = Itable257[rgb[0]] + Itable504[rgb[1]] + Itable098[rgb[2]] + 16;
+  }
+
+  inline static void RgbToU(uint8_t* rgb, uint8_t* const u) {
+    *u = Itable148[rgb[0]] + Itable291[rgb[1]] + Itable439[rgb[2]] + 128;
+  }
+
+  inline static void RgbToV(uint8_t* rgb, uint8_t* const v) {
+    *v = Itable439[rgb[0]] + Itable368[rgb[1]] + Itable071[rgb[2]] + 128;
+  }
+
+  inline static void RgbToYuv(uint8_t* rgb, uint8_t* const y, uint8_t* const u, uint8_t* const v) {
+    RgbToY(rgb, y);
+    RgbToU(rgb, u);
+    RgbToV(rgb, v);
+  }
+
+  inline static void RgbaToYuv(uint8_t* rgba, uint8_t* const y, uint8_t* const u, uint8_t* const v) {
+    RgbToYuv(rgba, y, u, v);
+  }
+</code></pre>
+
+    </div>
+    
+      <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h">Read other posts</span>
+          <hr />
+        </div>
+        <div class="pagination__buttons">
+          
+            <span class="button previous">
+              <a href="/posts/ghost-upgrade-to-0-5-3/">
+                <span class="button__icon">←</span>
+                <span class="button__text">Ghost upgrade to 0.5.3</span>
+              </a>
+            </span>
+          
+          
+            <span class="button next">
+              <a href="/posts/ffmpeg-secure-a-place-in-opw/">
+                <span class="button__text">FFmpeg提供给OPW一个实习岗位</span>
+                <span class="button__icon">→</span>
+              </a>
+            </span>
+          
+        </div>
+      </div>
+    
+
+    
+
+    </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">hello friend</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span>© 2019 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

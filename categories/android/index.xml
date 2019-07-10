@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Android on Hello Friend</title>
+    <link>/categories/android/</link>
+    <description>Recent content in Android on Hello Friend</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 20 Jun 2015 08:35:16 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/android/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Android支持按键双击事件</title>
+      <link>/posts/android-support-double-tap/</link>
+      <pubDate>Sat, 20 Jun 2015 08:35:16 +0000</pubDate>
+      
+      <guid>/posts/android-support-double-tap/</guid>
+      <description>最近做的东西比较杂，是得梳理一下了~
+参考了这篇文章。
+按键双击，这种组合键的做法类似volume down键 + power键 = 截屏
+因为两个按键之间肯定会有时间差，而双击其实就是x键 + x键；
+开翻~
+Android上keyevent，在framework层是由window manager来负责转发，找到PhoneWindowManager，会发现这里对于keyevent的各种intercept简直就是hook的绝佳地点：
+interceptKeyBeforeDispatching(WindowState win, KeyEvent event, int policyFlags)
+interceptKeyBeforeQueueing(KeyEvent event, int policyFlags)
+等。。。
+找到interceptKeyBeforeDispatching对volume down + power的处理（或者直接参考mHomeDoubleTapTimeoutRunnable），参考即可（可以顺着mVolumeDownKeyTriggered去看在哪里触发，在哪里判定tolerance的）
+基本流程就是： volume down先被点击的时候，记录下来时间； power点击的时候，判断是否在tolerance里面； 同理，power先被点击的时候，一样记录下来时间； 在volume down被点击的时候，判断是否在tolerance里面；
+这样就确定了是否是截屏“操作”，如果是，就consume这个事件（不再向上转发，直接return掉）；同时通过mScreenshotRunnable去截屏。
+同样，双击事件也一样（甚至更简单），前一次点击纪录下来时间，下次点击计算是否在tolerance中即可（就不贴代码了，因为太懒（烂）了。。。）
+其实L的代码，在window manager这里已经实现了volume down + power、volume up + power、 double tap home；参考对应的来实现一个即可。
+还有一点就是如何在屏幕没点亮的时候监听按键；
+在interceptKeyBeforeQueueing中找到interactive，（还没试，应该是用这个来决定是否screen on）
+就这个啦，即使这个为false的时候依然把keyevent传递出去就好了~ （或者简单点就参考power键~ ）
+基本如上~
+TADA~</description>
+    </item>
+    
+    <item>
+      <title>用Selinux遇到的限制</title>
+      <link>/posts/selinux-limitation/</link>
+      <pubDate>Sat, 20 Jun 2015 06:58:44 +0000</pubDate>
+      
+      <guid>/posts/selinux-limitation/</guid>
+      <description>（一停手就是若干年啊。。。）
+在做一个有趣的小功能，具体什么就不说了。中途遇到了一个问题，media进程直接写文件的时候无权限：
+fopen后strerrno(errno)是：permission denied.
+翻了翻，应该是sepolicy（selinux）的限制导致的。
+找到篇文章大概介绍了selinux和sepolicy设置（android L开始是建议厂商强制使用的）
+还有一篇更偏实用。
+打开/external/sepolicy/mediaserver.te
+（其实还有一个device/qcom/sepolicy/common/mediaserver.te，暂未确认是用哪个，还是做了一个交集）
+但可以确认的是camera_data_file应该是可写的：
+allow mediaserver camera_data_file:dir rw_dir_perms; allow mediaserver camera_data_file:file create_file_perms;
+那具体camera_data_file是哪里那？继续翻：
+在/external/sepolicy/file_contexts里面：
+/data/misc/camera(/.*)? u:object_r:camera_data_file:s0
+既然这样，那就直接往这个目录下面写吧~
+改完测试，一切OK~</description>
+    </item>
+    
+    <item>
+      <title>Android Camera HAL3.0</title>
+      <link>/posts/android-camera-hal3-0/</link>
+      <pubDate>Sat, 11 Apr 2015 07:15:21 +0000</pubDate>
+      
+      <guid>/posts/android-camera-hal3-0/</guid>
+      <description>官网文档在此
+简单来说，3.0的设计初衷就是 &amp;ndash; 提供per-frame操作的灵活性。
+更多细节在官网上写的很清楚了，这里就不再赘述。
+罗列一些点，跨度比较大，想到哪说到哪。
+######Camera 接口 首先接口本身的设计存在缺陷：
+例如setPreviewSize和setPreviewFrameRate是无关的。（但其实这很有关系）
+对于ISP这种pipeline来说，类比水管，最大出水量是恒定的；所以理论上，单帧size越大，那帧率（fps）也就越低。
+所以size和fps是应该有明确的对应关系的。但这个接口把这个关系打破了。
+那是否就无法获取这种对应关系了那？
+并不是。Camera提供了CameraCharacteristics来获取更具体的信息，但是要麻烦一些；
+可以参考cts测试中，getAvailableMinFrameDurationsForFormatChecked的做法；通过StreamConfigurationMap来算出fps和width/height的关系。
+######CTS CTS的加强； 5.0以来，camera的CTS测试case从3x项增加到了3xx项。。。通过cts更加困难。 初衷是好的，会改善android目前不容乐观的rom兼容性。 但真相是，这套测试更像是一张考卷，上有政策下有对策的大有人在。
+（不断补充ing）</description>
+    </item>
+    
+    <item>
+      <title>Android ImageFetcher</title>
+      <link>/posts/android-imagefetcher/</link>
+      <pubDate>Wed, 21 Jan 2015 06:15:21 +0000</pubDate>
+      
+      <guid>/posts/android-imagefetcher/</guid>
+      <description>Google完善文档后，也提供了一大批优秀的源代码。
+ImageFetcher就是其中之一，这货非常简洁的实现了用ImageView来异步加载网页图片，同时对图片进行二级缓存的功能。
+稍微改改就可以轻松适配任何图片资源（例如本地，例如需特殊条件（如宽高，比例，透明度等）等）了。
+主体代码构成： 外部调用如下：
+ New：
+ImageFetcher imageFetcher = new ImageFetcher(context, width, height);  就可以了。
+当然这里一般都会改动；
+例如为了区分cache目录，会把unique folder name作为参数传入进去）。
+例如为了替换默认图，把图标传进去。
+例如为了适配任何图片资源，增加自定义的ImageProvider，也在初始化的时候传进去。
+ Load bitmap：   imageFetcher.loadImage(pathString, (ImageView) view.findViewById(R.id.thumbnail));   这样这个ImageView就会在图片通过异步下载好（并缓存）以后，自己加载显示出来了～
+ Close cache：  imageFetcher.setPauseWork(false); imageFetcher.closeCache();  就是这么简单任性～
+内部逻辑重点的几个：
+ 对Download下来的图片，使用DiskLruCache来本地缓存，使用LruCache作为内存缓存；
+ 使用AsyncTask（WeakReference）来异步download图片；结束后对ImageView（WeakReference）进行setImageDrawable（AsyncDrawable）；这里的AsyncDrawable内部有正在处理自身的AsyncTask的WeakReference，所以可以避免重复execute的情况；每次都会先cancel之前的。
+ AsyncTask跑在Executor（线程池）中。
+  主要原理就是这样，其中一些细节可以自己翻源码～～ 非常方便使用和扩展～ 基本已经成为搭项目时必备库之一。
+但是这里有一点，需要注意！
+谨慎使用ImageFetcher.setPauseWork
+官方Sample给出了两个用法，看起来前后有一点矛盾：
+一个是在Grid滑动的时候：
+public void onScrollStateChanged(AbsListView absListView, int scrollState) { // Pause fetcher to ensure smoother scrolling when flinging if (scrollState == AbsListView.</description>
+    </item>
+    
+    <item>
+      <title>Android SparseArray中indexOfValue返回-1</title>
+      <link>/posts/android-sparsearray-indexofvalue-return-negative-1/</link>
+      <pubDate>Tue, 13 Jan 2015 12:55:43 +0000</pubDate>
+      
+      <guid>/posts/android-sparsearray-indexofvalue-return-negative-1/</guid>
+      <description>继续Android。
+SparseArray&amp;lt;T&amp;gt;是蛮好用的基本类型，一般用来替换掉HashMap&amp;lt;Integer, T&amp;gt;。
+有时候偷懒，也会用它来替换Object[]，也就是基本数组。
+因为这货有indexOfValue（这样就不用去遍历找索引啦），遍历也比HashMap方便的多。可以满足对基本数组的需要（但性能不高，使用需谨慎，文档有详细解释为什么）。
+但是，这玩意儿有个坑，也就在indexOfValue里面。
+当用它来存储String时，可能会出现明明Value已经put进去了，但是indexOfValue就是返回-1的情况。
+一开始还以为可能是线程安全相关的问题，还打算加锁来着。结果。。。
+原因在于：
+ Note also that unlike most collections&amp;rsquo; indexOf methods, this method compares values using == rather than equals.
+ 源码如下：
+public int indexOfValue(E value) { if (mGarbage) { gc(); } for (int i = 0; i &amp;lt; mSize; i++) if (mValues[i] == value) return i; return -1; }  T_T
+Java中，字符串比较用==和equals的区别就不用解释了吧。。。
+你说Android你加个方便好用的数据结构你用个equals能咋样。。。又中枪了。。。</description>
+    </item>
+    
+    <item>
+      <title>Android RelativeLayout中wrap_content和alignParentBottom的冲突</title>
+      <link>/posts/android-conflict-of-relativelayout-between-wrapcontent-and-alignparentbottom/</link>
+      <pubDate>Mon, 12 Jan 2015 08:25:33 +0000</pubDate>
+      
+      <guid>/posts/android-conflict-of-relativelayout-between-wrapcontent-and-alignparentbottom/</guid>
+      <description>继续随便记录一下，之前也说过，Android类似的坑不少。
+下面又是一例：
+RelativeLayout中，为了方便布局，子view经常会用到alignParentBottom/Top/Left/Right等，如：
+android:layout_alignParentBottom=&amp;quot;true&amp;quot;  但这时候需要注意的是，如果parent是wrap_content的话，alignParentRight就意味着要求parent的layout_width=&amp;quot;match_parent&amp;quot;； alignParentBottom就意味着要求parent的layout_height=&amp;quot;match_parent&amp;quot;
+这会带来什么问题那？两个问题：
+ 显示错误。在布局嵌套的环境下，例如布局A包含B和C，在A里面，B above C：（伪布局代码）  RelativeLayout width=match_parent height=match_parent id=&amp;quot;A&amp;quot; XXLayout width=match_parent height=wrap_content above=&amp;quot;C&amp;quot; id=&amp;quot;B&amp;quot; RelativeLayout width=match_parent height=wrap_content id=&amp;quot;C&amp;quot; XXView width=match_parent height=wrap_content android:layout_alignParentBottom=&amp;quot;true&amp;quot; src=xxx  本意是希望在布局A里面，B可以在C上面显示，C里面显示xxx；
+但是结果是：C会撑满A，然后导致B不可见。
+改法很简单，去掉 language-bash android:layout_alignParentBottom=&amp;quot;true&amp;quot; 即可。
+实际原因我没有去翻源码，不确定；但是猜测和Android的绘制/计算布局的方向有关，Android默认是从屏幕左上角向右下角绘制（在写自定义view，重载onDraw，或者坐标计算的时候需要依赖这种“特性”），所以在这种情况下，alignBottom或alignRight后，“画布”就自然而然被顶到下边和右边去了。
+ 性能。对，就是性能；撑满屏幕意味着这个view（例如上面的C）的刷新，不只是局部刷新，而是整屏刷新（即使XXView可能只是一个bottom bar这种非全屏的view），所以不管是耗电量还是性能，都会受到一定的影响。  综上，在设计layout的时候，需要注意方向带来的影响，同时注意不同属性之间可能导致的“冲突”。
+记录一下。</description>
+    </item>
+    
+    <item>
+      <title>Android LinearLayout动态增加item时Weight的设置</title>
+      <link>/posts/android-linear-layout-weight-setting-when-adding-child-dynamically/</link>
+      <pubDate>Fri, 09 Jan 2015 04:50:13 +0000</pubDate>
+      
+      <guid>/posts/android-linear-layout-weight-setting-when-adding-child-dynamically/</guid>
+      <description>Andorid上，LinearLayout动态增加child item时，一般如下：
+addView(child)  即可。
+child item可以从xml中直接inflate出来。
+这里有个问题是，动态增加的话，child item中的weight，在add到LinearLayout后无效（用LinearLayout，很多时候就是冲着weight去的，因为可以很容易做到对齐和分割）。
+唯一的办法是在addView的时候用新的LayoutParams来指定weight：
+addView(child, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT, 1));  最好设置一下weightSum：
+setWeightSum(childCount);  Android的layout配置中，类似的坑数不尽。。。再加上不同OS版本的不同表现，简直了T_T。。
+记录一下。</description>
+    </item>
+    
+    <item>
+      <title>Android java.lang.ClassNotFoundException</title>
+      <link>/posts/android-java-lang-classnotfoundexception/</link>
+      <pubDate>Wed, 19 Nov 2014 09:07:32 +0000</pubDate>
+      
+      <guid>/posts/android-java-lang-classnotfoundexception/</guid>
+      <description>ClassNotFound原因较多，这里列一个特殊case：
+抽象类A，因项目关系，code clean后，已无抽象方法（但依然带着abstract关键字）
+没深究过java语法，不过没有抽象方法却声明为抽象类，至少该有个警告把？而这里Eclipse（ADT）/Android studio均无任何提示，所以怀疑是JDK的bug）。
+Main activity继承自A。然后启动Main activity即报ClassNotFound。
+log里面会有奇怪的：
+11-19 16:51:21.301 W/dalvikvm(31571): Unable to resolve superclass of LxxxA; (207) 11-19 16:51:21.301 W/dalvikvm(31571): Link of class &#39;LxxxA;&#39; failed 11-19 16:51:21.301 W/dalvikvm(31571): Unable to resolve superclass of LxxxMain (1447) 11-19 16:51:21.301 W/dalvikvm(31571): Link of class &#39;LxxxMain;&#39; failed  修改方法很简单，把那个无用的abstract关键字去掉就好了。
+记录一下。</description>
+    </item>
+    
+    <item>
+      <title>关于Android如何动态加载res</title>
+      <link>/posts/about-loading-res-from-apk-directly/</link>
+      <pubDate>Fri, 07 Nov 2014 03:15:58 +0000</pubDate>
+      
+      <guid>/posts/about-loading-res-from-apk-directly/</guid>
+      <description>最近抽时间看了一下android插件化的东西。
+也稍微研究了一下。总结一下权当记录。
+同时也把研究过程中的testbed上传到github了，造福后人吧。
+####为什么需要插件化？
+最简单的原因大概就是为了避免过大的体积（rom size），以加速下载和安装。
+更多的原因例如插件化后可以单独升级避免每次一个小改动就app体量的升级，为了针对不同区域不同用户做不同的适配，为了市场更高的单app评分（插件的差评不算主app中）等等。
+####哪些可以插件化？
+大部分的功能性代码/资源及非自定义的布局
+####可用插件化方案： 这里仅讨论：以apk（在插件化的前提下，相比较jar，apk要灵活的多）的形式插件化的方案。
+这里不讨论：自行定义数据格式，并自行实现解析器（parser或LayoutInflater）的方案。（因为造这种轮子总让我想起曾经一个叫XXUI的垃圾框架。。。）
+ 已安装插件apk的情况下：
+ 读取静态资源（如png/jpg等） 可以通过AIDL的方式直接获取，这里不赘述。
+ 读取并执行功能函数： 同上。参数不可序列化的情况，可参考下面“不安装插件apk的情况”
+ 读取布局 简单布局同上，自定义布局不确定是否可行（不过已经安装了，这就不重要了）。
+ 直接启动activity 因为已安装，所以直接intent去start acitivty即可。
+  未安装插件apk的情况下：
+ 读取静态资源（如png/jpg等）
+例如从包名com.example.plugin里，读取名为test的drawable资源
+String libPath = Environment.getExternalStorageDirectory() + &amp;quot;/Plugin.apk&amp;quot;; try { AssetManager assetManager = AssetManager.class.newInstance(); Method addAssetPath = assetManager.getClass().getMethod( &amp;quot;addAssetPath&amp;quot;, String.class); addAssetPath.invoke(assetManager, libPath); mAssetManager = assetManager; } catch (Exception e) { e.printStackTrace(); } Resources superRes = super.getResources(); mResources = new Resources(mAssetManager, superRes.</description>
+    </item>
+    
+    <item>
+      <title>Jenkins android 自动化编译的一些坑</title>
+      <link>/posts/jenkins-android-auto-build-problems/</link>
+      <pubDate>Fri, 19 Sep 2014 09:16:23 +0000</pubDate>
+      
+      <guid>/posts/jenkins-android-auto-build-problems/</guid>
+      <description>Jenkins就是Hudson的元老们，对Oracle注册Hudson商标（Sun被吃了嘛）并且打算将其私有商业化表示不满后，另起炉灶的产物（所以和hudson不仅看起来像，连插件基本都通用。。。） 更具体的细节请移步Wiki
+[本文非科普/教程贴，仅供尝试使用Jenkins/Hudson但遇到问题的同学们，填平几个脚下的坑。]
+###基本教程：
+直接安装运行install jenkins就可以了，然后访问localhost:8080就可以看到基本页面。
+https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu https://wiki.jenkins-ci.org/display/JENKINS/GMail
+一般安装插件如下：
+https://wiki.jenkins-ci.org/display/JENKINS/Ant+Plugin https://wiki.jenkins-ci.org/display/JENKINS/Android+Lint+Plugin https://wiki.jenkins-ci.org/display/JENKINS/Android+Emulator+Plugin http://wiki.hudson-ci.org/display/HUDSON/Subversion+Release+Manager
+配置参考如下即可：
+http://java.dzone.com/articles/automating-continuous https://wiki.jenkins-ci.org/display/JENKINS/Building+an+Android+app+and+test+project
+###注意事项：
+一般如上操作，就差不多可以去“build”了。但很可能是荆棘遍野的，这里罗列一些遇到的坑：
+ 多工程依赖 如工程A，有两个依赖的library工程B和C，这时候除了需要在工程A下面生成build.xml和project.properties，还需要在工程B和C下面同样生成（android update project）；然后编译的时候在Ant的Build File里面使用工程A的build.xml即可
+ 路径问题 如果出现明明project.properties里面有注明android.library.reference.1=xxx的依赖项，编译时依然找不到；请确认路径是../../xxx的格式而不是..\\..\\xxx的格式。（反斜杠不兼容）
+ native库（.so）问题 如果出现库无法链接，或者没有打包到apk中的情况；请确认是否是target版本不对，目前android-20是存在一些问题的（例如安装后不能运行等。。。），暂不建议使用（2014/9/11）
+ 环境变量问题
+如出现环境变量找不到，可以直接加在Ant的Properties里面，如：
+sdk.dir=/xxx/xxx/xxx/sdk   签名问题   把key找个位置放好，然后在Ant的Properties里面加入：
+key.store=/xxx/xxx/xxx.key key.alias=xxx key.store.password=xxx key.alias.password=xxx  提示空间不足
+多次编译后如空间不足，最好将JENKINS_HOME（主要是改这个环境变量）迁移到其他盘（默认是/var/lib/jenkins）; 如果遇到了503的话，一般是权限不对，把新目录的owner改为jenkins:jenkins，权限改为755即可。
+ 多文件打包
+不支持多个文件同时输出（除非有name上的关联，如**/*.apk这种），这里可以用shell命令来打包；如tar；这里可以使用全局变量方便命名，如$JOB_NAME或者$WORKSPACE等等，举个栗子：
+cd $WORKSPACE/code/XXX/bin/ tar zcvf $JOB_NAME.tar.gz proguard/mapping.txt xxx.apk  最后Archive the artifaces填**/*.tar.gz就好了
+ 如何删除SVN的登录信息   登录服务器（界面上没找到修改的地方），Edit your HUDSON_HOME/hudson.scm.SubversionSCM.xml file and delete your /credentials/entry matching with your realm (and having your given username).</description>
+    </item>
+    
+    <item>
+      <title>说说前段时间闹得很凶的“手机超级病毒”</title>
+      <link>/posts/shuo-shuo-qian-duan-shi-jian-nao-de-hen-xiong-de-shou-ji-chao-ji-bing-du/</link>
+      <pubDate>Sat, 06 Sep 2014 11:25:36 +0000</pubDate>
+      
+      <guid>/posts/shuo-shuo-qian-duan-shi-jian-nao-de-hen-xiong-de-shou-ji-chao-ji-bing-du/</guid>
+      <description>如手机超级病毒
+之前的之前有public过一份源码，在开放信息间谍的全部源码并停止服务
+那代码里面已经涵盖了对短信/通话记录/联系人的获取和上传等功能（甚至基站定位的代码都有。。。），换言之，直接拿这源码改几行代码就可以完成那个所谓的“手机超级病毒”鸟。（如果乐意，即使是生手，花一点点时间也可以发布“病毒”了！）
+这么一个low level用来忽悠忽悠抓小三的怨妇们的玩意儿，加了一个短信群发，居然被炒的如此火热。。。也许是那段时间没新闻了所以硬要拉点头条出来吧。。。
+对于那些在这件事情上说“you can you up, no can no BB”的人，我要说一声，“我有代码，你上吧。”</description>
+    </item>
+    
+  </channel>
+</rss>

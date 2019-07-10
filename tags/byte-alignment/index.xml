@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Byte alignment on Hello Friend</title>
+    <link>/tags/byte-alignment/</link>
+    <description>Recent content in Byte alignment on Hello Friend</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 24 Aug 2013 21:31:11 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/byte-alignment/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Be care of the Byte Alignment in Type Cast.</title>
+      <link>/posts/be-care-of-the-byte-alignment-in-type-cast/</link>
+      <pubDate>Sat, 24 Aug 2013 21:31:11 +0000</pubDate>
+      
+      <guid>/posts/be-care-of-the-byte-alignment-in-type-cast/</guid>
+      <description>Be care of the Byte Alignment in Type Cast.
+For example, if you have one buffer(void*) with data follow this structure:
+typedef struct { uint8_t a; uint8_t b; uint32_t c; } xxx_t  Normally, it needs 6 bytes per data, right? But, actually, when you did type cast, like (xxx_t*)buffer the data will be totally wrong (probably a and b is right, but c is holy shit).
+The root cause, is Byte alignment.</description>
+    </item>
+    
+  </channel>
+</rss>

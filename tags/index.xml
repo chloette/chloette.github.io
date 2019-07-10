@@ -1,0 +1,1311 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Hello Friend</title>
+    <link>/tags/</link>
+    <description>Recent content in Tags on Hello Friend</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 14 Oct 2015 07:14:29 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ubuntu</title>
+      <link>/tags/ubuntu/</link>
+      <pubDate>Wed, 14 Oct 2015 07:14:29 +0000</pubDate>
+      
+      <guid>/tags/ubuntu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>forget password</title>
+      <link>/tags/forget-password/</link>
+      <pubDate>Wed, 14 Oct 2015 07:14:29 +0000</pubDate>
+      
+      <guid>/tags/forget-password/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>忘记密码</title>
+      <link>/tags/%E5%BF%98%E8%AE%B0%E5%AF%86%E7%A0%81/</link>
+      <pubDate>Wed, 14 Oct 2015 07:14:29 +0000</pubDate>
+      
+      <guid>/tags/%E5%BF%98%E8%AE%B0%E5%AF%86%E7%A0%81/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>李刚</title>
+      <link>/tags/%E6%9D%8E%E5%88%9A/</link>
+      <pubDate>Sat, 10 Oct 2015 07:22:28 +0000</pubDate>
+      
+      <guid>/tags/%E6%9D%8E%E5%88%9A/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>网络暴力</title>
+      <link>/tags/%E7%BD%91%E7%BB%9C%E6%9A%B4%E5%8A%9B/</link>
+      <pubDate>Sat, 10 Oct 2015 07:22:28 +0000</pubDate>
+      
+      <guid>/tags/%E7%BD%91%E7%BB%9C%E6%9A%B4%E5%8A%9B/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Android</title>
+      <link>/tags/android/</link>
+      <pubDate>Sat, 20 Jun 2015 08:35:16 +0000</pubDate>
+      
+      <guid>/tags/android/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>双击</title>
+      <link>/tags/%E5%8F%8C%E5%87%BB/</link>
+      <pubDate>Sat, 20 Jun 2015 08:35:16 +0000</pubDate>
+      
+      <guid>/tags/%E5%8F%8C%E5%87%BB/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>技术</title>
+      <link>/tags/%E6%8A%80%E6%9C%AF/</link>
+      <pubDate>Sat, 20 Jun 2015 08:35:16 +0000</pubDate>
+      
+      <guid>/tags/%E6%8A%80%E6%9C%AF/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Selinux</title>
+      <link>/tags/selinux/</link>
+      <pubDate>Sat, 20 Jun 2015 06:58:44 +0000</pubDate>
+      
+      <guid>/tags/selinux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sepolicy</title>
+      <link>/tags/sepolicy/</link>
+      <pubDate>Sat, 20 Jun 2015 06:58:44 +0000</pubDate>
+      
+      <guid>/tags/sepolicy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Camera</title>
+      <link>/tags/camera/</link>
+      <pubDate>Sun, 03 May 2015 14:23:04 +0000</pubDate>
+      
+      <guid>/tags/camera/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sensor</title>
+      <link>/tags/sensor/</link>
+      <pubDate>Sun, 03 May 2015 14:23:04 +0000</pubDate>
+      
+      <guid>/tags/sensor/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>成像</title>
+      <link>/tags/%E6%88%90%E5%83%8F/</link>
+      <pubDate>Sun, 03 May 2015 14:23:04 +0000</pubDate>
+      
+      <guid>/tags/%E6%88%90%E5%83%8F/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>记录</title>
+      <link>/tags/%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Sun, 26 Apr 2015 09:26:35 +0000</pubDate>
+      
+      <guid>/tags/%E8%AE%B0%E5%BD%95/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>HAL</title>
+      <link>/tags/hal/</link>
+      <pubDate>Sat, 11 Apr 2015 07:15:21 +0000</pubDate>
+      
+      <guid>/tags/hal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>monkeyrunner</title>
+      <link>/tags/monkeyrunner/</link>
+      <pubDate>Sun, 05 Apr 2015 10:54:28 +0000</pubDate>
+      
+      <guid>/tags/monkeyrunner/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>奇技淫巧</title>
+      <link>/tags/%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/</link>
+      <pubDate>Sun, 05 Apr 2015 10:54:28 +0000</pubDate>
+      
+      <guid>/tags/%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>windows</title>
+      <link>/tags/windows/</link>
+      <pubDate>Wed, 18 Mar 2015 06:26:36 +0000</pubDate>
+      
+      <guid>/tags/windows/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>免费</title>
+      <link>/tags/%E5%85%8D%E8%B4%B9/</link>
+      <pubDate>Wed, 18 Mar 2015 06:26:36 +0000</pubDate>
+      
+      <guid>/tags/%E5%85%8D%E8%B4%B9/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>打工旅行</title>
+      <link>/tags/%E6%89%93%E5%B7%A5%E6%97%85%E8%A1%8C/</link>
+      <pubDate>Mon, 09 Mar 2015 12:00:00 +0000</pubDate>
+      
+      <guid>/tags/%E6%89%93%E5%B7%A5%E6%97%85%E8%A1%8C/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>新西兰</title>
+      <link>/tags/%E6%96%B0%E8%A5%BF%E5%85%B0/</link>
+      <pubDate>Mon, 09 Mar 2015 12:00:00 +0000</pubDate>
+      
+      <guid>/tags/%E6%96%B0%E8%A5%BF%E5%85%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>生活</title>
+      <link>/tags/%E7%94%9F%E6%B4%BB/</link>
+      <pubDate>Mon, 09 Mar 2015 12:00:00 +0000</pubDate>
+      
+      <guid>/tags/%E7%94%9F%E6%B4%BB/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Internet</title>
+      <link>/tags/internet/</link>
+      <pubDate>Sat, 07 Mar 2015 10:58:42 +0000</pubDate>
+      
+      <guid>/tags/internet/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>协议栈</title>
+      <link>/tags/%E5%8D%8F%E8%AE%AE%E6%A0%88/</link>
+      <pubDate>Sat, 07 Mar 2015 10:58:42 +0000</pubDate>
+      
+      <guid>/tags/%E5%8D%8F%E8%AE%AE%E6%A0%88/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ghost</title>
+      <link>/tags/ghost/</link>
+      <pubDate>Fri, 06 Mar 2015 05:09:09 +0000</pubDate>
+      
+      <guid>/tags/ghost/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>highlight syntax</title>
+      <link>/tags/highlight-syntax/</link>
+      <pubDate>Wed, 04 Mar 2015 03:15:57 +0000</pubDate>
+      
+      <guid>/tags/highlight-syntax/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>QQ</title>
+      <link>/tags/qq/</link>
+      <pubDate>Tue, 03 Mar 2015 06:39:21 +0000</pubDate>
+      
+      <guid>/tags/qq/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TED</title>
+      <link>/tags/ted/</link>
+      <pubDate>Tue, 03 Mar 2015 05:35:47 +0000</pubDate>
+      
+      <guid>/tags/ted/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>囚徒健身</title>
+      <link>/tags/%E5%9B%9A%E5%BE%92%E5%81%A5%E8%BA%AB/</link>
+      <pubDate>Sat, 28 Feb 2015 06:54:00 +0000</pubDate>
+      
+      <guid>/tags/%E5%9B%9A%E5%BE%92%E5%81%A5%E8%BA%AB/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>EVA</title>
+      <link>/tags/eva/</link>
+      <pubDate>Fri, 20 Feb 2015 10:29:36 +0000</pubDate>
+      
+      <guid>/tags/eva/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>NERV</title>
+      <link>/tags/nerv/</link>
+      <pubDate>Fri, 20 Feb 2015 10:29:36 +0000</pubDate>
+      
+      <guid>/tags/nerv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GTA</title>
+      <link>/tags/gta/</link>
+      <pubDate>Fri, 20 Feb 2015 09:17:39 +0000</pubDate>
+      
+      <guid>/tags/gta/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>美亚</title>
+      <link>/tags/%E7%BE%8E%E4%BA%9A/</link>
+      <pubDate>Thu, 12 Feb 2015 10:08:36 +0000</pubDate>
+      
+      <guid>/tags/%E7%BE%8E%E4%BA%9A/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>load library</title>
+      <link>/tags/load-library/</link>
+      <pubDate>Thu, 12 Feb 2015 04:27:27 +0000</pubDate>
+      
+      <guid>/tags/load-library/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>APK Expansion</title>
+      <link>/tags/apk-expansion/</link>
+      <pubDate>Wed, 11 Feb 2015 07:17:39 +0000</pubDate>
+      
+      <guid>/tags/apk-expansion/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>zsh</title>
+      <link>/tags/zsh/</link>
+      <pubDate>Tue, 10 Feb 2015 07:12:29 +0000</pubDate>
+      
+      <guid>/tags/zsh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>工具</title>
+      <link>/tags/%E5%B7%A5%E5%85%B7/</link>
+      <pubDate>Tue, 10 Feb 2015 07:12:29 +0000</pubDate>
+      
+      <guid>/tags/%E5%B7%A5%E5%85%B7/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OS</title>
+      <link>/tags/os/</link>
+      <pubDate>Mon, 09 Feb 2015 10:37:17 +0000</pubDate>
+      
+      <guid>/tags/os/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>体验</title>
+      <link>/tags/%E4%BD%93%E9%AA%8C/</link>
+      <pubDate>Mon, 09 Feb 2015 10:37:17 +0000</pubDate>
+      
+      <guid>/tags/%E4%BD%93%E9%AA%8C/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gallery</title>
+      <link>/tags/gallery/</link>
+      <pubDate>Mon, 09 Feb 2015 07:26:01 +0000</pubDate>
+      
+      <guid>/tags/gallery/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>微信</title>
+      <link>/tags/%E5%BE%AE%E4%BF%A1/</link>
+      <pubDate>Thu, 22 Jan 2015 09:27:46 +0000</pubDate>
+      
+      <guid>/tags/%E5%BE%AE%E4%BF%A1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>/tags/python/</link>
+      <pubDate>Wed, 21 Jan 2015 12:07:06 +0000</pubDate>
+      
+      <guid>/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>script</title>
+      <link>/tags/script/</link>
+      <pubDate>Wed, 21 Jan 2015 12:07:06 +0000</pubDate>
+      
+      <guid>/tags/script/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ImageFetcher</title>
+      <link>/tags/imagefetcher/</link>
+      <pubDate>Wed, 21 Jan 2015 06:15:21 +0000</pubDate>
+      
+      <guid>/tags/imagefetcher/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>EC2</title>
+      <link>/tags/ec2/</link>
+      <pubDate>Tue, 20 Jan 2015 06:54:26 +0000</pubDate>
+      
+      <guid>/tags/ec2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>proguard</title>
+      <link>/tags/proguard/</link>
+      <pubDate>Sat, 17 Jan 2015 08:01:38 +0000</pubDate>
+      
+      <guid>/tags/proguard/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>混淆</title>
+      <link>/tags/%E6%B7%B7%E6%B7%86/</link>
+      <pubDate>Sat, 17 Jan 2015 08:01:38 +0000</pubDate>
+      
+      <guid>/tags/%E6%B7%B7%E6%B7%86/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gradle</title>
+      <link>/tags/gradle/</link>
+      <pubDate>Thu, 15 Jan 2015 13:17:06 +0000</pubDate>
+      
+      <guid>/tags/gradle/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jenkins</title>
+      <link>/tags/jenkins/</link>
+      <pubDate>Thu, 15 Jan 2015 13:17:06 +0000</pubDate>
+      
+      <guid>/tags/jenkins/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SparseArray</title>
+      <link>/tags/sparsearray/</link>
+      <pubDate>Tue, 13 Jan 2015 12:55:43 +0000</pubDate>
+      
+      <guid>/tags/sparsearray/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RelativeLayout</title>
+      <link>/tags/relativelayout/</link>
+      <pubDate>Mon, 12 Jan 2015 08:25:33 +0000</pubDate>
+      
+      <guid>/tags/relativelayout/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>View</title>
+      <link>/tags/view/</link>
+      <pubDate>Mon, 12 Jan 2015 08:25:33 +0000</pubDate>
+      
+      <guid>/tags/view/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>图片</title>
+      <link>/tags/%E5%9B%BE%E7%89%87/</link>
+      <pubDate>Tue, 06 Jan 2015 03:26:26 +0000</pubDate>
+      
+      <guid>/tags/%E5%9B%BE%E7%89%87/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>宽高</title>
+      <link>/tags/%E5%AE%BD%E9%AB%98/</link>
+      <pubDate>Tue, 06 Jan 2015 03:26:26 +0000</pubDate>
+      
+      <guid>/tags/%E5%AE%BD%E9%AB%98/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>charset</title>
+      <link>/tags/charset/</link>
+      <pubDate>Wed, 31 Dec 2014 13:10:19 +0000</pubDate>
+      
+      <guid>/tags/charset/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>编码</title>
+      <link>/tags/%E7%BC%96%E7%A0%81/</link>
+      <pubDate>Wed, 31 Dec 2014 13:10:19 +0000</pubDate>
+      
+      <guid>/tags/%E7%BC%96%E7%A0%81/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>转换</title>
+      <link>/tags/%E8%BD%AC%E6%8D%A2/</link>
+      <pubDate>Wed, 31 Dec 2014 13:10:19 +0000</pubDate>
+      
+      <guid>/tags/%E8%BD%AC%E6%8D%A2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>云服务</title>
+      <link>/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1/</link>
+      <pubDate>Fri, 26 Dec 2014 12:34:27 +0000</pubDate>
+      
+      <guid>/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>12306</title>
+      <link>/tags/12306/</link>
+      <pubDate>Thu, 25 Dec 2014 09:51:13 +0000</pubDate>
+      
+      <guid>/tags/12306/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>正则</title>
+      <link>/tags/%E6%AD%A3%E5%88%99/</link>
+      <pubDate>Thu, 25 Dec 2014 09:51:13 +0000</pubDate>
+      
+      <guid>/tags/%E6%AD%A3%E5%88%99/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ffmpeg</title>
+      <link>/tags/ffmpeg/</link>
+      <pubDate>Wed, 24 Dec 2014 09:11:09 +0000</pubDate>
+      
+      <guid>/tags/ffmpeg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>值得花钱</title>
+      <link>/tags/%E5%80%BC%E5%BE%97%E8%8A%B1%E9%92%B1/</link>
+      <pubDate>Tue, 23 Dec 2014 13:21:48 +0000</pubDate>
+      
+      <guid>/tags/%E5%80%BC%E5%BE%97%E8%8A%B1%E9%92%B1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>自用推荐</title>
+      <link>/tags/%E8%87%AA%E7%94%A8%E6%8E%A8%E8%8D%90/</link>
+      <pubDate>Tue, 23 Dec 2014 13:21:48 +0000</pubDate>
+      
+      <guid>/tags/%E8%87%AA%E7%94%A8%E6%8E%A8%E8%8D%90/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tips</title>
+      <link>/tags/tips/</link>
+      <pubDate>Tue, 23 Dec 2014 09:24:48 +0000</pubDate>
+      
+      <guid>/tags/tips/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>d</title>
+      <link>/tags/d/</link>
+      <pubDate>Tue, 23 Dec 2014 05:47:39 +0000</pubDate>
+      
+      <guid>/tags/d/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>chrome</title>
+      <link>/tags/chrome/</link>
+      <pubDate>Fri, 19 Dec 2014 14:57:26 +0000</pubDate>
+      
+      <guid>/tags/chrome/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>滑雪</title>
+      <link>/tags/%E6%BB%91%E9%9B%AA/</link>
+      <pubDate>Fri, 12 Dec 2014 11:50:10 +0000</pubDate>
+      
+      <guid>/tags/%E6%BB%91%E9%9B%AA/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>长白山</title>
+      <link>/tags/%E9%95%BF%E7%99%BD%E5%B1%B1/</link>
+      <pubDate>Fri, 12 Dec 2014 11:50:10 +0000</pubDate>
+      
+      <guid>/tags/%E9%95%BF%E7%99%BD%E5%B1%B1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ClassNotFound</title>
+      <link>/tags/classnotfound/</link>
+      <pubDate>Wed, 19 Nov 2014 09:07:32 +0000</pubDate>
+      
+      <guid>/tags/classnotfound/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>multi-path</title>
+      <link>/tags/multi-path/</link>
+      <pubDate>Thu, 13 Nov 2014 02:27:24 +0000</pubDate>
+      
+      <guid>/tags/multi-path/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ebola</title>
+      <link>/tags/ebola/</link>
+      <pubDate>Wed, 12 Nov 2014 02:40:06 +0000</pubDate>
+      
+      <guid>/tags/ebola/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bitlocker</title>
+      <link>/tags/bitlocker/</link>
+      <pubDate>Mon, 10 Nov 2014 03:51:50 +0000</pubDate>
+      
+      <guid>/tags/bitlocker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>修复key</title>
+      <link>/tags/%E4%BF%AE%E5%A4%8Dkey/</link>
+      <pubDate>Mon, 10 Nov 2014 03:51:50 +0000</pubDate>
+      
+      <guid>/tags/%E4%BF%AE%E5%A4%8Dkey/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>安全</title>
+      <link>/tags/%E5%AE%89%E5%85%A8/</link>
+      <pubDate>Mon, 10 Nov 2014 03:51:50 +0000</pubDate>
+      
+      <guid>/tags/%E5%AE%89%E5%85%A8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>android studio</title>
+      <link>/tags/android-studio/</link>
+      <pubDate>Fri, 07 Nov 2014 06:37:01 +0000</pubDate>
+      
+      <guid>/tags/android-studio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>常见问题</title>
+      <link>/tags/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Fri, 07 Nov 2014 06:37:01 +0000</pubDate>
+      
+      <guid>/tags/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>动态加载资源</title>
+      <link>/tags/%E5%8A%A8%E6%80%81%E5%8A%A0%E8%BD%BD%E8%B5%84%E6%BA%90/</link>
+      <pubDate>Fri, 07 Nov 2014 03:15:58 +0000</pubDate>
+      
+      <guid>/tags/%E5%8A%A8%E6%80%81%E5%8A%A0%E8%BD%BD%E8%B5%84%E6%BA%90/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>快件</title>
+      <link>/tags/%E5%BF%AB%E4%BB%B6/</link>
+      <pubDate>Thu, 06 Nov 2014 08:22:09 +0000</pubDate>
+      
+      <guid>/tags/%E5%BF%AB%E4%BB%B6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>骗局</title>
+      <link>/tags/%E9%AA%97%E5%B1%80/</link>
+      <pubDate>Thu, 06 Nov 2014 08:22:09 +0000</pubDate>
+      
+      <guid>/tags/%E9%AA%97%E5%B1%80/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hardware requirement</title>
+      <link>/tags/hardware-requirement/</link>
+      <pubDate>Tue, 04 Nov 2014 02:51:39 +0000</pubDate>
+      
+      <guid>/tags/hardware-requirement/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>out of memory</title>
+      <link>/tags/out-of-memory/</link>
+      <pubDate>Tue, 04 Nov 2014 02:51:39 +0000</pubDate>
+      
+      <guid>/tags/out-of-memory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sync</title>
+      <link>/tags/sync/</link>
+      <pubDate>Mon, 03 Nov 2014 03:13:29 +0000</pubDate>
+      
+      <guid>/tags/sync/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>急性鼻窦炎</title>
+      <link>/tags/%E6%80%A5%E6%80%A7%E9%BC%BB%E7%AA%A6%E7%82%8E/</link>
+      <pubDate>Wed, 22 Oct 2014 04:19:39 +0000</pubDate>
+      
+      <guid>/tags/%E6%80%A5%E6%80%A7%E9%BC%BB%E7%AA%A6%E7%82%8E/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>upgrade</title>
+      <link>/tags/upgrade/</link>
+      <pubDate>Wed, 22 Oct 2014 03:52:40 +0000</pubDate>
+      
+      <guid>/tags/upgrade/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>优化</title>
+      <link>/tags/%E4%BC%98%E5%8C%96/</link>
+      <pubDate>Sat, 11 Oct 2014 09:27:07 +0000</pubDate>
+      
+      <guid>/tags/%E4%BC%98%E5%8C%96/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>色彩空间</title>
+      <link>/tags/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/</link>
+      <pubDate>Sat, 11 Oct 2014 09:27:07 +0000</pubDate>
+      
+      <guid>/tags/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>文件大小</title>
+      <link>/tags/%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8F/</link>
+      <pubDate>Thu, 09 Oct 2014 06:37:34 +0000</pubDate>
+      
+      <guid>/tags/%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8F/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>括苍山</title>
+      <link>/tags/%E6%8B%AC%E8%8B%8D%E5%B1%B1/</link>
+      <pubDate>Thu, 09 Oct 2014 06:27:14 +0000</pubDate>
+      
+      <guid>/tags/%E6%8B%AC%E8%8B%8D%E5%B1%B1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>旅行</title>
+      <link>/tags/%E6%97%85%E8%A1%8C/</link>
+      <pubDate>Thu, 09 Oct 2014 06:27:14 +0000</pubDate>
+      
+      <guid>/tags/%E6%97%85%E8%A1%8C/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>logo</title>
+      <link>/tags/logo/</link>
+      <pubDate>Tue, 30 Sep 2014 04:22:52 +0000</pubDate>
+      
+      <guid>/tags/logo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>手算</title>
+      <link>/tags/%E6%89%8B%E7%AE%97/</link>
+      <pubDate>Tue, 30 Sep 2014 03:43:46 +0000</pubDate>
+      
+      <guid>/tags/%E6%89%8B%E7%AE%97/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>比特币</title>
+      <link>/tags/%E6%AF%94%E7%89%B9%E5%B8%81/</link>
+      <pubDate>Tue, 30 Sep 2014 03:43:46 +0000</pubDate>
+      
+      <guid>/tags/%E6%AF%94%E7%89%B9%E5%B8%81/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Shellshock</title>
+      <link>/tags/shellshock/</link>
+      <pubDate>Fri, 26 Sep 2014 07:05:44 +0000</pubDate>
+      
+      <guid>/tags/shellshock/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bash</title>
+      <link>/tags/bash/</link>
+      <pubDate>Fri, 26 Sep 2014 07:05:44 +0000</pubDate>
+      
+      <guid>/tags/bash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gpl</title>
+      <link>/tags/gpl/</link>
+      <pubDate>Wed, 24 Sep 2014 02:28:22 +0000</pubDate>
+      
+      <guid>/tags/gpl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>首页显示图片</title>
+      <link>/tags/%E9%A6%96%E9%A1%B5%E6%98%BE%E7%A4%BA%E5%9B%BE%E7%89%87/</link>
+      <pubDate>Mon, 22 Sep 2014 04:07:00 +0000</pubDate>
+      
+      <guid>/tags/%E9%A6%96%E9%A1%B5%E6%98%BE%E7%A4%BA%E5%9B%BE%E7%89%87/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>指纹</title>
+      <link>/tags/%E6%8C%87%E7%BA%B9/</link>
+      <pubDate>Sat, 20 Sep 2014 11:31:48 +0000</pubDate>
+      
+      <guid>/tags/%E6%8C%87%E7%BA%B9/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>看空</title>
+      <link>/tags/%E7%9C%8B%E7%A9%BA/</link>
+      <pubDate>Sat, 20 Sep 2014 02:42:15 +0000</pubDate>
+      
+      <guid>/tags/%E7%9C%8B%E7%A9%BA/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>阿里巴巴</title>
+      <link>/tags/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4/</link>
+      <pubDate>Sat, 20 Sep 2014 02:42:15 +0000</pubDate>
+      
+      <guid>/tags/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>周星驰</title>
+      <link>/tags/%E5%91%A8%E6%98%9F%E9%A9%B0/</link>
+      <pubDate>Fri, 19 Sep 2014 14:03:38 +0000</pubDate>
+      
+      <guid>/tags/%E5%91%A8%E6%98%9F%E9%A9%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>星爷</title>
+      <link>/tags/%E6%98%9F%E7%88%B7/</link>
+      <pubDate>Fri, 19 Sep 2014 14:03:38 +0000</pubDate>
+      
+      <guid>/tags/%E6%98%9F%E7%88%B7/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>自动化编译</title>
+      <link>/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E7%BC%96%E8%AF%91/</link>
+      <pubDate>Fri, 19 Sep 2014 09:16:23 +0000</pubDate>
+      
+      <guid>/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E7%BC%96%E8%AF%91/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Understanding node.js</title>
+      <link>/tags/understanding-node.js/</link>
+      <pubDate>Wed, 17 Sep 2014 05:21:54 +0000</pubDate>
+      
+      <guid>/tags/understanding-node.js/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>node.js</title>
+      <link>/tags/node.js/</link>
+      <pubDate>Wed, 17 Sep 2014 05:21:54 +0000</pubDate>
+      
+      <guid>/tags/node.js/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>翻译</title>
+      <link>/tags/%E7%BF%BB%E8%AF%91/</link>
+      <pubDate>Wed, 17 Sep 2014 05:21:54 +0000</pubDate>
+      
+      <guid>/tags/%E7%BF%BB%E8%AF%91/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hexo&#43;</title>
+      <link>/tags/hexo&#43;/</link>
+      <pubDate>Tue, 16 Sep 2014 12:12:41 +0000</pubDate>
+      
+      <guid>/tags/hexo&#43;/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kickstarter</title>
+      <link>/tags/kickstarter/</link>
+      <pubDate>Tue, 16 Sep 2014 12:12:41 +0000</pubDate>
+      
+      <guid>/tags/kickstarter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>fonts.googleapis.com</title>
+      <link>/tags/fonts.googleapis.com/</link>
+      <pubDate>Tue, 16 Sep 2014 07:49:08 +0000</pubDate>
+      
+      <guid>/tags/fonts.googleapis.com/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>performance</title>
+      <link>/tags/performance/</link>
+      <pubDate>Tue, 16 Sep 2014 07:49:08 +0000</pubDate>
+      
+      <guid>/tags/performance/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>wordpress</title>
+      <link>/tags/wordpress/</link>
+      <pubDate>Sun, 14 Sep 2014 16:27:10 +0000</pubDate>
+      
+      <guid>/tags/wordpress/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>迁移</title>
+      <link>/tags/%E8%BF%81%E7%A7%BB/</link>
+      <pubDate>Sun, 14 Sep 2014 16:27:10 +0000</pubDate>
+      
+      <guid>/tags/%E8%BF%81%E7%A7%BB/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>代码</title>
+      <link>/tags/%E4%BB%A3%E7%A0%81/</link>
+      <pubDate>Sat, 06 Sep 2014 12:30:36 +0000</pubDate>
+      
+      <guid>/tags/%E4%BB%A3%E7%A0%81/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>插入</title>
+      <link>/tags/%E6%8F%92%E5%85%A5/</link>
+      <pubDate>Sat, 06 Sep 2014 12:30:36 +0000</pubDate>
+      
+      <guid>/tags/%E6%8F%92%E5%85%A5/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>link</title>
+      <link>/tags/link/</link>
+      <pubDate>Sat, 06 Sep 2014 11:51:57 +0000</pubDate>
+      
+      <guid>/tags/link/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>标题</title>
+      <link>/tags/%E6%A0%87%E9%A2%98/</link>
+      <pubDate>Sat, 06 Sep 2014 11:51:57 +0000</pubDate>
+      
+      <guid>/tags/%E6%A0%87%E9%A2%98/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>链接</title>
+      <link>/tags/%E9%93%BE%E6%8E%A5/</link>
+      <pubDate>Sat, 06 Sep 2014 11:51:57 +0000</pubDate>
+      
+      <guid>/tags/%E9%93%BE%E6%8E%A5/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>开源</title>
+      <link>/tags/%E5%BC%80%E6%BA%90/</link>
+      <pubDate>Sat, 06 Sep 2014 11:25:36 +0000</pubDate>
+      
+      <guid>/tags/%E5%BC%80%E6%BA%90/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>中文</title>
+      <link>/tags/%E4%B8%AD%E6%96%87/</link>
+      <pubDate>Fri, 05 Sep 2014 22:08:36 +0000</pubDate>
+      
+      <guid>/tags/%E4%B8%AD%E6%96%87/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>语言</title>
+      <link>/tags/%E8%AF%AD%E8%A8%80/</link>
+      <pubDate>Fri, 05 Sep 2014 22:08:36 +0000</pubDate>
+      
+      <guid>/tags/%E8%AF%AD%E8%A8%80/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>选择</title>
+      <link>/tags/%E9%80%89%E6%8B%A9/</link>
+      <pubDate>Thu, 27 Mar 2014 23:22:09 +0000</pubDate>
+      
+      <guid>/tags/%E9%80%89%E6%8B%A9/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>高通</title>
+      <link>/tags/%E9%AB%98%E9%80%9A/</link>
+      <pubDate>Mon, 24 Mar 2014 13:45:03 +0000</pubDate>
+      
+      <guid>/tags/%E9%AB%98%E9%80%9A/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>支付宝</title>
+      <link>/tags/%E6%94%AF%E4%BB%98%E5%AE%9D/</link>
+      <pubDate>Sat, 18 Jan 2014 18:20:02 +0000</pubDate>
+      
+      <guid>/tags/%E6%94%AF%E4%BB%98%E5%AE%9D/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>btc</title>
+      <link>/tags/btc/</link>
+      <pubDate>Wed, 04 Dec 2013 23:35:18 +0000</pubDate>
+      
+      <guid>/tags/btc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ltc</title>
+      <link>/tags/ltc/</link>
+      <pubDate>Wed, 04 Dec 2013 23:35:18 +0000</pubDate>
+      
+      <guid>/tags/ltc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>okcoin</title>
+      <link>/tags/okcoin/</link>
+      <pubDate>Wed, 04 Dec 2013 23:35:18 +0000</pubDate>
+      
+      <guid>/tags/okcoin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>交易平台</title>
+      <link>/tags/%E4%BA%A4%E6%98%93%E5%B9%B3%E5%8F%B0/</link>
+      <pubDate>Wed, 04 Dec 2013 23:35:18 +0000</pubDate>
+      
+      <guid>/tags/%E4%BA%A4%E6%98%93%E5%B9%B3%E5%8F%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bitcoin</title>
+      <link>/tags/bitcoin/</link>
+      <pubDate>Sun, 01 Dec 2013 13:58:00 +0000</pubDate>
+      
+      <guid>/tags/bitcoin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ddos</title>
+      <link>/tags/ddos/</link>
+      <pubDate>Sun, 01 Dec 2013 13:58:00 +0000</pubDate>
+      
+      <guid>/tags/ddos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Byte alignment</title>
+      <link>/tags/byte-alignment/</link>
+      <pubDate>Sat, 24 Aug 2013 21:31:11 +0000</pubDate>
+      
+      <guid>/tags/byte-alignment/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>C</title>
+      <link>/tags/c/</link>
+      <pubDate>Sat, 24 Aug 2013 21:31:11 +0000</pubDate>
+      
+      <guid>/tags/c/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>团购</title>
+      <link>/tags/%E5%9B%A2%E8%B4%AD/</link>
+      <pubDate>Mon, 12 Aug 2013 10:50:24 +0000</pubDate>
+      
+      <guid>/tags/%E5%9B%A2%E8%B4%AD/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>电影</title>
+      <link>/tags/%E7%94%B5%E5%BD%B1/</link>
+      <pubDate>Thu, 08 Aug 2013 11:42:17 +0000</pubDate>
+      
+      <guid>/tags/%E7%94%B5%E5%BD%B1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>密码</title>
+      <link>/tags/%E5%AF%86%E7%A0%81/</link>
+      <pubDate>Sat, 15 Jun 2013 18:36:42 +0000</pubDate>
+      
+      <guid>/tags/%E5%AF%86%E7%A0%81/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>数据</title>
+      <link>/tags/%E6%95%B0%E6%8D%AE/</link>
+      <pubDate>Fri, 14 Jun 2013 16:07:18 +0000</pubDate>
+      
+      <guid>/tags/%E6%95%B0%E6%8D%AE/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>泄漏</title>
+      <link>/tags/%E6%B3%84%E6%BC%8F/</link>
+      <pubDate>Fri, 14 Jun 2013 16:07:18 +0000</pubDate>
+      
+      <guid>/tags/%E6%B3%84%E6%BC%8F/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>租车</title>
+      <link>/tags/%E7%A7%9F%E8%BD%A6/</link>
+      <pubDate>Fri, 14 Jun 2013 16:07:18 +0000</pubDate>
+      
+      <guid>/tags/%E7%A7%9F%E8%BD%A6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>/tags/git/</link>
+      <pubDate>Tue, 11 Jun 2013 03:20:37 +0000</pubDate>
+      
+      <guid>/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>undo</title>
+      <link>/tags/undo/</link>
+      <pubDate>Tue, 11 Jun 2013 03:20:37 +0000</pubDate>
+      
+      <guid>/tags/undo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>limits</title>
+      <link>/tags/limits/</link>
+      <pubDate>Tue, 11 Jun 2013 03:14:53 +0000</pubDate>
+      
+      <guid>/tags/limits/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>/tags/linux/</link>
+      <pubDate>Tue, 11 Jun 2013 03:14:53 +0000</pubDate>
+      
+      <guid>/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>putty</title>
+      <link>/tags/putty/</link>
+      <pubDate>Tue, 11 Jun 2013 03:14:53 +0000</pubDate>
+      
+      <guid>/tags/putty/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>神州</title>
+      <link>/tags/%E7%A5%9E%E5%B7%9E/</link>
+      <pubDate>Wed, 29 May 2013 22:37:38 +0000</pubDate>
+      
+      <guid>/tags/%E7%A5%9E%E5%B7%9E/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>信息间谍</title>
+      <link>/tags/%E4%BF%A1%E6%81%AF%E9%97%B4%E8%B0%8D/</link>
+      <pubDate>Wed, 29 May 2013 22:02:26 +0000</pubDate>
+      
+      <guid>/tags/%E4%BF%A1%E6%81%AF%E9%97%B4%E8%B0%8D/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>关于</title>
+      <link>/tags/%E5%85%B3%E4%BA%8E/</link>
+      <pubDate>Thu, 20 Sep 2012 14:53:41 +0000</pubDate>
+      
+      <guid>/tags/%E5%85%B3%E4%BA%8E/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

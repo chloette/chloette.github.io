@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>limits on Hello Friend</title>
+    <link>/tags/limits/</link>
+    <description>Recent content in limits on Hello Friend</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 11 Jun 2013 03:14:53 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/limits/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>about putty auto close</title>
+      <link>/posts/about-putty-auto-close/</link>
+      <pubDate>Tue, 11 Jun 2013 03:14:53 +0000</pubDate>
+      
+      <guid>/posts/about-putty-auto-close/</guid>
+      <description>Putty-auto-close may caused by server error like &amp;ldquo;too many logins to user &#39;xxx&#39; &amp;ldquo;.
+You can fix it by these steps:
+ login to server as admin
+ vim /etc/security/limits.conf
+ modify the limitation or add new one line as :
+  @xxx hard maxlogins 100
+and I&amp;rsquo;m sure you must have known what the xxx and 100 mean.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>APK Expansion on Hello Friend</title>
+    <link>/categories/apk-expansion/</link>
+    <description>Recent content in APK Expansion on Hello Friend</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Feb 2015 07:17:39 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/apk-expansion/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>APK Expansion limitation</title>
+      <link>/posts/apk-expansion-limitation/</link>
+      <pubDate>Wed, 11 Feb 2015 07:17:39 +0000</pubDate>
+      
+      <guid>/posts/apk-expansion-limitation/</guid>
+      <description>APK Expansion
+公司的App打算shrink app size &amp;ndash;&amp;gt; 因为有用户抱怨说app太大了看起来就觉得浪费资源bulabulabula。。。
+其中APK Expansion也被列为了备选方案；翻了文档和Sample源码后确认了APK Expansion的一些限制：
+ 超过50M的apk强制要求使用，不超过也可以使用； 可以使用任何格式作为expansion file，但只能有一个main，一个patch（即最多两个，各不超过2G） expansion的size算在app中；如160M的游戏，apk只有20M，但下载后app info看到的size依然是160M； expansion在一般情况下(on most devices)会随apk一起下载；在某些不能下载的设备上，可以手动下载；无法由app来选择，是否随apk一起下载； 需额外增加权限：com.android.vending.CHECK_LICENSE（google play） 和 android.permission.WAKE_LOCK（保证下载时cpu alive）  从app的角度来看，几乎没有好处。app size没有减少、下载的时候也是一起下载（没有lazy机制）、还需要额外权限。。
+所以这条方案基本可以pass了。
+另外的方案就是把可以shrink的资源，放在自己的服务器（或cdn）上，然后下载后再load；灵活性高很多，问题就是不确定服务器（或cdn）是否在犄角旮旯的地方都靠谱了。（分包apk的方案之前有提到）
+记录一下。</description>
+    </item>
+    
+  </channel>
+</rss>

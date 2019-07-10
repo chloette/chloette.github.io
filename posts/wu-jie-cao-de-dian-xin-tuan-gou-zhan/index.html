@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>无节操的电信团购站 :: Hello Friend — A simple theme for Hugo</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="如果你如我好友一样，是悲催的电信用户，终日挑机而不得，那你可能听过一个福音站点：貌似已失效了
+这是电信旗下的官方手机团购站，你初登上去可能觉得不以为然，没啥便宜货在团购，尤其是目前处于打广告状态的P6，就便宜了100块，还没电商便宜。。。
+但是如果你看过下面这几个团购信息（已经过期了）。。。
+这个折扣力度只能说“给力”是吧～
+这个可以算“BUG”了吧～
+这个。。。我觉得绝对是逆天了！
+现在你就知道了，这个站绝对是深藏不露杀人砍价发放福利于无形！
+好吧，为了为好友谋求同等福利，终于左等右等等到了1400的HTC C620D
+图就不上了，因为风头都被上面的IP4S抢掉了。。。
+但是这个抢购比较恶心啊，要跳转若干个页面，一般情况下分秒钟的事情怎么能等那么久那！
+所以看了看这个站的一些跳转逻辑，发现了一个明显的BUG。。。
+似乎可以在团购开始之前，直接通过如下链接进到对应的团购结算页（请务必登录进去以后再看～）：
+ http://tuan.hicdma.com/views/pages/bulk/bulkOrder.jsp?bulkId=1386&amp;amp;buyNum=1
+ 看到了什么啊亲看到了什么！！！ 是不是逆天价的IP4S啊！！！ 但是千万别激动，这个就是诱惑诱惑亲的。。。因为肉眼可见，服务器端做了时间和数量的限制，所以购买不了。。。
+那这个页面（修改bulkId来直接进入结算页）能干嘛那？
+回答 ： 节省所有的跳转步骤，在那一秒瞬间下单（*其实简单改一下JS就可以开启刷新球了。。。*）！ &amp;ndash; 这样的秒中机会要大很多很多吧？
+不过没有仔细研究到底限制是totally在服务器端做掉的，还是有一部分参数从client端走，暂时也没时间去研究。以后再说吧～
+BTW，个人觉得，能考虑到在服务器端进行时间和数量这些关键限制的站点维护团队，怎么可能会留下这种这么低级的跳转bug？
+莫非这团队故意留下这bug来给自己谋福利么。。。
+那我就只能呵呵呵呵呵呵～
+（that&amp;rsquo;s why I say&amp;hellip; 无节操&amp;hellip;）"/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="/posts/wu-jie-cao-de-dian-xin-tuan-gou-zhan/" />
+
+
+<link rel="stylesheet" href="/assets/style.css">
+
+
+<link rel="stylesheet" href="/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="无节操的电信团购站"/>
+<meta name="twitter:description" content="如果你如我好友一样，是悲催的电信用户，终日挑机而不得，那你可能听过一个福音站点：貌似已失效了
+这是电信旗下的官方手机团购站，你初登上去可能觉得不以为然，没啥便宜货在团购，尤其是目前处于打广告状态的P6，就便宜了100块，还没电商便宜。。。
+但是如果你看过下面这几个团购信息（已经过期了）。。。
+这个折扣力度只能说“给力”是吧～
+这个可以算“BUG”了吧～
+这个。。。我觉得绝对是逆天了！
+现在你就知道了，这个站绝对是深藏不露杀人砍价发放福利于无形！
+好吧，为了为好友谋求同等福利，终于左等右等等到了1400的HTC C620D
+图就不上了，因为风头都被上面的IP4S抢掉了。。。
+但是这个抢购比较恶心啊，要跳转若干个页面，一般情况下分秒钟的事情怎么能等那么久那！
+所以看了看这个站的一些跳转逻辑，发现了一个明显的BUG。。。
+似乎可以在团购开始之前，直接通过如下链接进到对应的团购结算页（请务必登录进去以后再看～）：
+ http://tuan.hicdma.com/views/pages/bulk/bulkOrder.jsp?bulkId=1386&amp;buyNum=1
+ 看到了什么啊亲看到了什么！！！ 是不是逆天价的IP4S啊！！！ 但是千万别激动，这个就是诱惑诱惑亲的。。。因为肉眼可见，服务器端做了时间和数量的限制，所以购买不了。。。
+那这个页面（修改bulkId来直接进入结算页）能干嘛那？
+回答 ： 节省所有的跳转步骤，在那一秒瞬间下单（*其实简单改一下JS就可以开启刷新球了。。。*）！ &ndash; 这样的秒中机会要大很多很多吧？
+不过没有仔细研究到底限制是totally在服务器端做掉的，还是有一部分参数从client端走，暂时也没时间去研究。以后再说吧～
+BTW，个人觉得，能考虑到在服务器端进行时间和数量这些关键限制的站点维护团队，怎么可能会留下这种这么低级的跳转bug？
+莫非这团队故意留下这bug来给自己谋福利么。。。
+那我就只能呵呵呵呵呵呵～
+（that&rsquo;s why I say&hellip; 无节操&hellip;）"/>
+
+
+
+<meta property="og:title" content="无节操的电信团购站" />
+<meta property="og:description" content="如果你如我好友一样，是悲催的电信用户，终日挑机而不得，那你可能听过一个福音站点：貌似已失效了
+这是电信旗下的官方手机团购站，你初登上去可能觉得不以为然，没啥便宜货在团购，尤其是目前处于打广告状态的P6，就便宜了100块，还没电商便宜。。。
+但是如果你看过下面这几个团购信息（已经过期了）。。。
+这个折扣力度只能说“给力”是吧～
+这个可以算“BUG”了吧～
+这个。。。我觉得绝对是逆天了！
+现在你就知道了，这个站绝对是深藏不露杀人砍价发放福利于无形！
+好吧，为了为好友谋求同等福利，终于左等右等等到了1400的HTC C620D
+图就不上了，因为风头都被上面的IP4S抢掉了。。。
+但是这个抢购比较恶心啊，要跳转若干个页面，一般情况下分秒钟的事情怎么能等那么久那！
+所以看了看这个站的一些跳转逻辑，发现了一个明显的BUG。。。
+似乎可以在团购开始之前，直接通过如下链接进到对应的团购结算页（请务必登录进去以后再看～）：
+ http://tuan.hicdma.com/views/pages/bulk/bulkOrder.jsp?bulkId=1386&amp;buyNum=1
+ 看到了什么啊亲看到了什么！！！ 是不是逆天价的IP4S啊！！！ 但是千万别激动，这个就是诱惑诱惑亲的。。。因为肉眼可见，服务器端做了时间和数量的限制，所以购买不了。。。
+那这个页面（修改bulkId来直接进入结算页）能干嘛那？
+回答 ： 节省所有的跳转步骤，在那一秒瞬间下单（*其实简单改一下JS就可以开启刷新球了。。。*）！ &ndash; 这样的秒中机会要大很多很多吧？
+不过没有仔细研究到底限制是totally在服务器端做掉的，还是有一部分参数从client端走，暂时也没时间去研究。以后再说吧～
+BTW，个人觉得，能考虑到在服务器端进行时间和数量这些关键限制的站点维护团队，怎么可能会留下这种这么低级的跳转bug？
+莫非这团队故意留下这bug来给自己谋福利么。。。
+那我就只能呵呵呵呵呵呵～
+（that&rsquo;s why I say&hellip; 无节操&hellip;）" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/wu-jie-cao-de-dian-xin-tuan-gou-zhan/" />
+<meta property="article:published_time" content="2013-08-12T10:50:24&#43;00:00"/>
+<meta property="article:modified_time" content="2013-08-12T10:50:24&#43;00:00"/><meta property="og:site_name" content="Hello Friend" />
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">hello friend</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/showcase">Showcase</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  <div class="post">
+    <h2 class="post-title"><a href="/posts/wu-jie-cao-de-dian-xin-tuan-gou-zhan/">无节操的电信团购站</a></h2>
+    <div class="post-meta">
+      
+        <span class="post-date">
+            2013-08-12
+        </span>
+      
+      <span class="post-author">— Written by Guo Yi</span>
+      
+    </div>
+
+    
+      <span class="post-tags">
+        
+          #<a href="/tags/%E5%9B%A2%E8%B4%AD/">团购</a>&nbsp;
+        
+          #<a href="/tags/%E5%AE%89%E5%85%A8/">安全</a>&nbsp;
+        
+      </span>
+    
+
+    
+
+    <div class="post-content">
+      <p>如果你如我好友一样，是悲催的电信用户，终日挑机而不得，那你可能听过一个福音站点：<a href="http://tuan.hicdma.com/">貌似已失效了</a></p>
+
+<p>这是电信旗下的官方手机团购站，你初登上去可能觉得不以为然，没啥便宜货在团购，尤其是目前处于打广告状态的P6，就便宜了100块，还没电商便宜。。。</p>
+
+<p>但是如果你看过下面这几个团购信息（已经过期了）。。。</p>
+
+<p><img src="/content/images/2013/08/01.png" alt="" /></p>
+
+<p><a href="http://tuan.hicdma.com/tuan_detail_1550.html">这个折扣力度只能说“给力”是吧～</a></p>
+
+<p><img src="/content/images/2013/08/1.png" alt="" /></p>
+
+<p><a href="http://tuan.hicdma.com/tuan_detail_1527.html">这个可以算“BUG”了吧～</a></p>
+
+<p><img src="/content/images/2013/08/2.png" alt="" /></p>
+
+<p><a href="http://tuan.hicdma.com/tuan_detail_1386.html">这个。。。我觉得绝对是逆天了！</a></p>
+
+<p>现在你就知道了，这个站绝对是深藏不露杀人砍价发放福利于无形！</p>
+
+<p>好吧，为了为好友谋求同等福利，终于左等右等等到了1400的HTC C620D</p>
+
+<p><a href="http://tuan.hicdma.com/tuan_detail_1602.html">图就不上了，因为风头都被上面的IP4S抢掉了。。。</a></p>
+
+<p>但是这个抢购比较恶心啊，要跳转若干个页面，一般情况下分秒钟的事情怎么能等那么久那！</p>
+
+<p>所以看了看这个站的一些跳转逻辑，发现了一个明显的BUG。。。</p>
+
+<p>似乎可以在团购开始之前，直接通过如下链接进到对应的团购结算页（请务必登录进去以后再看～）：</p>
+
+<blockquote>
+<p><a href="http://tuan.hicdma.com/views/pages/bulk/bulkOrder.jsp?bulkId=1386&amp;buyNum=1">http://tuan.hicdma.com/views/pages/bulk/bulkOrder.jsp?bulkId=1386&amp;buyNum=1</a></p>
+</blockquote>
+
+<p><img src="/content/images/2013/08/3.png" alt="" /></p>
+
+<p>看到了什么啊亲看到了什么！！！ 是不是逆天价的IP4S啊！！！ 但是千万别激动，这个就是诱惑诱惑亲的。。。因为肉眼可见，服务器端做了时间和数量的限制，所以购买不了。。。</p>
+
+<p>那这个页面（修改bulkId来直接进入结算页）能干嘛那？</p>
+
+<p>回答 ： 节省所有的跳转步骤，在那一秒瞬间下单（*其实简单改一下JS就可以开启刷新球了。。。*）！ &ndash; 这样的秒中机会要大很多很多吧？</p>
+
+<p>不过没有仔细研究到底限制是totally在服务器端做掉的，还是有一部分参数从client端走，暂时也没时间去研究。以后再说吧～</p>
+
+<p>BTW，个人觉得，能考虑到在服务器端进行时间和数量这些关键限制的站点维护团队，怎么可能会留下这种这么低级的跳转bug？</p>
+
+<p>莫非这团队故意留下这bug来给自己谋福利么。。。</p>
+
+<p>那我就只能呵呵呵呵呵呵～</p>
+
+<p>（that&rsquo;s why I say&hellip; 无节操&hellip;）</p>
+
+    </div>
+    
+      <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h">Read other posts</span>
+          <hr />
+        </div>
+        <div class="pagination__buttons">
+          
+            <span class="button previous">
+              <a href="/posts/be-care-of-the-byte-alignment-in-type-cast/">
+                <span class="button__icon">←</span>
+                <span class="button__text">Be care of the Byte Alignment in Type Cast.</span>
+              </a>
+            </span>
+          
+          
+            <span class="button next">
+              <a href="/posts/cloud-atlas/">
+                <span class="button__text">Cloud Atlas</span>
+                <span class="button__icon">→</span>
+              </a>
+            </span>
+          
+        </div>
+      </div>
+    
+
+    
+
+    </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">hello friend</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span>© 2019 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

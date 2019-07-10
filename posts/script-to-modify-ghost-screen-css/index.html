@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>Ghost修改screen.css的脚本 :: Hello Friend — A simple theme for Hugo</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="Ghost更新越来越频繁，每次都要手动更新css实在伤不起。。。
+反正改动的地方也不多，干脆做成一键脚本好了，把之前upgrade的脚本再扩展一下：
+首先更改#7，改动如下，增加了change logo position：
+#change post page what to show... echo &#39;7. replace &amp;quot;excerpt&amp;quot; with &amp;quot;content&amp;quot; ---------------&#39; #excerpt -&amp;gt; content #read more -&amp;gt; &amp;gt;&amp;gt; sed -i &amp;quot;s#&amp;lt;p&amp;gt;{{excerpt words=\&amp;quot;26\&amp;quot;}} &amp;lt;a class=\&amp;quot;read-more\&amp;quot; href=\&amp;quot;{{url}}\&amp;quot;&amp;gt;&amp;amp;raquo;#&amp;lt;p&amp;gt;{{content words=\&amp;quot;32\&amp;quot;}} &amp;lt;a class=\&amp;quot;read-more\&amp;quot; href=\&amp;quot;{{url}}\&amp;quot;&amp;gt;\&amp;amp;raquo;\&amp;amp;raquo;#g&amp;quot; ./content/themes/casper/partials/loop.hbs #change logo position sed -i &#39;s~{{#if @blog.logo}}&amp;lt;a class=&amp;quot;blog-logo&amp;quot; href=&amp;quot;{{@blog.url}}&amp;quot;&amp;gt;&amp;lt;img src=&amp;quot;{{@blog.logo}}&amp;quot; alt=&amp;quot;Blog Logo&amp;quot; /&amp;gt;&amp;lt;/a&amp;gt;{{/if}}~~g&#39; ./content/themes/casper/index.hbs sed -i &#39;s~&amp;lt;h1 class=&amp;quot;page-title&amp;quot;&amp;gt;{{@blog.title}}&amp;lt;/h1&amp;gt;~{{#if @blog.logo}}&amp;lt;a class=&amp;quot;blog-logo&amp;quot; href=&amp;quot;{{@blog.url}}/about&amp;quot;&amp;gt;&amp;lt;img src=&amp;quot;{{@blog.logo}}&amp;quot; alt=&amp;quot;Blog Logo&amp;quot; /&amp;gt;&amp;lt;/a&amp;gt;{{/if}}&amp;lt;h1 class=&amp;quot;page-title&amp;quot;&amp;gt;{{@blog.title}}&amp;lt;/h1&amp;gt;~g&#39; ./content/themes/casper/index.hbs  再就是考虑到自己智商太低，难以驾驭sed的多行匹配，所以祭出Python；脚本中加上这句：
+#call python to do multiple lines replacement python ~/ghost_css_adjustment."/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="/posts/script-to-modify-ghost-screen-css/" />
+
+
+<link rel="stylesheet" href="/assets/style.css">
+
+
+<link rel="stylesheet" href="/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Ghost修改screen.css的脚本"/>
+<meta name="twitter:description" content="Ghost更新越来越频繁，每次都要手动更新css实在伤不起。。。
+反正改动的地方也不多，干脆做成一键脚本好了，把之前upgrade的脚本再扩展一下：
+首先更改#7，改动如下，增加了change logo position：
+#change post page what to show... echo &#39;7. replace &quot;excerpt&quot; with &quot;content&quot; ---------------&#39; #excerpt -&gt; content #read more -&gt; &gt;&gt; sed -i &quot;s#&lt;p&gt;{{excerpt words=\&quot;26\&quot;}} &lt;a class=\&quot;read-more\&quot; href=\&quot;{{url}}\&quot;&gt;&amp;raquo;#&lt;p&gt;{{content words=\&quot;32\&quot;}} &lt;a class=\&quot;read-more\&quot; href=\&quot;{{url}}\&quot;&gt;\&amp;raquo;\&amp;raquo;#g&quot; ./content/themes/casper/partials/loop.hbs #change logo position sed -i &#39;s~{{#if @blog.logo}}&lt;a class=&quot;blog-logo&quot; href=&quot;{{@blog.url}}&quot;&gt;&lt;img src=&quot;{{@blog.logo}}&quot; alt=&quot;Blog Logo&quot; /&gt;&lt;/a&gt;{{/if}}~~g&#39; ./content/themes/casper/index.hbs sed -i &#39;s~&lt;h1 class=&quot;page-title&quot;&gt;{{@blog.title}}&lt;/h1&gt;~{{#if @blog.logo}}&lt;a class=&quot;blog-logo&quot; href=&quot;{{@blog.url}}/about&quot;&gt;&lt;img src=&quot;{{@blog.logo}}&quot; alt=&quot;Blog Logo&quot; /&gt;&lt;/a&gt;{{/if}}&lt;h1 class=&quot;page-title&quot;&gt;{{@blog.title}}&lt;/h1&gt;~g&#39; ./content/themes/casper/index.hbs  再就是考虑到自己智商太低，难以驾驭sed的多行匹配，所以祭出Python；脚本中加上这句：
+#call python to do multiple lines replacement python ~/ghost_css_adjustment."/>
+
+
+
+<meta property="og:title" content="Ghost修改screen.css的脚本" />
+<meta property="og:description" content="Ghost更新越来越频繁，每次都要手动更新css实在伤不起。。。
+反正改动的地方也不多，干脆做成一键脚本好了，把之前upgrade的脚本再扩展一下：
+首先更改#7，改动如下，增加了change logo position：
+#change post page what to show... echo &#39;7. replace &quot;excerpt&quot; with &quot;content&quot; ---------------&#39; #excerpt -&gt; content #read more -&gt; &gt;&gt; sed -i &quot;s#&lt;p&gt;{{excerpt words=\&quot;26\&quot;}} &lt;a class=\&quot;read-more\&quot; href=\&quot;{{url}}\&quot;&gt;&amp;raquo;#&lt;p&gt;{{content words=\&quot;32\&quot;}} &lt;a class=\&quot;read-more\&quot; href=\&quot;{{url}}\&quot;&gt;\&amp;raquo;\&amp;raquo;#g&quot; ./content/themes/casper/partials/loop.hbs #change logo position sed -i &#39;s~{{#if @blog.logo}}&lt;a class=&quot;blog-logo&quot; href=&quot;{{@blog.url}}&quot;&gt;&lt;img src=&quot;{{@blog.logo}}&quot; alt=&quot;Blog Logo&quot; /&gt;&lt;/a&gt;{{/if}}~~g&#39; ./content/themes/casper/index.hbs sed -i &#39;s~&lt;h1 class=&quot;page-title&quot;&gt;{{@blog.title}}&lt;/h1&gt;~{{#if @blog.logo}}&lt;a class=&quot;blog-logo&quot; href=&quot;{{@blog.url}}/about&quot;&gt;&lt;img src=&quot;{{@blog.logo}}&quot; alt=&quot;Blog Logo&quot; /&gt;&lt;/a&gt;{{/if}}&lt;h1 class=&quot;page-title&quot;&gt;{{@blog.title}}&lt;/h1&gt;~g&#39; ./content/themes/casper/index.hbs  再就是考虑到自己智商太低，难以驾驭sed的多行匹配，所以祭出Python；脚本中加上这句：
+#call python to do multiple lines replacement python ~/ghost_css_adjustment." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/script-to-modify-ghost-screen-css/" />
+<meta property="article:published_time" content="2015-01-21T12:07:06&#43;00:00"/>
+<meta property="article:modified_time" content="2015-01-21T12:07:06&#43;00:00"/><meta property="og:site_name" content="Hello Friend" />
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">hello friend</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/showcase">Showcase</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  <div class="post">
+    <h2 class="post-title"><a href="/posts/script-to-modify-ghost-screen-css/">Ghost修改screen.css的脚本</a></h2>
+    <div class="post-meta">
+      
+        <span class="post-date">
+            2015-01-21
+        </span>
+      
+      <span class="post-author">— Written by Guo Yi</span>
+      
+    </div>
+
+    
+      <span class="post-tags">
+        
+          #<a href="/tags/ghost/">ghost</a>&nbsp;
+        
+          #<a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
+        
+          #<a href="/tags/script/">script</a>&nbsp;
+        
+          #<a href="/tags/python/">python</a>&nbsp;
+        
+      </span>
+    
+
+    
+
+    <div class="post-content">
+      <p>Ghost更新越来越频繁，每次都要手动更新css实在伤不起。。。</p>
+
+<p>反正改动的地方也不多，干脆做成一键脚本好了，把之前<a href="http://nobodycare.me/2014/09/29/ghost-upgrade-to-0-5-2/">upgrade</a>的脚本再扩展一下：</p>
+
+<p>首先更改#7，改动如下，增加了<strong><em>change logo position</em></strong>：</p>
+
+<pre><code class="language-language-bash">#change post page what to show...
+echo '7. replace &quot;excerpt&quot; with &quot;content&quot; ---------------'
+#excerpt -&gt; content
+#read more -&gt; &gt;&gt;
+sed -i &quot;s#&lt;p&gt;{{excerpt words=\&quot;26\&quot;}} &lt;a class=\&quot;read-more\&quot; href=\&quot;{{url}}\&quot;&gt;&amp;raquo;#&lt;p&gt;{{content words=\&quot;32\&quot;}} &lt;a class=\&quot;read-more\&quot; href=\&quot;{{url}}\&quot;&gt;\&amp;raquo;\&amp;raquo;#g&quot; ./content/themes/casper/partials/loop.hbs
+
+#change logo position
+sed -i 's~{{#if @blog.logo}}&lt;a class=&quot;blog-logo&quot; href=&quot;{{@blog.url}}&quot;&gt;&lt;img src=&quot;{{@blog.logo}}&quot; alt=&quot;Blog Logo&quot; /&gt;&lt;/a&gt;{{/if}}~~g' ./content/themes/casper/index.hbs
+sed -i 's~&lt;h1 class=&quot;page-title&quot;&gt;{{@blog.title}}&lt;/h1&gt;~{{#if @blog.logo}}&lt;a class=&quot;blog-logo&quot; href=&quot;{{@blog.url}}/about&quot;&gt;&lt;img src=&quot;{{@blog.logo}}&quot; alt=&quot;Blog Logo&quot; /&gt;&lt;/a&gt;{{/if}}&lt;h1 class=&quot;page-title&quot;&gt;{{@blog.title}}&lt;/h1&gt;~g' ./content/themes/casper/index.hbs
+</code></pre>
+
+<p>再就是考虑到自己智商太低，难以驾驭sed的多行匹配，所以祭出Python；脚本中加上这句：</p>
+
+<pre><code class="language-language-bash">#call python to do multiple lines replacement
+python ~/ghost_css_adjustment.py
+</code></pre>
+
+<hr />
+
+<pre><code class="language-language-python">import re
+
+cssfile='./content/themes/casper/assets/css/screen.css'
+infile=open(cssfile, 'r')
+
+replacements = {
+            '.blog-logo {([^\}]*)((float: left){1})([^\{]*)}':'.blog-logo {\n    display: block;\n    float: center;\n    background: none !important;\n    border: none !important;\n}', #make logo center
+            '.blog-logo img {([^\}]*)((width: auto){1})([^\{]*)}':'.blog-logo img {\n    width: 100px;\n    height: 100px;\n    border: 2px solid white;\n    -webkit-border-radius: 100px;\n    -moz-border-radius: 100px;\n    -ms-border-radius: 100px;\n    -o-border-radius: 100px;\n    border-radius: 100px;\n}', #make logo likes pertty
+            '.blog-logo img {([\s]*)((height: 26px;){1})([\s]*)}':'', #remove useless blog-logo img css
+            '.blog-logo img {([\s]*)((max-height: 80px;){1})([\s]*)}':'', #same as above
+            '.blog-logo img {([\s]*)((padding: 4px 0;){1})([\s]*)}':'', #same as above
+            '.blog-logo {([\s]*)((padding: 10px 10px;){1})([\s]*)}':'', #same as above
+            '.post-content img {':'.post-content img, .post-excerpt img {' #make sure the excerpt img apparanet like content
+            }
+
+data = infile.read()
+for src, target in replacements.iteritems():
+        data = re.sub(src, target, data)
+infile.close()
+
+outfile = open(cssfile, 'w')
+outfile.write(data)
+outfile.close()
+</code></pre>
+
+<p>至此，以后升级终于可以轻松一键搞定了～～ LOL～～</p>
+
+<p>记录一下～</p>
+
+    </div>
+    
+      <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h">Read other posts</span>
+          <hr />
+        </div>
+        <div class="pagination__buttons">
+          
+            <span class="button previous">
+              <a href="/posts/about-weixin-and-alipay/">
+                <span class="button__icon">←</span>
+                <span class="button__text">谈谈微信和支付宝</span>
+              </a>
+            </span>
+          
+          
+            <span class="button next">
+              <a href="/posts/android-imagefetcher/">
+                <span class="button__text">Android ImageFetcher</span>
+                <span class="button__icon">→</span>
+              </a>
+            </span>
+          
+        </div>
+      </div>
+    
+
+    
+
+    </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">hello friend</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span>© 2019 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

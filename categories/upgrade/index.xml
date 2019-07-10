@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>upgrade on Hello Friend</title>
+    <link>/categories/upgrade/</link>
+    <description>Recent content in upgrade on Hello Friend</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 22 Oct 2014 03:52:40 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/upgrade/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ghost upgrade to 0.5.3</title>
+      <link>/posts/ghost-upgrade-to-0-5-3/</link>
+      <pubDate>Wed, 22 Oct 2014 03:52:40 +0000</pubDate>
+      
+      <guid>/posts/ghost-upgrade-to-0-5-3/</guid>
+      <description>改动不大，不过主题的css改动了一些。
+参考0.5.2的升级，一个命令就搞定。
+然后再手动更新一下logo的布局。
+Tada~~</description>
+    </item>
+    
+    <item>
+      <title>Ghost upgrade to 0.5.2</title>
+      <link>/posts/ghost-upgrade-to-0-5-2/</link>
+      <pubDate>Mon, 29 Sep 2014 02:22:45 +0000</pubDate>
+      
+      <guid>/posts/ghost-upgrade-to-0-5-2/</guid>
+      <description>不小心看到更新了，所以就去更新了（确实有新功能，如侧边栏和主题图片等，默认模板的字体也有修改），结果掉到自己给自己挖的坑里面去了。。。（手贱是病不治不行啊。。。）
+参考How to upgrade self-installed Ghost来升级即可。不过我又加上了修改fonts来源（通过sed），并修改excerpt（也是通过sed。。。）
+由于Ghost用的sqlite是不加密的（还是因为我用的是dev版本？），所以sed替换的时候会把sqlite数据库（content/data/sqlite-dev）里面的数据一并替换掉（还记得我之前写过Ghost访问比Wordpress还慢？么？真是自掘坟墓啊）
+结果启动Ghost就报sql corruption 500的错误。。。（这么“写”数据，基本的MD5校验都过不了啊）
+真是一失足成千古恨啊。折腾了蛮久才发现是这个问题。 T_T
+附上修改后的脚本，运行
+sudo ./upgrade_ghost.sh TARGET_DIR_PATH ```即可： ```language-bash #stop all echo &#39;1. stop all -----------------&#39; forever stopall #download latest build echo &#39;2. download latest package -------------------&#39; rm ghost-latest.zip wget http://ghost.org/zip/ghost-latest.zip #rm core echo &#39;3. delete core dir ---------------&#39; rm -rf $1/core #unzip echo &#39;4. unzip and merge code ----------------&#39; unzip -uo ghost-latest.zip -d $1/ #install rm ghost-latest.zip cd $1/ echo &#39;5.</description>
+    </item>
+    
+  </channel>
+</rss>

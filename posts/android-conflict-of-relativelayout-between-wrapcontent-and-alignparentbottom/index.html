@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>Android RelativeLayout中wrap_content和alignParentBottom的冲突 :: Hello Friend — A simple theme for Hugo</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="继续随便记录一下，之前也说过，Android类似的坑不少。
+下面又是一例：
+RelativeLayout中，为了方便布局，子view经常会用到alignParentBottom/Top/Left/Right等，如：
+android:layout_alignParentBottom=&amp;quot;true&amp;quot;  但这时候需要注意的是，如果parent是wrap_content的话，alignParentRight就意味着要求parent的layout_width=&amp;quot;match_parent&amp;quot;； alignParentBottom就意味着要求parent的layout_height=&amp;quot;match_parent&amp;quot;
+这会带来什么问题那？两个问题：
+ 显示错误。在布局嵌套的环境下，例如布局A包含B和C，在A里面，B above C：（伪布局代码）  RelativeLayout width=match_parent height=match_parent id=&amp;quot;A&amp;quot; XXLayout width=match_parent height=wrap_content above=&amp;quot;C&amp;quot; id=&amp;quot;B&amp;quot; RelativeLayout width=match_parent height=wrap_content id=&amp;quot;C&amp;quot; XXView width=match_parent height=wrap_content android:layout_alignParentBottom=&amp;quot;true&amp;quot; src=xxx  本意是希望在布局A里面，B可以在C上面显示，C里面显示xxx；
+但是结果是：C会撑满A，然后导致B不可见。
+改法很简单，去掉 language-bash android:layout_alignParentBottom=&amp;quot;true&amp;quot; 即可。
+实际原因我没有去翻源码，不确定；但是猜测和Android的绘制/计算布局的方向有关，Android默认是从屏幕左上角向右下角绘制（在写自定义view，重载onDraw，或者坐标计算的时候需要依赖这种“特性”），所以在这种情况下，alignBottom或alignRight后，“画布”就自然而然被顶到下边和右边去了。
+ 性能。对，就是性能；撑满屏幕意味着这个view（例如上面的C）的刷新，不只是局部刷新，而是整屏刷新（即使XXView可能只是一个bottom bar这种非全屏的view），所以不管是耗电量还是性能，都会受到一定的影响。  综上，在设计layout的时候，需要注意方向带来的影响，同时注意不同属性之间可能导致的“冲突”。
+记录一下。"/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="/posts/android-conflict-of-relativelayout-between-wrapcontent-and-alignparentbottom/" />
+
+
+<link rel="stylesheet" href="/assets/style.css">
+
+
+<link rel="stylesheet" href="/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Android RelativeLayout中wrap_content和alignParentBottom的冲突"/>
+<meta name="twitter:description" content="继续随便记录一下，之前也说过，Android类似的坑不少。
+下面又是一例：
+RelativeLayout中，为了方便布局，子view经常会用到alignParentBottom/Top/Left/Right等，如：
+android:layout_alignParentBottom=&quot;true&quot;  但这时候需要注意的是，如果parent是wrap_content的话，alignParentRight就意味着要求parent的layout_width=&quot;match_parent&quot;； alignParentBottom就意味着要求parent的layout_height=&quot;match_parent&quot;
+这会带来什么问题那？两个问题：
+ 显示错误。在布局嵌套的环境下，例如布局A包含B和C，在A里面，B above C：（伪布局代码）  RelativeLayout width=match_parent height=match_parent id=&quot;A&quot; XXLayout width=match_parent height=wrap_content above=&quot;C&quot; id=&quot;B&quot; RelativeLayout width=match_parent height=wrap_content id=&quot;C&quot; XXView width=match_parent height=wrap_content android:layout_alignParentBottom=&quot;true&quot; src=xxx  本意是希望在布局A里面，B可以在C上面显示，C里面显示xxx；
+但是结果是：C会撑满A，然后导致B不可见。
+改法很简单，去掉 language-bash android:layout_alignParentBottom=&quot;true&quot; 即可。
+实际原因我没有去翻源码，不确定；但是猜测和Android的绘制/计算布局的方向有关，Android默认是从屏幕左上角向右下角绘制（在写自定义view，重载onDraw，或者坐标计算的时候需要依赖这种“特性”），所以在这种情况下，alignBottom或alignRight后，“画布”就自然而然被顶到下边和右边去了。
+ 性能。对，就是性能；撑满屏幕意味着这个view（例如上面的C）的刷新，不只是局部刷新，而是整屏刷新（即使XXView可能只是一个bottom bar这种非全屏的view），所以不管是耗电量还是性能，都会受到一定的影响。  综上，在设计layout的时候，需要注意方向带来的影响，同时注意不同属性之间可能导致的“冲突”。
+记录一下。"/>
+
+
+
+<meta property="og:title" content="Android RelativeLayout中wrap_content和alignParentBottom的冲突" />
+<meta property="og:description" content="继续随便记录一下，之前也说过，Android类似的坑不少。
+下面又是一例：
+RelativeLayout中，为了方便布局，子view经常会用到alignParentBottom/Top/Left/Right等，如：
+android:layout_alignParentBottom=&quot;true&quot;  但这时候需要注意的是，如果parent是wrap_content的话，alignParentRight就意味着要求parent的layout_width=&quot;match_parent&quot;； alignParentBottom就意味着要求parent的layout_height=&quot;match_parent&quot;
+这会带来什么问题那？两个问题：
+ 显示错误。在布局嵌套的环境下，例如布局A包含B和C，在A里面，B above C：（伪布局代码）  RelativeLayout width=match_parent height=match_parent id=&quot;A&quot; XXLayout width=match_parent height=wrap_content above=&quot;C&quot; id=&quot;B&quot; RelativeLayout width=match_parent height=wrap_content id=&quot;C&quot; XXView width=match_parent height=wrap_content android:layout_alignParentBottom=&quot;true&quot; src=xxx  本意是希望在布局A里面，B可以在C上面显示，C里面显示xxx；
+但是结果是：C会撑满A，然后导致B不可见。
+改法很简单，去掉 language-bash android:layout_alignParentBottom=&quot;true&quot; 即可。
+实际原因我没有去翻源码，不确定；但是猜测和Android的绘制/计算布局的方向有关，Android默认是从屏幕左上角向右下角绘制（在写自定义view，重载onDraw，或者坐标计算的时候需要依赖这种“特性”），所以在这种情况下，alignBottom或alignRight后，“画布”就自然而然被顶到下边和右边去了。
+ 性能。对，就是性能；撑满屏幕意味着这个view（例如上面的C）的刷新，不只是局部刷新，而是整屏刷新（即使XXView可能只是一个bottom bar这种非全屏的view），所以不管是耗电量还是性能，都会受到一定的影响。  综上，在设计layout的时候，需要注意方向带来的影响，同时注意不同属性之间可能导致的“冲突”。
+记录一下。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/android-conflict-of-relativelayout-between-wrapcontent-and-alignparentbottom/" />
+<meta property="article:published_time" content="2015-01-12T08:25:33&#43;00:00"/>
+<meta property="article:modified_time" content="2015-01-12T08:25:33&#43;00:00"/><meta property="og:site_name" content="Hello Friend" />
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">hello friend</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/showcase">Showcase</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  <div class="post">
+    <h2 class="post-title"><a href="/posts/android-conflict-of-relativelayout-between-wrapcontent-and-alignparentbottom/">Android RelativeLayout中wrap_content和alignParentBottom的冲突</a></h2>
+    <div class="post-meta">
+      
+        <span class="post-date">
+            2015-01-12
+        </span>
+      
+      <span class="post-author">— Written by Guo Yi</span>
+      
+    </div>
+
+    
+      <span class="post-tags">
+        
+          #<a href="/tags/android/">Android</a>&nbsp;
+        
+          #<a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
+        
+          #<a href="/tags/view/">View</a>&nbsp;
+        
+          #<a href="/tags/relativelayout/">RelativeLayout</a>&nbsp;
+        
+      </span>
+    
+
+    
+
+    <div class="post-content">
+      <p>继续随便记录一下，之前也说过，Android类似的坑不少。</p>
+
+<p>下面又是一例：</p>
+
+<p>RelativeLayout中，为了方便布局，子view经常会用到alignParentBottom/Top/Left/Right等，如：</p>
+
+<pre><code class="language-language-bash">android:layout_alignParentBottom=&quot;true&quot;
+</code></pre>
+
+<p>但这时候需要注意的是，如果parent是<code>wrap_content</code>的话，<code>alignParentRight</code>就意味着要求parent的<code>layout_width=&quot;match_parent&quot;</code>； <code>alignParentBottom</code>就意味着要求parent的<code>layout_height=&quot;match_parent&quot;</code></p>
+
+<p>这会带来什么问题那？两个问题：</p>
+
+<ol>
+<li><strong>显示错误</strong>。在布局嵌套的环境下，例如布局A包含B和C，在A里面，B above C：（伪布局代码）</li>
+</ol>
+
+<pre><code class="language-language-bash">RelativeLayout 
+  width=match_parent
+  height=match_parent
+  id=&quot;A&quot;
+
+  XXLayout
+    width=match_parent
+    height=wrap_content
+    above=&quot;C&quot;
+    id=&quot;B&quot;
+
+    RelativeLayout
+      width=match_parent
+      height=wrap_content
+      id=&quot;C&quot;
+
+      XXView
+        width=match_parent
+        height=wrap_content
+        android:layout_alignParentBottom=&quot;true&quot;
+        src=xxx
+</code></pre>
+
+<p>本意是希望在布局A里面，B可以在C上面显示，C里面显示xxx；</p>
+
+<p>但是结果是：C会撑满A，然后导致B不可见。</p>
+
+<p>改法很简单，去掉
+<code>language-bash
+android:layout_alignParentBottom=&quot;true&quot;
+</code>即可。</p>
+
+<p>实际原因我没有去翻源码，不确定；但是猜测和Android的绘制/计算布局的方向有关，Android默认是从屏幕左上角向右下角绘制（在写自定义view，重载onDraw，或者坐标计算的时候需要依赖这种“特性”），所以在这种情况下，alignBottom或alignRight后，“画布”就自然而然被顶到<strong>下边</strong>和<strong>右边</strong>去了。</p>
+
+<ol>
+<li><strong>性能</strong>。对，就是性能；撑满屏幕意味着这个view（例如上面的C）的刷新，不只是局部刷新，而是整屏刷新（即使XXView可能只是一个bottom bar这种非全屏的view），所以不管是耗电量还是性能，都会受到一定的影响。</li>
+</ol>
+
+<hr />
+
+<p>综上，在设计layout的时候，需要注意方向带来的影响，同时注意不同属性之间可能导致的“冲突”。</p>
+
+<p>记录一下。</p>
+
+    </div>
+    
+      <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h">Read other posts</span>
+          <hr />
+        </div>
+        <div class="pagination__buttons">
+          
+            <span class="button previous">
+              <a href="/posts/android-sparsearray-indexofvalue-return-negative-1/">
+                <span class="button__icon">←</span>
+                <span class="button__text">Android SparseArray中indexOfValue返回-1</span>
+              </a>
+            </span>
+          
+          
+            <span class="button next">
+              <a href="/posts/android-linear-layout-weight-setting-when-adding-child-dynamically/">
+                <span class="button__text">Android LinearLayout动态增加item时Weight的设置</span>
+                <span class="button__icon">→</span>
+              </a>
+            </span>
+          
+        </div>
+      </div>
+    
+
+    
+
+    </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">hello friend</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span>© 2019 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

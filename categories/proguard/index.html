@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>proguard :: Hello Friend — A simple theme for Hugo</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="/categories/proguard/" />
+
+
+<link rel="stylesheet" href="/assets/style.css">
+
+
+<link rel="stylesheet" href="/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="proguard"/>
+<meta name="twitter:description" content=""/>
+
+
+
+<meta property="og:title" content="proguard" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/categories/proguard/" />
+
+<meta property="og:updated_time" content="2015-01-17T08:01:38&#43;00:00"/><meta property="og:site_name" content="Hello Friend" />
+
+
+
+<link rel="alternate" type="application/rss+xml" href="/categories/proguard/index.xml" title="Hello Friend" />
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">hello friend</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/showcase">Showcase</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  <div class="posts">
+    
+    
+    
+
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/proguard-obfuscation/">Proguard混淆</a></h1>
+      <div class="post-meta">
+        <span class="post-date">
+          2015-01-17
+        </span>
+        <span class="post-author">— Written by Guo Yi</span>
+        
+      </div>
+
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
+          
+            #<a href="/tags/proguard/">proguard</a>&nbsp;
+          
+            #<a href="/tags/%E6%B7%B7%E6%B7%86/">混淆</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            这里仅仅说Android的混淆，其他平台基本相同。
+不同的IDE有不同的配置方法。
+Android Studio的配置略有差异，可以参考前文
+混淆的大致原理就是rename class（所以混淆的过程比较慢），混淆的初衷，并不是为了不让人看源码，毕竟java的虚拟机机制就决定了，源码肯定是可以反编译出来的；其主要目的是让反编译后的代码“难以”看懂。
+例如打开一个混淆后输出的mapping文件，可以看到：
+（某代码片段，请无视。）
+这样一来，反编译后的代码里面，基本就是a.b.c(d.e)这种代码（也许原来只是Util.isNetworkAvailable(context)），大大增加了阅读难度；也就达到了防止反编译的目的。
+但经常会误伤，因为是rename，所以对name敏感（依赖name）的方法或者库就会无法正常工作。例如反射，例如JNI的接口class（依赖class name来找context object），例如GSON这些常用工具库。
+解决办法就是修改proguard的配置文件，将这些敏感class置为例外。
+常用方法如下：
+ 排除指定类A
+-keepclassmembers class com.xxx.xxx.A { *; }   将类A的子类全部排除 language-bash -keepclassmembers class * extends com.xxx.xxx.A { <em>; }   将包P内的class全部排除
+-keep public class com.xxx.P.</em> { *; }   将包P内的class及subclass全部排除 language-bash -keep public class com.xxx.P.** { *; }     注意*和**的差别；
+注意最后的{ *; }，用法很多，可以指定仅排除public/protected，如：
+{ public protected *;}  当然还可以直接更直接一些：
+{ &lt;fields&gt;; &lt;methods&gt;; }  如果是使用Gson的话，还可以直接如下使用方式来避免混淆问题：
+          
+        
+      </div>
+      <div><a class="read-more button" href="/posts/proguard-obfuscation/">Read more →</a></div>
+    </div>
+    
+    <div class="pagination">
+  <div class="pagination__buttons">
+    
+    
+  </div>
+</div>
+
+  </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">hello friend</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span>© 2019 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>骗局 on Hello Friend</title>
+    <link>/categories/%E9%AA%97%E5%B1%80/</link>
+    <description>Recent content in 骗局 on Hello Friend</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 06 Nov 2014 08:22:09 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/%E9%AA%97%E5%B1%80/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>快件骗局</title>
+      <link>/posts/lie-to-delivery/</link>
+      <pubDate>Thu, 06 Nov 2014 08:22:09 +0000</pubDate>
+      
+      <guid>/posts/lie-to-delivery/</guid>
+      <description>前几天在size下了一单直邮但不可跟踪（便宜）的国际件。
+估摸着这几天也快到了。
+结果刚接到两个电话，号码没记住（记性不好没办法），是从美国（+1）打过来的。
+接通以后就是以下对话（非原文，大意如下）：
+ “您好，您有一单快件连续三次无法投递，即将退运。 如需查询请按1， 人工请按9。”
+ 然后不管按哪个，电话都挂断掉了。
+想想不太科学。 也蛮着急的，不会真是size的件吧。万一退回去多麻烦阿。
+所以马上给size的客服留了言，请他们确认下目前的order delivery状态。
+然后回过神来，觉得不太对。
+ 英国（.co.uk）的网站就算是客服也不会是美国的电话吧？
+而且美国打过来的电话说中文？
+快递没投递的话也应该是local的快递部门联系我，那号码至少应该是国内（例如海关、邮政）的才对吧。
+ Google了一下“国际件 电话 退回 转人工”， 结果翻到了诈骗的字眼。
+恍然大悟，原来如此。差点儿中招阿。
+估计情况是这样：
+这笔快件的信息被卖给了诈骗集团
+因为两个电话，不管是按1还是9，都无法继续接通。估计是线路问题。
+所以这诈骗集团的这套系统可能部署上有点问题（这么分析我还真是闲的蛋疼）。
+那是谁卖的信息那？
+考虑到size.co.uk是正规B2C卖家，如果因为卖信息而失去了顾客降低了声誉，得不偿失。基本可以排除公司卖信息的可能。
+可能是黑客/个人行为/快递公司。 也懒得去确认了。
+信息泄漏太多，麻木就算了，还差点上当。
+记录下来引以为戒。</description>
+    </item>
+    
+  </channel>
+</rss>

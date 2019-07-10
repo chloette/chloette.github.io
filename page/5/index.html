@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta name="generator" content="Hugo 0.55.6" />
+    
+      <title>Hello Friend — A simple theme for Hugo</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="A simple theme for Hugo"/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="/" />
+
+
+<link rel="stylesheet" href="/assets/style.css">
+
+
+<link rel="stylesheet" href="/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Hello Friend"/>
+<meta name="twitter:description" content=""/>
+
+
+
+<meta property="og:title" content="Hello Friend" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/" />
+
+<meta property="og:updated_time" content="2018-03-04T22:34:32&#43;00:00"/><meta property="og:site_name" content="Hello Friend" />
+
+
+
+<link rel="alternate" type="application/rss+xml" href="/index.xml" title="Hello Friend" />
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">hello friend</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/showcase">Showcase</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  <div class="posts">
+    
+    
+    
+
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/my-ghost-upgrade-script/">My ghost upgrade script</a></h1>
+      <div class="post-meta">
+        <span class="post-date">
+          2015-03-06
+        </span>
+        <span class="post-author">— Written by Guo Yi</span>
+        
+      </div>
+
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/ghost/">ghost</a>&nbsp;
+          
+            #<a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            最后的最后，还是写了一个： 一行命令就升级ghost的脚本（包括：ghost升级、google font cdn优化、首页摘要显示优化、logo优化、首页图片显示优化、prism高亮code、disqus评论）。
+ghostUpgrade
+io page
+####Environment before using:
+ Ubuntu 14.04 (or similar) ghost0.5.x npm/nodejs/forever  ####How to use:
+ clone to folder-of-code add executable permission to upgrade_ghost.sh and start_ghost.sh like this: chmod a+x folder-of-code/*.sh change folder-of-ghost in start_ghost.sh to actual ghost folder If you need comments (Disqus only), upgrade like this: folder-of-code/upgrade_ghost.sh folder-of-ghost folder-of-code Disqus_forum_shortname, otherwise: folder-of-code/upgrade_ghost.sh folder-of-ghost folder-of-code Waiting&hellip;  LOL~ Enjoy your ghost~
+####What&rsquo;s upgrade_ghost.sh doing：
+          
+        
+      </div>
+      <div><a class="read-more button" href="/posts/my-ghost-upgrade-script/">Read more →</a></div>
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/ghost-highlight-syntax/">Ghost代码高亮</a></h1>
+      <div class="post-meta">
+        <span class="post-date">
+          2015-03-04
+        </span>
+        <span class="post-author">— Written by Guo Yi</span>
+        
+      </div>
+
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/ghost/">ghost</a>&nbsp;
+          
+            #<a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
+          
+            #<a href="/tags/%E8%AE%B0%E5%BD%95/">记录</a>&nbsp;
+          
+            #<a href="/tags/highlight-syntax/">highlight syntax</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            Ghost本身的代码高亮是很粗糙的，如下：
+//This is code sample int x = 0; int y = 1; x = y++; &hellip;  但是代码至少应该像下面这样才好看啊！
+//This is code sample int x = 0; int y = 1; x = y++; &hellip;  翻了翻ghost的论坛，发现了prism，使用可以参考这里
+下载css/js的时候可以选择自己需要的高亮语言等。
+这样就又需要修改server上用来更新ghost的bash了：
+#copy prism js/css to content and use it (to highlight codes) cp ~/prism/prism.js ./content/themes/casper/assets/js/ cp ~/prism/prism.css ./cotent/themes/casper/assets/css/ sed -i &rsquo;s~&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;{{asset &quot;css/screen.css&quot;}}&quot; /&gt;~&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;{{asset &quot;css/screen.css&quot;}}&quot; /&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;{{asset &quot;css/prism.
+          
+        
+      </div>
+      <div><a class="read-more button" href="/posts/ghost-highlight-syntax/">Read more →</a></div>
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/osx-qq-display-error/">OSX版QQ显示问题</a></h1>
+      <div class="post-meta">
+        <span class="post-date">
+          2015-03-03
+        </span>
+        <span class="post-author">— Written by Guo Yi</span>
+        
+      </div>
+
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/%E8%AE%B0%E5%BD%95/">记录</a>&nbsp;
+          
+            #<a href="/tags/qq/">QQ</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      <div><a class="read-more button" href="/posts/osx-qq-display-error/">Read more →</a></div>
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/computing-a-theory-of-everything/">计算 &ndash; 万物理论</a></h1>
+      <div class="post-meta">
+        <span class="post-date">
+          2015-03-03
+        </span>
+        <span class="post-author">— Written by Guo Yi</span>
+        
+      </div>
+
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/%E8%AE%B0%E5%BD%95/">记录</a>&nbsp;
+          
+            #<a href="/tags/ted/">TED</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      <div><a class="read-more button" href="/posts/computing-a-theory-of-everything/">Read more →</a></div>
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/leaving-cm/">将离（我要滚犊子啦）</a></h1>
+      <div class="post-meta">
+        <span class="post-date">
+          2015-02-28
+        </span>
+        <span class="post-author">— Written by Guo Yi</span>
+        
+      </div>
+
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/%E8%AE%B0%E5%BD%95/">记录</a>&nbsp;
+          
+            #<a href="/tags/%E7%94%9F%E6%B4%BB/">生活</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            离职提上日程了啊，邮箱已经被关掉了。。。
+动作够迅速，确认了下可能是IT部门弄错了时间；考虑到反正要关掉的，也就不用再开了吧 ：）
+该交接的东西不多，大部分都文档化了。
+直接留了一个索引表，想干什么事情找对应文档，即可。
+服务器相关的事情也交接完了，张老师还是很给力的~
+剩下来的时间虽然无聊却也弥足珍贵~
+回顾这一年，虽然偶尔忙碌，偶尔清闲，但一直工作的轻松愉快~（公司虽小，氛围却相当赞啊！）
+这一路走来，感触颇多，实在不知从何说起。流水账般的记录一下吧：
+若干新技能get√：
+ FFmpeg for Android FFmpeg对音视频的编码/解码 FFmpeg + GpuImage 实现美拍（Android）[待整理] Jenkins部署Ant/Gradle编译环境 本站（aws/nginx/ghost/python）  有爱的小伙伴们：
+ 张莉：张老师被我忽悠过来结果我跑路子了。。不要怪我~ 哈哈哈~ 敬你是条汉子！ 严隐：严导被我忽悠去滑雪然后果断上瘾。。不要怪我~ 哈哈哈~ 相当NB的全栈码农~ 郑良亮：Lake，leader，脾气很好，版本递交控制的很到位，值得学习！ 樊平：Boss，装备党！ 平乾：同装备党！ 王萌：大逗比！ 杨文杰：不说了，一图毁终生！ 包立：节操粉碎机！ 李波：会秒杀的90后！ 陈龙：大哥太低调！ 曾立：半半！ 乐敏飞：测试姐妹团的头目 程萍：测试姐妹团的小太妹 樊银：测试姐妹团的军火库 张冰洁：测试姐妹团中，被波波拒绝了的妹纸（波波你注孤生！） 黄平平：从测试姐妹团消失很久了。。。 王宝福：多国语言帝！ 郑XX：浙初兄，对，我忘记你叫啥了，但他们叫你快枪手。。。 张玉清：哈哈哈你想清楚再给我说好么~ 陈成：碉堡的优秀新人~ 张静：你的造型那么精致你让妹纸们情何以堪~ 张健：你一定是某VPN的代理商！ 李世珍：你知道每次别人喊Roy的时候我都会抬头么。。。 俞旻康：名字好难打，爆料王 T_T 龚敏慧：啥都会的HR~ 周璐：啥都会的前台~ 王萌说这是他在公司唯一信任的人，所以我觉得她和王萌有故事。 杨小乐：嗓门很大的IOS头目 郑楠：设计头目，但一定很缺钱！因为他居然还兼职牛丼（食其家）服务员~ 朱静凯：你们三个我不熟啊啊啊啊（0）！ 何宝泳：你们三个我不熟啊啊啊啊（1）！ 王璐：你们三个我不熟啊啊啊啊（2）！ 钟久祥：我真的不会教别人滑雪。。。 吴晓军：走得晚来的早！所以为了照顾你，公司就不提供加班费了~ 王文思：双鱼座！麦当劳走起！ 魏伟：你和大哥一样低调~ 胡锡舟：胡小墨！昵称当真名也是醉了。。。隐姓埋名藏这么深还偷偷练功夫一定是有原因的！欠别人钱记得早点还哦！ 蔡良建：你就是China Joy，就是那不一样的花火~  依然记得你们滑雪的英姿~
+          
+        
+      </div>
+      <div><a class="read-more button" href="/posts/leaving-cm/">Read more →</a></div>
+    </div>
+    
+    <div class="pagination">
+  <div class="pagination__buttons">
+    
+      <span class="button previous">
+        <a href="/page/4/">
+          <span class="button__icon">←</span>
+          <span class="button__text">Newer posts</span>
+        </a>
+      </span>
+    
+    
+      <span class="button next">
+        <a href="/page/6/">
+          <span class="button__text">Older posts</span>
+          <span class="button__icon">→</span>
+        </a>
+      </span>
+    
+  </div>
+</div>
+
+  </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">hello friend</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span>© 2019 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

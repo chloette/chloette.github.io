@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>android studio :: Hello Friend — A simple theme for Hugo</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="/categories/android-studio/" />
+
+
+<link rel="stylesheet" href="/assets/style.css">
+
+
+<link rel="stylesheet" href="/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="android studio"/>
+<meta name="twitter:description" content=""/>
+
+
+
+<meta property="og:title" content="android studio" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/categories/android-studio/" />
+
+<meta property="og:updated_time" content="2014-11-07T06:37:01&#43;00:00"/><meta property="og:site_name" content="Hello Friend" />
+
+
+
+<link rel="alternate" type="application/rss+xml" href="/categories/android-studio/index.xml" title="Hello Friend" />
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">hello friend</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/showcase">Showcase</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  <div class="posts">
+    
+    
+    
+
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/android-studiode-common-questions/">Android studio的一些坑</a></h1>
+      <div class="post-meta">
+        <span class="post-date">
+          2014-11-07
+        </span>
+        <span class="post-author">— Written by Guo Yi</span>
+        
+      </div>
+
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/android-studio/">android studio</a>&nbsp;
+          
+            #<a href="/tags/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">常见问题</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            Android studio会慢慢替换掉Eclipse，从来作为Android的主力IDE。
+但是目前存在的问题还是蛮多的，这里简单罗列一下（有更新陆续补充）：
+####报错：duplicate files during packaging of APK 在主工程的build.gradle增加：
+android { packagingOptions { exclude &lsquo;META-INF/LICENSE.txt&rsquo; } }  ####提示Error: Missing one of the key attributes &lsquo;action#name,category#name&rsquo; on element intent-filter at AndroidManifest.xml 将
+&lt;intent-filter android:priority=&quot;1000&quot; /&gt;  改为：
+&lt;intent-filter android:priority=&quot;1000&quot;&gt; &lt;action android:name=&quot;HEHEHE&quot; /&gt; &lt;/intent-filter&gt;  ####奇怪的编译错误：illegal character: &lsquo;\ufeff&rsquo;：
+Android studio 调试过程中出现：非法字符： \65279
+java: F:\android\Lock_QinZDLock\src\com\qin\lock\SliderRelativeLayout.java:1: 非法字符： \65279  解决方法：使用Notpad++打开 格式 选择保存为无bom编码 格式UTF-8不需要BOM来表明字节顺序，但可以用BOM来表明编码方式。字符&rdquo;ZERO WIDTH NO-BREAK SPACE&rdquo;的UTF-8编码是EF BB BF。所以如果接收者收到以EF BB BF开头的字节流，就知道这是UTF-8编码了。
+来自 <a href="http://blog.taorenjia.com/?p=319">http://blog.taorenjia.com/?p=319</a>
+          
+        
+      </div>
+      <div><a class="read-more button" href="/posts/android-studiode-common-questions/">Read more →</a></div>
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/android-studio-cannot-sync-after-upgrade/">Android Studio升级后无法完成sync</a></h1>
+      <div class="post-meta">
+        <span class="post-date">
+          2014-11-03
+        </span>
+        <span class="post-author">— Written by Guo Yi</span>
+        
+      </div>
+
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/android-studio/">android studio</a>&nbsp;
+          
+            #<a href="/tags/sync/">sync</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      <div><a class="read-more button" href="/posts/android-studio-cannot-sync-after-upgrade/">Read more →</a></div>
+    </div>
+    
+    <div class="pagination">
+  <div class="pagination__buttons">
+    
+    
+  </div>
+</div>
+
+  </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">hello friend</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span>© 2019 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

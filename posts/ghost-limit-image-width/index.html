@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>Ghost首页图片限制宽高 :: Hello Friend — A simple theme for Hugo</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="还是默认Theme。
+如何显示图片可以参考[Ghost在首页显示图片而非摘要]
+但是这样修改有一个地方漏掉了。就是图片的宽高，普通图片还好，但到了大图，就坑爹了。在首页显示比较大的图片，会直接撑破侧边。。。
+本来以为Ghost应该支持类似![](xxx.jpg =500x)（以500 x auto的宽高来显示xxx.jpg）这种语法，结果不支持。。。
+搜一搜，可以发现Ghost讨论组对于支持image的复杂操作（例如resize，旋转等）的呼声还是很高的，而且专门列了一贴来讨论，并且给出了若干可能的解决方案（都有各自的优缺点）。
+这里先不考虑多size来适配的case，这交给Ghost的大神们吧～
+我只是希望首页显示图片后，图片宽高可控。
+解决方法有两种：
+一种是直接把./partials/loop.hbs里，post-excerpt项的class直接修改为post-content～
+&amp;lt;section class=&amp;quot;post-content&amp;quot;&amp;gt; ... &amp;lt;/section&amp;gt;  这样的好处是方便，坏处（我觉得蛮好的）就是首页的文字风格和page页完全一样（例如字体大小，行间距等），没区别了。
+还有一种就是增加post-excerpt img的css，直接copy post-content img然后改一下名字即可：
+/* Keep images centred and within the bounds of the post-width */ .post-excerpt img { display: block; max-width: 100%; height: auto; margin: 0 auto; padding: 0.6em 0; }  好处是首页风格保持和之前一致，坏处嘛，稍微麻烦一点点。哈哈～
+暂时先这么处理吧（BTW，我选择的是后者）。
+按照Ghost的说法，Image Process已经放入Road map，坐等版本更新吧～"/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="/posts/ghost-limit-image-width/" />
+
+
+<link rel="stylesheet" href="/assets/style.css">
+
+
+<link rel="stylesheet" href="/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Ghost首页图片限制宽高"/>
+<meta name="twitter:description" content="还是默认Theme。
+如何显示图片可以参考[Ghost在首页显示图片而非摘要]
+但是这样修改有一个地方漏掉了。就是图片的宽高，普通图片还好，但到了大图，就坑爹了。在首页显示比较大的图片，会直接撑破侧边。。。
+本来以为Ghost应该支持类似![](xxx.jpg =500x)（以500 x auto的宽高来显示xxx.jpg）这种语法，结果不支持。。。
+搜一搜，可以发现Ghost讨论组对于支持image的复杂操作（例如resize，旋转等）的呼声还是很高的，而且专门列了一贴来讨论，并且给出了若干可能的解决方案（都有各自的优缺点）。
+这里先不考虑多size来适配的case，这交给Ghost的大神们吧～
+我只是希望首页显示图片后，图片宽高可控。
+解决方法有两种：
+一种是直接把./partials/loop.hbs里，post-excerpt项的class直接修改为post-content～
+&lt;section class=&quot;post-content&quot;&gt; ... &lt;/section&gt;  这样的好处是方便，坏处（我觉得蛮好的）就是首页的文字风格和page页完全一样（例如字体大小，行间距等），没区别了。
+还有一种就是增加post-excerpt img的css，直接copy post-content img然后改一下名字即可：
+/* Keep images centred and within the bounds of the post-width */ .post-excerpt img { display: block; max-width: 100%; height: auto; margin: 0 auto; padding: 0.6em 0; }  好处是首页风格保持和之前一致，坏处嘛，稍微麻烦一点点。哈哈～
+暂时先这么处理吧（BTW，我选择的是后者）。
+按照Ghost的说法，Image Process已经放入Road map，坐等版本更新吧～"/>
+
+
+
+<meta property="og:title" content="Ghost首页图片限制宽高" />
+<meta property="og:description" content="还是默认Theme。
+如何显示图片可以参考[Ghost在首页显示图片而非摘要]
+但是这样修改有一个地方漏掉了。就是图片的宽高，普通图片还好，但到了大图，就坑爹了。在首页显示比较大的图片，会直接撑破侧边。。。
+本来以为Ghost应该支持类似![](xxx.jpg =500x)（以500 x auto的宽高来显示xxx.jpg）这种语法，结果不支持。。。
+搜一搜，可以发现Ghost讨论组对于支持image的复杂操作（例如resize，旋转等）的呼声还是很高的，而且专门列了一贴来讨论，并且给出了若干可能的解决方案（都有各自的优缺点）。
+这里先不考虑多size来适配的case，这交给Ghost的大神们吧～
+我只是希望首页显示图片后，图片宽高可控。
+解决方法有两种：
+一种是直接把./partials/loop.hbs里，post-excerpt项的class直接修改为post-content～
+&lt;section class=&quot;post-content&quot;&gt; ... &lt;/section&gt;  这样的好处是方便，坏处（我觉得蛮好的）就是首页的文字风格和page页完全一样（例如字体大小，行间距等），没区别了。
+还有一种就是增加post-excerpt img的css，直接copy post-content img然后改一下名字即可：
+/* Keep images centred and within the bounds of the post-width */ .post-excerpt img { display: block; max-width: 100%; height: auto; margin: 0 auto; padding: 0.6em 0; }  好处是首页风格保持和之前一致，坏处嘛，稍微麻烦一点点。哈哈～
+暂时先这么处理吧（BTW，我选择的是后者）。
+按照Ghost的说法，Image Process已经放入Road map，坐等版本更新吧～" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/ghost-limit-image-width/" />
+<meta property="article:published_time" content="2015-01-06T03:26:26&#43;00:00"/>
+<meta property="article:modified_time" content="2015-01-06T03:26:26&#43;00:00"/><meta property="og:site_name" content="Hello Friend" />
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">hello friend</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/showcase">Showcase</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  <div class="post">
+    <h2 class="post-title"><a href="/posts/ghost-limit-image-width/">Ghost首页图片限制宽高</a></h2>
+    <div class="post-meta">
+      
+        <span class="post-date">
+            2015-01-06
+        </span>
+      
+      <span class="post-author">— Written by Guo Yi</span>
+      
+    </div>
+
+    
+      <span class="post-tags">
+        
+          #<a href="/tags/ghost/">ghost</a>&nbsp;
+        
+          #<a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
+        
+          #<a href="/tags/%E5%9B%BE%E7%89%87/">图片</a>&nbsp;
+        
+          #<a href="/tags/%E5%AE%BD%E9%AB%98/">宽高</a>&nbsp;
+        
+      </span>
+    
+
+    
+
+    <div class="post-content">
+      <p>还是默认Theme。</p>
+
+<p>如何显示图片可以参考[<a href="http://nobodycare.me/2014/09/22/ghost-display-post-images-on-home-page/">Ghost在首页显示图片而非摘要</a>]</p>
+
+<p>但是这样修改有一个地方漏掉了。就是图片的宽高，普通图片还好，但到了大图，就坑爹了。在首页显示比较大的图片，会直接撑破侧边。。。</p>
+
+<p>本来以为Ghost应该支持类似<code>![](xxx.jpg =500x)</code>（以500 x auto的宽高来显示xxx.jpg）这种语法，结果不支持。。。</p>
+
+<p>搜一搜，可以发现Ghost讨论组对于支持image的复杂操作（例如resize，旋转等）的呼声还是很高的，而且专门列了<a href="https://github.com/TryGhost/Ghost/issues/4453">一贴</a>来讨论，并且给出了若干可能的解决方案（都有各自的优缺点）。</p>
+
+<p>这里先不考虑多size来适配的case，这交给Ghost的大神们吧～</p>
+
+<p><strong>我只是希望首页显示图片后，图片宽高可控。</strong></p>
+
+<p>解决方法有两种：</p>
+
+<p>一种是直接把<code>./partials/loop.hbs</code>里，<code>post-excerpt</code>项的class直接修改为<code>post-content</code>～</p>
+
+<pre><code class="language-language-markup">&lt;section class=&quot;post-content&quot;&gt;
+...
+&lt;/section&gt;
+</code></pre>
+
+<p>这样的好处是方便，坏处（我觉得蛮好的）就是首页的文字风格和page页完全一样（例如字体大小，行间距等），没区别了。</p>
+
+<p>还有一种就是增加<code>post-excerpt img</code>的css，直接copy <code>post-content img</code>然后改一下名字即可：</p>
+
+<pre><code class="language-language-css-extras">/* Keep images centred and within the bounds of the post-width */
+.post-excerpt img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding: 0.6em 0;
+}
+</code></pre>
+
+<p>好处是首页风格保持和之前一致，坏处嘛，稍微麻烦一点点。哈哈～</p>
+
+<p>暂时先这么处理吧（BTW，我选择的是后者）。</p>
+
+<p>按照Ghost的说法，Image Process已经放入Road map，坐等版本更新吧～</p>
+
+    </div>
+    
+      <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h">Read other posts</span>
+          <hr />
+        </div>
+        <div class="pagination__buttons">
+          
+            <span class="button previous">
+              <a href="/posts/ghost-boot-up/">
+                <span class="button__icon">←</span>
+                <span class="button__text">Ghost开机启动</span>
+              </a>
+            </span>
+          
+          
+            <span class="button next">
+              <a href="/posts/new-year/">
+                <span class="button__text">新年</span>
+                <span class="button__icon">→</span>
+              </a>
+            </span>
+          
+        </div>
+      </div>
+    
+
+    
+
+    </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">hello friend</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span>© 2019 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>android studio on Hello Friend</title>
+    <link>/tags/android-studio/</link>
+    <description>Recent content in android studio on Hello Friend</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 07 Nov 2014 06:37:01 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/android-studio/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Android studio的一些坑</title>
+      <link>/posts/android-studiode-common-questions/</link>
+      <pubDate>Fri, 07 Nov 2014 06:37:01 +0000</pubDate>
+      
+      <guid>/posts/android-studiode-common-questions/</guid>
+      <description>Android studio会慢慢替换掉Eclipse，从来作为Android的主力IDE。
+但是目前存在的问题还是蛮多的，这里简单罗列一下（有更新陆续补充）：
+####报错：duplicate files during packaging of APK 在主工程的build.gradle增加：
+android { packagingOptions { exclude &#39;META-INF/LICENSE.txt&#39; } }  ####提示Error: Missing one of the key attributes &#39;action#name,category#name&#39; on element intent-filter at AndroidManifest.xml 将
+&amp;lt;intent-filter android:priority=&amp;quot;1000&amp;quot; /&amp;gt;  改为：
+&amp;lt;intent-filter android:priority=&amp;quot;1000&amp;quot;&amp;gt; &amp;lt;action android:name=&amp;quot;HEHEHE&amp;quot; /&amp;gt; &amp;lt;/intent-filter&amp;gt;  ####奇怪的编译错误：illegal character: &#39;\ufeff&#39;：
+Android studio 调试过程中出现：非法字符： \65279
+java: F:\android\Lock_QinZDLock\src\com\qin\lock\SliderRelativeLayout.java:1: 非法字符： \65279  解决方法：使用Notpad++打开 格式 选择保存为无bom编码 格式UTF-8不需要BOM来表明字节顺序，但可以用BOM来表明编码方式。字符&amp;rdquo;ZERO WIDTH NO-BREAK SPACE&amp;rdquo;的UTF-8编码是EF BB BF。所以如果接收者收到以EF BB BF开头的字节流，就知道这是UTF-8编码了。
+来自 http://blog.taorenjia.com/?p=319</description>
+    </item>
+    
+    <item>
+      <title>Android Studio升级后无法完成sync</title>
+      <link>/posts/android-studio-cannot-sync-after-upgrade/</link>
+      <pubDate>Mon, 03 Nov 2014 03:13:29 +0000</pubDate>
+      
+      <guid>/posts/android-studio-cannot-sync-after-upgrade/</guid>
+      <description>表现就是一旦sync，就下载gradle-all-2.1.zip的包，而且下载进度不动。地址是：https://services.gradle.org/distributions/gradle-2.1-all.zip
+推测是android studio升级后（从0.8.x-&amp;gt;0.9.0），新旧文件有冲突。 如果目录C:\Users\XXXX.gradle\wrapper\dists\gradle-2.1-all\xxxxxx下面有2个0KB的文件，分别是gradle-2.1-all.lck和gradle-2.1-all.part，那这个基本就是出现不能sync情况的那个工程（一般一个xxxxxx目录对应一个工程）了。
+解决方法就是：
+  关掉android studio 删掉目录下的两个文件（.lck和.part） 将下载好的gradle-2.1-all.zip和解压后的gradle-2.1目录放到新目录下 运行android studio   Tada~~~
+这时候应该就可以正常Sync啦～（正常的目录下会有gradle-x.x-all.zip.ok的文件，后缀很直白～）</description>
+    </item>
+    
+  </channel>
+</rss>
