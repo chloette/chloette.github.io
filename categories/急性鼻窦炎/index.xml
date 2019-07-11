@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>急性鼻窦炎 on Hello Friend</title>
+    <title>急性鼻窦炎 on 你好，世界</title>
     <link>/categories/%E6%80%A5%E6%80%A7%E9%BC%BB%E7%AA%A6%E7%82%8E/</link>
-    <description>Recent content in 急性鼻窦炎 on Hello Friend</description>
+    <description>Recent content in 急性鼻窦炎 on 你好，世界</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>来自某个八零后</copyright>
     <lastBuildDate>Wed, 22 Oct 2014 04:19:39 +0000</lastBuildDate>
     
 	<atom:link href="/categories/%E6%80%A5%E6%80%A7%E9%BC%BB%E7%AA%A6%E7%82%8E/index.xml" rel="self" type="application/rss+xml" />

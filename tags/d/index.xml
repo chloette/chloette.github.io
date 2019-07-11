@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>d on Hello Friend</title>
+    <title>d on 你好，世界</title>
     <link>/tags/d/</link>
-    <description>Recent content in d on Hello Friend</description>
+    <description>Recent content in d on 你好，世界</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>来自某个八零后</copyright>
     <lastBuildDate>Tue, 23 Dec 2014 05:47:39 +0000</lastBuildDate>
     
 	<atom:link href="/tags/d/index.xml" rel="self" type="application/rss+xml" />

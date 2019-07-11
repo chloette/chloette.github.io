@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Sepolicy on Hello Friend</title>
+    <title>Sepolicy on 你好，世界</title>
     <link>/tags/sepolicy/</link>
-    <description>Recent content in Sepolicy on Hello Friend</description>
+    <description>Recent content in Sepolicy on 你好，世界</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>来自某个八零后</copyright>
     <lastBuildDate>Sat, 20 Jun 2015 06:58:44 +0000</lastBuildDate>
     
 	<atom:link href="/tags/sepolicy/index.xml" rel="self" type="application/rss+xml" />

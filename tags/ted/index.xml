@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>TED on Hello Friend</title>
+    <title>TED on 你好，世界</title>
     <link>/tags/ted/</link>
-    <description>Recent content in TED on Hello Friend</description>
+    <description>Recent content in TED on 你好，世界</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>来自某个八零后</copyright>
     <lastBuildDate>Tue, 03 Mar 2015 05:35:47 +0000</lastBuildDate>
     
 	<atom:link href="/tags/ted/index.xml" rel="self" type="application/rss+xml" />

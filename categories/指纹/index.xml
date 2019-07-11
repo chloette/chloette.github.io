@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>指纹 on Hello Friend</title>
+    <title>指纹 on 你好，世界</title>
     <link>/categories/%E6%8C%87%E7%BA%B9/</link>
-    <description>Recent content in 指纹 on Hello Friend</description>
+    <description>Recent content in 指纹 on 你好，世界</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>来自某个八零后</copyright>
     <lastBuildDate>Sat, 20 Sep 2014 11:31:48 +0000</lastBuildDate>
     
 	<atom:link href="/categories/%E6%8C%87%E7%BA%B9/index.xml" rel="self" type="application/rss+xml" />

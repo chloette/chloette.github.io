@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>bitlocker on Hello Friend</title>
+    <title>bitlocker on 你好，世界</title>
     <link>/categories/bitlocker/</link>
-    <description>Recent content in bitlocker on Hello Friend</description>
+    <description>Recent content in bitlocker on 你好，世界</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>来自某个八零后</copyright>
     <lastBuildDate>Mon, 10 Nov 2014 03:51:50 +0000</lastBuildDate>
     
 	<atom:link href="/categories/bitlocker/index.xml" rel="self" type="application/rss+xml" />

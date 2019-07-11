@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ltc on Hello Friend</title>
+    <title>ltc on 你好，世界</title>
     <link>/tags/ltc/</link>
-    <description>Recent content in ltc on Hello Friend</description>
+    <description>Recent content in ltc on 你好，世界</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>来自某个八零后</copyright>
     <lastBuildDate>Wed, 04 Dec 2013 23:35:18 +0000</lastBuildDate>
     
 	<atom:link href="/tags/ltc/index.xml" rel="self" type="application/rss+xml" />

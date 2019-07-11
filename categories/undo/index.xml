@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>undo on Hello Friend</title>
+    <title>undo on 你好，世界</title>
     <link>/categories/undo/</link>
-    <description>Recent content in undo on Hello Friend</description>
+    <description>Recent content in undo on 你好，世界</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>来自某个八零后</copyright>
     <lastBuildDate>Tue, 11 Jun 2013 03:20:37 +0000</lastBuildDate>
     
 	<atom:link href="/categories/undo/index.xml" rel="self" type="application/rss+xml" />

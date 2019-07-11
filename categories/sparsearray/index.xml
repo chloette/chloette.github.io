@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>SparseArray on Hello Friend</title>
+    <title>SparseArray on 你好，世界</title>
     <link>/categories/sparsearray/</link>
-    <description>Recent content in SparseArray on Hello Friend</description>
+    <description>Recent content in SparseArray on 你好，世界</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>来自某个八零后</copyright>
     <lastBuildDate>Tue, 13 Jan 2015 12:55:43 +0000</lastBuildDate>
     
 	<atom:link href="/categories/sparsearray/index.xml" rel="self" type="application/rss+xml" />

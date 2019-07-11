@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>12306 on Hello Friend</title>
+    <title>12306 on 你好，世界</title>
     <link>/tags/12306/</link>
-    <description>Recent content in 12306 on Hello Friend</description>
+    <description>Recent content in 12306 on 你好，世界</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>来自某个八零后</copyright>
     <lastBuildDate>Thu, 25 Dec 2014 09:51:13 +0000</lastBuildDate>
     
 	<atom:link href="/tags/12306/index.xml" rel="self" type="application/rss+xml" />

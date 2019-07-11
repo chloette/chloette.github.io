@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>打工旅行 on Hello Friend</title>
+    <title>打工旅行 on 你好，世界</title>
     <link>/categories/%E6%89%93%E5%B7%A5%E6%97%85%E8%A1%8C/</link>
-    <description>Recent content in 打工旅行 on Hello Friend</description>
+    <description>Recent content in 打工旅行 on 你好，世界</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>来自某个八零后</copyright>
     <lastBuildDate>Mon, 09 Mar 2015 12:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/%E6%89%93%E5%B7%A5%E6%97%85%E8%A1%8C/index.xml" rel="self" type="application/rss+xml" />

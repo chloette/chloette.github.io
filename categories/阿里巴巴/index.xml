@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>阿里巴巴 on Hello Friend</title>
+    <title>阿里巴巴 on 你好，世界</title>
     <link>/categories/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4/</link>
-    <description>Recent content in 阿里巴巴 on Hello Friend</description>
+    <description>Recent content in 阿里巴巴 on 你好，世界</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>来自某个八零后</copyright>
     <lastBuildDate>Sat, 20 Sep 2014 02:42:15 +0000</lastBuildDate>
     
 	<atom:link href="/categories/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4/index.xml" rel="self" type="application/rss+xml" />

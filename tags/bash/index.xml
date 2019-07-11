@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>bash on Hello Friend</title>
+    <title>bash on 你好，世界</title>
     <link>/tags/bash/</link>
-    <description>Recent content in bash on Hello Friend</description>
+    <description>Recent content in bash on 你好，世界</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>来自某个八零后</copyright>
     <lastBuildDate>Fri, 26 Sep 2014 07:05:44 +0000</lastBuildDate>
     
 	<atom:link href="/tags/bash/index.xml" rel="self" type="application/rss+xml" />
