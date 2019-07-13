@@ -34,7 +34,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/" />
 
-<meta property="og:updated_time" content="2018-03-04T22:34:32&#43;00:00"/><meta property="og:site_name" content="你好，世界" />
+<meta property="og:updated_time" content="2019-07-13T19:28:05&#43;08:00"/><meta property="og:site_name" content="你好，世界" />
 
 
 
@@ -108,6 +108,46 @@
     
     
 
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/about-gpl/">关于GPL</a></h1>
+      <div class="post-meta">
+        <span class="post-date">
+          2014-09-24
+        </span>
+        <span class="post-author">— Written by Guo Yi</span>
+        
+      </div>
+
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
+          
+            #<a href="/tags/ffmpeg/">ffmpeg</a>&nbsp;
+          
+            #<a href="/tags/gpl/">gpl</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            因为最近在做ffmpeg相关的东西，所以GPL/LGPL还是要了解一下的。
+GPL的WIKI： GPL WIKI
+FFmpeg主要代码遵循的是LGPL；简单来说，静态库调用的话必须同样遵循LGPL（被传染），而动态库调用就没关系：FFmpeg legal
+ The following is a checklist for LGPL compliance when linking against the FFmpeg libraries. It is not the only way to comply with the license, but we think it is the easiest. There are also a few items that are not really related to LGPL compliance but are good ideas anyway.
+1.Compile FFmpeg without &ldquo;&ndash;enable-gpl&rdquo; and without &ldquo;&ndash;enable-nonfree&rdquo;.
+2.Use dynamic linking (on windows, this means linking to dlls) for linking with FFmpeg libraries.
+          
+        
+      </div>
+      <div><a class="read-more button" href="/posts/about-gpl/">Read more →</a></div>
+    </div>
     
     <div class="post on-list">
       <h1 class="post-title"><a href="/posts/ghost-display-post-images-on-home-page/">Ghost在首页显示图片而非摘要</a></h1>
@@ -233,63 +273,6 @@
         
       </div>
       <div><a class="read-more button" href="/posts/zhou-xing-chi/">Read more →</a></div>
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/jenkins-android-auto-build-problems/">Jenkins android 自动化编译的一些坑</a></h1>
-      <div class="post-meta">
-        <span class="post-date">
-          2014-09-19
-        </span>
-        <span class="post-author">— Written by Guo Yi</span>
-        
-      </div>
-
-
-      
-        <span class="post-tags">
-          
-            #<a href="/tags/android/">Android</a>&nbsp;
-          
-            #<a href="/tags/jenkins/">Jenkins</a>&nbsp;
-          
-            #<a href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E7%BC%96%E8%AF%91/">自动化编译</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            Jenkins就是Hudson的元老们，对Oracle注册Hudson商标（Sun被吃了嘛）并且打算将其私有商业化表示不满后，另起炉灶的产物（所以和hudson不仅看起来像，连插件基本都通用。。。） 更具体的细节请移步Wiki
-[本文非科普/教程贴，仅供尝试使用Jenkins/Hudson但遇到问题的同学们，填平几个脚下的坑。]
-###基本教程：
-直接安装运行install jenkins就可以了，然后访问localhost:8080就可以看到基本页面。
-<a href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu">https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu</a> <a href="https://wiki.jenkins-ci.org/display/JENKINS/GMail">https://wiki.jenkins-ci.org/display/JENKINS/GMail</a>
-一般安装插件如下：
-<a href="https://wiki.jenkins-ci.org/display/JENKINS/Ant+Plugin">https://wiki.jenkins-ci.org/display/JENKINS/Ant+Plugin</a> <a href="https://wiki.jenkins-ci.org/display/JENKINS/Android+Lint+Plugin">https://wiki.jenkins-ci.org/display/JENKINS/Android+Lint+Plugin</a> <a href="https://wiki.jenkins-ci.org/display/JENKINS/Android+Emulator+Plugin">https://wiki.jenkins-ci.org/display/JENKINS/Android+Emulator+Plugin</a> <a href="http://wiki.hudson-ci.org/display/HUDSON/Subversion+Release+Manager">http://wiki.hudson-ci.org/display/HUDSON/Subversion+Release+Manager</a>
-配置参考如下即可：
-<a href="http://java.dzone.com/articles/automating-continuous">http://java.dzone.com/articles/automating-continuous</a> <a href="https://wiki.jenkins-ci.org/display/JENKINS/Building+an+Android+app+and+test+project">https://wiki.jenkins-ci.org/display/JENKINS/Building+an+Android+app+and+test+project</a>
-###注意事项：
-一般如上操作，就差不多可以去“build”了。但很可能是荆棘遍野的，这里罗列一些遇到的坑：
- 多工程依赖 如工程A，有两个依赖的library工程B和C，这时候除了需要在工程A下面生成build.xml和project.properties，还需要在工程B和C下面同样生成（android update project）；然后编译的时候在Ant的Build File里面使用工程A的build.xml即可
- 路径问题 如果出现明明project.properties里面有注明android.library.reference.1=xxx的依赖项，编译时依然找不到；请确认路径是../../xxx的格式而不是..\..\xxx的格式。（反斜杠不兼容）
- native库（.so）问题 如果出现库无法链接，或者没有打包到apk中的情况；请确认是否是target版本不对，目前android-20是存在一些问题的（例如安装后不能运行等。。。），暂不建议使用（2014/9/11）
- 环境变量问题
-如出现环境变量找不到，可以直接加在Ant的Properties里面，如：
-sdk.dir=/xxx/xxx/xxx/sdk   签名问题   把key找个位置放好，然后在Ant的Properties里面加入：
-key.store=/xxx/xxx/xxx.key key.alias=xxx key.store.password=xxx key.alias.password=xxx  提示空间不足
-多次编译后如空间不足，最好将JENKINS_HOME（主要是改这个环境变量）迁移到其他盘（默认是/var/lib/jenkins）; 如果遇到了503的话，一般是权限不对，把新目录的owner改为jenkins:jenkins，权限改为755即可。
- 多文件打包
-不支持多个文件同时输出（除非有name上的关联，如<strong>/*.apk这种），这里可以用shell命令来打包；如tar；这里可以使用全局变量方便命名，如$JOB_NAME或者$WORKSPACE等等，举个栗子：
-cd $WORKSPACE/code/XXX/bin/ tar zcvf $JOB_NAME.tar.gz proguard/mapping.txt xxx.apk  最后Archive the artifaces填</strong>/*.tar.gz就好了
- 如何删除SVN的登录信息   登录服务器（界面上没找到修改的地方），Edit your HUDSON_HOME/hudson.scm.SubversionSCM.xml file and delete your /credentials/entry matching with your realm (and having your given username).
-          
-        
-      </div>
-      <div><a class="read-more button" href="/posts/jenkins-android-auto-build-problems/">Read more →</a></div>
     </div>
     
     <div class="pagination">
