@@ -33,7 +33,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/posts/" />
 
-<meta property="og:updated_time" content="2019-07-13T19:28:05&#43;08:00"/><meta property="og:site_name" content="你好，世界" />
+<meta property="og:updated_time" content="2019-07-13T20:37:26&#43;08:00"/><meta property="og:site_name" content="你好，世界" />
 
 
 
@@ -107,6 +107,50 @@
     
     
 
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/shen-zhou-zu-che-de-shu-ju-an-quan-wen-ti-secure-problem-of-zuche-com/">神州租车的数据安全问题(secure problem of ZuChe.com)</a></h1>
+      <div class="post-meta">
+        <span class="post-date">
+          2013-05-29
+        </span>
+        <span class="post-author">— Written by Guo Yi</span>
+        
+      </div>
+
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/%E5%AE%89%E5%85%A8/">安全</a>&nbsp;
+          
+            #<a href="/tags/%E6%95%B0%E6%8D%AE/">数据</a>&nbsp;
+          
+            #<a href="/tags/%E6%B3%84%E6%BC%8F/">泄漏</a>&nbsp;
+          
+            #<a href="/tags/%E7%A5%9E%E5%B7%9E/">神州</a>&nbsp;
+          
+            #<a href="/tags/%E7%A7%9F%E8%BD%A6/">租车</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            说实话我不知道从何开始写，我发现了神州租车的一些，问题；而且非常严重。
+我曾经试图联系他们，但是没有得到任何反馈，所以我决定写出来，作为一个记录。
+当然，通过我的分析及实践，可以进一步得到它的用户数据，甚至进行修改或破坏，但这不是我的初衷，所以这里会做一些模糊处理（相信官方补丁会跑在那些有心者前面）。
+直接拆开它的apk【其实如果用sniffer之类的，会比我这么做来的更直接；我这么做的原因就是顺手而已。】
+可以得到对应的源文件，通过一些简单的代码和逻辑分析（几乎没有混淆），可以得到两个很霸道的接口，一个接口是通过user id来获取对应该用户所有订单信息的，获取到的内容可能如下：
+&lt;soap:Envelope xmlns:soap=&quot;<a href="http://schemas.xmlsoap.org/soap/envelope/&quot;">http://schemas.xmlsoap.org/soap/envelope/&quot;</a> xmlns:xsd=&quot;<a href="http://www.w3.org/2001/XMLSchema&quot;">http://www.w3.org/2001/XMLSchema&quot;</a> xmlns:xsi=&quot;<a href="http://www.w3.org/2001/XMLSchema-instance&quot;&gt;">http://www.w3.org/2001/XMLSchema-instance&quot;&gt;</a>; &lt;;soap:Body&gt;; &lt;;OrderListQueryResponse xmlns=&quot;<a href="http://tempuri.org/&quot;&gt;">http://tempuri.org/&quot;&gt;</a>; &lt;;OrderListQueryResult xmlns=&quot;<a href="http://tempuri.org/&quot;&gt;">http://tempuri.org/&quot;&gt;</a>; &lt;;CurrentPage xmlns=&quot;OrderListQueryResult&quot;&gt;;1&lt;;/CurrentPage&gt;; &lt;;OrderList xmlns=&quot;OrderListQueryResult&quot;&gt;;&lt;;ns1:OrderValue xmlns:ns1=&quot;OrderValue&quot;&gt;; &lt;;Address xmlns=&quot;OrderValue&quot;&gt;; &lt;span style=&quot;color: #ff0000;&quot;&gt; &lt;strong&gt;南宁市西乡塘区北湖路西三里20号【模糊】401号房&lt;/strong&gt;&lt;/span&gt;&lt;;/Address&gt;; &lt;;CarType xmlns=&quot;OrderValue&quot;&gt;;标致207/三厢/1.4手动&lt;;/CarType&gt;; &lt;;Comments xmlns=&quot;OrderValue&quot;&gt;;&lt;;/Comments&gt;; &lt;;DrivingLicenceNo xmlns=&quot;OrderValue&quot;&gt;;null&lt;;/DrivingLicenceNo&gt;; &lt;;Email xmlns=&quot;OrderValue&quot;&gt;;&lt;;/Email&gt;; &lt;;FromAddr xmlns=&quot;OrderValue&quot;&gt;;null&lt;;/FromAddr&gt;;&lt;;FromCity xmlns=&quot;OrderValue&quot;&gt;;南宁&lt;;/FromCity&gt;; &lt;;FromDate xmlns=&quot;OrderValue&quot;&gt;;2013-04-08 12:00 &lt;;/FromDate&gt;; &lt;;FromProvince xmlns=&quot;OrderValue&quot;&gt;;广西壮族自治区&lt;;/FromProvince&gt;; &lt;;FromStore xmlns=&quot;OrderValue&quot;&gt;;广西体育馆店&lt;;/FromStore&gt;; &lt;;IdCardNo xmlns=&quot;OrderValue&quot;&gt;; &lt;span style=&quot;color: #ff0000;&quot;&gt;&lt;strong&gt;450104【模糊】0510&lt;/strong&gt;&lt;/span&gt;&lt;;/IdCardNo&gt;; &lt;;IdCardType xmlns=&quot;OrderValue&quot;&gt;;10&lt;;/IdCardType&gt;; &lt;;InsuranceFee xmlns=&quot;OrderValue&quot;&gt;;30.0&lt;;/InsuranceFee&gt;; &lt;;Mobile xmlns=&quot;OrderValue&quot;&gt;; &lt;strong&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;158【模糊】1523&lt;/span&gt;&lt;/strong&gt;&lt;;/Mobile&gt;; &lt;;OrderNo xmlns=&quot;OrderValue&quot;&gt;;13653269673220 ? ? ?&lt;;/OrderNo&gt;; &lt;;OrderStatus xmlns=&quot;OrderValue&quot;&gt;;已完成&lt;;/OrderStatus&gt;; &lt;;Picture xmlns=&quot;OrderValue&quot;&gt;;<a href="http://static.zuchecdn.com/images/terminal/bj207.jpg&lt;;/Picture&gt;">http://static.zuchecdn.com/images/terminal/bj207.jpg&lt;;/Picture&gt;</a>; &lt;;ReturnAddr xmlns=&quot;OrderValue&quot;&gt;;广西壮族自治区南宁市江南区星光大道3号广西体育馆&lt;;/ReturnAddr&gt;; &lt;;ServiceFee xmlns=&quot;OrderValue&quot;&gt;;20.
+          
+        
+      </div>
+      <div><a class="read-more button" href="/posts/shen-zhou-zu-che-de-shu-ju-an-quan-wen-ti-secure-problem-of-zuche-com/">Read more →</a></div>
+    </div>
     
     <div class="post on-list">
       <h1 class="post-title"><a href="/posts/kai-fang-xin-xi-jian-die-de-quan-bu-yuan-ma-bing-ting-zhi-fu-wu/">开放信息间谍的全部源码并停止服务</a></h1>

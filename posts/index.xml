@@ -7,10 +7,49 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>来自某个八零后</copyright>
-    <lastBuildDate>Sat, 13 Jul 2019 19:28:05 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 13 Jul 2019 20:37:26 +0800</lastBuildDate>
     
 	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>从AWS搬离</title>
+      <link>/posts/leaveaws/</link>
+      <pubDate>Sat, 13 Jul 2019 20:37:26 +0800</pubDate>
+      
+      <guid>/posts/leaveaws/</guid>
+      <description> 说来话长。
+1.又双叒叕被封的AWS 去年续费了AWS，3年，小2000块。
+上面不仅跑着我的博客，还跑着几个大数据库（曾经好奇爬的）；
+最重要的是，挂着我的SS。
+这可以算‘离岸资产’了吧，所以被盯上了「哈哈哈」
+实际情况是今年5月开始，AWS日本的诸多IP段都无法访问了。
+这个故事告诉我们，‘离岸资产’别动辄续费好几年；因为如果被封禁，是很难要求退款的。  
+2.尝试阿里云 不管白猫黑猫，能抓到老鼠才是好猫。
+想清楚了这个，就开始筹划AWS数据迁移和阿里云的搭建事宜。
+考虑到自己瞎BB可能有敏感词，所以博客/数据/SS需要分离；鸡蛋不能放在一个篮子里！
+暂定是博客就直接放在Github「每年Pro的钱不能白花」，保证访问性；
+数据放本地NAS上，保证运算能力；
+SS放在阿里云香港站，保证速度；
+想通用了好多天，实际落地就用了一下午。
+在国内就该老老实实用国内的ISP啊。  
+3.部署SS 阿里云搭起来挺方便，配置好key可以ssh，后面需要做的事情就很少了。
+参考这里一步步来即可
+「不要忘记了系统启动自动加载哦」
+
+4.博客迁移 我之前的博客是基于Ghost；优点是图文界面齐全；缺点也随之而来，迁移比较痛苦；
+先按照Quick Start本地建站；
+然后按照GhostToHugo来迁移；
+一步步来，有问题就debug，跑起来后第一感觉是 &amp;ndash; 这页面是不是太简单了。。。
+自己作的妖，得继续作完啊。
+继续按照HostOnGithub来上Github
+最后，别忘记了 &amp;ndash; DNS需要重定向（尤其是多域名）。
+全部作完，只有一个担心；旧文格式/显示‘可能’有问题还处理不？
+这是深坑，换个时间再面对。  
+5.验证 边跑边看。
+「反正我不打算加评论区」  
+也算尘埃落定，重新开始。 </description>
+    </item>
     
     <item>
       <title>想起一些人</title>

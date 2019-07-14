@@ -33,7 +33,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/posts/" />
 
-<meta property="og:updated_time" content="2019-07-13T19:28:05&#43;08:00"/><meta property="og:site_name" content="你好，世界" />
+<meta property="og:updated_time" content="2019-07-13T20:37:26&#43;08:00"/><meta property="og:site_name" content="你好，世界" />
 
 
 
@@ -107,6 +107,46 @@
     
     
 
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/about-shellshock-bash-bug/">关于Shellshock bash bug</a></h1>
+      <div class="post-meta">
+        <span class="post-date">
+          2014-09-26
+        </span>
+        <span class="post-author">— Written by Guo Yi</span>
+        
+      </div>
+
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/%E5%AE%89%E5%85%A8/">安全</a>&nbsp;
+          
+            #<a href="/tags/shellshock/">Shellshock</a>&nbsp;
+          
+            #<a href="/tags/bash/">bash</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            “不小心”看到了shellshock bash bug
+不明觉厉，按图索骥：
+$env x=&lsquo;() { :;}; echo vulnerable&rsquo; bash -c &lsquo;echo this is a test&rsquo;   If you see the word &ldquo;vulnerable&rdquo; as an answer, your system is, well&hellip; vulnerable.
+ 中枪。。。
+立刻update+upgrade，再回过头看看到底啥情况：
+ Your Bash shell is simply running more code after a function (the &ldquo;() { :;};&rdquo; part), and that shouldn&rsquo;t be happening. The function is the &ldquo;allowed&rdquo; code, while everything after it is where the potentially &ldquo;malicious&rdquo; code could be installed.
+          
+        
+      </div>
+      <div><a class="read-more button" href="/posts/about-shellshock-bash-bug/">Read more →</a></div>
+    </div>
     
     <div class="post on-list">
       <h1 class="post-title"><a href="/posts/about-gpl/">关于GPL</a></h1>
@@ -241,37 +281,6 @@ FFmpeg主要代码遵循的是LGPL；简单来说，静态库调用的话必须�
         
       </div>
       <div><a class="read-more button" href="/posts/a-li-ba-ba-de-kuang-huan/">Read more →</a></div>
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/zhou-xing-chi/">周星星最近被黑的不轻</a></h1>
-      <div class="post-meta">
-        <span class="post-date">
-          2014-09-19
-        </span>
-        <span class="post-author">— Written by Guo Yi</span>
-        
-      </div>
-
-
-      
-        <span class="post-tags">
-          
-            #<a href="/tags/%E6%98%9F%E7%88%B7/">星爷</a>&nbsp;
-          
-            #<a href="/tags/%E5%91%A8%E6%98%9F%E9%A9%B0/">周星驰</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      <div><a class="read-more button" href="/posts/zhou-xing-chi/">Read more →</a></div>
     </div>
     
     <div class="pagination">

@@ -33,7 +33,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/posts/" />
 
-<meta property="og:updated_time" content="2019-07-13T19:28:05&#43;08:00"/><meta property="og:site_name" content="你好，世界" />
+<meta property="og:updated_time" content="2019-07-13T20:37:26&#43;08:00"/><meta property="og:site_name" content="你好，世界" />
 
 
 
@@ -107,6 +107,47 @@
     
     
 
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/android-studiode-common-questions/">Android studio的一些坑</a></h1>
+      <div class="post-meta">
+        <span class="post-date">
+          2014-11-07
+        </span>
+        <span class="post-author">— Written by Guo Yi</span>
+        
+      </div>
+
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/android-studio/">android studio</a>&nbsp;
+          
+            #<a href="/tags/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">常见问题</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            Android studio会慢慢替换掉Eclipse，从来作为Android的主力IDE。
+但是目前存在的问题还是蛮多的，这里简单罗列一下（有更新陆续补充）：
+####报错：duplicate files during packaging of APK 在主工程的build.gradle增加：
+android { packagingOptions { exclude &lsquo;META-INF/LICENSE.txt&rsquo; } }  ####提示Error: Missing one of the key attributes &lsquo;action#name,category#name&rsquo; on element intent-filter at AndroidManifest.xml 将
+&lt;intent-filter android:priority=&quot;1000&quot; /&gt;  改为：
+&lt;intent-filter android:priority=&quot;1000&quot;&gt; &lt;action android:name=&quot;HEHEHE&quot; /&gt; &lt;/intent-filter&gt;  ####奇怪的编译错误：illegal character: &lsquo;\ufeff&rsquo;：
+Android studio 调试过程中出现：非法字符： \65279
+java: F:\android\Lock_QinZDLock\src\com\qin\lock\SliderRelativeLayout.java:1: 非法字符： \65279  解决方法：使用Notpad++打开 格式 选择保存为无bom编码 格式UTF-8不需要BOM来表明字节顺序，但可以用BOM来表明编码方式。字符&rdquo;ZERO WIDTH NO-BREAK SPACE&rdquo;的UTF-8编码是EF BB BF。所以如果接收者收到以EF BB BF开头的字节流，就知道这是UTF-8编码了。
+来自 <a href="http://blog.taorenjia.com/?p=319">http://blog.taorenjia.com/?p=319</a>
+          
+        
+      </div>
+      <div><a class="read-more button" href="/posts/android-studiode-common-questions/">Read more →</a></div>
+    </div>
     
     <div class="post on-list">
       <h1 class="post-title"><a href="/posts/about-loading-res-from-apk-directly/">关于Android如何动态加载res</a></h1>
@@ -267,37 +308,6 @@ HDD : depends on the needs. For my use, a 8 modules j2ee maven project + db scri
         
       </div>
       <div><a class="read-more button" href="/posts/android-studio-cannot-sync-after-upgrade/">Read more →</a></div>
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/ji-xing-bi-dou-yan/">急性鼻窦炎</a></h1>
-      <div class="post-meta">
-        <span class="post-date">
-          2014-10-22
-        </span>
-        <span class="post-author">— Written by Guo Yi</span>
-        
-      </div>
-
-
-      
-        <span class="post-tags">
-          
-            #<a href="/tags/%E8%AE%B0%E5%BD%95/">记录</a>&nbsp;
-          
-            #<a href="/tags/%E6%80%A5%E6%80%A7%E9%BC%BB%E7%AA%A6%E7%82%8E/">急性鼻窦炎</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      <div><a class="read-more button" href="/posts/ji-xing-bi-dou-yan/">Read more →</a></div>
     </div>
     
     <div class="pagination">

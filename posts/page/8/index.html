@@ -33,7 +33,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/posts/" />
 
-<meta property="og:updated_time" content="2019-07-13T19:28:05&#43;08:00"/><meta property="og:site_name" content="你好，世界" />
+<meta property="og:updated_time" content="2019-07-13T20:37:26&#43;08:00"/><meta property="og:site_name" content="你好，世界" />
 
 
 
@@ -107,6 +107,39 @@
     
     
 
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/different-os/">不同OS个人体验</a></h1>
+      <div class="post-meta">
+        <span class="post-date">
+          2015-02-09
+        </span>
+        <span class="post-author">— Written by Guo Yi</span>
+        
+      </div>
+
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/%E8%AE%B0%E5%BD%95/">记录</a>&nbsp;
+          
+            #<a href="/tags/os/">OS</a>&nbsp;
+          
+            #<a href="/tags/%E4%BD%93%E9%AA%8C/">体验</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      <div><a class="read-more button" href="/posts/different-os/">Read more →</a></div>
+    </div>
     
     <div class="post on-list">
       <h1 class="post-title"><a href="/posts/photo-gallery-from-folder/">Photo gallery from folder</a></h1>
@@ -275,62 +308,6 @@
         
       </div>
       <div><a class="read-more button" href="/posts/script-to-modify-ghost-screen-css/">Read more →</a></div>
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/android-imagefetcher/">Android ImageFetcher</a></h1>
-      <div class="post-meta">
-        <span class="post-date">
-          2015-01-21
-        </span>
-        <span class="post-author">— Written by Guo Yi</span>
-        
-      </div>
-
-
-      
-        <span class="post-tags">
-          
-            #<a href="/tags/android/">Android</a>&nbsp;
-          
-            #<a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
-          
-            #<a href="/tags/imagefetcher/">ImageFetcher</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            Google完善文档后，也提供了一大批优秀的源代码。
-ImageFetcher就是其中之一，这货非常简洁的实现了用ImageView来异步加载网页图片，同时对图片进行二级缓存的功能。
-稍微改改就可以轻松适配任何图片资源（例如本地，例如需特殊条件（如宽高，比例，透明度等）等）了。
-主体代码构成： 外部调用如下：
- New：
-ImageFetcher imageFetcher = new ImageFetcher(context, width, height);  就可以了。
-当然这里一般都会改动；
-例如为了区分cache目录，会把unique folder name作为参数传入进去）。
-例如为了替换默认图，把图标传进去。
-例如为了适配任何图片资源，增加自定义的ImageProvider，也在初始化的时候传进去。
- Load bitmap：   imageFetcher.loadImage(pathString, (ImageView) view.findViewById(R.id.thumbnail));   这样这个ImageView就会在图片通过异步下载好（并缓存）以后，自己加载显示出来了～
- Close cache：  imageFetcher.setPauseWork(false); imageFetcher.closeCache();  就是这么简单任性～
-内部逻辑重点的几个：
- 对Download下来的图片，使用DiskLruCache来本地缓存，使用LruCache作为内存缓存；
- 使用AsyncTask（WeakReference）来异步download图片；结束后对ImageView（WeakReference）进行setImageDrawable（AsyncDrawable）；这里的AsyncDrawable内部有正在处理自身的AsyncTask的WeakReference，所以可以避免重复execute的情况；每次都会先cancel之前的。
- AsyncTask跑在Executor（线程池）中。
-  主要原理就是这样，其中一些细节可以自己翻源码～～ 非常方便使用和扩展～ 基本已经成为搭项目时必备库之一。
-但是这里有一点，需要注意！
-谨慎使用ImageFetcher.setPauseWork
-官方Sample给出了两个用法，看起来前后有一点矛盾：
-一个是在Grid滑动的时候：
-public void onScrollStateChanged(AbsListView absListView, int scrollState) { // Pause fetcher to ensure smoother scrolling when flinging if (scrollState == AbsListView.
-          
-        
-      </div>
-      <div><a class="read-more button" href="/posts/android-imagefetcher/">Read more →</a></div>
     </div>
     
     <div class="pagination">
