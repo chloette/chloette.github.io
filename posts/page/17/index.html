@@ -33,7 +33,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/posts/" />
 
-<meta property="og:updated_time" content="2019-07-13T20:37:26&#43;08:00"/><meta property="og:site_name" content="你好，世界" />
+<meta property="og:updated_time" content="2019-07-23T21:11:13&#43;08:00"/><meta property="og:site_name" content="你好，世界" />
 
 
 
@@ -107,6 +107,39 @@
     
     
 
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/ghost-image-upload-limitation/">Ghost图片上传大小限制</a></h1>
+      <div class="post-meta">
+        <span class="post-date">
+          2014-10-09
+        </span>
+        <span class="post-author">— Written by Guo Yi</span>
+        
+      </div>
+
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/ghost/">ghost</a>&nbsp;
+          
+            #<a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
+          
+            #<a href="/tags/%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8F/">文件大小</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      <div><a class="read-more button" href="/posts/ghost-image-upload-limitation/">Read more →</a></div>
+    </div>
     
     <div class="post on-list">
       <h1 class="post-title"><a href="/posts/star-sun-moon/">星星/太阳/月亮</a></h1>
@@ -292,47 +325,6 @@ FFmpeg是多媒体框架的领军人物，允许解码、编码、转码、Mux�
         
       </div>
       <div><a class="read-more button" href="/posts/about-ffmpeg-basic/">Read more →</a></div>
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/ghost-upgrade-to-0-5-2/">Ghost upgrade to 0.5.2</a></h1>
-      <div class="post-meta">
-        <span class="post-date">
-          2014-09-29
-        </span>
-        <span class="post-author">— Written by Guo Yi</span>
-        
-      </div>
-
-
-      
-        <span class="post-tags">
-          
-            #<a href="/tags/ghost/">ghost</a>&nbsp;
-          
-            #<a href="/tags/upgrade/">upgrade</a>&nbsp;
-          
-            #<a href="/tags/script/">script</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            不小心看到更新了，所以就去更新了（确实有新功能，如侧边栏和主题图片等，默认模板的字体也有修改），结果掉到自己给自己挖的坑里面去了。。。（手贱是病不治不行啊。。。）
-参考How to upgrade self-installed Ghost来升级即可。不过我又加上了修改fonts来源（通过sed），并修改excerpt（也是通过sed。。。）
-由于Ghost用的sqlite是不加密的（还是因为我用的是dev版本？），所以sed替换的时候会把sqlite数据库（content/data/sqlite-dev）里面的数据一并替换掉（还记得我之前写过Ghost访问比Wordpress还慢？么？真是自掘坟墓啊）
-结果启动Ghost就报sql corruption 500的错误。。。（这么“写”数据，基本的MD5校验都过不了啊）
-真是一失足成千古恨啊。折腾了蛮久才发现是这个问题。 T_T
-附上修改后的脚本，运行
-sudo ./upgrade_ghost.sh TARGET_DIR_PATH <code>即可：</code>language-bash #stop all echo &lsquo;1. stop all &mdash;&mdash;&mdash;&mdash;&mdash;&ndash;&rsquo; forever stopall #download latest build echo &lsquo;2. download latest package &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-&rsquo; rm ghost-latest.zip wget <a href="http://ghost.org/zip/ghost-latest.zip">http://ghost.org/zip/ghost-latest.zip</a> #rm core echo &lsquo;3. delete core dir &mdash;&mdash;&mdash;&mdash;&mdash;&rsquo; rm -rf $1/core #unzip echo &lsquo;4. unzip and merge code &mdash;&mdash;&mdash;&mdash;&mdash;-&rsquo; unzip -uo ghost-latest.zip -d $1/ #install rm ghost-latest.zip cd $1/ echo &lsquo;5.
-          
-        
-      </div>
-      <div><a class="read-more button" href="/posts/ghost-upgrade-to-0-5-2/">Read more →</a></div>
     </div>
     
     <div class="pagination">

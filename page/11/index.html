@@ -34,7 +34,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/" />
 
-<meta property="og:updated_time" content="2019-07-13T20:37:26&#43;08:00"/><meta property="og:site_name" content="你好，世界" />
+<meta property="og:updated_time" content="2019-07-23T21:11:13&#43;08:00"/><meta property="og:site_name" content="你好，世界" />
 
 
 
@@ -108,6 +108,35 @@
     
     
 
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/new-year/">新年</a></h1>
+      <div class="post-meta">
+        <span class="post-date">
+          2015-01-05
+        </span>
+        <span class="post-author">— Written by Guo Yi</span>
+        
+      </div>
+
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/%E8%AE%B0%E5%BD%95/">记录</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      <div><a class="read-more button" href="/posts/new-year/">Read more →</a></div>
+    </div>
     
     <div class="post on-list">
       <h1 class="post-title"><a href="/posts/about-charset/">关于字符编码</a></h1>
@@ -275,49 +304,6 @@ UTF-8就是为了存储和传输方便，缩小版的UTF-16。
         
       </div>
       <div><a class="read-more button" href="/posts/android-docs-opengles/">Read more →</a></div>
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/about-ffmpeg-advance/">关于FFmpeg（进阶）</a></h1>
-      <div class="post-meta">
-        <span class="post-date">
-          2014-12-24
-        </span>
-        <span class="post-author">— Written by Guo Yi</span>
-        
-      </div>
-
-
-      
-        <span class="post-tags">
-          
-            #<a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
-          
-            #<a href="/tags/ffmpeg/">ffmpeg</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            基本篇在此。
-目前仅使用到了ffmpeg的读写文件/编解码功能，并未使用其去直接渲染。
-这里说是进阶，其实也只能算浮于表面。因此主要记录使用ffmpeg以来遇到的坑，版本差异，android版本编译等。So，这里就不继续采用Q&amp;A的方式了。
-（本文并非通过ffmpeg.exe\bin传递command来进行处理，而是直接调用ffmpeg相关libraries中的api）
-####FFmpeg libraries FFmpeg有以下库：（2014/12/24 ffmpeg 2.5.2），主要功能列在About中有基本介绍，这里不再赘述。
- libavutil 54. 15.100 libavcodec 56. 13.100 libavformat 56. 15.102 libavdevice 56. 3.100 &mdash; 未使用 libavfilter 5. 2.103 &mdash; 未使用 libavresample 2. 1. 0 &mdash; 未使用 libswscale 3. 1.101 libswresample 1. 1.100 libpostproc 53. 3.100 &mdash; 未使用   ####FFmpeg基本 首先，官方文档为第一参考文档；其次就是源码（这里把*源码<em>放到这么靠前的原因下文会提到）。
-FFmpeg的官方文档算是比较全的。 一些常见case的testbed都可以找得到；例如2.5版本，编解码的sample
-同时官方的例子并非浅显易懂，但是因为层次简单，所以调用逻辑很清楚；参考着这些文档/Sample就可以按需设计一个简化版Adapter了。
-####FFmpeg基本调用逻辑 还记得Decode/Encode和Muxer/Demuxer吧，如果还记得那就很好理解了。下面截选了部分代码（不要在意细节），有一些重要关键但非流程相关的步骤这里先省略（例如FIFO等），下文再提。
-#####Encoding（Based on 2.x） - Register all codec //应该是plugin的机制
-av_register_all(); avcodec_register_all();   Find encoder -&gt; create stream -&gt; open encoder  /</em> find the audio encoder */ p_audio_codec = avcodec_find_encoder(m_p_fmt_ctx-&gt;oformat-&gt;audio_codec); if (!
-          
-        
-      </div>
-      <div><a class="read-more button" href="/posts/about-ffmpeg-advance/">Read more →</a></div>
     </div>
     
     <div class="pagination">

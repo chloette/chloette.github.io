@@ -34,7 +34,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/" />
 
-<meta property="og:updated_time" content="2019-07-13T20:37:26&#43;08:00"/><meta property="og:site_name" content="你好，世界" />
+<meta property="og:updated_time" content="2019-07-23T21:11:13&#43;08:00"/><meta property="og:site_name" content="你好，世界" />
 
 
 
@@ -108,6 +108,47 @@
     
     
 
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/script-to-modify-ghost-screen-css/">Ghost修改screen.css的脚本</a></h1>
+      <div class="post-meta">
+        <span class="post-date">
+          2015-01-21
+        </span>
+        <span class="post-author">— Written by Guo Yi</span>
+        
+      </div>
+
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/ghost/">ghost</a>&nbsp;
+          
+            #<a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
+          
+            #<a href="/tags/script/">script</a>&nbsp;
+          
+            #<a href="/tags/python/">python</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            Ghost更新越来越频繁，每次都要手动更新css实在伤不起。。。
+反正改动的地方也不多，干脆做成一键脚本好了，把之前upgrade的脚本再扩展一下：
+首先更改#7，改动如下，增加了change logo position：
+#change post page what to show&hellip; echo &lsquo;7. replace &quot;excerpt&quot; with &quot;content&quot; &mdash;&mdash;&mdash;&mdash;&mdash;&rsquo; #excerpt -&gt; content #read more -&gt; &gt;&gt; sed -i &quot;s#&lt;p&gt;{{excerpt words=&amp;quot;26&amp;quot;}} &lt;a class=&amp;quot;read-more&amp;quot; href=&amp;quot;{{url}}&amp;quot;&gt;&amp;raquo;#&lt;p&gt;{{content words=&amp;quot;32&amp;quot;}} &lt;a class=&amp;quot;read-more&amp;quot; href=&amp;quot;{{url}}&amp;quot;&gt;&amp;amp;raquo;&amp;amp;raquo;#g&quot; ./content/themes/casper/partials/loop.hbs #change logo position sed -i &rsquo;s~{{#if @blog.logo}}&lt;a class=&quot;blog-logo&quot; href=&quot;{{@blog.url}}&quot;&gt;&lt;img src=&quot;{{@blog.logo}}&quot; alt=&quot;Blog Logo&quot; /&gt;&lt;/a&gt;{{/if}}~~g&rsquo; ./content/themes/casper/index.hbs sed -i &rsquo;s~&lt;h1 class=&quot;page-title&quot;&gt;{{@blog.title}}&lt;/h1&gt;~{{#if @blog.logo}}&lt;a class=&quot;blog-logo&quot; href=&quot;{{@blog.url}}/about&quot;&gt;&lt;img src=&quot;{{@blog.logo}}&quot; alt=&quot;Blog Logo&quot; /&gt;&lt;/a&gt;{{/if}}&lt;h1 class=&quot;page-title&quot;&gt;{{@blog.title}}&lt;/h1&gt;~g&rsquo; ./content/themes/casper/index.hbs  再就是考虑到自己智商太低，难以驾驭sed的多行匹配，所以祭出Python；脚本中加上这句：
+#call python to do multiple lines replacement python ~/ghost_css_adjustment.
+          
+        
+      </div>
+      <div><a class="read-more button" href="/posts/script-to-modify-ghost-screen-css/">Read more →</a></div>
+    </div>
     
     <div class="post on-list">
       <h1 class="post-title"><a href="/posts/android-imagefetcher/">Android ImageFetcher</a></h1>
@@ -294,39 +335,6 @@ JAVA_HOME和ANDROID_HOME这两个环境变量需要提前设置好（可以在/e
         
       </div>
       <div><a class="read-more button" href="/posts/jenkins-github-gradle-android/">Read more →</a></div>
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/android-sparsearray-indexofvalue-return-negative-1/">Android SparseArray中indexOfValue返回-1</a></h1>
-      <div class="post-meta">
-        <span class="post-date">
-          2015-01-13
-        </span>
-        <span class="post-author">— Written by Guo Yi</span>
-        
-      </div>
-
-
-      
-        <span class="post-tags">
-          
-            #<a href="/tags/android/">Android</a>&nbsp;
-          
-            #<a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
-          
-            #<a href="/tags/sparsearray/">SparseArray</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      <div><a class="read-more button" href="/posts/android-sparsearray-indexofvalue-return-negative-1/">Read more →</a></div>
     </div>
     
     <div class="pagination">
