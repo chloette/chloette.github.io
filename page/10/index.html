@@ -34,7 +34,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/" />
 
-<meta property="og:updated_time" content="2019-07-23T21:11:13&#43;08:00"/><meta property="og:site_name" content="你好，世界" />
+<meta property="og:updated_time" content="2019-07-28T23:01:43&#43;08:00"/><meta property="og:site_name" content="你好，世界" />
 
 
 
@@ -108,6 +108,56 @@
     
     
 
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/jenkins-github-gradle-android/">Jenkins+Github+Gradle+Android</a></h1>
+      <div class="post-meta">
+        <span class="post-date">
+          2015-01-15
+        </span>
+        <span class="post-author">— Written by Guo Yi</span>
+        
+      </div>
+
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
+          
+            #<a href="/tags/jenkins/">Jenkins</a>&nbsp;
+          
+            #<a href="/tags/gradle/">Gradle</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            也许题目换成《配置以Github作为源码仓库并用Gradle编译Android的Jenkins时遇到的坑》更恰当~ LOL~
+网上教学贴很多，不一一列举了。也可以参考前一篇（BTW，我想说Subversion Release Plugin比自带的Subversion Plugin好用多了）。本文主要补充配置Github和Gradle容易遇到的问题。
+重要的plugin：
+ Git plugin
+ Gradle plugin
+  至于Github plugin之类的插件，自己看着办吧。
+这里有几个容易出问题的地方
+ 如何用Jenkins从Github获取代码：  建议使用Deploy keys
+怎么用那？最好用.ssh/config，可以参考这里。
+需要注意的是，在创建ssh key的时候，需要
+sudo -u jenkins ssh-keygen -t rsa -f &hellip;/jenkins/.ssh/id_rsa_project  加-u来指定以jenkins身份创建key，加-f就是为了方便多个ssh key（例如多repository）的时候好管理。
+同时，创建出来的ssh key不要设置密码，因为jenkins对ssh key密码的支持不是特别好，会报public key permission错误（非访问权限问题）。BTW，虽然github提到deploy keys缺点时有说，这货一般为了方便不加密码；但通过command方式，用带密码的ssh key去访问github是没问题的。
+当然Github还提供了一套更华丽的方式，叫Machine user，简单说就是单独申请一个账户（类似一个代理），把这个账户加到不同的repository里面作为只读的collaborator，再直接在这个账户里面加ssh key（而不用每个repository一个deploy key了），这样通过这一个machine user（代理）就可以访问多个repository了。
+最后，这里去clone/pull代码的时候，有时候出报timeout的错误，解决方法有两种，一种是在该目录下，手动git clone &ndash;bare一个repository出来；再一种就是增加timeout时间：源码管理 -&gt; Git -&gt; Additional Behaviours -&gt; Advanced clone behaviours
+ 如何用Jenkins来run Gradle：  需要手动匹配gradle版本。在系统设置里面新增Gradle安装即可，不然在Invoke Gradle script的时候，除了default就没得选了。
+JAVA_HOME和ANDROID_HOME这两个环境变量需要提前设置好（可以在/etc/profile里面export，然后source /etc/profile即可）；修改环境变量后需要重启jenkins；同时注意对应的目录，jenkins是否有访问权限；
+          
+        
+      </div>
+      <div><a class="read-more button" href="/posts/jenkins-github-gradle-android/">Read more →</a></div>
+    </div>
     
     <div class="post on-list">
       <h1 class="post-title"><a href="/posts/android-sparsearray-indexofvalue-return-negative-1/">Android SparseArray中indexOfValue返回-1</a></h1>
@@ -250,41 +300,6 @@ At this point in the boot process PATH isn&rsquo;t set yet, so it is critical th
         
       </div>
       <div><a class="read-more button" href="/posts/ghost-boot-up/">Read more →</a></div>
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/ghost-limit-image-width/">Ghost首页图片限制宽高</a></h1>
-      <div class="post-meta">
-        <span class="post-date">
-          2015-01-06
-        </span>
-        <span class="post-author">— Written by Guo Yi</span>
-        
-      </div>
-
-
-      
-        <span class="post-tags">
-          
-            #<a href="/tags/ghost/">ghost</a>&nbsp;
-          
-            #<a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
-          
-            #<a href="/tags/%E5%9B%BE%E7%89%87/">图片</a>&nbsp;
-          
-            #<a href="/tags/%E5%AE%BD%E9%AB%98/">宽高</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      <div><a class="read-more button" href="/posts/ghost-limit-image-width/">Read more →</a></div>
     </div>
     
     <div class="pagination">

@@ -33,7 +33,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/posts/" />
 
-<meta property="og:updated_time" content="2019-07-23T21:11:13&#43;08:00"/><meta property="og:site_name" content="你好，世界" />
+<meta property="og:updated_time" content="2019-07-28T23:01:43&#43;08:00"/><meta property="og:site_name" content="你好，世界" />
 
 
 
@@ -107,6 +107,35 @@
     
     
 
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/the-design-of-everyday-things/">《设计心理学》</a></h1>
+      <div class="post-meta">
+        <span class="post-date">
+          2014-12-22
+        </span>
+        <span class="post-author">— Written by Guo Yi</span>
+        
+      </div>
+
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/%E8%AE%B0%E5%BD%95/">记录</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      <div><a class="read-more button" href="/posts/the-design-of-everyday-things/">Read more →</a></div>
+    </div>
     
     <div class="post on-list">
       <h1 class="post-title"><a href="/posts/chrome-cannot-open-profile-correctly/">Chrome cannot open profile correctly</a></h1>
@@ -232,62 +261,6 @@
         
       </div>
       <div><a class="read-more button" href="/posts/ski-at-cbs/">Read more →</a></div>
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/nexus5-manually-ota-to-lollipop/">等不到OTA的Nexus5</a></h1>
-      <div class="post-meta">
-        <span class="post-date">
-          2014-12-08
-        </span>
-        <span class="post-author">— Written by Guo Yi</span>
-        
-      </div>
-
-
-      
-        <span class="post-tags">
-          
-            #<a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
-          
-            #<a href="/tags/%E8%AE%B0%E5%BD%95/">记录</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            美版刷了电信的Nexus5，11月13号就陆续概率发布的OTA，到现在都没收到，也是醉了。。。
-手贱决定线刷OTA（sideload）。参考机锋教程
-其中有一个步骤可能会卡住，就是准备adb sideload的时候，报：
-insufficient permissions for device  解决方法就是用sudo，找到adb的路径（adk的platform-tools下面）
-sudo ./adb kill-server sudo ./adb devices （这里会重启adb并列出对应的设备） sudo ./adb sideload &lsquo;xxx.zip&rsquo;  然后就静静的等待吧。。。
-我还在等待 T_T
-杯具了。。连续杯具3天。原以为一步搞定的。。。
-电信的苦逼用户真是无可奈何。上了5.0，恢复EFS无效，最后迫不得已全清，然后从4.4.4开始刷。折腾快3天，系统从4.4.4刷到4.4.2又刷回5.0。。。
-最后看到电信3G冒出来的时候真是泪流满面啊。。。
-重新整理一下破解思路，如下：
- 数据全清，重刷底包到4.4.4（数据自行备份，使用google身份验证器（基于OTP）的一定要备份，据我所知不止一个站点，支持了OTP但是在无原始OTP的情况下，不能重置）
- 刷回4.4.4，启动系统后打开开发者模式。重启bootloader。
- 刷TWRP的recovery，建议刷2.8.1的版本（这个版本在recovery模式下支持MTP，方便copy EFS的备份），重启会提示是否root，确认。
- 重启系统后按照TWRP的提示，开始root。
- root后安装最新版的Nexus Field Test（需要最新版3.3；因为2.x的版本不支持4.4.3以上系统），DDD001（看过教程都懂的。）
-这里注意，新版本的NFT，如果要获取SPC的话，需要通过右上角-&gt;Setting(View)-&gt;LTE-&gt;Edit来获取。
- 重启recovery，恢复EFS（同时恢复data更容易成功）或者重新破解，来恢复电信通话/短信/3G功能。 注意事项：
- 破解时，ruim only总是被重置的话，建议用cdma workshop 来写。 破解时，cdma hdr总是被重置的话，建议插卡破解 破解时，每次重启建议通过锁屏键关机再重启，而不是用命令。目测关机时，基带也有一个关闭的过程，可能会记录一些状态来方便快速重启，如果直接命令关机可能导致重启后reset。 DFS可以使用新版本。   &ndash;&gt;到这里，4.4.4的电信就算破解完毕了。如果已经到了5.0，电信掉了还不死心的，请从这里开始看
- 重启bootloader，直接线刷5.0（切记：数据备份，EFS备份），要保留数据的出门左转，我的数据已经清掉了所以也没办法试了。
-注意：线刷有一些不同的版本，都是为了保留数据，有的教程是用修改flash版本的img来sideload的，有的教程说去掉-w的方法来update img，有的教程是只手动flash了boot/system/cache img；
-我用的是版本是后者，但是接着就恢复出厂设置了。（所以和完整刷5.0底包没区别）【目测有些运气不错的同学，保留了数据又吃上了棒棒糖，给力～】
- 恢复出厂设置后重启，并（想保留数据的，从这里开始看）重新root（即通过recovery刷supersu的2.37 zip包）
- 重新安装NFT3.3版本，重新设置LTE，到DDD001（注意手动选择移动网络到3G，不然第一个选项可能无法disable）
- 重点来了：关机-&gt;拔卡-&gt;恢复EFS-&gt;开机-&gt;插卡。如果3G信号+感叹号出来了，就意味着搞定了（我是一次搞定，回想之前刷失败的原因，应该就是忘记去设置DDD001）。 注意事项：
-          
-        
-      </div>
-      <div><a class="read-more button" href="/posts/nexus5-manually-ota-to-lollipop/">Read more →</a></div>
     </div>
     
     <div class="pagination">

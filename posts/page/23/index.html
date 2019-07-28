@@ -33,7 +33,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/posts/" />
 
-<meta property="og:updated_time" content="2019-07-23T21:11:13&#43;08:00"/><meta property="og:site_name" content="你好，世界" />
+<meta property="og:updated_time" content="2019-07-28T23:01:43&#43;08:00"/><meta property="og:site_name" content="你好，世界" />
 
 
 
@@ -107,6 +107,42 @@
     
     
 
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/be-care-of-the-byte-alignment-in-type-cast/">Be care of the Byte Alignment in Type Cast.</a></h1>
+      <div class="post-meta">
+        <span class="post-date">
+          2013-08-24
+        </span>
+        <span class="post-author">— Written by Guo Yi</span>
+        
+      </div>
+
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/byte-alignment/">Byte alignment</a>&nbsp;
+          
+            #<a href="/tags/c/">C</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            Be care of the Byte Alignment in Type Cast.
+For example, if you have one buffer(void<em>) with data follow this structure:
+typedef struct { uint8_t a; uint8_t b; uint32_t c; } xxx_t  Normally, it needs 6 bytes per data, right? But, actually, when you did type cast, like (xxx_t</em>)buffer the data will be totally wrong (probably a and b is right, but c is holy shit).
+The root cause, is Byte alignment.
+          
+        
+      </div>
+      <div><a class="read-more button" href="/posts/be-care-of-the-byte-alignment-in-type-cast/">Read more →</a></div>
+    </div>
     
     <div class="post on-list">
       <h1 class="post-title"><a href="/posts/wu-jie-cao-de-dian-xin-tuan-gou-zhan/">无节操的电信团购站</a></h1>
@@ -234,37 +270,6 @@
         
       </div>
       <div><a class="read-more button" href="/posts/shen-zhou-zu-che-de-shu-ju-an-quan-wen-ti-xu-secure-problem-of-zuche-com-end/">Read more →</a></div>
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/about-git-undo/">about git undo</a></h1>
-      <div class="post-meta">
-        <span class="post-date">
-          2013-06-11
-        </span>
-        <span class="post-author">— Written by Guo Yi</span>
-        
-      </div>
-
-
-      
-        <span class="post-tags">
-          
-            #<a href="/tags/git/">git</a>&nbsp;
-          
-            #<a href="/tags/undo/">undo</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      <div><a class="read-more button" href="/posts/about-git-undo/">Read more →</a></div>
     </div>
     
     <div class="pagination">
