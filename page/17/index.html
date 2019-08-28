@@ -34,7 +34,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/" />
 
-<meta property="og:updated_time" content="2019-07-28T23:01:43&#43;08:00"/><meta property="og:site_name" content="你好，世界" />
+<meta property="og:updated_time" content="2019-08-28T12:00:00&#43;08:00"/><meta property="og:site_name" content="你好，世界" />
 
 
 
@@ -108,6 +108,42 @@
     
     
 
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/optimize-rgb-to-yuv/">优化RGB-&gt;YUV</a></h1>
+      <div class="post-meta">
+        <span class="post-date">
+          2014-10-11
+        </span>
+        <span class="post-author">— Written by Guo Yi</span>
+        
+      </div>
+
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
+          
+            #<a href="/tags/%E4%BC%98%E5%8C%96/">优化</a>&nbsp;
+          
+            #<a href="/tags/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/">色彩空间</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            网上随处可见YUV到RGB的优化，其中被借鉴最多的应该就是VP8的源码了吧：
+// Copyright 2010 Google Inc. // // This code is licensed under the same terms as WebM: // Software License Agreement: <a href="http://www.webmproject.org/license/software/">http://www.webmproject.org/license/software/</a> // Additional IP Rights Grant: <a href="http://www.webmproject.org/license/additional/">http://www.webmproject.org/license/additional/</a> // &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash; // // YUV-&gt;RGB conversion function // // Author: Skal (pascal.massimino@gmail.com) #include &quot;yuv.h&quot; #if defined(__cplusplus) || defined(c_plusplus) extern &quot;C&quot; { #endif enum { YUV_HALF = 1 &lt;&lt; (YUV_FIX - 1) }; int16_t VP8kVToR[256], VP8kUToB[256]; int32_t VP8kVToG[256], VP8kUToG[256]; uint8_t VP8kClip[YUV_RANGE_MAX - YUV_RANGE_MIN]; static int done = 0; void VP8YUVInit() { int i; if (done) { return; } for (i = 0; i &lt; 256; ++i) { VP8kVToR[i] = (89858 * (i - 128) + YUV_HALF) &gt;&gt; YUV_FIX; VP8kUToG[i] = -22014 * (i - 128) + YUV_HALF; VP8kVToG[i] = -45773 * (i - 128); VP8kUToB[i] = (113618 * (i - 128) + YUV_HALF) &gt;&gt; YUV_FIX; } for (i = YUV_RANGE_MIN; i &lt; YUV_RANGE_MAX; ++i) { const int k = ((i - 16) * 76283 + YUV_HALF) &gt;&gt; YUV_FIX; VP8kClip[i - YUV_RANGE_MIN] = (k &lt; 0) ?
+          
+        
+      </div>
+      <div><a class="read-more button" href="/posts/optimize-rgb-to-yuv/">Read more →</a></div>
+    </div>
     
     <div class="post on-list">
       <h1 class="post-title"><a href="/posts/ffmpeg-secure-a-place-in-opw/">FFmpeg提供给OPW一个实习岗位</a></h1>
@@ -281,37 +317,6 @@ I&rsquo;m glad you came&hellip;
         
       </div>
       <div><a class="read-more button" href="/posts/optimize-layout-of-ghost-logo/">Read more →</a></div>
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/about-bitcoin-calculate-algorithm-manually/">关于比特币：老外纸笔演算比特币算法（转）</a></h1>
-      <div class="post-meta">
-        <span class="post-date">
-          2014-09-30
-        </span>
-        <span class="post-author">— Written by Guo Yi</span>
-        
-      </div>
-
-
-      
-        <span class="post-tags">
-          
-            #<a href="/tags/%E6%AF%94%E7%89%B9%E5%B8%81/">比特币</a>&nbsp;
-          
-            #<a href="/tags/%E6%89%8B%E7%AE%97/">手算</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      <div><a class="read-more button" href="/posts/about-bitcoin-calculate-algorithm-manually/">Read more →</a></div>
     </div>
     
     <div class="pagination">

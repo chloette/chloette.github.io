@@ -33,7 +33,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/posts/" />
 
-<meta property="og:updated_time" content="2019-07-28T23:01:43&#43;08:00"/><meta property="og:site_name" content="你好，世界" />
+<meta property="og:updated_time" content="2019-08-28T12:00:00&#43;08:00"/><meta property="og:site_name" content="你好，世界" />
 
 
 
@@ -107,6 +107,48 @@
     
     
 
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/ghost-boot-up/">Ghost开机启动</a></h1>
+      <div class="post-meta">
+        <span class="post-date">
+          2015-01-08
+        </span>
+        <span class="post-author">— Written by Guo Yi</span>
+        
+      </div>
+
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/ghost/">ghost</a>&nbsp;
+          
+            #<a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
+          
+            #<a href="/tags/%E8%AE%B0%E5%BD%95/">记录</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            Ghost本身是基于node.js的，这意味着 &ndash; 常驻后台需要用到其他方式，例如&amp;或者forever（官网建议）
+但这样也需要使用类似sudo start_ghost.sh这种方式来启动，想开机启动的话还是需要使用update-rc.d或者cron
+前者官网提供了一个说明，相当于自己写一个service
+后者比较强大，用在这里有点大材小用。
+简单点的做法就直接参考stackoverflow
+sudo mv /filename /etc/init.d/ sudo chmod +x /etc/init.d/filename sudo update-rc.d filename defaults   Script should now start on boot. Note that this method also works with both hard links and symbolic links (ln).
+Edit
+At this point in the boot process PATH isn&rsquo;t set yet, so it is critical that absolute paths are used throughout. BUT, as pointed out in the comments by Steve HHH, explicitly declaring the full file path (/etc/init.
+          
+        
+      </div>
+      <div><a class="read-more button" href="/posts/ghost-boot-up/">Read more →</a></div>
+    </div>
     
     <div class="post on-list">
       <h1 class="post-title"><a href="/posts/ghost-limit-image-width/">Ghost首页图片限制宽高</a></h1>
@@ -274,39 +316,6 @@ UTF-8就是为了存储和传输方便，缩小版的UTF-16。
         
       </div>
       <div><a class="read-more button" href="/posts/cloud-sync/">Read more →</a></div>
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/about-data-leak-from-12306/">谈谈12306的数据泄露</a></h1>
-      <div class="post-meta">
-        <span class="post-date">
-          2014-12-25
-        </span>
-        <span class="post-author">— Written by Guo Yi</span>
-        
-      </div>
-
-
-      
-        <span class="post-tags">
-          
-            #<a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
-          
-            #<a href="/tags/12306/">12306</a>&nbsp;
-          
-            #<a href="/tags/%E6%AD%A3%E5%88%99/">正则</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      <div><a class="read-more button" href="/posts/about-data-leak-from-12306/">Read more →</a></div>
     </div>
     
     <div class="pagination">

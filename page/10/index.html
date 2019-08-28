@@ -34,7 +34,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/" />
 
-<meta property="og:updated_time" content="2019-07-28T23:01:43&#43;08:00"/><meta property="og:site_name" content="你好，世界" />
+<meta property="og:updated_time" content="2019-08-28T12:00:00&#43;08:00"/><meta property="og:site_name" content="你好，世界" />
 
 
 
@@ -108,6 +108,56 @@
     
     
 
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/proguard-obfuscation/">Proguard混淆</a></h1>
+      <div class="post-meta">
+        <span class="post-date">
+          2015-01-17
+        </span>
+        <span class="post-author">— Written by Guo Yi</span>
+        
+      </div>
+
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
+          
+            #<a href="/tags/proguard/">proguard</a>&nbsp;
+          
+            #<a href="/tags/%E6%B7%B7%E6%B7%86/">混淆</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            这里仅仅说Android的混淆，其他平台基本相同。
+不同的IDE有不同的配置方法。
+Android Studio的配置略有差异，可以参考前文
+混淆的大致原理就是rename class（所以混淆的过程比较慢），混淆的初衷，并不是为了不让人看源码，毕竟java的虚拟机机制就决定了，源码肯定是可以反编译出来的；其主要目的是让反编译后的代码“难以”看懂。
+例如打开一个混淆后输出的mapping文件，可以看到：
+（某代码片段，请无视。）
+这样一来，反编译后的代码里面，基本就是a.b.c(d.e)这种代码（也许原来只是Util.isNetworkAvailable(context)），大大增加了阅读难度；也就达到了防止反编译的目的。
+但经常会误伤，因为是rename，所以对name敏感（依赖name）的方法或者库就会无法正常工作。例如反射，例如JNI的接口class（依赖class name来找context object），例如GSON这些常用工具库。
+解决办法就是修改proguard的配置文件，将这些敏感class置为例外。
+常用方法如下：
+ 排除指定类A
+-keepclassmembers class com.xxx.xxx.A { *; }   将类A的子类全部排除 language-bash -keepclassmembers class * extends com.xxx.xxx.A { <em>; }   将包P内的class全部排除
+-keep public class com.xxx.P.</em> { *; }   将包P内的class及subclass全部排除 language-bash -keep public class com.xxx.P.** { *; }     注意*和**的差别；
+注意最后的{ *; }，用法很多，可以指定仅排除public/protected，如：
+{ public protected *;}  当然还可以直接更直接一些：
+{ &lt;fields&gt;; &lt;methods&gt;; }  如果是使用Gson的话，还可以直接如下使用方式来避免混淆问题：
+          
+        
+      </div>
+      <div><a class="read-more button" href="/posts/proguard-obfuscation/">Read more →</a></div>
+    </div>
     
     <div class="post on-list">
       <h1 class="post-title"><a href="/posts/jenkins-github-gradle-android/">Jenkins+Github+Gradle+Android</a></h1>
@@ -258,48 +308,6 @@ JAVA_HOME和ANDROID_HOME这两个环境变量需要提前设置好（可以在/e
         
       </div>
       <div><a class="read-more button" href="/posts/android-linear-layout-weight-setting-when-adding-child-dynamically/">Read more →</a></div>
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/ghost-boot-up/">Ghost开机启动</a></h1>
-      <div class="post-meta">
-        <span class="post-date">
-          2015-01-08
-        </span>
-        <span class="post-author">— Written by Guo Yi</span>
-        
-      </div>
-
-
-      
-        <span class="post-tags">
-          
-            #<a href="/tags/ghost/">ghost</a>&nbsp;
-          
-            #<a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
-          
-            #<a href="/tags/%E8%AE%B0%E5%BD%95/">记录</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            Ghost本身是基于node.js的，这意味着 &ndash; 常驻后台需要用到其他方式，例如&amp;或者forever（官网建议）
-但这样也需要使用类似sudo start_ghost.sh这种方式来启动，想开机启动的话还是需要使用update-rc.d或者cron
-前者官网提供了一个说明，相当于自己写一个service
-后者比较强大，用在这里有点大材小用。
-简单点的做法就直接参考stackoverflow
-sudo mv /filename /etc/init.d/ sudo chmod +x /etc/init.d/filename sudo update-rc.d filename defaults   Script should now start on boot. Note that this method also works with both hard links and symbolic links (ln).
-Edit
-At this point in the boot process PATH isn&rsquo;t set yet, so it is critical that absolute paths are used throughout. BUT, as pointed out in the comments by Steve HHH, explicitly declaring the full file path (/etc/init.
-          
-        
-      </div>
-      <div><a class="read-more button" href="/posts/ghost-boot-up/">Read more →</a></div>
     </div>
     
     <div class="pagination">

@@ -33,7 +33,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/posts/" />
 
-<meta property="og:updated_time" content="2019-07-28T23:01:43&#43;08:00"/><meta property="og:site_name" content="你好，世界" />
+<meta property="og:updated_time" content="2019-08-28T12:00:00&#43;08:00"/><meta property="og:site_name" content="你好，世界" />
 
 
 
@@ -107,6 +107,39 @@
     
     
 
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/ski-at-cbs/">长白山滑雪度假</a></h1>
+      <div class="post-meta">
+        <span class="post-date">
+          2014-12-12
+        </span>
+        <span class="post-author">— Written by Guo Yi</span>
+        
+      </div>
+
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/%E8%AE%B0%E5%BD%95/">记录</a>&nbsp;
+          
+            #<a href="/tags/%E9%95%BF%E7%99%BD%E5%B1%B1/">长白山</a>&nbsp;
+          
+            #<a href="/tags/%E6%BB%91%E9%9B%AA/">滑雪</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      <div><a class="read-more button" href="/posts/ski-at-cbs/">Read more →</a></div>
+    </div>
     
     <div class="post on-list">
       <h1 class="post-title"><a href="/posts/nexus5-manually-ota-to-lollipop/">等不到OTA的Nexus5</a></h1>
@@ -255,50 +288,6 @@ sudo ./adb kill-server sudo ./adb devices （这里会重启adb并列出对应�
         
       </div>
       <div><a class="read-more button" href="/posts/damn-tao-bao-miao-sha/">Read more →</a></div>
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/jenkins-with-multi-svn-paths/">Jenkins单工程跨多代码目录</a></h1>
-      <div class="post-meta">
-        <span class="post-date">
-          2014-11-13
-        </span>
-        <span class="post-author">— Written by Guo Yi</span>
-        
-      </div>
-
-
-      
-        <span class="post-tags">
-          
-            #<a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
-          
-            #<a href="/tags/jenkins/">Jenkins</a>&nbsp;
-          
-            #<a href="/tags/multi-path/">multi-path</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            偶尔会遇到这种情况，例如工程A，工程B，同时依赖工程C（公共库）
-而一般情况下，如果代码结构管理的好，工程C的svn（git）路径和工程A/B是完全分开的。
-编译的时候正常导入（其实Android studio这里是有坑的，index无法排除目录）就好了。而Jenkins就需要特别配置一下。
-增加对应的工程（这里使用的svn module是Subversion Release），如下：
-（BTW，注意Local module directory，最好和本地代码路径保持一致，不然按照工程目录下的project.properties找不到对应工程就呵呵了）
-这时候会发现，环境变量$SVN_REVISION很可能不干活了。
-翻了下文档：
- Subversion Revision and URL information as Environment Variables
-The Subversion SCM plugin exports the svn revisions and URLs of the build&rsquo;s subversion modules as environment variables. These are $SVN_REVISION_n and $SVN_URL_n, where n is the 1-based index of the module in the configuration.
-For backwards compatibility if there&rsquo;s only a single module, its values are also exported as $SVN_REVISION and $SVN_URL.
-          
-        
-      </div>
-      <div><a class="read-more button" href="/posts/jenkins-with-multi-svn-paths/">Read more →</a></div>
     </div>
     
     <div class="pagination">
