@@ -1,0 +1,43 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>技术 - 你好，世界</title>
+    <link>/tags/%E6%8A%80%E6%9C%AF/</link>
+    <description>Recent content in 技术 on 你好，世界</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>来自某个八零后</copyright>
+    <lastBuildDate>Sat, 20 Jun 2015 08:35:16 +0000</lastBuildDate>
+    
+        <atom:link href="/tags/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Ghost修改圆框logo</title>
+      <link>/posts/optimize-layout-of-ghost-logo/</link>
+      <pubDate>Tue, 30 Sep 2014 04:22:52 +0000</pubDate>
+      
+      <guid>/posts/optimize-layout-of-ghost-logo/</guid>
+      <description></description>
+    </item><item>
+      <title>关于FFmpeg（基础）</title>
+      <link>/posts/about-ffmpeg-basic/</link>
+      <pubDate>Mon, 29 Sep 2014 12:35:21 +0000</pubDate>
+      
+      <guid>/posts/about-ffmpeg-basic/</guid>
+      <description></description>
+    </item><item>
+      <title>关于GPL</title>
+      <link>/posts/about-gpl/</link>
+      <pubDate>Wed, 24 Sep 2014 02:28:22 +0000</pubDate>
+      
+      <guid>/posts/about-gpl/</guid>
+      <description></description>
+    </item><item>
+      <title>Ghost在首页显示图片而非摘要</title>
+      <link>/posts/ghost-display-post-images-on-home-page/</link>
+      <pubDate>Mon, 22 Sep 2014 04:07:00 +0000</pubDate>
+      
+      <guid>/posts/ghost-display-post-images-on-home-page/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

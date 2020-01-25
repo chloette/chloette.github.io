@@ -1,0 +1,50 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories - 你好，世界</title>
+    <link>/categories/</link>
+    <description>Recent content in Categories on 你好，世界</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>来自某个八零后</copyright>
+    <lastBuildDate>Wed, 14 Oct 2015 07:14:29 +0000</lastBuildDate>
+    
+        <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>ffmpeg</title>
+      <link>/categories/ffmpeg/</link>
+      <pubDate>Wed, 24 Dec 2014 09:11:09 +0000</pubDate>
+      
+      <guid>/categories/ffmpeg/</guid>
+      <description></description>
+    </item><item>
+      <title>值得花钱</title>
+      <link>/categories/%E5%80%BC%E5%BE%97%E8%8A%B1%E9%92%B1/</link>
+      <pubDate>Tue, 23 Dec 2014 13:21:48 +0000</pubDate>
+      
+      <guid>/categories/%E5%80%BC%E5%BE%97%E8%8A%B1%E9%92%B1/</guid>
+      <description></description>
+    </item><item>
+      <title>自用推荐</title>
+      <link>/categories/%E8%87%AA%E7%94%A8%E6%8E%A8%E8%8D%90/</link>
+      <pubDate>Tue, 23 Dec 2014 13:21:48 +0000</pubDate>
+      
+      <guid>/categories/%E8%87%AA%E7%94%A8%E6%8E%A8%E8%8D%90/</guid>
+      <description></description>
+    </item><item>
+      <title>tips</title>
+      <link>/categories/tips/</link>
+      <pubDate>Tue, 23 Dec 2014 09:24:48 +0000</pubDate>
+      
+      <guid>/categories/tips/</guid>
+      <description></description>
+    </item><item>
+      <title>d</title>
+      <link>/categories/d/</link>
+      <pubDate>Tue, 23 Dec 2014 05:47:39 +0000</pubDate>
+      
+      <guid>/categories/d/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

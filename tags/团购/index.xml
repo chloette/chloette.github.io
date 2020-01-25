@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>团购 on 你好，世界</title>
+    <title>团购 - 你好，世界</title>
     <link>/tags/%E5%9B%A2%E8%B4%AD/</link>
     <description>Recent content in 团购 on 你好，世界</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -9,8 +8,7 @@
     <copyright>来自某个八零后</copyright>
     <lastBuildDate>Mon, 12 Aug 2013 10:50:24 +0000</lastBuildDate>
     
-	<atom:link href="/tags/%E5%9B%A2%E8%B4%AD/index.xml" rel="self" type="application/rss+xml" />
-    
+        <atom:link href="/tags/%E5%9B%A2%E8%B4%AD/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>无节操的电信团购站</title>
@@ -18,28 +16,7 @@
       <pubDate>Mon, 12 Aug 2013 10:50:24 +0000</pubDate>
       
       <guid>/posts/wu-jie-cao-de-dian-xin-tuan-gou-zhan/</guid>
-      <description>如果你如我好友一样，是悲催的电信用户，终日挑机而不得，那你可能听过一个福音站点：貌似已失效了
-这是电信旗下的官方手机团购站，你初登上去可能觉得不以为然，没啥便宜货在团购，尤其是目前处于打广告状态的P6，就便宜了100块，还没电商便宜。。。
-但是如果你看过下面这几个团购信息（已经过期了）。。。
-这个折扣力度只能说“给力”是吧～
-这个可以算“BUG”了吧～
-这个。。。我觉得绝对是逆天了！
-现在你就知道了，这个站绝对是深藏不露杀人砍价发放福利于无形！
-好吧，为了为好友谋求同等福利，终于左等右等等到了1400的HTC C620D
-图就不上了，因为风头都被上面的IP4S抢掉了。。。
-但是这个抢购比较恶心啊，要跳转若干个页面，一般情况下分秒钟的事情怎么能等那么久那！
-所以看了看这个站的一些跳转逻辑，发现了一个明显的BUG。。。
-似乎可以在团购开始之前，直接通过如下链接进到对应的团购结算页（请务必登录进去以后再看～）：
- http://tuan.hicdma.com/views/pages/bulk/bulkOrder.jsp?bulkId=1386&amp;amp;buyNum=1
- 看到了什么啊亲看到了什么！！！ 是不是逆天价的IP4S啊！！！ 但是千万别激动，这个就是诱惑诱惑亲的。。。因为肉眼可见，服务器端做了时间和数量的限制，所以购买不了。。。
-那这个页面（修改bulkId来直接进入结算页）能干嘛那？
-回答 ： 节省所有的跳转步骤，在那一秒瞬间下单（*其实简单改一下JS就可以开启刷新球了。。。*）！ &amp;ndash; 这样的秒中机会要大很多很多吧？
-不过没有仔细研究到底限制是totally在服务器端做掉的，还是有一部分参数从client端走，暂时也没时间去研究。以后再说吧～
-BTW，个人觉得，能考虑到在服务器端进行时间和数量这些关键限制的站点维护团队，怎么可能会留下这种这么低级的跳转bug？
-莫非这团队故意留下这bug来给自己谋福利么。。。
-那我就只能呵呵呵呵呵呵～
-（that&amp;rsquo;s why I say&amp;hellip; 无节操&amp;hellip;）</description>
+      <description></description>
     </item>
-    
   </channel>
 </rss>

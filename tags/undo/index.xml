@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>undo on 你好，世界</title>
+    <title>undo - 你好，世界</title>
     <link>/tags/undo/</link>
     <description>Recent content in undo on 你好，世界</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -9,8 +8,7 @@
     <copyright>来自某个八零后</copyright>
     <lastBuildDate>Tue, 11 Jun 2013 03:20:37 +0000</lastBuildDate>
     
-	<atom:link href="/tags/undo/index.xml" rel="self" type="application/rss+xml" />
-    
+        <atom:link href="/tags/undo/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>about git undo</title>
@@ -18,11 +16,7 @@
       <pubDate>Tue, 11 Jun 2013 03:20:37 +0000</pubDate>
       
       <guid>/posts/about-git-undo/</guid>
-      <description>git is a powerful tool but really hard to pick up soon.
-and I found one article is very good at git undo: [the second comment]
- http://stackoverflow.com/questions/927358/how-to-undo-the-last-git-commit
- </description>
+      <description></description>
     </item>
-    
   </channel>
 </rss>

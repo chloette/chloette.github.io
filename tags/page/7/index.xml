@@ -1,0 +1,50 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags - 你好，世界</title>
+    <link>/tags/</link>
+    <description>Recent content in Tags on 你好，世界</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>来自某个八零后</copyright>
+    <lastBuildDate>Wed, 14 Oct 2015 07:14:29 +0000</lastBuildDate>
+    
+        <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>NERV</title>
+      <link>/tags/nerv/</link>
+      <pubDate>Fri, 20 Feb 2015 10:29:36 +0000</pubDate>
+      
+      <guid>/tags/nerv/</guid>
+      <description></description>
+    </item><item>
+      <title>GTA</title>
+      <link>/tags/gta/</link>
+      <pubDate>Fri, 20 Feb 2015 09:17:39 +0000</pubDate>
+      
+      <guid>/tags/gta/</guid>
+      <description></description>
+    </item><item>
+      <title>美亚</title>
+      <link>/tags/%E7%BE%8E%E4%BA%9A/</link>
+      <pubDate>Thu, 12 Feb 2015 10:08:36 +0000</pubDate>
+      
+      <guid>/tags/%E7%BE%8E%E4%BA%9A/</guid>
+      <description></description>
+    </item><item>
+      <title>load library</title>
+      <link>/tags/load-library/</link>
+      <pubDate>Thu, 12 Feb 2015 04:27:27 +0000</pubDate>
+      
+      <guid>/tags/load-library/</guid>
+      <description></description>
+    </item><item>
+      <title>APK Expansion</title>
+      <link>/tags/apk-expansion/</link>
+      <pubDate>Wed, 11 Feb 2015 07:17:39 +0000</pubDate>
+      
+      <guid>/tags/apk-expansion/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

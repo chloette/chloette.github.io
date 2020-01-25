@@ -1,0 +1,50 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts - 你好，世界</title>
+    <link>/posts/</link>
+    <description>Recent content in Posts on 你好，世界</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>来自某个八零后</copyright>
+    <lastBuildDate>Sat, 25 Jan 2020 17:51:12 +0800</lastBuildDate>
+    
+        <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Android LinearLayout动态增加item时Weight的设置</title>
+      <link>/posts/android-linear-layout-weight-setting-when-adding-child-dynamically/</link>
+      <pubDate>Fri, 09 Jan 2015 04:50:13 +0000</pubDate>
+      
+      <guid>/posts/android-linear-layout-weight-setting-when-adding-child-dynamically/</guid>
+      <description></description>
+    </item><item>
+      <title>Ghost开机启动</title>
+      <link>/posts/ghost-boot-up/</link>
+      <pubDate>Thu, 08 Jan 2015 02:30:07 +0000</pubDate>
+      
+      <guid>/posts/ghost-boot-up/</guid>
+      <description></description>
+    </item><item>
+      <title>Ghost首页图片限制宽高</title>
+      <link>/posts/ghost-limit-image-width/</link>
+      <pubDate>Tue, 06 Jan 2015 03:26:26 +0000</pubDate>
+      
+      <guid>/posts/ghost-limit-image-width/</guid>
+      <description></description>
+    </item><item>
+      <title>新年</title>
+      <link>/posts/new-year/</link>
+      <pubDate>Mon, 05 Jan 2015 10:18:32 +0000</pubDate>
+      
+      <guid>/posts/new-year/</guid>
+      <description></description>
+    </item><item>
+      <title>关于字符编码</title>
+      <link>/posts/about-charset/</link>
+      <pubDate>Wed, 31 Dec 2014 13:10:19 +0000</pubDate>
+      
+      <guid>/posts/about-charset/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>highlight syntax on 你好，世界</title>
+    <title>highlight syntax - 你好，世界</title>
     <link>/tags/highlight-syntax/</link>
     <description>Recent content in highlight syntax on 你好，世界</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -9,8 +8,7 @@
     <copyright>来自某个八零后</copyright>
     <lastBuildDate>Wed, 04 Mar 2015 03:15:57 +0000</lastBuildDate>
     
-	<atom:link href="/tags/highlight-syntax/index.xml" rel="self" type="application/rss+xml" />
-    
+        <atom:link href="/tags/highlight-syntax/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Ghost代码高亮</title>
@@ -18,13 +16,7 @@
       <pubDate>Wed, 04 Mar 2015 03:15:57 +0000</pubDate>
       
       <guid>/posts/ghost-highlight-syntax/</guid>
-      <description>Ghost本身的代码高亮是很粗糙的，如下：
-//This is code sample int x = 0; int y = 1; x = y++; ...  但是代码至少应该像下面这样才好看啊！
-//This is code sample int x = 0; int y = 1; x = y++; ...  翻了翻ghost的论坛，发现了prism，使用可以参考这里
-下载css/js的时候可以选择自己需要的高亮语言等。
-这样就又需要修改server上用来更新ghost的bash了：
-#copy prism js/css to content and use it (to highlight codes) cp ~/prism/prism.js ./content/themes/casper/assets/js/ cp ~/prism/prism.css ./cotent/themes/casper/assets/css/ sed -i &#39;s~&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; type=&amp;quot;text/css&amp;quot; href=&amp;quot;{{asset &amp;quot;css/screen.css&amp;quot;}}&amp;quot; /&amp;gt;~&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; type=&amp;quot;text/css&amp;quot; href=&amp;quot;{{asset &amp;quot;css/screen.css&amp;quot;}}&amp;quot; /&amp;gt;&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; type=&amp;quot;text/css&amp;quot; href=&amp;quot;{{asset &amp;quot;css/prism.</description>
+      <description></description>
     </item>
-    
   </channel>
 </rss>

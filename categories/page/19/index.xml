@@ -1,0 +1,50 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories - 你好，世界</title>
+    <link>/categories/</link>
+    <description>Recent content in Categories on 你好，世界</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>来自某个八零后</copyright>
+    <lastBuildDate>Wed, 14 Oct 2015 07:14:29 +0000</lastBuildDate>
+    
+        <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>手算</title>
+      <link>/categories/%E6%89%8B%E7%AE%97/</link>
+      <pubDate>Tue, 30 Sep 2014 03:43:46 +0000</pubDate>
+      
+      <guid>/categories/%E6%89%8B%E7%AE%97/</guid>
+      <description></description>
+    </item><item>
+      <title>比特币</title>
+      <link>/categories/%E6%AF%94%E7%89%B9%E5%B8%81/</link>
+      <pubDate>Tue, 30 Sep 2014 03:43:46 +0000</pubDate>
+      
+      <guid>/categories/%E6%AF%94%E7%89%B9%E5%B8%81/</guid>
+      <description></description>
+    </item><item>
+      <title>bash</title>
+      <link>/categories/bash/</link>
+      <pubDate>Fri, 26 Sep 2014 07:05:44 +0000</pubDate>
+      
+      <guid>/categories/bash/</guid>
+      <description></description>
+    </item><item>
+      <title>Shellshock</title>
+      <link>/categories/shellshock/</link>
+      <pubDate>Fri, 26 Sep 2014 07:05:44 +0000</pubDate>
+      
+      <guid>/categories/shellshock/</guid>
+      <description></description>
+    </item><item>
+      <title>gpl</title>
+      <link>/categories/gpl/</link>
+      <pubDate>Wed, 24 Sep 2014 02:28:22 +0000</pubDate>
+      
+      <guid>/categories/gpl/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>node.js on 你好，世界</title>
+    <title>node.js - 你好，世界</title>
     <link>/tags/node.js/</link>
     <description>Recent content in node.js on 你好，世界</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -9,8 +8,7 @@
     <copyright>来自某个八零后</copyright>
     <lastBuildDate>Wed, 17 Sep 2014 05:21:54 +0000</lastBuildDate>
     
-	<atom:link href="/tags/node.js/index.xml" rel="self" type="application/rss+xml" />
-    
+        <atom:link href="/tags/node.js/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Understanding node.js 瞎翻译</title>
@@ -18,30 +16,7 @@
       <pubDate>Wed, 17 Sep 2014 05:21:54 +0000</pubDate>
       
       <guid>/posts/understanding-node-js-xia-fan-yi/</guid>
-      <description>原文在此
-结果翻译完了。。发现了译言
-当初在挑用哪个platform的时候，为了了解啥是node.js，恰好看到了此文，觉得不错。所以翻译一下，加深下印象。（就当是免责声明吧）
-我介绍给别人Node.js时，一般他们有两种反应；一种是马上“哦！我懂了！”，一种是“哦。。。到底啥玩意儿啊？”
-如果你到现在还是后者，那先简单给你介绍一下：
- 它一个命令行工具，下载tarball，编译然后安装即可； 可以直接在terminal中敲node my_app.js就跑起来一个Javascript的程序； Node里的JS是靠V8引擎（chrome为啥那么快？因为有V8）来解析执行的； Node提供了一套JavaScript的API来访问网络和文件系统；  “但是我可以用ruby、python、php、java等等一大坨工具来做一样甚至更多的事情啊”
-对，你说的一点儿也没错！Node并不是万能钥匙。它只是一个工具，至少现在，它没办法完全替代你在用的常规工具。
-“说重点！”
-来了！Node非常适合一种情况：同时处理多个事情。你是否写过一些代码然后嘀咕“我希望可以并行的跑这些代码”？重点来了！在Node里，所有东西都是并行的，除了你的代码！
-“啥？”
-没错，everything runs in parallel, except your code. 要理解这句话，想象一下，你的代码是老大，而Node是小弟。
-每天，小弟会叫醒嗜睡的老大（*这尼玛被砍死的节奏*），问他今天有没有啥事儿。老大就会给小弟一堆任务然后继续去睡觉了。小弟拿到任务就去找小小弟们分发任务并且开始愉快地干活了。
-一旦某个小弟完成了任务，就会去给老大报告。老大每次只见一个小弟（秘密嘛）并听报告。有时候老大会再给小弟安排后续任务。
-这样的生活多美好啊，小弟们并行的把所有事情都做完了，只要报告给老大一个结果就好了。 &amp;gt;注：以上显然只是一个简单隐约，毕竟在现实生活中很难找到“非阻塞”的例子。
-“碉堡了！别扯淡了，上代码！！！”
-额，来了！一个简单的node程序如下：
-var fs = require(&#39;fs&#39;) , sys = require(&#39;sys&#39;); fs.readFile(&#39;treasure-chamber-report.txt&#39;, function(report) { sys.puts(&amp;quot;oh, look at all my money: &amp;quot;+report); }); fs.writeFile(&#39;letter-to-princess.txt&#39;, &#39;...&#39;, function() { sys.puts(&amp;quot;can&#39;t wait to hear back from her!&amp;quot;); });  代码里给了node两个任务，分别是读和写一个文件，然后sleep（睡觉。。。呵呵）。一旦node完成任务，就callback。但是每次只能有一个callback被执行（小弟报告要排队啊！）。前一个callback结束前，其他的必须排队。顺便说一句，callback被执行的顺序是不保证的。
-“所以，我不用担心代码同时访问同一数据结构的问题？”
-你说对了！那就是JavaScript单线程/事件循环设计的美妙所在！
-“非常好，但是我为什么要用它？”
-一个理由是，高效。在web应用中，响应时间一般是所有数据库查询的时间之和*【类似sum（Q1，Q2，Q3，Q4）】*。但是用了Node，可以马上同时执行所有查询，把响应时间降到和最慢的那次查询一样。【类似max（Q1，Q2，Q3，Q4）】
-另一个原因是JavaScript。你可以用Node从浏览器一直跑到后端了。JavaScript一直在进步啊。尽管你以前一直在用python、ruby、java、php等等等等，你应该也用过一点点JS对嘛？
-最后一个原因就是速度，V8在成为最快动态语言解析器的道路上越走越远（*原文楼下有人砸场子，说V8不是最快的，死忠粉速去喷！*）。我无法想象有任何一种语言有如此快的进步速度。另外，node的I/O非常轻巧，可以让你最大程度的利用系统I/O。</description>
+      <description></description>
     </item>
-    
   </channel>
 </rss>

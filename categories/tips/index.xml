@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>tips on 你好，世界</title>
+    <title>tips - 你好，世界</title>
     <link>/categories/tips/</link>
     <description>Recent content in tips on 你好，世界</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -9,8 +8,7 @@
     <copyright>来自某个八零后</copyright>
     <lastBuildDate>Tue, 23 Dec 2014 09:24:48 +0000</lastBuildDate>
     
-	<atom:link href="/categories/tips/index.xml" rel="self" type="application/rss+xml" />
-    
+        <atom:link href="/categories/tips/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>DexIndexOverflow</title>
@@ -18,15 +16,7 @@
       <pubDate>Tue, 23 Dec 2014 09:24:48 +0000</pubDate>
       
       <guid>/posts/dexindexoverflow/</guid>
-      <description>Android工程，在工程代码较多（或复杂），依赖工程较多时，容易出现这个编译报错。
-简单说就是Dex不支持非jumbo模式下，函数数量超过65535（请联想Youtube/鸟叔/点播次数）
-一般修改方式如下：
-Eclipse：
-在project.properties（主工程）中增加
-dex.force.jumbo=true  Android Studio：
-在build.gradle（主工程）中增加
-android { dexOptions { jumboMode true } }  </description>
+      <description></description>
     </item>
-    
   </channel>
 </rss>

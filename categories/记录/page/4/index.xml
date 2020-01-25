@@ -1,0 +1,50 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>记录 - 你好，世界</title>
+    <link>/categories/%E8%AE%B0%E5%BD%95/</link>
+    <description>Recent content in 记录 on 你好，世界</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>来自某个八零后</copyright>
+    <lastBuildDate>Sun, 26 Apr 2015 09:26:35 +0000</lastBuildDate>
+    
+        <atom:link href="/categories/%E8%AE%B0%E5%BD%95/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Ghost开机启动</title>
+      <link>/posts/ghost-boot-up/</link>
+      <pubDate>Thu, 08 Jan 2015 02:30:07 +0000</pubDate>
+      
+      <guid>/posts/ghost-boot-up/</guid>
+      <description></description>
+    </item><item>
+      <title>新年</title>
+      <link>/posts/new-year/</link>
+      <pubDate>Mon, 05 Jan 2015 10:18:32 +0000</pubDate>
+      
+      <guid>/posts/new-year/</guid>
+      <description></description>
+    </item><item>
+      <title>同步云服务</title>
+      <link>/posts/cloud-sync/</link>
+      <pubDate>Fri, 26 Dec 2014 12:34:27 +0000</pubDate>
+      
+      <guid>/posts/cloud-sync/</guid>
+      <description></description>
+    </item><item>
+      <title>Android docs (OpenGLES)</title>
+      <link>/posts/android-docs-opengles/</link>
+      <pubDate>Thu, 25 Dec 2014 08:39:37 +0000</pubDate>
+      
+      <guid>/posts/android-docs-opengles/</guid>
+      <description></description>
+    </item><item>
+      <title>Astrill VPN</title>
+      <link>/posts/astrill-vpn/</link>
+      <pubDate>Tue, 23 Dec 2014 13:21:48 +0000</pubDate>
+      
+      <guid>/posts/astrill-vpn/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

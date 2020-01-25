@@ -1,0 +1,29 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>记录 - 你好，世界</title>
+    <link>/categories/%E8%AE%B0%E5%BD%95/</link>
+    <description>Recent content in 记录 on 你好，世界</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>来自某个八零后</copyright>
+    <lastBuildDate>Sun, 26 Apr 2015 09:26:35 +0000</lastBuildDate>
+    
+        <atom:link href="/categories/%E8%AE%B0%E5%BD%95/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>急性鼻窦炎</title>
+      <link>/posts/ji-xing-bi-dou-yan/</link>
+      <pubDate>Wed, 22 Oct 2014 04:19:39 +0000</pubDate>
+      
+      <guid>/posts/ji-xing-bi-dou-yan/</guid>
+      <description></description>
+    </item><item>
+      <title>星星/太阳/月亮</title>
+      <link>/posts/star-sun-moon/</link>
+      <pubDate>Thu, 09 Oct 2014 06:27:14 +0000</pubDate>
+      
+      <guid>/posts/star-sun-moon/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

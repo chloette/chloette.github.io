@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>bitcoin on 你好，世界</title>
+    <title>bitcoin - 你好，世界</title>
     <link>/tags/bitcoin/</link>
     <description>Recent content in bitcoin on 你好，世界</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -9,8 +8,7 @@
     <copyright>来自某个八零后</copyright>
     <lastBuildDate>Sun, 01 Dec 2013 13:58:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/bitcoin/index.xml" rel="self" type="application/rss+xml" />
-    
+        <atom:link href="/tags/bitcoin/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>关于比特币,从51%攻击说开了去 （I）</title>
@@ -18,17 +16,7 @@
       <pubDate>Sun, 01 Dec 2013 13:58:00 +0000</pubDate>
       
       <guid>/posts/guan-yu-bi-te-bi-cong-51-gong-ji-shuo-kai-le-qu-i/</guid>
-      <description>最近比特币火爆到不行，讨论这玩意儿值不值钱无疑都是被喷的节奏，而且讨论这种话题也显然不是我的套路。 还是说说怎么攻击比较靠谱～
-首先不管是比特币（bitcoin）还是莱特比（litecoin），简单说就是一种“电子数据”（不好意思，我称之为数据而非货币，这样比较不会有争议。）
-形式上略有差别，但也就是一段“人类无法识别”的字符串。
-不管是哪种“比特币”，都是有一个全局的交易记录来共同维护的（这也是所谓去中心化的核心思想）。
-换言之，从它诞生之初的第一笔“交易”到最新的一笔“交易”，以及一个币从被“挖掘”出来后的所有的“交易”操作，所有人，都是可以同步到并查询到的。同时因为每次“交易”都需要广播告诉所有人（P2P），得到大家的普遍（50%以上）认可后才会被接受，所以这里没有假币这个概念。
-而所谓“交易”，或者说“比特币”的“流通”本身，其实就是广播出去，说A的多少多少“比特币”给予B了。等到下一次交易记录表更新的时候，这笔记录如果在上面，就说明成功了“流通”了。
-好吧，所谓51%攻击就是卡在一个算法基于全网大部分认可的基础上，简单说，如果算力够强，就可以伪造“流通”记录。 当然那几乎不可能，因为从目前几个矿机制造商的算力来看，想超越他们？（当然如果你有办法把银河拉出来，那就另说了～） 所以必须还有其他的攻击方式，例如前段时间被DDOS的某站。 用DDOS攻击还修改记录，听起来有点不可思议吧，一直以为DDOS只是用来宕机的各位可以醒醒了。 其实针对这种依赖P2P记录来确定交易成功与否的方式，向交易平台发大量伪造的报文就好了。只要打得交易平台接受了，那也就没必要和所谓51%的全网算力较劲了。
-说到这里是不是立刻有豁然开朗的感觉？ 当然我只是信口开河一下，具体操作的话。。。
-呵呵～～
-BTW，比特币能不能赚钱这种问题。。 呵呵呵呵～～～～</description>
+      <description></description>
     </item>
-    
   </channel>
 </rss>

@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>安全 on 你好，世界</title>
+    <title>安全 - 你好，世界</title>
     <link>/categories/%E5%AE%89%E5%85%A8/</link>
     <description>Recent content in 安全 on 你好，世界</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -9,8 +8,7 @@
     <copyright>来自某个八零后</copyright>
     <lastBuildDate>Mon, 10 Nov 2014 03:51:50 +0000</lastBuildDate>
     
-	<atom:link href="/categories/%E5%AE%89%E5%85%A8/index.xml" rel="self" type="application/rss+xml" />
-    
+        <atom:link href="/categories/%E5%AE%89%E5%85%A8/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>关于Bitlocker</title>
@@ -18,227 +16,35 @@
       <pubDate>Mon, 10 Nov 2014 03:51:50 +0000</pubDate>
       
       <guid>/posts/about-bitlocker-remake-u-key-disk/</guid>
-      <description>什么是Bitlocker就不赘述了，各类百科够用。
-简单说就是一种傻瓜式（相比较其他各类加密软件）的数据加密方案，一次加密，受用终生。
-不幸的是，从原理上来讲，这种加密（这里指对系统盘的加密）是必须依赖一个三方模块（一般是独立硬件）来存放密钥的（钥匙放门上，门再结实也不安全）。
-一般使用的模块叫TPM，这个模块国内的笔记本（台式机更稀缺了）是没有的（这个就要看TPM和TCM的差异了，这种涉及加密的标准，国家限制是很严格的）。
-当然，要可以用其他硬件来代替TPM，如U盘，对，就是一个普通的U盘，里面塞满片儿都无所谓的那种。
-如果有TPM，那么加密解密都很方便，设置后用密码登录系统就够了，和平时使用没什么差别（无非就是密码要强壮一些，不然门是够结实，但是锁一碰就坏掉了，那也谈不上安全）
-但如果是用U盘，那么每次开机都需要插上U盘，确保系统可以访问到U盘来获取解密密钥。稍微麻烦点，但换个角度，带TPM的机器（笔记本）一般动辄就上万（例如thinkpad的T/X/W系部分型号），普通笔记本+U盘可就便宜多了去了。
-但使用U盘有个小问题，就是U盘不能轻易格式化。
-因为密钥以一种特殊的隐藏文件形式放在U盘上，如果格式化了，这密钥就丢了。唯一的办法，就是使用recoverykey &amp;mdash; 在第一次加密的时候，会提示你保存下来，非常重要！我相信肯定有不明真相群众放在加密后的系统目录下的（钥匙落在屋里了，有木有）。
-(BTW，如果用的是win8/8.1，且使用微软账号登录的话，是可以把recoverykey直接保存在onedrive上的，相当方便。)
-那U盘格式化了以后就都要用recoverykey了么？那一长串数字真是让人呵呵呵呵啊。
-当然不是，翻看一下recoverykey的文档（不是闲的蛋疼，就是遇到了这个情况 T_T），在进入系统后，是可以重新制作一个key U盘的。
-以管理员身份运行cmd（假设目标U盘的盘符是G）：
-manage-bde.exe -protectors -add c: -rp -rk g:  运行一下～
-Tada~ （写这么久就为了show这最后一个命令也是醉了。。。）</description>
-    </item>
-    
-    <item>
+      <description></description>
+    </item><item>
       <title>关于Shellshock bash bug</title>
       <link>/posts/about-shellshock-bash-bug/</link>
       <pubDate>Fri, 26 Sep 2014 07:05:44 +0000</pubDate>
       
       <guid>/posts/about-shellshock-bash-bug/</guid>
-      <description>“不小心”看到了shellshock bash bug
-不明觉厉，按图索骥：
-$env x=&#39;() { :;}; echo vulnerable&#39; bash -c &#39;echo this is a test&#39;   If you see the word &amp;ldquo;vulnerable&amp;rdquo; as an answer, your system is, well&amp;hellip; vulnerable.
- 中枪。。。
-立刻update+upgrade，再回过头看看到底啥情况：
- Your Bash shell is simply running more code after a function (the &amp;ldquo;() { :;};&amp;rdquo; part), and that shouldn&amp;rsquo;t be happening. The function is the &amp;ldquo;allowed&amp;rdquo; code, while everything after it is where the potentially &amp;ldquo;malicious&amp;rdquo; code could be installed.</description>
-    </item>
-    
-    <item>
+      <description></description>
+    </item><item>
       <title>指纹，想说爱你不容易...</title>
       <link>/posts/zhi-wen-xiang-shuo-ai-ni-bu-rong-yi/</link>
       <pubDate>Sat, 20 Sep 2014 11:31:48 +0000</pubDate>
       
       <guid>/posts/zhi-wen-xiang-shuo-ai-ni-bu-rong-yi/</guid>
-      <description>iPhone6也没办法完美解决的问题啊。。。
-还记得之前说过的Is fingerprint safe?</description>
-    </item>
-    
-    <item>
+      <description></description>
+    </item><item>
       <title>说说前段时间闹得很凶的“手机超级病毒”</title>
       <link>/posts/shuo-shuo-qian-duan-shi-jian-nao-de-hen-xiong-de-shou-ji-chao-ji-bing-du/</link>
       <pubDate>Sat, 06 Sep 2014 11:25:36 +0000</pubDate>
       
       <guid>/posts/shuo-shuo-qian-duan-shi-jian-nao-de-hen-xiong-de-shou-ji-chao-ji-bing-du/</guid>
-      <description>如手机超级病毒
-之前的之前有public过一份源码，在开放信息间谍的全部源码并停止服务
-那代码里面已经涵盖了对短信/通话记录/联系人的获取和上传等功能（甚至基站定位的代码都有。。。），换言之，直接拿这源码改几行代码就可以完成那个所谓的“手机超级病毒”鸟。（如果乐意，即使是生手，花一点点时间也可以发布“病毒”了！）
-这么一个low level用来忽悠忽悠抓小三的怨妇们的玩意儿，加了一个短信群发，居然被炒的如此火热。。。也许是那段时间没新闻了所以硬要拉点头条出来吧。。。
-对于那些在这件事情上说“you can you up, no can no BB”的人，我要说一声，“我有代码，你上吧。”</description>
-    </item>
-    
-    <item>
+      <description></description>
+    </item><item>
       <title>About 96123.com</title>
       <link>/posts/about-96123-com/</link>
       <pubDate>Sat, 25 Jan 2014 21:27:17 +0000</pubDate>
       
       <guid>/posts/about-96123-com/</guid>
-      <description>http://www.96123.com/member-dingdan.aspx 页面有很多问题。 最简单的。。 就是对订单的查询没有任何的身份验证措施，你可以随意访问目前的订单。 例如你可以访问：http://www.96123.com/member-jilu.aspx?id=9886 也可以访问：http://www.96123.com/member-jilu.aspx?id=9887
-轻松遍历所有订单。
-至于注入之类的。。 这种级别的身份验证措施。。我就不说了吧。
-翻了一下代码，貌似是2010年的。。。
-管理界面可能是：http://www.96123.com/login.aspx
-界面风格相当粗糙啊。。。
-不给力啊。</description>
+      <description></description>
     </item>
-    
-    <item>
-      <title>没有完美</title>
-      <link>/posts/mei-you-wan-mei/</link>
-      <pubDate>Sat, 18 Jan 2014 18:20:02 +0000</pubDate>
-      
-      <guid>/posts/mei-you-wan-mei/</guid>
-      <description>如果你最近有稍微关注一下支付宝的新闻，你会看到如下连续的三篇： [惊悚实验]支付宝关联了银行卡 如果手机丢了会发生什么 [多图]支付宝找回密码验身份证被指依然可以绕过 [多图]捡到手机 除了支付宝你还可以干点什么?
-我们不去讨论为什么这三篇文章如此集中（这还用说嘛，TX要推自己的“XX宝”了，当然要打压对手一下～） 但是这里可以看到，都集中在获取手机后如何如何去做坏事，彰显手机的强大，鄙视了支付宝等各大站点在安全上对手机的过分依赖。 说白了，就是拿到了手机，就仿佛获得了原机主的最高权限～～ （我想说句废话，手机里面那么多秘密，给你看到了还不疯掉！支付宝在这种case下算个P啊！）
-不过我们换个角度想想看，为什么支付宝会有这种“漏洞”。 支付宝最关注的是什么？ 一定是安全。 一个绝对靠谱的安全是什么样子？ 就像之前密码和指纹 哪个身份识别方式更安全？里面说的，各种复杂的多重验证；而且密码恢复的手段都是反人类不科学到听了都吐血的。《白宫陷落》看过没？地狱犬系统还记得吧？ 况且，假设真做到那种程度，支付宝还有人用么？ 想象一下，想给手机充个值，结果需要3个不同的动态密钥，还要一个放在邮箱，一个发到手机，一个用脑子记住，而且强制3个月必须更换！想找回密码，必须本人亲自去杭州支付宝总部，带上身份证/户口本/当地派出所出具的证明函/单身证明或已婚证明等等等等，还有要记得排队取号哦亲～ 但如果那样的话，大家还有必要用支付宝么～？
-所以我们来看支付宝另外需要密切关注的点，也就是方便（用户体验） 如果支付宝用起来不方便，大家就没必要用支付宝了；就好像去吃KFC，一样的套餐，你是在家门口的KFC吃或者叫外卖吃？还是坐飞机跑到北上广深的市中心去吃？（如果你选择了后者。。。亲请出门左转不送） 所以支付宝必须在安全和方便之间做权衡，这也是题目的意思，没有完美的逻辑；没有安全到极限又无比方便的方案，这不管是从统计学还是上升到哲学高度都是说不通的。 不同的互联网公司会做不同的权衡，支付宝选择手机-号码作为一个核心的依赖项，应该是出于以下两点的考虑： 1. “手机”是贴身方便的个人物品 2. “号码”是运营商提供的，而运营商是靠谱的（至少比三方机构靠谱吧） &amp;ndash; 这里请忽略2G假基站的影响，谢谢。 当然如果亲觉得这种依赖是个弊端，那请问有什么“更好”的方案么～？
-那如何避免出现类似支付宝这种的损失？ 我想说，这个大家都会，而且可能有些人已经做过了，而且。。有些人可能做过不止一次。。。 1. 手机应该已经加密过，至少应该有开启“设备管理器”或类似的远程销毁数据的功能（没这些就算了，大家等着亲的艳照门哦～） 2. 手机号码第一时间挂失补办新卡（重要啊！！）
-插句其他的 &amp;ndash; WordPress的新升级感觉不错嘛～</description>
-    </item>
-    
-    <item>
-      <title>is fingerprint safe?</title>
-      <link>/posts/is-fingerprint-safe/</link>
-      <pubDate>Mon, 23 Sep 2013 16:18:13 +0000</pubDate>
-      
-      <guid>/posts/is-fingerprint-safe/</guid>
-      <description>Eh.. it&amp;rsquo;s hard to say&amp;hellip;
-You can review my another article here: 密码和指纹-哪个身份识别方式更安全？
-And before my trying&amp;hellip; someone hacked already&amp;hellip;
-[视频]黑客称已成功绕过苹果iPhone 5s指纹识别系统</description>
-    </item>
-    
-    <item>
-      <title>无节操的电信团购站</title>
-      <link>/posts/wu-jie-cao-de-dian-xin-tuan-gou-zhan/</link>
-      <pubDate>Mon, 12 Aug 2013 10:50:24 +0000</pubDate>
-      
-      <guid>/posts/wu-jie-cao-de-dian-xin-tuan-gou-zhan/</guid>
-      <description>如果你如我好友一样，是悲催的电信用户，终日挑机而不得，那你可能听过一个福音站点：貌似已失效了
-这是电信旗下的官方手机团购站，你初登上去可能觉得不以为然，没啥便宜货在团购，尤其是目前处于打广告状态的P6，就便宜了100块，还没电商便宜。。。
-但是如果你看过下面这几个团购信息（已经过期了）。。。
-这个折扣力度只能说“给力”是吧～
-这个可以算“BUG”了吧～
-这个。。。我觉得绝对是逆天了！
-现在你就知道了，这个站绝对是深藏不露杀人砍价发放福利于无形！
-好吧，为了为好友谋求同等福利，终于左等右等等到了1400的HTC C620D
-图就不上了，因为风头都被上面的IP4S抢掉了。。。
-但是这个抢购比较恶心啊，要跳转若干个页面，一般情况下分秒钟的事情怎么能等那么久那！
-所以看了看这个站的一些跳转逻辑，发现了一个明显的BUG。。。
-似乎可以在团购开始之前，直接通过如下链接进到对应的团购结算页（请务必登录进去以后再看～）：
- http://tuan.hicdma.com/views/pages/bulk/bulkOrder.jsp?bulkId=1386&amp;amp;buyNum=1
- 看到了什么啊亲看到了什么！！！ 是不是逆天价的IP4S啊！！！ 但是千万别激动，这个就是诱惑诱惑亲的。。。因为肉眼可见，服务器端做了时间和数量的限制，所以购买不了。。。
-那这个页面（修改bulkId来直接进入结算页）能干嘛那？
-回答 ： 节省所有的跳转步骤，在那一秒瞬间下单（*其实简单改一下JS就可以开启刷新球了。。。*）！ &amp;ndash; 这样的秒中机会要大很多很多吧？
-不过没有仔细研究到底限制是totally在服务器端做掉的，还是有一部分参数从client端走，暂时也没时间去研究。以后再说吧～
-BTW，个人觉得，能考虑到在服务器端进行时间和数量这些关键限制的站点维护团队，怎么可能会留下这种这么低级的跳转bug？
-莫非这团队故意留下这bug来给自己谋福利么。。。
-那我就只能呵呵呵呵呵呵～
-（that&amp;rsquo;s why I say&amp;hellip; 无节操&amp;hellip;）</description>
-    </item>
-    
-    <item>
-      <title>密码和指纹 哪个身份识别方式更安全？</title>
-      <link>/posts/mi-ma-he-zhi-wen-na-ge-shen-fen-shi-bie-fang-shi-geng-an-quan/</link>
-      <pubDate>Sat, 15 Jun 2013 18:36:42 +0000</pubDate>
-      
-      <guid>/posts/mi-ma-he-zhi-wen-na-ge-shen-fen-shi-bie-fang-shi-geng-an-quan/</guid>
-      <description>当初入TP的时候，就有过这个思考，是不是要带指纹识别；
-不过后来仔细想了一下，这会是一个很有意思的事情；
-依稀记得之前有电影片段，是某个机密的场所，进门需要指纹+掌纹，结果若干反派人物就直接把那位有指纹同学的手给砍了下来，淡定的进门了。。。
-这个片段一次一次的让我对于指纹识别抱有一定的戒心，因为那就好像在告诉别人，嘿，我这里有一些小秘密，但是只有我的手可以打开哦～
-。。。
-言归正传，这就需要先回到身份识别方式的选择上。
-最原始的识别方式就是传统的文本型密码（再往前咱们就不追究了吧）
-后来有了动态识别码，或者硬件辅助（U盾）的手段；
-再后来有了人脸识别，指纹识别，等等。
-但哪个更安全？恐怕没办法立刻下结论，这就要扯到密码学里面的一个概念 &amp;ndash; 相对安全性
-不管多长的密码都只是相对安全的（其实指纹也好人脸识别也好，都可以抽象理解为一种密码）
-无非是需要5分钟还是5000年才能“理论上”破译的差别，这就是相对安全；因为随着硬件性能的不断提高，当初认为是5000年才能破译的密码，可能现在只需要5分钟都不到就搞定了；同样，现在号称5000年才能破译的密码，在若干年后，随着计算能力的不断提高（尤其是更大规模更普及的云计算/分布式计算），指不定10年后就把这个在10年前认为需要5000年的计算量的事情在短短5分钟之内搞定了（当然这里说的略有夸张，毕竟5000年和5分钟相差了9个数量级）。
-&amp;nbsp;
-而密码的破译，或者说成功破译，几乎很少会依赖于计算能力，而更多的是依赖于 &amp;ndash; 方法（砍手就是一个不错的方法～）
-对于纯文本型的传统密码，也许只有按键记录器或者“偷窥”会靠谱一些；
-而动态识别码和U盾，你只要“偷”到了这个硬件，就搞定了；
-至于人脸识别和指纹识别，就更简单了，直接拿照片或者复制一下指纹（透明胶带或者玻璃杯子即可）就可以了；至于因为拿照片就可以搞定解锁这件事情。。。google表示压力略大（[图]谷歌建议用户吐舌头、歪脖子 设置高安全性能面部解锁密码），毕竟android4.x系统有一个“给力”的功能就是人脸解锁。。。
-所以看起来，似乎安全性上，是传统密码 &amp;gt; 动态识别码及U盾（你需要随身携带） &amp;gt; 人脸识别和指纹识别
-而从“用户需要记录的数据量/使用简易程度”来看，传统密码&amp;gt; 动态识别码及U盾（你需要随身携带）&amp;gt; 人脸识别和指纹识别
-这很有意思，因为似乎，用户体验越高，安全性就越差（less is more，really？）
-那到底该选择哪一种？
-这很难说，其实这是一个因人而异的问题；
-如果用户是一个“所有密码都一样”的“纯粹”的人，那么他真心需要“非传统密码”的保护，因为从某个角度来说，即使是他的照片都要比他的传统密码安全。
-如果用户是一个自我保护意识很强的“杞人”，那么还是传统密码更适合他，而且是需要分级（根据信息安全级别的不同来分级密码）的。毕竟天天担心着自己的手被别人砍掉是压力很大的～ 因为“杞人”认为，内在的“存储”要比外在的“皮肤”靠谱的多～
-当然，最好的办法，其实各个银行的网银已经给出了答案，就是多次不同类型的验证。毕竟现在连outlook都开始支持二次验证了（google是最先全线支持的么？）
-而至于我，说实话我其实是一个蛮“纯粹”的人～</description>
-    </item>
-    
-    <item>
-      <title>神州租车的数据安全问题[续](secure problem of ZuChe.com [End])</title>
-      <link>/posts/shen-zhou-zu-che-de-shu-ju-an-quan-wen-ti-xu-secure-problem-of-zuche-com-end/</link>
-      <pubDate>Fri, 14 Jun 2013 16:07:18 +0000</pubDate>
-      
-      <guid>/posts/shen-zhou-zu-che-de-shu-ju-an-quan-wen-ti-xu-secure-problem-of-zuche-com-end/</guid>
-      <description>前文：神州租车的数据安全问题(secure problem of ZuChe.com)
-说实话我还有傻乎乎的担心了一下我这么写出来会不会被社会报复的问题，后来想了想，本为无名小卒，何足大家挂齿，更何况我也不在国内，难不成还引渡么？（扯远了。。。）。遂继续写写，说说我对神州这个泄漏的一点看法。
-这个leak的根源是：万能钥匙的问题（当然我才疏学浅，不知道这么说对不对），就是一把钥匙可以开N把锁；换言之，就是越权的问题。
-在这里，仅仅通过用户ID（钥匙），就可以得到这个用户的全部订单信息（锁A），本身就是很危险的（但其实很多很多service，都有一样的问题，不一一列举）
-而这里更过分的是不仅仅有订单信息，还有用户敏感信息（锁B），如身份证/手机号码/住宅地址等；
-当然如果你觉得这就是结束，那就高估这不给力的service了。
-神州还有一个本身逻辑存在严重缺陷的设计：通过用户ID+身份证+新密码 即可修改掉用户原有密码（而且貌似是不会通知用户的 T_T）。
-而神州是有推出过VIP充值服务的（额，尽管有很多负面报道），所以这意味着，你可以改掉某个VIP的密码，然后免费租车。。。（什么？你说驾照要复印？你开玩笑的吧，这种hack就像小时候学家长签字一样，毫无技术含量啊。。。）
-当我看到这里的时候我开始有点担心这设计者的前途了，万一被别人知道就是你设计出来这么渣的系统。。。唉。。。你以后怎么办啊。。。
-好吧，换个角度，其实可以发起一次这样的数据扫描+毁灭性打击：
- 遍历所有的用户id（你累加id就好了，目测神州用户不超过300W，额，目测，别问我怎么知道的。。。），可以得到所有的用户身份信息（而且基本都是真实靠谱可用的） == 数据扫描，done；该干嘛干嘛。。。
- 遍历修改所有用户的密码（ID+身份证+新密码） == 打击，done；神州彻底废了。。。
-  对于神州来说，针对这个问题，改动其实会很大，原因是这涉及到应用架构的改变，换言之，要彻底改掉这个问题，神州需要要求所有的用户进行至少一次APP升级，而其内部进行若干次service升级。
-OK，就这样吧。给神州一点时间好好修改，毕竟是打算上市的公司，给点后路。
-具体到代码层面的东西明眼人都明白，太细的就不说了。
-另外这次神州中枪完全是我个人一时好奇，绝无针对性和恶意（我甚至还用神州租过车，唉，悔不当初）。
-后来我又顺路去看了看一嗨和安飞士（这两个名字都是哪路神仙想出来的。。？）也有问题，但是相比较神州，轻微很多，以后再表。
-BTW，如果神州愿意出点小钱让我帮忙改改，OY～ 我是会考虑的～ 哈哈哈～</description>
-    </item>
-    
-    <item>
-      <title>神州租车的数据安全问题(secure problem of ZuChe.com)</title>
-      <link>/posts/shen-zhou-zu-che-de-shu-ju-an-quan-wen-ti-secure-problem-of-zuche-com/</link>
-      <pubDate>Wed, 29 May 2013 22:37:38 +0000</pubDate>
-      
-      <guid>/posts/shen-zhou-zu-che-de-shu-ju-an-quan-wen-ti-secure-problem-of-zuche-com/</guid>
-      <description>说实话我不知道从何开始写，我发现了神州租车的一些，问题；而且非常严重。
-我曾经试图联系他们，但是没有得到任何反馈，所以我决定写出来，作为一个记录。
-当然，通过我的分析及实践，可以进一步得到它的用户数据，甚至进行修改或破坏，但这不是我的初衷，所以这里会做一些模糊处理（相信官方补丁会跑在那些有心者前面）。
-直接拆开它的apk【其实如果用sniffer之类的，会比我这么做来的更直接；我这么做的原因就是顺手而已。】
-可以得到对应的源文件，通过一些简单的代码和逻辑分析（几乎没有混淆），可以得到两个很霸道的接口，一个接口是通过user id来获取对应该用户所有订单信息的，获取到的内容可能如下：
-&amp;lt;soap:Envelope xmlns:soap=&amp;quot;http://schemas.xmlsoap.org/soap/envelope/&amp;quot; xmlns:xsd=&amp;quot;http://www.w3.org/2001/XMLSchema&amp;quot; xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot;&amp;gt;; &amp;lt;;soap:Body&amp;gt;; &amp;lt;;OrderListQueryResponse xmlns=&amp;quot;http://tempuri.org/&amp;quot;&amp;gt;; &amp;lt;;OrderListQueryResult xmlns=&amp;quot;http://tempuri.org/&amp;quot;&amp;gt;; &amp;lt;;CurrentPage xmlns=&amp;quot;OrderListQueryResult&amp;quot;&amp;gt;;1&amp;lt;;/CurrentPage&amp;gt;; &amp;lt;;OrderList xmlns=&amp;quot;OrderListQueryResult&amp;quot;&amp;gt;;&amp;lt;;ns1:OrderValue xmlns:ns1=&amp;quot;OrderValue&amp;quot;&amp;gt;; &amp;lt;;Address xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;; &amp;lt;span style=&amp;quot;color: #ff0000;&amp;quot;&amp;gt; &amp;lt;strong&amp;gt;南宁市西乡塘区北湖路西三里20号【模糊】401号房&amp;lt;/strong&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;;/Address&amp;gt;; &amp;lt;;CarType xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;标致207/三厢/1.4手动&amp;lt;;/CarType&amp;gt;; &amp;lt;;Comments xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;&amp;lt;;/Comments&amp;gt;; &amp;lt;;DrivingLicenceNo xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;null&amp;lt;;/DrivingLicenceNo&amp;gt;; &amp;lt;;Email xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;&amp;lt;;/Email&amp;gt;; &amp;lt;;FromAddr xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;null&amp;lt;;/FromAddr&amp;gt;;&amp;lt;;FromCity xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;南宁&amp;lt;;/FromCity&amp;gt;; &amp;lt;;FromDate xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;2013-04-08 12:00 &amp;lt;;/FromDate&amp;gt;; &amp;lt;;FromProvince xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;广西壮族自治区&amp;lt;;/FromProvince&amp;gt;; &amp;lt;;FromStore xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;广西体育馆店&amp;lt;;/FromStore&amp;gt;; &amp;lt;;IdCardNo xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;; &amp;lt;span style=&amp;quot;color: #ff0000;&amp;quot;&amp;gt;&amp;lt;strong&amp;gt;450104【模糊】0510&amp;lt;/strong&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;;/IdCardNo&amp;gt;; &amp;lt;;IdCardType xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;10&amp;lt;;/IdCardType&amp;gt;; &amp;lt;;InsuranceFee xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;30.0&amp;lt;;/InsuranceFee&amp;gt;; &amp;lt;;Mobile xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;; &amp;lt;strong&amp;gt;&amp;lt;span style=&amp;quot;color: #ff0000;&amp;quot;&amp;gt;158【模糊】1523&amp;lt;/span&amp;gt;&amp;lt;/strong&amp;gt;&amp;lt;;/Mobile&amp;gt;; &amp;lt;;OrderNo xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;13653269673220 ? ? ?&amp;lt;;/OrderNo&amp;gt;; &amp;lt;;OrderStatus xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;已完成&amp;lt;;/OrderStatus&amp;gt;; &amp;lt;;Picture xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;http://static.zuchecdn.com/images/terminal/bj207.jpg&amp;lt;;/Picture&amp;gt;; &amp;lt;;ReturnAddr xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;广西壮族自治区南宁市江南区星光大道3号广西体育馆&amp;lt;;/ReturnAddr&amp;gt;; &amp;lt;;ServiceFee xmlns=&amp;quot;OrderValue&amp;quot;&amp;gt;;20.</description>
-    </item>
-    
-    <item>
-      <title>开放信息间谍的全部源码并停止服务</title>
-      <link>/posts/kai-fang-xin-xi-jian-die-de-quan-bu-yuan-ma-bing-ting-zhi-fu-wu/</link>
-      <pubDate>Wed, 29 May 2013 22:02:26 +0000</pubDate>
-      
-      <guid>/posts/kai-fang-xin-xi-jian-die-de-quan-bu-yuan-ma-bing-ting-zhi-fu-wu/</guid>
-      <description>出于很多考虑来做这件事情，最大的原因也许是：到现在为止没有因为这个项目收到一分钱。
-唉。
-好吧，开放源码了。
-邮件服务器也close了。
-之前的缓存服务器也直接drop table了。
-这个项目到此为止吧。
-下面源码不能直接编译通过，因为删除了一个加密用的文件。
-但是影响不大。
-可以从源码中学习到：
- 短信/电话记录的拦截
- GPS/基站定位
- 开机/拨号启动
- 后台服务常驻
- 与服务器的通信
-  &amp;hellip;
-下载链接：apk codes</description>
-    </item>
-    
   </channel>
 </rss>

@@ -1,0 +1,50 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories - 你好，世界</title>
+    <link>/categories/</link>
+    <description>Recent content in Categories on 你好，世界</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>来自某个八零后</copyright>
+    <lastBuildDate>Wed, 14 Oct 2015 07:14:29 +0000</lastBuildDate>
+    
+        <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>编码</title>
+      <link>/categories/%E7%BC%96%E7%A0%81/</link>
+      <pubDate>Wed, 31 Dec 2014 13:10:19 +0000</pubDate>
+      
+      <guid>/categories/%E7%BC%96%E7%A0%81/</guid>
+      <description></description>
+    </item><item>
+      <title>转换</title>
+      <link>/categories/%E8%BD%AC%E6%8D%A2/</link>
+      <pubDate>Wed, 31 Dec 2014 13:10:19 +0000</pubDate>
+      
+      <guid>/categories/%E8%BD%AC%E6%8D%A2/</guid>
+      <description></description>
+    </item><item>
+      <title>云服务</title>
+      <link>/categories/%E4%BA%91%E6%9C%8D%E5%8A%A1/</link>
+      <pubDate>Fri, 26 Dec 2014 12:34:27 +0000</pubDate>
+      
+      <guid>/categories/%E4%BA%91%E6%9C%8D%E5%8A%A1/</guid>
+      <description></description>
+    </item><item>
+      <title>12306</title>
+      <link>/categories/12306/</link>
+      <pubDate>Thu, 25 Dec 2014 09:51:13 +0000</pubDate>
+      
+      <guid>/categories/12306/</guid>
+      <description></description>
+    </item><item>
+      <title>正则</title>
+      <link>/categories/%E6%AD%A3%E5%88%99/</link>
+      <pubDate>Thu, 25 Dec 2014 09:51:13 +0000</pubDate>
+      
+      <guid>/categories/%E6%AD%A3%E5%88%99/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

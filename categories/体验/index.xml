@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>体验 on 你好，世界</title>
+    <title>体验 - 你好，世界</title>
     <link>/categories/%E4%BD%93%E9%AA%8C/</link>
     <description>Recent content in 体验 on 你好，世界</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -9,8 +8,7 @@
     <copyright>来自某个八零后</copyright>
     <lastBuildDate>Mon, 09 Feb 2015 10:37:17 +0000</lastBuildDate>
     
-	<atom:link href="/categories/%E4%BD%93%E9%AA%8C/index.xml" rel="self" type="application/rss+xml" />
-    
+        <atom:link href="/categories/%E4%BD%93%E9%AA%8C/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>不同OS个人体验</title>
@@ -18,54 +16,7 @@
       <pubDate>Mon, 09 Feb 2015 10:37:17 +0000</pubDate>
       
       <guid>/posts/different-os/</guid>
-      <description>T410升级到MBPR了。
-windows用了很多年。
-ubuntu断断续续用了几年。
-osx用了几天。
-来简单说说个人体验。
-####Windows：
-几乎没有做不了的事情。
-95-&amp;gt;98-&amp;gt;2000-&amp;gt;XP-&amp;gt;7-&amp;gt;8.1 （没用过的就不罗列了）
-在边边角角的地方都照顾的很到位 &amp;ndash; 例如各类游戏，各种小工具（对讲机写频之类啊，手机破解啊等等），第一个带UI的版本基本都是windows的。
-问题也不少，被说的很不安全，各种杀毒软件满天飞。
-经常被说不靠谱。
-但又很难离得开。
-作为开发者，windows就是万金油的存在。万金油的好就是啥都能干；不好就是，经常差那么一点点。
-第一次拿到T410，当天我重装了2次系统，主要目的是重新分区，以及从专业版升级到旗舰版。
-顺便说，Bitlocker很强大。
-####Ubuntu：
-断断续续用过，最近半年才开始当主力系统(14.10)使用。
-遇到了不少问题，和Windows的不同在于，有些可以解决，有些解决不了。。。
-系统流畅性上还是可以的，但稳定性要比windows差。
-个人觉得workspace的切换方式，用起来很方便。
-但！是！这玩意儿经常有bug，如：
-Chrome浏览器必须在第一个workspace，不然会卡死；
-对话框弹起是在当前workspace而非调起这个对话框的那个workspace；
-这里仅拿这一个例子来说明不稳定吧。。。
-说多了都是泪。
-个人觉得最大的好处，应该和android的契合。Terminal用起来要比windows的command舒服多了。
-拿老的T410开刀，也是安装了两次，第一次安装后发现全盘加密在安装系统后再加有点麻烦，干脆重装直接上。
-软件的话，主流的都有。但都不会那么好用（像Android studio这种IDE不在此列，ubuntu上也是很好用的~）。QQ这种还是windows的最好用。所以我用virtualbox安装了虚拟机，啥都不干就跑QQ和evernote（对，这货没有ubuntu版本，web版还有笔记重复或分享消失的bug。。。）
-不少功能，关键时刻容易掉链子，例如分屏显示 T_T 。。。
-安全，大家都说很安全（其实只是用的人不多，黑客兴趣不大罢了）
-####OSX
-最酷的触摸板。
-最清晰的屏幕。
-最蹩脚的快捷键。。。（我猜我是键位不习惯。）
-这才用没多久，也不好说到底有啥好有啥坏，但是。。。
-刚拿到mbp（为了避免问题普遍化：型号XC2，目前的15寸顶配）的第一天，被要求系统更新，更新到一半，推荐我全盘加密（FileVault）；我觉得这蛮好啊，就同意了；结果加密到一半，系统的另外一个更新，直接reboot系统了。。。
-我想这OSX太NB了，全盘加密到一半还能继续啊？重启后发现，果然，不能继续。。。（可自行搜索filevault stuck on encryption，看看大家的怨念）
-不能继续就算了，我一边担心会不会硬盘以后用起来不太正常，一边尝试继续加密，结果键盘不能用了（触摸板还可以用）。。。只能重启。。。
-以后每次尝试继续加密，都会导致键盘完全不能用。（硬件Hang住了吧 T_T）
-这是第一个OS，让我，被迫全盘格式化来重装系统。。。
-另外优胜美地经常花屏的问题我就不说了。。。目前升级到10.10.2，好了很多。
-BTW不能忽略它的一大优势，就是基于unix，所以terminal也很好用~ 哈哈哈~
-至于安全嘛，引用《浪潮之巅》里面一段话，也许有失偏颇，但确实符合客观规律：
- 几天前我和圣地亚哥加州大学一位研究计算机安全的教授讨论信息安全的问题。我们在谈到以往的基于 Unix 内核的操作系统，比如苹果的OS，通常比微软的安全时，他向我介绍说，新的微软操作系统 Vista 现在已经比苹果的操作系统和 Linux 安全得多（我多少有点惊讶）。但是，微软的 Vista 仍然比苹果的操作系统容易受到攻击，因为后者的数量（或者说市场占有率）太小，以至于制造计算机病毒和间谍软件（ Spyware ）的人“懒得”去攻击苹果的计算机。这对苹果公司和苹果的用户是一条悲哀的好消息，它说明微软在操作系统上的统治地位多么强，就连造毒者都必须造微软的毒。
- 最后的最后，反正我已经打算把mbp作为主力机了，所以就慢慢适应吧。总会越来越好用的吧~
-也会慢慢开始ios的开发~
-有趣的东西那么多，不尝试多遗憾啊~</description>
+      <description></description>
     </item>
-    
   </channel>
 </rss>

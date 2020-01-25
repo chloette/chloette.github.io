@@ -1,0 +1,50 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts - 你好，世界</title>
+    <link>/posts/</link>
+    <description>Recent content in Posts on 你好，世界</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>来自某个八零后</copyright>
+    <lastBuildDate>Sat, 25 Jan 2020 17:51:12 +0800</lastBuildDate>
+    
+        <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>坑爹的淘宝秒杀（更新）</title>
+      <link>/posts/damn-tao-bao-miao-sha/</link>
+      <pubDate>Tue, 18 Nov 2014 02:32:12 +0000</pubDate>
+      
+      <guid>/posts/damn-tao-bao-miao-sha/</guid>
+      <description></description>
+    </item><item>
+      <title>Jenkins单工程跨多代码目录</title>
+      <link>/posts/jenkins-with-multi-svn-paths/</link>
+      <pubDate>Thu, 13 Nov 2014 02:27:24 +0000</pubDate>
+      
+      <guid>/posts/jenkins-with-multi-svn-paths/</guid>
+      <description></description>
+    </item><item>
+      <title>拉上Google一起对抗Ebola</title>
+      <link>/posts/help-fight-ebola/</link>
+      <pubDate>Wed, 12 Nov 2014 02:40:06 +0000</pubDate>
+      
+      <guid>/posts/help-fight-ebola/</guid>
+      <description></description>
+    </item><item>
+      <title>关于Bitlocker</title>
+      <link>/posts/about-bitlocker-remake-u-key-disk/</link>
+      <pubDate>Mon, 10 Nov 2014 03:51:50 +0000</pubDate>
+      
+      <guid>/posts/about-bitlocker-remake-u-key-disk/</guid>
+      <description></description>
+    </item><item>
+      <title>Android studio的一些坑</title>
+      <link>/posts/android-studiode-common-questions/</link>
+      <pubDate>Fri, 07 Nov 2014 06:37:01 +0000</pubDate>
+      
+      <guid>/posts/android-studiode-common-questions/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

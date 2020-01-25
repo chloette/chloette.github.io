@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>HAL on 你好，世界</title>
+    <title>HAL - 你好，世界</title>
     <link>/tags/hal/</link>
     <description>Recent content in HAL on 你好，世界</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -9,8 +8,7 @@
     <copyright>来自某个八零后</copyright>
     <lastBuildDate>Sat, 11 Apr 2015 07:15:21 +0000</lastBuildDate>
     
-	<atom:link href="/tags/hal/index.xml" rel="self" type="application/rss+xml" />
-    
+        <atom:link href="/tags/hal/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Android Camera HAL3.0</title>
@@ -18,20 +16,7 @@
       <pubDate>Sat, 11 Apr 2015 07:15:21 +0000</pubDate>
       
       <guid>/posts/android-camera-hal3-0/</guid>
-      <description>官网文档在此
-简单来说，3.0的设计初衷就是 &amp;ndash; 提供per-frame操作的灵活性。
-更多细节在官网上写的很清楚了，这里就不再赘述。
-罗列一些点，跨度比较大，想到哪说到哪。
-######Camera 接口 首先接口本身的设计存在缺陷：
-例如setPreviewSize和setPreviewFrameRate是无关的。（但其实这很有关系）
-对于ISP这种pipeline来说，类比水管，最大出水量是恒定的；所以理论上，单帧size越大，那帧率（fps）也就越低。
-所以size和fps是应该有明确的对应关系的。但这个接口把这个关系打破了。
-那是否就无法获取这种对应关系了那？
-并不是。Camera提供了CameraCharacteristics来获取更具体的信息，但是要麻烦一些；
-可以参考cts测试中，getAvailableMinFrameDurationsForFormatChecked的做法；通过StreamConfigurationMap来算出fps和width/height的关系。
-######CTS CTS的加强； 5.0以来，camera的CTS测试case从3x项增加到了3xx项。。。通过cts更加困难。 初衷是好的，会改善android目前不容乐观的rom兼容性。 但真相是，这套测试更像是一张考卷，上有政策下有对策的大有人在。
-（不断补充ing）</description>
+      <description></description>
     </item>
-    
   </channel>
 </rss>

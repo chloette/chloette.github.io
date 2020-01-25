@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ebola on 你好，世界</title>
+    <title>Ebola - 你好，世界</title>
     <link>/categories/ebola/</link>
     <description>Recent content in Ebola on 你好，世界</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -9,8 +8,7 @@
     <copyright>来自某个八零后</copyright>
     <lastBuildDate>Wed, 12 Nov 2014 02:40:06 +0000</lastBuildDate>
     
-	<atom:link href="/categories/ebola/index.xml" rel="self" type="application/rss+xml" />
-    
+        <atom:link href="/categories/ebola/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>拉上Google一起对抗Ebola</title>
@@ -18,13 +16,7 @@
       <pubDate>Wed, 12 Nov 2014 02:40:06 +0000</pubDate>
       
       <guid>/posts/help-fight-ebola/</guid>
-      <description>Ebola目前的形势还不容乐观。
-在Google首页居然看到了活动（1%发布么T_T）：Help figh Ebola. For every $1 you give, Google will give $2.
-想了下，还是要do something的，就去donate了$5。
-有兴趣的一起上吧～
-离目标$750W不远啦！
-【2015/1/23 忘记更新了。。。貌似第二天还是第三天就筹满了～ 】</description>
+      <description></description>
     </item>
-    
   </channel>
 </rss>

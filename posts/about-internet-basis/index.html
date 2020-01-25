@@ -1,228 +1,191 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us" dir="ltr">
   <head>
-    
-      <title>关于Internet的基础 :: 你好，世界 — 📝🎿🛹🏍️</title>
-    
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="description" content="一直想找时间好好理清楚Internet的基础，例如协议栈、例如http、例如tcp等等，但一直没整理。
-原因一个是这确实是自己的短板，知道的不少，但一直没有从上到下的整理过。
-再就是互联网协议从底到上，点太多，经常抓瞎，不知从何谈起。
-[BTW，本文尝试不用Q&amp;amp;A的方式来展开试试看~]
-现在正好离职了，终于空了足够时间来整理一下~
-google&#43;wiki的时候，找到了此文（上，下），写的很浅显易懂。推荐~
-加上wiki
-上面引用的那位哥说了这么句话： &amp;gt;前面说过，以太网数据包只包含MAC地址，并没有IP地址的栏位。那么是否需要修改数据定义，再添加一个栏位呢？
- 回答是不需要，我们可以把IP数据包直接放进以太网数据包的&amp;rdquo;数据&amp;rdquo;部分，因此完全不用修改以太网的规格。这就是互联网分层结构的好处：上层的变动完全不涉及下层的结构。
- 这句话说得很好，其实不管七层OSI，还是成为实际标准的四层tcp/ip协议栈，关键的就是这样一个层级间的再封装以保持的层级无关（独立）性。
-这种无关性，才能保证整个行业，各自轻松愉快的向前发展，而不用过分关心协议外的耦合性。（有种回答“学计算机都会修电脑”这种问题的即视感。。。）
-下图（拼图）描述了从主机A到主机B的网络拓扑，可以清晰看到层与层之间的关系，同层级之间的联系，不同层级的数据格式、协议等：
-层级之间，以一种简单方式封装实现的层级无关的数据包结构，wiki的原话相当到位：沿着不同的层应用数据的封装递减： （当然，过分简单也就意味着无法兼顾安全。）
-想象下你是如何从主机A访问到这里的（类似的例子其实在下有提到）[这里会做很多简化]
- 主机A首先用浏览器；输入nobodycare.me，敲回车；（这里忽略浏览器缓存等优化）
- 浏览器会先去问dns服务器（一般DHCP会同样告知DNS服务器的IP），请求nobodycare.me的实际IP地址；
- DNS回复实际IP地址X（最初的GFW就是简单的DNS劫持/污染）；
- 浏览器（这里跳过子网掩码这一步）通过主机A的端口N（1024-65535的某端口）向地址X的80端口（http）发出请求（request）；
- 浏览器发出的请求的数据包（假设是TCP包），最终会如下分包：（TCP-&amp;gt;IP-&amp;gt;Ethernet） （这里说“分包”其实有一些歧义，因为TCP-&amp;gt;IP-&amp;gt;Ethernet的过程是不断加不同层报头的逐级封装递增，只是最后受限于ethernet的长度限制，才需要”分包“）
- 请求经过多层路由，到达了地址X的这台主机B（一般称为服务器），再经过合包（Ethernet-&amp;gt;IP-&amp;gt;TCP），得到那个最初浏览器发出的请求；
- 服务器开始处理这个请求：nginx转发-&amp;gt;node.js&#43;ghost处理并反馈（response）html数据；
- 反馈也一样进行分包（TCP-&amp;gt;IP-&amp;gt;Ethernet）；
- 这分包后的反馈同样经过多层路由，返回到主机A并同样合包（Ethernet-&amp;gt;IP-&amp;gt;TCP），然后数据回到端口N；
- 浏览器通过端口N收到反馈（html数据），并开始按照html数据进行渲染；
- 然后主机A的浏览器就显示了本站；
-  再回去看那个网络拓扑（如Application层：浏览器 -&amp;gt; node.js），就更加清晰明了了。
-上面这个例子也简单描述了request/response模型
-顺便提一下，http协议是无状态协议，服务器甚至都不知道两次http请求是不是相互有关联，这其实并不适合大部分的业务逻辑，这时候就需要一种方式来“记录（保持）”状态 &amp;ndash; Cookies和Session。  &amp;gt;客户端与服务器进行动态交互的Web应用程序出现之后，HTTP无状态的特性严重阻碍了这些应用程序的实现，毕竟交互是需要承前启后的，简单的购物车程序也要知道用户到底在之前选择了什么商品。于是，两种用于保持HTTP连接状态的技术就应运而生了，一个是Cookie，而另一个则是Session。HTTP本身是一个无状态的连接协议，为了支持客户端与服务器之间的交互，我们就需要通过不同的技术为交互存储状态，而这些不同的技术就是Cookie和Session了。
-正是基于这一整套简单又很聪明的设计，构成了整个internet的基础。
-简单又干活。（码农毕生追求了吧~）
-在wiki里同时看到这么一段有趣的历史（这才让我想起来确实曾有一些高昂的专用网络）：
-在长期的发展过程中，IP逐渐取代其他网络。这里是一个简单的解释。IP传输通用数据。数据能够用于任何目的，并且能够很轻易地取代以前由专有数据网络传输的数据。下面是一个普通的过程：
- 一个专有的网络开发出来用于特定目的。如果它工作很好，用户将接受它。 为了便利提供IP服务，经常用于访问电子邮件或者聊天，通常以某种方式通过专有网络隧道实现。隧道方式最初可能非常没有效率，因为电子邮件和聊天只需要很低的带宽。 通过一点点的投资IP基础设施逐渐在专有数据网络周边出现。 用IP取代专有服务的需求出现，经常是一个用户要求。 IP替代品过程遍布整个因特网，这使IP替代品比最初的专有网络更加有价值（由于网络效应）。 专有网络受到压制。许多用户开始维护使用IP替代品的复制品。 IP包的间接开销很小，少于1%，这样在成本上非常有竞争性。人们开发一种能够将 IP带到专有网络上的大部分用户的不昂贵的传输媒介。 大多数用户为了削减开销，专有网络被取消。  新工作、新生活即将开始，就拿IP取代专属网络这种屌丝气死高富帅的故事来励志吧~"/>
-<meta name="keywords" content=""/>
-<meta name="robots" content="noodp"/>
-<link rel="canonical" href="/posts/about-internet-basis/" />
-
-
-<link rel="stylesheet" href="/assets/style.css">
-
-
-<link rel="stylesheet" href="/style.css">
-
-
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
-<link rel="shortcut icon" href="/img/favicon.png">
-
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="关于Internet的基础"/>
-<meta name="twitter:description" content="一直想找时间好好理清楚Internet的基础，例如协议栈、例如http、例如tcp等等，但一直没整理。
-原因一个是这确实是自己的短板，知道的不少，但一直没有从上到下的整理过。
-再就是互联网协议从底到上，点太多，经常抓瞎，不知从何谈起。
-[BTW，本文尝试不用Q&amp;A的方式来展开试试看~]
-现在正好离职了，终于空了足够时间来整理一下~
-google&#43;wiki的时候，找到了此文（上，下），写的很浅显易懂。推荐~
-加上wiki
-上面引用的那位哥说了这么句话： &gt;前面说过，以太网数据包只包含MAC地址，并没有IP地址的栏位。那么是否需要修改数据定义，再添加一个栏位呢？
- 回答是不需要，我们可以把IP数据包直接放进以太网数据包的&rdquo;数据&rdquo;部分，因此完全不用修改以太网的规格。这就是互联网分层结构的好处：上层的变动完全不涉及下层的结构。
- 这句话说得很好，其实不管七层OSI，还是成为实际标准的四层tcp/ip协议栈，关键的就是这样一个层级间的再封装以保持的层级无关（独立）性。
-这种无关性，才能保证整个行业，各自轻松愉快的向前发展，而不用过分关心协议外的耦合性。（有种回答“学计算机都会修电脑”这种问题的即视感。。。）
-下图（拼图）描述了从主机A到主机B的网络拓扑，可以清晰看到层与层之间的关系，同层级之间的联系，不同层级的数据格式、协议等：
-层级之间，以一种简单方式封装实现的层级无关的数据包结构，wiki的原话相当到位：沿着不同的层应用数据的封装递减： （当然，过分简单也就意味着无法兼顾安全。）
-想象下你是如何从主机A访问到这里的（类似的例子其实在下有提到）[这里会做很多简化]
- 主机A首先用浏览器；输入nobodycare.me，敲回车；（这里忽略浏览器缓存等优化）
- 浏览器会先去问dns服务器（一般DHCP会同样告知DNS服务器的IP），请求nobodycare.me的实际IP地址；
- DNS回复实际IP地址X（最初的GFW就是简单的DNS劫持/污染）；
- 浏览器（这里跳过子网掩码这一步）通过主机A的端口N（1024-65535的某端口）向地址X的80端口（http）发出请求（request）；
- 浏览器发出的请求的数据包（假设是TCP包），最终会如下分包：（TCP-&gt;IP-&gt;Ethernet） （这里说“分包”其实有一些歧义，因为TCP-&gt;IP-&gt;Ethernet的过程是不断加不同层报头的逐级封装递增，只是最后受限于ethernet的长度限制，才需要”分包“）
- 请求经过多层路由，到达了地址X的这台主机B（一般称为服务器），再经过合包（Ethernet-&gt;IP-&gt;TCP），得到那个最初浏览器发出的请求；
- 服务器开始处理这个请求：nginx转发-&gt;node.js&#43;ghost处理并反馈（response）html数据；
- 反馈也一样进行分包（TCP-&gt;IP-&gt;Ethernet）；
- 这分包后的反馈同样经过多层路由，返回到主机A并同样合包（Ethernet-&gt;IP-&gt;TCP），然后数据回到端口N；
- 浏览器通过端口N收到反馈（html数据），并开始按照html数据进行渲染；
- 然后主机A的浏览器就显示了本站；
-  再回去看那个网络拓扑（如Application层：浏览器 -&gt; node.js），就更加清晰明了了。
-上面这个例子也简单描述了request/response模型
-顺便提一下，http协议是无状态协议，服务器甚至都不知道两次http请求是不是相互有关联，这其实并不适合大部分的业务逻辑，这时候就需要一种方式来“记录（保持）”状态 &ndash; Cookies和Session。  &gt;客户端与服务器进行动态交互的Web应用程序出现之后，HTTP无状态的特性严重阻碍了这些应用程序的实现，毕竟交互是需要承前启后的，简单的购物车程序也要知道用户到底在之前选择了什么商品。于是，两种用于保持HTTP连接状态的技术就应运而生了，一个是Cookie，而另一个则是Session。HTTP本身是一个无状态的连接协议，为了支持客户端与服务器之间的交互，我们就需要通过不同的技术为交互存储状态，而这些不同的技术就是Cookie和Session了。
-正是基于这一整套简单又很聪明的设计，构成了整个internet的基础。
-简单又干活。（码农毕生追求了吧~）
-在wiki里同时看到这么一段有趣的历史（这才让我想起来确实曾有一些高昂的专用网络）：
-在长期的发展过程中，IP逐渐取代其他网络。这里是一个简单的解释。IP传输通用数据。数据能够用于任何目的，并且能够很轻易地取代以前由专有数据网络传输的数据。下面是一个普通的过程：
- 一个专有的网络开发出来用于特定目的。如果它工作很好，用户将接受它。 为了便利提供IP服务，经常用于访问电子邮件或者聊天，通常以某种方式通过专有网络隧道实现。隧道方式最初可能非常没有效率，因为电子邮件和聊天只需要很低的带宽。 通过一点点的投资IP基础设施逐渐在专有数据网络周边出现。 用IP取代专有服务的需求出现，经常是一个用户要求。 IP替代品过程遍布整个因特网，这使IP替代品比最初的专有网络更加有价值（由于网络效应）。 专有网络受到压制。许多用户开始维护使用IP替代品的复制品。 IP包的间接开销很小，少于1%，这样在成本上非常有竞争性。人们开发一种能够将 IP带到专有网络上的大部分用户的不昂贵的传输媒介。 大多数用户为了削减开销，专有网络被取消。  新工作、新生活即将开始，就拿IP取代专属网络这种屌丝气死高富帅的故事来励志吧~"/>
-
-
-
-<meta property="og:title" content="关于Internet的基础" />
-<meta property="og:description" content="一直想找时间好好理清楚Internet的基础，例如协议栈、例如http、例如tcp等等，但一直没整理。
-原因一个是这确实是自己的短板，知道的不少，但一直没有从上到下的整理过。
-再就是互联网协议从底到上，点太多，经常抓瞎，不知从何谈起。
-[BTW，本文尝试不用Q&amp;A的方式来展开试试看~]
-现在正好离职了，终于空了足够时间来整理一下~
-google&#43;wiki的时候，找到了此文（上，下），写的很浅显易懂。推荐~
-加上wiki
-上面引用的那位哥说了这么句话： &gt;前面说过，以太网数据包只包含MAC地址，并没有IP地址的栏位。那么是否需要修改数据定义，再添加一个栏位呢？
- 回答是不需要，我们可以把IP数据包直接放进以太网数据包的&rdquo;数据&rdquo;部分，因此完全不用修改以太网的规格。这就是互联网分层结构的好处：上层的变动完全不涉及下层的结构。
- 这句话说得很好，其实不管七层OSI，还是成为实际标准的四层tcp/ip协议栈，关键的就是这样一个层级间的再封装以保持的层级无关（独立）性。
-这种无关性，才能保证整个行业，各自轻松愉快的向前发展，而不用过分关心协议外的耦合性。（有种回答“学计算机都会修电脑”这种问题的即视感。。。）
-下图（拼图）描述了从主机A到主机B的网络拓扑，可以清晰看到层与层之间的关系，同层级之间的联系，不同层级的数据格式、协议等：
-层级之间，以一种简单方式封装实现的层级无关的数据包结构，wiki的原话相当到位：沿着不同的层应用数据的封装递减： （当然，过分简单也就意味着无法兼顾安全。）
-想象下你是如何从主机A访问到这里的（类似的例子其实在下有提到）[这里会做很多简化]
- 主机A首先用浏览器；输入nobodycare.me，敲回车；（这里忽略浏览器缓存等优化）
- 浏览器会先去问dns服务器（一般DHCP会同样告知DNS服务器的IP），请求nobodycare.me的实际IP地址；
- DNS回复实际IP地址X（最初的GFW就是简单的DNS劫持/污染）；
- 浏览器（这里跳过子网掩码这一步）通过主机A的端口N（1024-65535的某端口）向地址X的80端口（http）发出请求（request）；
- 浏览器发出的请求的数据包（假设是TCP包），最终会如下分包：（TCP-&gt;IP-&gt;Ethernet） （这里说“分包”其实有一些歧义，因为TCP-&gt;IP-&gt;Ethernet的过程是不断加不同层报头的逐级封装递增，只是最后受限于ethernet的长度限制，才需要”分包“）
- 请求经过多层路由，到达了地址X的这台主机B（一般称为服务器），再经过合包（Ethernet-&gt;IP-&gt;TCP），得到那个最初浏览器发出的请求；
- 服务器开始处理这个请求：nginx转发-&gt;node.js&#43;ghost处理并反馈（response）html数据；
- 反馈也一样进行分包（TCP-&gt;IP-&gt;Ethernet）；
- 这分包后的反馈同样经过多层路由，返回到主机A并同样合包（Ethernet-&gt;IP-&gt;TCP），然后数据回到端口N；
- 浏览器通过端口N收到反馈（html数据），并开始按照html数据进行渲染；
- 然后主机A的浏览器就显示了本站；
-  再回去看那个网络拓扑（如Application层：浏览器 -&gt; node.js），就更加清晰明了了。
-上面这个例子也简单描述了request/response模型
-顺便提一下，http协议是无状态协议，服务器甚至都不知道两次http请求是不是相互有关联，这其实并不适合大部分的业务逻辑，这时候就需要一种方式来“记录（保持）”状态 &ndash; Cookies和Session。  &gt;客户端与服务器进行动态交互的Web应用程序出现之后，HTTP无状态的特性严重阻碍了这些应用程序的实现，毕竟交互是需要承前启后的，简单的购物车程序也要知道用户到底在之前选择了什么商品。于是，两种用于保持HTTP连接状态的技术就应运而生了，一个是Cookie，而另一个则是Session。HTTP本身是一个无状态的连接协议，为了支持客户端与服务器之间的交互，我们就需要通过不同的技术为交互存储状态，而这些不同的技术就是Cookie和Session了。
-正是基于这一整套简单又很聪明的设计，构成了整个internet的基础。
-简单又干活。（码农毕生追求了吧~）
-在wiki里同时看到这么一段有趣的历史（这才让我想起来确实曾有一些高昂的专用网络）：
-在长期的发展过程中，IP逐渐取代其他网络。这里是一个简单的解释。IP传输通用数据。数据能够用于任何目的，并且能够很轻易地取代以前由专有数据网络传输的数据。下面是一个普通的过程：
- 一个专有的网络开发出来用于特定目的。如果它工作很好，用户将接受它。 为了便利提供IP服务，经常用于访问电子邮件或者聊天，通常以某种方式通过专有网络隧道实现。隧道方式最初可能非常没有效率，因为电子邮件和聊天只需要很低的带宽。 通过一点点的投资IP基础设施逐渐在专有数据网络周边出现。 用IP取代专有服务的需求出现，经常是一个用户要求。 IP替代品过程遍布整个因特网，这使IP替代品比最初的专有网络更加有价值（由于网络效应）。 专有网络受到压制。许多用户开始维护使用IP替代品的复制品。 IP包的间接开销很小，少于1%，这样在成本上非常有竞争性。人们开发一种能够将 IP带到专有网络上的大部分用户的不昂贵的传输媒介。 大多数用户为了削减开销，专有网络被取消。  新工作、新生活即将开始，就拿IP取代专属网络这种屌丝气死高富帅的故事来励志吧~" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/about-internet-basis/" />
-<meta property="article:published_time" content="2015-03-07T10:58:42+00:00" />
-<meta property="article:modified_time" content="2015-03-07T10:58:42+00:00" /><meta property="og:site_name" content="你好，世界" />
-
-
-
-
-
-
-  </head>
-  <body class="dark-theme">
-    <div class="container">
-      <header class="header">
-  <span class="header__inner">
-    <a href="/" class="logo" style="text-decoration: none;">
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>关于Internet的基础 &middot; 你好，世界</title>
+  <meta name="description" content="" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
-  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
-</svg>
-</span>
-    <span class="logo__text">Hello World</span>
-    <span class="logo__cursor"></span>
   
-</a>
+  
+  
+  
+  <link href="/css/concated.min.css" rel="stylesheet">
+  
+  
+</head>
 
-    <span class="header__right">
+  <body class="single-body">
+    <nav class="nav-bar side-padding">
+  <h1 class="nav-header"><a href="/" class="nav-text">你好，世界</a></h1>
+  <div class="hamburger-menu">
+    <button onclick="hamburgerMenuPressed.call(this)" aria-haspopup="true" aria-expanded="false" aria-controls="menu" aria-label="Menu">
+      <span></span>
+      <span></span>
+    </button>
+    <ul id="menu" class="hamburger-menu-overlay">
+      <li><a href="/" class="hamburger-menu-overlay-link">Home</a></li>
       
-        <nav class="menu">
-  <ul class="menu__inner menu__inner--desktop">
-    
+      <li><a href="/categories/12306/" class="hamburger-menu-overlay-link">12306</a></li>
       
-        
-          <li><a href="/about">About</a></li>
-        
+      <li><a href="/categories/android/" class="hamburger-menu-overlay-link">Android</a></li>
+      
+      <li><a href="/categories/android-studio/" class="hamburger-menu-overlay-link">android studio</a></li>
+      
+      <li><a href="/categories/apk-expansion/" class="hamburger-menu-overlay-link">APK Expansion</a></li>
+      
+      <li><a href="/categories/bash/" class="hamburger-menu-overlay-link">bash</a></li>
+      
+      <li><a href="/categories/bitcoin/" class="hamburger-menu-overlay-link">bitcoin</a></li>
+      
+      <li><a href="/categories/bitlocker/" class="hamburger-menu-overlay-link">bitlocker</a></li>
+      
+      <li><a href="/categories/btc/" class="hamburger-menu-overlay-link">btc</a></li>
+      
+      <li><a href="/categories/byte-alignment/" class="hamburger-menu-overlay-link">Byte alignment</a></li>
+      
+      <li><a href="/categories/c/" class="hamburger-menu-overlay-link">C</a></li>
+      
+      <li><a href="/categories/camera/" class="hamburger-menu-overlay-link">Camera</a></li>
+      
+      <li><a href="/categories/charset/" class="hamburger-menu-overlay-link">charset</a></li>
+      
+      <li><a href="/categories/chrome/" class="hamburger-menu-overlay-link">chrome</a></li>
+      
+      <li><a href="/categories/classnotfound/" class="hamburger-menu-overlay-link">ClassNotFound</a></li>
+      
+      <li><a href="/categories/d/" class="hamburger-menu-overlay-link">d</a></li>
+      
+      <li><a href="/categories/ddos/" class="hamburger-menu-overlay-link">ddos</a></li>
+      
+      <li><a href="/categories/ebola/" class="hamburger-menu-overlay-link">Ebola</a></li>
+      
+      <li><a href="/categories/ec2/" class="hamburger-menu-overlay-link">EC2</a></li>
+      
+      <li><a href="/categories/eva/" class="hamburger-menu-overlay-link">EVA</a></li>
+      
+      <li><a href="/categories/ffmpeg/" class="hamburger-menu-overlay-link">ffmpeg</a></li>
+      
+      <li><a href="/categories/fonts.googleapis.com/" class="hamburger-menu-overlay-link">fonts.googleapis.com</a></li>
+      
+      <li><a href="/categories/forget-password/" class="hamburger-menu-overlay-link">forget password</a></li>
+      
+      <li><a href="/categories/gallery/" class="hamburger-menu-overlay-link">Gallery</a></li>
+      
+      <li><a href="/categories/ghost/" class="hamburger-menu-overlay-link">ghost</a></li>
+      
+      <li><a href="/categories/git/" class="hamburger-menu-overlay-link">git</a></li>
+      
+      <li><a href="/categories/gpl/" class="hamburger-menu-overlay-link">gpl</a></li>
+      
+      <li><a href="/categories/gradle/" class="hamburger-menu-overlay-link">Gradle</a></li>
+      
+      <li><a href="/categories/gta/" class="hamburger-menu-overlay-link">GTA</a></li>
+      
+      <li><a href="/categories/hal/" class="hamburger-menu-overlay-link">HAL</a></li>
+      
+      <li><a href="/categories/hardware-requirement/" class="hamburger-menu-overlay-link">hardware requirement</a></li>
+      
+      <li><a href="/categories/hexo&#43;/" class="hamburger-menu-overlay-link">Hexo&#43;</a></li>
+      
+      <li><a href="/categories/highlight-syntax/" class="hamburger-menu-overlay-link">highlight syntax</a></li>
+      
+      <li><a href="/categories/imagefetcher/" class="hamburger-menu-overlay-link">ImageFetcher</a></li>
+      
+      <li><a href="/categories/internet/" class="hamburger-menu-overlay-link">Internet</a></li>
+      
+      <li><a href="/categories/jenkins/" class="hamburger-menu-overlay-link">Jenkins</a></li>
+      
+      <li><a href="/categories/kickstarter/" class="hamburger-menu-overlay-link">kickstarter</a></li>
+      
+      <li><a href="/categories/limits/" class="hamburger-menu-overlay-link">limits</a></li>
+      
+      <li><a href="/categories/link/" class="hamburger-menu-overlay-link">link</a></li>
+      
+      <li><a href="/categories/linux/" class="hamburger-menu-overlay-link">linux</a></li>
+      
+      <li><a href="/categories/load-library/" class="hamburger-menu-overlay-link">load library</a></li>
+      
+      <li><a href="/categories/logo/" class="hamburger-menu-overlay-link">logo</a></li>
+      
+      <li><a href="/categories/ltc/" class="hamburger-menu-overlay-link">ltc</a></li>
+      
+      <li><a href="/categories/monkeyrunner/" class="hamburger-menu-overlay-link">monkeyrunner</a></li>
+      
+      <li><a href="/categories/multi-path/" class="hamburger-menu-overlay-link">multi-path</a></li>
+      
+      <li><a href="/categories/nerv/" class="hamburger-menu-overlay-link">NERV</a></li>
+      
+      <li><a href="/categories/node.js/" class="hamburger-menu-overlay-link">node.js</a></li>
+      
+      <li><a href="/categories/okcoin/" class="hamburger-menu-overlay-link">okcoin</a></li>
+      
+      <li><a href="/categories/os/" class="hamburger-menu-overlay-link">OS</a></li>
+      
+      <li><a href="/categories/out-of-memory/" class="hamburger-menu-overlay-link">out of memory</a></li>
+      
+      <li><a href="/categories/performance/" class="hamburger-menu-overlay-link">performance</a></li>
+      
+      <li><a href="/categories/proguard/" class="hamburger-menu-overlay-link">proguard</a></li>
+      
+      <li><a href="/categories/putty/" class="hamburger-menu-overlay-link">putty</a></li>
+      
+      <li><a href="/categories/python/" class="hamburger-menu-overlay-link">python</a></li>
+      
+      <li><a href="/categories/qq/" class="hamburger-menu-overlay-link">QQ</a></li>
+      
+      <li><a href="/categories/relativelayout/" class="hamburger-menu-overlay-link">RelativeLayout</a></li>
+      
+      <li><a href="/categories/script/" class="hamburger-menu-overlay-link">script</a></li>
+      
+      <li><a href="/categories/selinux/" class="hamburger-menu-overlay-link">Selinux</a></li>
+      
+      <li><a href="/categories/sensor/" class="hamburger-menu-overlay-link">sensor</a></li>
+      
+      <li><a href="/categories/sepolicy/" class="hamburger-menu-overlay-link">Sepolicy</a></li>
+      
+      <li><a href="/categories/shellshock/" class="hamburger-menu-overlay-link">Shellshock</a></li>
+      
+      <li><a href="/categories/sparsearray/" class="hamburger-menu-overlay-link">SparseArray</a></li>
+      
+      <li><a href="/categories/sync/" class="hamburger-menu-overlay-link">sync</a></li>
+      
+      <li><a href="/categories/ted/" class="hamburger-menu-overlay-link">TED</a></li>
+      
+      <li><a href="/categories/tips/" class="hamburger-menu-overlay-link">tips</a></li>
+      
+      <li><a href="/categories/ubuntu/" class="hamburger-menu-overlay-link">Ubuntu</a></li>
+      
+      <li><a href="/categories/understanding-node.js/" class="hamburger-menu-overlay-link">Understanding node.js</a></li>
+      
+      <li><a href="/categories/undo/" class="hamburger-menu-overlay-link">undo</a></li>
+      
+      <li><a href="/categories/upgrade/" class="hamburger-menu-overlay-link">upgrade</a></li>
+      
+      <li><a href="/categories/view/" class="hamburger-menu-overlay-link">View</a></li>
+      
+      <li><a href="/categories/windows/" class="hamburger-menu-overlay-link">windows</a></li>
+      
+      <li><a href="/categories/wordpress/" class="hamburger-menu-overlay-link">wordpress</a></li>
+      
+      <li><a href="/categories/zsh/" class="hamburger-menu-overlay-link">zsh</a></li>
       
       
-    
-  </ul>
-
-  <ul class="menu__inner menu__inner--mobile">
-    
-      
-        <li><a href="/about">About</a></li>
-      
-    
-  </ul>
+    </ul>
+  </div>
 </nav>
 
-        <span class="menu-trigger">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M0 0h24v24H0z" fill="none"/>
-            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
-          </svg>
-        </span>
-      
-      <span class="theme-toggle">
-        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
-  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
-  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
-</svg>
-
-      </span>
-    </span>
-  </span>
-</header>
-
-
-      <div class="content">
+    <main class="content side-text-padding">
+      <article class="post dropcase">
+        <header class="post-header">
+        	<h1 class="post-title">关于Internet的基础</h1>
+          <p class="post-date">Posted <time datetime="2015-03-07">Mar 7, 2015</time></p>
+        </header>
         
-  <div class="post">
-    <h2 class="post-title"><a href="/posts/about-internet-basis/">关于Internet的基础</a></h2>
-    <div class="post-meta">
-      
-        <span class="post-date">
-            2015-03-07
-        </span>
-      
-      <span class="post-author">— Written by Guo Yi</span>
-      
-    </div>
-
-    
-      <span class="post-tags">
-        
-          #<a href="/tags/internet/">Internet</a>&nbsp;
-        
-          #<a href="/tags/%E5%8D%8F%E8%AE%AE%E6%A0%88/">协议栈</a>&nbsp;
-        
-      </span>
-    
-
-    
-
-    <div class="post-content">
-      <p>一直想找时间好好理清楚Internet的基础，例如协议栈、例如http、例如tcp等等，但一直没整理。</p>
+        <p>一直想找时间好好理清楚Internet的基础，例如协议栈、例如http、例如tcp等等，但一直没整理。</p>
 
 <p>原因一个是这确实是自己的短板，知道的不少，但一直没有从上到下的整理过。</p>
 
@@ -327,56 +290,38 @@ IP带到专有网络上的大部分用户的不昂贵的传输媒介。</li>
 
 <p>新工作、新生活即将开始，就拿IP取代专属网络这种屌丝气死高富帅的故事来励志吧~</p>
 
-    </div>
-    
-      <div class="pagination">
-        <div class="pagination__title">
-          <span class="pagination__title-h">Read other posts</span>
-          <hr />
-        </div>
-        <div class="pagination__buttons">
-          
-            <span class="button previous">
-              <a href="/posts/working-holiday-visa-of-newzealand/">
-                <span class="button__icon">←</span>
-                <span class="button__text">Working holiday visa of NewZealand</span>
-              </a>
-            </span>
-          
-          
-            <span class="button next">
-              <a href="/posts/my-ghost-upgrade-script/">
-                <span class="button__text">My ghost upgrade script</span>
-                <span class="button__icon">→</span>
-              </a>
-            </span>
-          
-        </div>
-      </div>
-    
-
-    
-
-    </div>
-
-      </div>
-
+      </article>
       
-        <footer class="footer">
-  <div class="footer__inner">
-    
-      <div class="copyright copyright--user">来自某个八零后</div>
-    
-  </div>
-</footer>
-
-<script src="/assets/main.js"></script>
-<script src="/assets/prism.js"></script>
-
-
+    </main>
+    <nav class="end-nav side-padding">
       
+      <a ontouchstart="cardPressed.call(this)" ontouchend="cardReleased.call(this)" ontouchmove="cardReleased.call(this)" 
+  href="/posts/my-ghost-upgrade-script/" class="card blog-card" rel="bookmark" >
+  
+  <article class="card-body">
+    <h2 class="card-title">My ghost upgrade script</h2>
+    <p class="card-text"></p>
+    <div class="card-subtext muted-text">
+      <p>Posted <time datetime="2015-03-06 36:00">Mar 6, 2015</time></p>
+      <p>#ghost #技术 </p>
     </div>
+  </article>
+</a>
+      
+      <a ontouchstart="cardPressed.call(this)" ontouchend="cardReleased.call(this)" ontouchmove="cardReleased.call(this)" 
+  href="/" class="card home-card" style="background-image: url( /img/grey-cloud.jpg )" rel="bookmark" >
+  Home
+</a>
+    </nav>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+  
+  <script src="/js/core.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
 
-    
   </body>
 </html>

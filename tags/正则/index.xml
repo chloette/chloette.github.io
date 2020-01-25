@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>正则 on 你好，世界</title>
+    <title>正则 - 你好，世界</title>
     <link>/tags/%E6%AD%A3%E5%88%99/</link>
     <description>Recent content in 正则 on 你好，世界</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -9,8 +8,7 @@
     <copyright>来自某个八零后</copyright>
     <lastBuildDate>Thu, 25 Dec 2014 09:51:13 +0000</lastBuildDate>
     
-	<atom:link href="/tags/%E6%AD%A3%E5%88%99/index.xml" rel="self" type="application/rss+xml" />
-    
+        <atom:link href="/tags/%E6%AD%A3%E5%88%99/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>谈谈12306的数据泄露</title>
@@ -18,31 +16,7 @@
       <pubDate>Thu, 25 Dec 2014 09:51:13 +0000</pubDate>
       
       <guid>/posts/about-data-leak-from-12306/</guid>
-      <description>好奇的不仅仅是数据“如何”泄露，更好奇的是哪位同学居然敢老虎嘴里拔牙，敢情也是不想在大天朝混了。
-看报道说是被撞库了（个人意见：12306今年的表现确实可圈可点）。那往前推，最可能的还是CSDN那次明文密码（大500W）泄露事件（后面有一次更大规模的17173/uuu9的泄露，也是受CSDN那波的影响）。
-那就拿这13W的数据（纯研究，不提供下载链接 &amp;ndash; Google，你懂的）分析下看看吧。
-祭出杀器Notepad++，打开居然是乱码。。。改编码到GB2312，恢复正常。
-考虑到CSDN上男女比例应该严重失调，那就验证看看～
-先统计一下女生（*身份证倒数第二位是偶数*）的数量。
-打开正则表达式的WIKI（对，我就是记不住），当然也可以用RegExr～
-\d{16}[02468](?=\d{1}|[xX])  然后Notepad++只hit到9860个结果。。。131653行的数据。
-这男女比例（约12.4：1）。很符合CSDN的特征啊。
-没错，CSDN，社工事业先驱者。
-接下来的事情就比较有趣了，例如翻翻找找本地的妹纸啊，然后以*“同学你账号泄露了”*为名去勾搭吧～
-随手查一下，*被泄露的成都本地90后妹纸*（正则：
-510\d{3}199\d{7}[02468](?=\d{1}|[xX])  ）有51个（就不截图了，你懂的～）
-哈哈哈～
-【2014/12/26更新】
-12306网站泄密事件进展：2名犯罪嫌疑人已被抓
-呵呵，咱们开头说啥来着。
-【2015/1/7更新】
-nodepad++确实神器，可惜ubuntu上用起来太麻烦。
-直接上grep好啦，命令稍微改改（\d这种无法识别，用[0-9]代替）
-例如搜索90后妹纸：
-grep -cE &#39;[0-9]{6}199[0-9]{7}[02468]([0-9]{1}|[xX])&#39; 12306.txt  结果只有1927个，但是notepad++上报出来是1928个。
-很奇怪，还特意祭出Beyond Compare来比较结果，发现原来notepad++重复统计了某一行（那一行的同学，用身份证做账号。。。）
-问题解决～</description>
+      <description></description>
     </item>
-    
   </channel>
 </rss>

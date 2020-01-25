@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>关于 on 你好，世界</title>
+    <title>关于 - 你好，世界</title>
     <link>/tags/%E5%85%B3%E4%BA%8E/</link>
     <description>Recent content in 关于 on 你好，世界</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -9,8 +8,7 @@
     <copyright>来自某个八零后</copyright>
     <lastBuildDate>Thu, 20 Sep 2012 14:53:41 +0000</lastBuildDate>
     
-	<atom:link href="/tags/%E5%85%B3%E4%BA%8E/index.xml" rel="self" type="application/rss+xml" />
-    
+        <atom:link href="/tags/%E5%85%B3%E4%BA%8E/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>关于</title>
@@ -18,24 +16,7 @@
       <pubDate>Thu, 20 Sep 2012 14:53:41 +0000</pubDate>
       
       <guid>/about/</guid>
-      <description>###逆界
-####技术
-懂点C、会点Android、写过算法、做过App、搞过Kernel、折腾过VPS&amp;hellip;
-Full-stack developer的方向，渣渣的命。
-简单理解：P都不会。
-####安全
-我是小白`
-####记录
-关于我的你的他的她的它的 &amp;ndash; 那些无法忘却的过去
-也许幼稚也许青涩也许矫情也许夸张也许不知所云也许无关痛痒
-但
-真心谢谢你们曾经陪伴。
- 谢谢。 )
-  ####书单
-####观影单
-About Copyright:
-（Hope you have powerful enough anti-DDOS Mechanisms. ^_^）</description>
+      <description></description>
     </item>
-    
   </channel>
 </rss>

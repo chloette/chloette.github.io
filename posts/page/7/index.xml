@@ -1,0 +1,50 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts - 你好，世界</title>
+    <link>/posts/</link>
+    <description>Recent content in Posts on 你好，世界</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>来自某个八零后</copyright>
+    <lastBuildDate>Sat, 25 Jan 2020 17:51:12 +0800</lastBuildDate>
+    
+        <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>将离（我要滚犊子啦）</title>
+      <link>/posts/leaving-cm/</link>
+      <pubDate>Sat, 28 Feb 2015 07:49:03 +0000</pubDate>
+      
+      <guid>/posts/leaving-cm/</guid>
+      <description></description>
+    </item><item>
+      <title>God&#39;s in his heaven - All&#39;s right with the world!</title>
+      <link>/posts/gods-in-his-heaven-alls-right-with-the-world/</link>
+      <pubDate>Fri, 20 Feb 2015 10:29:36 +0000</pubDate>
+      
+      <guid>/posts/gods-in-his-heaven-alls-right-with-the-world/</guid>
+      <description></description>
+    </item><item>
+      <title>GTA5</title>
+      <link>/posts/gta5/</link>
+      <pubDate>Fri, 20 Feb 2015 09:17:39 +0000</pubDate>
+      
+      <guid>/posts/gta5/</guid>
+      <description></description>
+    </item><item>
+      <title>大年三十</title>
+      <link>/posts/last-day-of-year/</link>
+      <pubDate>Wed, 18 Feb 2015 06:55:12 +0000</pubDate>
+      
+      <guid>/posts/last-day-of-year/</guid>
+      <description></description>
+    </item><item>
+      <title>美亚速度</title>
+      <link>/posts/amazon-speed/</link>
+      <pubDate>Thu, 12 Feb 2015 10:08:36 +0000</pubDate>
+      
+      <guid>/posts/amazon-speed/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

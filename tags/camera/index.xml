@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Camera on 你好，世界</title>
+    <title>Camera - 你好，世界</title>
     <link>/tags/camera/</link>
     <description>Recent content in Camera on 你好，世界</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -9,8 +8,7 @@
     <copyright>来自某个八零后</copyright>
     <lastBuildDate>Sun, 03 May 2015 14:23:04 +0000</lastBuildDate>
     
-	<atom:link href="/tags/camera/index.xml" rel="self" type="application/rss+xml" />
-    
+        <atom:link href="/tags/camera/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>关于Camera（成像）</title>
@@ -18,29 +16,7 @@
       <pubDate>Sun, 03 May 2015 14:23:04 +0000</pubDate>
       
       <guid>/posts/about-camera-sensor-1/</guid>
-      <description>其实早就想写，但这种题目会让模电考试作弊才堪堪及格的我压力山大。。。
-注意：这里的camera，基本指目前绝大多数的电子成像设备。
-本文从一个有基本理科知识的角度，来科普性质的讲讲图像传感器都干了些什么（才助力陈老师造福全人类的）。当然也一定会有遗漏缺失错误的地方（不吝指出~）
-本文很多内容，是基于《CMOS图像传感器集成电路原理、设计和应用》（罗昕 编著），这本书不错，让我重新梳理所学，值得看一看~
-#####小孔成像
-在说到图像传感器前，先说说小孔成像；这是目前所有成像技术的光学基础 &amp;ndash; 光是直线传播的（在忽略引力作用的前提下）：
-尽管我不喜欢baidu，但是这篇百科中，墨子如是说：
- “景。光之人，煦若射，下者之人也高；高者之人也下。足蔽下光，故成景于上；首蔽上光，故成景于下。在远近有端，与于光，故景库内也。”
- 用通俗的话说，就是说照射在人身上的光线，（反射出去）就像射出去的箭；下面的光也会（反）射向上方，上部的光也会（反）射向下方，（通过小孔时），小孔下半部分挡住了下面的光，所以足部成像在上面；小孔上半部分挡住了上面的光，所以头部成像在下面。
-墨子居然就这么轻描淡写的，阐述了：光是直线传播的。
-######有个疑问是，那小孔变成大孔那？为何不能成像了？
-因为。。。假设大孔无限大，这样反射光就全无遮拦无过滤的混在一起了，光线们都没羞没躁的混在一起，就是白色（总觉得哪里不太对啊嘿嘿嘿）了嘛。
-基于此，人类有了真实记录自己的理论依据。
-再之后，通过对感光材料的研究，人类发明了照片。
-#####既然已经知道了成像的原理，那camera如何成像的？
-分三步：
- 把冰箱门打开 把大象推进去 把冰箱门关上  。。。好吧其实是这么几步：
- 光，打到sensor（像素阵列每个像素的）光电二极管上，激发电荷  &amp;mdash;如果是CCD
- 逐行逐列的读取 电荷信号经过电荷-电压转换电路转换成模拟电压信号 电压信号通过常规模拟电子电路实现放大  &amp;mdash;如果是CMOS
- 激发后的电荷通过像素上的电路转换为电压并放大 逐行逐列的读取  &amp;mdash;结束如果
- 通过模数转换将模拟电压信号转换为数字信号 通过差分传输将数据从sensor传输到isp ISP将sensor传出的数据（根据pattern不同，目前主流是bayer的GRGB结构）进行整帧组装 ISP开始对这一帧进行处理（如lens shading，color enhancement, crop等），最终输出YUV（或其他常规格式）的整帧数据。（这里先忽略3A） Jpeg encoder（目前主流均已hw化了）将整帧数据写入jpeg文件（因为上面忽略了3A，这里的exif也顺带忽略~） 恩，可以上传照片到朋友圈了  似乎有点复杂，简化下：
-光 -&amp;gt; 1.光电二极管 -&amp;gt; 2.生成电荷 -&amp;gt; 3.转换到电压并放大信号 -&amp;gt; 4.阵列化逐行逐列输出 -&amp;gt; 5.电压信号模数转换到数字信号 -&amp;gt; 6.传输给ISP -&amp;gt; 7.ISP处理成YUV -&amp;gt; 8.</description>
+      <description></description>
     </item>
-    
   </channel>
 </rss>

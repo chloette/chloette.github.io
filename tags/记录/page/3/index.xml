@@ -1,0 +1,50 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>记录 - 你好，世界</title>
+    <link>/tags/%E8%AE%B0%E5%BD%95/</link>
+    <description>Recent content in 记录 on 你好，世界</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>来自某个八零后</copyright>
+    <lastBuildDate>Sun, 26 Apr 2015 09:26:35 +0000</lastBuildDate>
+    
+        <atom:link href="/tags/%E8%AE%B0%E5%BD%95/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Android library loading limitation</title>
+      <link>/posts/android-library-loading-limitation/</link>
+      <pubDate>Thu, 12 Feb 2015 04:27:27 +0000</pubDate>
+      
+      <guid>/posts/android-library-loading-limitation/</guid>
+      <description></description>
+    </item><item>
+      <title>新年目标</title>
+      <link>/posts/2015-birthday/</link>
+      <pubDate>Wed, 11 Feb 2015 12:33:00 +0000</pubDate>
+      
+      <guid>/posts/2015-birthday/</guid>
+      <description></description>
+    </item><item>
+      <title>不同OS个人体验</title>
+      <link>/posts/different-os/</link>
+      <pubDate>Mon, 09 Feb 2015 10:37:17 +0000</pubDate>
+      
+      <guid>/posts/different-os/</guid>
+      <description></description>
+    </item><item>
+      <title>Photo gallery from folder</title>
+      <link>/posts/photo-gallery-from-folder/</link>
+      <pubDate>Mon, 09 Feb 2015 07:26:01 +0000</pubDate>
+      
+      <guid>/posts/photo-gallery-from-folder/</guid>
+      <description></description>
+    </item><item>
+      <title>谈谈微信和支付宝</title>
+      <link>/posts/about-weixin-and-alipay/</link>
+      <pubDate>Thu, 22 Jan 2015 09:27:46 +0000</pubDate>
+      
+      <guid>/posts/about-weixin-and-alipay/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

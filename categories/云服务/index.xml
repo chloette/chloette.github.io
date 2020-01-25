@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>云服务 on 你好，世界</title>
+    <title>云服务 - 你好，世界</title>
     <link>/categories/%E4%BA%91%E6%9C%8D%E5%8A%A1/</link>
     <description>Recent content in 云服务 on 你好，世界</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -9,8 +8,7 @@
     <copyright>来自某个八零后</copyright>
     <lastBuildDate>Fri, 26 Dec 2014 12:34:27 +0000</lastBuildDate>
     
-	<atom:link href="/categories/%E4%BA%91%E6%9C%8D%E5%8A%A1/index.xml" rel="self" type="application/rss+xml" />
-    
+        <atom:link href="/categories/%E4%BA%91%E6%9C%8D%E5%8A%A1/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>同步云服务</title>
@@ -18,39 +16,7 @@
       <pubDate>Fri, 26 Dec 2014 12:34:27 +0000</pubDate>
       
       <guid>/posts/cloud-sync/</guid>
-      <description>自用推荐：不用花钱系列
-文件同步/云盘服务现在不能算多如牛毛，但也让人目不暇接了。这里尽量客观的评价下我接触或用过的。不评分，仅评价。
- Dropbox：  说实话我用的不多（被墙是原因之一），但是据我所知，Qualcomm内每个员工都有一个绑定的dropbox会员账号（2013年的时候）；一个数据备份/分享云服务，居然可以被一个靠专利生存的大公司信任！从这个角度来说，不管是影响力还是使用量，其他公司都是难以望其项背的。
-听说他们年初的时候估值已达100亿，我觉得，值。
-优点：无出其右的兼容性（全系统全平台的客户端， WP sorry），专业版的价格也不贵。
-缺点：要！翻！墙！
- OneDrive：  我是有免费25G空间的老用户哦（优越感油然而生）～
-微软的东西，应该比Dropbox存在的时间还要久（之前是叫SkyDrive），未考证。和微软系统对接的比较好，速度一般（貌似最近也需要翻墙才能用了）。考虑到稳定性等因素，我用这货还是比较多的，至今没出啥问题（云盘也有。。。问题的，下面会提到）。
-优点：和自家服务搭配使用很方便，例如OneNote。
-缺点：现在也要翻墙了！
- Google Drive：  这个用的就比较少了，原因很简单 &amp;ndash; Goooooooooooogle和大天朝，你懂的。
-优点：和微软类似，都是用云盘作为一个基础组件（虚拟硬盘），然后在上面搭配各种服务。最近也支持gmail直接贴Google Drive链接了（这速度确实不像Google的风格）
-缺点：请继续翻墙。。。
- 微云  企鹅家的东西
-优点：速度
-缺点：你放心么？举个例子，微云（腾讯），居然赤裸裸的提供了极速秒传功能（必然是*MD5匹配后直接copy一份（也许只是个link）*！简而言之，腾讯对上传的数据做了一次“扫描”）
- 百度盘  优点：速度，支持离线下载（直接下载种子/磁力链等）
-缺点：离线下载基于和“极速秒传”一样的原理！再就是，这货居然会直接和谐网盘内容！妈蛋！说好的*只复制别剪切那，只扫描不修改那*！？最后，我不会告诉你们百度盘早一些的客户端会上传失败会丢文件的！
- 115  雨林木风也蛮拼的。。
-优点：速度
-缺点：貌似比企鹅还不让人放心，而且动不动要下载浏览器是要闹哪样。
- 华为、360、金山  懒得评价这三家了，前两年为了占坑打得火热，现在也偃旗息鼓了。
- BitTorrent Sync  之前找资料的时候翻出来的一个工具（这真是一个巧合而已），之前在labs.bittorrent.com上，现在改到了getsync.com上了。
-这个工具必须要说一下，因为这货基本上是颠覆了我们对云盘的理解。
-优点：首先是匿名性（包括匿名分享，我不会告诉你们好莱坞XX门几乎每周都有更新的！），BT的先天优势；再就是几乎（仅需要和服务器进行微小数据量的同步）offline，所有数据都是在自己信任的地方之间sync（例如自己的笔记本和自己的手机之间同步）；然后就是这玩意儿强大的兼容性，和Dropbox不相伯仲；最后的最后，也是更华丽的，这货居然提供命令行启动方式 &amp;mdash; 这意味着随便租一个VPS（例如不限存储量的DH）就可以搭建私有云了！
-缺点：最大的问题就在于，偶尔会想，能有个服务器避免数据丢失也不错。
-目前个人在用的是OneDrive/微云/百度盘/BitTorrent Sync（而且我都没付钱。。。）
-因为还没有一个网盘可以一次满足我所有要求。。。
-敏感/重要数据：加密放在OneDrive
-重要/一般数据：放在微云（百度盘基本上仅用来离线下载）
-常用数据：通过BitTorrent Sync来同步
-我想，不管对技术是多么的不屑（遍身罗绮者，不是养蚕人。。。），也不得不承认这是一个技术越来越少的受限于基础带宽的时代，这也意味着基于云端的各类服务只会越来越多，也越来越容易使用；试着找一个自己喜欢的，靠谱的云服务，然后尽情享受技术带来的便利吧。</description>
+      <description></description>
     </item>
-    
   </channel>
 </rss>

@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>EC2 on 你好，世界</title>
+    <title>EC2 - 你好，世界</title>
     <link>/tags/ec2/</link>
     <description>Recent content in EC2 on 你好，世界</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -9,8 +8,7 @@
     <copyright>来自某个八零后</copyright>
     <lastBuildDate>Tue, 20 Jan 2015 06:54:26 +0000</lastBuildDate>
     
-	<atom:link href="/tags/ec2/index.xml" rel="self" type="application/rss+xml" />
-    
+        <atom:link href="/tags/ec2/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>EC2 /dev/xvda1 should be checked for errors</title>
@@ -18,12 +16,7 @@
       <pubDate>Tue, 20 Jan 2015 06:54:26 +0000</pubDate>
       
       <guid>/posts/ec2-devxvda1-should-be-checked-for-errors/</guid>
-      <description>今天ssh登到EC2，发现报这个问题：
-/dev/xvda1 should be checked for errors  短板突显，翻了翻google，比较靠谱的是这个：
-Running fsck on EC2
-已试，靠谱～
-记录一下～</description>
+      <description></description>
     </item>
-    
   </channel>
 </rss>

@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>滑雪 on 你好，世界</title>
+    <title>滑雪 - 你好，世界</title>
     <link>/categories/%E6%BB%91%E9%9B%AA/</link>
     <description>Recent content in 滑雪 on 你好，世界</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -9,8 +8,7 @@
     <copyright>来自某个八零后</copyright>
     <lastBuildDate>Fri, 12 Dec 2014 11:50:10 +0000</lastBuildDate>
     
-	<atom:link href="/categories/%E6%BB%91%E9%9B%AA/index.xml" rel="self" type="application/rss+xml" />
-    
+        <atom:link href="/categories/%E6%BB%91%E9%9B%AA/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>长白山滑雪度假</title>
@@ -18,25 +16,7 @@
       <pubDate>Fri, 12 Dec 2014 11:50:10 +0000</pubDate>
       
       <guid>/posts/ski-at-cbs/</guid>
-      <description>知道长白山滑雪度假区是前年的事情。
-第一次体验是去年的事情。
-这次去（十一月底到十二月初）已经是第三次了。
-也是这个地方让我知道“度假”是个什么概念。
-就像我们吐槽了很久的三亚一样，度假也就睡睡觉，晒晒太阳，玩玩水，回家。
-这里，长白山，就是睡睡觉，晒晒太阳，滑滑雪，泡泡温泉，回家。
-轻松惬意，每天或规律或不规律的享受一下匆匆流走的时光。不去多想多念多思考。这样就蛮好的。
-每一次到那里都有一些不同的感受。
-第一次去，两个人，感觉雪道好多，设备正规，铺天盖地莽莽白色，撒欢的玩啊。
-第二次去，一个人扛着板子，除夕夜，飞机晚点凌晨才到酒店，待了几天，本想思考思考人生，结果全用来刷道了。
-第三次去，四个人，去的早了，雪道开的不多，而且果松岭的雪场没开，要去小镇。在魔毯和初级道玩了几天，最后一天拉着胖子上了G5，也算让他功德圆满一次。
-给我的感觉是，滑雪很有趣，雪中泡温泉很赞。度假也就应该如此吧～
-每次去之前想到那里好好思考的问题，全都没去想；等回去再面对或者就这么慢慢忘掉吧。也无所谓。
-不断尝试不断发现不断折腾 不就是这短暂人生的那么一点点意义么（脑海中闪过星际穿越的各种画面）。
-上真相一张（无后期）：
-至于攻略。。。我觉得度假和旅行最大的差别就是，不需要攻略。
-订好机票，订好房间。出发就好了。
-从落地一直到准备离开，全程都不用操心。就这么随意～</description>
+      <description></description>
     </item>
-    
   </channel>
 </rss>

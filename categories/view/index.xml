@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>View on 你好，世界</title>
+    <title>View - 你好，世界</title>
     <link>/categories/view/</link>
     <description>Recent content in View on 你好，世界</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -9,8 +8,7 @@
     <copyright>来自某个八零后</copyright>
     <lastBuildDate>Mon, 12 Jan 2015 08:25:33 +0000</lastBuildDate>
     
-	<atom:link href="/categories/view/index.xml" rel="self" type="application/rss+xml" />
-    
+        <atom:link href="/categories/view/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Android RelativeLayout中wrap_content和alignParentBottom的冲突</title>
@@ -18,36 +16,14 @@
       <pubDate>Mon, 12 Jan 2015 08:25:33 +0000</pubDate>
       
       <guid>/posts/android-conflict-of-relativelayout-between-wrapcontent-and-alignparentbottom/</guid>
-      <description>继续随便记录一下，之前也说过，Android类似的坑不少。
-下面又是一例：
-RelativeLayout中，为了方便布局，子view经常会用到alignParentBottom/Top/Left/Right等，如：
-android:layout_alignParentBottom=&amp;quot;true&amp;quot;  但这时候需要注意的是，如果parent是wrap_content的话，alignParentRight就意味着要求parent的layout_width=&amp;quot;match_parent&amp;quot;； alignParentBottom就意味着要求parent的layout_height=&amp;quot;match_parent&amp;quot;
-这会带来什么问题那？两个问题：
- 显示错误。在布局嵌套的环境下，例如布局A包含B和C，在A里面，B above C：（伪布局代码）
-RelativeLayout width=match_parent height=match_parent id=&amp;quot;A&amp;quot; XXLayout width=match_parent height=wrap_content above=&amp;quot;C&amp;quot; id=&amp;quot;B&amp;quot; RelativeLayout width=match_parent height=wrap_content id=&amp;quot;C&amp;quot; XXView width=match_parent height=wrap_content android:layout_alignParentBottom=&amp;quot;true&amp;quot; src=xxx   本意是希望在布局A里面，B可以在C上面显示，C里面显示xxx；
-但是结果是：C会撑满A，然后导致B不可见。
-改法很简单，去掉
-android:layout_alignParentBottom=&amp;quot;true&amp;quot;  即可。
-实际原因我没有去翻源码，不确定；但是猜测和Android的绘制/计算布局的方向有关，Android默认是从屏幕左上角向右下角绘制（在写自定义view，重载onDraw，或者坐标计算的时候需要依赖这种“特性”），所以在这种情况下，alignBottom或alignRight后，“画布”就自然而然被顶到下边和右边去了。
- 性能。对，就是性能；撑满屏幕意味着这个view（例如上面的C）的刷新，不只是局部刷新，而是整屏刷新（即使XXView可能只是一个bottom bar这种非全屏的view），所以不管是耗电量还是性能，都会受到一定的影响。  综上，在设计layout的时候，需要注意方向带来的影响，同时注意不同属性之间可能导致的“冲突”。
-记录一下。</description>
-    </item>
-    
-    <item>
+      <description></description>
+    </item><item>
       <title>Android LinearLayout动态增加item时Weight的设置</title>
       <link>/posts/android-linear-layout-weight-setting-when-adding-child-dynamically/</link>
       <pubDate>Fri, 09 Jan 2015 04:50:13 +0000</pubDate>
       
       <guid>/posts/android-linear-layout-weight-setting-when-adding-child-dynamically/</guid>
-      <description>Andorid上，LinearLayout动态增加child item时，一般如下：
-addView(child)  即可。
-child item可以从xml中直接inflate出来。
-这里有个问题是，动态增加的话，child item中的weight，在add到LinearLayout后无效（用LinearLayout，很多时候就是冲着weight去的，因为可以很容易做到对齐和分割）。
-唯一的办法是在addView的时候用新的LayoutParams来指定weight：
-addView(child, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT, 1));  最好设置一下weightSum：
-setWeightSum(childCount);  Android的layout配置中，类似的坑数不尽。。。再加上不同OS版本的不同表现，简直了T_T。。
-记录一下。</description>
+      <description></description>
     </item>
-    
   </channel>
 </rss>

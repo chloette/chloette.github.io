@@ -1,0 +1,50 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags - 你好，世界</title>
+    <link>/tags/</link>
+    <description>Recent content in Tags on 你好，世界</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>来自某个八零后</copyright>
+    <lastBuildDate>Wed, 14 Oct 2015 07:14:29 +0000</lastBuildDate>
+    
+        <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>zsh</title>
+      <link>/tags/zsh/</link>
+      <pubDate>Tue, 10 Feb 2015 07:12:29 +0000</pubDate>
+      
+      <guid>/tags/zsh/</guid>
+      <description></description>
+    </item><item>
+      <title>工具</title>
+      <link>/tags/%E5%B7%A5%E5%85%B7/</link>
+      <pubDate>Tue, 10 Feb 2015 07:12:29 +0000</pubDate>
+      
+      <guid>/tags/%E5%B7%A5%E5%85%B7/</guid>
+      <description></description>
+    </item><item>
+      <title>OS</title>
+      <link>/tags/os/</link>
+      <pubDate>Mon, 09 Feb 2015 10:37:17 +0000</pubDate>
+      
+      <guid>/tags/os/</guid>
+      <description></description>
+    </item><item>
+      <title>体验</title>
+      <link>/tags/%E4%BD%93%E9%AA%8C/</link>
+      <pubDate>Mon, 09 Feb 2015 10:37:17 +0000</pubDate>
+      
+      <guid>/tags/%E4%BD%93%E9%AA%8C/</guid>
+      <description></description>
+    </item><item>
+      <title>Gallery</title>
+      <link>/tags/gallery/</link>
+      <pubDate>Mon, 09 Feb 2015 07:26:01 +0000</pubDate>
+      
+      <guid>/tags/gallery/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

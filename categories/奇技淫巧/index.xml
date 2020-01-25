@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>奇技淫巧 on 你好，世界</title>
+    <title>奇技淫巧 - 你好，世界</title>
     <link>/categories/%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/</link>
     <description>Recent content in 奇技淫巧 on 你好，世界</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -9,8 +8,7 @@
     <copyright>来自某个八零后</copyright>
     <lastBuildDate>Sun, 05 Apr 2015 10:54:28 +0000</lastBuildDate>
     
-	<atom:link href="/categories/%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/index.xml" rel="self" type="application/rss+xml" />
-    
+        <atom:link href="/categories/%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>MonkeyRunner script</title>
@@ -18,71 +16,35 @@
       <pubDate>Sun, 05 Apr 2015 10:54:28 +0000</pubDate>
       
       <guid>/posts/monkeyrunner-click-script/</guid>
-      <description>[android官方]
-经常用来做压力测试的话，脚本必不可少；
-带UI挂工程的就算啦（么必要像CTS那么认真嘛，动不动tearDown），简单直接最好～
-MonkeyRunner完全符合条件，直接上无限单击的脚本（Python），对照着改改坐标就好使了：
-from com.android.monkeyrunner import MonkeyRunner, MonkeyDevice _COUNT = 0 def take_picture(device): global _COUNT _COUNT += 1 note = &amp;quot;%s%d%s&amp;quot; % (&#39;take the &#39;, _COUNT, &#39; times.&#39;) print note device.touch(720, 2300, MonkeyDevice.DOWN_AND_UP) def main(): _device = MonkeyRunner.waitForConnection() print &#39;opening&#39; while True: take_picture(_device) MonkeyRunner.sleep(3.5) main();  脚本跑起来，开个窗口看log，空下来一会就可以记录一下（不然保持目前干活的节奏~ 会很久不更新的~）</description>
-    </item>
-    
-    <item>
+      <description></description>
+    </item><item>
       <title>Repo sync failed through ssh</title>
       <link>/posts/repo-sync-failed-through-ssh/</link>
       <pubDate>Wed, 25 Mar 2015 13:48:55 +0000</pubDate>
       
       <guid>/posts/repo-sync-failed-through-ssh/</guid>
-      <description>通过ssh远程连接主机后，在git配置的ssh-key需要密码验证时，repo sync很容易失败（因为使用的git服务器未必一样，所以可能会多次验证密码，造成输入不及时即表现为“密码验证失败”）
-在~/.bash_profile里面加上下面代码，然后source一下，即可保证每次ssh登录都会要求（通过ssh-add）输入ssh-key的密码来验证并记住：
-if [ -z &amp;quot;$SSH_AUTH_SOCK&amp;quot; ] ; then eval `ssh-agent -s` ssh-add fi  解决~</description>
-    </item>
-    
-    <item>
+      <description></description>
+    </item><item>
       <title>Switch JDK on mac</title>
       <link>/posts/switch-jdk-on-mac/</link>
       <pubDate>Mon, 23 Mar 2015 12:56:54 +0000</pubDate>
       
       <guid>/posts/switch-jdk-on-mac/</guid>
-      <description>要切换回底层开发啦~
-android源码编译的话，L以上需要jdk1.7，以下需要jdk1.6（比2.3还低就要求jdk1.5了）
-所以如何方便快速的切换jdk就成了一个问题~
-Ubuntu上面可以直接用下面的方式来切换JDK：
-sudo update-alternatives --config javac  但mac上就要用java_home了，找到了一个不错的脚本：
-function setjdk() { if [ $# -ne 0 ]; then removeFromPath &#39;/System/Library/Frameworks/JavaVM.framework/Home/bin&#39; if [ -n &amp;quot;${JAVA_HOME+x}&amp;quot; ]; then removeFromPath $JAVA_HOME fi export JAVA_HOME=`/usr/libexec/java_home -v $@` export PATH=$JAVA_HOME/bin:$PATH fi } function removeFromPath() { export PATH=$(echo $PATH | sed -E -e &amp;quot;s;:$1;;&amp;quot; -e &amp;quot;s;$1:?;;&amp;quot;) }  写到./bash_profile里面，然后直接setjdk 1.x就好了。 非常方便~
-感谢贡献~</description>
-    </item>
-    
-    <item>
+      <description></description>
+    </item><item>
       <title>Free Windows is coming</title>
       <link>/posts/free-windows-is-coming/</link>
       <pubDate>Wed, 18 Mar 2015 06:26:36 +0000</pubDate>
       
       <guid>/posts/free-windows-is-coming/</guid>
-      <description>微软下猛药了。
-（贴个QQ的，360也有了）
-QQ + 360，本来是依附于windows的下游厂商，这次却逆袭来推上游的windows。不说打不打架（其实。。。已经打起来了），这预期的装机用户量，简直可以覆盖全中国。
-更华丽的是：全平台统一，包括台式机、笔记本、智能手机、平板、Xbox主机在内的所有设备，都将统一使用Windows 10，不会再有Windows、Windows Phone的区分。
-这带来的影响简直不可估量。。。
-首先一定是很多扫盲科普不会用咋办的文章会广为流传
-再就是新系统各种小技巧
-当然，面对目前被iOS + Android瓜分的移动端市场，老插不进去脚的Windows这次终于有所仰仗了（windows10的全民更新带来的无差别体验，显然会提升windows phone的使用量；BTW，现在还能叫Windows phone么~？）。
-同时xbox和windows10的深度整合的结果，就是同款游戏，购买一次即可在两个平台同时玩 &amp;ndash; 没娘的PS咋办啊？
-再加上小米要推出Windows版本 &amp;ndash; 病毒式营销~ （尽管google不太会允许这种事情的发生。。。）
-windows免费，及全平台统一；造成的影响，很快可以看出端倪了吧~</description>
-    </item>
-    
-    <item>
+      <description></description>
+    </item><item>
       <title>Android Studio export Jar</title>
       <link>/posts/android-studio-export-jar/</link>
       <pubDate>Wed, 04 Feb 2015 09:52:35 +0000</pubDate>
       
       <guid>/posts/android-studio-export-jar/</guid>
-      <description>纯记录：
-Android Studio没提供export jar这种选项，一般做法参考这里
-纯代码无assets的话，在编译后的library module目录下：
-找到
- build/intermediates/bundles/release/classes.jar
- 直接重命名就可以用啦～</description>
+      <description></description>
     </item>
-    
   </channel>
 </rss>

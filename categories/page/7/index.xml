@@ -1,0 +1,50 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories - 你好，世界</title>
+    <link>/categories/</link>
+    <description>Recent content in Categories on 你好，世界</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>来自某个八零后</copyright>
+    <lastBuildDate>Wed, 14 Oct 2015 07:14:29 +0000</lastBuildDate>
+    
+        <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>NERV</title>
+      <link>/categories/nerv/</link>
+      <pubDate>Fri, 20 Feb 2015 10:29:36 +0000</pubDate>
+      
+      <guid>/categories/nerv/</guid>
+      <description></description>
+    </item><item>
+      <title>GTA</title>
+      <link>/categories/gta/</link>
+      <pubDate>Fri, 20 Feb 2015 09:17:39 +0000</pubDate>
+      
+      <guid>/categories/gta/</guid>
+      <description></description>
+    </item><item>
+      <title>美亚</title>
+      <link>/categories/%E7%BE%8E%E4%BA%9A/</link>
+      <pubDate>Thu, 12 Feb 2015 10:08:36 +0000</pubDate>
+      
+      <guid>/categories/%E7%BE%8E%E4%BA%9A/</guid>
+      <description></description>
+    </item><item>
+      <title>load library</title>
+      <link>/categories/load-library/</link>
+      <pubDate>Thu, 12 Feb 2015 04:27:27 +0000</pubDate>
+      
+      <guid>/categories/load-library/</guid>
+      <description></description>
+    </item><item>
+      <title>APK Expansion</title>
+      <link>/categories/apk-expansion/</link>
+      <pubDate>Wed, 11 Feb 2015 07:17:39 +0000</pubDate>
+      
+      <guid>/categories/apk-expansion/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

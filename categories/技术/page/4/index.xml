@@ -1,0 +1,50 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>技术 - 你好，世界</title>
+    <link>/categories/%E6%8A%80%E6%9C%AF/</link>
+    <description>Recent content in 技术 on 你好，世界</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>来自某个八零后</copyright>
+    <lastBuildDate>Sat, 20 Jun 2015 08:35:16 +0000</lastBuildDate>
+    
+        <atom:link href="/categories/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Android SparseArray中indexOfValue返回-1</title>
+      <link>/posts/android-sparsearray-indexofvalue-return-negative-1/</link>
+      <pubDate>Tue, 13 Jan 2015 12:55:43 +0000</pubDate>
+      
+      <guid>/posts/android-sparsearray-indexofvalue-return-negative-1/</guid>
+      <description></description>
+    </item><item>
+      <title>Android RelativeLayout中wrap_content和alignParentBottom的冲突</title>
+      <link>/posts/android-conflict-of-relativelayout-between-wrapcontent-and-alignparentbottom/</link>
+      <pubDate>Mon, 12 Jan 2015 08:25:33 +0000</pubDate>
+      
+      <guid>/posts/android-conflict-of-relativelayout-between-wrapcontent-and-alignparentbottom/</guid>
+      <description></description>
+    </item><item>
+      <title>Android LinearLayout动态增加item时Weight的设置</title>
+      <link>/posts/android-linear-layout-weight-setting-when-adding-child-dynamically/</link>
+      <pubDate>Fri, 09 Jan 2015 04:50:13 +0000</pubDate>
+      
+      <guid>/posts/android-linear-layout-weight-setting-when-adding-child-dynamically/</guid>
+      <description></description>
+    </item><item>
+      <title>Ghost开机启动</title>
+      <link>/posts/ghost-boot-up/</link>
+      <pubDate>Thu, 08 Jan 2015 02:30:07 +0000</pubDate>
+      
+      <guid>/posts/ghost-boot-up/</guid>
+      <description></description>
+    </item><item>
+      <title>Ghost首页图片限制宽高</title>
+      <link>/posts/ghost-limit-image-width/</link>
+      <pubDate>Tue, 06 Jan 2015 03:26:26 +0000</pubDate>
+      
+      <guid>/posts/ghost-limit-image-width/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

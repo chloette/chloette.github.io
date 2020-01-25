@@ -1,0 +1,50 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts - 你好，世界</title>
+    <link>/posts/</link>
+    <description>Recent content in Posts on 你好，世界</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>来自某个八零后</copyright>
+    <lastBuildDate>Sat, 25 Jan 2020 17:51:12 +0800</lastBuildDate>
+    
+        <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>关于Internet的基础</title>
+      <link>/posts/about-internet-basis/</link>
+      <pubDate>Sat, 07 Mar 2015 10:58:42 +0000</pubDate>
+      
+      <guid>/posts/about-internet-basis/</guid>
+      <description></description>
+    </item><item>
+      <title>My ghost upgrade script</title>
+      <link>/posts/my-ghost-upgrade-script/</link>
+      <pubDate>Fri, 06 Mar 2015 05:09:09 +0000</pubDate>
+      
+      <guid>/posts/my-ghost-upgrade-script/</guid>
+      <description></description>
+    </item><item>
+      <title>Ghost代码高亮</title>
+      <link>/posts/ghost-highlight-syntax/</link>
+      <pubDate>Wed, 04 Mar 2015 03:15:57 +0000</pubDate>
+      
+      <guid>/posts/ghost-highlight-syntax/</guid>
+      <description></description>
+    </item><item>
+      <title>OSX版QQ显示问题</title>
+      <link>/posts/osx-qq-display-error/</link>
+      <pubDate>Tue, 03 Mar 2015 06:39:21 +0000</pubDate>
+      
+      <guid>/posts/osx-qq-display-error/</guid>
+      <description></description>
+    </item><item>
+      <title>计算 -- 万物理论</title>
+      <link>/posts/computing-a-theory-of-everything/</link>
+      <pubDate>Tue, 03 Mar 2015 05:35:47 +0000</pubDate>
+      
+      <guid>/posts/computing-a-theory-of-everything/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

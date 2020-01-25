@@ -1,0 +1,50 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories - 你好，世界</title>
+    <link>/categories/</link>
+    <description>Recent content in Categories on 你好，世界</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>来自某个八零后</copyright>
+    <lastBuildDate>Wed, 14 Oct 2015 07:14:29 +0000</lastBuildDate>
+    
+        <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>RelativeLayout</title>
+      <link>/categories/relativelayout/</link>
+      <pubDate>Mon, 12 Jan 2015 08:25:33 +0000</pubDate>
+      
+      <guid>/categories/relativelayout/</guid>
+      <description></description>
+    </item><item>
+      <title>View</title>
+      <link>/categories/view/</link>
+      <pubDate>Mon, 12 Jan 2015 08:25:33 +0000</pubDate>
+      
+      <guid>/categories/view/</guid>
+      <description></description>
+    </item><item>
+      <title>图片</title>
+      <link>/categories/%E5%9B%BE%E7%89%87/</link>
+      <pubDate>Tue, 06 Jan 2015 03:26:26 +0000</pubDate>
+      
+      <guid>/categories/%E5%9B%BE%E7%89%87/</guid>
+      <description></description>
+    </item><item>
+      <title>宽高</title>
+      <link>/categories/%E5%AE%BD%E9%AB%98/</link>
+      <pubDate>Tue, 06 Jan 2015 03:26:26 +0000</pubDate>
+      
+      <guid>/categories/%E5%AE%BD%E9%AB%98/</guid>
+      <description></description>
+    </item><item>
+      <title>charset</title>
+      <link>/categories/charset/</link>
+      <pubDate>Wed, 31 Dec 2014 13:10:19 +0000</pubDate>
+      
+      <guid>/categories/charset/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

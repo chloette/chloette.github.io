@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>SparseArray on 你好，世界</title>
+    <title>SparseArray - 你好，世界</title>
     <link>/tags/sparsearray/</link>
     <description>Recent content in SparseArray on 你好，世界</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -9,8 +8,7 @@
     <copyright>来自某个八零后</copyright>
     <lastBuildDate>Tue, 13 Jan 2015 12:55:43 +0000</lastBuildDate>
     
-	<atom:link href="/tags/sparsearray/index.xml" rel="self" type="application/rss+xml" />
-    
+        <atom:link href="/tags/sparsearray/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Android SparseArray中indexOfValue返回-1</title>
@@ -18,20 +16,7 @@
       <pubDate>Tue, 13 Jan 2015 12:55:43 +0000</pubDate>
       
       <guid>/posts/android-sparsearray-indexofvalue-return-negative-1/</guid>
-      <description>继续Android。
-SparseArray&amp;lt;T&amp;gt;是蛮好用的基本类型，一般用来替换掉HashMap&amp;lt;Integer, T&amp;gt;。
-有时候偷懒，也会用它来替换Object[]，也就是基本数组。
-因为这货有indexOfValue（这样就不用去遍历找索引啦），遍历也比HashMap方便的多。可以满足对基本数组的需要（但性能不高，使用需谨慎，文档有详细解释为什么）。
-但是，这玩意儿有个坑，也就在indexOfValue里面。
-当用它来存储String时，可能会出现明明Value已经put进去了，但是indexOfValue就是返回-1的情况。
-一开始还以为可能是线程安全相关的问题，还打算加锁来着。结果。。。
-原因在于：
- Note also that unlike most collections&amp;rsquo; indexOf methods, this method compares values using == rather than equals.
- 源码如下：
-public int indexOfValue(E value) { if (mGarbage) { gc(); } for (int i = 0; i &amp;lt; mSize; i++) if (mValues[i] == value) return i; return -1; }  T_T
-Java中，字符串比较用==和equals的区别就不用解释了吧。。。
-你说Android你加个方便好用的数据结构你用个equals能咋样。。。又中枪了。。。</description>
+      <description></description>
     </item>
-    
   </channel>
 </rss>

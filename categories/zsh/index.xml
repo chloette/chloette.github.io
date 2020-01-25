@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>zsh on 你好，世界</title>
+    <title>zsh - 你好，世界</title>
     <link>/categories/zsh/</link>
     <description>Recent content in zsh on 你好，世界</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -9,8 +8,7 @@
     <copyright>来自某个八零后</copyright>
     <lastBuildDate>Tue, 10 Feb 2015 07:12:29 +0000</lastBuildDate>
     
-	<atom:link href="/categories/zsh/index.xml" rel="self" type="application/rss+xml" />
-    
+        <atom:link href="/categories/zsh/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>zsh &#43; oh-my-zsh &gt; default shell</title>
@@ -18,15 +16,7 @@
       <pubDate>Tue, 10 Feb 2015 07:12:29 +0000</pubDate>
       
       <guid>/posts/zsh-oh-my-zsh/</guid>
-      <description>尽管换上了MBP，terminal的使用还是不少的。。。
-而且相比较ubuntu的terminal，osx默认的shell。。。配色太“单调”，提示也很弱。
-所以找到了zsh + oh-my-zsh
-安装配置文档都有。
-可以自己make install zsh再手动配置oh-my-zsh；
-或者直接curl -L http://install.ohmyz.sh | sh
-plugin设置好自己常用的（例如adb、git、go、osx、python等等）；
-然后选择一个喜欢的配色主题，就这么愉快的开工吧：</description>
+      <description></description>
     </item>
-    
   </channel>
 </rss>

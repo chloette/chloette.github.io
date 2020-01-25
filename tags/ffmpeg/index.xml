@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ffmpeg on 你好，世界</title>
+    <title>ffmpeg - 你好，世界</title>
     <link>/tags/ffmpeg/</link>
     <description>Recent content in ffmpeg on 你好，世界</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -9,8 +8,7 @@
     <copyright>来自某个八零后</copyright>
     <lastBuildDate>Wed, 24 Dec 2014 09:11:09 +0000</lastBuildDate>
     
-	<atom:link href="/tags/ffmpeg/index.xml" rel="self" type="application/rss+xml" />
-    
+        <atom:link href="/tags/ffmpeg/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>关于FFmpeg（进阶）</title>
@@ -18,68 +16,28 @@
       <pubDate>Wed, 24 Dec 2014 09:11:09 +0000</pubDate>
       
       <guid>/posts/about-ffmpeg-advance/</guid>
-      <description>基本篇在此。
-目前仅使用到了ffmpeg的读写文件/编解码功能，并未使用其去直接渲染。
-这里说是进阶，其实也只能算浮于表面。因此主要记录使用ffmpeg以来遇到的坑，版本差异，android版本编译等。So，这里就不继续采用Q&amp;amp;A的方式了。
-（本文并非通过ffmpeg.exe\bin传递command来进行处理，而是直接调用ffmpeg相关libraries中的api）
-####FFmpeg libraries FFmpeg有以下库：（2014/12/24 ffmpeg 2.5.2），主要功能列在About中有基本介绍，这里不再赘述。
- libavutil 54. 15.100 libavcodec 56. 13.100 libavformat 56. 15.102 libavdevice 56. 3.100 &amp;mdash; 未使用 libavfilter 5. 2.103 &amp;mdash; 未使用 libavresample 2. 1. 0 &amp;mdash; 未使用 libswscale 3. 1.101 libswresample 1. 1.100 libpostproc 53. 3.100 &amp;mdash; 未使用   ####FFmpeg基本 首先，官方文档为第一参考文档；其次就是源码（这里把*源码*放到这么靠前的原因下文会提到）。
-FFmpeg的官方文档算是比较全的。 一些常见case的testbed都可以找得到；例如2.5版本，编解码的sample
-同时官方的例子并非浅显易懂，但是因为层次简单，所以调用逻辑很清楚；参考着这些文档/Sample就可以按需设计一个简化版Adapter了。
-####FFmpeg基本调用逻辑 还记得Decode/Encode和Muxer/Demuxer吧，如果还记得那就很好理解了。下面截选了部分代码（不要在意细节），有一些重要关键但非流程相关的步骤这里先省略（例如FIFO等），下文再提。
-#####Encoding（Based on 2.x） - Register all codec //应该是plugin的机制
-av_register_all(); avcodec_register_all();   Find encoder -&amp;gt; create stream -&amp;gt; open encoder</description>
-    </item>
-    
-    <item>
+      <description></description>
+    </item><item>
       <title>FFmpeg提供给OPW一个实习岗位</title>
       <link>/posts/ffmpeg-secure-a-place-in-opw/</link>
       <pubDate>Sat, 11 Oct 2014 07:40:35 +0000</pubDate>
       
       <guid>/posts/ffmpeg-secure-a-place-in-opw/</guid>
-      <description>原文如下：
- ####October 8, 2014, FFmpeg secured a place in OPW!
-Thanks to a generous 6K USD donation by Samsung (Open Source Group), FFmpeg will be welcoming at least 1 &amp;ldquo;Outreach Program for Women&amp;rdquo; intern to work with our community for an initial period starting December 2014 (through March 2015).
-We all know FFmpeg is used by the industry, but even while there are countless products building on our code, it is not at all common for companies to step up and help us out when needed.</description>
-    </item>
-    
-    <item>
+      <description></description>
+    </item><item>
       <title>关于FFmpeg（基础）</title>
       <link>/posts/about-ffmpeg-basic/</link>
       <pubDate>Mon, 29 Sep 2014 12:35:21 +0000</pubDate>
       
       <guid>/posts/about-ffmpeg-basic/</guid>
-      <description>这篇title有点大，因为ffmpeg作为一个合格的多媒体框架，支持那么多codec和协议，一篇文章想写完，不现实。
-不过本着本人不喜细节的一贯作风（不要在意这些细节！），所以就这么随便说说吧，当是个给自己的记录。
-（下文基本是自问自答的方式（原因在于我觉得这种风格蛮容易理解的））
-####什么是FFmpeg？
-这个太宽泛了，简单回答就是一个多媒体框架。什么是多媒体？一句话：但凡不是文字还具有表意的数据形式，都可以称之为多媒体。（不过，如果对多媒体真是一点概念都没有的话。。。建议还是出门左拐6块钱麻辣烫填饱肚子再说吧。。。）
- FFmpeg is the leading multimedia framework, able to decode, encode, transcode, mux, demux, stream, filter and play pretty much anything that humans and machines have created. It supports the most obscure ancient formats up to the cutting edge. No matter if they were designed by some standards committee, the community or a corporation.
-FFmpeg是多媒体框架的领军人物，允许解码、编码、转码、Mux（觉得确实没有特别好的翻译）、Demux、stream（这里不是名词）、filter和播放各种文件。它还支持时至今日的绝大多数古老文件格式，即使那格式甚至都尚未成为标准。
- 是不是听起来碉堡了。BUT有一点一定要了解的就是，FFmpeg的开源协议。
-####听起来很棒，谁在用？
-这个很难回答。。。
-因为应用太广泛了，而且目前的FFmpeg版本（2.x）框架也更易于“组合”
-所以更容易以不同的形式出现在你的周围。例如各种XX影音和XX视频等等。
-####这么多，太棒了！那他们都开源了吧！
-呵呵。
-尽管LGPL已经比较宽泛，动态链接即可；
-但是加上遵循GPL的X264这块烫手山芋，（其实还是有办法绕过的，在FFmpeg的开源协议有提到华丽的classpath exception）</description>
-    </item>
-    
-    <item>
+      <description></description>
+    </item><item>
       <title>关于GPL</title>
       <link>/posts/about-gpl/</link>
       <pubDate>Wed, 24 Sep 2014 02:28:22 +0000</pubDate>
       
       <guid>/posts/about-gpl/</guid>
-      <description>因为最近在做ffmpeg相关的东西，所以GPL/LGPL还是要了解一下的。
-GPL的WIKI： GPL WIKI
-FFmpeg主要代码遵循的是LGPL；简单来说，静态库调用的话必须同样遵循LGPL（被传染），而动态库调用就没关系：FFmpeg legal
- The following is a checklist for LGPL compliance when linking against the FFmpeg libraries. It is not the only way to comply with the license, but we think it is the easiest. There are also a few items that are not really related to LGPL compliance but are good ideas anyway.
-1.Compile FFmpeg without &amp;ldquo;&amp;ndash;enable-gpl&amp;rdquo; and without &amp;ldquo;&amp;ndash;enable-nonfree&amp;rdquo;.
-2.Use dynamic linking (on windows, this means linking to dlls) for linking with FFmpeg libraries.</description>
+      <description></description>
     </item>
-    
   </channel>
 </rss>

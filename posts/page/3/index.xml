@@ -1,0 +1,50 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts - 你好，世界</title>
+    <link>/posts/</link>
+    <description>Recent content in Posts on 你好，世界</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>来自某个八零后</copyright>
+    <lastBuildDate>Sat, 25 Jan 2020 17:51:12 +0800</lastBuildDate>
+    
+        <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>如何拯救手欠做了Git reset hard</title>
+      <link>/posts/ru-he-zheng-jiu-shou-qian-zuo-liao-git-reset-hard/</link>
+      <pubDate>Wed, 18 Jan 2017 02:49:48 +0000</pubDate>
+      
+      <guid>/posts/ru-he-zheng-jiu-shou-qian-zuo-liao-git-reset-hard/</guid>
+      <description></description>
+    </item><item>
+      <title>Ubuntu forgot password</title>
+      <link>/posts/ubuntu-forgot-password/</link>
+      <pubDate>Wed, 14 Oct 2015 07:14:29 +0000</pubDate>
+      
+      <guid>/posts/ubuntu-forgot-password/</guid>
+      <description></description>
+    </item><item>
+      <title>那些网络暴力</title>
+      <link>/posts/shuo-shuo-na-xie-wang-luo-bao-li/</link>
+      <pubDate>Sat, 10 Oct 2015 07:22:28 +0000</pubDate>
+      
+      <guid>/posts/shuo-shuo-na-xie-wang-luo-bao-li/</guid>
+      <description></description>
+    </item><item>
+      <title>1937年的差速器科普视频</title>
+      <link>/posts/around-the-corner/</link>
+      <pubDate>Fri, 09 Oct 2015 06:45:27 +0000</pubDate>
+      
+      <guid>/posts/around-the-corner/</guid>
+      <description></description>
+    </item><item>
+      <title>Android支持按键双击事件</title>
+      <link>/posts/android-support-double-tap/</link>
+      <pubDate>Sat, 20 Jun 2015 08:35:16 +0000</pubDate>
+      
+      <guid>/posts/android-support-double-tap/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

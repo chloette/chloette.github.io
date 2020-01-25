@@ -1,0 +1,50 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags - 你好，世界</title>
+    <link>/tags/</link>
+    <description>Recent content in Tags on 你好，世界</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>来自某个八零后</copyright>
+    <lastBuildDate>Wed, 14 Oct 2015 07:14:29 +0000</lastBuildDate>
+    
+        <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>常见问题</title>
+      <link>/tags/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Fri, 07 Nov 2014 06:37:01 +0000</pubDate>
+      
+      <guid>/tags/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</guid>
+      <description></description>
+    </item><item>
+      <title>动态加载资源</title>
+      <link>/tags/%E5%8A%A8%E6%80%81%E5%8A%A0%E8%BD%BD%E8%B5%84%E6%BA%90/</link>
+      <pubDate>Fri, 07 Nov 2014 03:15:58 +0000</pubDate>
+      
+      <guid>/tags/%E5%8A%A8%E6%80%81%E5%8A%A0%E8%BD%BD%E8%B5%84%E6%BA%90/</guid>
+      <description></description>
+    </item><item>
+      <title>快件</title>
+      <link>/tags/%E5%BF%AB%E4%BB%B6/</link>
+      <pubDate>Thu, 06 Nov 2014 08:22:09 +0000</pubDate>
+      
+      <guid>/tags/%E5%BF%AB%E4%BB%B6/</guid>
+      <description></description>
+    </item><item>
+      <title>骗局</title>
+      <link>/tags/%E9%AA%97%E5%B1%80/</link>
+      <pubDate>Thu, 06 Nov 2014 08:22:09 +0000</pubDate>
+      
+      <guid>/tags/%E9%AA%97%E5%B1%80/</guid>
+      <description></description>
+    </item><item>
+      <title>hardware requirement</title>
+      <link>/tags/hardware-requirement/</link>
+      <pubDate>Tue, 04 Nov 2014 02:51:39 +0000</pubDate>
+      
+      <guid>/tags/hardware-requirement/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

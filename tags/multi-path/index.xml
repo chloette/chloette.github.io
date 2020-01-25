@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>multi-path on 你好，世界</title>
+    <title>multi-path - 你好，世界</title>
     <link>/tags/multi-path/</link>
     <description>Recent content in multi-path on 你好，世界</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -9,8 +8,7 @@
     <copyright>来自某个八零后</copyright>
     <lastBuildDate>Thu, 13 Nov 2014 02:27:24 +0000</lastBuildDate>
     
-	<atom:link href="/tags/multi-path/index.xml" rel="self" type="application/rss+xml" />
-    
+        <atom:link href="/tags/multi-path/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Jenkins单工程跨多代码目录</title>
@@ -18,17 +16,7 @@
       <pubDate>Thu, 13 Nov 2014 02:27:24 +0000</pubDate>
       
       <guid>/posts/jenkins-with-multi-svn-paths/</guid>
-      <description>偶尔会遇到这种情况，例如工程A，工程B，同时依赖工程C（公共库）
-而一般情况下，如果代码结构管理的好，工程C的svn（git）路径和工程A/B是完全分开的。
-编译的时候正常导入（其实Android studio这里是有坑的，index无法排除目录）就好了。而Jenkins就需要特别配置一下。
-增加对应的工程（这里使用的svn module是Subversion Release），如下：
-（BTW，注意Local module directory，最好和本地代码路径保持一致，不然按照工程目录下的project.properties找不到对应工程就呵呵了）
-这时候会发现，环境变量$SVN_REVISION很可能不干活了。
-翻了下文档：
- Subversion Revision and URL information as Environment Variables
-The Subversion SCM plugin exports the svn revisions and URLs of the build&amp;rsquo;s subversion modules as environment variables. These are $SVN_REVISION_n and $SVN_URL_n, where n is the 1-based index of the module in the configuration.
-For backwards compatibility if there&amp;rsquo;s only a single module, its values are also exported as $SVN_REVISION and $SVN_URL.</description>
+      <description></description>
     </item>
-    
   </channel>
 </rss>

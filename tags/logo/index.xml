@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>logo on 你好，世界</title>
+    <title>logo - 你好，世界</title>
     <link>/tags/logo/</link>
     <description>Recent content in logo on 你好，世界</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -9,8 +8,7 @@
     <copyright>来自某个八零后</copyright>
     <lastBuildDate>Tue, 30 Sep 2014 04:22:52 +0000</lastBuildDate>
     
-	<atom:link href="/tags/logo/index.xml" rel="self" type="application/rss+xml" />
-    
+        <atom:link href="/tags/logo/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Ghost修改圆框logo</title>
@@ -18,15 +16,7 @@
       <pubDate>Tue, 30 Sep 2014 04:22:52 +0000</pubDate>
       
       <guid>/posts/optimize-layout-of-ghost-logo/</guid>
-      <description>我一直觉得Casper主题（就是默认的！LOL~）什么都不错，就是logo位置如果可以居中。。然后可以做一个圆形的效果。。。 就更好啦～～～
-找了一个有类似实现的主题（ichi），对比了一下css（其实是搜了一下&amp;rdquo;logo&amp;rdquo;的css不同），然后用下面的方式解决：
-.blog-logo img { width: 100px; height: 100px; border: 2px solid white; -webkit-border-radius: 100px; -moz-border-radius: 100px; -ms-border-radius: 100px; -o-border-radius: 100px; border-radius: 100px; }  替换完以后瞬间高大上了～
-试一下分辨率发现几个小问题，把assets/css/screen.css中对应blog-logo的其他项清(delete)一下～
-为了居中的话，修改blog-logo的float：left改为center即可
-至于位置的话，修改index.hbs就可以了（把blog-logo移到page-title前面即可～）
-最后就是主页的效果啦～
-Tada～</description>
+      <description></description>
     </item>
-    
   </channel>
 </rss>

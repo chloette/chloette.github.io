@@ -1,0 +1,50 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags - 你好，世界</title>
+    <link>/tags/</link>
+    <description>Recent content in Tags on 你好，世界</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>来自某个八零后</copyright>
+    <lastBuildDate>Wed, 14 Oct 2015 07:14:29 +0000</lastBuildDate>
+    
+        <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Camera</title>
+      <link>/tags/camera/</link>
+      <pubDate>Sun, 03 May 2015 14:23:04 +0000</pubDate>
+      
+      <guid>/tags/camera/</guid>
+      <description></description>
+    </item><item>
+      <title>sensor</title>
+      <link>/tags/sensor/</link>
+      <pubDate>Sun, 03 May 2015 14:23:04 +0000</pubDate>
+      
+      <guid>/tags/sensor/</guid>
+      <description></description>
+    </item><item>
+      <title>成像</title>
+      <link>/tags/%E6%88%90%E5%83%8F/</link>
+      <pubDate>Sun, 03 May 2015 14:23:04 +0000</pubDate>
+      
+      <guid>/tags/%E6%88%90%E5%83%8F/</guid>
+      <description></description>
+    </item><item>
+      <title>记录</title>
+      <link>/tags/%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Sun, 26 Apr 2015 09:26:35 +0000</pubDate>
+      
+      <guid>/tags/%E8%AE%B0%E5%BD%95/</guid>
+      <description></description>
+    </item><item>
+      <title>HAL</title>
+      <link>/tags/hal/</link>
+      <pubDate>Sat, 11 Apr 2015 07:15:21 +0000</pubDate>
+      
+      <guid>/tags/hal/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

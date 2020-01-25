@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>fonts.googleapis.com on 你好，世界</title>
+    <title>fonts.googleapis.com - 你好，世界</title>
     <link>/tags/fonts.googleapis.com/</link>
     <description>Recent content in fonts.googleapis.com on 你好，世界</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -9,8 +8,7 @@
     <copyright>来自某个八零后</copyright>
     <lastBuildDate>Tue, 16 Sep 2014 07:49:08 +0000</lastBuildDate>
     
-	<atom:link href="/tags/fonts.googleapis.com/index.xml" rel="self" type="application/rss+xml" />
-    
+        <atom:link href="/tags/fonts.googleapis.com/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Ghost访问比Wordpress还慢？</title>
@@ -18,18 +16,7 @@
       <pubDate>Tue, 16 Sep 2014 07:49:08 +0000</pubDate>
       
       <guid>/posts/ghost-slower-than-wordpress/</guid>
-      <description>可能么？回答是当然，不考虑极端情况和不同条件下的比较，目前就遇到了本站在某些情况下访问慢的情况。。。
-这不科学啊，这是ghost啊！ 不是臃肿的Wordpress啊，何况还是直接nginx重定向的啊，不是apache啊！
-抱着一丝对人生的怀疑，祭出大杀器fiddler： 额，访问google字库没反应了啊，然后看一下耗时（估计超时了吧）。。。果然，21S。。。
-也不熟悉ghost，上服务器搜一下，结果所有的模板，甚至server都在用google字库。。。
-T_T
-这咋办。。。天朝大国服对此表示确实压力很大啊。。。
-~~先mark，想想咋解决。[TODO] ~~
-貌似也没特别好的解决方案啊，罗列几个可用的吧：
- 直接comment掉font那行，结果是：（BTW,发现在ghost论坛有人提一样的问题，哈哈～how to disable fonts）  访问速度瞬间翻N倍（因为本来就是秒开才对的嘛） 字体全部变默认了。。。（废话）  不用google remote的font，全部cache在server上（我去，还是有人捷足先登啊ghost local fonts）：  访问速度保持翻N倍的节奏 但是第一次访问该页面，理论上速度不快哦，因为浏览器要下载字体 有点麻烦的是以后万一字体更新或者ghost更新。。。每次替换或者merge很无奈啊。  这问题大家都遇到，难道没有mirror站么？（还真有。。。这里默默给360点个赞360 CDN）  好处同2 缺点嘛。。。首先是安全方面，这个真不好说。再就是貌似从国外访问这个cdn的速度很扯淡。。。    现在暂时用方案3，以后应该会改成方案2。LOL~
-至于方案3，主题多的话总不能一个一个替换过去吧，那得累死啊。直接SSH上去，两句话（2014/09/29更新，参见Ghost upgrade to 0.5.2）命令：
-sed -i &amp;quot;s/fonts.googleapis.com/fonts.useso.com/g&amp;quot; `grep fonts.googleapis.com -rl ./content/themes/` sed -i &amp;quot;s/fonts.googleapis.com/fonts.useso.com/g&amp;quot; `grep fonts.googleapis.com -rl ./core/server/views/`  Tada~</description>
+      <description></description>
     </item>
-    
   </channel>
 </rss>

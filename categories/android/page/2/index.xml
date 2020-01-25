@@ -1,0 +1,50 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Android - 你好，世界</title>
+    <link>/categories/android/</link>
+    <description>Recent content in Android on 你好，世界</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>来自某个八零后</copyright>
+    <lastBuildDate>Sat, 20 Jun 2015 08:35:16 +0000</lastBuildDate>
+    
+        <atom:link href="/categories/android/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Android RelativeLayout中wrap_content和alignParentBottom的冲突</title>
+      <link>/posts/android-conflict-of-relativelayout-between-wrapcontent-and-alignparentbottom/</link>
+      <pubDate>Mon, 12 Jan 2015 08:25:33 +0000</pubDate>
+      
+      <guid>/posts/android-conflict-of-relativelayout-between-wrapcontent-and-alignparentbottom/</guid>
+      <description></description>
+    </item><item>
+      <title>Android LinearLayout动态增加item时Weight的设置</title>
+      <link>/posts/android-linear-layout-weight-setting-when-adding-child-dynamically/</link>
+      <pubDate>Fri, 09 Jan 2015 04:50:13 +0000</pubDate>
+      
+      <guid>/posts/android-linear-layout-weight-setting-when-adding-child-dynamically/</guid>
+      <description></description>
+    </item><item>
+      <title>Android java.lang.ClassNotFoundException</title>
+      <link>/posts/android-java-lang-classnotfoundexception/</link>
+      <pubDate>Wed, 19 Nov 2014 09:07:32 +0000</pubDate>
+      
+      <guid>/posts/android-java-lang-classnotfoundexception/</guid>
+      <description></description>
+    </item><item>
+      <title>关于Android如何动态加载res</title>
+      <link>/posts/about-loading-res-from-apk-directly/</link>
+      <pubDate>Fri, 07 Nov 2014 03:15:58 +0000</pubDate>
+      
+      <guid>/posts/about-loading-res-from-apk-directly/</guid>
+      <description></description>
+    </item><item>
+      <title>Jenkins android 自动化编译的一些坑</title>
+      <link>/posts/jenkins-android-auto-build-problems/</link>
+      <pubDate>Fri, 19 Sep 2014 09:16:23 +0000</pubDate>
+      
+      <guid>/posts/jenkins-android-auto-build-problems/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,50 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts - 你好，世界</title>
+    <link>/posts/</link>
+    <description>Recent content in Posts on 你好，世界</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>来自某个八零后</copyright>
+    <lastBuildDate>Sat, 25 Jan 2020 17:51:12 +0800</lastBuildDate>
+    
+        <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Jenkins android 自动化编译的一些坑</title>
+      <link>/posts/jenkins-android-auto-build-problems/</link>
+      <pubDate>Fri, 19 Sep 2014 09:16:23 +0000</pubDate>
+      
+      <guid>/posts/jenkins-android-auto-build-problems/</guid>
+      <description></description>
+    </item><item>
+      <title>Understanding node.js 瞎翻译</title>
+      <link>/posts/understanding-node-js-xia-fan-yi/</link>
+      <pubDate>Wed, 17 Sep 2014 05:21:54 +0000</pubDate>
+      
+      <guid>/posts/understanding-node-js-xia-fan-yi/</guid>
+      <description></description>
+    </item><item>
+      <title>Hexo&#43; !!!</title>
+      <link>/posts/hexo/</link>
+      <pubDate>Tue, 16 Sep 2014 12:12:41 +0000</pubDate>
+      
+      <guid>/posts/hexo/</guid>
+      <description></description>
+    </item><item>
+      <title>Ghost访问比Wordpress还慢？</title>
+      <link>/posts/ghost-slower-than-wordpress/</link>
+      <pubDate>Tue, 16 Sep 2014 07:49:08 +0000</pubDate>
+      
+      <guid>/posts/ghost-slower-than-wordpress/</guid>
+      <description></description>
+    </item><item>
+      <title>从Wordpress迁移到Ghost</title>
+      <link>/posts/from-wordpress-to-ghost/</link>
+      <pubDate>Sun, 14 Sep 2014 16:27:10 +0000</pubDate>
+      
+      <guid>/posts/from-wordpress-to-ghost/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

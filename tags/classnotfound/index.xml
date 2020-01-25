@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ClassNotFound on 你好，世界</title>
+    <title>ClassNotFound - 你好，世界</title>
     <link>/tags/classnotfound/</link>
     <description>Recent content in ClassNotFound on 你好，世界</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -9,8 +8,7 @@
     <copyright>来自某个八零后</copyright>
     <lastBuildDate>Wed, 19 Nov 2014 09:07:32 +0000</lastBuildDate>
     
-	<atom:link href="/tags/classnotfound/index.xml" rel="self" type="application/rss+xml" />
-    
+        <atom:link href="/tags/classnotfound/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Android java.lang.ClassNotFoundException</title>
@@ -18,14 +16,7 @@
       <pubDate>Wed, 19 Nov 2014 09:07:32 +0000</pubDate>
       
       <guid>/posts/android-java-lang-classnotfoundexception/</guid>
-      <description>ClassNotFound原因较多，这里列一个特殊case：
-抽象类A，因项目关系，code clean后，已无抽象方法（但依然带着abstract关键字）
-没深究过java语法，不过没有抽象方法却声明为抽象类，至少该有个警告把？而这里Eclipse（ADT）/Android studio均无任何提示，所以怀疑是JDK的bug）。
-Main activity继承自A。然后启动Main activity即报ClassNotFound。
-log里面会有奇怪的：
-11-19 16:51:21.301 W/dalvikvm(31571): Unable to resolve superclass of LxxxA; (207) 11-19 16:51:21.301 W/dalvikvm(31571): Link of class &#39;LxxxA;&#39; failed 11-19 16:51:21.301 W/dalvikvm(31571): Unable to resolve superclass of LxxxMain (1447) 11-19 16:51:21.301 W/dalvikvm(31571): Link of class &#39;LxxxMain;&#39; failed  修改方法很简单，把那个无用的abstract关键字去掉就好了。
-记录一下。</description>
+      <description></description>
     </item>
-    
   </channel>
 </rss>

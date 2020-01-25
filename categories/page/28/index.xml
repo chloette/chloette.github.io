@@ -1,0 +1,50 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories - 你好，世界</title>
+    <link>/categories/</link>
+    <description>Recent content in Categories on 你好，世界</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>来自某个八零后</copyright>
+    <lastBuildDate>Wed, 14 Oct 2015 07:14:29 +0000</lastBuildDate>
+    
+        <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>租车</title>
+      <link>/categories/%E7%A7%9F%E8%BD%A6/</link>
+      <pubDate>Fri, 14 Jun 2013 16:07:18 +0000</pubDate>
+      
+      <guid>/categories/%E7%A7%9F%E8%BD%A6/</guid>
+      <description></description>
+    </item><item>
+      <title>git</title>
+      <link>/categories/git/</link>
+      <pubDate>Tue, 11 Jun 2013 03:20:37 +0000</pubDate>
+      
+      <guid>/categories/git/</guid>
+      <description></description>
+    </item><item>
+      <title>undo</title>
+      <link>/categories/undo/</link>
+      <pubDate>Tue, 11 Jun 2013 03:20:37 +0000</pubDate>
+      
+      <guid>/categories/undo/</guid>
+      <description></description>
+    </item><item>
+      <title>limits</title>
+      <link>/categories/limits/</link>
+      <pubDate>Tue, 11 Jun 2013 03:14:53 +0000</pubDate>
+      
+      <guid>/categories/limits/</guid>
+      <description></description>
+    </item><item>
+      <title>linux</title>
+      <link>/categories/linux/</link>
+      <pubDate>Tue, 11 Jun 2013 03:14:53 +0000</pubDate>
+      
+      <guid>/categories/linux/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>迁移 on 你好，世界</title>
+    <title>迁移 - 你好，世界</title>
     <link>/tags/%E8%BF%81%E7%A7%BB/</link>
     <description>Recent content in 迁移 on 你好，世界</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -9,8 +8,7 @@
     <copyright>来自某个八零后</copyright>
     <lastBuildDate>Sun, 14 Sep 2014 16:27:10 +0000</lastBuildDate>
     
-	<atom:link href="/tags/%E8%BF%81%E7%A7%BB/index.xml" rel="self" type="application/rss+xml" />
-    
+        <atom:link href="/tags/%E8%BF%81%E7%A7%BB/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>从Wordpress迁移到Ghost</title>
@@ -18,17 +16,7 @@
       <pubDate>Sun, 14 Sep 2014 16:27:10 +0000</pubDate>
       
       <guid>/posts/from-wordpress-to-ghost/</guid>
-      <description>纠结了很久，一开始考虑是不是折腾一下jekyll（毕竟有github撑腰不断更新）；或者成熟一些的octopress；亦或者是台湾同胞的hexo；不过最后还是选择了Ghost
-不想用WP的原因说白了就是。。。那玩意儿不太像是码农用的啊。。。（速度太慢体积太大不容易迁移这些明摆着的事情就不讨论了吧～）
-不用Jekyll和octopress的原因其就是太麻烦了，想象一下，应该需要一个online的编辑器（而且算是比较好的选择了吧），然后用github（方便些）或者自己开一个shell去commit &amp;amp; generate
-不用hexo的原因是，既然都已经上node.js了，干脆找个靠谱点的好了啊。
-另外最后选择ghost还是看到了一篇老外的文章，也是面临类似的选择，其中一句话我觉得很对： &amp;gt;I chose Ghost over Jekyll because I wanted to minimize the amount of work spent on the blog outside of writing actual content. Quote
-说的很对！
-这次迁移中遇到了不少问题，因为没有什么好的工具可以从wordpress无缝迁移到ghost
-尽管有一个ghost的wp插件，可以export content成json形式（然后在/ghost/debug页面可以去import），但是，这玩意儿真没那么好用。
-迁移的时候有以下几个坑要注意：
- Slug是中文的（转码后是%E6%88这种），是无法导入ghost的，必须用英文或拼音代替（目测没有好工具。。。） ghost是没有分类（category）的，只有tag；所以WP的分类都会被转为tag的形式。 上传到wp的图片，一般是放在/wp-content/uploads/；ghost的话，一般是放置在/content/images/；找文本替换工具来替换吧，然后把图片copy过去就好了。 ghost没有像wp一样自动生成小尺寸的预览图，而是提供原图，所以页面上如果有很多图，那就真的是多图杀猫了。。。 html形式的高亮/斜体/颜色/超链接等等，都可以识别，但为了统一（其实是简化），最好还是改成markdown的形式 上传到wp的文件，例如xx.zip或者xx.pdf这一类的，ghost是玩不转的，需要自行处理。 模板一般放置在/content/theme/，自己下载解压缩后重启ghost即可使用了。不过免费的模板的质量确实不敢恭维啊。。。 ghost默认start的是development模式，而不是production模式；  有遗漏再补充，暂时就这些。</description>
+      <description></description>
     </item>
-    
   </channel>
 </rss>

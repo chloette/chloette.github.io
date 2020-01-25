@@ -1,0 +1,50 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags - 你好，世界</title>
+    <link>/tags/</link>
+    <description>Recent content in Tags on 你好，世界</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>来自某个八零后</copyright>
+    <lastBuildDate>Wed, 14 Oct 2015 07:14:29 +0000</lastBuildDate>
+    
+        <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Hexo&#43;</title>
+      <link>/tags/hexo&#43;/</link>
+      <pubDate>Tue, 16 Sep 2014 12:12:41 +0000</pubDate>
+      
+      <guid>/tags/hexo&#43;/</guid>
+      <description></description>
+    </item><item>
+      <title>kickstarter</title>
+      <link>/tags/kickstarter/</link>
+      <pubDate>Tue, 16 Sep 2014 12:12:41 +0000</pubDate>
+      
+      <guid>/tags/kickstarter/</guid>
+      <description></description>
+    </item><item>
+      <title>fonts.googleapis.com</title>
+      <link>/tags/fonts.googleapis.com/</link>
+      <pubDate>Tue, 16 Sep 2014 07:49:08 +0000</pubDate>
+      
+      <guid>/tags/fonts.googleapis.com/</guid>
+      <description></description>
+    </item><item>
+      <title>performance</title>
+      <link>/tags/performance/</link>
+      <pubDate>Tue, 16 Sep 2014 07:49:08 +0000</pubDate>
+      
+      <guid>/tags/performance/</guid>
+      <description></description>
+    </item><item>
+      <title>wordpress</title>
+      <link>/tags/wordpress/</link>
+      <pubDate>Sun, 14 Sep 2014 16:27:10 +0000</pubDate>
+      
+      <guid>/tags/wordpress/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

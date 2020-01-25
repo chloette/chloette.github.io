@@ -1,209 +1,191 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us" dir="ltr">
   <head>
-    
-      <title>密码和指纹 哪个身份识别方式更安全？ :: 你好，世界 — 📝🎿🛹🏍️</title>
-    
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="description" content="当初入TP的时候，就有过这个思考，是不是要带指纹识别；
-不过后来仔细想了一下，这会是一个很有意思的事情；
-依稀记得之前有电影片段，是某个机密的场所，进门需要指纹&#43;掌纹，结果若干反派人物就直接把那位有指纹同学的手给砍了下来，淡定的进门了。。。
-这个片段一次一次的让我对于指纹识别抱有一定的戒心，因为那就好像在告诉别人，嘿，我这里有一些小秘密，但是只有我的手可以打开哦～
-。。。
-言归正传，这就需要先回到身份识别方式的选择上。
-最原始的识别方式就是传统的文本型密码（再往前咱们就不追究了吧）
-后来有了动态识别码，或者硬件辅助（U盾）的手段；
-再后来有了人脸识别，指纹识别，等等。
-但哪个更安全？恐怕没办法立刻下结论，这就要扯到密码学里面的一个概念 &amp;ndash; 相对安全性
-不管多长的密码都只是相对安全的（其实指纹也好人脸识别也好，都可以抽象理解为一种密码）
-无非是需要5分钟还是5000年才能“理论上”破译的差别，这就是相对安全；因为随着硬件性能的不断提高，当初认为是5000年才能破译的密码，可能现在只需要5分钟都不到就搞定了；同样，现在号称5000年才能破译的密码，在若干年后，随着计算能力的不断提高（尤其是更大规模更普及的云计算/分布式计算），指不定10年后就把这个在10年前认为需要5000年的计算量的事情在短短5分钟之内搞定了（当然这里说的略有夸张，毕竟5000年和5分钟相差了9个数量级）。
-&amp;nbsp;
-而密码的破译，或者说成功破译，几乎很少会依赖于计算能力，而更多的是依赖于 &amp;ndash; 方法（砍手就是一个不错的方法～）
-对于纯文本型的传统密码，也许只有按键记录器或者“偷窥”会靠谱一些；
-而动态识别码和U盾，你只要“偷”到了这个硬件，就搞定了；
-至于人脸识别和指纹识别，就更简单了，直接拿照片或者复制一下指纹（透明胶带或者玻璃杯子即可）就可以了；至于因为拿照片就可以搞定解锁这件事情。。。google表示压力略大（[图]谷歌建议用户吐舌头、歪脖子 设置高安全性能面部解锁密码），毕竟android4.x系统有一个“给力”的功能就是人脸解锁。。。
-所以看起来，似乎安全性上，是传统密码 &amp;gt; 动态识别码及U盾（你需要随身携带） &amp;gt; 人脸识别和指纹识别
-而从“用户需要记录的数据量/使用简易程度”来看，传统密码&amp;gt; 动态识别码及U盾（你需要随身携带）&amp;gt; 人脸识别和指纹识别
-这很有意思，因为似乎，用户体验越高，安全性就越差（less is more，really？）
-那到底该选择哪一种？
-这很难说，其实这是一个因人而异的问题；
-如果用户是一个“所有密码都一样”的“纯粹”的人，那么他真心需要“非传统密码”的保护，因为从某个角度来说，即使是他的照片都要比他的传统密码安全。
-如果用户是一个自我保护意识很强的“杞人”，那么还是传统密码更适合他，而且是需要分级（根据信息安全级别的不同来分级密码）的。毕竟天天担心着自己的手被别人砍掉是压力很大的～ 因为“杞人”认为，内在的“存储”要比外在的“皮肤”靠谱的多～
-当然，最好的办法，其实各个银行的网银已经给出了答案，就是多次不同类型的验证。毕竟现在连outlook都开始支持二次验证了（google是最先全线支持的么？）
-而至于我，说实话我其实是一个蛮“纯粹”的人～"/>
-<meta name="keywords" content=""/>
-<meta name="robots" content="noodp"/>
-<link rel="canonical" href="/posts/mi-ma-he-zhi-wen-na-ge-shen-fen-shi-bie-fang-shi-geng-an-quan/" />
-
-
-<link rel="stylesheet" href="/assets/style.css">
-
-
-<link rel="stylesheet" href="/style.css">
-
-
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
-<link rel="shortcut icon" href="/img/favicon.png">
-
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="密码和指纹 哪个身份识别方式更安全？"/>
-<meta name="twitter:description" content="当初入TP的时候，就有过这个思考，是不是要带指纹识别；
-不过后来仔细想了一下，这会是一个很有意思的事情；
-依稀记得之前有电影片段，是某个机密的场所，进门需要指纹&#43;掌纹，结果若干反派人物就直接把那位有指纹同学的手给砍了下来，淡定的进门了。。。
-这个片段一次一次的让我对于指纹识别抱有一定的戒心，因为那就好像在告诉别人，嘿，我这里有一些小秘密，但是只有我的手可以打开哦～
-。。。
-言归正传，这就需要先回到身份识别方式的选择上。
-最原始的识别方式就是传统的文本型密码（再往前咱们就不追究了吧）
-后来有了动态识别码，或者硬件辅助（U盾）的手段；
-再后来有了人脸识别，指纹识别，等等。
-但哪个更安全？恐怕没办法立刻下结论，这就要扯到密码学里面的一个概念 &ndash; 相对安全性
-不管多长的密码都只是相对安全的（其实指纹也好人脸识别也好，都可以抽象理解为一种密码）
-无非是需要5分钟还是5000年才能“理论上”破译的差别，这就是相对安全；因为随着硬件性能的不断提高，当初认为是5000年才能破译的密码，可能现在只需要5分钟都不到就搞定了；同样，现在号称5000年才能破译的密码，在若干年后，随着计算能力的不断提高（尤其是更大规模更普及的云计算/分布式计算），指不定10年后就把这个在10年前认为需要5000年的计算量的事情在短短5分钟之内搞定了（当然这里说的略有夸张，毕竟5000年和5分钟相差了9个数量级）。
-&nbsp;
-而密码的破译，或者说成功破译，几乎很少会依赖于计算能力，而更多的是依赖于 &ndash; 方法（砍手就是一个不错的方法～）
-对于纯文本型的传统密码，也许只有按键记录器或者“偷窥”会靠谱一些；
-而动态识别码和U盾，你只要“偷”到了这个硬件，就搞定了；
-至于人脸识别和指纹识别，就更简单了，直接拿照片或者复制一下指纹（透明胶带或者玻璃杯子即可）就可以了；至于因为拿照片就可以搞定解锁这件事情。。。google表示压力略大（[图]谷歌建议用户吐舌头、歪脖子 设置高安全性能面部解锁密码），毕竟android4.x系统有一个“给力”的功能就是人脸解锁。。。
-所以看起来，似乎安全性上，是传统密码 &gt; 动态识别码及U盾（你需要随身携带） &gt; 人脸识别和指纹识别
-而从“用户需要记录的数据量/使用简易程度”来看，传统密码&gt; 动态识别码及U盾（你需要随身携带）&gt; 人脸识别和指纹识别
-这很有意思，因为似乎，用户体验越高，安全性就越差（less is more，really？）
-那到底该选择哪一种？
-这很难说，其实这是一个因人而异的问题；
-如果用户是一个“所有密码都一样”的“纯粹”的人，那么他真心需要“非传统密码”的保护，因为从某个角度来说，即使是他的照片都要比他的传统密码安全。
-如果用户是一个自我保护意识很强的“杞人”，那么还是传统密码更适合他，而且是需要分级（根据信息安全级别的不同来分级密码）的。毕竟天天担心着自己的手被别人砍掉是压力很大的～ 因为“杞人”认为，内在的“存储”要比外在的“皮肤”靠谱的多～
-当然，最好的办法，其实各个银行的网银已经给出了答案，就是多次不同类型的验证。毕竟现在连outlook都开始支持二次验证了（google是最先全线支持的么？）
-而至于我，说实话我其实是一个蛮“纯粹”的人～"/>
-
-
-
-<meta property="og:title" content="密码和指纹 哪个身份识别方式更安全？" />
-<meta property="og:description" content="当初入TP的时候，就有过这个思考，是不是要带指纹识别；
-不过后来仔细想了一下，这会是一个很有意思的事情；
-依稀记得之前有电影片段，是某个机密的场所，进门需要指纹&#43;掌纹，结果若干反派人物就直接把那位有指纹同学的手给砍了下来，淡定的进门了。。。
-这个片段一次一次的让我对于指纹识别抱有一定的戒心，因为那就好像在告诉别人，嘿，我这里有一些小秘密，但是只有我的手可以打开哦～
-。。。
-言归正传，这就需要先回到身份识别方式的选择上。
-最原始的识别方式就是传统的文本型密码（再往前咱们就不追究了吧）
-后来有了动态识别码，或者硬件辅助（U盾）的手段；
-再后来有了人脸识别，指纹识别，等等。
-但哪个更安全？恐怕没办法立刻下结论，这就要扯到密码学里面的一个概念 &ndash; 相对安全性
-不管多长的密码都只是相对安全的（其实指纹也好人脸识别也好，都可以抽象理解为一种密码）
-无非是需要5分钟还是5000年才能“理论上”破译的差别，这就是相对安全；因为随着硬件性能的不断提高，当初认为是5000年才能破译的密码，可能现在只需要5分钟都不到就搞定了；同样，现在号称5000年才能破译的密码，在若干年后，随着计算能力的不断提高（尤其是更大规模更普及的云计算/分布式计算），指不定10年后就把这个在10年前认为需要5000年的计算量的事情在短短5分钟之内搞定了（当然这里说的略有夸张，毕竟5000年和5分钟相差了9个数量级）。
-&nbsp;
-而密码的破译，或者说成功破译，几乎很少会依赖于计算能力，而更多的是依赖于 &ndash; 方法（砍手就是一个不错的方法～）
-对于纯文本型的传统密码，也许只有按键记录器或者“偷窥”会靠谱一些；
-而动态识别码和U盾，你只要“偷”到了这个硬件，就搞定了；
-至于人脸识别和指纹识别，就更简单了，直接拿照片或者复制一下指纹（透明胶带或者玻璃杯子即可）就可以了；至于因为拿照片就可以搞定解锁这件事情。。。google表示压力略大（[图]谷歌建议用户吐舌头、歪脖子 设置高安全性能面部解锁密码），毕竟android4.x系统有一个“给力”的功能就是人脸解锁。。。
-所以看起来，似乎安全性上，是传统密码 &gt; 动态识别码及U盾（你需要随身携带） &gt; 人脸识别和指纹识别
-而从“用户需要记录的数据量/使用简易程度”来看，传统密码&gt; 动态识别码及U盾（你需要随身携带）&gt; 人脸识别和指纹识别
-这很有意思，因为似乎，用户体验越高，安全性就越差（less is more，really？）
-那到底该选择哪一种？
-这很难说，其实这是一个因人而异的问题；
-如果用户是一个“所有密码都一样”的“纯粹”的人，那么他真心需要“非传统密码”的保护，因为从某个角度来说，即使是他的照片都要比他的传统密码安全。
-如果用户是一个自我保护意识很强的“杞人”，那么还是传统密码更适合他，而且是需要分级（根据信息安全级别的不同来分级密码）的。毕竟天天担心着自己的手被别人砍掉是压力很大的～ 因为“杞人”认为，内在的“存储”要比外在的“皮肤”靠谱的多～
-当然，最好的办法，其实各个银行的网银已经给出了答案，就是多次不同类型的验证。毕竟现在连outlook都开始支持二次验证了（google是最先全线支持的么？）
-而至于我，说实话我其实是一个蛮“纯粹”的人～" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/mi-ma-he-zhi-wen-na-ge-shen-fen-shi-bie-fang-shi-geng-an-quan/" />
-<meta property="article:published_time" content="2013-06-15T18:36:42+00:00" />
-<meta property="article:modified_time" content="2013-06-15T18:36:42+00:00" /><meta property="og:site_name" content="你好，世界" />
-
-
-
-
-
-
-  </head>
-  <body class="dark-theme">
-    <div class="container">
-      <header class="header">
-  <span class="header__inner">
-    <a href="/" class="logo" style="text-decoration: none;">
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>密码和指纹 哪个身份识别方式更安全？ &middot; 你好，世界</title>
+  <meta name="description" content="" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
-  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
-</svg>
-</span>
-    <span class="logo__text">Hello World</span>
-    <span class="logo__cursor"></span>
   
-</a>
+  
+  
+  
+  <link href="/css/concated.min.css" rel="stylesheet">
+  
+  
+</head>
 
-    <span class="header__right">
+  <body class="single-body">
+    <nav class="nav-bar side-padding">
+  <h1 class="nav-header"><a href="/" class="nav-text">你好，世界</a></h1>
+  <div class="hamburger-menu">
+    <button onclick="hamburgerMenuPressed.call(this)" aria-haspopup="true" aria-expanded="false" aria-controls="menu" aria-label="Menu">
+      <span></span>
+      <span></span>
+    </button>
+    <ul id="menu" class="hamburger-menu-overlay">
+      <li><a href="/" class="hamburger-menu-overlay-link">Home</a></li>
       
-        <nav class="menu">
-  <ul class="menu__inner menu__inner--desktop">
-    
+      <li><a href="/categories/12306/" class="hamburger-menu-overlay-link">12306</a></li>
       
-        
-          <li><a href="/about">About</a></li>
-        
+      <li><a href="/categories/android/" class="hamburger-menu-overlay-link">Android</a></li>
+      
+      <li><a href="/categories/android-studio/" class="hamburger-menu-overlay-link">android studio</a></li>
+      
+      <li><a href="/categories/apk-expansion/" class="hamburger-menu-overlay-link">APK Expansion</a></li>
+      
+      <li><a href="/categories/bash/" class="hamburger-menu-overlay-link">bash</a></li>
+      
+      <li><a href="/categories/bitcoin/" class="hamburger-menu-overlay-link">bitcoin</a></li>
+      
+      <li><a href="/categories/bitlocker/" class="hamburger-menu-overlay-link">bitlocker</a></li>
+      
+      <li><a href="/categories/btc/" class="hamburger-menu-overlay-link">btc</a></li>
+      
+      <li><a href="/categories/byte-alignment/" class="hamburger-menu-overlay-link">Byte alignment</a></li>
+      
+      <li><a href="/categories/c/" class="hamburger-menu-overlay-link">C</a></li>
+      
+      <li><a href="/categories/camera/" class="hamburger-menu-overlay-link">Camera</a></li>
+      
+      <li><a href="/categories/charset/" class="hamburger-menu-overlay-link">charset</a></li>
+      
+      <li><a href="/categories/chrome/" class="hamburger-menu-overlay-link">chrome</a></li>
+      
+      <li><a href="/categories/classnotfound/" class="hamburger-menu-overlay-link">ClassNotFound</a></li>
+      
+      <li><a href="/categories/d/" class="hamburger-menu-overlay-link">d</a></li>
+      
+      <li><a href="/categories/ddos/" class="hamburger-menu-overlay-link">ddos</a></li>
+      
+      <li><a href="/categories/ebola/" class="hamburger-menu-overlay-link">Ebola</a></li>
+      
+      <li><a href="/categories/ec2/" class="hamburger-menu-overlay-link">EC2</a></li>
+      
+      <li><a href="/categories/eva/" class="hamburger-menu-overlay-link">EVA</a></li>
+      
+      <li><a href="/categories/ffmpeg/" class="hamburger-menu-overlay-link">ffmpeg</a></li>
+      
+      <li><a href="/categories/fonts.googleapis.com/" class="hamburger-menu-overlay-link">fonts.googleapis.com</a></li>
+      
+      <li><a href="/categories/forget-password/" class="hamburger-menu-overlay-link">forget password</a></li>
+      
+      <li><a href="/categories/gallery/" class="hamburger-menu-overlay-link">Gallery</a></li>
+      
+      <li><a href="/categories/ghost/" class="hamburger-menu-overlay-link">ghost</a></li>
+      
+      <li><a href="/categories/git/" class="hamburger-menu-overlay-link">git</a></li>
+      
+      <li><a href="/categories/gpl/" class="hamburger-menu-overlay-link">gpl</a></li>
+      
+      <li><a href="/categories/gradle/" class="hamburger-menu-overlay-link">Gradle</a></li>
+      
+      <li><a href="/categories/gta/" class="hamburger-menu-overlay-link">GTA</a></li>
+      
+      <li><a href="/categories/hal/" class="hamburger-menu-overlay-link">HAL</a></li>
+      
+      <li><a href="/categories/hardware-requirement/" class="hamburger-menu-overlay-link">hardware requirement</a></li>
+      
+      <li><a href="/categories/hexo&#43;/" class="hamburger-menu-overlay-link">Hexo&#43;</a></li>
+      
+      <li><a href="/categories/highlight-syntax/" class="hamburger-menu-overlay-link">highlight syntax</a></li>
+      
+      <li><a href="/categories/imagefetcher/" class="hamburger-menu-overlay-link">ImageFetcher</a></li>
+      
+      <li><a href="/categories/internet/" class="hamburger-menu-overlay-link">Internet</a></li>
+      
+      <li><a href="/categories/jenkins/" class="hamburger-menu-overlay-link">Jenkins</a></li>
+      
+      <li><a href="/categories/kickstarter/" class="hamburger-menu-overlay-link">kickstarter</a></li>
+      
+      <li><a href="/categories/limits/" class="hamburger-menu-overlay-link">limits</a></li>
+      
+      <li><a href="/categories/link/" class="hamburger-menu-overlay-link">link</a></li>
+      
+      <li><a href="/categories/linux/" class="hamburger-menu-overlay-link">linux</a></li>
+      
+      <li><a href="/categories/load-library/" class="hamburger-menu-overlay-link">load library</a></li>
+      
+      <li><a href="/categories/logo/" class="hamburger-menu-overlay-link">logo</a></li>
+      
+      <li><a href="/categories/ltc/" class="hamburger-menu-overlay-link">ltc</a></li>
+      
+      <li><a href="/categories/monkeyrunner/" class="hamburger-menu-overlay-link">monkeyrunner</a></li>
+      
+      <li><a href="/categories/multi-path/" class="hamburger-menu-overlay-link">multi-path</a></li>
+      
+      <li><a href="/categories/nerv/" class="hamburger-menu-overlay-link">NERV</a></li>
+      
+      <li><a href="/categories/node.js/" class="hamburger-menu-overlay-link">node.js</a></li>
+      
+      <li><a href="/categories/okcoin/" class="hamburger-menu-overlay-link">okcoin</a></li>
+      
+      <li><a href="/categories/os/" class="hamburger-menu-overlay-link">OS</a></li>
+      
+      <li><a href="/categories/out-of-memory/" class="hamburger-menu-overlay-link">out of memory</a></li>
+      
+      <li><a href="/categories/performance/" class="hamburger-menu-overlay-link">performance</a></li>
+      
+      <li><a href="/categories/proguard/" class="hamburger-menu-overlay-link">proguard</a></li>
+      
+      <li><a href="/categories/putty/" class="hamburger-menu-overlay-link">putty</a></li>
+      
+      <li><a href="/categories/python/" class="hamburger-menu-overlay-link">python</a></li>
+      
+      <li><a href="/categories/qq/" class="hamburger-menu-overlay-link">QQ</a></li>
+      
+      <li><a href="/categories/relativelayout/" class="hamburger-menu-overlay-link">RelativeLayout</a></li>
+      
+      <li><a href="/categories/script/" class="hamburger-menu-overlay-link">script</a></li>
+      
+      <li><a href="/categories/selinux/" class="hamburger-menu-overlay-link">Selinux</a></li>
+      
+      <li><a href="/categories/sensor/" class="hamburger-menu-overlay-link">sensor</a></li>
+      
+      <li><a href="/categories/sepolicy/" class="hamburger-menu-overlay-link">Sepolicy</a></li>
+      
+      <li><a href="/categories/shellshock/" class="hamburger-menu-overlay-link">Shellshock</a></li>
+      
+      <li><a href="/categories/sparsearray/" class="hamburger-menu-overlay-link">SparseArray</a></li>
+      
+      <li><a href="/categories/sync/" class="hamburger-menu-overlay-link">sync</a></li>
+      
+      <li><a href="/categories/ted/" class="hamburger-menu-overlay-link">TED</a></li>
+      
+      <li><a href="/categories/tips/" class="hamburger-menu-overlay-link">tips</a></li>
+      
+      <li><a href="/categories/ubuntu/" class="hamburger-menu-overlay-link">Ubuntu</a></li>
+      
+      <li><a href="/categories/understanding-node.js/" class="hamburger-menu-overlay-link">Understanding node.js</a></li>
+      
+      <li><a href="/categories/undo/" class="hamburger-menu-overlay-link">undo</a></li>
+      
+      <li><a href="/categories/upgrade/" class="hamburger-menu-overlay-link">upgrade</a></li>
+      
+      <li><a href="/categories/view/" class="hamburger-menu-overlay-link">View</a></li>
+      
+      <li><a href="/categories/windows/" class="hamburger-menu-overlay-link">windows</a></li>
+      
+      <li><a href="/categories/wordpress/" class="hamburger-menu-overlay-link">wordpress</a></li>
+      
+      <li><a href="/categories/zsh/" class="hamburger-menu-overlay-link">zsh</a></li>
       
       
-    
-  </ul>
-
-  <ul class="menu__inner menu__inner--mobile">
-    
-      
-        <li><a href="/about">About</a></li>
-      
-    
-  </ul>
+    </ul>
+  </div>
 </nav>
 
-        <span class="menu-trigger">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M0 0h24v24H0z" fill="none"/>
-            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
-          </svg>
-        </span>
-      
-      <span class="theme-toggle">
-        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
-  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
-  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
-</svg>
-
-      </span>
-    </span>
-  </span>
-</header>
-
-
-      <div class="content">
+    <main class="content side-text-padding">
+      <article class="post dropcase">
+        <header class="post-header">
+        	<h1 class="post-title">密码和指纹 哪个身份识别方式更安全？</h1>
+          <p class="post-date">Posted <time datetime="2013-06-15">Jun 15, 2013</time></p>
+        </header>
         
-  <div class="post">
-    <h2 class="post-title"><a href="/posts/mi-ma-he-zhi-wen-na-ge-shen-fen-shi-bie-fang-shi-geng-an-quan/">密码和指纹 哪个身份识别方式更安全？</a></h2>
-    <div class="post-meta">
-      
-        <span class="post-date">
-            2013-06-15
-        </span>
-      
-      <span class="post-author">— Written by Guo Yi</span>
-      
-    </div>
-
-    
-      <span class="post-tags">
-        
-          #<a href="/tags/%E5%AE%89%E5%85%A8/">安全</a>&nbsp;
-        
-          #<a href="/tags/%E5%AF%86%E7%A0%81/">密码</a>&nbsp;
-        
-          #<a href="/tags/%E6%8C%87%E7%BA%B9/">指纹</a>&nbsp;
-        
-      </span>
-    
-
-    
-
-    <div class="post-content">
-      <p>当初入TP的时候，就有过这个思考，是不是要带指纹识别；</p>
+        <p>当初入TP的时候，就有过这个思考，是不是要带指纹识别；</p>
 
 <p>不过后来仔细想了一下，这会是一个很有意思的事情；</p>
 
@@ -255,56 +237,38 @@
 
 <p>而至于我，说实话我其实是一个蛮“纯粹”的人～</p>
 
-    </div>
-    
-      <div class="pagination">
-        <div class="pagination__title">
-          <span class="pagination__title-h">Read other posts</span>
-          <hr />
-        </div>
-        <div class="pagination__buttons">
-          
-            <span class="button previous">
-              <a href="/posts/cloud-atlas/">
-                <span class="button__icon">←</span>
-                <span class="button__text">Cloud Atlas</span>
-              </a>
-            </span>
-          
-          
-            <span class="button next">
-              <a href="/posts/shen-zhou-zu-che-de-shu-ju-an-quan-wen-ti-xu-secure-problem-of-zuche-com-end/">
-                <span class="button__text">神州租车的数据安全问题[续](secure problem of ZuChe.com [End])</span>
-                <span class="button__icon">→</span>
-              </a>
-            </span>
-          
-        </div>
-      </div>
-    
-
-    
-
-    </div>
-
-      </div>
-
+      </article>
       
-        <footer class="footer">
-  <div class="footer__inner">
-    
-      <div class="copyright copyright--user">来自某个八零后</div>
-    
-  </div>
-</footer>
-
-<script src="/assets/main.js"></script>
-<script src="/assets/prism.js"></script>
-
-
+    </main>
+    <nav class="end-nav side-padding">
       
+      <a ontouchstart="cardPressed.call(this)" ontouchend="cardReleased.call(this)" ontouchmove="cardReleased.call(this)" 
+  href="/posts/shen-zhou-zu-che-de-shu-ju-an-quan-wen-ti-xu-secure-problem-of-zuche-com-end/" class="card blog-card" rel="bookmark" >
+  
+  <article class="card-body">
+    <h2 class="card-title">神州租车的数据安全问题[续](secure problem of ZuChe.com [End])</h2>
+    <p class="card-text"></p>
+    <div class="card-subtext muted-text">
+      <p>Posted <time datetime="2013-06-14 614:00">Jun 14, 2013</time></p>
+      <p>#安全 #数据 #泄漏 #租车 </p>
     </div>
+  </article>
+</a>
+      
+      <a ontouchstart="cardPressed.call(this)" ontouchend="cardReleased.call(this)" ontouchmove="cardReleased.call(this)" 
+  href="/" class="card home-card" style="background-image: url( /img/grey-cloud.jpg )" rel="bookmark" >
+  Home
+</a>
+    </nav>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+  
+  <script src="/js/core.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
 
-    
   </body>
 </html>

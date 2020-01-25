@@ -1,0 +1,29 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ghost - 你好，世界</title>
+    <link>/categories/ghost/</link>
+    <description>Recent content in ghost on 你好，世界</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>来自某个八零后</copyright>
+    <lastBuildDate>Fri, 06 Mar 2015 05:09:09 +0000</lastBuildDate>
+    
+        <atom:link href="/categories/ghost/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Ghost访问比Wordpress还慢？</title>
+      <link>/posts/ghost-slower-than-wordpress/</link>
+      <pubDate>Tue, 16 Sep 2014 07:49:08 +0000</pubDate>
+      
+      <guid>/posts/ghost-slower-than-wordpress/</guid>
+      <description></description>
+    </item><item>
+      <title>从Wordpress迁移到Ghost</title>
+      <link>/posts/from-wordpress-to-ghost/</link>
+      <pubDate>Sun, 14 Sep 2014 16:27:10 +0000</pubDate>
+      
+      <guid>/posts/from-wordpress-to-ghost/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,50 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags - 你好，世界</title>
+    <link>/tags/</link>
+    <description>Recent content in Tags on 你好，世界</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>来自某个八零后</copyright>
+    <lastBuildDate>Wed, 14 Oct 2015 07:14:29 +0000</lastBuildDate>
+    
+        <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>色彩空间</title>
+      <link>/tags/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/</link>
+      <pubDate>Sat, 11 Oct 2014 09:27:07 +0000</pubDate>
+      
+      <guid>/tags/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/</guid>
+      <description></description>
+    </item><item>
+      <title>文件大小</title>
+      <link>/tags/%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8F/</link>
+      <pubDate>Thu, 09 Oct 2014 06:37:34 +0000</pubDate>
+      
+      <guid>/tags/%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8F/</guid>
+      <description></description>
+    </item><item>
+      <title>括苍山</title>
+      <link>/tags/%E6%8B%AC%E8%8B%8D%E5%B1%B1/</link>
+      <pubDate>Thu, 09 Oct 2014 06:27:14 +0000</pubDate>
+      
+      <guid>/tags/%E6%8B%AC%E8%8B%8D%E5%B1%B1/</guid>
+      <description></description>
+    </item><item>
+      <title>旅行</title>
+      <link>/tags/%E6%97%85%E8%A1%8C/</link>
+      <pubDate>Thu, 09 Oct 2014 06:27:14 +0000</pubDate>
+      
+      <guid>/tags/%E6%97%85%E8%A1%8C/</guid>
+      <description></description>
+    </item><item>
+      <title>logo</title>
+      <link>/tags/logo/</link>
+      <pubDate>Tue, 30 Sep 2014 04:22:52 +0000</pubDate>
+      
+      <guid>/tags/logo/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

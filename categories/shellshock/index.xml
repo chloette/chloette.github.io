@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Shellshock on 你好，世界</title>
+    <title>Shellshock - 你好，世界</title>
     <link>/categories/shellshock/</link>
     <description>Recent content in Shellshock on 你好，世界</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -9,8 +8,7 @@
     <copyright>来自某个八零后</copyright>
     <lastBuildDate>Fri, 26 Sep 2014 07:05:44 +0000</lastBuildDate>
     
-	<atom:link href="/categories/shellshock/index.xml" rel="self" type="application/rss+xml" />
-    
+        <atom:link href="/categories/shellshock/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>关于Shellshock bash bug</title>
@@ -18,13 +16,7 @@
       <pubDate>Fri, 26 Sep 2014 07:05:44 +0000</pubDate>
       
       <guid>/posts/about-shellshock-bash-bug/</guid>
-      <description>“不小心”看到了shellshock bash bug
-不明觉厉，按图索骥：
-$env x=&#39;() { :;}; echo vulnerable&#39; bash -c &#39;echo this is a test&#39;   If you see the word &amp;ldquo;vulnerable&amp;rdquo; as an answer, your system is, well&amp;hellip; vulnerable.
- 中枪。。。
-立刻update+upgrade，再回过头看看到底啥情况：
- Your Bash shell is simply running more code after a function (the &amp;ldquo;() { :;};&amp;rdquo; part), and that shouldn&amp;rsquo;t be happening. The function is the &amp;ldquo;allowed&amp;rdquo; code, while everything after it is where the potentially &amp;ldquo;malicious&amp;rdquo; code could be installed.</description>
+      <description></description>
     </item>
-    
   </channel>
 </rss>

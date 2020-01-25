@@ -1,0 +1,50 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts - 你好，世界</title>
+    <link>/posts/</link>
+    <description>Recent content in Posts on 你好，世界</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>来自某个八零后</copyright>
+    <lastBuildDate>Sat, 25 Jan 2020 17:51:12 +0800</lastBuildDate>
+    
+        <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>EC2 /dev/xvda1 should be checked for errors</title>
+      <link>/posts/ec2-devxvda1-should-be-checked-for-errors/</link>
+      <pubDate>Tue, 20 Jan 2015 06:54:26 +0000</pubDate>
+      
+      <guid>/posts/ec2-devxvda1-should-be-checked-for-errors/</guid>
+      <description></description>
+    </item><item>
+      <title>Proguard混淆</title>
+      <link>/posts/proguard-obfuscation/</link>
+      <pubDate>Sat, 17 Jan 2015 08:01:38 +0000</pubDate>
+      
+      <guid>/posts/proguard-obfuscation/</guid>
+      <description></description>
+    </item><item>
+      <title>Jenkins&#43;Github&#43;Gradle&#43;Android</title>
+      <link>/posts/jenkins-github-gradle-android/</link>
+      <pubDate>Thu, 15 Jan 2015 13:17:06 +0000</pubDate>
+      
+      <guid>/posts/jenkins-github-gradle-android/</guid>
+      <description></description>
+    </item><item>
+      <title>Android SparseArray中indexOfValue返回-1</title>
+      <link>/posts/android-sparsearray-indexofvalue-return-negative-1/</link>
+      <pubDate>Tue, 13 Jan 2015 12:55:43 +0000</pubDate>
+      
+      <guid>/posts/android-sparsearray-indexofvalue-return-negative-1/</guid>
+      <description></description>
+    </item><item>
+      <title>Android RelativeLayout中wrap_content和alignParentBottom的冲突</title>
+      <link>/posts/android-conflict-of-relativelayout-between-wrapcontent-and-alignparentbottom/</link>
+      <pubDate>Mon, 12 Jan 2015 08:25:33 +0000</pubDate>
+      
+      <guid>/posts/android-conflict-of-relativelayout-between-wrapcontent-and-alignparentbottom/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

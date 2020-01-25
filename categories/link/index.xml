@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>link on 你好，世界</title>
+    <title>link - 你好，世界</title>
     <link>/categories/link/</link>
     <description>Recent content in link on 你好，世界</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -9,8 +8,7 @@
     <copyright>来自某个八零后</copyright>
     <lastBuildDate>Sat, 06 Sep 2014 11:51:57 +0000</lastBuildDate>
     
-	<atom:link href="/categories/link/index.xml" rel="self" type="application/rss+xml" />
-    
+        <atom:link href="/categories/link/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Wordpress插入链接无效或者不显示标题</title>
@@ -18,11 +16,7 @@
       <pubDate>Sat, 06 Sep 2014 11:51:57 +0000</pubDate>
       
       <guid>/posts/wordpress-cha-ru-lian-jie-wu-xiao-huo-zhe-bu-xian-shi-biao-ti/</guid>
-      <description>刚刚。。遇到了使用link插入链接后页面不显示，或者明明写了链接的标题但是显示的还是url的问题。。。 看了下代码，发现貌似html代码不太对：
-现在用link标签插入的link如下：
-&amp;lt;a title=&amp;quot;本文啊本文&amp;quot; href=&amp;quot;https://xxxx/&amp;quot; target=&amp;quot;_blank&amp;quot;&amp;gt;&amp;lt;/a&amp;gt;  正常的link应该如下：
-&amp;lt;a title=&amp;quot;本文啊本文&amp;quot; href=&amp;quot;https://xxxx/&amp;quot; target=&amp;quot;_blank&amp;quot;&amp;gt;本文啊本文&amp;lt;/a&amp;gt;  注意&amp;lt;a&amp;gt;&amp;lt;/a&amp;gt;之间的标题哦，更新一下～ Tada～ 链接好啦～ （难道是升级版本搞出来的问题。。？懒得管啦～）</description>
+      <description></description>
     </item>
-    
   </channel>
 </rss>

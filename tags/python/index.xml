@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>python on 你好，世界</title>
+    <title>python - 你好，世界</title>
     <link>/tags/python/</link>
     <description>Recent content in python on 你好，世界</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -9,8 +8,7 @@
     <copyright>来自某个八零后</copyright>
     <lastBuildDate>Wed, 21 Jan 2015 12:07:06 +0000</lastBuildDate>
     
-	<atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
-    
+        <atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Ghost修改screen.css的脚本</title>
@@ -18,12 +16,7 @@
       <pubDate>Wed, 21 Jan 2015 12:07:06 +0000</pubDate>
       
       <guid>/posts/script-to-modify-ghost-screen-css/</guid>
-      <description>Ghost更新越来越频繁，每次都要手动更新css实在伤不起。。。
-反正改动的地方也不多，干脆做成一键脚本好了，把之前upgrade的脚本再扩展一下：
-首先更改#7，改动如下，增加了change logo position：
-#change post page what to show... echo &#39;7. replace &amp;quot;excerpt&amp;quot; with &amp;quot;content&amp;quot; ---------------&#39; #excerpt -&amp;gt; content #read more -&amp;gt; &amp;gt;&amp;gt; sed -i &amp;quot;s#&amp;lt;p&amp;gt;{{excerpt words=\&amp;quot;26\&amp;quot;}} &amp;lt;a class=\&amp;quot;read-more\&amp;quot; href=\&amp;quot;{{url}}\&amp;quot;&amp;gt;&amp;amp;raquo;#&amp;lt;p&amp;gt;{{content words=\&amp;quot;32\&amp;quot;}} &amp;lt;a class=\&amp;quot;read-more\&amp;quot; href=\&amp;quot;{{url}}\&amp;quot;&amp;gt;\&amp;amp;raquo;\&amp;amp;raquo;#g&amp;quot; ./content/themes/casper/partials/loop.hbs #change logo position sed -i &#39;s~{{#if @blog.logo}}&amp;lt;a class=&amp;quot;blog-logo&amp;quot; href=&amp;quot;{{@blog.url}}&amp;quot;&amp;gt;&amp;lt;img src=&amp;quot;{{@blog.logo}}&amp;quot; alt=&amp;quot;Blog Logo&amp;quot; /&amp;gt;&amp;lt;/a&amp;gt;{{/if}}~~g&#39; ./content/themes/casper/index.hbs sed -i &#39;s~&amp;lt;h1 class=&amp;quot;page-title&amp;quot;&amp;gt;{{@blog.title}}&amp;lt;/h1&amp;gt;~{{#if @blog.logo}}&amp;lt;a class=&amp;quot;blog-logo&amp;quot; href=&amp;quot;{{@blog.url}}/about&amp;quot;&amp;gt;&amp;lt;img src=&amp;quot;{{@blog.logo}}&amp;quot; alt=&amp;quot;Blog Logo&amp;quot; /&amp;gt;&amp;lt;/a&amp;gt;{{/if}}&amp;lt;h1 class=&amp;quot;page-title&amp;quot;&amp;gt;{{@blog.title}}&amp;lt;/h1&amp;gt;~g&#39; ./content/themes/casper/index.hbs  再就是考虑到自己智商太低，难以驾驭sed的多行匹配，所以祭出Python；脚本中加上这句：
-#call python to do multiple lines replacement python ~/ghost_css_adjustment.</description>
+      <description></description>
     </item>
-    
   </channel>
 </rss>

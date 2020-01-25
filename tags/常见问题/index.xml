@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>常见问题 on 你好，世界</title>
+    <title>常见问题 - 你好，世界</title>
     <link>/tags/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</link>
     <description>Recent content in 常见问题 on 你好，世界</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -9,8 +8,7 @@
     <copyright>来自某个八零后</copyright>
     <lastBuildDate>Fri, 07 Nov 2014 06:37:01 +0000</lastBuildDate>
     
-	<atom:link href="/tags/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/index.xml" rel="self" type="application/rss+xml" />
-    
+        <atom:link href="/tags/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Android studio的一些坑</title>
@@ -18,16 +16,7 @@
       <pubDate>Fri, 07 Nov 2014 06:37:01 +0000</pubDate>
       
       <guid>/posts/android-studiode-common-questions/</guid>
-      <description>Android studio会慢慢替换掉Eclipse，从来作为Android的主力IDE。
-但是目前存在的问题还是蛮多的，这里简单罗列一下（有更新陆续补充）：
-####报错：duplicate files during packaging of APK 在主工程的build.gradle增加：
-android { packagingOptions { exclude &#39;META-INF/LICENSE.txt&#39; } }  ####提示Error: Missing one of the key attributes &#39;action#name,category#name&#39; on element intent-filter at AndroidManifest.xml 将
-&amp;lt;intent-filter android:priority=&amp;quot;1000&amp;quot; /&amp;gt;  改为：
-&amp;lt;intent-filter android:priority=&amp;quot;1000&amp;quot;&amp;gt; &amp;lt;action android:name=&amp;quot;HEHEHE&amp;quot; /&amp;gt; &amp;lt;/intent-filter&amp;gt;  ####奇怪的编译错误：illegal character: &#39;\ufeff&#39;：
-Android studio 调试过程中出现：非法字符： \65279
-java: F:\android\Lock_QinZDLock\src\com\qin\lock\SliderRelativeLayout.java:1: 非法字符： \65279  解决方法：使用Notpad++打开 格式 选择保存为无bom编码 格式UTF-8不需要BOM来表明字节顺序，但可以用BOM来表明编码方式。字符&amp;rdquo;ZERO WIDTH NO-BREAK SPACE&amp;rdquo;的UTF-8编码是EF BB BF。所以如果接收者收到以EF BB BF开头的字节流，就知道这是UTF-8编码了。
-来自 http://blog.taorenjia.com/?p=319</description>
+      <description></description>
     </item>
-    
   </channel>
 </rss>

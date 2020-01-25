@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>高通 on 你好，世界</title>
+    <title>高通 - 你好，世界</title>
     <link>/categories/%E9%AB%98%E9%80%9A/</link>
     <description>Recent content in 高通 on 你好，世界</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -9,8 +8,7 @@
     <copyright>来自某个八零后</copyright>
     <lastBuildDate>Mon, 24 Mar 2014 13:45:03 +0000</lastBuildDate>
     
-	<atom:link href="/categories/%E9%AB%98%E9%80%9A/index.xml" rel="self" type="application/rss+xml" />
-    
+        <atom:link href="/categories/%E9%AB%98%E9%80%9A/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>纪念在高通奋战的一年</title>
@@ -18,27 +16,7 @@
       <pubDate>Mon, 24 Mar 2014 13:45:03 +0000</pubDate>
       
       <guid>/posts/when-i-am-at-qualcomm/</guid>
-      <description>对，我用了奋战这个词。而且用了这么传（S）统（B）的标题。。。
-不管从什么角度，高通（对，就是那个Qualcomm）的camera团队，在过去的一年，都不能算顺风顺水。 而作为consultant（就是外包）的我们磕磕绊绊的走过来，一点儿也不容易。
-去年4月份到6月份待在韩国水原，大战棒子；在三星奋战到次日下午才回宾馆睡觉，然后午夜0点再杀进去的疯狂至今历历在目～～
-然后6月底到7月中旬，有幸去大美帝逍（ku）遥（bi）了三周；路过旧金山、去了圣迭戈、体验了在美帝加班到深夜后的四下无人黑灯瞎火、也看到了美国人民休闲自得的周末生活（羡慕嫉妒恨。。。）、参加了海边华丽的team-building、逛了westfield、也扫荡了outlets、打了枪、看了脱衣舞、回来路过韩国（廉价机票）还逛了一天首尔明洞、也算圆满了。
-这一路认识了
- Jeff（camera的leader）（当然Jeff被棒子指着鼻子责备的样子也记忆犹新～ 哈哈～） Mingcheng（清华教过书） Marvin（笑看人生坎坷的“相声演员”） Kevin（香港高考状元） Jack（吃喝嫖赌抽的80后） Rama（一个极为搞笑的老印） Jeremy（住在“江南”的花美男） Sree、JP &amp;amp; Hody（Sensor部门的三巨头）等一众猛人。  接下来因为种种原因，无法再有机会出国鸟；就在上海瞬联的office待（dai）了两个月。巩固了基础知识。
-彼时的上海晴空碧日，甚至不逊美帝。那时晚上吃着龙虾喝着啤酒（作死么）瞎扯淡吃空饷的日子也许就这么一去不复返了@FengShouhu。
-然后就到了9月份，正式的任务终于下来了，全体转战北京，通宵达旦的奋战到10月中旬（我会告诉你们我十一还去了川西转了一圈结识了*珊姐/小牦牛/小超超*么～？），K910项目顺利结束，也第一次，证明了我们的存在价值。。。着实不易。
-接下来11月份上海支持ZTE（A21项目），12月份北京支持SoMC（sony中国移动研发部门，Tianchi项目），然后1月初跑去深圳/东莞支持BBK（XPlay 3s）和OPPO（Find 7）直到过年。
-也结识了强大的CE，如Xiaocheng、Jiale，以及Jeff,Gan、YiHe、Kai等～
-再比如三大金刚（Su，Wenbin &amp;amp; Ju）及不倒翁（Guoquan）
-太多太多，真诚的，谢谢你们。
-除了华为（人家用海思。。。），小米（本身software有猛人），宇龙（没轮到），和没啥software改动的JSR（貌似是这个缩写吧），国内有点名气的手机厂商算是转遍了；混了不少名片，也混了不少“后路”。
-这一年过得匆匆，不敢说跑遍了大江南北，但也算去了不少地方；
-这是学习的一年，是进步成长的一年，是难得人生阅历无限提高的一年；
-这里我必须要发自内心的谢谢这一路陪伴我成长的人们；因为你们，让我在迷茫不知所措的那段日子，看到了前进的方向，意识到了自己的自满和渺小，让我才得以历此磨练，得以战斗到今天。
-谢谢你们。
-附上给高通的Farewell: (看到大家的回复还是会情不自禁啊T_T)
-Hi All,
-I’m afraid it’s time to say goodbye. As some of you probably already know, I will quit from Arc, and I do not goto Shanghai either… (I’m really, really, really sorry for that because of personal reasons… T_T )</description>
+      <description></description>
     </item>
-    
   </channel>
 </rss>

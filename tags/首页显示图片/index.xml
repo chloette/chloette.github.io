@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>首页显示图片 on 你好，世界</title>
+    <title>首页显示图片 - 你好，世界</title>
     <link>/tags/%E9%A6%96%E9%A1%B5%E6%98%BE%E7%A4%BA%E5%9B%BE%E7%89%87/</link>
     <description>Recent content in 首页显示图片 on 你好，世界</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -9,8 +8,7 @@
     <copyright>来自某个八零后</copyright>
     <lastBuildDate>Mon, 22 Sep 2014 04:07:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/%E9%A6%96%E9%A1%B5%E6%98%BE%E7%A4%BA%E5%9B%BE%E7%89%87/index.xml" rel="self" type="application/rss+xml" />
-    
+        <atom:link href="/tags/%E9%A6%96%E9%A1%B5%E6%98%BE%E7%A4%BA%E5%9B%BE%E7%89%87/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Ghost在首页显示图片而非摘要</title>
@@ -18,15 +16,7 @@
       <pubDate>Mon, 22 Sep 2014 04:07:00 +0000</pubDate>
       
       <guid>/posts/ghost-display-post-images-on-home-page/</guid>
-      <description>我就拿默认的Casper来说事吧。
-老版本应该参考Display Post Images on home page就够了。but我在目前的版本0.5.1中，index.hbs中没发现对应项。。。
-看了一下，发现换地儿了，在./partials/loop.hbs里，把post-excerpt项如下修改即可～
-&amp;lt;section class=&amp;quot;post-excerpt&amp;quot;&amp;gt; &amp;lt;p&amp;gt;{{content words=&amp;quot;30&amp;quot;}} &amp;lt;a class=&amp;quot;read-more&amp;quot; href=&amp;quot;{{url}}&amp;quot;&amp;gt;more &amp;amp;raquo;&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/section&amp;gt;  修改后接着restart ghost（*我用的forever， 随手写个shell重启所有ghost～ 简单易用O Yeah*）就好啦
-最新版修改hbs后，貌似不用重启ghost就可以生效了～页面刷新即可～
-Tada~
-[更新 2015/1/6]
-现在更新的版本可以直接使用{{image}}了，直接参考Display Post Images on home page即可 &amp;ndash; 这个页面更新啦～ 哈哈～</description>
+      <description></description>
     </item>
-    
   </channel>
 </rss>

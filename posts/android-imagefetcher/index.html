@@ -1,203 +1,191 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us" dir="ltr">
   <head>
-    
-      <title>Android ImageFetcher :: 你好，世界 — 📝🎿🛹🏍️</title>
-    
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="description" content="Google完善文档后，也提供了一大批优秀的源代码。
-ImageFetcher就是其中之一，这货非常简洁的实现了用ImageView来异步加载网页图片，同时对图片进行二级缓存的功能。
-稍微改改就可以轻松适配任何图片资源（例如本地，例如需特殊条件（如宽高，比例，透明度等）等）了。
-主体代码构成： 外部调用如下：
- New：
-ImageFetcher imageFetcher = new ImageFetcher(context, width, height);  就可以了。
-  当然这里一般都会改动；
-例如为了区分cache目录，会把unique folder name作为参数传入进去）。
-例如为了替换默认图，把图标传进去。
-例如为了适配任何图片资源，增加自定义的ImageProvider，也在初始化的时候传进去。
- Load bitmap：
-imageFetcher.loadImage(pathString, (ImageView) view.findViewById(R.id.thumbnail));   这样这个ImageView就会在图片通过异步下载好（并缓存）以后，自己加载显示出来了～
- Close cache：
-imageFetcher.setPauseWork(false); imageFetcher.closeCache();   就是这么简单任性～
-内部逻辑重点的几个：
- 对Download下来的图片，使用DiskLruCache来本地缓存，使用LruCache作为内存缓存；
- 使用AsyncTask（WeakReference）来异步download图片；结束后对ImageView（WeakReference）进行setImageDrawable（AsyncDrawable）；这里的AsyncDrawable内部有正在处理自身的AsyncTask的WeakReference，所以可以避免重复execute的情况；每次都会先cancel之前的。
- AsyncTask跑在Executor（线程池）中。
-  主要原理就是这样，其中一些细节可以自己翻源码～～ 非常方便使用和扩展～ 基本已经成为搭项目时必备库之一。
-但是这里有一点，需要注意！
-谨慎使用ImageFetcher.setPauseWork
-官方Sample给出了两个用法，看起来前后有一点矛盾：
-一个是在Grid滑动的时候：
-public void onScrollStateChanged(AbsListView absListView, int scrollState) { // Pause fetcher to ensure smoother scrolling when flinging if (scrollState == AbsListView."/>
-<meta name="keywords" content=""/>
-<meta name="robots" content="noodp"/>
-<link rel="canonical" href="/posts/android-imagefetcher/" />
-
-
-<link rel="stylesheet" href="/assets/style.css">
-
-
-<link rel="stylesheet" href="/style.css">
-
-
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
-<link rel="shortcut icon" href="/img/favicon.png">
-
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Android ImageFetcher"/>
-<meta name="twitter:description" content="Google完善文档后，也提供了一大批优秀的源代码。
-ImageFetcher就是其中之一，这货非常简洁的实现了用ImageView来异步加载网页图片，同时对图片进行二级缓存的功能。
-稍微改改就可以轻松适配任何图片资源（例如本地，例如需特殊条件（如宽高，比例，透明度等）等）了。
-主体代码构成： 外部调用如下：
- New：
-ImageFetcher imageFetcher = new ImageFetcher(context, width, height);  就可以了。
-  当然这里一般都会改动；
-例如为了区分cache目录，会把unique folder name作为参数传入进去）。
-例如为了替换默认图，把图标传进去。
-例如为了适配任何图片资源，增加自定义的ImageProvider，也在初始化的时候传进去。
- Load bitmap：
-imageFetcher.loadImage(pathString, (ImageView) view.findViewById(R.id.thumbnail));   这样这个ImageView就会在图片通过异步下载好（并缓存）以后，自己加载显示出来了～
- Close cache：
-imageFetcher.setPauseWork(false); imageFetcher.closeCache();   就是这么简单任性～
-内部逻辑重点的几个：
- 对Download下来的图片，使用DiskLruCache来本地缓存，使用LruCache作为内存缓存；
- 使用AsyncTask（WeakReference）来异步download图片；结束后对ImageView（WeakReference）进行setImageDrawable（AsyncDrawable）；这里的AsyncDrawable内部有正在处理自身的AsyncTask的WeakReference，所以可以避免重复execute的情况；每次都会先cancel之前的。
- AsyncTask跑在Executor（线程池）中。
-  主要原理就是这样，其中一些细节可以自己翻源码～～ 非常方便使用和扩展～ 基本已经成为搭项目时必备库之一。
-但是这里有一点，需要注意！
-谨慎使用ImageFetcher.setPauseWork
-官方Sample给出了两个用法，看起来前后有一点矛盾：
-一个是在Grid滑动的时候：
-public void onScrollStateChanged(AbsListView absListView, int scrollState) { // Pause fetcher to ensure smoother scrolling when flinging if (scrollState == AbsListView."/>
-
-
-
-<meta property="og:title" content="Android ImageFetcher" />
-<meta property="og:description" content="Google完善文档后，也提供了一大批优秀的源代码。
-ImageFetcher就是其中之一，这货非常简洁的实现了用ImageView来异步加载网页图片，同时对图片进行二级缓存的功能。
-稍微改改就可以轻松适配任何图片资源（例如本地，例如需特殊条件（如宽高，比例，透明度等）等）了。
-主体代码构成： 外部调用如下：
- New：
-ImageFetcher imageFetcher = new ImageFetcher(context, width, height);  就可以了。
-  当然这里一般都会改动；
-例如为了区分cache目录，会把unique folder name作为参数传入进去）。
-例如为了替换默认图，把图标传进去。
-例如为了适配任何图片资源，增加自定义的ImageProvider，也在初始化的时候传进去。
- Load bitmap：
-imageFetcher.loadImage(pathString, (ImageView) view.findViewById(R.id.thumbnail));   这样这个ImageView就会在图片通过异步下载好（并缓存）以后，自己加载显示出来了～
- Close cache：
-imageFetcher.setPauseWork(false); imageFetcher.closeCache();   就是这么简单任性～
-内部逻辑重点的几个：
- 对Download下来的图片，使用DiskLruCache来本地缓存，使用LruCache作为内存缓存；
- 使用AsyncTask（WeakReference）来异步download图片；结束后对ImageView（WeakReference）进行setImageDrawable（AsyncDrawable）；这里的AsyncDrawable内部有正在处理自身的AsyncTask的WeakReference，所以可以避免重复execute的情况；每次都会先cancel之前的。
- AsyncTask跑在Executor（线程池）中。
-  主要原理就是这样，其中一些细节可以自己翻源码～～ 非常方便使用和扩展～ 基本已经成为搭项目时必备库之一。
-但是这里有一点，需要注意！
-谨慎使用ImageFetcher.setPauseWork
-官方Sample给出了两个用法，看起来前后有一点矛盾：
-一个是在Grid滑动的时候：
-public void onScrollStateChanged(AbsListView absListView, int scrollState) { // Pause fetcher to ensure smoother scrolling when flinging if (scrollState == AbsListView." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/android-imagefetcher/" />
-<meta property="article:published_time" content="2015-01-21T06:15:21+00:00" />
-<meta property="article:modified_time" content="2015-01-21T06:15:21+00:00" /><meta property="og:site_name" content="你好，世界" />
-
-
-
-
-
-
-  </head>
-  <body class="dark-theme">
-    <div class="container">
-      <header class="header">
-  <span class="header__inner">
-    <a href="/" class="logo" style="text-decoration: none;">
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Android ImageFetcher &middot; 你好，世界</title>
+  <meta name="description" content="" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
-  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
-</svg>
-</span>
-    <span class="logo__text">Hello World</span>
-    <span class="logo__cursor"></span>
   
-</a>
+  
+  
+  
+  <link href="/css/concated.min.css" rel="stylesheet">
+  
+  
+</head>
 
-    <span class="header__right">
+  <body class="single-body">
+    <nav class="nav-bar side-padding">
+  <h1 class="nav-header"><a href="/" class="nav-text">你好，世界</a></h1>
+  <div class="hamburger-menu">
+    <button onclick="hamburgerMenuPressed.call(this)" aria-haspopup="true" aria-expanded="false" aria-controls="menu" aria-label="Menu">
+      <span></span>
+      <span></span>
+    </button>
+    <ul id="menu" class="hamburger-menu-overlay">
+      <li><a href="/" class="hamburger-menu-overlay-link">Home</a></li>
       
-        <nav class="menu">
-  <ul class="menu__inner menu__inner--desktop">
-    
+      <li><a href="/categories/12306/" class="hamburger-menu-overlay-link">12306</a></li>
       
-        
-          <li><a href="/about">About</a></li>
-        
+      <li><a href="/categories/android/" class="hamburger-menu-overlay-link">Android</a></li>
+      
+      <li><a href="/categories/android-studio/" class="hamburger-menu-overlay-link">android studio</a></li>
+      
+      <li><a href="/categories/apk-expansion/" class="hamburger-menu-overlay-link">APK Expansion</a></li>
+      
+      <li><a href="/categories/bash/" class="hamburger-menu-overlay-link">bash</a></li>
+      
+      <li><a href="/categories/bitcoin/" class="hamburger-menu-overlay-link">bitcoin</a></li>
+      
+      <li><a href="/categories/bitlocker/" class="hamburger-menu-overlay-link">bitlocker</a></li>
+      
+      <li><a href="/categories/btc/" class="hamburger-menu-overlay-link">btc</a></li>
+      
+      <li><a href="/categories/byte-alignment/" class="hamburger-menu-overlay-link">Byte alignment</a></li>
+      
+      <li><a href="/categories/c/" class="hamburger-menu-overlay-link">C</a></li>
+      
+      <li><a href="/categories/camera/" class="hamburger-menu-overlay-link">Camera</a></li>
+      
+      <li><a href="/categories/charset/" class="hamburger-menu-overlay-link">charset</a></li>
+      
+      <li><a href="/categories/chrome/" class="hamburger-menu-overlay-link">chrome</a></li>
+      
+      <li><a href="/categories/classnotfound/" class="hamburger-menu-overlay-link">ClassNotFound</a></li>
+      
+      <li><a href="/categories/d/" class="hamburger-menu-overlay-link">d</a></li>
+      
+      <li><a href="/categories/ddos/" class="hamburger-menu-overlay-link">ddos</a></li>
+      
+      <li><a href="/categories/ebola/" class="hamburger-menu-overlay-link">Ebola</a></li>
+      
+      <li><a href="/categories/ec2/" class="hamburger-menu-overlay-link">EC2</a></li>
+      
+      <li><a href="/categories/eva/" class="hamburger-menu-overlay-link">EVA</a></li>
+      
+      <li><a href="/categories/ffmpeg/" class="hamburger-menu-overlay-link">ffmpeg</a></li>
+      
+      <li><a href="/categories/fonts.googleapis.com/" class="hamburger-menu-overlay-link">fonts.googleapis.com</a></li>
+      
+      <li><a href="/categories/forget-password/" class="hamburger-menu-overlay-link">forget password</a></li>
+      
+      <li><a href="/categories/gallery/" class="hamburger-menu-overlay-link">Gallery</a></li>
+      
+      <li><a href="/categories/ghost/" class="hamburger-menu-overlay-link">ghost</a></li>
+      
+      <li><a href="/categories/git/" class="hamburger-menu-overlay-link">git</a></li>
+      
+      <li><a href="/categories/gpl/" class="hamburger-menu-overlay-link">gpl</a></li>
+      
+      <li><a href="/categories/gradle/" class="hamburger-menu-overlay-link">Gradle</a></li>
+      
+      <li><a href="/categories/gta/" class="hamburger-menu-overlay-link">GTA</a></li>
+      
+      <li><a href="/categories/hal/" class="hamburger-menu-overlay-link">HAL</a></li>
+      
+      <li><a href="/categories/hardware-requirement/" class="hamburger-menu-overlay-link">hardware requirement</a></li>
+      
+      <li><a href="/categories/hexo&#43;/" class="hamburger-menu-overlay-link">Hexo&#43;</a></li>
+      
+      <li><a href="/categories/highlight-syntax/" class="hamburger-menu-overlay-link">highlight syntax</a></li>
+      
+      <li><a href="/categories/imagefetcher/" class="hamburger-menu-overlay-link">ImageFetcher</a></li>
+      
+      <li><a href="/categories/internet/" class="hamburger-menu-overlay-link">Internet</a></li>
+      
+      <li><a href="/categories/jenkins/" class="hamburger-menu-overlay-link">Jenkins</a></li>
+      
+      <li><a href="/categories/kickstarter/" class="hamburger-menu-overlay-link">kickstarter</a></li>
+      
+      <li><a href="/categories/limits/" class="hamburger-menu-overlay-link">limits</a></li>
+      
+      <li><a href="/categories/link/" class="hamburger-menu-overlay-link">link</a></li>
+      
+      <li><a href="/categories/linux/" class="hamburger-menu-overlay-link">linux</a></li>
+      
+      <li><a href="/categories/load-library/" class="hamburger-menu-overlay-link">load library</a></li>
+      
+      <li><a href="/categories/logo/" class="hamburger-menu-overlay-link">logo</a></li>
+      
+      <li><a href="/categories/ltc/" class="hamburger-menu-overlay-link">ltc</a></li>
+      
+      <li><a href="/categories/monkeyrunner/" class="hamburger-menu-overlay-link">monkeyrunner</a></li>
+      
+      <li><a href="/categories/multi-path/" class="hamburger-menu-overlay-link">multi-path</a></li>
+      
+      <li><a href="/categories/nerv/" class="hamburger-menu-overlay-link">NERV</a></li>
+      
+      <li><a href="/categories/node.js/" class="hamburger-menu-overlay-link">node.js</a></li>
+      
+      <li><a href="/categories/okcoin/" class="hamburger-menu-overlay-link">okcoin</a></li>
+      
+      <li><a href="/categories/os/" class="hamburger-menu-overlay-link">OS</a></li>
+      
+      <li><a href="/categories/out-of-memory/" class="hamburger-menu-overlay-link">out of memory</a></li>
+      
+      <li><a href="/categories/performance/" class="hamburger-menu-overlay-link">performance</a></li>
+      
+      <li><a href="/categories/proguard/" class="hamburger-menu-overlay-link">proguard</a></li>
+      
+      <li><a href="/categories/putty/" class="hamburger-menu-overlay-link">putty</a></li>
+      
+      <li><a href="/categories/python/" class="hamburger-menu-overlay-link">python</a></li>
+      
+      <li><a href="/categories/qq/" class="hamburger-menu-overlay-link">QQ</a></li>
+      
+      <li><a href="/categories/relativelayout/" class="hamburger-menu-overlay-link">RelativeLayout</a></li>
+      
+      <li><a href="/categories/script/" class="hamburger-menu-overlay-link">script</a></li>
+      
+      <li><a href="/categories/selinux/" class="hamburger-menu-overlay-link">Selinux</a></li>
+      
+      <li><a href="/categories/sensor/" class="hamburger-menu-overlay-link">sensor</a></li>
+      
+      <li><a href="/categories/sepolicy/" class="hamburger-menu-overlay-link">Sepolicy</a></li>
+      
+      <li><a href="/categories/shellshock/" class="hamburger-menu-overlay-link">Shellshock</a></li>
+      
+      <li><a href="/categories/sparsearray/" class="hamburger-menu-overlay-link">SparseArray</a></li>
+      
+      <li><a href="/categories/sync/" class="hamburger-menu-overlay-link">sync</a></li>
+      
+      <li><a href="/categories/ted/" class="hamburger-menu-overlay-link">TED</a></li>
+      
+      <li><a href="/categories/tips/" class="hamburger-menu-overlay-link">tips</a></li>
+      
+      <li><a href="/categories/ubuntu/" class="hamburger-menu-overlay-link">Ubuntu</a></li>
+      
+      <li><a href="/categories/understanding-node.js/" class="hamburger-menu-overlay-link">Understanding node.js</a></li>
+      
+      <li><a href="/categories/undo/" class="hamburger-menu-overlay-link">undo</a></li>
+      
+      <li><a href="/categories/upgrade/" class="hamburger-menu-overlay-link">upgrade</a></li>
+      
+      <li><a href="/categories/view/" class="hamburger-menu-overlay-link">View</a></li>
+      
+      <li><a href="/categories/windows/" class="hamburger-menu-overlay-link">windows</a></li>
+      
+      <li><a href="/categories/wordpress/" class="hamburger-menu-overlay-link">wordpress</a></li>
+      
+      <li><a href="/categories/zsh/" class="hamburger-menu-overlay-link">zsh</a></li>
       
       
-    
-  </ul>
-
-  <ul class="menu__inner menu__inner--mobile">
-    
-      
-        <li><a href="/about">About</a></li>
-      
-    
-  </ul>
+    </ul>
+  </div>
 </nav>
 
-        <span class="menu-trigger">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M0 0h24v24H0z" fill="none"/>
-            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
-          </svg>
-        </span>
-      
-      <span class="theme-toggle">
-        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
-  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
-  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
-</svg>
-
-      </span>
-    </span>
-  </span>
-</header>
-
-
-      <div class="content">
+    <main class="content side-text-padding">
+      <article class="post dropcase">
+        <header class="post-header">
+        	<h1 class="post-title">Android ImageFetcher</h1>
+          <p class="post-date">Posted <time datetime="2015-01-21">Jan 21, 2015</time></p>
+        </header>
         
-  <div class="post">
-    <h2 class="post-title"><a href="/posts/android-imagefetcher/">Android ImageFetcher</a></h2>
-    <div class="post-meta">
-      
-        <span class="post-date">
-            2015-01-21
-        </span>
-      
-      <span class="post-author">— Written by Guo Yi</span>
-      
-    </div>
-
-    
-      <span class="post-tags">
-        
-          #<a href="/tags/android/">Android</a>&nbsp;
-        
-          #<a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
-        
-          #<a href="/tags/imagefetcher/">ImageFetcher</a>&nbsp;
-        
-      </span>
-    
-
-    
-
-    <div class="post-content">
-      <p>Google完善文档后，也提供了一大批优秀的源代码。</p>
+        <p>Google完善文档后，也提供了一大批优秀的源代码。</p>
 
 <p><a href="https://developer.android.com/samples/DisplayingBitmaps/src/com.example.android.displayingbitmaps/util/ImageFetcher.html">ImageFetcher</a>就是其中之一，这货非常简洁的实现了用ImageView来异步加载网页图片，同时对图片进行二级缓存的功能。</p>
 
@@ -324,56 +312,38 @@ imageFetcher.closeCache();
 
 <p>解决办法，尝试改成一个锁（这种单线程顺序执行的case用两个锁干嘛啊）。</p>
 
-    </div>
-    
-      <div class="pagination">
-        <div class="pagination__title">
-          <span class="pagination__title-h">Read other posts</span>
-          <hr />
-        </div>
-        <div class="pagination__buttons">
-          
-            <span class="button previous">
-              <a href="/posts/script-to-modify-ghost-screen-css/">
-                <span class="button__icon">←</span>
-                <span class="button__text">Ghost修改screen.css的脚本</span>
-              </a>
-            </span>
-          
-          
-            <span class="button next">
-              <a href="/posts/ec2-devxvda1-should-be-checked-for-errors/">
-                <span class="button__text">EC2 /dev/xvda1 should be checked for errors</span>
-                <span class="button__icon">→</span>
-              </a>
-            </span>
-          
-        </div>
-      </div>
-    
-
-    
-
-    </div>
-
-      </div>
-
+      </article>
       
-        <footer class="footer">
-  <div class="footer__inner">
-    
-      <div class="copyright copyright--user">来自某个八零后</div>
-    
-  </div>
-</footer>
-
-<script src="/assets/main.js"></script>
-<script src="/assets/prism.js"></script>
-
-
+    </main>
+    <nav class="end-nav side-padding">
       
+      <a ontouchstart="cardPressed.call(this)" ontouchend="cardReleased.call(this)" ontouchmove="cardReleased.call(this)" 
+  href="/posts/ec2-devxvda1-should-be-checked-for-errors/" class="card blog-card" rel="bookmark" >
+  
+  <article class="card-body">
+    <h2 class="card-title">EC2 /dev/xvda1 should be checked for errors</h2>
+    <p class="card-text"></p>
+    <div class="card-subtext muted-text">
+      <p>Posted <time datetime="2015-01-20 120:00">Jan 20, 2015</time></p>
+      <p>#技术 #EC2 </p>
     </div>
+  </article>
+</a>
+      
+      <a ontouchstart="cardPressed.call(this)" ontouchend="cardReleased.call(this)" ontouchmove="cardReleased.call(this)" 
+  href="/" class="card home-card" style="background-image: url( /img/grey-cloud.jpg )" rel="bookmark" >
+  Home
+</a>
+    </nav>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+  
+  <script src="/js/core.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
 
-    
   </body>
 </html>

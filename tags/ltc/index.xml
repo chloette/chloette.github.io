@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ltc on 你好，世界</title>
+    <title>ltc - 你好，世界</title>
     <link>/tags/ltc/</link>
     <description>Recent content in ltc on 你好，世界</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -9,8 +8,7 @@
     <copyright>来自某个八零后</copyright>
     <lastBuildDate>Wed, 04 Dec 2013 23:35:18 +0000</lastBuildDate>
     
-	<atom:link href="/tags/ltc/index.xml" rel="self" type="application/rss+xml" />
-    
+        <atom:link href="/tags/ltc/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>关于比特币，从交易平台盈利继续说（II）</title>
@@ -18,28 +16,7 @@
       <pubDate>Wed, 04 Dec 2013 23:35:18 +0000</pubDate>
       
       <guid>/posts/guan-yu-bi-te-bi-cong-jiao-yi-ping-tai-ying-li-ji-xu-shuo-ii/</guid>
-      <description>比特币也好，莱特币也好，既然号称货币（如果的话），那就一定需要具备流通性。
-目前来说，屈指可数的几个可以用比特币支付商品，一般也是噱头大于实际操作价值。
-真正在大量流通这些比特币的地方，还是各大交易平台。
-国内数得着的，就是btcchina，okcoin
-国外就是mtgox，BTC-E
-当然还有一些鱼龙混杂才崛起没多久新生平台，这就不举例了。
-难道不觉得奇怪么？为什么可以用来实际支付的商品少的可怜，而交易平台却多如牛毛？
-抱着这个疑问，我稍微看了一下okcoin（其他平台类似） 以okcoin为例，在过去的24小时里，成交量如下：
-BTC：40938.47฿ LTC: 4544376.94Ł
-按照均价6000的BTC和200的LTC来算，再抹掉零头，24小时内的流通金额达到了惊人的：1154503200元，是不是有点长？
-我们就按照11亿来计算（五千万被抹掉了。。。），价格交易平台手机收取哪怕万分之一的手续费（但是据我说知，不少交易平台的交易费是0.2%甚至更高，这意味着什么捏～ 例如过去24小时内交易LTC在30W+，BTC在2W+的FXBTC～ ），24小时内进账就会超过11W，月均进账可以轻松超过300W。
-对于这些几乎没有建站难度，三天两天遭遇DDOS攻击就崩溃半天的交易平台来说，这绝对是空手套白狼的大金库。
-不过话说回来，你相信一天会有11亿流动资金在这样的一个交易平台内滚动么？ 显然不可能嘛，保守估计应该千万级是有可能的～
-再想深入一点，你相信日均交易量会这么大么？ 都是实际交易么？ 你可能会说有大庄家～ 我承认肯定有大庄家～ 但是。。。我们考虑一下目前来看的最大受益者～ 你还觉得只是庄家操盘这么简单么～
-当然前面是有一个小bug的， okcoin和btcchina都号称免除交易手续费 那怎么赚钱那？
-首先btcchina早就获得百万美元级别的风投了，而okcoin，创立之初就是风投百万起来的。所以他们都不存在运营资金短缺的问题。
-另外先不说他们是不是会走积累用户量以后做大做强这条路，但至少，他们以平台级别进行操盘来获取收益，是件易如反掌的事情。（这就比较黑幕了，因为交易平台的存在，会使用大量中间钱包，导致了通过全局唯一的交易表，很难明确货币大致流向和趋势）
-小站收税揽财（各种手续费），大站烧钱拼量（控盘）。 不管哪个领域都是这样开始的吧。
-BTW大家还记得之前的GBL么？就那个卷款还卷大量比特币跑路的那个站，我说既然厚着脸皮卷款跑路了，钱追回来问题不大，但是那些存进去的BTC，是可以100%的肯定被黑掉了。 （因为这个交易记录就像某位同学丢到垃圾桶的硬盘里的记录一样，只要放的位置好，别人永远找不到。） GBL的这些同学是在赌以后比特币肯定升值么？ 先捂着？ OK，祝你们好运～
-BTW，不管是哪个交易平台，都没有任何的监管措施（谁会自己砸自己脚啊），所以自买自卖，自抬自价的现象非常普遍
-最后，入市有风险，投资需谨慎。</description>
+      <description></description>
     </item>
-    
   </channel>
 </rss>

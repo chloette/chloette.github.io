@@ -1,0 +1,50 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>记录 - 你好，世界</title>
+    <link>/tags/%E8%AE%B0%E5%BD%95/</link>
+    <description>Recent content in 记录 on 你好，世界</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>来自某个八零后</copyright>
+    <lastBuildDate>Sun, 26 Apr 2015 09:26:35 +0000</lastBuildDate>
+    
+        <atom:link href="/tags/%E8%AE%B0%E5%BD%95/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>等不到OTA的Nexus5</title>
+      <link>/posts/nexus5-manually-ota-to-lollipop/</link>
+      <pubDate>Mon, 08 Dec 2014 12:59:04 +0000</pubDate>
+      
+      <guid>/posts/nexus5-manually-ota-to-lollipop/</guid>
+      <description></description>
+    </item><item>
+      <title>Android studio 1.0 RC (更新)</title>
+      <link>/posts/android-studio-1-0-rc/</link>
+      <pubDate>Fri, 21 Nov 2014 07:00:33 +0000</pubDate>
+      
+      <guid>/posts/android-studio-1-0-rc/</guid>
+      <description></description>
+    </item><item>
+      <title>坑爹的淘宝秒杀（更新）</title>
+      <link>/posts/damn-tao-bao-miao-sha/</link>
+      <pubDate>Tue, 18 Nov 2014 02:32:12 +0000</pubDate>
+      
+      <guid>/posts/damn-tao-bao-miao-sha/</guid>
+      <description></description>
+    </item><item>
+      <title>拉上Google一起对抗Ebola</title>
+      <link>/posts/help-fight-ebola/</link>
+      <pubDate>Wed, 12 Nov 2014 02:40:06 +0000</pubDate>
+      
+      <guid>/posts/help-fight-ebola/</guid>
+      <description></description>
+    </item><item>
+      <title>快件骗局</title>
+      <link>/posts/lie-to-delivery/</link>
+      <pubDate>Thu, 06 Nov 2014 08:22:09 +0000</pubDate>
+      
+      <guid>/posts/lie-to-delivery/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

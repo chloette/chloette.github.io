@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ubuntu on 你好，世界</title>
+    <title>Ubuntu - 你好，世界</title>
     <link>/tags/ubuntu/</link>
     <description>Recent content in Ubuntu on 你好，世界</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -9,8 +8,7 @@
     <copyright>来自某个八零后</copyright>
     <lastBuildDate>Wed, 14 Oct 2015 07:14:29 +0000</lastBuildDate>
     
-	<atom:link href="/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
-    
+        <atom:link href="/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Ubuntu forgot password</title>
@@ -18,18 +16,7 @@
       <pubDate>Wed, 14 Oct 2015 07:14:29 +0000</pubDate>
       
       <guid>/posts/ubuntu-forgot-password/</guid>
-      <description>Ubuntu忘记密码了。。
-试了半天，还是想不起来。
-搜了一遍，如果依然可以开机长按shift进入recovery界面，那可以试试这样Ubuntu 14.04忘记root密码的解决方法
-但我是连recovery界面都进不去了，那只能用下面的方法了~
- 搞一个ubuntu启动盘
- 开机启动，并进入启动页面
- 选择Try Ubuntu
- 找到之前的系统盘下/etc/shadow
- sudo下通过vim打开并编辑，去掉自己账号后面的密码串（可以参考这里）
- 重启正常启动原来系统即可，会发现忘记密码的用户可以直接登陆进去了；登陆后抓紧passwd修改密码吧！！！
-  Tada~~</description>
+      <description></description>
     </item>
-    
   </channel>
 </rss>

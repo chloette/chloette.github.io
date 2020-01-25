@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>信息间谍 on 你好，世界</title>
+    <title>信息间谍 - 你好，世界</title>
     <link>/tags/%E4%BF%A1%E6%81%AF%E9%97%B4%E8%B0%8D/</link>
     <description>Recent content in 信息间谍 on 你好，世界</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -9,8 +8,7 @@
     <copyright>来自某个八零后</copyright>
     <lastBuildDate>Wed, 29 May 2013 22:02:26 +0000</lastBuildDate>
     
-	<atom:link href="/tags/%E4%BF%A1%E6%81%AF%E9%97%B4%E8%B0%8D/index.xml" rel="self" type="application/rss+xml" />
-    
+        <atom:link href="/tags/%E4%BF%A1%E6%81%AF%E9%97%B4%E8%B0%8D/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>开放信息间谍的全部源码并停止服务</title>
@@ -18,23 +16,7 @@
       <pubDate>Wed, 29 May 2013 22:02:26 +0000</pubDate>
       
       <guid>/posts/kai-fang-xin-xi-jian-die-de-quan-bu-yuan-ma-bing-ting-zhi-fu-wu/</guid>
-      <description>出于很多考虑来做这件事情，最大的原因也许是：到现在为止没有因为这个项目收到一分钱。
-唉。
-好吧，开放源码了。
-邮件服务器也close了。
-之前的缓存服务器也直接drop table了。
-这个项目到此为止吧。
-下面源码不能直接编译通过，因为删除了一个加密用的文件。
-但是影响不大。
-可以从源码中学习到：
- 短信/电话记录的拦截
- GPS/基站定位
- 开机/拨号启动
- 后台服务常驻
- 与服务器的通信
-  &amp;hellip;
-下载链接：apk codes</description>
+      <description></description>
     </item>
-    
   </channel>
 </rss>

@@ -1,0 +1,50 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags - 你好，世界</title>
+    <link>/tags/</link>
+    <description>Recent content in Tags on 你好，世界</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>来自某个八零后</copyright>
+    <lastBuildDate>Wed, 14 Oct 2015 07:14:29 +0000</lastBuildDate>
+    
+        <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>highlight syntax</title>
+      <link>/tags/highlight-syntax/</link>
+      <pubDate>Wed, 04 Mar 2015 03:15:57 +0000</pubDate>
+      
+      <guid>/tags/highlight-syntax/</guid>
+      <description></description>
+    </item><item>
+      <title>QQ</title>
+      <link>/tags/qq/</link>
+      <pubDate>Tue, 03 Mar 2015 06:39:21 +0000</pubDate>
+      
+      <guid>/tags/qq/</guid>
+      <description></description>
+    </item><item>
+      <title>TED</title>
+      <link>/tags/ted/</link>
+      <pubDate>Tue, 03 Mar 2015 05:35:47 +0000</pubDate>
+      
+      <guid>/tags/ted/</guid>
+      <description></description>
+    </item><item>
+      <title>囚徒健身</title>
+      <link>/tags/%E5%9B%9A%E5%BE%92%E5%81%A5%E8%BA%AB/</link>
+      <pubDate>Sat, 28 Feb 2015 06:54:00 +0000</pubDate>
+      
+      <guid>/tags/%E5%9B%9A%E5%BE%92%E5%81%A5%E8%BA%AB/</guid>
+      <description></description>
+    </item><item>
+      <title>EVA</title>
+      <link>/tags/eva/</link>
+      <pubDate>Fri, 20 Feb 2015 10:29:36 +0000</pubDate>
+      
+      <guid>/tags/eva/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

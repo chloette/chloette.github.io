@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>优化 on 你好，世界</title>
+    <title>优化 - 你好，世界</title>
     <link>/tags/%E4%BC%98%E5%8C%96/</link>
     <description>Recent content in 优化 on 你好，世界</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -9,8 +8,7 @@
     <copyright>来自某个八零后</copyright>
     <lastBuildDate>Sat, 11 Oct 2014 09:27:07 +0000</lastBuildDate>
     
-	<atom:link href="/tags/%E4%BC%98%E5%8C%96/index.xml" rel="self" type="application/rss+xml" />
-    
+        <atom:link href="/tags/%E4%BC%98%E5%8C%96/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>优化RGB-&gt;YUV</title>
@@ -18,9 +16,7 @@
       <pubDate>Sat, 11 Oct 2014 09:27:07 +0000</pubDate>
       
       <guid>/posts/optimize-rgb-to-yuv/</guid>
-      <description>网上随处可见YUV到RGB的优化，其中被借鉴最多的应该就是VP8的源码了吧：
-// Copyright 2010 Google Inc. // // This code is licensed under the same terms as WebM: // Software License Agreement: http://www.webmproject.org/license/software/ // Additional IP Rights Grant: http://www.webmproject.org/license/additional/ // ----------------------------------------------------------------------------- // // YUV-&amp;gt;RGB conversion function // // Author: Skal (pascal.massimino@gmail.com) #include &amp;quot;yuv.h&amp;quot; #if defined(__cplusplus) || defined(c_plusplus) extern &amp;quot;C&amp;quot; { #endif enum { YUV_HALF = 1 &amp;lt;&amp;lt; (YUV_FIX - 1) }; int16_t VP8kVToR[256], VP8kUToB[256]; int32_t VP8kVToG[256], VP8kUToG[256]; uint8_t VP8kClip[YUV_RANGE_MAX - YUV_RANGE_MIN]; static int done = 0; void VP8YUVInit() { int i; if (done) { return; } for (i = 0; i &amp;lt; 256; ++i) { VP8kVToR[i] = (89858 * (i - 128) + YUV_HALF) &amp;gt;&amp;gt; YUV_FIX; VP8kUToG[i] = -22014 * (i - 128) + YUV_HALF; VP8kVToG[i] = -45773 * (i - 128); VP8kUToB[i] = (113618 * (i - 128) + YUV_HALF) &amp;gt;&amp;gt; YUV_FIX; } for (i = YUV_RANGE_MIN; i &amp;lt; YUV_RANGE_MAX; ++i) { const int k = ((i - 16) * 76283 + YUV_HALF) &amp;gt;&amp;gt; YUV_FIX; VP8kClip[i - YUV_RANGE_MIN] = (k &amp;lt; 0) ?</description>
+      <description></description>
     </item>
-    
   </channel>
 </rss>

@@ -1,0 +1,50 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories - 你好，世界</title>
+    <link>/categories/</link>
+    <description>Recent content in Categories on 你好，世界</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>来自某个八零后</copyright>
+    <lastBuildDate>Wed, 14 Oct 2015 07:14:29 +0000</lastBuildDate>
+    
+        <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Android</title>
+      <link>/categories/android/</link>
+      <pubDate>Sat, 20 Jun 2015 08:35:16 +0000</pubDate>
+      
+      <guid>/categories/android/</guid>
+      <description></description>
+    </item><item>
+      <title>双击</title>
+      <link>/categories/%E5%8F%8C%E5%87%BB/</link>
+      <pubDate>Sat, 20 Jun 2015 08:35:16 +0000</pubDate>
+      
+      <guid>/categories/%E5%8F%8C%E5%87%BB/</guid>
+      <description></description>
+    </item><item>
+      <title>技术</title>
+      <link>/categories/%E6%8A%80%E6%9C%AF/</link>
+      <pubDate>Sat, 20 Jun 2015 08:35:16 +0000</pubDate>
+      
+      <guid>/categories/%E6%8A%80%E6%9C%AF/</guid>
+      <description></description>
+    </item><item>
+      <title>Selinux</title>
+      <link>/categories/selinux/</link>
+      <pubDate>Sat, 20 Jun 2015 06:58:44 +0000</pubDate>
+      
+      <guid>/categories/selinux/</guid>
+      <description></description>
+    </item><item>
+      <title>Sepolicy</title>
+      <link>/categories/sepolicy/</link>
+      <pubDate>Sat, 20 Jun 2015 06:58:44 +0000</pubDate>
+      
+      <guid>/categories/sepolicy/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

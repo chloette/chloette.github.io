@@ -1,0 +1,50 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts - 你好，世界</title>
+    <link>/posts/</link>
+    <description>Recent content in Posts on 你好，世界</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>来自某个八零后</copyright>
+    <lastBuildDate>Sat, 25 Jan 2020 17:51:12 +0800</lastBuildDate>
+    
+        <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Photo gallery from folder</title>
+      <link>/posts/photo-gallery-from-folder/</link>
+      <pubDate>Mon, 09 Feb 2015 07:26:01 +0000</pubDate>
+      
+      <guid>/posts/photo-gallery-from-folder/</guid>
+      <description></description>
+    </item><item>
+      <title>Android Studio export Jar</title>
+      <link>/posts/android-studio-export-jar/</link>
+      <pubDate>Wed, 04 Feb 2015 09:52:35 +0000</pubDate>
+      
+      <guid>/posts/android-studio-export-jar/</guid>
+      <description></description>
+    </item><item>
+      <title>谈谈微信和支付宝</title>
+      <link>/posts/about-weixin-and-alipay/</link>
+      <pubDate>Thu, 22 Jan 2015 09:27:46 +0000</pubDate>
+      
+      <guid>/posts/about-weixin-and-alipay/</guid>
+      <description></description>
+    </item><item>
+      <title>Ghost修改screen.css的脚本</title>
+      <link>/posts/script-to-modify-ghost-screen-css/</link>
+      <pubDate>Wed, 21 Jan 2015 12:07:06 +0000</pubDate>
+      
+      <guid>/posts/script-to-modify-ghost-screen-css/</guid>
+      <description></description>
+    </item><item>
+      <title>Android ImageFetcher</title>
+      <link>/posts/android-imagefetcher/</link>
+      <pubDate>Wed, 21 Jan 2015 06:15:21 +0000</pubDate>
+      
+      <guid>/posts/android-imagefetcher/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

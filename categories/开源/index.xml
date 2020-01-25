@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>开源 on 你好，世界</title>
+    <title>开源 - 你好，世界</title>
     <link>/categories/%E5%BC%80%E6%BA%90/</link>
     <description>Recent content in 开源 on 你好，世界</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -9,8 +8,7 @@
     <copyright>来自某个八零后</copyright>
     <lastBuildDate>Sat, 06 Sep 2014 11:25:36 +0000</lastBuildDate>
     
-	<atom:link href="/categories/%E5%BC%80%E6%BA%90/index.xml" rel="self" type="application/rss+xml" />
-    
+        <atom:link href="/categories/%E5%BC%80%E6%BA%90/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>说说前段时间闹得很凶的“手机超级病毒”</title>
@@ -18,36 +16,14 @@
       <pubDate>Sat, 06 Sep 2014 11:25:36 +0000</pubDate>
       
       <guid>/posts/shuo-shuo-qian-duan-shi-jian-nao-de-hen-xiong-de-shou-ji-chao-ji-bing-du/</guid>
-      <description>如手机超级病毒
-之前的之前有public过一份源码，在开放信息间谍的全部源码并停止服务
-那代码里面已经涵盖了对短信/通话记录/联系人的获取和上传等功能（甚至基站定位的代码都有。。。），换言之，直接拿这源码改几行代码就可以完成那个所谓的“手机超级病毒”鸟。（如果乐意，即使是生手，花一点点时间也可以发布“病毒”了！）
-这么一个low level用来忽悠忽悠抓小三的怨妇们的玩意儿，加了一个短信群发，居然被炒的如此火热。。。也许是那段时间没新闻了所以硬要拉点头条出来吧。。。
-对于那些在这件事情上说“you can you up, no can no BB”的人，我要说一声，“我有代码，你上吧。”</description>
-    </item>
-    
-    <item>
+      <description></description>
+    </item><item>
       <title>开放信息间谍的全部源码并停止服务</title>
       <link>/posts/kai-fang-xin-xi-jian-die-de-quan-bu-yuan-ma-bing-ting-zhi-fu-wu/</link>
       <pubDate>Wed, 29 May 2013 22:02:26 +0000</pubDate>
       
       <guid>/posts/kai-fang-xin-xi-jian-die-de-quan-bu-yuan-ma-bing-ting-zhi-fu-wu/</guid>
-      <description>出于很多考虑来做这件事情，最大的原因也许是：到现在为止没有因为这个项目收到一分钱。
-唉。
-好吧，开放源码了。
-邮件服务器也close了。
-之前的缓存服务器也直接drop table了。
-这个项目到此为止吧。
-下面源码不能直接编译通过，因为删除了一个加密用的文件。
-但是影响不大。
-可以从源码中学习到：
- 短信/电话记录的拦截
- GPS/基站定位
- 开机/拨号启动
- 后台服务常驻
- 与服务器的通信
-  &amp;hellip;
-下载链接：apk codes</description>
+      <description></description>
     </item>
-    
   </channel>
 </rss>

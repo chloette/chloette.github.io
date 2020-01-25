@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>NERV on 你好，世界</title>
+    <title>NERV - 你好，世界</title>
     <link>/categories/nerv/</link>
     <description>Recent content in NERV on 你好，世界</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -9,8 +8,7 @@
     <copyright>来自某个八零后</copyright>
     <lastBuildDate>Fri, 20 Feb 2015 10:29:36 +0000</lastBuildDate>
     
-	<atom:link href="/categories/nerv/index.xml" rel="self" type="application/rss+xml" />
-    
+        <atom:link href="/categories/nerv/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>God&#39;s in his heaven - All&#39;s right with the world!</title>
@@ -18,31 +16,7 @@
       <pubDate>Fri, 20 Feb 2015 10:29:36 +0000</pubDate>
       
       <guid>/posts/gods-in-his-heaven-alls-right-with-the-world/</guid>
-      <description>本文为洗地。
-本来没听过这句话，直到《EVA》；NERV总部的slogan；
-然后有Fan就直接翻译成了：神不为者，人为之；（天地不仁，视万物为刍狗）
-我觉得翻译的蛮好的（在我知道这句话的来历之前）。
-结果好巧不巧，发现有人说翻译不对，说原文是：
- The year’s at the spring,
-And day’s at the morn;
-Morning’s at seven;
-The hill-side’s dew-pearled;
-The lark’s on the wing;
-The snail’s on the thorn;
-God’s in His heaven—
-All’s right with the world!
- 原文很欢快清新的基调，所以那么翻译不对，应该如下翻译：
- 一年适逢春,
-一日正当晨，
-朝钟鸣七响，
-山山露珠润，
-云雀在翱翔，
-蜗牛荆条躺，
-上帝天堂居——
-万象皆调畅！
- 但其实原作者，甚至原全文，从wiki上来看，并不是单纯的欢快清新那么简单。
- The work caused some controversy when it was first published, due to the matter-of-fact portrayals of many of the area&amp;rsquo;s more disreputable characters – notably the adulterous Ottima – and for its frankness on sexual matters.</description>
+      <description></description>
     </item>
-    
   </channel>
 </rss>

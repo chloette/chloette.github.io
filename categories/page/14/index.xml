@@ -1,0 +1,50 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories - 你好，世界</title>
+    <link>/categories/</link>
+    <description>Recent content in Categories on 你好，世界</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>来自某个八零后</copyright>
+    <lastBuildDate>Wed, 14 Oct 2015 07:14:29 +0000</lastBuildDate>
+    
+        <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>chrome</title>
+      <link>/categories/chrome/</link>
+      <pubDate>Fri, 19 Dec 2014 14:57:26 +0000</pubDate>
+      
+      <guid>/categories/chrome/</guid>
+      <description></description>
+    </item><item>
+      <title>滑雪</title>
+      <link>/categories/%E6%BB%91%E9%9B%AA/</link>
+      <pubDate>Fri, 12 Dec 2014 11:50:10 +0000</pubDate>
+      
+      <guid>/categories/%E6%BB%91%E9%9B%AA/</guid>
+      <description></description>
+    </item><item>
+      <title>长白山</title>
+      <link>/categories/%E9%95%BF%E7%99%BD%E5%B1%B1/</link>
+      <pubDate>Fri, 12 Dec 2014 11:50:10 +0000</pubDate>
+      
+      <guid>/categories/%E9%95%BF%E7%99%BD%E5%B1%B1/</guid>
+      <description></description>
+    </item><item>
+      <title>ClassNotFound</title>
+      <link>/categories/classnotfound/</link>
+      <pubDate>Wed, 19 Nov 2014 09:07:32 +0000</pubDate>
+      
+      <guid>/categories/classnotfound/</guid>
+      <description></description>
+    </item><item>
+      <title>multi-path</title>
+      <link>/categories/multi-path/</link>
+      <pubDate>Thu, 13 Nov 2014 02:27:24 +0000</pubDate>
+      
+      <guid>/categories/multi-path/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

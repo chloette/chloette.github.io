@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>bitlocker on 你好，世界</title>
+    <title>bitlocker - 你好，世界</title>
     <link>/categories/bitlocker/</link>
     <description>Recent content in bitlocker on 你好，世界</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -9,8 +8,7 @@
     <copyright>来自某个八零后</copyright>
     <lastBuildDate>Mon, 10 Nov 2014 03:51:50 +0000</lastBuildDate>
     
-	<atom:link href="/categories/bitlocker/index.xml" rel="self" type="application/rss+xml" />
-    
+        <atom:link href="/categories/bitlocker/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>关于Bitlocker</title>
@@ -18,22 +16,7 @@
       <pubDate>Mon, 10 Nov 2014 03:51:50 +0000</pubDate>
       
       <guid>/posts/about-bitlocker-remake-u-key-disk/</guid>
-      <description>什么是Bitlocker就不赘述了，各类百科够用。
-简单说就是一种傻瓜式（相比较其他各类加密软件）的数据加密方案，一次加密，受用终生。
-不幸的是，从原理上来讲，这种加密（这里指对系统盘的加密）是必须依赖一个三方模块（一般是独立硬件）来存放密钥的（钥匙放门上，门再结实也不安全）。
-一般使用的模块叫TPM，这个模块国内的笔记本（台式机更稀缺了）是没有的（这个就要看TPM和TCM的差异了，这种涉及加密的标准，国家限制是很严格的）。
-当然，要可以用其他硬件来代替TPM，如U盘，对，就是一个普通的U盘，里面塞满片儿都无所谓的那种。
-如果有TPM，那么加密解密都很方便，设置后用密码登录系统就够了，和平时使用没什么差别（无非就是密码要强壮一些，不然门是够结实，但是锁一碰就坏掉了，那也谈不上安全）
-但如果是用U盘，那么每次开机都需要插上U盘，确保系统可以访问到U盘来获取解密密钥。稍微麻烦点，但换个角度，带TPM的机器（笔记本）一般动辄就上万（例如thinkpad的T/X/W系部分型号），普通笔记本+U盘可就便宜多了去了。
-但使用U盘有个小问题，就是U盘不能轻易格式化。
-因为密钥以一种特殊的隐藏文件形式放在U盘上，如果格式化了，这密钥就丢了。唯一的办法，就是使用recoverykey &amp;mdash; 在第一次加密的时候，会提示你保存下来，非常重要！我相信肯定有不明真相群众放在加密后的系统目录下的（钥匙落在屋里了，有木有）。
-(BTW，如果用的是win8/8.1，且使用微软账号登录的话，是可以把recoverykey直接保存在onedrive上的，相当方便。)
-那U盘格式化了以后就都要用recoverykey了么？那一长串数字真是让人呵呵呵呵啊。
-当然不是，翻看一下recoverykey的文档（不是闲的蛋疼，就是遇到了这个情况 T_T），在进入系统后，是可以重新制作一个key U盘的。
-以管理员身份运行cmd（假设目标U盘的盘符是G）：
-manage-bde.exe -protectors -add c: -rp -rk g:  运行一下～
-Tada~ （写这么久就为了show这最后一个命令也是醉了。。。）</description>
+      <description></description>
     </item>
-    
   </channel>
 </rss>

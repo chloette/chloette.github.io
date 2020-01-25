@@ -1,0 +1,50 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories - 你好，世界</title>
+    <link>/categories/</link>
+    <description>Recent content in Categories on 你好，世界</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>来自某个八零后</copyright>
+    <lastBuildDate>Wed, 14 Oct 2015 07:14:29 +0000</lastBuildDate>
+    
+        <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>高通</title>
+      <link>/categories/%E9%AB%98%E9%80%9A/</link>
+      <pubDate>Mon, 24 Mar 2014 13:45:03 +0000</pubDate>
+      
+      <guid>/categories/%E9%AB%98%E9%80%9A/</guid>
+      <description></description>
+    </item><item>
+      <title>支付宝</title>
+      <link>/categories/%E6%94%AF%E4%BB%98%E5%AE%9D/</link>
+      <pubDate>Sat, 18 Jan 2014 18:20:02 +0000</pubDate>
+      
+      <guid>/categories/%E6%94%AF%E4%BB%98%E5%AE%9D/</guid>
+      <description></description>
+    </item><item>
+      <title>btc</title>
+      <link>/categories/btc/</link>
+      <pubDate>Wed, 04 Dec 2013 23:35:18 +0000</pubDate>
+      
+      <guid>/categories/btc/</guid>
+      <description></description>
+    </item><item>
+      <title>ltc</title>
+      <link>/categories/ltc/</link>
+      <pubDate>Wed, 04 Dec 2013 23:35:18 +0000</pubDate>
+      
+      <guid>/categories/ltc/</guid>
+      <description></description>
+    </item><item>
+      <title>okcoin</title>
+      <link>/categories/okcoin/</link>
+      <pubDate>Wed, 04 Dec 2013 23:35:18 +0000</pubDate>
+      
+      <guid>/categories/okcoin/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
