@@ -7,10 +7,33 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>来自某个八零后</copyright>
-    <lastBuildDate>Wed, 28 Aug 2019 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 25 Jan 2020 17:51:12 +0800</lastBuildDate>
     
 	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>2020 艰难前行</title>
+      <link>/posts/2020/</link>
+      <pubDate>Sat, 25 Jan 2020 17:51:12 +0800</pubDate>
+      
+      <guid>/posts/2020/</guid>
+      <description>2020伊始就出了“新型冠状病毒肺炎”
+天灾+人祸，导致传染源没有有效控制，借着春运+高铁就蔓延了开来
+因为这事儿，没回家过年，也没出去滑雪「这可能是我过的最安分的年」
+大年三十的午饭和晚饭分别是KFC和麦当劳 还提前买了一大堆补给，担心形势恶化 旧的一年，临了，很不顺
+还好在最后的最后
+中央工作组入驻了
+“火神山/雷神山”临时医院同时兴建
+一线城市和军方的医疗资源被紧急调派
+各方自发的捐赠也在陆续到位
+互联网厂们也没干看着
+头条买了《囧妈》来让大家在家待着哪哪都别去 迅雷悄悄放开了下载的网速限制，看东洋小姐姐们的艺术作品更方便了
+。。。
+新的一年，愿平安喜乐，一切皆好
+而我也给自己定了个目标，一个小目标
+新的一年，再不顺，也要加油啊！</description>
+    </item>
     
     <item>
       <title>离开小米</title>
@@ -958,12 +981,14 @@ ImageFetcher就是其中之一，这货非常简洁的实现了用ImageView来�
 主体代码构成： 外部调用如下：
  New：
 ImageFetcher imageFetcher = new ImageFetcher(context, width, height);  就可以了。
-当然这里一般都会改动；
+  当然这里一般都会改动；
 例如为了区分cache目录，会把unique folder name作为参数传入进去）。
 例如为了替换默认图，把图标传进去。
 例如为了适配任何图片资源，增加自定义的ImageProvider，也在初始化的时候传进去。
- Load bitmap：   imageFetcher.loadImage(pathString, (ImageView) view.findViewById(R.id.thumbnail));   这样这个ImageView就会在图片通过异步下载好（并缓存）以后，自己加载显示出来了～
- Close cache：  imageFetcher.setPauseWork(false); imageFetcher.closeCache();  就是这么简单任性～
+ Load bitmap：
+imageFetcher.loadImage(pathString, (ImageView) view.findViewById(R.id.thumbnail));   这样这个ImageView就会在图片通过异步下载好（并缓存）以后，自己加载显示出来了～
+ Close cache：
+imageFetcher.setPauseWork(false); imageFetcher.closeCache();   就是这么简单任性～
 内部逻辑重点的几个：
  对Download下来的图片，使用DiskLruCache来本地缓存，使用LruCache作为内存缓存；
  使用AsyncTask（WeakReference）来异步download图片；结束后对ImageView（WeakReference）进行setImageDrawable（AsyncDrawable）；这里的AsyncDrawable内部有正在处理自身的AsyncTask的WeakReference，所以可以避免重复execute的情况；每次都会先cancel之前的。
@@ -1006,11 +1031,14 @@ Android Studio的配置略有差异，可以参考前文
 解决办法就是修改proguard的配置文件，将这些敏感class置为例外。
 常用方法如下：
  排除指定类A
--keepclassmembers class com.xxx.xxx.A { *; }   将类A的子类全部排除 language-bash -keepclassmembers class * extends com.xxx.xxx.A { *; }   将包P内的class全部排除
--keep public class com.xxx.P.* { *; }   将包P内的class及subclass全部排除 language-bash -keep public class com.xxx.P.** { *; }     注意*和**的差别；
+-keepclassmembers class com.xxx.xxx.A { *; }  将类A的子类全部排除
+-keepclassmembers class * extends com.xxx.xxx.A { *; }  将包P内的class全部排除
+-keep public class com.xxx.P.* { *; }  将包P内的class及subclass全部排除
+-keep public class com.xxx.P.** { *; }   注意*和**的差别；
 注意最后的{ *; }，用法很多，可以指定仅排除public/protected，如：
 { public protected *;}  当然还可以直接更直接一些：
-{ &amp;lt;fields&amp;gt;; &amp;lt;methods&amp;gt;; }  如果是使用Gson的话，还可以直接如下使用方式来避免混淆问题：</description>
+{ &amp;lt;fields&amp;gt;; &amp;lt;methods&amp;gt;; }  如果是使用Gson的话，还可以直接如下使用方式来避免混淆问题：
+@SerializedName(&amp;quot;data&amp;quot;) ArrayList&amp;lt;Object&amp;gt; data;  另外可以通过</description>
     </item>
     
     <item>
@@ -1069,9 +1097,11 @@ Java中，字符串比较用==和equals的区别就不用解释了吧。。。
 RelativeLayout中，为了方便布局，子view经常会用到alignParentBottom/Top/Left/Right等，如：
 android:layout_alignParentBottom=&amp;quot;true&amp;quot;  但这时候需要注意的是，如果parent是wrap_content的话，alignParentRight就意味着要求parent的layout_width=&amp;quot;match_parent&amp;quot;； alignParentBottom就意味着要求parent的layout_height=&amp;quot;match_parent&amp;quot;
 这会带来什么问题那？两个问题：
- 显示错误。在布局嵌套的环境下，例如布局A包含B和C，在A里面，B above C：（伪布局代码）  RelativeLayout width=match_parent height=match_parent id=&amp;quot;A&amp;quot; XXLayout width=match_parent height=wrap_content above=&amp;quot;C&amp;quot; id=&amp;quot;B&amp;quot; RelativeLayout width=match_parent height=wrap_content id=&amp;quot;C&amp;quot; XXView width=match_parent height=wrap_content android:layout_alignParentBottom=&amp;quot;true&amp;quot; src=xxx  本意是希望在布局A里面，B可以在C上面显示，C里面显示xxx；
+ 显示错误。在布局嵌套的环境下，例如布局A包含B和C，在A里面，B above C：（伪布局代码）
+RelativeLayout width=match_parent height=match_parent id=&amp;quot;A&amp;quot; XXLayout width=match_parent height=wrap_content above=&amp;quot;C&amp;quot; id=&amp;quot;B&amp;quot; RelativeLayout width=match_parent height=wrap_content id=&amp;quot;C&amp;quot; XXView width=match_parent height=wrap_content android:layout_alignParentBottom=&amp;quot;true&amp;quot; src=xxx   本意是希望在布局A里面，B可以在C上面显示，C里面显示xxx；
 但是结果是：C会撑满A，然后导致B不可见。
-改法很简单，去掉 language-bash android:layout_alignParentBottom=&amp;quot;true&amp;quot; 即可。
+改法很简单，去掉
+android:layout_alignParentBottom=&amp;quot;true&amp;quot;  即可。
 实际原因我没有去翻源码，不确定；但是猜测和Android的绘制/计算布局的方向有关，Android默认是从屏幕左上角向右下角绘制（在写自定义view，重载onDraw，或者坐标计算的时候需要依赖这种“特性”），所以在这种情况下，alignBottom或alignRight后，“画布”就自然而然被顶到下边和右边去了。
  性能。对，就是性能；撑满屏幕意味着这个view（例如上面的C）的刷新，不只是局部刷新，而是整屏刷新（即使XXView可能只是一个bottom bar这种非全屏的view），所以不管是耗电量还是性能，都会受到一定的影响。  综上，在设计layout的时候，需要注意方向带来的影响，同时注意不同属性之间可能导致的“冲突”。
 记录一下。</description>
@@ -1255,7 +1285,16 @@ UTF-8就是为了存储和传输方便，缩小版的UTF-16。
 没错，CSDN，社工事业先驱者。
 接下来的事情就比较有趣了，例如翻翻找找本地的妹纸啊，然后以*“同学你账号泄露了”*为名去勾搭吧～
 随手查一下，*被泄露的成都本地90后妹纸*（正则：
-510\d{3}199\d{7}[02468](?=\d{1}|[xX]) ```）有51个（就不截图了，你懂的～） 哈哈哈～ --- 【2014/12/26更新】 [12306网站泄密事件进展：2名犯罪嫌疑人已被抓](http://tech.sina.com.cn/i/2014-12-26/doc-icczmvun4410202.shtml) 呵呵，咱们开头说啥来着。 --- 【2015/1/7更新】 nodepad++确实神器，可惜ubuntu上用起来太麻烦。 直接上grep好啦，命令稍微改改（`\d`这种无法识别，用[0-9]代替） 例如搜索90后妹纸： ```language-bash grep -cE &#39;[0-9]{6}199[0-9]{7}[02468]([0-9]{1}|[xX])&#39; 12306.txt  结果只有1927个，但是notepad++上报出来是1928个。
+510\d{3}199\d{7}[02468](?=\d{1}|[xX])  ）有51个（就不截图了，你懂的～）
+哈哈哈～
+【2014/12/26更新】
+12306网站泄密事件进展：2名犯罪嫌疑人已被抓
+呵呵，咱们开头说啥来着。
+【2015/1/7更新】
+nodepad++确实神器，可惜ubuntu上用起来太麻烦。
+直接上grep好啦，命令稍微改改（\d这种无法识别，用[0-9]代替）
+例如搜索90后妹纸：
+grep -cE &#39;[0-9]{6}199[0-9]{7}[02468]([0-9]{1}|[xX])&#39; 12306.txt  结果只有1927个，但是notepad++上报出来是1928个。
 很奇怪，还特意祭出Beyond Compare来比较结果，发现原来notepad++重复统计了某一行（那一行的同学，用身份证做账号。。。）
 问题解决～</description>
     </item>
@@ -1296,7 +1335,7 @@ FFmpeg的官方文档算是比较全的。 一些常见case的testbed都可以�
 同时官方的例子并非浅显易懂，但是因为层次简单，所以调用逻辑很清楚；参考着这些文档/Sample就可以按需设计一个简化版Adapter了。
 ####FFmpeg基本调用逻辑 还记得Decode/Encode和Muxer/Demuxer吧，如果还记得那就很好理解了。下面截选了部分代码（不要在意细节），有一些重要关键但非流程相关的步骤这里先省略（例如FIFO等），下文再提。
 #####Encoding（Based on 2.x） - Register all codec //应该是plugin的机制
-av_register_all(); avcodec_register_all();   Find encoder -&amp;gt; create stream -&amp;gt; open encoder  /* find the audio encoder */ p_audio_codec = avcodec_find_encoder(m_p_fmt_ctx-&amp;gt;oformat-&amp;gt;audio_codec); if (!</description>
+av_register_all(); avcodec_register_all();   Find encoder -&amp;gt; create stream -&amp;gt; open encoder</description>
     </item>
     
     <item>
@@ -1371,7 +1410,8 @@ android { dexOptions { jumboMode true } }  </description>
 结果就是无法正常使用账户同步功能（不能多设备同步我还用你干嘛！？！）
 翻了翻资料，看了看log，发现这种时候新启动的chrome尝试去打开一个已经lock住的数据库（这不科学），然后就报错了。
 继续翻，貌似每次第一次启动的chrome没有正常关闭，依然占用数据库（单例真的好么）。结果就是后面再启动的chrome尝试open，然后失败。
-官方解决方法目前未找到。。。土方法就是 language-bash ps -A | grep &#39;chrome&#39;  然后kill吧。
+官方解决方法目前未找到。。。土方法就是
+ps -A | grep &#39;chrome&#39;  然后kill吧。
 Chrome现在也略不靠谱啊。T_T</description>
     </item>
     
@@ -1896,7 +1936,8 @@ FFmpeg是多媒体框架的领军人物，允许解码、编码、转码、Mux�
 结果启动Ghost就报sql corruption 500的错误。。。（这么“写”数据，基本的MD5校验都过不了啊）
 真是一失足成千古恨啊。折腾了蛮久才发现是这个问题。 T_T
 附上修改后的脚本，运行
-sudo ./upgrade_ghost.sh TARGET_DIR_PATH ```即可： ```language-bash #stop all echo &#39;1. stop all -----------------&#39; forever stopall #download latest build echo &#39;2. download latest package -------------------&#39; rm ghost-latest.zip wget http://ghost.org/zip/ghost-latest.zip #rm core echo &#39;3. delete core dir ---------------&#39; rm -rf $1/core #unzip echo &#39;4. unzip and merge code ----------------&#39; unzip -uo ghost-latest.zip -d $1/ #install rm ghost-latest.zip cd $1/ echo &#39;5.</description>
+sudo ./upgrade_ghost.sh TARGET_DIR_PATH  即可：
+#stop all echo &#39;1. stop all -----------------&#39; forever stopall #download latest build echo &#39;2. download latest package -------------------&#39; rm ghost-latest.zip wget http://ghost.org/zip/ghost-latest.zip #rm core echo &#39;3. delete core dir ---------------&#39; rm -rf $1/core #unzip echo &#39;4. unzip and merge code ----------------&#39; unzip -uo ghost-latest.zip -d $1/ #install rm ghost-latest.zip cd $1/ echo &#39;5.</description>
     </item>
     
     <item>
@@ -1999,13 +2040,15 @@ http://java.dzone.com/articles/automating-continuous https://wiki.jenkins-ci.org
  native库（.so）问题 如果出现库无法链接，或者没有打包到apk中的情况；请确认是否是target版本不对，目前android-20是存在一些问题的（例如安装后不能运行等。。。），暂不建议使用（2014/9/11）
  环境变量问题
 如出现环境变量找不到，可以直接加在Ant的Properties里面，如：
-sdk.dir=/xxx/xxx/xxx/sdk   签名问题   把key找个位置放好，然后在Ant的Properties里面加入：
+sdk.dir=/xxx/xxx/xxx/sdk  签名问题
+把key找个位置放好，然后在Ant的Properties里面加入：
 key.store=/xxx/xxx/xxx.key key.alias=xxx key.store.password=xxx key.alias.password=xxx  提示空间不足
 多次编译后如空间不足，最好将JENKINS_HOME（主要是改这个环境变量）迁移到其他盘（默认是/var/lib/jenkins）; 如果遇到了503的话，一般是权限不对，把新目录的owner改为jenkins:jenkins，权限改为755即可。
  多文件打包
 不支持多个文件同时输出（除非有name上的关联，如**/*.apk这种），这里可以用shell命令来打包；如tar；这里可以使用全局变量方便命名，如$JOB_NAME或者$WORKSPACE等等，举个栗子：
 cd $WORKSPACE/code/XXX/bin/ tar zcvf $JOB_NAME.tar.gz proguard/mapping.txt xxx.apk  最后Archive the artifaces填**/*.tar.gz就好了
- 如何删除SVN的登录信息   登录服务器（界面上没找到修改的地方），Edit your HUDSON_HOME/hudson.scm.SubversionSCM.xml file and delete your /credentials/entry matching with your realm (and having your given username).</description>
+ 如何删除SVN的登录信息
+登录服务器（界面上没找到修改的地方），Edit your HUDSON_HOME/hudson.scm.SubversionSCM.xml file and delete your /credentials/entry matching with your realm (and having your given username).</description>
     </item>
     
     <item>

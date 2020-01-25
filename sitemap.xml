@@ -3,15 +3,18 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/posts/2020/</loc>
+    <lastmod>2020-01-25T17:51:12+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/posts/</loc>
-    <lastmod>2019-08-28T12:00:00+08:00</lastmod>
-    <priority>0</priority>
+    <lastmod>2020-01-25T17:51:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>/</loc>
-    <lastmod>2019-08-28T12:00:00+08:00</lastmod>
-    <priority>0</priority>
+    <lastmod>2020-01-25T17:51:12+08:00</lastmod>
   </url>
   
   <url>
@@ -67,25 +70,31 @@
   <url>
     <loc>/categories/</loc>
     <lastmod>2015-10-14T07:14:29+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/forget-password/</loc>
+    <lastmod>2015-10-14T07:14:29+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/forget-password/</loc>
+    <lastmod>2015-10-14T07:14:29+00:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/</loc>
     <lastmod>2015-10-14T07:14:29+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/ubuntu/</loc>
     <lastmod>2015-10-14T07:14:29+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/ubuntu/</loc>
     <lastmod>2015-10-14T07:14:29+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -94,51 +103,33 @@
   </url>
   
   <url>
-    <loc>/tags/forget-password/</loc>
-    <lastmod>2015-10-14T07:14:29+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/forget-password/</loc>
-    <lastmod>2015-10-14T07:14:29+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/tags/%E5%BF%98%E8%AE%B0%E5%AF%86%E7%A0%81/</loc>
     <lastmod>2015-10-14T07:14:29+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/%E5%BF%98%E8%AE%B0%E5%AF%86%E7%A0%81/</loc>
     <lastmod>2015-10-14T07:14:29+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/%E6%9D%8E%E5%88%9A/</loc>
     <lastmod>2015-10-10T07:22:28+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/%E6%9D%8E%E5%88%9A/</loc>
     <lastmod>2015-10-10T07:22:28+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/%E7%BD%91%E7%BB%9C%E6%9A%B4%E5%8A%9B/</loc>
-    <lastmod>2015-10-10T07:22:28+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/%E7%BD%91%E7%BB%9C%E6%9A%B4%E5%8A%9B/</loc>
     <lastmod>2015-10-10T07:22:28+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/%E7%BD%91%E7%BB%9C%E6%9A%B4%E5%8A%9B/</loc>
+    <lastmod>2015-10-10T07:22:28+00:00</lastmod>
   </url>
   
   <url>
@@ -154,13 +145,11 @@
   <url>
     <loc>/tags/android/</loc>
     <lastmod>2015-06-20T08:35:16+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/android/</loc>
     <lastmod>2015-06-20T08:35:16+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -169,51 +158,43 @@
   </url>
   
   <url>
-    <loc>/tags/%E5%8F%8C%E5%87%BB/</loc>
-    <lastmod>2015-06-20T08:35:16+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/categories/%E5%8F%8C%E5%87%BB/</loc>
     <lastmod>2015-06-20T08:35:16+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/%E6%8A%80%E6%9C%AF/</loc>
+    <loc>/tags/%E5%8F%8C%E5%87%BB/</loc>
     <lastmod>2015-06-20T08:35:16+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/%E6%8A%80%E6%9C%AF/</loc>
     <lastmod>2015-06-20T08:35:16+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/selinux/</loc>
-    <lastmod>2015-06-20T06:58:44+00:00</lastmod>
-    <priority>0</priority>
+    <loc>/tags/%E6%8A%80%E6%9C%AF/</loc>
+    <lastmod>2015-06-20T08:35:16+00:00</lastmod>
   </url>
   
   <url>
     <loc>/categories/selinux/</loc>
     <lastmod>2015-06-20T06:58:44+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/selinux/</loc>
+    <lastmod>2015-06-20T06:58:44+00:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/sepolicy/</loc>
     <lastmod>2015-06-20T06:58:44+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/sepolicy/</loc>
     <lastmod>2015-06-20T06:58:44+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -224,25 +205,21 @@
   <url>
     <loc>/tags/camera/</loc>
     <lastmod>2015-05-03T14:23:04+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/camera/</loc>
     <lastmod>2015-05-03T14:23:04+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/sensor/</loc>
-    <lastmod>2015-05-03T14:23:04+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/sensor/</loc>
     <lastmod>2015-05-03T14:23:04+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/sensor/</loc>
+    <lastmod>2015-05-03T14:23:04+00:00</lastmod>
   </url>
   
   <url>
@@ -253,13 +230,11 @@
   <url>
     <loc>/tags/%E6%88%90%E5%83%8F/</loc>
     <lastmod>2015-05-03T14:23:04+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/%E6%88%90%E5%83%8F/</loc>
     <lastmod>2015-05-03T14:23:04+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -270,13 +245,11 @@
   <url>
     <loc>/tags/%E8%AE%B0%E5%BD%95/</loc>
     <lastmod>2015-04-26T09:26:35+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/%E8%AE%B0%E5%BD%95/</loc>
     <lastmod>2015-04-26T09:26:35+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -290,15 +263,23 @@
   </url>
   
   <url>
-    <loc>/tags/hal/</loc>
+    <loc>/categories/hal/</loc>
     <lastmod>2015-04-11T07:15:21+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/hal/</loc>
+    <loc>/tags/hal/</loc>
     <lastmod>2015-04-11T07:15:21+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/monkeyrunner/</loc>
+    <lastmod>2015-04-05T10:54:28+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/monkeyrunner/</loc>
+    <lastmod>2015-04-05T10:54:28+00:00</lastmod>
   </url>
   
   <url>
@@ -307,27 +288,13 @@
   </url>
   
   <url>
-    <loc>/tags/monkeyrunner/</loc>
-    <lastmod>2015-04-05T10:54:28+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/monkeyrunner/</loc>
-    <lastmod>2015-04-05T10:54:28+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/tags/%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/</loc>
     <lastmod>2015-04-05T10:54:28+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/</loc>
     <lastmod>2015-04-05T10:54:28+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -348,25 +315,21 @@
   <url>
     <loc>/tags/windows/</loc>
     <lastmod>2015-03-18T06:26:36+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/windows/</loc>
     <lastmod>2015-03-18T06:26:36+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/%E5%85%8D%E8%B4%B9/</loc>
     <lastmod>2015-03-18T06:26:36+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/%E5%85%8D%E8%B4%B9/</loc>
     <lastmod>2015-03-18T06:26:36+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -382,49 +345,41 @@
   <url>
     <loc>/tags/%E6%89%93%E5%B7%A5%E6%97%85%E8%A1%8C/</loc>
     <lastmod>2015-03-09T12:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/%E6%89%93%E5%B7%A5%E6%97%85%E8%A1%8C/</loc>
     <lastmod>2015-03-09T12:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/%E6%96%B0%E8%A5%BF%E5%85%B0/</loc>
-    <lastmod>2015-03-09T12:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/%E6%96%B0%E8%A5%BF%E5%85%B0/</loc>
     <lastmod>2015-03-09T12:00:00+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/%E6%96%B0%E8%A5%BF%E5%85%B0/</loc>
+    <lastmod>2015-03-09T12:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/%E7%94%9F%E6%B4%BB/</loc>
     <lastmod>2015-03-09T12:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/%E7%94%9F%E6%B4%BB/</loc>
     <lastmod>2015-03-09T12:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/internet/</loc>
     <lastmod>2015-03-07T10:58:42+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/internet/</loc>
     <lastmod>2015-03-07T10:58:42+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -435,30 +390,26 @@
   <url>
     <loc>/tags/%E5%8D%8F%E8%AE%AE%E6%A0%88/</loc>
     <lastmod>2015-03-07T10:58:42+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/%E5%8D%8F%E8%AE%AE%E6%A0%88/</loc>
     <lastmod>2015-03-07T10:58:42+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/posts/my-ghost-upgrade-script/</loc>
+    <loc>/categories/ghost/</loc>
     <lastmod>2015-03-06T05:09:09+00:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/ghost/</loc>
     <lastmod>2015-03-06T05:09:09+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/ghost/</loc>
+    <loc>/posts/my-ghost-upgrade-script/</loc>
     <lastmod>2015-03-06T05:09:09+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -469,13 +420,11 @@
   <url>
     <loc>/tags/highlight-syntax/</loc>
     <lastmod>2015-03-04T03:15:57+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/highlight-syntax/</loc>
     <lastmod>2015-03-04T03:15:57+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -484,27 +433,23 @@
   </url>
   
   <url>
-    <loc>/tags/qq/</loc>
-    <lastmod>2015-03-03T06:39:21+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/categories/qq/</loc>
     <lastmod>2015-03-03T06:39:21+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/ted/</loc>
-    <lastmod>2015-03-03T05:35:47+00:00</lastmod>
-    <priority>0</priority>
+    <loc>/tags/qq/</loc>
+    <lastmod>2015-03-03T06:39:21+00:00</lastmod>
   </url>
   
   <url>
     <loc>/categories/ted/</loc>
     <lastmod>2015-03-03T05:35:47+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/ted/</loc>
+    <lastmod>2015-03-03T05:35:47+00:00</lastmod>
   </url>
   
   <url>
@@ -523,27 +468,23 @@
   </url>
   
   <url>
-    <loc>/tags/%E5%9B%9A%E5%BE%92%E5%81%A5%E8%BA%AB/</loc>
-    <lastmod>2015-02-28T06:54:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/categories/%E5%9B%9A%E5%BE%92%E5%81%A5%E8%BA%AB/</loc>
     <lastmod>2015-02-28T06:54:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/eva/</loc>
-    <lastmod>2015-02-20T10:29:36+00:00</lastmod>
-    <priority>0</priority>
+    <loc>/tags/%E5%9B%9A%E5%BE%92%E5%81%A5%E8%BA%AB/</loc>
+    <lastmod>2015-02-28T06:54:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/categories/eva/</loc>
     <lastmod>2015-02-20T10:29:36+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/eva/</loc>
+    <lastmod>2015-02-20T10:29:36+00:00</lastmod>
   </url>
   
   <url>
@@ -552,27 +493,23 @@
   </url>
   
   <url>
-    <loc>/tags/nerv/</loc>
-    <lastmod>2015-02-20T10:29:36+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/categories/nerv/</loc>
     <lastmod>2015-02-20T10:29:36+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/gta/</loc>
-    <lastmod>2015-02-20T09:17:39+00:00</lastmod>
-    <priority>0</priority>
+    <loc>/tags/nerv/</loc>
+    <lastmod>2015-02-20T10:29:36+00:00</lastmod>
   </url>
   
   <url>
     <loc>/categories/gta/</loc>
     <lastmod>2015-02-20T09:17:39+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/gta/</loc>
+    <lastmod>2015-02-20T09:17:39+00:00</lastmod>
   </url>
   
   <url>
@@ -586,15 +523,13 @@
   </url>
   
   <url>
-    <loc>/tags/%E7%BE%8E%E4%BA%9A/</loc>
+    <loc>/categories/%E7%BE%8E%E4%BA%9A/</loc>
     <lastmod>2015-02-12T10:08:36+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/%E7%BE%8E%E4%BA%9A/</loc>
+    <loc>/tags/%E7%BE%8E%E4%BA%9A/</loc>
     <lastmod>2015-02-12T10:08:36+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -608,15 +543,13 @@
   </url>
   
   <url>
-    <loc>/tags/load-library/</loc>
+    <loc>/categories/load-library/</loc>
     <lastmod>2015-02-12T04:27:27+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/load-library/</loc>
+    <loc>/tags/load-library/</loc>
     <lastmod>2015-02-12T04:27:27+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -627,13 +560,11 @@
   <url>
     <loc>/tags/apk-expansion/</loc>
     <lastmod>2015-02-11T07:17:39+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/apk-expansion/</loc>
     <lastmod>2015-02-11T07:17:39+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -642,15 +573,13 @@
   </url>
   
   <url>
-    <loc>/tags/zsh/</loc>
+    <loc>/categories/zsh/</loc>
     <lastmod>2015-02-10T07:12:29+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/zsh/</loc>
+    <loc>/tags/zsh/</loc>
     <lastmod>2015-02-10T07:12:29+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -659,27 +588,23 @@
   </url>
   
   <url>
-    <loc>/tags/%E5%B7%A5%E5%85%B7/</loc>
-    <lastmod>2015-02-10T07:12:29+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/categories/%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2015-02-10T07:12:29+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/os/</loc>
-    <lastmod>2015-02-09T10:37:17+00:00</lastmod>
-    <priority>0</priority>
+    <loc>/tags/%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2015-02-10T07:12:29+00:00</lastmod>
   </url>
   
   <url>
     <loc>/categories/os/</loc>
     <lastmod>2015-02-09T10:37:17+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/os/</loc>
+    <lastmod>2015-02-09T10:37:17+00:00</lastmod>
   </url>
   
   <url>
@@ -688,27 +613,23 @@
   </url>
   
   <url>
-    <loc>/tags/%E4%BD%93%E9%AA%8C/</loc>
-    <lastmod>2015-02-09T10:37:17+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/categories/%E4%BD%93%E9%AA%8C/</loc>
     <lastmod>2015-02-09T10:37:17+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/gallery/</loc>
-    <lastmod>2015-02-09T07:26:01+00:00</lastmod>
-    <priority>0</priority>
+    <loc>/tags/%E4%BD%93%E9%AA%8C/</loc>
+    <lastmod>2015-02-09T10:37:17+00:00</lastmod>
   </url>
   
   <url>
     <loc>/categories/gallery/</loc>
     <lastmod>2015-02-09T07:26:01+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/gallery/</loc>
+    <lastmod>2015-02-09T07:26:01+00:00</lastmod>
   </url>
   
   <url>
@@ -724,13 +645,11 @@
   <url>
     <loc>/tags/%E5%BE%AE%E4%BF%A1/</loc>
     <lastmod>2015-01-22T09:27:46+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/%E5%BE%AE%E4%BF%A1/</loc>
     <lastmod>2015-01-22T09:27:46+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -746,25 +665,21 @@
   <url>
     <loc>/tags/python/</loc>
     <lastmod>2015-01-21T12:07:06+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/python/</loc>
     <lastmod>2015-01-21T12:07:06+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/script/</loc>
-    <lastmod>2015-01-21T12:07:06+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/script/</loc>
     <lastmod>2015-01-21T12:07:06+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/script/</loc>
+    <lastmod>2015-01-21T12:07:06+00:00</lastmod>
   </url>
   
   <url>
@@ -775,25 +690,21 @@
   <url>
     <loc>/tags/imagefetcher/</loc>
     <lastmod>2015-01-21T06:15:21+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/imagefetcher/</loc>
     <lastmod>2015-01-21T06:15:21+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/ec2/</loc>
     <lastmod>2015-01-20T06:54:26+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/ec2/</loc>
     <lastmod>2015-01-20T06:54:26+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -802,56 +713,48 @@
   </url>
   
   <url>
-    <loc>/posts/proguard-obfuscation/</loc>
-    <lastmod>2015-01-17T08:01:38+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tags/proguard/</loc>
     <lastmod>2015-01-17T08:01:38+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/proguard/</loc>
     <lastmod>2015-01-17T08:01:38+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/posts/proguard-obfuscation/</loc>
+    <lastmod>2015-01-17T08:01:38+00:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/%E6%B7%B7%E6%B7%86/</loc>
     <lastmod>2015-01-17T08:01:38+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/%E6%B7%B7%E6%B7%86/</loc>
     <lastmod>2015-01-17T08:01:38+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/gradle/</loc>
-    <lastmod>2015-01-15T13:17:06+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/gradle/</loc>
     <lastmod>2015-01-15T13:17:06+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/gradle/</loc>
+    <lastmod>2015-01-15T13:17:06+00:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/jenkins/</loc>
     <lastmod>2015-01-15T13:17:06+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/jenkins/</loc>
     <lastmod>2015-01-15T13:17:06+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -867,13 +770,11 @@
   <url>
     <loc>/tags/sparsearray/</loc>
     <lastmod>2015-01-13T12:55:43+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/sparsearray/</loc>
     <lastmod>2015-01-13T12:55:43+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -884,25 +785,21 @@
   <url>
     <loc>/tags/relativelayout/</loc>
     <lastmod>2015-01-12T08:25:33+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/relativelayout/</loc>
     <lastmod>2015-01-12T08:25:33+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/view/</loc>
-    <lastmod>2015-01-12T08:25:33+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/view/</loc>
     <lastmod>2015-01-12T08:25:33+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/view/</loc>
+    <lastmod>2015-01-12T08:25:33+00:00</lastmod>
   </url>
   
   <url>
@@ -921,27 +818,23 @@
   </url>
   
   <url>
-    <loc>/tags/%E5%9B%BE%E7%89%87/</loc>
-    <lastmod>2015-01-06T03:26:26+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/categories/%E5%9B%BE%E7%89%87/</loc>
     <lastmod>2015-01-06T03:26:26+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/%E5%AE%BD%E9%AB%98/</loc>
+    <loc>/tags/%E5%9B%BE%E7%89%87/</loc>
     <lastmod>2015-01-06T03:26:26+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/%E5%AE%BD%E9%AB%98/</loc>
     <lastmod>2015-01-06T03:26:26+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/%E5%AE%BD%E9%AB%98/</loc>
+    <lastmod>2015-01-06T03:26:26+00:00</lastmod>
   </url>
   
   <url>
@@ -950,15 +843,13 @@
   </url>
   
   <url>
-    <loc>/tags/charset/</loc>
+    <loc>/categories/charset/</loc>
     <lastmod>2014-12-31T13:10:19+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/charset/</loc>
+    <loc>/tags/charset/</loc>
     <lastmod>2014-12-31T13:10:19+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -969,37 +860,31 @@
   <url>
     <loc>/tags/%E7%BC%96%E7%A0%81/</loc>
     <lastmod>2014-12-31T13:10:19+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/%E7%BC%96%E7%A0%81/</loc>
     <lastmod>2014-12-31T13:10:19+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/%E8%BD%AC%E6%8D%A2/</loc>
     <lastmod>2014-12-31T13:10:19+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/%E8%BD%AC%E6%8D%A2/</loc>
     <lastmod>2014-12-31T13:10:19+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1/</loc>
-    <lastmod>2014-12-26T12:34:27+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/%E4%BA%91%E6%9C%8D%E5%8A%A1/</loc>
     <lastmod>2014-12-26T12:34:27+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1/</loc>
+    <lastmod>2014-12-26T12:34:27+00:00</lastmod>
   </url>
   
   <url>
@@ -1010,25 +895,21 @@
   <url>
     <loc>/tags/12306/</loc>
     <lastmod>2014-12-25T09:51:13+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/12306/</loc>
     <lastmod>2014-12-25T09:51:13+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/%E6%AD%A3%E5%88%99/</loc>
-    <lastmod>2014-12-25T09:51:13+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/%E6%AD%A3%E5%88%99/</loc>
     <lastmod>2014-12-25T09:51:13+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/%E6%AD%A3%E5%88%99/</loc>
+    <lastmod>2014-12-25T09:51:13+00:00</lastmod>
   </url>
   
   <url>
@@ -1042,15 +923,13 @@
   </url>
   
   <url>
-    <loc>/tags/ffmpeg/</loc>
+    <loc>/categories/ffmpeg/</loc>
     <lastmod>2014-12-24T09:11:09+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/ffmpeg/</loc>
+    <loc>/tags/ffmpeg/</loc>
     <lastmod>2014-12-24T09:11:09+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1066,25 +945,21 @@
   <url>
     <loc>/tags/%E5%80%BC%E5%BE%97%E8%8A%B1%E9%92%B1/</loc>
     <lastmod>2014-12-23T13:21:48+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/%E5%80%BC%E5%BE%97%E8%8A%B1%E9%92%B1/</loc>
     <lastmod>2014-12-23T13:21:48+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/%E8%87%AA%E7%94%A8%E6%8E%A8%E8%8D%90/</loc>
-    <lastmod>2014-12-23T13:21:48+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/%E8%87%AA%E7%94%A8%E6%8E%A8%E8%8D%90/</loc>
     <lastmod>2014-12-23T13:21:48+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/%E8%87%AA%E7%94%A8%E6%8E%A8%E8%8D%90/</loc>
+    <lastmod>2014-12-23T13:21:48+00:00</lastmod>
   </url>
   
   <url>
@@ -1093,27 +968,23 @@
   </url>
   
   <url>
-    <loc>/tags/tips/</loc>
+    <loc>/categories/tips/</loc>
     <lastmod>2014-12-23T09:24:48+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/tips/</loc>
+    <loc>/tags/tips/</loc>
     <lastmod>2014-12-23T09:24:48+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/d/</loc>
     <lastmod>2014-12-23T05:47:39+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/d/</loc>
     <lastmod>2014-12-23T05:47:39+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1132,20 +1003,18 @@
   </url>
   
   <url>
-    <loc>/posts/chrome-cannot-open-profile-correctly/</loc>
+    <loc>/categories/chrome/</loc>
     <lastmod>2014-12-19T14:57:26+00:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/chrome/</loc>
     <lastmod>2014-12-19T14:57:26+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/chrome/</loc>
+    <loc>/posts/chrome-cannot-open-profile-correctly/</loc>
     <lastmod>2014-12-19T14:57:26+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1161,25 +1030,21 @@
   <url>
     <loc>/tags/%E6%BB%91%E9%9B%AA/</loc>
     <lastmod>2014-12-12T11:50:10+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/%E6%BB%91%E9%9B%AA/</loc>
     <lastmod>2014-12-12T11:50:10+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/%E9%95%BF%E7%99%BD%E5%B1%B1/</loc>
     <lastmod>2014-12-12T11:50:10+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/%E9%95%BF%E7%99%BD%E5%B1%B1/</loc>
     <lastmod>2014-12-12T11:50:10+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1205,13 +1070,11 @@
   <url>
     <loc>/tags/classnotfound/</loc>
     <lastmod>2014-11-19T09:07:32+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/classnotfound/</loc>
     <lastmod>2014-11-19T09:07:32+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1225,27 +1088,23 @@
   </url>
   
   <url>
-    <loc>/tags/multi-path/</loc>
-    <lastmod>2014-11-13T02:27:24+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/categories/multi-path/</loc>
     <lastmod>2014-11-13T02:27:24+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/ebola/</loc>
-    <lastmod>2014-11-12T02:40:06+00:00</lastmod>
-    <priority>0</priority>
+    <loc>/tags/multi-path/</loc>
+    <lastmod>2014-11-13T02:27:24+00:00</lastmod>
   </url>
   
   <url>
     <loc>/categories/ebola/</loc>
     <lastmod>2014-11-12T02:40:06+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/ebola/</loc>
+    <lastmod>2014-11-12T02:40:06+00:00</lastmod>
   </url>
   
   <url>
@@ -1256,25 +1115,21 @@
   <url>
     <loc>/tags/bitlocker/</loc>
     <lastmod>2014-11-10T03:51:50+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/bitlocker/</loc>
     <lastmod>2014-11-10T03:51:50+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/%E4%BF%AE%E5%A4%8Dkey/</loc>
-    <lastmod>2014-11-10T03:51:50+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/%E4%BF%AE%E5%A4%8Dkey/</loc>
     <lastmod>2014-11-10T03:51:50+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/%E4%BF%AE%E5%A4%8Dkey/</loc>
+    <lastmod>2014-11-10T03:51:50+00:00</lastmod>
   </url>
   
   <url>
@@ -1283,15 +1138,23 @@
   </url>
   
   <url>
-    <loc>/tags/%E5%AE%89%E5%85%A8/</loc>
+    <loc>/categories/%E5%AE%89%E5%85%A8/</loc>
     <lastmod>2014-11-10T03:51:50+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/%E5%AE%89%E5%85%A8/</loc>
+    <loc>/tags/%E5%AE%89%E5%85%A8/</loc>
     <lastmod>2014-11-10T03:51:50+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/android-studio/</loc>
+    <lastmod>2014-11-07T06:37:01+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/android-studio/</loc>
+    <lastmod>2014-11-07T06:37:01+00:00</lastmod>
   </url>
   
   <url>
@@ -1300,27 +1163,13 @@
   </url>
   
   <url>
-    <loc>/tags/android-studio/</loc>
-    <lastmod>2014-11-07T06:37:01+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/android-studio/</loc>
-    <lastmod>2014-11-07T06:37:01+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/tags/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</loc>
     <lastmod>2014-11-07T06:37:01+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</loc>
     <lastmod>2014-11-07T06:37:01+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1329,27 +1178,23 @@
   </url>
   
   <url>
-    <loc>/tags/%E5%8A%A8%E6%80%81%E5%8A%A0%E8%BD%BD%E8%B5%84%E6%BA%90/</loc>
+    <loc>/categories/%E5%8A%A8%E6%80%81%E5%8A%A0%E8%BD%BD%E8%B5%84%E6%BA%90/</loc>
     <lastmod>2014-11-07T03:15:58+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/%E5%8A%A8%E6%80%81%E5%8A%A0%E8%BD%BD%E8%B5%84%E6%BA%90/</loc>
+    <loc>/tags/%E5%8A%A8%E6%80%81%E5%8A%A0%E8%BD%BD%E8%B5%84%E6%BA%90/</loc>
     <lastmod>2014-11-07T03:15:58+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/%E5%BF%AB%E4%BB%B6/</loc>
     <lastmod>2014-11-06T08:22:09+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/%E5%BF%AB%E4%BB%B6/</loc>
     <lastmod>2014-11-06T08:22:09+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1360,13 +1205,21 @@
   <url>
     <loc>/tags/%E9%AA%97%E5%B1%80/</loc>
     <lastmod>2014-11-06T08:22:09+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/%E9%AA%97%E5%B1%80/</loc>
     <lastmod>2014-11-06T08:22:09+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/hardware-requirement/</loc>
+    <lastmod>2014-11-04T02:51:39+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/hardware-requirement/</loc>
+    <lastmod>2014-11-04T02:51:39+00:00</lastmod>
   </url>
   
   <url>
@@ -1375,27 +1228,13 @@
   </url>
   
   <url>
-    <loc>/tags/hardware-requirement/</loc>
-    <lastmod>2014-11-04T02:51:39+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/hardware-requirement/</loc>
-    <lastmod>2014-11-04T02:51:39+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/tags/out-of-memory/</loc>
     <lastmod>2014-11-04T02:51:39+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/out-of-memory/</loc>
     <lastmod>2014-11-04T02:51:39+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1406,25 +1245,21 @@
   <url>
     <loc>/tags/sync/</loc>
     <lastmod>2014-11-03T03:13:29+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/sync/</loc>
     <lastmod>2014-11-03T03:13:29+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/%E6%80%A5%E6%80%A7%E9%BC%BB%E7%AA%A6%E7%82%8E/</loc>
     <lastmod>2014-10-22T04:19:39+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/%E6%80%A5%E6%80%A7%E9%BC%BB%E7%AA%A6%E7%82%8E/</loc>
     <lastmod>2014-10-22T04:19:39+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1438,27 +1273,23 @@
   </url>
   
   <url>
-    <loc>/tags/upgrade/</loc>
-    <lastmod>2014-10-22T03:52:40+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/categories/upgrade/</loc>
     <lastmod>2014-10-22T03:52:40+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/%E4%BC%98%E5%8C%96/</loc>
-    <lastmod>2014-10-11T09:27:07+00:00</lastmod>
-    <priority>0</priority>
+    <loc>/tags/upgrade/</loc>
+    <lastmod>2014-10-22T03:52:40+00:00</lastmod>
   </url>
   
   <url>
     <loc>/categories/%E4%BC%98%E5%8C%96/</loc>
     <lastmod>2014-10-11T09:27:07+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/%E4%BC%98%E5%8C%96/</loc>
+    <lastmod>2014-10-11T09:27:07+00:00</lastmod>
   </url>
   
   <url>
@@ -1467,15 +1298,13 @@
   </url>
   
   <url>
-    <loc>/tags/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/</loc>
+    <loc>/categories/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/</loc>
     <lastmod>2014-10-11T09:27:07+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/</loc>
+    <loc>/tags/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/</loc>
     <lastmod>2014-10-11T09:27:07+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1491,37 +1320,31 @@
   <url>
     <loc>/tags/%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8F/</loc>
     <lastmod>2014-10-09T06:37:34+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8F/</loc>
     <lastmod>2014-10-09T06:37:34+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/%E6%8B%AC%E8%8B%8D%E5%B1%B1/</loc>
-    <lastmod>2014-10-09T06:27:14+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/%E6%8B%AC%E8%8B%8D%E5%B1%B1/</loc>
     <lastmod>2014-10-09T06:27:14+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/%E6%8B%AC%E8%8B%8D%E5%B1%B1/</loc>
+    <lastmod>2014-10-09T06:27:14+00:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/%E6%97%85%E8%A1%8C/</loc>
     <lastmod>2014-10-09T06:27:14+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/%E6%97%85%E8%A1%8C/</loc>
     <lastmod>2014-10-09T06:27:14+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1535,15 +1358,13 @@
   </url>
   
   <url>
-    <loc>/tags/logo/</loc>
+    <loc>/categories/logo/</loc>
     <lastmod>2014-09-30T04:22:52+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/logo/</loc>
+    <loc>/tags/logo/</loc>
     <lastmod>2014-09-30T04:22:52+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1552,27 +1373,23 @@
   </url>
   
   <url>
-    <loc>/tags/%E6%89%8B%E7%AE%97/</loc>
+    <loc>/categories/%E6%89%8B%E7%AE%97/</loc>
     <lastmod>2014-09-30T03:43:46+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/%E6%89%8B%E7%AE%97/</loc>
+    <loc>/tags/%E6%89%8B%E7%AE%97/</loc>
     <lastmod>2014-09-30T03:43:46+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/%E6%AF%94%E7%89%B9%E5%B8%81/</loc>
     <lastmod>2014-09-30T03:43:46+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/%E6%AF%94%E7%89%B9%E5%B8%81/</loc>
     <lastmod>2014-09-30T03:43:46+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1586,27 +1403,23 @@
   </url>
   
   <url>
-    <loc>/tags/shellshock/</loc>
+    <loc>/categories/bash/</loc>
     <lastmod>2014-09-26T07:05:44+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/shellshock/</loc>
-    <lastmod>2014-09-26T07:05:44+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/bash/</loc>
     <lastmod>2014-09-26T07:05:44+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/bash/</loc>
+    <loc>/categories/shellshock/</loc>
     <lastmod>2014-09-26T07:05:44+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/shellshock/</loc>
+    <lastmod>2014-09-26T07:05:44+00:00</lastmod>
   </url>
   
   <url>
@@ -1617,13 +1430,11 @@
   <url>
     <loc>/tags/gpl/</loc>
     <lastmod>2014-09-24T02:28:22+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/gpl/</loc>
     <lastmod>2014-09-24T02:28:22+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1639,25 +1450,21 @@
   <url>
     <loc>/tags/%E9%A6%96%E9%A1%B5%E6%98%BE%E7%A4%BA%E5%9B%BE%E7%89%87/</loc>
     <lastmod>2014-09-22T04:07:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/%E9%A6%96%E9%A1%B5%E6%98%BE%E7%A4%BA%E5%9B%BE%E7%89%87/</loc>
     <lastmod>2014-09-22T04:07:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/%E6%8C%87%E7%BA%B9/</loc>
     <lastmod>2014-09-20T11:31:48+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/%E6%8C%87%E7%BA%B9/</loc>
     <lastmod>2014-09-20T11:31:48+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1666,27 +1473,23 @@
   </url>
   
   <url>
-    <loc>/tags/%E7%9C%8B%E7%A9%BA/</loc>
-    <lastmod>2014-09-20T02:42:15+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/categories/%E7%9C%8B%E7%A9%BA/</loc>
     <lastmod>2014-09-20T02:42:15+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4/</loc>
+    <loc>/tags/%E7%9C%8B%E7%A9%BA/</loc>
     <lastmod>2014-09-20T02:42:15+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4/</loc>
     <lastmod>2014-09-20T02:42:15+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4/</loc>
+    <lastmod>2014-09-20T02:42:15+00:00</lastmod>
   </url>
   
   <url>
@@ -1702,25 +1505,21 @@
   <url>
     <loc>/tags/%E5%91%A8%E6%98%9F%E9%A9%B0/</loc>
     <lastmod>2014-09-19T14:03:38+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/%E5%91%A8%E6%98%9F%E9%A9%B0/</loc>
     <lastmod>2014-09-19T14:03:38+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/%E6%98%9F%E7%88%B7/</loc>
-    <lastmod>2014-09-19T14:03:38+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/%E6%98%9F%E7%88%B7/</loc>
     <lastmod>2014-09-19T14:03:38+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/%E6%98%9F%E7%88%B7/</loc>
+    <lastmod>2014-09-19T14:03:38+00:00</lastmod>
   </url>
   
   <url>
@@ -1731,25 +1530,31 @@
   <url>
     <loc>/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E7%BC%96%E8%AF%91/</loc>
     <lastmod>2014-09-19T09:16:23+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E7%BC%96%E8%AF%91/</loc>
     <lastmod>2014-09-19T09:16:23+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/node.js/</loc>
+    <lastmod>2014-09-17T05:21:54+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/node.js/</loc>
+    <lastmod>2014-09-17T05:21:54+00:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/understanding-node.js/</loc>
     <lastmod>2014-09-17T05:21:54+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/understanding-node.js/</loc>
     <lastmod>2014-09-17T05:21:54+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1758,39 +1563,23 @@
   </url>
   
   <url>
-    <loc>/tags/node.js/</loc>
-    <lastmod>2014-09-17T05:21:54+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/node.js/</loc>
-    <lastmod>2014-09-17T05:21:54+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/tags/%E7%BF%BB%E8%AF%91/</loc>
     <lastmod>2014-09-17T05:21:54+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/%E7%BF%BB%E8%AF%91/</loc>
     <lastmod>2014-09-17T05:21:54+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/hexo&#43;/</loc>
     <lastmod>2014-09-16T12:12:41+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/hexo&#43;/</loc>
     <lastmod>2014-09-16T12:12:41+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1801,13 +1590,21 @@
   <url>
     <loc>/tags/kickstarter/</loc>
     <lastmod>2014-09-16T12:12:41+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/kickstarter/</loc>
     <lastmod>2014-09-16T12:12:41+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/fonts.googleapis.com/</loc>
+    <lastmod>2014-09-16T07:49:08+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/fonts.googleapis.com/</loc>
+    <lastmod>2014-09-16T07:49:08+00:00</lastmod>
   </url>
   
   <url>
@@ -1816,39 +1613,23 @@
   </url>
   
   <url>
-    <loc>/tags/fonts.googleapis.com/</loc>
-    <lastmod>2014-09-16T07:49:08+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/fonts.googleapis.com/</loc>
-    <lastmod>2014-09-16T07:49:08+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/tags/performance/</loc>
     <lastmod>2014-09-16T07:49:08+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/performance/</loc>
     <lastmod>2014-09-16T07:49:08+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/wordpress/</loc>
     <lastmod>2014-09-14T16:27:10+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/wordpress/</loc>
     <lastmod>2014-09-14T16:27:10+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1859,13 +1640,11 @@
   <url>
     <loc>/tags/%E8%BF%81%E7%A7%BB/</loc>
     <lastmod>2014-09-14T16:27:10+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/%E8%BF%81%E7%A7%BB/</loc>
     <lastmod>2014-09-14T16:27:10+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1874,27 +1653,33 @@
   </url>
   
   <url>
-    <loc>/tags/%E4%BB%A3%E7%A0%81/</loc>
+    <loc>/categories/%E4%BB%A3%E7%A0%81/</loc>
     <lastmod>2014-09-06T12:30:36+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/%E4%BB%A3%E7%A0%81/</loc>
+    <loc>/tags/%E4%BB%A3%E7%A0%81/</loc>
     <lastmod>2014-09-06T12:30:36+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/%E6%8F%92%E5%85%A5/</loc>
     <lastmod>2014-09-06T12:30:36+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/%E6%8F%92%E5%85%A5/</loc>
     <lastmod>2014-09-06T12:30:36+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/link/</loc>
+    <lastmod>2014-09-06T11:51:57+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/link/</loc>
+    <lastmod>2014-09-06T11:51:57+00:00</lastmod>
   </url>
   
   <url>
@@ -1903,51 +1688,33 @@
   </url>
   
   <url>
-    <loc>/tags/link/</loc>
+    <loc>/categories/%E6%A0%87%E9%A2%98/</loc>
     <lastmod>2014-09-06T11:51:57+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/link/</loc>
-    <lastmod>2014-09-06T11:51:57+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/%E6%A0%87%E9%A2%98/</loc>
     <lastmod>2014-09-06T11:51:57+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/%E6%A0%87%E9%A2%98/</loc>
-    <lastmod>2014-09-06T11:51:57+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/%E9%93%BE%E6%8E%A5/</loc>
     <lastmod>2014-09-06T11:51:57+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/%E9%93%BE%E6%8E%A5/</loc>
     <lastmod>2014-09-06T11:51:57+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/%E5%BC%80%E6%BA%90/</loc>
     <lastmod>2014-09-06T11:25:36+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/%E5%BC%80%E6%BA%90/</loc>
     <lastmod>2014-09-06T11:25:36+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1961,27 +1728,23 @@
   </url>
   
   <url>
-    <loc>/tags/%E4%B8%AD%E6%96%87/</loc>
+    <loc>/categories/%E4%B8%AD%E6%96%87/</loc>
     <lastmod>2014-09-05T22:08:36+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/%E4%B8%AD%E6%96%87/</loc>
+    <loc>/tags/%E4%B8%AD%E6%96%87/</loc>
     <lastmod>2014-09-05T22:08:36+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/%E8%AF%AD%E8%A8%80/</loc>
     <lastmod>2014-09-05T22:08:36+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/%E8%AF%AD%E8%A8%80/</loc>
     <lastmod>2014-09-05T22:08:36+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1990,15 +1753,13 @@
   </url>
   
   <url>
-    <loc>/tags/%E9%80%89%E6%8B%A9/</loc>
+    <loc>/categories/%E9%80%89%E6%8B%A9/</loc>
     <lastmod>2014-03-27T23:22:09+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/%E9%80%89%E6%8B%A9/</loc>
+    <loc>/tags/%E9%80%89%E6%8B%A9/</loc>
     <lastmod>2014-03-27T23:22:09+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -2007,15 +1768,13 @@
   </url>
   
   <url>
-    <loc>/tags/%E9%AB%98%E9%80%9A/</loc>
+    <loc>/categories/%E9%AB%98%E9%80%9A/</loc>
     <lastmod>2014-03-24T13:45:03+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/%E9%AB%98%E9%80%9A/</loc>
+    <loc>/tags/%E9%AB%98%E9%80%9A/</loc>
     <lastmod>2014-03-24T13:45:03+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -2031,13 +1790,11 @@
   <url>
     <loc>/tags/%E6%94%AF%E4%BB%98%E5%AE%9D/</loc>
     <lastmod>2014-01-18T18:20:02+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/%E6%94%AF%E4%BB%98%E5%AE%9D/</loc>
     <lastmod>2014-01-18T18:20:02+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -2048,49 +1805,41 @@
   <url>
     <loc>/tags/btc/</loc>
     <lastmod>2013-12-04T23:35:18+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/btc/</loc>
     <lastmod>2013-12-04T23:35:18+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/ltc/</loc>
-    <lastmod>2013-12-04T23:35:18+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/ltc/</loc>
     <lastmod>2013-12-04T23:35:18+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/ltc/</loc>
+    <lastmod>2013-12-04T23:35:18+00:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/okcoin/</loc>
     <lastmod>2013-12-04T23:35:18+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/okcoin/</loc>
     <lastmod>2013-12-04T23:35:18+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/%E4%BA%A4%E6%98%93%E5%B9%B3%E5%8F%B0/</loc>
-    <lastmod>2013-12-04T23:35:18+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/%E4%BA%A4%E6%98%93%E5%B9%B3%E5%8F%B0/</loc>
     <lastmod>2013-12-04T23:35:18+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/%E4%BA%A4%E6%98%93%E5%B9%B3%E5%8F%B0/</loc>
+    <lastmod>2013-12-04T23:35:18+00:00</lastmod>
   </url>
   
   <url>
@@ -2101,25 +1850,21 @@
   <url>
     <loc>/tags/bitcoin/</loc>
     <lastmod>2013-12-01T13:58:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/bitcoin/</loc>
     <lastmod>2013-12-01T13:58:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/ddos/</loc>
     <lastmod>2013-12-01T13:58:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/ddos/</loc>
     <lastmod>2013-12-01T13:58:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -2140,37 +1885,31 @@
   <url>
     <loc>/tags/byte-alignment/</loc>
     <lastmod>2013-08-24T21:31:11+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/byte-alignment/</loc>
     <lastmod>2013-08-24T21:31:11+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/c/</loc>
     <lastmod>2013-08-24T21:31:11+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/c/</loc>
     <lastmod>2013-08-24T21:31:11+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/%E5%9B%A2%E8%B4%AD/</loc>
-    <lastmod>2013-08-12T10:50:24+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/%E5%9B%A2%E8%B4%AD/</loc>
     <lastmod>2013-08-12T10:50:24+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/%E5%9B%A2%E8%B4%AD/</loc>
+    <lastmod>2013-08-12T10:50:24+00:00</lastmod>
   </url>
   
   <url>
@@ -2186,25 +1925,21 @@
   <url>
     <loc>/tags/%E7%94%B5%E5%BD%B1/</loc>
     <lastmod>2013-08-08T11:42:17+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/%E7%94%B5%E5%BD%B1/</loc>
     <lastmod>2013-08-08T11:42:17+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/%E5%AF%86%E7%A0%81/</loc>
-    <lastmod>2013-06-15T18:36:42+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/%E5%AF%86%E7%A0%81/</loc>
     <lastmod>2013-06-15T18:36:42+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/%E5%AF%86%E7%A0%81/</loc>
+    <lastmod>2013-06-15T18:36:42+00:00</lastmod>
   </url>
   
   <url>
@@ -2213,27 +1948,23 @@
   </url>
   
   <url>
-    <loc>/tags/%E6%95%B0%E6%8D%AE/</loc>
-    <lastmod>2013-06-14T16:07:18+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/categories/%E6%95%B0%E6%8D%AE/</loc>
     <lastmod>2013-06-14T16:07:18+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/%E6%B3%84%E6%BC%8F/</loc>
+    <loc>/tags/%E6%95%B0%E6%8D%AE/</loc>
     <lastmod>2013-06-14T16:07:18+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/%E6%B3%84%E6%BC%8F/</loc>
     <lastmod>2013-06-14T16:07:18+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/%E6%B3%84%E6%BC%8F/</loc>
+    <lastmod>2013-06-14T16:07:18+00:00</lastmod>
   </url>
   
   <url>
@@ -2242,15 +1973,13 @@
   </url>
   
   <url>
-    <loc>/tags/%E7%A7%9F%E8%BD%A6/</loc>
+    <loc>/categories/%E7%A7%9F%E8%BD%A6/</loc>
     <lastmod>2013-06-14T16:07:18+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/%E7%A7%9F%E8%BD%A6/</loc>
+    <loc>/tags/%E7%A7%9F%E8%BD%A6/</loc>
     <lastmod>2013-06-14T16:07:18+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -2259,27 +1988,23 @@
   </url>
   
   <url>
-    <loc>/tags/git/</loc>
+    <loc>/categories/git/</loc>
     <lastmod>2013-06-11T03:20:37+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/git/</loc>
+    <loc>/tags/git/</loc>
     <lastmod>2013-06-11T03:20:37+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/undo/</loc>
     <lastmod>2013-06-11T03:20:37+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/undo/</loc>
     <lastmod>2013-06-11T03:20:37+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -2288,51 +2013,43 @@
   </url>
   
   <url>
-    <loc>/tags/limits/</loc>
+    <loc>/categories/limits/</loc>
     <lastmod>2013-06-11T03:14:53+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/limits/</loc>
+    <loc>/tags/limits/</loc>
     <lastmod>2013-06-11T03:14:53+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/linux/</loc>
     <lastmod>2013-06-11T03:14:53+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/linux/</loc>
     <lastmod>2013-06-11T03:14:53+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/putty/</loc>
-    <lastmod>2013-06-11T03:14:53+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/putty/</loc>
     <lastmod>2013-06-11T03:14:53+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/%E7%A5%9E%E5%B7%9E/</loc>
-    <lastmod>2013-05-29T22:37:38+00:00</lastmod>
-    <priority>0</priority>
+    <loc>/tags/putty/</loc>
+    <lastmod>2013-06-11T03:14:53+00:00</lastmod>
   </url>
   
   <url>
     <loc>/categories/%E7%A5%9E%E5%B7%9E/</loc>
     <lastmod>2013-05-29T22:37:38+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/%E7%A5%9E%E5%B7%9E/</loc>
+    <lastmod>2013-05-29T22:37:38+00:00</lastmod>
   </url>
   
   <url>
@@ -2341,15 +2058,13 @@
   </url>
   
   <url>
-    <loc>/tags/%E4%BF%A1%E6%81%AF%E9%97%B4%E8%B0%8D/</loc>
+    <loc>/categories/%E4%BF%A1%E6%81%AF%E9%97%B4%E8%B0%8D/</loc>
     <lastmod>2013-05-29T22:02:26+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/%E4%BF%A1%E6%81%AF%E9%97%B4%E8%B0%8D/</loc>
+    <loc>/tags/%E4%BF%A1%E6%81%AF%E9%97%B4%E8%B0%8D/</loc>
     <lastmod>2013-05-29T22:02:26+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -2360,13 +2075,11 @@
   <url>
     <loc>/tags/%E5%85%B3%E4%BA%8E/</loc>
     <lastmod>2012-09-20T14:53:41+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/%E5%85%B3%E4%BA%8E/</loc>
     <lastmod>2012-09-20T14:53:41+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>

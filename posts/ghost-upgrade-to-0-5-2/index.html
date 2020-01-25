@@ -12,7 +12,8 @@
 结果启动Ghost就报sql corruption 500的错误。。。（这么“写”数据，基本的MD5校验都过不了啊）
 真是一失足成千古恨啊。折腾了蛮久才发现是这个问题。 T_T
 附上修改后的脚本，运行
-sudo ./upgrade_ghost.sh TARGET_DIR_PATH ```即可： ```language-bash #stop all echo &#39;1. stop all -----------------&#39; forever stopall #download latest build echo &#39;2. download latest package -------------------&#39; rm ghost-latest.zip wget http://ghost.org/zip/ghost-latest.zip #rm core echo &#39;3. delete core dir ---------------&#39; rm -rf $1/core #unzip echo &#39;4. unzip and merge code ----------------&#39; unzip -uo ghost-latest.zip -d $1/ #install rm ghost-latest.zip cd $1/ echo &#39;5."/>
+sudo ./upgrade_ghost.sh TARGET_DIR_PATH  即可：
+#stop all echo &#39;1. stop all -----------------&#39; forever stopall #download latest build echo &#39;2. download latest package -------------------&#39; rm ghost-latest.zip wget http://ghost.org/zip/ghost-latest.zip #rm core echo &#39;3. delete core dir ---------------&#39; rm -rf $1/core #unzip echo &#39;4. unzip and merge code ----------------&#39; unzip -uo ghost-latest.zip -d $1/ #install rm ghost-latest.zip cd $1/ echo &#39;5."/>
 <meta name="keywords" content=""/>
 <meta name="robots" content="noodp"/>
 <link rel="canonical" href="/posts/ghost-upgrade-to-0-5-2/" />
@@ -36,7 +37,8 @@ sudo ./upgrade_ghost.sh TARGET_DIR_PATH ```即可： ```language-bash #stop all 
 结果启动Ghost就报sql corruption 500的错误。。。（这么“写”数据，基本的MD5校验都过不了啊）
 真是一失足成千古恨啊。折腾了蛮久才发现是这个问题。 T_T
 附上修改后的脚本，运行
-sudo ./upgrade_ghost.sh TARGET_DIR_PATH ```即可： ```language-bash #stop all echo &#39;1. stop all -----------------&#39; forever stopall #download latest build echo &#39;2. download latest package -------------------&#39; rm ghost-latest.zip wget http://ghost.org/zip/ghost-latest.zip #rm core echo &#39;3. delete core dir ---------------&#39; rm -rf $1/core #unzip echo &#39;4. unzip and merge code ----------------&#39; unzip -uo ghost-latest.zip -d $1/ #install rm ghost-latest.zip cd $1/ echo &#39;5."/>
+sudo ./upgrade_ghost.sh TARGET_DIR_PATH  即可：
+#stop all echo &#39;1. stop all -----------------&#39; forever stopall #download latest build echo &#39;2. download latest package -------------------&#39; rm ghost-latest.zip wget http://ghost.org/zip/ghost-latest.zip #rm core echo &#39;3. delete core dir ---------------&#39; rm -rf $1/core #unzip echo &#39;4. unzip and merge code ----------------&#39; unzip -uo ghost-latest.zip -d $1/ #install rm ghost-latest.zip cd $1/ echo &#39;5."/>
 
 
 
@@ -47,11 +49,12 @@ sudo ./upgrade_ghost.sh TARGET_DIR_PATH ```即可： ```language-bash #stop all 
 结果启动Ghost就报sql corruption 500的错误。。。（这么“写”数据，基本的MD5校验都过不了啊）
 真是一失足成千古恨啊。折腾了蛮久才发现是这个问题。 T_T
 附上修改后的脚本，运行
-sudo ./upgrade_ghost.sh TARGET_DIR_PATH ```即可： ```language-bash #stop all echo &#39;1. stop all -----------------&#39; forever stopall #download latest build echo &#39;2. download latest package -------------------&#39; rm ghost-latest.zip wget http://ghost.org/zip/ghost-latest.zip #rm core echo &#39;3. delete core dir ---------------&#39; rm -rf $1/core #unzip echo &#39;4. unzip and merge code ----------------&#39; unzip -uo ghost-latest.zip -d $1/ #install rm ghost-latest.zip cd $1/ echo &#39;5." />
+sudo ./upgrade_ghost.sh TARGET_DIR_PATH  即可：
+#stop all echo &#39;1. stop all -----------------&#39; forever stopall #download latest build echo &#39;2. download latest package -------------------&#39; rm ghost-latest.zip wget http://ghost.org/zip/ghost-latest.zip #rm core echo &#39;3. delete core dir ---------------&#39; rm -rf $1/core #unzip echo &#39;4. unzip and merge code ----------------&#39; unzip -uo ghost-latest.zip -d $1/ #install rm ghost-latest.zip cd $1/ echo &#39;5." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/ghost-upgrade-to-0-5-2/" />
-<meta property="article:published_time" content="2014-09-29T02:22:45&#43;00:00"/>
-<meta property="article:modified_time" content="2014-09-29T02:22:45&#43;00:00"/><meta property="og:site_name" content="你好，世界" />
+<meta property="article:published_time" content="2014-09-29T02:22:45+00:00" />
+<meta property="article:modified_time" content="2014-09-29T02:22:45+00:00" /><meta property="og:site_name" content="你好，世界" />
 
 
 
@@ -159,11 +162,11 @@ sudo ./upgrade_ghost.sh TARGET_DIR_PATH ```即可： ```language-bash #stop all 
 <p>附上修改后的脚本，运行</p>
 
 <pre><code class="language-language-bash">sudo ./upgrade_ghost.sh TARGET_DIR_PATH
-```即可：
+</code></pre>
 
+<p>即可：</p>
 
-```language-bash
-#stop all
+<pre><code class="language-language-bash">#stop all
 echo '1. stop all -----------------'
 forever stopall
 

@@ -33,7 +33,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/tags/%E6%8A%80%E6%9C%AF/" />
 
-<meta property="og:updated_time" content="2015-06-20T08:35:16&#43;00:00"/><meta property="og:site_name" content="你好，世界" />
+<meta property="og:updated_time" content="2015-06-20T08:35:16+00:00" /><meta property="og:site_name" content="你好，世界" />
 
 
 
@@ -183,12 +183,14 @@ ImageFetcher就是其中之一，这货非常简洁的实现了用ImageView来�
 主体代码构成： 外部调用如下：
  New：
 ImageFetcher imageFetcher = new ImageFetcher(context, width, height);  就可以了。
-当然这里一般都会改动；
+  当然这里一般都会改动；
 例如为了区分cache目录，会把unique folder name作为参数传入进去）。
 例如为了替换默认图，把图标传进去。
 例如为了适配任何图片资源，增加自定义的ImageProvider，也在初始化的时候传进去。
- Load bitmap：   imageFetcher.loadImage(pathString, (ImageView) view.findViewById(R.id.thumbnail));   这样这个ImageView就会在图片通过异步下载好（并缓存）以后，自己加载显示出来了～
- Close cache：  imageFetcher.setPauseWork(false); imageFetcher.closeCache();  就是这么简单任性～
+ Load bitmap：
+imageFetcher.loadImage(pathString, (ImageView) view.findViewById(R.id.thumbnail));   这样这个ImageView就会在图片通过异步下载好（并缓存）以后，自己加载显示出来了～
+ Close cache：
+imageFetcher.setPauseWork(false); imageFetcher.closeCache();   就是这么简单任性～
 内部逻辑重点的几个：
  对Download下来的图片，使用DiskLruCache来本地缓存，使用LruCache作为内存缓存；
  使用AsyncTask（WeakReference）来异步download图片；结束后对ImageView（WeakReference）进行setImageDrawable（AsyncDrawable）；这里的AsyncDrawable内部有正在处理自身的AsyncTask的WeakReference，所以可以避免重复execute的情况；每次都会先cancel之前的。
@@ -275,11 +277,14 @@ Android Studio的配置略有差异，可以参考前文
 解决办法就是修改proguard的配置文件，将这些敏感class置为例外。
 常用方法如下：
  排除指定类A
--keepclassmembers class com.xxx.xxx.A { *; }   将类A的子类全部排除 language-bash -keepclassmembers class * extends com.xxx.xxx.A { <em>; }   将包P内的class全部排除
--keep public class com.xxx.P.</em> { *; }   将包P内的class及subclass全部排除 language-bash -keep public class com.xxx.P.** { *; }     注意*和**的差别；
+-keepclassmembers class com.xxx.xxx.A { *; }  将类A的子类全部排除
+-keepclassmembers class * extends com.xxx.xxx.A { <em>; }  将包P内的class全部排除
+-keep public class com.xxx.P.</em> { *; }  将包P内的class及subclass全部排除
+-keep public class com.xxx.P.** { *; }   注意*和**的差别；
 注意最后的{ *; }，用法很多，可以指定仅排除public/protected，如：
 { public protected *;}  当然还可以直接更直接一些：
 { &lt;fields&gt;; &lt;methods&gt;; }  如果是使用Gson的话，还可以直接如下使用方式来避免混淆问题：
+@SerializedName(&quot;data&quot;) ArrayList&lt;Object&gt; data;  另外可以通过
           
         
       </div>

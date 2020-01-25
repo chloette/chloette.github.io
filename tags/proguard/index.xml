@@ -29,11 +29,14 @@ Android Studio的配置略有差异，可以参考前文
 解决办法就是修改proguard的配置文件，将这些敏感class置为例外。
 常用方法如下：
  排除指定类A
--keepclassmembers class com.xxx.xxx.A { *; }   将类A的子类全部排除 language-bash -keepclassmembers class * extends com.xxx.xxx.A { *; }   将包P内的class全部排除
--keep public class com.xxx.P.* { *; }   将包P内的class及subclass全部排除 language-bash -keep public class com.xxx.P.** { *; }     注意*和**的差别；
+-keepclassmembers class com.xxx.xxx.A { *; }  将类A的子类全部排除
+-keepclassmembers class * extends com.xxx.xxx.A { *; }  将包P内的class全部排除
+-keep public class com.xxx.P.* { *; }  将包P内的class及subclass全部排除
+-keep public class com.xxx.P.** { *; }   注意*和**的差别；
 注意最后的{ *; }，用法很多，可以指定仅排除public/protected，如：
 { public protected *;}  当然还可以直接更直接一些：
-{ &amp;lt;fields&amp;gt;; &amp;lt;methods&amp;gt;; }  如果是使用Gson的话，还可以直接如下使用方式来避免混淆问题：</description>
+{ &amp;lt;fields&amp;gt;; &amp;lt;methods&amp;gt;; }  如果是使用Gson的话，还可以直接如下使用方式来避免混淆问题：
+@SerializedName(&amp;quot;data&amp;quot;) ArrayList&amp;lt;Object&amp;gt; data;  另外可以通过</description>
     </item>
     
   </channel>

@@ -33,7 +33,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/posts/" />
 
-<meta property="og:updated_time" content="2019-08-28T12:00:00&#43;08:00"/><meta property="og:site_name" content="你好，世界" />
+<meta property="og:updated_time" content="2020-01-25T17:51:12+08:00" /><meta property="og:site_name" content="你好，世界" />
 
 
 
@@ -109,6 +109,37 @@
 
     
     <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/ec2-devxvda1-should-be-checked-for-errors/">EC2 /dev/xvda1 should be checked for errors</a></h1>
+      <div class="post-meta">
+        <span class="post-date">
+          2015-01-20
+        </span>
+        <span class="post-author">— Written by Guo Yi</span>
+        
+      </div>
+
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
+          
+            #<a href="/tags/ec2/">EC2</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      <div><a class="read-more button" href="/posts/ec2-devxvda1-should-be-checked-for-errors/">Read more →</a></div>
+    </div>
+    
+    <div class="post on-list">
       <h1 class="post-title"><a href="/posts/proguard-obfuscation/">Proguard混淆</a></h1>
       <div class="post-meta">
         <span class="post-date">
@@ -147,11 +178,14 @@ Android Studio的配置略有差异，可以参考前文
 解决办法就是修改proguard的配置文件，将这些敏感class置为例外。
 常用方法如下：
  排除指定类A
--keepclassmembers class com.xxx.xxx.A { *; }   将类A的子类全部排除 language-bash -keepclassmembers class * extends com.xxx.xxx.A { <em>; }   将包P内的class全部排除
--keep public class com.xxx.P.</em> { *; }   将包P内的class及subclass全部排除 language-bash -keep public class com.xxx.P.** { *; }     注意*和**的差别；
+-keepclassmembers class com.xxx.xxx.A { *; }  将类A的子类全部排除
+-keepclassmembers class * extends com.xxx.xxx.A { <em>; }  将包P内的class全部排除
+-keep public class com.xxx.P.</em> { *; }  将包P内的class及subclass全部排除
+-keep public class com.xxx.P.** { *; }   注意*和**的差别；
 注意最后的{ *; }，用法很多，可以指定仅排除public/protected，如：
 { public protected *;}  当然还可以直接更直接一些：
 { &lt;fields&gt;; &lt;methods&gt;; }  如果是使用Gson的话，还可以直接如下使用方式来避免混淆问题：
+@SerializedName(&quot;data&quot;) ArrayList&lt;Object&gt; data;  另外可以通过
           
         
       </div>
@@ -274,39 +308,6 @@ JAVA_HOME和ANDROID_HOME这两个环境变量需要提前设置好（可以在/e
         
       </div>
       <div><a class="read-more button" href="/posts/android-conflict-of-relativelayout-between-wrapcontent-and-alignparentbottom/">Read more →</a></div>
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/android-linear-layout-weight-setting-when-adding-child-dynamically/">Android LinearLayout动态增加item时Weight的设置</a></h1>
-      <div class="post-meta">
-        <span class="post-date">
-          2015-01-09
-        </span>
-        <span class="post-author">— Written by Guo Yi</span>
-        
-      </div>
-
-
-      
-        <span class="post-tags">
-          
-            #<a href="/tags/android/">Android</a>&nbsp;
-          
-            #<a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
-          
-            #<a href="/tags/view/">View</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      <div><a class="read-more button" href="/posts/android-linear-layout-weight-setting-when-adding-child-dynamically/">Read more →</a></div>
     </div>
     
     <div class="pagination">

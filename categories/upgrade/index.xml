@@ -36,7 +36,8 @@ Tada~~</description>
 结果启动Ghost就报sql corruption 500的错误。。。（这么“写”数据，基本的MD5校验都过不了啊）
 真是一失足成千古恨啊。折腾了蛮久才发现是这个问题。 T_T
 附上修改后的脚本，运行
-sudo ./upgrade_ghost.sh TARGET_DIR_PATH ```即可： ```language-bash #stop all echo &#39;1. stop all -----------------&#39; forever stopall #download latest build echo &#39;2. download latest package -------------------&#39; rm ghost-latest.zip wget http://ghost.org/zip/ghost-latest.zip #rm core echo &#39;3. delete core dir ---------------&#39; rm -rf $1/core #unzip echo &#39;4. unzip and merge code ----------------&#39; unzip -uo ghost-latest.zip -d $1/ #install rm ghost-latest.zip cd $1/ echo &#39;5.</description>
+sudo ./upgrade_ghost.sh TARGET_DIR_PATH  即可：
+#stop all echo &#39;1. stop all -----------------&#39; forever stopall #download latest build echo &#39;2. download latest package -------------------&#39; rm ghost-latest.zip wget http://ghost.org/zip/ghost-latest.zip #rm core echo &#39;3. delete core dir ---------------&#39; rm -rf $1/core #unzip echo &#39;4. unzip and merge code ----------------&#39; unzip -uo ghost-latest.zip -d $1/ #install rm ghost-latest.zip cd $1/ echo &#39;5.</description>
     </item>
     
   </channel>

@@ -47,8 +47,8 @@
 #copy prism js/css to content and use it (to highlight codes) cp ~/prism/prism.js ./content/themes/casper/assets/js/ cp ~/prism/prism.css ./cotent/themes/casper/assets/css/ sed -i &#39;s~&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;{{asset &quot;css/screen.css&quot;}}&quot; /&gt;~&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;{{asset &quot;css/screen.css&quot;}}&quot; /&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;{{asset &quot;css/prism." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/ghost-highlight-syntax/" />
-<meta property="article:published_time" content="2015-03-04T03:15:57&#43;00:00"/>
-<meta property="article:modified_time" content="2015-03-04T03:15:57&#43;00:00"/><meta property="og:site_name" content="你好，世界" />
+<meta property="article:published_time" content="2015-03-04T03:15:57+00:00" />
+<meta property="article:modified_time" content="2015-03-04T03:15:57+00:00" /><meta property="og:site_name" content="你好，世界" />
 
 
 
@@ -186,15 +186,18 @@ sed -i 's~&lt;script type=&quot;text/javascript&quot; src=&quot;{{asset &quot;js
 
 <p>在ghost里，markdown对code的语法是：</p>
 
-<pre><code class="language-language-markdown"> ```language-markdown
- code here
-</code></pre>
+<pre><code class="language-language-markdown"></code></pre>
 
-<pre><code>（**注意**：Prism依赖language；而Ghost对language的识别，要求起始和结束的```前面不能有tab/空格，不然就遇到了下面的情况）
+<p>language-markdown
+ code here</p>
 
-或者
-```language-markdown
-	code（注意前面的tab/空格）
+<pre><code></code></pre>
+
+<p>（<strong>注意</strong>：Prism依赖language；而Ghost对language的识别，要求起始和结束的```前面不能有tab/空格，不然就遇到了下面的情况）</p>
+
+<p>或者</p>
+
+<pre><code class="language-language-markdown">	code（注意前面的tab/空格）
 </code></pre>
 
 <p>这一般情况下OK，但是markdown还有分组的语法也是通过tab/空格，如下</p>

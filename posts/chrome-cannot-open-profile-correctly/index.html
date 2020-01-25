@@ -10,7 +10,8 @@
 结果就是无法正常使用账户同步功能（不能多设备同步我还用你干嘛！？！）
 翻了翻资料，看了看log，发现这种时候新启动的chrome尝试去打开一个已经lock住的数据库（这不科学），然后就报错了。
 继续翻，貌似每次第一次启动的chrome没有正常关闭，依然占用数据库（单例真的好么）。结果就是后面再启动的chrome尝试open，然后失败。
-官方解决方法目前未找到。。。土方法就是 language-bash ps -A | grep &#39;chrome&#39;  然后kill吧。
+官方解决方法目前未找到。。。土方法就是
+ps -A | grep &#39;chrome&#39;  然后kill吧。
 Chrome现在也略不靠谱啊。T_T"/>
 <meta name="keywords" content=""/>
 <meta name="robots" content="noodp"/>
@@ -33,7 +34,8 @@ Chrome现在也略不靠谱啊。T_T"/>
 结果就是无法正常使用账户同步功能（不能多设备同步我还用你干嘛！？！）
 翻了翻资料，看了看log，发现这种时候新启动的chrome尝试去打开一个已经lock住的数据库（这不科学），然后就报错了。
 继续翻，貌似每次第一次启动的chrome没有正常关闭，依然占用数据库（单例真的好么）。结果就是后面再启动的chrome尝试open，然后失败。
-官方解决方法目前未找到。。。土方法就是 language-bash ps -A | grep &#39;chrome&#39;  然后kill吧。
+官方解决方法目前未找到。。。土方法就是
+ps -A | grep &#39;chrome&#39;  然后kill吧。
 Chrome现在也略不靠谱啊。T_T"/>
 
 
@@ -43,12 +45,13 @@ Chrome现在也略不靠谱啊。T_T"/>
 结果就是无法正常使用账户同步功能（不能多设备同步我还用你干嘛！？！）
 翻了翻资料，看了看log，发现这种时候新启动的chrome尝试去打开一个已经lock住的数据库（这不科学），然后就报错了。
 继续翻，貌似每次第一次启动的chrome没有正常关闭，依然占用数据库（单例真的好么）。结果就是后面再启动的chrome尝试open，然后失败。
-官方解决方法目前未找到。。。土方法就是 language-bash ps -A | grep &#39;chrome&#39;  然后kill吧。
+官方解决方法目前未找到。。。土方法就是
+ps -A | grep &#39;chrome&#39;  然后kill吧。
 Chrome现在也略不靠谱啊。T_T" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/chrome-cannot-open-profile-correctly/" />
-<meta property="article:published_time" content="2014-12-19T14:57:26&#43;00:00"/>
-<meta property="article:modified_time" content="2014-12-19T14:57:26&#43;00:00"/><meta property="og:site_name" content="你好，世界" />
+<meta property="article:published_time" content="2014-12-19T14:57:26+00:00" />
+<meta property="article:modified_time" content="2014-12-19T14:57:26+00:00" /><meta property="og:site_name" content="你好，世界" />
 
 
 
@@ -149,10 +152,12 @@ Chrome现在也略不靠谱啊。T_T" />
 
 <p>继续翻，貌似每次第一次启动的chrome没有正常关闭，依然占用数据库（单例真的好么）。结果就是后面再启动的chrome尝试open，然后失败。</p>
 
-<p>官方解决方法目前未找到。。。土方法就是
-<code>language-bash
-ps -A | grep 'chrome'
-</code> 然后<code>kill</code>吧。</p>
+<p>官方解决方法目前未找到。。。土方法就是</p>
+
+<pre><code class="language-language-bash">ps -A | grep 'chrome'
+</code></pre>
+
+<p>然后<code>kill</code>吧。</p>
 
 <p>Chrome现在也略不靠谱啊。T_T</p>
 

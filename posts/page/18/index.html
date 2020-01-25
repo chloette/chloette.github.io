@@ -33,7 +33,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/posts/" />
 
-<meta property="og:updated_time" content="2019-08-28T12:00:00&#43;08:00"/><meta property="og:site_name" content="你好，世界" />
+<meta property="og:updated_time" content="2020-01-25T17:51:12+08:00" /><meta property="og:site_name" content="你好，世界" />
 
 
 
@@ -107,6 +107,39 @@
     
     
 
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/optimize-layout-of-ghost-logo/">Ghost修改圆框logo</a></h1>
+      <div class="post-meta">
+        <span class="post-date">
+          2014-09-30
+        </span>
+        <span class="post-author">— Written by Guo Yi</span>
+        
+      </div>
+
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/ghost/">ghost</a>&nbsp;
+          
+            #<a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
+          
+            #<a href="/tags/logo/">logo</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      <div><a class="read-more button" href="/posts/optimize-layout-of-ghost-logo/">Read more →</a></div>
+    </div>
     
     <div class="post on-list">
       <h1 class="post-title"><a href="/posts/about-bitcoin-calculate-algorithm-manually/">关于比特币：老外纸笔演算比特币算法（转）</a></h1>
@@ -221,7 +254,8 @@ FFmpeg是多媒体框架的领军人物，允许解码、编码、转码、Mux�
 结果启动Ghost就报sql corruption 500的错误。。。（这么“写”数据，基本的MD5校验都过不了啊）
 真是一失足成千古恨啊。折腾了蛮久才发现是这个问题。 T_T
 附上修改后的脚本，运行
-sudo ./upgrade_ghost.sh TARGET_DIR_PATH <code>即可：</code>language-bash #stop all echo &lsquo;1. stop all &mdash;&mdash;&mdash;&mdash;&mdash;&ndash;&rsquo; forever stopall #download latest build echo &lsquo;2. download latest package &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-&rsquo; rm ghost-latest.zip wget <a href="http://ghost.org/zip/ghost-latest.zip">http://ghost.org/zip/ghost-latest.zip</a> #rm core echo &lsquo;3. delete core dir &mdash;&mdash;&mdash;&mdash;&mdash;&rsquo; rm -rf $1/core #unzip echo &lsquo;4. unzip and merge code &mdash;&mdash;&mdash;&mdash;&mdash;-&rsquo; unzip -uo ghost-latest.zip -d $1/ #install rm ghost-latest.zip cd $1/ echo &lsquo;5.
+sudo ./upgrade_ghost.sh TARGET_DIR_PATH  即可：
+#stop all echo &lsquo;1. stop all &mdash;&mdash;&mdash;&mdash;&mdash;&ndash;&rsquo; forever stopall #download latest build echo &lsquo;2. download latest package &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-&rsquo; rm ghost-latest.zip wget <a href="http://ghost.org/zip/ghost-latest.zip">http://ghost.org/zip/ghost-latest.zip</a> #rm core echo &lsquo;3. delete core dir &mdash;&mdash;&mdash;&mdash;&mdash;&rsquo; rm -rf $1/core #unzip echo &lsquo;4. unzip and merge code &mdash;&mdash;&mdash;&mdash;&mdash;-&rsquo; unzip -uo ghost-latest.zip -d $1/ #install rm ghost-latest.zip cd $1/ echo &lsquo;5.
           
         
       </div>
@@ -266,46 +300,6 @@ $env x=&lsquo;() { :;}; echo vulnerable&rsquo; bash -c &lsquo;echo this is a tes
         
       </div>
       <div><a class="read-more button" href="/posts/about-shellshock-bash-bug/">Read more →</a></div>
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/about-gpl/">关于GPL</a></h1>
-      <div class="post-meta">
-        <span class="post-date">
-          2014-09-24
-        </span>
-        <span class="post-author">— Written by Guo Yi</span>
-        
-      </div>
-
-
-      
-        <span class="post-tags">
-          
-            #<a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
-          
-            #<a href="/tags/ffmpeg/">ffmpeg</a>&nbsp;
-          
-            #<a href="/tags/gpl/">gpl</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            因为最近在做ffmpeg相关的东西，所以GPL/LGPL还是要了解一下的。
-GPL的WIKI： GPL WIKI
-FFmpeg主要代码遵循的是LGPL；简单来说，静态库调用的话必须同样遵循LGPL（被传染），而动态库调用就没关系：FFmpeg legal
- The following is a checklist for LGPL compliance when linking against the FFmpeg libraries. It is not the only way to comply with the license, but we think it is the easiest. There are also a few items that are not really related to LGPL compliance but are good ideas anyway.
-1.Compile FFmpeg without &ldquo;&ndash;enable-gpl&rdquo; and without &ldquo;&ndash;enable-nonfree&rdquo;.
-2.Use dynamic linking (on windows, this means linking to dlls) for linking with FFmpeg libraries.
-          
-        
-      </div>
-      <div><a class="read-more button" href="/posts/about-gpl/">Read more →</a></div>
     </div>
     
     <div class="pagination">

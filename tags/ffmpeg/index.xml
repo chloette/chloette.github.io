@@ -28,7 +28,7 @@ FFmpeg的官方文档算是比较全的。 一些常见case的testbed都可以�
 同时官方的例子并非浅显易懂，但是因为层次简单，所以调用逻辑很清楚；参考着这些文档/Sample就可以按需设计一个简化版Adapter了。
 ####FFmpeg基本调用逻辑 还记得Decode/Encode和Muxer/Demuxer吧，如果还记得那就很好理解了。下面截选了部分代码（不要在意细节），有一些重要关键但非流程相关的步骤这里先省略（例如FIFO等），下文再提。
 #####Encoding（Based on 2.x） - Register all codec //应该是plugin的机制
-av_register_all(); avcodec_register_all();   Find encoder -&amp;gt; create stream -&amp;gt; open encoder  /* find the audio encoder */ p_audio_codec = avcodec_find_encoder(m_p_fmt_ctx-&amp;gt;oformat-&amp;gt;audio_codec); if (!</description>
+av_register_all(); avcodec_register_all();   Find encoder -&amp;gt; create stream -&amp;gt; open encoder</description>
     </item>
     
     <item>

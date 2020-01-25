@@ -95,12 +95,14 @@ ImageFetcher就是其中之一，这货非常简洁的实现了用ImageView来�
 主体代码构成： 外部调用如下：
  New：
 ImageFetcher imageFetcher = new ImageFetcher(context, width, height);  就可以了。
-当然这里一般都会改动；
+  当然这里一般都会改动；
 例如为了区分cache目录，会把unique folder name作为参数传入进去）。
 例如为了替换默认图，把图标传进去。
 例如为了适配任何图片资源，增加自定义的ImageProvider，也在初始化的时候传进去。
- Load bitmap：   imageFetcher.loadImage(pathString, (ImageView) view.findViewById(R.id.thumbnail));   这样这个ImageView就会在图片通过异步下载好（并缓存）以后，自己加载显示出来了～
- Close cache：  imageFetcher.setPauseWork(false); imageFetcher.closeCache();  就是这么简单任性～
+ Load bitmap：
+imageFetcher.loadImage(pathString, (ImageView) view.findViewById(R.id.thumbnail));   这样这个ImageView就会在图片通过异步下载好（并缓存）以后，自己加载显示出来了～
+ Close cache：
+imageFetcher.setPauseWork(false); imageFetcher.closeCache();   就是这么简单任性～
 内部逻辑重点的几个：
  对Download下来的图片，使用DiskLruCache来本地缓存，使用LruCache作为内存缓存；
  使用AsyncTask（WeakReference）来异步download图片；结束后对ImageView（WeakReference）进行setImageDrawable（AsyncDrawable）；这里的AsyncDrawable内部有正在处理自身的AsyncTask的WeakReference，所以可以避免重复execute的情况；每次都会先cancel之前的。
@@ -145,9 +147,11 @@ Java中，字符串比较用==和equals的区别就不用解释了吧。。。
 RelativeLayout中，为了方便布局，子view经常会用到alignParentBottom/Top/Left/Right等，如：
 android:layout_alignParentBottom=&amp;quot;true&amp;quot;  但这时候需要注意的是，如果parent是wrap_content的话，alignParentRight就意味着要求parent的layout_width=&amp;quot;match_parent&amp;quot;； alignParentBottom就意味着要求parent的layout_height=&amp;quot;match_parent&amp;quot;
 这会带来什么问题那？两个问题：
- 显示错误。在布局嵌套的环境下，例如布局A包含B和C，在A里面，B above C：（伪布局代码）  RelativeLayout width=match_parent height=match_parent id=&amp;quot;A&amp;quot; XXLayout width=match_parent height=wrap_content above=&amp;quot;C&amp;quot; id=&amp;quot;B&amp;quot; RelativeLayout width=match_parent height=wrap_content id=&amp;quot;C&amp;quot; XXView width=match_parent height=wrap_content android:layout_alignParentBottom=&amp;quot;true&amp;quot; src=xxx  本意是希望在布局A里面，B可以在C上面显示，C里面显示xxx；
+ 显示错误。在布局嵌套的环境下，例如布局A包含B和C，在A里面，B above C：（伪布局代码）
+RelativeLayout width=match_parent height=match_parent id=&amp;quot;A&amp;quot; XXLayout width=match_parent height=wrap_content above=&amp;quot;C&amp;quot; id=&amp;quot;B&amp;quot; RelativeLayout width=match_parent height=wrap_content id=&amp;quot;C&amp;quot; XXView width=match_parent height=wrap_content android:layout_alignParentBottom=&amp;quot;true&amp;quot; src=xxx   本意是希望在布局A里面，B可以在C上面显示，C里面显示xxx；
 但是结果是：C会撑满A，然后导致B不可见。
-改法很简单，去掉 language-bash android:layout_alignParentBottom=&amp;quot;true&amp;quot; 即可。
+改法很简单，去掉
+android:layout_alignParentBottom=&amp;quot;true&amp;quot;  即可。
 实际原因我没有去翻源码，不确定；但是猜测和Android的绘制/计算布局的方向有关，Android默认是从屏幕左上角向右下角绘制（在写自定义view，重载onDraw，或者坐标计算的时候需要依赖这种“特性”），所以在这种情况下，alignBottom或alignRight后，“画布”就自然而然被顶到下边和右边去了。
  性能。对，就是性能；撑满屏幕意味着这个view（例如上面的C）的刷新，不只是局部刷新，而是整屏刷新（即使XXView可能只是一个bottom bar这种非全屏的view），所以不管是耗电量还是性能，都会受到一定的影响。  综上，在设计layout的时候，需要注意方向带来的影响，同时注意不同属性之间可能导致的“冲突”。
 记录一下。</description>
@@ -233,13 +237,15 @@ http://java.dzone.com/articles/automating-continuous https://wiki.jenkins-ci.org
  native库（.so）问题 如果出现库无法链接，或者没有打包到apk中的情况；请确认是否是target版本不对，目前android-20是存在一些问题的（例如安装后不能运行等。。。），暂不建议使用（2014/9/11）
  环境变量问题
 如出现环境变量找不到，可以直接加在Ant的Properties里面，如：
-sdk.dir=/xxx/xxx/xxx/sdk   签名问题   把key找个位置放好，然后在Ant的Properties里面加入：
+sdk.dir=/xxx/xxx/xxx/sdk  签名问题
+把key找个位置放好，然后在Ant的Properties里面加入：
 key.store=/xxx/xxx/xxx.key key.alias=xxx key.store.password=xxx key.alias.password=xxx  提示空间不足
 多次编译后如空间不足，最好将JENKINS_HOME（主要是改这个环境变量）迁移到其他盘（默认是/var/lib/jenkins）; 如果遇到了503的话，一般是权限不对，把新目录的owner改为jenkins:jenkins，权限改为755即可。
  多文件打包
 不支持多个文件同时输出（除非有name上的关联，如**/*.apk这种），这里可以用shell命令来打包；如tar；这里可以使用全局变量方便命名，如$JOB_NAME或者$WORKSPACE等等，举个栗子：
 cd $WORKSPACE/code/XXX/bin/ tar zcvf $JOB_NAME.tar.gz proguard/mapping.txt xxx.apk  最后Archive the artifaces填**/*.tar.gz就好了
- 如何删除SVN的登录信息   登录服务器（界面上没找到修改的地方），Edit your HUDSON_HOME/hudson.scm.SubversionSCM.xml file and delete your /credentials/entry matching with your realm (and having your given username).</description>
+ 如何删除SVN的登录信息
+登录服务器（界面上没找到修改的地方），Edit your HUDSON_HOME/hudson.scm.SubversionSCM.xml file and delete your /credentials/entry matching with your realm (and having your given username).</description>
     </item>
     
     <item>

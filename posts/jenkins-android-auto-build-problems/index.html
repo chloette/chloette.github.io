@@ -22,13 +22,15 @@ http://java.dzone.com/articles/automating-continuous https://wiki.jenkins-ci.org
  native库（.so）问题 如果出现库无法链接，或者没有打包到apk中的情况；请确认是否是target版本不对，目前android-20是存在一些问题的（例如安装后不能运行等。。。），暂不建议使用（2014/9/11）
  环境变量问题
 如出现环境变量找不到，可以直接加在Ant的Properties里面，如：
-sdk.dir=/xxx/xxx/xxx/sdk   签名问题   把key找个位置放好，然后在Ant的Properties里面加入：
+sdk.dir=/xxx/xxx/xxx/sdk  签名问题
+把key找个位置放好，然后在Ant的Properties里面加入：
 key.store=/xxx/xxx/xxx.key key.alias=xxx key.store.password=xxx key.alias.password=xxx  提示空间不足
 多次编译后如空间不足，最好将JENKINS_HOME（主要是改这个环境变量）迁移到其他盘（默认是/var/lib/jenkins）; 如果遇到了503的话，一般是权限不对，把新目录的owner改为jenkins:jenkins，权限改为755即可。
  多文件打包
 不支持多个文件同时输出（除非有name上的关联，如**/*.apk这种），这里可以用shell命令来打包；如tar；这里可以使用全局变量方便命名，如$JOB_NAME或者$WORKSPACE等等，举个栗子：
 cd $WORKSPACE/code/XXX/bin/ tar zcvf $JOB_NAME.tar.gz proguard/mapping.txt xxx.apk  最后Archive the artifaces填**/*.tar.gz就好了
- 如何删除SVN的登录信息   登录服务器（界面上没找到修改的地方），Edit your HUDSON_HOME/hudson.scm.SubversionSCM.xml file and delete your /credentials/entry matching with your realm (and having your given username)."/>
+ 如何删除SVN的登录信息
+登录服务器（界面上没找到修改的地方），Edit your HUDSON_HOME/hudson.scm.SubversionSCM.xml file and delete your /credentials/entry matching with your realm (and having your given username)."/>
 <meta name="keywords" content=""/>
 <meta name="robots" content="noodp"/>
 <link rel="canonical" href="/posts/jenkins-android-auto-build-problems/" />
@@ -62,13 +64,15 @@ http://java.dzone.com/articles/automating-continuous https://wiki.jenkins-ci.org
  native库（.so）问题 如果出现库无法链接，或者没有打包到apk中的情况；请确认是否是target版本不对，目前android-20是存在一些问题的（例如安装后不能运行等。。。），暂不建议使用（2014/9/11）
  环境变量问题
 如出现环境变量找不到，可以直接加在Ant的Properties里面，如：
-sdk.dir=/xxx/xxx/xxx/sdk   签名问题   把key找个位置放好，然后在Ant的Properties里面加入：
+sdk.dir=/xxx/xxx/xxx/sdk  签名问题
+把key找个位置放好，然后在Ant的Properties里面加入：
 key.store=/xxx/xxx/xxx.key key.alias=xxx key.store.password=xxx key.alias.password=xxx  提示空间不足
 多次编译后如空间不足，最好将JENKINS_HOME（主要是改这个环境变量）迁移到其他盘（默认是/var/lib/jenkins）; 如果遇到了503的话，一般是权限不对，把新目录的owner改为jenkins:jenkins，权限改为755即可。
  多文件打包
 不支持多个文件同时输出（除非有name上的关联，如**/*.apk这种），这里可以用shell命令来打包；如tar；这里可以使用全局变量方便命名，如$JOB_NAME或者$WORKSPACE等等，举个栗子：
 cd $WORKSPACE/code/XXX/bin/ tar zcvf $JOB_NAME.tar.gz proguard/mapping.txt xxx.apk  最后Archive the artifaces填**/*.tar.gz就好了
- 如何删除SVN的登录信息   登录服务器（界面上没找到修改的地方），Edit your HUDSON_HOME/hudson.scm.SubversionSCM.xml file and delete your /credentials/entry matching with your realm (and having your given username)."/>
+ 如何删除SVN的登录信息
+登录服务器（界面上没找到修改的地方），Edit your HUDSON_HOME/hudson.scm.SubversionSCM.xml file and delete your /credentials/entry matching with your realm (and having your given username)."/>
 
 
 
@@ -89,17 +93,19 @@ http://java.dzone.com/articles/automating-continuous https://wiki.jenkins-ci.org
  native库（.so）问题 如果出现库无法链接，或者没有打包到apk中的情况；请确认是否是target版本不对，目前android-20是存在一些问题的（例如安装后不能运行等。。。），暂不建议使用（2014/9/11）
  环境变量问题
 如出现环境变量找不到，可以直接加在Ant的Properties里面，如：
-sdk.dir=/xxx/xxx/xxx/sdk   签名问题   把key找个位置放好，然后在Ant的Properties里面加入：
+sdk.dir=/xxx/xxx/xxx/sdk  签名问题
+把key找个位置放好，然后在Ant的Properties里面加入：
 key.store=/xxx/xxx/xxx.key key.alias=xxx key.store.password=xxx key.alias.password=xxx  提示空间不足
 多次编译后如空间不足，最好将JENKINS_HOME（主要是改这个环境变量）迁移到其他盘（默认是/var/lib/jenkins）; 如果遇到了503的话，一般是权限不对，把新目录的owner改为jenkins:jenkins，权限改为755即可。
  多文件打包
 不支持多个文件同时输出（除非有name上的关联，如**/*.apk这种），这里可以用shell命令来打包；如tar；这里可以使用全局变量方便命名，如$JOB_NAME或者$WORKSPACE等等，举个栗子：
 cd $WORKSPACE/code/XXX/bin/ tar zcvf $JOB_NAME.tar.gz proguard/mapping.txt xxx.apk  最后Archive the artifaces填**/*.tar.gz就好了
- 如何删除SVN的登录信息   登录服务器（界面上没找到修改的地方），Edit your HUDSON_HOME/hudson.scm.SubversionSCM.xml file and delete your /credentials/entry matching with your realm (and having your given username)." />
+ 如何删除SVN的登录信息
+登录服务器（界面上没找到修改的地方），Edit your HUDSON_HOME/hudson.scm.SubversionSCM.xml file and delete your /credentials/entry matching with your realm (and having your given username)." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/jenkins-android-auto-build-problems/" />
-<meta property="article:published_time" content="2014-09-19T09:16:23&#43;00:00"/>
-<meta property="article:modified_time" content="2014-09-19T09:16:23&#43;00:00"/><meta property="og:site_name" content="你好，世界" />
+<meta property="article:published_time" content="2014-09-19T09:16:23+00:00" />
+<meta property="article:modified_time" content="2014-09-19T09:16:23+00:00" /><meta property="og:site_name" content="你好，世界" />
 
 
 
@@ -241,12 +247,9 @@ cd $WORKSPACE/code/XXX/bin/ tar zcvf $JOB_NAME.tar.gz proguard/mapping.txt xxx.a
 <p>如出现环境变量找不到，可以直接加在Ant的Properties里面，如：</p>
 
 <pre><code class="language-language-bash">sdk.dir=/xxx/xxx/xxx/sdk
-</code></pre>
+</code></pre></li>
 
-<ul>
-<li>签名问题
-<br /></li>
-</ul>
+<li><p>签名问题</p>
 
 <p>把key找个位置放好，然后在Ant的Properties里面加入：</p>
 
@@ -268,19 +271,13 @@ key.alias.password=xxx
 tar zcvf $JOB_NAME.tar.gz proguard/mapping.txt xxx.apk
 </code></pre>
 
-<p>最后Archive the artifaces填<code>**/*.tar.gz</code>就好了</p>
+<p>最后Archive the artifaces填<code>**/*.tar.gz</code>就好了</p></li>
 
-<ul>
-<li>如何删除SVN的登录信息
-<br /></li>
-</ul>
+<li><p>如何删除SVN的登录信息</p>
 
-<p>登录服务器（界面上没找到修改的地方），Edit your <code>HUDSON_HOME/hudson.scm.SubversionSCM.xml</code> file and delete your <code>/credentials/entry</code> matching with your realm (and having your given username).</p>
+<p>登录服务器（界面上没找到修改的地方），Edit your <code>HUDSON_HOME/hudson.scm.SubversionSCM.xml</code> file and delete your <code>/credentials/entry</code> matching with your realm (and having your given username).</p></li>
 
-<ul>
-<li>偶尔出现的HTTP ERROR: 503 Problem accessing /jenkins. Reason: Service Unavailable
-<br /></li>
-</ul>
+<li><p>偶尔出现的HTTP ERROR: 503 Problem accessing /jenkins. Reason: Service Unavailable</p>
 
 <p>如果用了Jetty，参考这个<a href="http://stackoverflow.com/questions/9111759/http-error-503-accessing-jenkins-reason-service-unavailable">方案</a>。</p>
 

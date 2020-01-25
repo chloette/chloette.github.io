@@ -35,8 +35,8 @@
 // Copyright 2010 Google Inc. // // This code is licensed under the same terms as WebM: // Software License Agreement: http://www.webmproject.org/license/software/ // Additional IP Rights Grant: http://www.webmproject.org/license/additional/ // ----------------------------------------------------------------------------- // // YUV-&gt;RGB conversion function // // Author: Skal (pascal.massimino@gmail.com) #include &quot;yuv.h&quot; #if defined(__cplusplus) || defined(c_plusplus) extern &quot;C&quot; { #endif enum { YUV_HALF = 1 &lt;&lt; (YUV_FIX - 1) }; int16_t VP8kVToR[256], VP8kUToB[256]; int32_t VP8kVToG[256], VP8kUToG[256]; uint8_t VP8kClip[YUV_RANGE_MAX - YUV_RANGE_MIN]; static int done = 0; void VP8YUVInit() { int i; if (done) { return; } for (i = 0; i &lt; 256; &#43;&#43;i) { VP8kVToR[i] = (89858 * (i - 128) &#43; YUV_HALF) &gt;&gt; YUV_FIX; VP8kUToG[i] = -22014 * (i - 128) &#43; YUV_HALF; VP8kVToG[i] = -45773 * (i - 128); VP8kUToB[i] = (113618 * (i - 128) &#43; YUV_HALF) &gt;&gt; YUV_FIX; } for (i = YUV_RANGE_MIN; i &lt; YUV_RANGE_MAX; &#43;&#43;i) { const int k = ((i - 16) * 76283 &#43; YUV_HALF) &gt;&gt; YUV_FIX; VP8kClip[i - YUV_RANGE_MIN] = (k &lt; 0) ?" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/optimize-rgb-to-yuv/" />
-<meta property="article:published_time" content="2014-10-11T09:27:07&#43;00:00"/>
-<meta property="article:modified_time" content="2014-10-11T09:27:07&#43;00:00"/><meta property="og:site_name" content="你好，世界" />
+<meta property="article:published_time" content="2014-10-11T09:27:07+00:00" />
+<meta property="article:modified_time" content="2014-10-11T09:27:07+00:00" /><meta property="og:site_name" content="你好，世界" />
 
 
 

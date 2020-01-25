@@ -33,7 +33,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/categories/upgrade/" />
 
-<meta property="og:updated_time" content="2014-10-22T03:52:40&#43;00:00"/><meta property="og:site_name" content="你好，世界" />
+<meta property="og:updated_time" content="2014-10-22T03:52:40+00:00" /><meta property="og:site_name" content="你好，世界" />
 
 
 
@@ -173,7 +173,8 @@
 结果启动Ghost就报sql corruption 500的错误。。。（这么“写”数据，基本的MD5校验都过不了啊）
 真是一失足成千古恨啊。折腾了蛮久才发现是这个问题。 T_T
 附上修改后的脚本，运行
-sudo ./upgrade_ghost.sh TARGET_DIR_PATH <code>即可：</code>language-bash #stop all echo &lsquo;1. stop all &mdash;&mdash;&mdash;&mdash;&mdash;&ndash;&rsquo; forever stopall #download latest build echo &lsquo;2. download latest package &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-&rsquo; rm ghost-latest.zip wget <a href="http://ghost.org/zip/ghost-latest.zip">http://ghost.org/zip/ghost-latest.zip</a> #rm core echo &lsquo;3. delete core dir &mdash;&mdash;&mdash;&mdash;&mdash;&rsquo; rm -rf $1/core #unzip echo &lsquo;4. unzip and merge code &mdash;&mdash;&mdash;&mdash;&mdash;-&rsquo; unzip -uo ghost-latest.zip -d $1/ #install rm ghost-latest.zip cd $1/ echo &lsquo;5.
+sudo ./upgrade_ghost.sh TARGET_DIR_PATH  即可：
+#stop all echo &lsquo;1. stop all &mdash;&mdash;&mdash;&mdash;&mdash;&ndash;&rsquo; forever stopall #download latest build echo &lsquo;2. download latest package &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-&rsquo; rm ghost-latest.zip wget <a href="http://ghost.org/zip/ghost-latest.zip">http://ghost.org/zip/ghost-latest.zip</a> #rm core echo &lsquo;3. delete core dir &mdash;&mdash;&mdash;&mdash;&mdash;&rsquo; rm -rf $1/core #unzip echo &lsquo;4. unzip and merge code &mdash;&mdash;&mdash;&mdash;&mdash;-&rsquo; unzip -uo ghost-latest.zip -d $1/ #install rm ghost-latest.zip cd $1/ echo &lsquo;5.
           
         
       </div>

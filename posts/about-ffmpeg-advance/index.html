@@ -16,7 +16,7 @@ FFmpeg的官方文档算是比较全的。 一些常见case的testbed都可以�
 同时官方的例子并非浅显易懂，但是因为层次简单，所以调用逻辑很清楚；参考着这些文档/Sample就可以按需设计一个简化版Adapter了。
 ####FFmpeg基本调用逻辑 还记得Decode/Encode和Muxer/Demuxer吧，如果还记得那就很好理解了。下面截选了部分代码（不要在意细节），有一些重要关键但非流程相关的步骤这里先省略（例如FIFO等），下文再提。
 #####Encoding（Based on 2.x） - Register all codec //应该是plugin的机制
-av_register_all(); avcodec_register_all();   Find encoder -&amp;gt; create stream -&amp;gt; open encoder  /* find the audio encoder */ p_audio_codec = avcodec_find_encoder(m_p_fmt_ctx-&amp;gt;oformat-&amp;gt;audio_codec); if (!"/>
+av_register_all(); avcodec_register_all();   Find encoder -&amp;gt; create stream -&amp;gt; open encoder"/>
 <meta name="keywords" content=""/>
 <meta name="robots" content="noodp"/>
 <link rel="canonical" href="/posts/about-ffmpeg-advance/" />
@@ -44,7 +44,7 @@ FFmpeg的官方文档算是比较全的。 一些常见case的testbed都可以�
 同时官方的例子并非浅显易懂，但是因为层次简单，所以调用逻辑很清楚；参考着这些文档/Sample就可以按需设计一个简化版Adapter了。
 ####FFmpeg基本调用逻辑 还记得Decode/Encode和Muxer/Demuxer吧，如果还记得那就很好理解了。下面截选了部分代码（不要在意细节），有一些重要关键但非流程相关的步骤这里先省略（例如FIFO等），下文再提。
 #####Encoding（Based on 2.x） - Register all codec //应该是plugin的机制
-av_register_all(); avcodec_register_all();   Find encoder -&gt; create stream -&gt; open encoder  /* find the audio encoder */ p_audio_codec = avcodec_find_encoder(m_p_fmt_ctx-&gt;oformat-&gt;audio_codec); if (!"/>
+av_register_all(); avcodec_register_all();   Find encoder -&gt; create stream -&gt; open encoder"/>
 
 
 
@@ -59,11 +59,11 @@ FFmpeg的官方文档算是比较全的。 一些常见case的testbed都可以�
 同时官方的例子并非浅显易懂，但是因为层次简单，所以调用逻辑很清楚；参考着这些文档/Sample就可以按需设计一个简化版Adapter了。
 ####FFmpeg基本调用逻辑 还记得Decode/Encode和Muxer/Demuxer吧，如果还记得那就很好理解了。下面截选了部分代码（不要在意细节），有一些重要关键但非流程相关的步骤这里先省略（例如FIFO等），下文再提。
 #####Encoding（Based on 2.x） - Register all codec //应该是plugin的机制
-av_register_all(); avcodec_register_all();   Find encoder -&gt; create stream -&gt; open encoder  /* find the audio encoder */ p_audio_codec = avcodec_find_encoder(m_p_fmt_ctx-&gt;oformat-&gt;audio_codec); if (!" />
+av_register_all(); avcodec_register_all();   Find encoder -&gt; create stream -&gt; open encoder" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/about-ffmpeg-advance/" />
-<meta property="article:published_time" content="2014-12-24T09:11:09&#43;00:00"/>
-<meta property="article:modified_time" content="2014-12-24T09:11:09&#43;00:00"/><meta property="og:site_name" content="你好，世界" />
+<meta property="article:published_time" content="2014-12-24T09:11:09+00:00" />
+<meta property="article:modified_time" content="2014-12-24T09:11:09+00:00" /><meta property="og:site_name" content="你好，世界" />
 
 
 
@@ -201,22 +201,21 @@ avcodec_register_all();
 </code></pre>
 
 <ul>
-<li><strong>Find encoder -&gt; create stream -&gt; open encoder</strong></li>
-</ul>
+<li><p><strong>Find encoder -&gt; create stream -&gt; open encoder</strong></p>
 
 <pre><code class="language-language-cpp">/* find the audio encoder */
 p_audio_codec = avcodec_find_encoder(m_p_fmt_ctx-&gt;oformat-&gt;audio_codec);
 if (!p_audio_codec) {
-  res = ErrorNoEncoderFound;
-  goto EXIT;
+res = ErrorNoEncoderFound;
+goto EXIT;
 }
 
 // Try create stream.
 m_p_audio_stream = avformat_new_stream(m_p_fmt_ctx, p_audio_codec);
 if (!m_p_audio_stream) {
-  LOGE(&quot;Cannot add new audio stream\n&quot;);
-  res = ErrorNoStreamFound;
-  goto EXIT;
+LOGE(&quot;Cannot add new audio stream\n&quot;);
+res = ErrorNoStreamFound;
+goto EXIT;
 }
 
 p_codec_ctx = m_p_audio_stream-&gt;codec;
@@ -225,44 +224,37 @@ p_codec_ctx = m_p_audio_stream-&gt;codec;
 // open the codec.
 res = avcodec_open2(p_codec_ctx, p_audio_codec, &amp;p_options);
 CHK_RES(res);
-</code></pre>
+</code></pre></li>
 
-<ul>
-<li><strong>Open File -&gt; write header</strong></li>
-</ul>
+<li><p><strong>Open File -&gt; write header</strong></p>
 
 <pre><code class="language-language-c">res = avio_open(&amp;m_p_fmt_ctx-&gt;pb, m_p_file_path, AVIO_FLAG_WRITE);
 ...
 res = avformat_write_header(m_p_fmt_ctx, NULL);
 ...
-</code></pre>
+</code></pre></li>
 
-<ul>
-<li><strong>Encode</strong></li>
-</ul>
+<li><p><strong>Encode</strong></p>
 
 <pre><code class="language-language-cpp">av_init_packet(&amp;output_packet);
- ...
+...
 res = avcodec_encode_audio2(output_audio_stream-&gt;codec, &amp;output_packet, frame, data_present);
 ...
 res = av_interleaved_write_frame(output_format_context, &amp;output_packet);
-</code></pre>
+</code></pre></li>
 
-<ul>
-<li><strong>Write trailer</strong></li>
-</ul>
+<li><p><strong>Write trailer</strong></p>
 
 <pre><code class="language-language-cpp">av_write_trailer(m_p_fmt_ctx);
-</code></pre>
+</code></pre></li>
 
-<ul>
-<li><strong>Release</strong></li>
-</ul>
+<li><p><strong>Release</strong></p>
 
 <pre><code class="language-language-cpp">avcodec_close(m_p_audio_stream-&gt;codec);
 avio_close(m_p_fmt_ctx-&gt;pb);
 avformat_free_context(m_p_fmt_ctx);
-</code></pre>
+</code></pre></li>
+</ul>
 
 <hr />
 
@@ -274,48 +266,45 @@ avcodec_register_all();
 </code></pre>
 
 <ul>
-<li><strong>Open File -&gt; find stream -&gt; find decoder -&gt; open decoder</strong></li>
-</ul>
+<li><p><strong>Open File -&gt; find stream -&gt; find decoder -&gt; open decoder</strong></p>
 
 <pre><code class="language-language-cpp">res = avformat_open_input(&amp;m_p_fmt_ctx, filename, NULL, NULL);
 if (res &lt; 0) {
-  LOGE(&quot;Could not open find stream info (error '%s')\n&quot;,
-  get_error_text(res));
-  goto EXIT;
+LOGE(&quot;Could not open find stream info (error '%s')\n&quot;,
+get_error_text(res));
+goto EXIT;
 }
 
 /** Get information on the input file (number of streams etc.). */
 res = avformat_find_stream_info(m_p_fmt_ctx, NULL);
 if (res &lt; 0) {
-  LOGE(&quot;Could not open find stream info (error '%s')\n&quot;, get_error_text(res));
-  goto EXIT;
+LOGE(&quot;Could not open find stream info (error '%s')\n&quot;, get_error_text(res));
+goto EXIT;
 }
 
 ...//match stream via stream-&gt;codec-&gt;codec_type
 
 if (m_p_video_stream) {
 // Find the decoder for the video stream
-  p_video_codec = avcodec_find_decoder(p_video_ctx-&gt;codec_id);
-  if (!p_video_codec) {
-    LOGE(&quot;avcodec_find_decoder() error: Unsupported video format or codec not found: %d. &quot;, p_video_ctx-&gt;codec_id);
+p_video_codec = avcodec_find_decoder(p_video_ctx-&gt;codec_id);
+if (!p_video_codec) {
+LOGE(&quot;avcodec_find_decoder() error: Unsupported video format or codec not found: %d. &quot;, p_video_ctx-&gt;codec_id);
 }
 
 // Open video codec
 if (p_video_codec &amp;&amp; (res = avcodec_open2(p_video_ctx, p_video_codec, NULL)) &lt; 0) {
-  LOGE(&quot;avcodec_open2() error %d: Could not open video codec.&quot;, res);
+LOGE(&quot;avcodec_open2() error %d: Could not open video codec.&quot;, res);
 }
-</code></pre>
+</code></pre></li>
 
-<ul>
-<li><strong>Decode</strong> //考虑到视频编码的特殊性（前后帧参考），所以这里一般是需要do-while的。</li>
-</ul>
+<li><p><strong>Decode</strong> //考虑到视频编码的特殊性（前后帧参考），所以这里一般是需要do-while的。</p>
 
 <pre><code class="language-language-cpp">av_init_packet(&amp;pkt);
 
 res = av_read_frame(m_p_fmt_ctx, &amp;pkt);
 if (res &lt; 0) {
-  av_free_packet(&amp;pkt);
-  break;
+av_free_packet(&amp;pkt);
+break;
 }
 
 ...
@@ -324,15 +313,14 @@ if (res &lt; 0) {
 decoded_length = avcodec_decode_video2(m_p_video_stream-&gt;codec, temp_frame, &amp;got_frame, &amp;pkt);
 
 av_free_packet(&amp;pkt);
-</code></pre>
+</code></pre></li>
 
-<ul>
-<li><strong>Release</strong></li>
-</ul>
+<li><p><strong>Release</strong></p>
 
 <pre><code class="language-language-cpp">avcodec_close(m_p_audio_stream-&gt;codec);
 avformat_close_input(&amp;m_p_fmt_ctx);
-</code></pre>
+</code></pre></li>
+</ul>
 
 <hr />
 

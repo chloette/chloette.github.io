@@ -17,11 +17,14 @@ Android Studio的配置略有差异，可以参考前文
 解决办法就是修改proguard的配置文件，将这些敏感class置为例外。
 常用方法如下：
  排除指定类A
--keepclassmembers class com.xxx.xxx.A { *; }   将类A的子类全部排除 language-bash -keepclassmembers class * extends com.xxx.xxx.A { *; }   将包P内的class全部排除
--keep public class com.xxx.P.* { *; }   将包P内的class及subclass全部排除 language-bash -keep public class com.xxx.P.** { *; }     注意*和**的差别；
+-keepclassmembers class com.xxx.xxx.A { *; }  将类A的子类全部排除
+-keepclassmembers class * extends com.xxx.xxx.A { *; }  将包P内的class全部排除
+-keep public class com.xxx.P.* { *; }  将包P内的class及subclass全部排除
+-keep public class com.xxx.P.** { *; }   注意*和**的差别；
 注意最后的{ *; }，用法很多，可以指定仅排除public/protected，如：
 { public protected *;}  当然还可以直接更直接一些：
-{ &amp;lt;fields&amp;gt;; &amp;lt;methods&amp;gt;; }  如果是使用Gson的话，还可以直接如下使用方式来避免混淆问题："/>
+{ &amp;lt;fields&amp;gt;; &amp;lt;methods&amp;gt;; }  如果是使用Gson的话，还可以直接如下使用方式来避免混淆问题：
+@SerializedName(&amp;quot;data&amp;quot;) ArrayList&amp;lt;Object&amp;gt; data;  另外可以通过"/>
 <meta name="keywords" content=""/>
 <meta name="robots" content="noodp"/>
 <link rel="canonical" href="/posts/proguard-obfuscation/" />
@@ -50,11 +53,14 @@ Android Studio的配置略有差异，可以参考前文
 解决办法就是修改proguard的配置文件，将这些敏感class置为例外。
 常用方法如下：
  排除指定类A
--keepclassmembers class com.xxx.xxx.A { *; }   将类A的子类全部排除 language-bash -keepclassmembers class * extends com.xxx.xxx.A { *; }   将包P内的class全部排除
--keep public class com.xxx.P.* { *; }   将包P内的class及subclass全部排除 language-bash -keep public class com.xxx.P.** { *; }     注意*和**的差别；
+-keepclassmembers class com.xxx.xxx.A { *; }  将类A的子类全部排除
+-keepclassmembers class * extends com.xxx.xxx.A { *; }  将包P内的class全部排除
+-keep public class com.xxx.P.* { *; }  将包P内的class及subclass全部排除
+-keep public class com.xxx.P.** { *; }   注意*和**的差别；
 注意最后的{ *; }，用法很多，可以指定仅排除public/protected，如：
 { public protected *;}  当然还可以直接更直接一些：
-{ &lt;fields&gt;; &lt;methods&gt;; }  如果是使用Gson的话，还可以直接如下使用方式来避免混淆问题："/>
+{ &lt;fields&gt;; &lt;methods&gt;; }  如果是使用Gson的话，还可以直接如下使用方式来避免混淆问题：
+@SerializedName(&quot;data&quot;) ArrayList&lt;Object&gt; data;  另外可以通过"/>
 
 
 
@@ -70,15 +76,18 @@ Android Studio的配置略有差异，可以参考前文
 解决办法就是修改proguard的配置文件，将这些敏感class置为例外。
 常用方法如下：
  排除指定类A
--keepclassmembers class com.xxx.xxx.A { *; }   将类A的子类全部排除 language-bash -keepclassmembers class * extends com.xxx.xxx.A { *; }   将包P内的class全部排除
--keep public class com.xxx.P.* { *; }   将包P内的class及subclass全部排除 language-bash -keep public class com.xxx.P.** { *; }     注意*和**的差别；
+-keepclassmembers class com.xxx.xxx.A { *; }  将类A的子类全部排除
+-keepclassmembers class * extends com.xxx.xxx.A { *; }  将包P内的class全部排除
+-keep public class com.xxx.P.* { *; }  将包P内的class及subclass全部排除
+-keep public class com.xxx.P.** { *; }   注意*和**的差别；
 注意最后的{ *; }，用法很多，可以指定仅排除public/protected，如：
 { public protected *;}  当然还可以直接更直接一些：
-{ &lt;fields&gt;; &lt;methods&gt;; }  如果是使用Gson的话，还可以直接如下使用方式来避免混淆问题：" />
+{ &lt;fields&gt;; &lt;methods&gt;; }  如果是使用Gson的话，还可以直接如下使用方式来避免混淆问题：
+@SerializedName(&quot;data&quot;) ArrayList&lt;Object&gt; data;  另外可以通过" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/proguard-obfuscation/" />
-<meta property="article:published_time" content="2015-01-17T08:01:38&#43;00:00"/>
-<meta property="article:modified_time" content="2015-01-17T08:01:38&#43;00:00"/><meta property="og:site_name" content="你好，世界" />
+<meta property="article:published_time" content="2015-01-17T08:01:38+00:00" />
+<meta property="article:modified_time" content="2015-01-17T08:01:38+00:00" /><meta property="og:site_name" content="你好，世界" />
 
 
 
@@ -199,27 +208,22 @@ Android Studio的配置略有差异，可以参考前文
 <li><p>排除指定类A</p>
 
 <pre><code class="language-language-bash">-keepclassmembers class com.xxx.xxx.A { *; }
-</code></pre>
+</code></pre></li>
 
-<ul>
-<li>将类A的子类全部排除
-<code>language-bash
--keepclassmembers class * extends com.xxx.xxx.A { *; }
-</code></li>
-</ul></li>
+<li><p>将类A的子类全部排除</p>
+
+<pre><code class="language-language-bash">-keepclassmembers class * extends com.xxx.xxx.A { *; }
+</code></pre></li>
 
 <li><p>将包P内的class全部排除</p>
 
 <pre><code class="language-language-bash">-keep public class com.xxx.P.* { *; }
-</code></pre>
+</code></pre></li>
 
-<ul>
-<li>将包P内的class及subclass全部排除
-<code>language-bash
--keep public class com.xxx.P.** { *; }
-</code>
-<br /></li>
-</ul></li>
+<li><p>将包P内的class及subclass全部排除</p>
+
+<pre><code class="language-language-bash">-keep public class com.xxx.P.** { *; }
+</code></pre></li>
 </ul>
 
 <p>注意<code>*</code>和<code>**</code>的差别；</p>
@@ -240,10 +244,12 @@ Android Studio的配置略有差异，可以参考前文
 ArrayList&lt;Object&gt; data;
 </code></pre>
 
-<p>另外可以通过
-<code>language-bash 
--printmapping mapping.txt
-</code>来输出mapping，基本这些就够用了。记录一下。</p>
+<p>另外可以通过</p>
+
+<pre><code class="language-language-bash">-printmapping mapping.txt
+</code></pre>
+
+<p>来输出mapping，基本这些就够用了。记录一下。</p>
 
 <hr />
 

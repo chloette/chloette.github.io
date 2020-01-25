@@ -86,8 +86,8 @@ String libPath = Environment.getExternalStorageDirectory() &#43; &quot;/Plugin.a
 String libPath = Environment.getExternalStorageDirectory() &#43; &quot;/Plugin.apk&quot;; try { AssetManager assetManager = AssetManager.class.newInstance(); Method addAssetPath = assetManager.getClass().getMethod( &quot;addAssetPath&quot;, String.class); addAssetPath.invoke(assetManager, libPath); mAssetManager = assetManager; } catch (Exception e) { e.printStackTrace(); } Resources superRes = super.getResources(); mResources = new Resources(mAssetManager, superRes." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/about-loading-res-from-apk-directly/" />
-<meta property="article:published_time" content="2014-11-07T03:15:58&#43;00:00"/>
-<meta property="article:modified_time" content="2014-11-07T03:15:58&#43;00:00"/><meta property="og:site_name" content="你好，世界" />
+<meta property="article:published_time" content="2014-11-07T03:15:58+00:00" />
+<meta property="article:modified_time" content="2014-11-07T03:15:58+00:00" /><meta property="og:site_name" content="你好，世界" />
 
 
 
@@ -242,12 +242,9 @@ Resources superRes = super.getResources();
 mResources = new Resources(mAssetManager, superRes.getDisplayMetrics(),
         superRes.getConfiguration());
 Drawable temp = mResources.getDrawable(mResources.getIdentifier(&quot;test&quot;, &quot;drawable&quot;, &quot;com.example.plugin&quot;));
-</code></pre>
+</code></pre></li>
 
-<ul>
-<li>读取并执行功能函数：
-<br /></li>
-</ul>
+<li><p>读取并执行功能函数：</p>
 
 <p>例如从卡上的<code>Plugin.apk</code>中，读取<code>com.example.plugin.MainActivity</code>中的一个<code>String md5(String path)</code>的函数并执行：</p>
 
@@ -293,7 +290,6 @@ String xxx = (String) md5.invoke(myInstance, libPath);
 <li><p>直接启动activity</p>
 
 <p>可以参考<a href="https://github.com/singwhatiwanna/dynamic-load-apk。">https://github.com/singwhatiwanna/dynamic-load-apk。</a></p></li>
-</ul></li>
 </ul>
 
 <hr />
@@ -340,7 +336,8 @@ String xxx = (String) md5.invoke(myInstance, libPath);
 
 <p>@jefferyyangkai</p>
 
-<p><a href="http://blog.csdn.net/jefferyyangkai/article/details/9260841">qq游戏大厅中解析不安装apk的研究</a></p>
+<p><a href="http://blog.csdn.net/jefferyyangkai/article/details/9260841">qq游戏大厅中解析不安装apk的研究</a></p></li>
+</ul>
 
     </div>
     
