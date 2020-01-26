@@ -6,11 +6,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>来自某个八零后</copyright>
-    <lastBuildDate>Sat, 25 Jan 2020 17:51:12 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 26 Jan 2020 18:38:04 +0800</lastBuildDate>
     
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>从Wordpress迁移到Ghost</title>
+      <link>/posts/from-wordpress-to-ghost/</link>
+      <pubDate>Sun, 14 Sep 2014 16:27:10 +0000</pubDate>
+      
+      <guid>/posts/from-wordpress-to-ghost/</guid>
+      <description></description>
+    </item><item>
       <title>Wordpress插入代码失效</title>
       <link>/posts/wordpress-cha-ru-dai-ma-shi-xiao/</link>
       <pubDate>Sat, 06 Sep 2014 12:30:36 +0000</pubDate>
@@ -37,13 +44,6 @@
       <pubDate>Fri, 05 Sep 2014 22:08:36 +0000</pubDate>
       
       <guid>/posts/wp-xin-ban-ben-ru-he-qie-huan-yu-yan-dao-zhong-wen/</guid>
-      <description></description>
-    </item><item>
-      <title>再一次的选择</title>
-      <link>/posts/zai-yi-ci-de-xuan-ze/</link>
-      <pubDate>Thu, 27 Mar 2014 23:22:09 +0000</pubDate>
-      
-      <guid>/posts/zai-yi-ci-de-xuan-ze/</guid>
       <description></description>
     </item>
   </channel>

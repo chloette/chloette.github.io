@@ -6,11 +6,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>来自某个八零后</copyright>
-    <lastBuildDate>Sat, 25 Jan 2020 17:51:12 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 26 Jan 2020 18:38:04 +0800</lastBuildDate>
     
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>关于Shellshock bash bug</title>
+      <link>/posts/about-shellshock-bash-bug/</link>
+      <pubDate>Fri, 26 Sep 2014 07:05:44 +0000</pubDate>
+      
+      <guid>/posts/about-shellshock-bash-bug/</guid>
+      <description></description>
+    </item><item>
       <title>关于GPL</title>
       <link>/posts/about-gpl/</link>
       <pubDate>Wed, 24 Sep 2014 02:28:22 +0000</pubDate>
@@ -37,13 +44,6 @@
       <pubDate>Sat, 20 Sep 2014 02:42:15 +0000</pubDate>
       
       <guid>/posts/a-li-ba-ba-de-kuang-huan/</guid>
-      <description></description>
-    </item><item>
-      <title>周星星最近被黑的不轻</title>
-      <link>/posts/zhou-xing-chi/</link>
-      <pubDate>Fri, 19 Sep 2014 14:03:38 +0000</pubDate>
-      
-      <guid>/posts/zhou-xing-chi/</guid>
       <description></description>
     </item>
   </channel>
