@@ -6,11 +6,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>来自某个八零后</copyright>
-    <lastBuildDate>Sun, 26 Jan 2020 18:38:04 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 04 Feb 2020 20:46:15 +0800</lastBuildDate>
     
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>WP新版本如何切换语言到中文</title>
+      <link>/posts/wp-xin-ban-ben-ru-he-qie-huan-yu-yan-dao-zhong-wen/</link>
+      <pubDate>Fri, 05 Sep 2014 22:08:36 +0000</pubDate>
+      
+      <guid>/posts/wp-xin-ban-ben-ru-he-qie-huan-yu-yan-dao-zhong-wen/</guid>
+      <description></description>
+    </item><item>
       <title>再一次的选择</title>
       <link>/posts/zai-yi-ci-de-xuan-ze/</link>
       <pubDate>Thu, 27 Mar 2014 23:22:09 +0000</pubDate>
@@ -37,13 +44,6 @@
       <pubDate>Sat, 25 Jan 2014 21:27:17 +0000</pubDate>
       
       <guid>/posts/about-96123-com/</guid>
-      <description></description>
-    </item><item>
-      <title>没有完美</title>
-      <link>/posts/mei-you-wan-mei/</link>
-      <pubDate>Sat, 18 Jan 2014 18:20:02 +0000</pubDate>
-      
-      <guid>/posts/mei-you-wan-mei/</guid>
       <description></description>
     </item>
   </channel>

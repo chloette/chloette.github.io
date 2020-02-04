@@ -6,11 +6,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>来自某个八零后</copyright>
-    <lastBuildDate>Sun, 26 Jan 2020 18:38:04 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 04 Feb 2020 20:46:15 +0800</lastBuildDate>
     
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>about putty auto close</title>
+      <link>/posts/about-putty-auto-close/</link>
+      <pubDate>Tue, 11 Jun 2013 03:14:53 +0000</pubDate>
+      
+      <guid>/posts/about-putty-auto-close/</guid>
+      <description></description>
+    </item><item>
       <title>神州租车的数据安全问题(secure problem of ZuChe.com)</title>
       <link>/posts/shen-zhou-zu-che-de-shu-ju-an-quan-wen-ti-secure-problem-of-zuche-com/</link>
       <pubDate>Wed, 29 May 2013 22:37:38 +0000</pubDate>

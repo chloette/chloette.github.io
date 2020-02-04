@@ -6,11 +6,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>来自某个八零后</copyright>
-    <lastBuildDate>Sun, 26 Jan 2020 18:38:04 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 04 Feb 2020 20:46:15 +0800</lastBuildDate>
     
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>相对论</title>
+      <link>/posts/theory-of-relativity/</link>
+      <pubDate>Sun, 12 Apr 2015 11:40:13 +0000</pubDate>
+      
+      <guid>/posts/theory-of-relativity/</guid>
+      <description></description>
+    </item><item>
       <title>Android Camera HAL3.0</title>
       <link>/posts/android-camera-hal3-0/</link>
       <pubDate>Sat, 11 Apr 2015 07:15:21 +0000</pubDate>
@@ -37,13 +44,6 @@
       <pubDate>Mon, 23 Mar 2015 12:56:54 +0000</pubDate>
       
       <guid>/posts/switch-jdk-on-mac/</guid>
-      <description></description>
-    </item><item>
-      <title>Free Windows is coming</title>
-      <link>/posts/free-windows-is-coming/</link>
-      <pubDate>Wed, 18 Mar 2015 06:26:36 +0000</pubDate>
-      
-      <guid>/posts/free-windows-is-coming/</guid>
       <description></description>
     </item>
   </channel>
