@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Posts &middot; 你好，世界</title>
+  <title>怎么快速翻墙？ &middot; 你好，世界</title>
   <meta name="description" content="" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
@@ -14,12 +14,11 @@
   
   
   <link href="/css/concated.min.css" rel="stylesheet">
-  <link rel="alternate" type="application/rss+xml" href="/posts/index.xml" title="你好，世界" />
   
   
 </head>
 
-  <body class="list-body">
+  <body class="single-body">
     <nav class="nav-bar side-padding">
   <h1 class="nav-header"><a href="/" class="nav-text">你好，世界</a></h1>
   <div class="hamburger-menu">
@@ -179,74 +178,86 @@
   </div>
 </nav>
 
-    <main class="card-container side-gutter">
-      <header class="list-header">
+    <main class="content side-text-padding">
+      <article class="post dropcase">
+        <header class="post-header">
+        	<h1 class="post-title">怎么快速翻墙？</h1>
+          <p class="post-date">Posted <time datetime="2020-02-08">Feb 8, 2020</time></p>
+        </header>
         
-        <h1 class="list-header-title">Posts</h1>
-      </header>
+        <p>本来不应该写这样的文，毕竟不想网站被封。</p>
+<p>但今天手贱，自己把自己的翻墙服务器搞挂了。。。</p>
+<p>既然要重新搭一个，那就干脆记录一下</p>
+<p><strong>0.服务器基本配置</strong></p>
+<p>首先还是服务器选择，要翻墙还要网速，毫无疑问：
+<img src="/img/fanqiang-ali.PNG" alt=""></p>
+<p>「注册啊付费啊安全组的key下载啊这些就不赘述了」</p>
+<p>配置也找最低的就好：
+<img src="/img/fanqiang-ali-ecs.PNG" alt="">
+<img src="/img/fanqiang-ali-ecs-1.PNG" alt=""></p>
+<hr>
+<p><strong>1.Shadowsocks</strong></p>
+<p>然后远程连接上去，先一键安装shadowsocks「少用，容易被封」</p>
+<pre><code>wget --no-check-certificate -O shadowsocks-all.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.sh
+chmod +x shadowsocks-all.sh
+./shadowsocks-all.sh 2&gt;&amp;1 | tee shadowsocks-all.log
+</code></pre><p>「有人说这个有‘毒’，我粗看了下源码，貌似没事儿」</p>
+<p>安装完后如果顺利，应该是如下提示：</p>
+<pre><code>Congratulations, your_shadowsocks_version install completed!
+Your Server IP        :your_server_ip
+Your Server Port      :your_server_port
+Your Password         :your_password
+Your Encryption Method:your_encryption_method
+
+Your QR Code: (For Shadowsocks Windows, OSX, Android and iOS clients)
+ ss://your_encryption_method:your_password@your_server_ip:your_server_port
+Your QR Code has been saved as a PNG file path:
+ your_path.png
+
+Welcome to visit:https://teddysun.com/486.html
+Enjoy it!
+</code></pre><p>「打开之前的ShadowSocks客户端先试试看吧」</p>
+<hr>
+<p><strong>2.V2Ray</strong></p>
+<p>这还不算完，目前相对好用的是V2Ray「比较持久」</p>
+<p>继续安装：</p>
+<pre><code>wget https://install.direct/go.sh
+chmod +x go.sh
+./go.sh
+</code></pre><p>注意记录端口号和UUID，这忘了不好找。</p>
+<p>再用「BBR Plus」加持一下</p>
+<pre><code>wget -N --no-check-certificate &quot;https://raw.githubusercontent.com/chiakge/Linux-NetSpeed/master/tcp.sh&quot;
+chmod +x tcp.sh
+./tcp.sh
+</code></pre><p>一定要记得去设置阿里云的安全组访问规则「端口」
+<img src="/img/fanqiang-ali-ecs-ip.PNG" alt=""></p>
+<p>这样V2Ray也可以用啦~ 走起来！</p>
+<hr>
+<p><strong>3.BB一下</strong></p>
+<p>「其实一定要记录下来的原因很简单，万一梯子没了，还知道咋再搭一个 T_T」</p>
+
+      </article>
       
-      
+    </main>
+    <nav class="end-nav side-padding">
       
       <a ontouchstart="cardPressed.call(this)" ontouchend="cardReleased.call(this)" ontouchmove="cardReleased.call(this)" 
-  href="/posts/help-fight-ebola/" class="card blog-card" rel="bookmark" >
+  href="/posts/tohttps/" class="card blog-card" rel="bookmark" >
   
   <article class="card-body">
-    <h2 class="card-title">拉上Google一起对抗Ebola</h2>
+    <h2 class="card-title">支持HTTPS访问鸟</h2>
     <p class="card-text"></p>
     <div class="card-subtext muted-text">
-      <p>Posted <time datetime="2014-11-12">Nov 12, 2014</time></p>
-      <p>#%E8%AE%B0%E5%BD%95 #Ebola </p>
-    </div>
-  </article>
-</a><a ontouchstart="cardPressed.call(this)" ontouchend="cardReleased.call(this)" ontouchmove="cardReleased.call(this)" 
-  href="/posts/about-bitlocker-remake-u-key-disk/" class="card blog-card" rel="bookmark" >
-  
-  <article class="card-body">
-    <h2 class="card-title">关于Bitlocker</h2>
-    <p class="card-text"></p>
-    <div class="card-subtext muted-text">
-      <p>Posted <time datetime="2014-11-10">Nov 10, 2014</time></p>
-      <p>#%E5%AE%89%E5%85%A8 #Bitlocker #%E4%BF%AE%E5%A4%8Dkey </p>
-    </div>
-  </article>
-</a><a ontouchstart="cardPressed.call(this)" ontouchend="cardReleased.call(this)" ontouchmove="cardReleased.call(this)" 
-  href="/posts/android-studiode-common-questions/" class="card blog-card" rel="bookmark" >
-  
-  <article class="card-body">
-    <h2 class="card-title">Android studio的一些坑</h2>
-    <p class="card-text"></p>
-    <div class="card-subtext muted-text">
-      <p>Posted <time datetime="2014-11-07">Nov 7, 2014</time></p>
-      <p>#Android-Studio #%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98 </p>
-    </div>
-  </article>
-</a><a ontouchstart="cardPressed.call(this)" ontouchend="cardReleased.call(this)" ontouchmove="cardReleased.call(this)" 
-  href="/posts/about-loading-res-from-apk-directly/" class="card blog-card" rel="bookmark" >
-  
-  <article class="card-body">
-    <h2 class="card-title">关于Android如何动态加载res</h2>
-    <p class="card-text"></p>
-    <div class="card-subtext muted-text">
-      <p>Posted <time datetime="2014-11-07">Nov 7, 2014</time></p>
-      <p>#Android #%E6%8A%80%E6%9C%AF #%E5%8A%A8%E6%80%81%E5%8A%A0%E8%BD%BD%E8%B5%84%E6%BA%90 </p>
-    </div>
-  </article>
-</a><a ontouchstart="cardPressed.call(this)" ontouchend="cardReleased.call(this)" ontouchmove="cardReleased.call(this)" 
-  href="/posts/lie-to-delivery/" class="card blog-card" rel="bookmark" >
-  
-  <article class="card-body">
-    <h2 class="card-title">快件骗局</h2>
-    <p class="card-text"></p>
-    <div class="card-subtext muted-text">
-      <p>Posted <time datetime="2014-11-06">Nov 6, 2014</time></p>
-      <p>#%E8%AE%B0%E5%BD%95 #%E9%AA%97%E5%B1%80 #%E5%BF%AB%E4%BB%B6 </p>
+      <p>Posted <time datetime="2020-02-04 24:00">Feb 4, 2020</time></p>
+      <p></p>
     </div>
   </article>
 </a>
-    </main>
-    <nav class="pagination-nav side-padding">
-      <a href="/posts/page/15/" class="pagination-newer">&lt; Newer Posts</a>
-      <a href="/posts/page/17/" class="pagination-older">Older Posts &gt;</a>
+      
+      <a ontouchstart="cardPressed.call(this)" ontouchend="cardReleased.call(this)" ontouchmove="cardReleased.call(this)" 
+  href="/" class="card home-card" style="background-image: url( /img/grey-cloud.jpg )" rel="bookmark" >
+  Home
+</a>
     </nav>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>

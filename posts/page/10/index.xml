@@ -6,11 +6,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>来自某个八零后</copyright>
-    <lastBuildDate>Tue, 04 Feb 2020 20:46:15 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 08 Feb 2020 00:39:36 +0800</lastBuildDate>
     
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>谈谈微信和支付宝</title>
+      <link>/posts/about-weixin-and-alipay/</link>
+      <pubDate>Thu, 22 Jan 2015 09:27:46 +0000</pubDate>
+      
+      <guid>/posts/about-weixin-and-alipay/</guid>
+      <description></description>
+    </item><item>
       <title>Ghost修改screen.css的脚本</title>
       <link>/posts/script-to-modify-ghost-screen-css/</link>
       <pubDate>Wed, 21 Jan 2015 12:07:06 +0000</pubDate>
@@ -37,13 +44,6 @@
       <pubDate>Sat, 17 Jan 2015 08:01:38 +0000</pubDate>
       
       <guid>/posts/proguard-obfuscation/</guid>
-      <description></description>
-    </item><item>
-      <title>Jenkins&#43;Github&#43;Gradle&#43;Android</title>
-      <link>/posts/jenkins-github-gradle-android/</link>
-      <pubDate>Thu, 15 Jan 2015 13:17:06 +0000</pubDate>
-      
-      <guid>/posts/jenkins-github-gradle-android/</guid>
       <description></description>
     </item>
   </channel>

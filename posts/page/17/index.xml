@@ -6,11 +6,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>来自某个八零后</copyright>
-    <lastBuildDate>Tue, 04 Feb 2020 20:46:15 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 08 Feb 2020 00:39:36 +0800</lastBuildDate>
     
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Jenkins会OOM</title>
+      <link>/posts/jenkins-out-of-memory/</link>
+      <pubDate>Tue, 04 Nov 2014 02:51:39 +0000</pubDate>
+      
+      <guid>/posts/jenkins-out-of-memory/</guid>
+      <description></description>
+    </item><item>
       <title>Android Studio升级后无法完成sync</title>
       <link>/posts/android-studio-cannot-sync-after-upgrade/</link>
       <pubDate>Mon, 03 Nov 2014 03:13:29 +0000</pubDate>
@@ -37,13 +44,6 @@
       <pubDate>Sat, 11 Oct 2014 09:27:07 +0000</pubDate>
       
       <guid>/posts/optimize-rgb-to-yuv/</guid>
-      <description></description>
-    </item><item>
-      <title>FFmpeg提供给OPW一个实习岗位</title>
-      <link>/posts/ffmpeg-secure-a-place-in-opw/</link>
-      <pubDate>Sat, 11 Oct 2014 07:40:35 +0000</pubDate>
-      
-      <guid>/posts/ffmpeg-secure-a-place-in-opw/</guid>
       <description></description>
     </item>
   </channel>
