@@ -186,10 +186,8 @@
         </header>
         
         <p>我一直觉得Casper主题（就是默认的！LOL~）什么都不错，就是logo位置如果可以居中。。然后可以做一个圆形的效果。。。 就更好啦～～～</p>
-
-<p>找了一个有类似实现的主题（<a href="https://github.com/twogrey/ichi/">ichi</a>），对比了一下css（其实是搜了一下&rdquo;logo&rdquo;的css不同），然后用下面的方式解决：</p>
-
-<pre><code class="language-language-css-extras">.blog-logo img {
+<p>找了一个有类似实现的主题（<a href="https://github.com/twogrey/ichi/">ichi</a>），对比了一下css（其实是搜了一下&quot;logo&quot;的css不同），然后用下面的方式解决：</p>
+<pre><code class="language-language-css-extras" data-lang="language-css-extras">.blog-logo img {
   width: 100px;
   height: 100px;
   border: 2px solid white;
@@ -199,19 +197,12 @@
   -o-border-radius: 100px;
   border-radius: 100px;
 }
-</code></pre>
-
-<p>替换完以后瞬间高大上了～</p>
-
+</code></pre><p>替换完以后瞬间高大上了～</p>
 <p>试一下分辨率发现几个小问题，把assets/css/screen.css中对应blog-logo的其他项清(delete)一下～</p>
-
 <p>为了居中的话，修改blog-logo的float：left改为center即可</p>
-
 <p>至于位置的话，修改index.hbs就可以了（把blog-logo移到page-title前面即可～）</p>
-
 <p>最后就是主页的效果啦～</p>
-
-<p><strong><em>Tada～</em></strong></p>
+<p><em><strong>Tada～</strong></em></p>
 
       </article>
       

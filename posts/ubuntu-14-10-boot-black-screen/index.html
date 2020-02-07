@@ -186,25 +186,15 @@
         </header>
         
         <p>现在在慢慢习惯Ubuntu做主系统，所以把小黑直接“刷”上了14.10，结果遇到了重启会黑屏的诡异问题（每次都要手动强制关机再启动）。T_T，不折腾会死啊。。</p>
-
 <p>网上搜了一下，也没有具体的解决方案。但隐约都指向了显卡驱动。</p>
-
 <p>那就试试看吧。</p>
-
 <p>先</p>
-
-<pre><code class="language-language-bash">ubuntu-drivers devices
-</code></pre>
-
-<p>推荐使用的是nVidia的331驱动。</p>
-
+<pre><code class="language-language-bash" data-lang="language-bash">ubuntu-drivers devices
+</code></pre><p>推荐使用的是nVidia的331驱动。</p>
 <p>打开Additional Driver，显卡（古老的NV3100）默认选择的不是331。</p>
-
 <p>那就果断换之～</p>
-
 <p>之后重启（除了cryptsetup界面有点丑），一切正常～</p>
-
-<p><strong><em>～Tada～</em></strong></p>
+<p><em><strong>～Tada～</strong></em></p>
 
       </article>
       

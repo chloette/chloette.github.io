@@ -186,16 +186,11 @@
         </header>
         
         <p>说实话我不知道从何开始写，我发现了神州租车的一些，问题；而且非常严重。</p>
-
 <p>我曾经试图联系他们，但是没有得到任何反馈，所以我决定写出来，作为一个记录。</p>
-
 <p>当然，通过我的分析及实践，可以进一步得到它的用户数据，甚至进行修改或破坏，但这不是我的初衷，所以这里会做一些模糊处理（相信官方补丁会跑在那些有心者前面）。</p>
-
 <p>直接拆开它的apk【其实如果用sniffer之类的，会比我这么做来的更直接；我这么做的原因就是顺手而已。】</p>
-
 <p>可以得到对应的源文件，通过一些简单的代码和逻辑分析（几乎没有混淆），可以得到两个很霸道的接口，一个接口是通过user id来获取对应该用户所有订单信息的，获取到的内容可能如下：</p>
-
-<pre><code class="language-language-markup">&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;;
+<pre><code class="language-language-markup" data-lang="language-markup">&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;;
 &lt;;soap:Body&gt;;
 &lt;;OrderListQueryResponse xmlns=&quot;http://tempuri.org/&quot;&gt;;
 &lt;;OrderListQueryResult xmlns=&quot;http://tempuri.org/&quot;&gt;;
@@ -243,21 +238,13 @@ xmlns=&quot;OrderValue&quot;&gt;;南宁&lt;;/FromCity&gt;;
 &lt;;/StateValues&gt;;&lt;;/OrderListQueryResult&gt;;
 &lt;;/OrderListQueryResponse&gt;;&lt;;/soap:Body&gt;;&lt;;/soap:Envelope&gt;;
 
-</code></pre>
-
-<p>注意看，应该猜的到这些都是什么。</p>
-
-<p>另外一个接口就更隐晦一些，是通过<strong><em>user id</em></strong>和<strong><em>身份证</em></strong>来直接<strong><em>修改用户密码</em></strong>，甚至不需要提供之前的密码。而通过上面的接口去获取订单信息，可以得到身份证等信息。所以，这是一个钥匙挂外面的锁。</p>
-
+</code></pre><p>注意看，应该猜的到这些都是什么。</p>
+<p>另外一个接口就更隐晦一些，是通过<em><strong>user id</strong></em>和<em><strong>身份证</strong></em>来直接<em><strong>修改用户密码</strong></em>，甚至不需要提供之前的密码。而通过上面的接口去获取订单信息，可以得到身份证等信息。所以，这是一个钥匙挂外面的锁。</p>
 <p>还有一些小漏洞的接口，这里就不表了。相信官方更了解。</p>
-
 <p>至此只能说，神州你上上心吧。</p>
-
 <p>作为你们的用户之一，深表伤心和失望。</p>
-
 <p>BTW，我会在10日后更新更多的细节。</p>
-
-<p>后文：<a href="http://www.nobodycare.me/2013/06/14/shen-zhou-zu-che-de-shu-ju-an-quan-wen-ti-xu-secure-problem-of-zuche-com-end/">神州租车的数据安全问题<a href="secure problem of ZuChe.com [End]">续</a></a></p>
+<p>后文：<a href="http://www.nobodycare.me/2013/06/14/shen-zhou-zu-che-de-shu-ju-an-quan-wen-ti-xu-secure-problem-of-zuche-com-end/">神州租车的数据安全问题[续](secure problem of ZuChe.com [End])</a></p>
 
       </article>
       

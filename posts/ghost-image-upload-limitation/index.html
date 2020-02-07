@@ -186,24 +186,16 @@
         </header>
         
         <p>Ghost通过<code>ctrl+shift+i</code>的华丽方式上传图片，会遇到一些问题。例如较大的图片上传，会报错。（大于1M）</p>
-
 <p>由于一般架在VPS上的ghost都不是直接监听80端口，而是用nginx做前端转发；</p>
-
 <p>所以推测八成被nginx限制住了。（可以参考<a href="https://github.com/TryGhost/Ghost/issues/994">ghost论坛</a>）</p>
-
 <p>nginx这边可以如下修改（老版本是在nginx.conf里面修改，那个波及面太广）：</p>
-
-<p>直接修改<code>site-enabled</code>目录下面对应的站点config文件，在<code>location /</code>下面增加</p>
-
+<p>直接修改<code>site-enabled</code>目录下面对应的站点config文件，在<code>location / </code>下面增加</p>
 <blockquote>
 <p><a href="http://wiki.nginx.org/HttpCoreModule#client_max_body_size"><code>client_max_body_size</code></a> 5m;</p>
 </blockquote>
-
 <p>即可（这里限制为最大5M，土豪随便改哈）。</p>
-
 <p>重启nginx再试试～</p>
-
-<p><strong><em>Tada～</em></strong></p>
+<p><em><strong>Tada～</strong></em></p>
 
       </article>
       

@@ -185,43 +185,32 @@
           <p class="post-date">Posted <time datetime="2014-09-26">Sep 26, 2014</time></p>
         </header>
         
-        <p>“不小心”看到了<a href="What is the Shellshock Bash bug and why does it matter?">shellshock bash bug</a></p>
-
+        <p>“不小心”看到了[shellshock bash bug](What is the Shellshock Bash bug and why does it matter?)</p>
 <p>不明觉厉，按图索骥：</p>
-
-<pre><code class="language-language-bash">$env x='() { :;}; echo vulnerable' bash -c 'echo this is a test'
-</code></pre>
-
-<blockquote>
+<pre><code class="language-language-bash" data-lang="language-bash">$env x='() { :;}; echo vulnerable' bash -c 'echo this is a test'
+</code></pre><blockquote>
 <p>If you see the word &ldquo;vulnerable&rdquo; as an answer, your system is, well&hellip; vulnerable.</p>
 </blockquote>
-
 <p>中枪。。。</p>
-
 <p>立刻update+upgrade，再回过头看看到底啥情况：</p>
-
 <blockquote>
-<p>Your Bash shell is simply <strong><em>running more code after a function (the &ldquo;() { :;};&rdquo; part)</em></strong>, and that shouldn&rsquo;t be happening. The function is the &ldquo;allowed&rdquo; code, while everything after it is where the potentially &ldquo;malicious&rdquo; code could be installed.</p>
+<p>Your Bash shell is simply <em><strong>running more code after a function (the &ldquo;() { :;};&rdquo; part)</strong></em>, and that shouldn&rsquo;t be happening. The function is the &ldquo;allowed&rdquo; code, while everything after it is where the potentially &ldquo;malicious&rdquo; code could be installed.</p>
 </blockquote>
-
 <p>这，SQL注入的即视感啊。</p>
-
 <blockquote>
 <p>##WHAT CAN AN ATTACKER DO?</p>
-
-<p>The remote execution (over the internet or a network) of extra code could <strong><em>let an attacker load malware on a system and steal private information, delete files, activate your camera, open a lock and, well, do pretty much anything with a little know-how.</em></strong> However, as we mentioned, this is not something that should matter much on a user&rsquo;s computer with a working firewall, because it hasn&rsquo;t been proven possible to take advantage of the bug under that scenario.</p>
-
+</blockquote>
+<blockquote>
+<p>The remote execution (over the internet or a network) of extra code could <em><strong>let an attacker load malware on a system and steal private information, delete files, activate your camera, open a lock and, well, do pretty much anything with a little know-how.</strong></em> However, as we mentioned, this is not something that should matter much on a user&rsquo;s computer with a working firewall, because it hasn&rsquo;t been proven possible to take advantage of the bug under that scenario.</p>
+</blockquote>
+<blockquote>
 <p>A server, well, that&rsquo;s a completely different story, because a server has to listen to requests in order to &ldquo;serve&rdquo; (pun intended) its purpose. This means that by requesting almost any data and running malicious code, an attacker can infect any affected server, which is about 60 percent of web servers out on the internet, most routers (even your home router) and many consumer devices (including security cameras and &ldquo;smart&rdquo; appliances &ndash; which don&rsquo;t seem so smart right about now). This is because smart appliances are a form of servers.</p>
 </blockquote>
-
 <p>基本上个人计算机（一般都自带防火墙）是不受影响的，而服务器就呵呵了；只要可以远程shell上去（很多VPS都支持吧），或者服务器本身用bash解析脚本/服务，那就可以轻松加载malware了，然后就是脚本小子们的发挥时间。。。</p>
-
 <blockquote>
-<p>The bottom line is: this is a serious bug, but patches are available and should be installed promptly. But, there&rsquo;s no doubt we&rsquo;ll be hearing plenty more about Shellshock and the problems it can cause in the coming days and weeks &ndash; <strong><em>especially since it&rsquo;s gone unnoticed for around 25 years.</em></strong> There&rsquo;s a lot of holes out there to patch.</p>
+<p>The bottom line is: this is a serious bug, but patches are available and should be installed promptly. But, there&rsquo;s no doubt we&rsquo;ll be hearing plenty more about Shellshock and the problems it can cause in the coming days and weeks &ndash; <em><strong>especially since it&rsquo;s gone unnoticed for around 25 years.</strong></em> There&rsquo;s a lot of holes out there to patch.</p>
 </blockquote>
-
 <p>这一个藏了25年的bug，可算被Windows抓住小辫子了。</p>
-
 <p>一句话总结：安全是永恒的话题啊。</p>
 
       </article>

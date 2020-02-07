@@ -186,59 +186,43 @@
         </header>
         
         <p>可能么？回答是当然，不考虑极端情况和不同条件下的比较，目前就遇到了本站在某些情况下访问慢的情况。。。</p>
-
 <p>这不科学啊，这是ghost啊！ 不是臃肿的Wordpress啊，何况还是直接nginx重定向的啊，不是apache啊！</p>
-
 <p>抱着一丝对人生的怀疑，祭出大杀器fiddler：
-<img src="/content/images/2014/Sep/fiddler_502.PNG" alt="" /></p>
-
+<img src="/content/images/2014/Sep/fiddler_502.PNG" alt=""></p>
 <p>额，访问google字库没反应了啊，然后看一下耗时（估计超时了吧）。。。果然，21S。。。</p>
-
 <p>也不熟悉ghost，上服务器搜一下，结果所有的模板，甚至server都在用google字库。。。</p>
-
-<p><img src="/content/images/2014/Sep/fonts_position.PNG" alt="" /></p>
-
+<p><img src="/content/images/2014/Sep/fonts_position.PNG" alt=""></p>
 <p>T_T</p>
-
 <p>这咋办。。。天朝大国服对此表示确实压力很大啊。。。</p>
-
 <p>~~先mark，想想咋解决。[TODO] ~~</p>
-
 <p>貌似也没特别好的解决方案啊，罗列几个可用的吧：</p>
-
 <ol>
 <li>直接comment掉font那行，结果是：（BTW,发现在ghost论坛有人提一样的问题，哈哈～<a href="https://ghost.org/forum/using-ghost/15723-how-to-disable-fonts-from-fonts-gstatic-com-in-ghost/">how to disable fonts</a>）
-
 <ul>
 <li>访问速度瞬间翻N倍（因为本来就是秒开才对的嘛）</li>
 <li>字体全部变<strong>默认</strong>了。。。（废话）</li>
-</ul></li>
+</ul>
+</li>
 <li>不用google remote的font，全部cache在server上（我去，还是有人捷足先登啊<a href="http://ghost.centminmod.com/ghost-local-fonts-vs-google-fonts/">ghost local fonts</a>）：
-
 <ul>
 <li>访问速度保持翻N倍的节奏</li>
 <li>但是第一次访问该页面，理论上速度不快哦，因为浏览器要下载字体</li>
 <li>有点麻烦的是以后万一字体更新或者ghost更新。。。每次替换或者merge很无奈啊。</li>
-</ul></li>
+</ul>
+</li>
 <li>这问题大家都遇到，难道没有mirror站么？（还真有。。。这里默默给360点个赞<a href="http://libs.useso.com/">360 CDN</a>）
-
 <ul>
 <li>好处同2</li>
-<li>缺点嘛。。。首先是安全方面，这个真不好说。再就是貌似从国外访问这个cdn的速度很扯淡。。。
-<br /></li>
-</ul></li>
+<li>缺点嘛。。。首先是安全方面，这个真不好说。再就是貌似从国外访问这个cdn的速度很扯淡。。。</li>
+</ul>
+</li>
 </ol>
-
 <p>现在暂时用方案3，以后应该会改成方案2。LOL~</p>
-
 <p>至于方案3，主题多的话总不能一个一个替换过去吧，那得累死啊。直接SSH上去，两句话（2014/09/29更新，参见<a href="http://nobodycare.me/2014/09/29/ghost-upgrade-to-0-5-2/">Ghost upgrade to 0.5.2</a>）命令：</p>
-
-<pre><code class="language-language-bash">sed -i &quot;s/fonts.googleapis.com/fonts.useso.com/g&quot; `grep fonts.googleapis.com -rl ./content/themes/`
+<pre><code class="language-language-bash" data-lang="language-bash">sed -i &quot;s/fonts.googleapis.com/fonts.useso.com/g&quot; `grep fonts.googleapis.com -rl ./content/themes/`
 sed -i &quot;s/fonts.googleapis.com/fonts.useso.com/g&quot; `grep fonts.googleapis.com -rl ./core/server/views/`
 
-</code></pre>
-
-<p><em>Tada~</em></p>
+</code></pre><p><em>Tada~</em></p>
 
       </article>
       

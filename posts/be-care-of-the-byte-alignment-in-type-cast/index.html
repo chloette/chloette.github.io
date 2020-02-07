@@ -186,18 +186,13 @@
         </header>
         
         <p>Be care of the Byte Alignment in Type Cast.</p>
-
 <p>For example, if you have one buffer(void*) with data follow this structure:</p>
-
-<pre><code class="language-language-c">typedef  struct {
+<pre><code class="language-language-c" data-lang="language-c">typedef  struct {
   uint8_t a;
   uint8_t b;
   uint32_t c;
 } xxx_t
-</code></pre>
-
-<p>Normally,  it needs 6 bytes per data, right?  But, actually, when you did type cast, like <strong><em><code>(xxx_t*)buffer</code></em></strong> the data will be totally wrong (probably a and b is right, but c is holy shit).</p>
-
+</code></pre><p>Normally,  it needs 6 bytes per data, right?  But, actually, when you did type cast, like <em><strong><code>(xxx_t*)buffer</code></strong></em> the data will be totally wrong (probably a and b is right, but c is holy shit).</p>
 <p>The root cause, is Byte alignment.</p>
 
       </article>

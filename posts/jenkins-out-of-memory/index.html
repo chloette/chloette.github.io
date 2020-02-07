@@ -186,31 +186,23 @@
         </header>
         
         <p>本来还打算在AWS的服务器上搭个jenkins来自动化编译的。</p>
-
 <p>配置都配置好了，但是跑着跑着就会报502（nginx倒是很直白）</p>
-
 <p>后来才发现，服务直接被关掉了（</p>
-
-<pre><code class="language-language-bash">sudo service jenkins status
-</code></pre>
-
-<p>）</p>
-
+<pre><code class="language-language-bash" data-lang="language-bash">sudo service jenkins status
+</code></pre><p>）</p>
 <p>估计是内存不够（主目录已经转移到了单独的硬盘上，空间肯定够的）导致了一系列问题后挂掉了吧。毕竟是AWS的最低配的EC2（VPS） T_T</p>
-
 <p>网上一查，官网没找到有最低硬件配置要求，但还真有维护人员指出了<a href="http://stackoverflow.com/questions/8747533/jenkins-hudson-ci-minimum-requirements-for-a-linux-rh-installation">这一点</a>：</p>
-
 <blockquote>
 <p>CPU : n/a (bye bye plain old school CPU at least ;) )</p>
-
+</blockquote>
+<blockquote>
 <p>RAM : 1GB (I prefer 2)</p>
-
+</blockquote>
+<blockquote>
 <p>HDD : depends on the needs. For my use, a 8 modules j2ee maven project + db scripts (6500 lines of code) represents less of 50 MB. I configured Jenkins to store 10 builds (500 MB)</p>
 </blockquote>
-
 <p>报着也许我搞错了吧的心态（其实是死马当活马医了。。），double check了/var/log/jenkins/jenkins.log，结果：</p>
-
-<pre><code class="language-language-markup">Nov 03, 2014 7:20:21 AM org.eclipse.jetty.util.log.JavaUtilLog warn
+<pre><code class="language-language-markup" data-lang="language-markup">Nov 03, 2014 7:20:21 AM org.eclipse.jetty.util.log.JavaUtilLog warn
 
 WARNING:
 
@@ -231,10 +223,7 @@ java.lang.OutOfMemoryError: unable to create new native thread
         at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
         at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
         at java.lang.Thread.run(Thread.java:745)
-</code></pre>
-
-<p>T_T</p>
-
+</code></pre><p>T_T</p>
 <p>彻底死心了。。。</p>
 
       </article>

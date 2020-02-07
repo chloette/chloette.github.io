@@ -186,22 +186,16 @@
         </header>
         
         <p>Ubuntu版本的Chrome，很容易出现Profile cannot be opened correctly的错误。</p>
-
 <p>结果就是无法正常使用账户同步功能（不能多设备同步我还用你干嘛！？！）</p>
-
 <p>翻了翻资料，看了看log，发现这种时候新启动的chrome尝试去打开一个已经lock住的数据库（这不科学），然后就报错了。</p>
-
 <p>继续翻，貌似每次第一次启动的chrome没有正常关闭，依然占用数据库（单例真的好么）。结果就是后面再启动的chrome尝试open，然后失败。</p>
-
 <p>官方解决方法目前未找到。。。土方法就是</p>
+<pre><code class="language-language-bash" data-lang="language-bash">ps -A | grep 'chrome'
+``` 然后`kill`吧。
 
-<pre><code class="language-language-bash">ps -A | grep 'chrome'
+Chrome现在也略不靠谱啊。T_T
+
 </code></pre>
-
-<p>然后<code>kill</code>吧。</p>
-
-<p>Chrome现在也略不靠谱啊。T_T</p>
-
       </article>
       
     </main>

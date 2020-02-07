@@ -186,23 +186,15 @@
         </header>
         
         <p>ClassNotFound原因较多，这里列一个特殊case：</p>
-
 <p>抽象类A，因项目关系，code clean后，已无抽象方法（但依然带着abstract关键字）</p>
-
-<p><strong><em>没深究过java语法，不过没有抽象方法却声明为抽象类，至少该有个警告把？而这里Eclipse（ADT）/Android studio均无任何提示，所以怀疑是JDK的bug）。</em></strong></p>
-
+<p><em><strong>没深究过java语法，不过没有抽象方法却声明为抽象类，至少该有个警告把？而这里Eclipse（ADT）/Android studio均无任何提示，所以怀疑是JDK的bug）。</strong></em></p>
 <p>Main activity继承自A。然后启动Main activity即报ClassNotFound。</p>
-
 <p>log里面会有奇怪的：</p>
-
-<pre><code class="language-language-bash">11-19 16:51:21.301 W/dalvikvm(31571): Unable to resolve superclass of LxxxA; (207)
+<pre><code class="language-language-bash" data-lang="language-bash">11-19 16:51:21.301 W/dalvikvm(31571): Unable to resolve superclass of LxxxA; (207)
 11-19 16:51:21.301 W/dalvikvm(31571): Link of class 'LxxxA;' failed
 11-19 16:51:21.301 W/dalvikvm(31571): Unable to resolve superclass of LxxxMain (1447)
 11-19 16:51:21.301 W/dalvikvm(31571): Link of class 'LxxxMain;' failed
-</code></pre>
-
-<p>修改方法很简单，<strong><em>把那个无用的abstract关键字去掉</em></strong>就好了。</p>
-
+</code></pre><p>修改方法很简单，<em><strong>把那个无用的abstract关键字去掉</strong></em>就好了。</p>
 <p>记录一下。</p>
 
       </article>

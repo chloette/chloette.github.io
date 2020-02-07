@@ -186,63 +186,43 @@
         </header>
         
         <p>当有大量图片需要快速分享出去的时候（例如出去玩，拍了大量照片，分享就变成了大麻烦；如果可以有一个简单的server（或其他机制）来快速分享，那就好多了）</p>
-
 <p>目前搬砖的公司就遇到这个情况，年会有照片，但是因为共享机制的差异（mac访问windows共享），导致公司有不少同学无法拿到照片。</p>
-
 <p>工作机之前搭过amp的环境，所以为了省时省力，就去搜了php gallery from folder</p>
-
 <p>Google前两位分别是<a href="http://www.ubergallery.net/">UberGallery</a>和<a href="http://www.foliopages.com/php-jquery-ajax-photo-gallery-no-database">FolioGallery</a></p>
-
 <p>都蛮不错。我选择了后者（因为后者天生支持multi-directory listing！）</p>
-
 <p>搭建起来很容易：</p>
-
 <ul>
 <li>下载并解压缩放到web目录下</li>
 <li>图片放到albums目录下</li>
 <li>albums目录为www-data增加可写权限（因为需要在子目录下生成thumbnail）</li>
 <li>浏览器打开foliogallery.php（点击对应目录生成thumbnail）</li>
 </ul>
-
 <p>这就OK了！简单吧~ 效果如下：</p>
-
-<p><img src="/content/images/2015/02/foliogallery.png" alt="" /></p>
-
+<p><img src="/content/images/2015/02/foliogallery.png" alt=""></p>
 <p>点击会popup一个大图预览；</p>
-
 <p>大图点击可以左右切换图片；</p>
-
 <p>而且自带slideshow；</p>
-
 <p>基本功能都满足了~</p>
-
-<hr />
-
+<hr>
 <p>可能会遇到的问题就是图片显示不出来（例如我T_T）：</p>
-
 <blockquote>
 <p>Requirements：</p>
-
+</blockquote>
+<blockquote>
 <p>A server running PHP 5+.</p>
-
+</blockquote>
+<blockquote>
 <p><strong>PHP GD library (for automatc thumbnail creation).</strong></p>
-
+</blockquote>
+<blockquote>
 <p>jQuery JavaScript library.</p>
 </blockquote>
-
 <p>安装一下：</p>
-
-<pre><code class="language-language-bash">sudo apt-get install php5-gd &amp;&amp; sudo service apache2 restart
-</code></pre>
-
-<p><strong><em>Tada~~</em></strong></p>
-
-<hr />
-
+<pre><code class="language-language-bash" data-lang="language-bash">sudo apt-get install php5-gd &amp;&amp; sudo service apache2 restart
+</code></pre><p>***Tada~~***</p>
+<hr>
 <p>BTW，这看起来可以做一个很有趣的小玩意儿啊~</p>
-
 <p>快速上传，然后用类似Gallery的方式分享，然后大家都可以互相编辑，点赞，加评论等~</p>
-
 <p>很有意思~</p>
 
       </article>

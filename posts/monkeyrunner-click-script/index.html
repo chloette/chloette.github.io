@@ -186,14 +186,10 @@
         </header>
         
         <p>[<a href="http://developer.android.com/tools/testing-support-library/index.html">android官方</a>]</p>
-
 <p>经常用来做压力测试的话，脚本必不可少；</p>
-
 <p>带UI挂工程的就算啦（么必要像CTS那么认真嘛，动不动tearDown），简单直接最好～</p>
-
 <p><code>MonkeyRunner</code>完全符合条件，直接上无限单击的脚本（<code>Python</code>），对照着改改坐标就好使了：</p>
-
-<pre><code class="language-language-python">from com.android.monkeyrunner import MonkeyRunner, MonkeyDevice
+<pre><code class="language-language-python" data-lang="language-python">from com.android.monkeyrunner import MonkeyRunner, MonkeyDevice
 
 _COUNT = 0
 
@@ -214,9 +210,7 @@ def main():
 
 main();
 
-</code></pre>
-
-<p>脚本跑起来，开个窗口看log，空下来一会就可以记录一下（不然保持目前干活的节奏~ 会很久不更新的~）</p>
+</code></pre><p>脚本跑起来，开个窗口看log，空下来一会就可以记录一下（不然保持目前干活的节奏~ 会很久不更新的~）</p>
 
       </article>
       

@@ -187,16 +187,11 @@
         
         <p>在外出差拖着虚拟机，遇到build编译问题简直崩溃；
 Google一下一大把解决方法，但靠谱的没几个；</p>
-
 <p>可以参考：
-<a href="http://stackoverflow.com/questions/35579646/android-source-code-compile-error-try-increasing-heap-size-with-java-option">Try increasing heap size with java option &lsquo;-Xmx<size>&lsquo;</a></p>
-
+<a href="http://stackoverflow.com/questions/35579646/android-source-code-compile-error-try-increasing-heap-size-with-java-option">Try increasing heap size with java option &lsquo;-Xmx<!-- raw HTML omitted -->&rsquo;</a></p>
 <p>亲测有效：</p>
-
 <p><code>export JACK_SERVER_VM_ARGUMENTS=&quot;-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4g&quot;</code></p>
-
 <p><code>./prebuilts/sdk/tools/jack-admin kill-server</code></p>
-
 <p><code>./prebuilts/sdk/tools/jack-admin start-server</code></p>
 
       </article>

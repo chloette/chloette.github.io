@@ -186,34 +186,27 @@
         </header>
         
         <p>偶尔会遇到这种情况，例如工程A，工程B，同时依赖工程C（公共库）</p>
-
 <p>而一般情况下，如果代码结构管理的好，工程C的svn（git）路径和工程A/B是完全分开的。</p>
-
 <p>编译的时候正常导入（其实Android studio这里是有坑的，index无法排除目录）就好了。而Jenkins就需要特别配置一下。</p>
-
 <p>增加对应的工程（这里使用的svn module是Subversion Release），如下：</p>
-
-<p><img src="/content/images/2014/11/jenkins_multi_svn_path-1.png" alt="" /></p>
-
+<p><img src="/content/images/2014/11/jenkins_multi_svn_path-1.png" alt=""></p>
 <p>（BTW，注意Local module directory，最好和本地代码路径保持一致，不然按照工程目录下的project.properties找不到对应工程就呵呵了）</p>
-
 <p>这时候会发现，环境变量$SVN_REVISION很可能不干活了。</p>
-
 <p>翻了下文档：</p>
-
 <blockquote>
 <p>Subversion Revision and URL information as Environment Variables</p>
-
-<p>The Subversion SCM plugin exports the svn revisions and URLs of the build&rsquo;s subversion modules as environment variables. These are <strong><em>$SVN_REVISION_n</em></strong> and <strong><em>$SVN_URL_n</em></strong>, where n is the <strong><em>1-based index</em></strong> of the module in the configuration.</p>
-
+</blockquote>
+<blockquote>
+<p>The Subversion SCM plugin exports the svn revisions and URLs of the build&rsquo;s subversion modules as environment variables. These are <em><strong>$SVN_REVISION_n</strong></em> and <em><strong>$SVN_URL_n</strong></em>, where n is the <em><strong>1-based index</strong></em> of the module in the configuration.</p>
+</blockquote>
+<blockquote>
 <p>For backwards compatibility <em>if there&rsquo;s only a single module, its values are also exported as $SVN_REVISION and $SVN_URL</em>.</p>
-
+</blockquote>
+<blockquote>
 <p>Note that the revision number exposed is the &lsquo;last-changed&rsquo; revision number of the particular directory and not the current revision of the repository. (See What are these two revision numbers in svn info?)</p>
 </blockquote>
-
-<p>老老实实换上<strong><em>$SVN_REVISION_n</em></strong> （貌似还是不行啊。。<strong><em>$SVN_URL_n</em></strong>也没有对应值。等升级吧。）</p>
-
-<p><strong><em>T_T</em></strong></p>
+<p>老老实实换上<em><strong>$SVN_REVISION_n</strong></em> （貌似还是不行啊。。<em><strong>$SVN_URL_n</strong></em>也没有对应值。等升级吧。）</p>
+<p><em><strong>T_T</strong></em></p>
 
       </article>
       

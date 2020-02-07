@@ -186,30 +186,16 @@
         </header>
         
         <p>Andorid上，LinearLayout动态增加child item时，一般如下：</p>
-
-<pre><code class="language-language-java">addView(child)
-</code></pre>
-
-<p>即可。</p>
-
+<pre><code class="language-language-java" data-lang="language-java">addView(child)
+</code></pre><p>即可。</p>
 <p>child item可以从xml中直接inflate出来。</p>
-
 <p>这里有个问题是，<strong>动态增加</strong>的话，child item中的weight，在add到LinearLayout后无效（用LinearLayout，很多时候就是冲着weight去的，因为可以很容易做到对齐和分割）。</p>
-
 <p>唯一的办法是在addView的时候用新的LayoutParams来指定weight：</p>
-
-<pre><code class="language-language-java">addView(child, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT, 1));
-</code></pre>
-
-<p>最好设置一下weightSum：</p>
-
-<pre><code class="language-language-java">setWeightSum(childCount);
-</code></pre>
-
-<hr />
-
+<pre><code class="language-language-java" data-lang="language-java">addView(child, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT, 1));
+</code></pre><p>最好设置一下weightSum：</p>
+<pre><code class="language-language-java" data-lang="language-java">setWeightSum(childCount);
+</code></pre><hr>
 <p>Android的layout配置中，类似的坑数不尽。。。再加上不同OS版本的不同表现，简直了T_T。。</p>
-
 <p>记录一下。</p>
 
       </article>

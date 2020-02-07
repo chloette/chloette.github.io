@@ -186,47 +186,39 @@
         </header>
         
         <p>因为最近在做ffmpeg相关的东西，所以GPL/LGPL还是要了解一下的。</p>
-
 <p>GPL的WIKI： <a href="http://en.wikipedia.org/wiki/GNU_General_Public_License">GPL WIKI</a></p>
-
 <p>FFmpeg主要代码遵循的是LGPL；简单来说，静态库调用的话必须同样遵循LGPL（被传染），而动态库调用就没关系：<a href="http://ffmpeg.org/legal.html">FFmpeg legal</a></p>
-
 <blockquote>
 <p>The following is a checklist for LGPL compliance when linking against the FFmpeg libraries. It is not the only way to comply with the license, but we think it is the easiest. There are also a few items that are not really related to LGPL compliance but are good ideas anyway.</p>
-
+</blockquote>
+<blockquote>
 <p>1.Compile FFmpeg without &ldquo;&ndash;enable-gpl&rdquo; and without &ldquo;&ndash;enable-nonfree&rdquo;.</p>
-
-<p>2.<strong><em>Use dynamic linking (on windows, this means linking to dlls) for linking with FFmpeg libraries.</em></strong></p>
-
+</blockquote>
+<blockquote>
+<p>2.<em><strong>Use dynamic linking (on windows, this means linking to dlls) for linking with FFmpeg libraries.</strong></em></p>
+</blockquote>
+<blockquote>
 <p>&hellip;</p>
 </blockquote>
-
 <p>但是<a href="http://www.videolan.org/developers/x264.html">X264</a>遵循的是GPL。。。（编译的时候要<code>--enable-gpl</code>还记得么）</p>
-
 <p>在静态库链接上，基本没疑问，老老实实遵循GPL就好了。</p>
-
 <p>但是在动态库链接上，争议很大。正如<a href="http://www.ifanr.com/92261">Android ，在争议中逃离 Linux 内核的 GPL 约束</a>提到的GPL官网的FAQ：</p>
-
 <blockquote>
 <p>If a library is released under the GPL (not the LGPL), does that mean that any software which uses it has to be under the GPL or a GPL-compatible license? (#IfLibraryIsGPL)</p>
-
+</blockquote>
+<blockquote>
 <p>Yes, because the software as it is actually run includes the library.</p>
 </blockquote>
-
-<p>这句话是有争议的，如果可以证明<strong><em>software can run without the library</em></strong>那就可以用的意思么（静态链接的话，去掉库编译都报错了，所以直接pass）？</p>
-
+<p>这句话是有争议的，如果可以证明<em><strong>software can run without the library</strong></em>那就可以用的意思么（静态链接的话，去掉库编译都报错了，所以直接pass）？</p>
 <p>在wiki上对此也有三个版本的说法：</p>
-
 <ol>
 <li>Point of view: dynamic and static linking violate GPL</li>
 <li>Point of view: static linking violates GPL but unclear as of dynamic linking</li>
 <li>Point of view: linking is irrelevant</li>
 </ol>
-
-<p><del>。。。先按照相对最安全的方法，使用<strong><em>动态库链接</em></strong>吧。。。。</del></p>
-
+<p><del>。。。先按照相对最安全的方法，使用<em><strong>动态库链接</strong></em>吧。。。。</del></p>
 <p>更新：发现更华丽的一个License : <a href="http://www.gnu.org/software/classpath/license.html">GNU Classpath exception</a>
-【<a href="https://code.google.com/p/javacv/">Javacv</a>在用，这是<strong><em>止步GPL于JAR包</em></strong>的意思啊，很好！】</p>
+【<a href="https://code.google.com/p/javacv/">Javacv</a>在用，这是<em><strong>止步GPL于JAR包</strong></em>的意思啊，很好！】</p>
 
       </article>
       

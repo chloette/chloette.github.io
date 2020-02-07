@@ -186,34 +186,19 @@
         </header>
         
         <p>（一停手就是若干年啊。。。）</p>
-
 <p>在做一个有趣的小功能，具体什么就不说了。中途遇到了一个问题，media进程直接写文件的时候无权限：</p>
-
 <p>fopen后strerrno(errno)是：permission denied.</p>
-
 <p>翻了翻，应该是sepolicy（selinux）的限制导致的。</p>
-
 <p>找到篇<a href="http://blog.csdn.net/innost/article/details/19299937">文章</a>大概介绍了selinux和sepolicy设置（android L开始是建议厂商强制使用的）</p>
-
 <p>还有<a href="http://www.2cto.com/kf/201504/390742.html">一篇</a>更偏实用。</p>
-
 <p>打开/external/sepolicy/mediaserver.te</p>
-
 <p>（其实还有一个device/qcom/sepolicy/common/mediaserver.te，暂未确认是用哪个，还是做了一个交集）</p>
-
 <p>但可以确认的是<code>camera_data_file</code>应该是可写的：</p>
-
-<p><code>allow mediaserver camera_data_file:dir rw_dir_perms;
-allow mediaserver camera_data_file:file create_file_perms;</code></p>
-
+<p><code>allow mediaserver camera_data_file:dir rw_dir_perms; allow mediaserver camera_data_file:file create_file_perms;</code></p>
 <p>那具体<code>camera_data_file</code>是哪里那？继续翻：</p>
-
 <p>在/external/sepolicy/file_contexts里面：</p>
-
 <p><code>/data/misc/camera(/.*)?         u:object_r:camera_data_file:s0</code></p>
-
 <p>既然这样，那就直接往这个目录下面写吧~</p>
-
 <p>改完测试，一切OK~</p>
 
       </article>

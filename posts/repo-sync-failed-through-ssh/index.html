@@ -186,16 +186,12 @@
         </header>
         
         <p>通过ssh远程连接主机后，在git配置的ssh-key需要密码验证时，repo sync很容易失败（因为使用的git服务器未必一样，所以可能会多次验证密码，造成输入不及时即表现为“密码验证失败”）</p>
-
 <p>在<code>~/.bash_profile</code>里面加上下面代码，然后<code>source</code>一下，即可保证每次ssh登录都会要求（通过<code>ssh-add</code>）输入ssh-key的密码来验证并<a href="http://stackoverflow.com/questions/1595848/configuring-git-over-ssh-to-login-once">记住</a>：</p>
-
-<pre><code class="language-language-shell">if [ -z &quot;$SSH_AUTH_SOCK&quot; ] ; then
+<pre><code class="language-language-shell" data-lang="language-shell">if [ -z &quot;$SSH_AUTH_SOCK&quot; ] ; then
   eval `ssh-agent -s`
   ssh-add
 fi
-</code></pre>
-
-<p>解决~</p>
+</code></pre><p>解决~</p>
 
       </article>
       

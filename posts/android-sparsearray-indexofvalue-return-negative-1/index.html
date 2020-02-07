@@ -186,28 +186,18 @@
         </header>
         
         <p>继续Android。</p>
-
 <p><code>SparseArray&lt;T&gt;</code>是蛮好用的基本类型，一般用来替换掉<code>HashMap&lt;Integer, T&gt;</code>。</p>
-
 <p>有时候偷懒，也会用它来替换<code>Object[]</code>，也就是基本数组。</p>
-
 <p>因为这货有<code>indexOfValue</code>（这样就不用去遍历找索引啦），遍历也比HashMap方便的多。可以满足对基本数组的需要（但性能不高，使用需谨慎，<a href="http://developer.android.com/reference/android/util/SparseArray.html">文档</a>有详细解释为什么）。</p>
-
 <p>但是，这玩意儿有个坑，也就在<code>indexOfValue</code>里面。</p>
-
 <p>当用它来存储<code>String</code>时，可能会出现明明<code>Value</code>已经<code>put</code>进去了，但是<code>indexOfValue</code>就是返回<code>-1</code>的情况。</p>
-
 <p>一开始还以为可能是线程安全相关的问题，还打算加锁来着。结果。。。</p>
-
 <p>原因<a href="http://developer.android.com/reference/android/util/SparseArray.html#indexOfValue%28E%29">在于</a>：</p>
-
 <blockquote>
-<p>Note also that unlike most collections&rsquo; indexOf methods, this method compares values <strong><em>using == rather than equals</em></strong>.</p>
+<p>Note also that unlike most collections&rsquo; indexOf methods, this method compares values <em><strong>using == rather than equals</strong></em>.</p>
 </blockquote>
-
 <p>源码如下：</p>
-
-<pre><code class="language-language-java">public int indexOfValue(E value) {
+<pre><code class="language-language-java" data-lang="language-java">public int indexOfValue(E value) {
   if (mGarbage) {
   gc();
   }
@@ -218,14 +208,9 @@
 
   return -1;
 }
-</code></pre>
-
-<p>T_T</p>
-
+</code></pre><p>T_T</p>
 <p>Java中，字符串比较用<code>==</code>和<code>equals</code>的<a href="http://stackoverflow.com/questions/513832/how-do-i-compare-strings-in-java">区别</a>就不用解释了吧。。。</p>
-
-<hr />
-
+<hr>
 <p>你说Android你加个方便好用的数据结构你用个equals能咋样。。。又中枪了。。。</p>
 
       </article>

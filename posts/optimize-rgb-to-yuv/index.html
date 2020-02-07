@@ -186,8 +186,7 @@
         </header>
         
         <p>网上随处可见YUV到RGB的优化，其中被借鉴最多的应该就是<a href="https://code.google.com/p/webm/source/browse/src/libwebp/dec/yuv.c?repo=webp-wic-codec&amp;r=125e890972c0b3a86c592c345f93f15568d8b40c">VP8的源码</a>了吧：</p>
-
-<pre><code class="language-language-c">// Copyright 2010 Google Inc.
+<pre><code class="language-language-c" data-lang="language-c">// Copyright 2010 Google Inc.
 //
 // This code is licensed under the same terms as WebM:
 //  Software License Agreement:  http://www.webmproject.org/license/software/
@@ -233,19 +232,12 @@ void VP8YUVInit() {
 #if defined(__cplusplus) || defined(c_plusplus)
 }    // extern &quot;C&quot;
 #endif
-</code></pre>
-
-<p>但罕见RGB到YUV的转换（太冷门了么亲。。。）</p>
-
+</code></pre><p>但罕见RGB到YUV的转换（太冷门了么亲。。。）</p>
 <p>移位（浮点转整型）建表后通过查表法来加速转换的代码有这么复杂么。。。</p>
-
-<hr />
-
+<hr>
 <p>做回好人吧。</p>
-
 <p>在上面代码的基础上，增加：（对，我为了看得懂还特意把对应的转换公式（包括YUV-&gt;RGB的）放上去了，这公式见仁见智，有特殊需要的自行替换修改）</p>
-
-<pre><code class="language-language-c">  int16_t Itable257[I_TABLE_SIZE], Itable504[I_TABLE_SIZE], Itable098[I_TABLE_SIZE], Itable148[I_TABLE_SIZE], Itable291[I_TABLE_SIZE], Itable439[I_TABLE_SIZE], Itable368[I_TABLE_SIZE], Itable071[I_TABLE_SIZE];
+<pre><code class="language-language-c" data-lang="language-c">  int16_t Itable257[I_TABLE_SIZE], Itable504[I_TABLE_SIZE], Itable098[I_TABLE_SIZE], Itable148[I_TABLE_SIZE], Itable291[I_TABLE_SIZE], Itable439[I_TABLE_SIZE], Itable368[I_TABLE_SIZE], Itable071[I_TABLE_SIZE];
 
   static int done = 0;
 
@@ -275,11 +267,8 @@ void VP8YUVInit() {
     }
     done = 1;
   }
-</code></pre>
-
-<p>还是熟悉的用法，还是熟悉的味道：</p>
-
-<pre><code class="language-language-c">  inline static void RgbToY(uint8_t* rgb, uint8_t* const y) {
+</code></pre><p>还是熟悉的用法，还是熟悉的味道：</p>
+<pre><code class="language-language-c" data-lang="language-c">  inline static void RgbToY(uint8_t* rgb, uint8_t* const y) {
     *y = Itable257[rgb[0]] + Itable504[rgb[1]] + Itable098[rgb[2]] + 16;
   }
 
@@ -301,7 +290,6 @@ void VP8YUVInit() {
     RgbToYuv(rgba, y, u, v);
   }
 </code></pre>
-
       </article>
       
     </main>

@@ -186,33 +186,20 @@
         </header>
         
         <p>还是默认Theme。</p>
-
 <p>如何显示图片可以参考[<a href="http://nobodycare.me/2014/09/22/ghost-display-post-images-on-home-page/">Ghost在首页显示图片而非摘要</a>]</p>
-
 <p>但是这样修改有一个地方漏掉了。就是图片的宽高，普通图片还好，但到了大图，就坑爹了。在首页显示比较大的图片，会直接撑破侧边。。。</p>
-
 <p>本来以为Ghost应该支持类似<code>![](xxx.jpg =500x)</code>（以500 x auto的宽高来显示xxx.jpg）这种语法，结果不支持。。。</p>
-
 <p>搜一搜，可以发现Ghost讨论组对于支持image的复杂操作（例如resize，旋转等）的呼声还是很高的，而且专门列了<a href="https://github.com/TryGhost/Ghost/issues/4453">一贴</a>来讨论，并且给出了若干可能的解决方案（都有各自的优缺点）。</p>
-
 <p>这里先不考虑多size来适配的case，这交给Ghost的大神们吧～</p>
-
 <p><strong>我只是希望首页显示图片后，图片宽高可控。</strong></p>
-
 <p>解决方法有两种：</p>
-
 <p>一种是直接把<code>./partials/loop.hbs</code>里，<code>post-excerpt</code>项的class直接修改为<code>post-content</code>～</p>
-
-<pre><code class="language-language-markup">&lt;section class=&quot;post-content&quot;&gt;
+<pre><code class="language-language-markup" data-lang="language-markup">&lt;section class=&quot;post-content&quot;&gt;
 ...
 &lt;/section&gt;
-</code></pre>
-
-<p>这样的好处是方便，坏处（我觉得蛮好的）就是首页的文字风格和page页完全一样（例如字体大小，行间距等），没区别了。</p>
-
+</code></pre><p>这样的好处是方便，坏处（我觉得蛮好的）就是首页的文字风格和page页完全一样（例如字体大小，行间距等），没区别了。</p>
 <p>还有一种就是增加<code>post-excerpt img</code>的css，直接copy <code>post-content img</code>然后改一下名字即可：</p>
-
-<pre><code class="language-language-css-extras">/* Keep images centred and within the bounds of the post-width */
+<pre><code class="language-language-css-extras" data-lang="language-css-extras">/* Keep images centred and within the bounds of the post-width */
 .post-excerpt img {
   display: block;
   max-width: 100%;
@@ -220,12 +207,8 @@
   margin: 0 auto;
   padding: 0.6em 0;
 }
-</code></pre>
-
-<p>好处是首页风格保持和之前一致，坏处嘛，稍微麻烦一点点。哈哈～</p>
-
+</code></pre><p>好处是首页风格保持和之前一致，坏处嘛，稍微麻烦一点点。哈哈～</p>
 <p>暂时先这么处理吧（BTW，我选择的是后者）。</p>
-
 <p>按照Ghost的说法，Image Process已经放入Road map，坐等版本更新吧～</p>
 
       </article>

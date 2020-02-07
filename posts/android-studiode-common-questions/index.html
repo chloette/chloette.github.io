@@ -186,55 +186,33 @@
         </header>
         
         <p>Android studio会慢慢替换掉Eclipse，从来作为Android的主力IDE。</p>
-
 <p>但是目前存在的问题还是蛮多的，这里简单罗列一下（有更新陆续补充）：</p>
-
 <p>####报错：<code>duplicate files during packaging of APK</code>
 在主工程的build.gradle增加：</p>
-
-<pre><code class="language-language-groovy">android {
+<pre><code class="language-language-groovy" data-lang="language-groovy">android {
     packagingOptions {
         exclude 'META-INF/LICENSE.txt'
     }
 }
-</code></pre>
-
-<p>####提示<code>Error: Missing one of the key attributes 'action#name,category#name' on element intent-filter at AndroidManifest.xml</code>
+</code></pre><p>####提示<code>Error: Missing one of the key attributes 'action#name,category#name' on element intent-filter at AndroidManifest.xml</code>
 将</p>
-
-<pre><code class="language-language-markup">&lt;intent-filter android:priority=&quot;1000&quot; /&gt;
-</code></pre>
-
-<p>改为：</p>
-
-<pre><code class="language-language-markup">&lt;intent-filter android:priority=&quot;1000&quot;&gt;
+<pre><code class="language-language-markup" data-lang="language-markup">&lt;intent-filter android:priority=&quot;1000&quot; /&gt;
+</code></pre><p>改为：</p>
+<pre><code class="language-language-markup" data-lang="language-markup">&lt;intent-filter android:priority=&quot;1000&quot;&gt;
 	&lt;action android:name=&quot;HEHEHE&quot; /&gt;
 &lt;/intent-filter&gt;
-</code></pre>
-
-<p>####奇怪的编译错误：<code>illegal character: '\ufeff'</code>：</p>
-
+</code></pre><p>####奇怪的编译错误：<code>illegal character: '\ufeff'</code>：</p>
 <p>Android studio 调试过程中出现：非法字符： \65279</p>
-
-<pre><code class="language-language-bash">java: F:\android\Lock_QinZDLock\src\com\qin\lock\SliderRelativeLayout.java:1: 非法字符： \65279
-</code></pre>
-
-<p>解决方法：使用Notpad++打开 格式 选择保存为无bom编码 格式UTF-8不需要BOM来表明字节顺序，但可以用BOM来表明编码方式。字符&rdquo;ZERO WIDTH NO-BREAK SPACE&rdquo;的UTF-8编码是EF BB BF。所以如果接收者收到以EF BB BF开头的字节流，就知道这是UTF-8编码了。</p>
-
+<pre><code class="language-language-bash" data-lang="language-bash">java: F:\android\Lock_QinZDLock\src\com\qin\lock\SliderRelativeLayout.java:1: 非法字符： \65279
+</code></pre><p>解决方法：使用Notpad++打开 格式 选择保存为无bom编码 格式UTF-8不需要BOM来表明字节顺序，但可以用BOM来表明编码方式。字符&quot;ZERO WIDTH NO-BREAK SPACE&quot;的UTF-8编码是EF BB BF。所以如果接收者收到以EF BB BF开头的字节流，就知道这是UTF-8编码了。</p>
 <p>来自 <a href="http://blog.taorenjia.com/?p=319">http://blog.taorenjia.com/?p=319</a></p>
-
 <p>####针对跨多目录的工程，请小心使用rename等refactor操作</p>
-
 <p>首先不建议跨多目录，因为android studio建index的过程会扫描多目录，层级越深越杯具（没找到exclude目录/文件的方法 T_T）</p>
-
 <p>再就是如果一定要跨多目录，refactor的时候注意review，exclude掉不需要rename的项。不然就等着哭吧。。。</p>
-
 <p>尤其注意的是，包名这种的rename。【其实IntelliJ至少从版本13开始就支持Mark Directory As &gt; Excluded，Android studio 到最新的canary 0.9.2依然没动静。。。T_T】</p>
-
 <p>####更新失败后无法打开Android studio
 java版本较高比较容易出现（或者使用Canary版本更容易出现？）
 办法就是手动下载<a href="http://tools.android.com/download/studio/canary/latest">最新版</a>（注意这里是canary版本，想要稳定版请勿尝试），覆盖老版本。</p>
-
 <p>####Find usage(Alt+ F7)对于查找资源引用/调用，可能有遗漏
 例如资源在drawable下面，然后anim目录下有引用该资源。这时候针对这个资源的find usage是不会提示anim目录下的引用项的。目前版本0.9.3，依然存在该问题。</p>
 

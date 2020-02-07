@@ -186,12 +186,9 @@
         </header>
         
         <p>Ghost更新越来越频繁，每次都要手动更新css实在伤不起。。。</p>
-
 <p>反正改动的地方也不多，干脆做成一键脚本好了，把之前<a href="http://nobodycare.me/2014/09/29/ghost-upgrade-to-0-5-2/">upgrade</a>的脚本再扩展一下：</p>
-
-<p>首先更改#7，改动如下，增加了<strong><em>change logo position</em></strong>：</p>
-
-<pre><code class="language-language-bash">#change post page what to show...
+<p>首先更改#7，改动如下，增加了<em><strong>change logo position</strong></em>：</p>
+<pre><code class="language-language-bash" data-lang="language-bash">#change post page what to show...
 echo '7. replace &quot;excerpt&quot; with &quot;content&quot; ---------------'
 #excerpt -&gt; content
 #read more -&gt; &gt;&gt;
@@ -200,17 +197,11 @@ sed -i &quot;s#&lt;p&gt;{{excerpt words=\&quot;26\&quot;}} &lt;a class=\&quot;re
 #change logo position
 sed -i 's~{{#if @blog.logo}}&lt;a class=&quot;blog-logo&quot; href=&quot;{{@blog.url}}&quot;&gt;&lt;img src=&quot;{{@blog.logo}}&quot; alt=&quot;Blog Logo&quot; /&gt;&lt;/a&gt;{{/if}}~~g' ./content/themes/casper/index.hbs
 sed -i 's~&lt;h1 class=&quot;page-title&quot;&gt;{{@blog.title}}&lt;/h1&gt;~{{#if @blog.logo}}&lt;a class=&quot;blog-logo&quot; href=&quot;{{@blog.url}}/about&quot;&gt;&lt;img src=&quot;{{@blog.logo}}&quot; alt=&quot;Blog Logo&quot; /&gt;&lt;/a&gt;{{/if}}&lt;h1 class=&quot;page-title&quot;&gt;{{@blog.title}}&lt;/h1&gt;~g' ./content/themes/casper/index.hbs
-</code></pre>
-
-<p>再就是考虑到自己智商太低，难以驾驭sed的多行匹配，所以祭出Python；脚本中加上这句：</p>
-
-<pre><code class="language-language-bash">#call python to do multiple lines replacement
+</code></pre><p>再就是考虑到自己智商太低，难以驾驭sed的多行匹配，所以祭出Python；脚本中加上这句：</p>
+<pre><code class="language-language-bash" data-lang="language-bash">#call python to do multiple lines replacement
 python ~/ghost_css_adjustment.py
-</code></pre>
-
-<hr />
-
-<pre><code class="language-language-python">import re
+</code></pre><hr>
+<pre><code class="language-language-python" data-lang="language-python">import re
 
 cssfile='./content/themes/casper/assets/css/screen.css'
 infile=open(cssfile, 'r')
@@ -233,10 +224,7 @@ infile.close()
 outfile = open(cssfile, 'w')
 outfile.write(data)
 outfile.close()
-</code></pre>
-
-<p>至此，以后升级终于可以轻松一键搞定了～～ LOL～～</p>
-
+</code></pre><p>至此，以后升级终于可以轻松一键搞定了～～ LOL～～</p>
 <p>记录一下～</p>
 
       </article>

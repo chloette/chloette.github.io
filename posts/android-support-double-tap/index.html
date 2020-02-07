@@ -186,45 +186,27 @@
         </header>
         
         <p>最近做的东西比较杂，是得梳理一下了~</p>
-
 <p>参考了这篇<a href="http://www.android100.org/html/201307/13/3577.html">文章</a>。</p>
-
 <p>按键双击，这种组合键的做法类似volume down键 + power键 = 截屏</p>
-
 <p>因为两个按键之间肯定会有时间差，而双击其实就是x键 + x键；</p>
-
 <p>开翻~</p>
-
 <p>Android上keyevent，在framework层是由window manager来负责转发，找到PhoneWindowManager，会发现这里对于keyevent的各种intercept简直就是hook的绝佳地点：</p>
-
 <p><code>interceptKeyBeforeDispatching(WindowState win, KeyEvent event, int policyFlags)</code></p>
-
 <p><code>interceptKeyBeforeQueueing(KeyEvent event, int policyFlags)</code></p>
-
 <p>等。。。</p>
-
 <p>找到interceptKeyBeforeDispatching对volume down + power的处理（或者直接参考mHomeDoubleTapTimeoutRunnable），参考即可（可以顺着mVolumeDownKeyTriggered去看在哪里触发，在哪里判定tolerance的）</p>
-
 <p>基本流程就是：
 volume down先被点击的时候，记录下来时间；
 power点击的时候，判断是否在tolerance里面；
 同理，power先被点击的时候，一样记录下来时间；
 在volume down被点击的时候，判断是否在tolerance里面；</p>
-
 <p>这样就确定了是否是截屏“操作”，如果是，就consume这个事件（不再向上转发，直接return掉）；同时通过mScreenshotRunnable去截屏。</p>
-
 <p>同样，双击事件也一样（甚至更简单），前一次点击纪录下来时间，下次点击计算是否在tolerance中即可（就不贴代码了，因为太懒（烂）了。。。）</p>
-
 <p>其实L的代码，在window manager这里已经实现了volume down + power、volume up + power、 double tap home；参考对应的来实现一个即可。</p>
-
 <p>还有一点就是如何在屏幕没点亮的时候监听按键；</p>
-
 <p>在interceptKeyBeforeQueueing中找到interactive，（还没试，应该是用这个来决定是否screen on）</p>
-
 <p>就这个啦，即使这个为false的时候依然把keyevent传递出去就好了~ （或者简单点就参考power键~ ）</p>
-
 <p>基本如上~</p>
-
 <p>TADA~</p>
 
       </article>

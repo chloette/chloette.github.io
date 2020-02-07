@@ -186,19 +186,19 @@
         </header>
         
         <p>Putty-auto-close may caused by server error like &ldquo;<code>too many logins to user 'xxx'</code> &ldquo;.</p>
-
 <p>You can fix it by these steps:</p>
-
 <ol>
-<li><p>login to server as admin</p></li>
-
-<li><p><code>vim /etc/security/limits.conf</code></p></li>
-
-<li><p>modify the limitation or add new one line as :</p></li>
+<li>
+<p>login to server as admin</p>
+</li>
+<li>
+<p><code>vim /etc/security/limits.conf</code></p>
+</li>
+<li>
+<p>modify the limitation or add new one line as :</p>
+</li>
 </ol>
-
 <p>@xxx hard maxlogins 100</p>
-
 <p>and I&rsquo;m sure you must have known what the xxx and 100 mean.</p>
 
       </article>

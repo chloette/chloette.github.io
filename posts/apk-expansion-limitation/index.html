@@ -186,11 +186,8 @@
         </header>
         
         <p><a href="http://developer.android.com/google/play/expansion-files.html">APK Expansion</a></p>
-
 <p>公司的App打算shrink app size &ndash;&gt; 因为有用户抱怨说app太大了看起来就觉得浪费资源bulabulabula。。。</p>
-
 <p>其中APK Expansion也被列为了备选方案；翻了文档和Sample源码后确认了APK Expansion的一些限制：</p>
-
 <ol>
 <li>超过50M的apk强制要求使用，不超过也可以使用；</li>
 <li>可以使用任何格式作为expansion file，但只能有一个main，一个patch（即最多两个，各不超过2G）</li>
@@ -198,13 +195,9 @@
 <li><strong>expansion在一般情况下(on most devices)会随apk一起下载</strong>；在某些不能下载的设备上，可以手动下载；无法由app来选择，是否随apk一起下载；</li>
 <li><strong>需额外增加权限</strong>：com.android.vending.CHECK_LICENSE（google play） 和 android.permission.WAKE_LOCK（保证下载时cpu alive）</li>
 </ol>
-
 <p>从app的角度来看，几乎没有好处。app size没有减少、下载的时候也是一起下载（没有lazy机制）、还需要额外权限。。</p>
-
 <p>所以这条方案基本可以pass了。</p>
-
 <p>另外的方案就是把可以shrink的资源，放在自己的服务器（或cdn）上，然后下载后再load；灵活性高很多，问题就是不确定服务器（或cdn）是否在犄角旮旯的地方都靠谱了。（<a href="http://nobodycare.me/2014/11/07/about-loading-res-from-apk-directly/">分包apk的方案之前有提到</a>）</p>
-
 <p>记录一下。</p>
 
       </article>

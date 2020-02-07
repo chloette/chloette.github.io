@@ -186,40 +186,30 @@
         </header>
         
         <p>纠结了很久，一开始考虑是不是折腾一下jekyll（毕竟有github撑腰不断更新）；或者成熟一些的octopress；亦或者是台湾同胞的hexo；不过最后还是选择了Ghost</p>
-
 <p>不想用WP的原因说白了就是。。。那玩意儿不太像是码农用的啊。。。（速度太慢体积太大不容易迁移这些明摆着的事情就不讨论了吧～）</p>
-
-<hr />
-
+<hr>
 <p>不用Jekyll和octopress的原因其就是太麻烦了，想象一下，应该需要一个online的编辑器（而且算是比较好的选择了吧），然后用github（方便些）或者自己开一个shell去commit &amp; generate</p>
-
 <p>不用hexo的原因是，既然都已经上node.js了，干脆找个靠谱点的好了啊。</p>
-
-<p>另外最后选择ghost还是看到了一篇老外的文章，也是面临类似的选择，其中一句话我觉得很对：
-&gt;I chose Ghost over Jekyll because I wanted to minimize the amount of work spent on the blog outside of writing actual content.
+<p>另外最后选择ghost还是看到了一篇老外的文章，也是面临类似的选择，其中一句话我觉得很对：</p>
+<blockquote>
+<p>I chose Ghost over Jekyll because I wanted to minimize the amount of work spent on the blog outside of writing actual content.
 <a href="http://christopher.su/2014/wordpress-ghost-jekyll/">Quote</a></p>
-
+</blockquote>
 <p>说的很对！</p>
-
-<hr />
-
+<hr>
 <p>这次迁移中遇到了不少问题，因为没有什么好的工具可以从wordpress无缝迁移到ghost</p>
-
 <p>尽管有一个ghost的wp插件，可以export content成json形式（然后在/ghost/debug页面可以去import），但是，这玩意儿真没那么好用。</p>
-
 <p>迁移的时候有以下几个坑要注意：</p>
-
 <ol>
 <li>Slug是中文的（转码后是<code>%E6%88</code>这种），是无法导入ghost的，必须用英文或拼音代替（目测没有好工具。。。）</li>
 <li>ghost是没有分类（<code>category</code>）的，只有<code>tag</code>；所以WP的分类都会被转为<code>tag</code>的形式。</li>
 <li>上传到wp的图片，一般是放在<code>/wp-content/uploads/</code>；ghost的话，一般是放置在<code>/content/images/</code>；找文本替换工具来替换吧，然后把图片copy过去就好了。</li>
-<li>ghost没有像wp一样自动生成小尺寸的预览图，而是提供原图，所以页面上如果有很多图，那就真的是<strong><em>多图杀猫</em></strong>了。。。</li>
+<li>ghost没有像wp一样自动生成小尺寸的预览图，而是提供原图，所以页面上如果有很多图，那就真的是<em><strong>多图杀猫</strong></em>了。。。</li>
 <li>html形式的高亮/斜体/颜色/超链接等等，都可以识别，但为了统一（其实是简化），最好还是改成markdown的形式</li>
 <li>上传到wp的文件，例如<code>xx.zip</code>或者<code>xx.pdf</code>这一类的，ghost是玩不转的，需要自行处理。</li>
 <li>模板一般放置在<code>/content/theme/</code>，自己下载解压缩后重启ghost即可使用了。不过免费的模板的质量确实不敢恭维啊。。。</li>
 <li>ghost默认start的是<code>development</code>模式，而不是<code>production</code>模式；</li>
 </ol>
-
 <p>有遗漏再补充，暂时就这些。</p>
 
       </article>

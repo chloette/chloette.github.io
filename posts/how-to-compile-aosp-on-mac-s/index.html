@@ -187,16 +187,12 @@
         
         <p>Follow :
 <a href="https://source.android.com/setup/initializing">https://source.android.com/setup/initializing</a></p>
-
 <p>Then you may meet one compile error:</p>
-
 <pre><code>FAILED: out/soong/.intermediates/system/tools/aidl/libaidl-common/darwin_x8664static/gen/yacc/system/tools/aidl/aidl_language_y.cpp out/soong/.intermediates/system/tools/aidl/libaidl-common/darwin_x8664static/gen/yacc/system/tools/aidl/aidl_language_y.h 
 
 BISON_PKGDATADIR=external/bison/data prebuilts/misc/darwin-x86/bison/bison -d  --defines=out/soong/.intermediates/system/tools/aidl/libaidl-common/darwin_x8664static/gen/yacc/system/tools/aidl/aidl_language_y.h -o out/soong/.intermediates/system/tools/aidl/libaidl-common/darwin_x8664static/gen/yacc/system/tools/aidl/aidl_language_y.cpp system/tools/aidl/aidl_language_y.yy
 </code></pre>
-
 <p>Then do this:</p>
-
 <pre><code>1.Patch bison fix for High Sierra and build bison:
 
     cd /Volumes/AOSP/external/bison

@@ -186,23 +186,17 @@
         </header>
         
         <p>不小心看到更新了，所以就去更新了（确实有新功能，如侧边栏和主题图片等，默认模板的字体也有修改），结果掉到自己给自己挖的坑里面去了。。。（手贱是病不治不行啊。。。）</p>
-
 <p>参考<a href="http://support.ghost.org/how-to-upgrade/">How to upgrade self-installed Ghost</a>来升级即可。不过我又加上了修改fonts来源（通过sed），并修改excerpt（也是通过sed。。。）</p>
-
 <p>由于Ghost用的sqlite是不加密的（还是因为我用的是dev版本？），所以sed替换的时候会把sqlite数据库（content/data/sqlite-dev）里面的数据一并替换掉（还记得我之前写过<a href="http://nobodycare.me/2014/09/16/ghost-slower-than-wordpress/">Ghost访问比Wordpress还慢？</a>么？真是自掘坟墓啊）</p>
-
 <p>结果启动Ghost就报sql corruption 500的错误。。。（这么“写”数据，基本的MD5校验都过不了啊）</p>
-
 <p>真是一失足成千古恨啊。折腾了蛮久才发现是这个问题。 T_T</p>
-
 <p>附上修改后的脚本，运行</p>
+<pre><code class="language-language-bash" data-lang="language-bash">sudo ./upgrade_ghost.sh TARGET_DIR_PATH
+```即可：
 
-<pre><code class="language-language-bash">sudo ./upgrade_ghost.sh TARGET_DIR_PATH
-</code></pre>
 
-<p>即可：</p>
-
-<pre><code class="language-language-bash">#stop all
+```language-bash
+#stop all
 echo '1. stop all -----------------'
 forever stopall
 
@@ -242,11 +236,8 @@ echo '8. restart ---------------'
 
 echo ' ------------ All done. --------------'
 
-</code></pre>
-
-<p>不出意外这样就升级完啦～</p>
-
-<p><strong><em>Tada~</em></strong></p>
+</code></pre><p>不出意外这样就升级完啦～</p>
+<p><em><strong>Tada~</strong></em></p>
 
       </article>
       

@@ -186,58 +186,39 @@
         </header>
         
         <p>也许题目换成《配置以Github作为源码仓库并用Gradle编译Android的Jenkins时遇到的坑》更恰当~ LOL~</p>
-
 <p>网上<a href="https://www.digitalocean.com/community/tutorials/how-to-build-android-apps-with-jenkins">教学贴</a>很多，不一一列举了。也可以参考<a href="http://nobodycare.me/2014/09/19/jenkins-android-auto-build-problems/">前一篇</a>（BTW，我想说<a href="http://wiki.hudson-ci.org/display/HUDSON/Subversion+Release+Manager">Subversion Release Plugin</a>比自带的Subversion Plugin好用多了）。本文主要补充配置Github和Gradle容易遇到的问题。</p>
-
 <p>重要的plugin：</p>
-
 <ol>
-<li><p><a href="https://wiki.jenkins-ci.org/display/JENKINS/Git+Plugin">Git plugin</a></p></li>
-
-<li><p><a href="http://wiki.jenkins-ci.org/display/JENKINS/Gradle+Plugin">Gradle plugin</a></p></li>
+<li>
+<p><a href="https://wiki.jenkins-ci.org/display/JENKINS/Git+Plugin">Git plugin</a></p>
+</li>
+<li>
+<p><a href="http://wiki.jenkins-ci.org/display/JENKINS/Gradle+Plugin">Gradle plugin</a></p>
+</li>
 </ol>
-
 <p>至于Github plugin之类的插件，自己看着办吧。</p>
-
 <p>这里有几个容易出问题的地方</p>
-
 <ul>
 <li>如何用Jenkins从Github获取代码：</li>
 </ul>
-
 <p>建议使用<a href="https://developer.github.com/guides/managing-deploy-keys/">Deploy keys</a></p>
-
 <p>怎么用那？最好用<code>.ssh/config</code>，可以参考<a href="http://stackoverflow.com/questions/5212304/authenticate-jenkins-ci-for-github-private-repository">这里</a>。</p>
-
 <p>需要注意的是，在创建ssh key的时候，需要</p>
-
-<pre><code class="language-language-bash">sudo -u jenkins ssh-keygen -t rsa -f .../jenkins/.ssh/id_rsa_project
-</code></pre>
-
-<p>加<code>-u</code>来指定以jenkins身份创建key，加<code>-f</code>就是为了方便多个ssh key（例如多repository）的时候好管理。</p>
-
+<pre><code class="language-language-bash" data-lang="language-bash">sudo -u jenkins ssh-keygen -t rsa -f .../jenkins/.ssh/id_rsa_project
+</code></pre><p>加<code>-u</code>来指定以jenkins身份创建key，加<code>-f</code>就是为了方便多个ssh key（例如多repository）的时候好管理。</p>
 <p>同时，创建出来的ssh key不要设置密码，因为jenkins对ssh key密码的支持不是特别好，会报public key permission错误（非访问权限问题）。BTW，虽然github提到deploy keys缺点时有说，这货一般为了方便不加密码；但通过command方式，用带密码的ssh key去访问github是没问题的。</p>
-
 <p>当然Github还提供了一套更华丽的方式，叫<a href="https://developer.github.com/guides/managing-deploy-keys/#machine-users">Machine user</a>，简单说就是单独申请一个账户（类似一个代理），把这个账户加到不同的repository里面作为只读的collaborator，再直接在这个账户里面加ssh key（而不用每个repository一个deploy key了），这样通过这一个machine user（代理）就可以访问多个repository了。</p>
-
 <p>最后，这里去clone/pull代码的时候，有时候出报timeout的错误，解决方法有两种，一种是在该目录下，手动git clone &ndash;bare一个repository出来；再一种就是增加timeout时间：<code>源码管理</code> -&gt; <code>Git</code> -&gt; <code>Additional Behaviours</code> -&gt; <code>Advanced clone behaviours</code></p>
-
 <ul>
 <li>如何用Jenkins来run Gradle：</li>
 </ul>
-
 <p>需要手动匹配gradle版本。在<code>系统设置</code>里面<code>新增Gradle安装</code>即可，不然在<code>Invoke Gradle script</code>的时候，除了<code>default</code>就没得选了。</p>
-
 <p><code>JAVA_HOME</code>和<code>ANDROID_HOME</code>这两个环境变量需要提前设置好（可以在<code>/etc/profile</code>里面export，然后<code>source /etc/profile</code>即可）；修改环境变量后需要重启jenkins；同时注意对应的目录，jenkins是否有访问权限；</p>
-
 <ul>
-<li><a href="http://tools.android.com/tech-docs/new-build-system/user-guide#TOC-Signing-Configurations">gradle增加签名</a>用的key的方式如下：
-<br /></li>
+<li><a href="http://tools.android.com/tech-docs/new-build-system/user-guide#TOC-Signing-Configurations">gradle增加签名</a>用的key的方式如下：</li>
 </ul>
-
 <p>增加<code>signingConfigs</code>，注意路径：</p>
-
-<pre><code class="language-language-groovy">android {
+<pre><code class="language-language-groovy" data-lang="language-groovy">android {
   signingConfigs {
     releaseSignConfig {
     storeFile file(&quot;../../../xxx/android.key&quot;)
@@ -254,11 +235,8 @@ buildTypes {
   } 
   ...
 }
-</code></pre>
-
-<p>如果不希望把key/password直接写在gradle中（太直接了好么）；可以换个方式（对，就是通过环境变量）：</p>
-
-<pre><code class="language-language-groovy">signingConfigs {
+</code></pre><p>如果不希望把key/password直接写在gradle中（太直接了好么）；可以换个方式（对，就是通过环境变量）：</p>
+<pre><code class="language-language-groovy" data-lang="language-groovy">signingConfigs {
   release {
     storeFile file(System.getenv(&quot;KEYSTORE&quot;))
     storePassword System.getenv(&quot;KEYSTORE_PASSWORD&quot;)
@@ -266,16 +244,12 @@ buildTypes {
     keyPassword System.getenv(&quot;KEY_PASSWORD&quot;)
   }
 }
-</code></pre>
-
-<ul>
+</code></pre><ul>
 <li><a href="http://tools.android.com/tech-docs/new-build-system/user-guide#TOC-Running-ProGuard">gradle增加proguard</a></li>
 </ul>
-
 <p>之前版本是用<code>runProguard true</code>来作为proguard的开关，
 但是，自从android gradle plugin升到<a href="http://tools.android.com/tech-docs/new-build-system/migrating-to-1-0-0">1.0</a>以后，就要换成<code>minifyEnabled true</code>了。如：</p>
-
-<pre><code class="language-language-bash">android {
+<pre><code class="language-language-bash" data-lang="language-bash">android {
   buildTypes {
     release {
       minifyEnabled true
@@ -283,29 +257,17 @@ buildTypes {
     }
   }
 }
-</code></pre>
-
-<ul>
+</code></pre><ul>
 <li>仅编译release版本</li>
 </ul>
-
 <p>Build Task填：</p>
-
-<pre><code class="language-language-bash">clean check assembleRelease
-</code></pre>
-
-<p><a href="http://tools.android.com/tech-docs/new-build-system/user-guide#TOC-Android-tasks">因为</a>：</p>
-
-<pre><code class="language-language-bash">build = check + assemble
+<pre><code class="language-language-bash" data-lang="language-bash">clean check assembleRelease
+</code></pre><p><a href="http://tools.android.com/tech-docs/new-build-system/user-guide#TOC-Android-tasks">因为</a>：</p>
+<pre><code class="language-language-bash" data-lang="language-bash">build = check + assemble
 assemble = assembleRelease + assembleDebug
-</code></pre>
-
-<p>如果对于proguard的结果有疑问的话，可以祭出<code>dex2jar</code>反编译看看效果。</p>
-
-<hr />
-
+</code></pre><p>如果对于proguard的结果有疑问的话，可以祭出<code>dex2jar</code>反编译看看效果。</p>
+<hr>
 <p>基本上就这些了。</p>
-
 <p>现在就差。。一个能正常运行Jenkins又价格可接受的Server了。。。</p>
 
       </article>

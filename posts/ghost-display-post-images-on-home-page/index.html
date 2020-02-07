@@ -186,27 +186,17 @@
         </header>
         
         <p>我就拿默认的Casper来说事吧。</p>
-
 <p>老版本应该参考<a href="http://www.ghostforbeginners.com/display-post-images-on-home-page/">Display Post Images on home page</a>就够了。but我在目前的版本0.5.1中，index.hbs中没发现对应项。。。</p>
-
 <p>看了一下，发现换地儿了，在<code>./partials/loop.hbs</code>里，把post-excerpt项如下修改即可～</p>
-
-<pre><code class="language-language-markup">&lt;section class=&quot;post-excerpt&quot;&gt;
+<pre><code class="language-language-markup" data-lang="language-markup">&lt;section class=&quot;post-excerpt&quot;&gt;
   &lt;p&gt;{{content words=&quot;30&quot;}} &lt;a class=&quot;read-more&quot; href=&quot;{{url}}&quot;&gt;more &amp;raquo;&lt;/a&gt;&lt;/p&gt;
 &lt;/section&gt;
 
-</code></pre>
-
-<p><del>修改后接着restart ghost（*我用的forever， 随手写个shell重启所有ghost～ 简单易用O Yeah*）就好啦</del></p>
-
+</code></pre><p><del>修改后接着restart ghost（<em>我用的forever， 随手写个shell重启所有ghost～ 简单易用O Yeah</em>）就好啦</del></p>
 <p><em>最新版修改hbs后，貌似不用重启ghost就可以生效了～页面刷新即可～</em></p>
-
-<p><strong><em>Tada~</em></strong></p>
-
-<hr />
-
+<p><em><strong>Tada~</strong></em></p>
+<hr>
 <p>[更新 2015/1/6]</p>
-
 <p>现在更新的版本可以直接使用{{image}}了，直接参考<a href="http://www.ghostforbeginners.com/display-post-images-on-home-page/">Display Post Images on home page</a>即可 &ndash; 这个页面更新啦～ 哈哈～</p>
 
       </article>

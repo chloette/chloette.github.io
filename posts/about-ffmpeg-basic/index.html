@@ -186,201 +186,115 @@
         </header>
         
         <p>这篇title有点大，因为ffmpeg作为一个合格的多媒体框架，支持那么多codec和协议，一篇文章想写完，不现实。</p>
-
 <p>不过本着本人不喜细节的一贯作风（不要在意这些细节！），所以就这么随便说说吧，当是个给自己的记录。</p>
-
 <p>（下文基本是自问自答的方式（原因在于我觉得<a href="http://nobodycare.me/2014/09/17/understanding-node-js-xia-fan-yi/">这种风格</a>蛮容易理解的））</p>
-
 <p>####什么是FFmpeg？</p>
-
 <p>这个太宽泛了，简单回答就是一个多媒体框架。什么是多媒体？一句话：但凡不是文字还具有表意的数据形式，都可以称之为多媒体。（不过，如果对多媒体真是一点概念都没有的话。。。建议还是出门左拐6块钱麻辣烫填饱肚子再说吧。。。）</p>
-
 <blockquote>
 <p>FFmpeg is the leading multimedia framework, able to decode, encode, transcode, mux, demux, stream, filter and play pretty much anything that humans and machines have created. It supports the most obscure ancient formats up to the cutting edge. No matter if they were designed by some standards committee, the community or a corporation.</p>
-
+</blockquote>
+<blockquote>
 <p>FFmpeg是多媒体框架的领军人物，允许解码、编码、转码、Mux（觉得确实没有特别好的翻译）、Demux、stream（这里不是名词）、filter和播放各种文件。它还支持时至今日的绝大多数古老文件格式，即使那格式甚至都尚未成为标准。</p>
 </blockquote>
-
 <p>是不是听起来碉堡了。BUT有一点一定要了解的就是，<a href="http://nobodycare.me/2014/09/24/about-gpl/">FFmpeg的开源协议</a>。</p>
-
 <p>####听起来很棒，谁在用？</p>
-
 <p>这个很难回答。。。</p>
-
 <p>因为应用太广泛了，而且目前的FFmpeg版本（2.x）框架也更易于“组合”</p>
-
 <p>所以更容易以不同的形式出现在你的周围。例如各种XX影音和XX视频等等。</p>
-
 <p>####这么多，太棒了！那他们都开源了吧！</p>
-
 <p>呵呵。</p>
-
 <p>尽管LGPL已经比较宽泛，动态链接即可；</p>
-
 <p>但是加上遵循GPL的X264这块烫手山芋，（其实还是有办法绕过的，在<a href="http://nobodycare.me/2014/09/24/about-gpl/">FFmpeg的开源协议</a>有提到华丽的classpath exception）</p>
-
 <p>以及下文会提到的“技术门槛”，“不自觉的是大多数”也是看似合理的结果。</p>
-
 <p>可以看看有哪些数一数二的播放软件/格式转换软件上榜：<a href="http://libav.org/shame.html">Shame</a></p>
-
 <p>####既然“应用”这么广泛，为什么（国内）相关资料却很少？</p>
-
 <p>可能受前一个原因影响吧，能藏多隐晦就多隐晦？</p>
-
 <p>当然我觉得更多的原因是，ffmpeg本身是一个需要一定门槛的框架。简单来说，至少要知道什么是多媒体吧；当然更多的，例如要知道什么是编码/解码、什么是Mux/Demux等。</p>
-
 <p>而所有有一定门槛的“技术”，在国内都是很“值钱”的。所以大家藏着掖着也合情合理。</p>
-
 <p>BTW，我打算开源一个封装ffmpeg的库，C/C++代码 + JNI + Java的封装层（为了规避GPL）；支持基本的：</p>
-
 <ul>
 <li>编码图像/音频帧到视频文件</li>
 <li>解码视频文件到buffer或bitmap</li>
 </ul>
-
 <p>【更新】代码已上传至<a href="http://chloette.github.io/FFmpegAdapter/">github</a>，详情请参考<a href="http://nobodycare.me/2014/12/24/about-ffmpeg-advance/">进阶篇</a>。</p>
-
 <p>####那什么是编码/解码？</p>
-
 <p>这个要从为什么需要编码/解码开始说起吧？而原因一句话概括就是：当年太穷，硬件比电贵。</p>
-
 <p>再具体点的话，就先从图片说起吧。</p>
-
-<p>拿主流摄像头的像素1300W来说好了，这意味着一张照片，原始数据（注意这个是指RAW数据，非sensor和isp端）会占用多少空间那？
-&gt;会占用（按照Bayer sensor经过ISP后输出的YUV420的数据来算）大约18.6M的存储空间。</p>
-
+<p>拿主流摄像头的像素1300W来说好了，这意味着一张照片，原始数据（注意这个是指RAW数据，非sensor和isp端）会占用多少空间那？</p>
+<blockquote>
+<p>会占用（按照Bayer sensor经过ISP后输出的YUV420的数据来算）大约18.6M的存储空间。</p>
+</blockquote>
 <blockquote>
 <p>而如果要用于显示，放在内存里面那？如果是按照Android的RGBA颜色空间来算，需要大约49.6M的内存。</p>
 </blockquote>
-
 <p>很夸张吧。当然这里我们不讨论针对“大图”的<strong>内存</strong>优化策略，只讨论存储空间的优化策略和编码/解码的关系。</p>
-
 <p>由于夸张的单图尺寸，所以有了jpeg这种（有损）压缩图片的方式。经过压缩，体积会明显下降（没有具体的指标，因为要看图片本身的构图复杂程度，纯色图的压缩比可以跟高，但马赛克图就未必了）</p>
-
 <p>把raw图 -&gt; 压缩到 -&gt; jpeg = 其实就是在编码。</p>
-
 <p>而把jpeg数据 -&gt; 解压缩到 -&gt; 内存，就是解码了（针对更高效的传输并显示数据而诞生的YUV，这里就不表了）。</p>
-
 <p>这就是编码（压缩）和解码（解压缩）。直白点就是：用（编码/解码）时间换（存储）空间。</p>
-
 <p>回到视频/音频部分，依然拿“图片”来举例（因为PCM不够直观啊），视频就是若干图片的连续播放序列（这里不考虑音频先）。</p>
-
 <p>但是这个播放序列，显然不是把图片一张一张按照顺序圆模原样存进一个视频文件中的。因为如果那样的话：30帧/秒的4K视频，1秒，就需要占用<strong>515M</strong>的存储空间（按YUV420来算）。</p>
-
 <p>这显示是不能被接受的！即使全部压缩成jpeg，在压缩比达到5：1的情况下，也需要大约<strong>100M</strong>。</p>
-
 <p>“压缩”视频文件，不单要压缩单帧数据的大小，同时需要压缩前后有关联的帧的数据大小。</p>
-
 <p>这里就需要了解<a href="http://en.wikipedia.org/wiki/Video_compression_picture_types">I、B、P帧的概念</a>了。</p>
-
 <p>顺便休息一下吧。</p>
-
 <p>因为。</p>
-
 <p><em>编码解码的过去、现在以及未来，就是不断做好“空间换时间”这件事情。</em></p>
-
 <p>####为什么不用无损压缩，有数据损失总觉得什么地方不太对。。。</p>
-
 <p>是的，我也觉得什么地方不太对。</p>
-
 <p>这其实是一种权衡。</p>
-
 <p>前面一直没细说无损/有损。有损的好处就是大大降低存储空间（高风险高回报懂么？），因为，它不在意那些细节。无损反之。</p>
-
 <p>无损就意味着低压缩比，也就意味着更大的存储空间（这个无法理解的话，请出门左转6块钱麻辣烫走起冷静地思考人生一下）。</p>
-
 <p>到底是听上千码率的WAV，还是听128K的mp3？</p>
-
 <p>这注定是土豪碾压屌丝的悲伤故事。</p>
-
 <p>####编码/解码就可以写/读视频文件了么？</p>
-
 <p>好问题，不能！</p>
-
 <p>视频/音频不同于图片，简单说就是：图片就一张，视频是一沓。</p>
-
 <p>所以还差一步，就是Muxer和Demuxer</p>
-
 <p>####什么是Muxer/Demuxer</p>
-
 <p>额。。想了想，现实生活中还真难以找到类似的case。。。</p>
-
 <p>哦，想起来一个有点类似的！《1Q84》看过没？</p>
-
 <p>就是里面，每个角色一个小章节，占据若干页，然后以不同的身份娓娓道来的那本书（对，村上春树的）；</p>
-
 <p>如果把那本书，每一页的内容（可能是audio也可能是video）看作是编码后/解码前的audio/video数据（可能不足一帧）</p>
-
 <p>那不同的角色，就是不同的类型；例如青豆就是video编码后/解码前的数据，天吾就是audio编码后/解码前的数据；</p>
-
 <p>这些数据可能一页就可以表达一帧（video），也可能若干页才可以表达一帧（video）；</p>
-
 <p>Muxer的作用，就是将这一页一页的内容（编码后的数据）进行有顺序（按时间戳及帧类型等）的写入（mux）；这样就编制成了一本《1Q84》</p>
-
 <p>Demuxer的作用反之，就是将这一页一页的内容（解码前的数据）按照顺序（按时间戳及帧类型等）读出来（demux）；也可以类比读书的过程。</p>
-
 <p>从FFmpeg的角度来看，可以简单理解为某种容器的读写器。</p>
-
 <p>就是，这么，简单吧～</p>
-
 <p>####简单。。。你TM在逗我？</p>
-
 <p>好吧，换个角度看这个问题：</p>
-
 <p>我们把编码和解码 简单看作 写和读</p>
-
 <p>那图片的写和读的过程就是：</p>
-
 <blockquote>
 <p>image-&gt;decode-&gt;memory buffer-&gt;encode-&gt;image</p>
 </blockquote>
-
 <p>而音频和视频，写和读的过程就是：</p>
-
 <blockquote>
 <p>audio/video-&gt;demuxer-&gt;decode-&gt;memory buffer-&gt;encode-&gt;muxer-&gt;audio/video</p>
 </blockquote>
-
 <p>毕竟audio/video都是连贯的“动态”数据，不是一页纸可以显示下的“静态”的image</p>
-
 <p>所以muxer/demuxer承担的角色，简单说就是“如何合理存取audio/video（编码后的或解码前的）数据”</p>
-
 <p>####所以ffmpeg，对于视频，也有这一整套的方案？</p>
-
 <p>对，没错。</p>
-
 <p>####一定要敲代码才可以用么？我只是想转换格式而已。</p>
-
 <p>当然不需要！</p>
-
 <p>FFmpeg的release每次都是有bin包的，可以去<a href="http://ffmpeg.zeranoe.com/builds/">FFmpeg Windows</a>下载。</p>
-
 <p>直接当adb用就好了，参数很多，可以参考的文章也很多。</p>
-
 <p>当然，不止是转换格式；crop视频、split视频、插入音乐、插入图片、提取视频帧、提取音频、插入字幕或者水印等等，正常情况下能用到的，都有参数直接用。</p>
-
 <p>####那为什么还需要写代码去调接口。。？</p>
-
 <p>这个，有多种原因。</p>
-
 <ol>
 <li>有一些功能，bin是无法实现或者难以实现的；例如写入内存中的数据。。。</li>
 <li>bin本身调用有局限性，例如在android上调用就容易遇到权限问题</li>
 <li>那么大牌的软件是吧，叫XX影音是吧，结果是通过bin来调用的，那多说不过去啊是吧（本行主要用来吐槽，LOL～）</li>
 </ol>
-
 <p>####Android上如何调用FFmpeg啊？</p>
-
 <p>这问题。。。</p>
-
 <p>简单说，FFmpeg提供的都是C接口，所以在Android上，只能走JNI的方式来调用。</p>
-
 <p>编译的部分可以参考<a href="http://chloette.github.io/ffmpeg4android/">FFmpeg4android</a></p>
-
-<hr />
-
+<hr>
 <p>（待补充）</p>
-
 <p>-&gt;<a href="http://nobodycare.me/2014/12/24/about-ffmpeg-advance/">FFmpeg进阶篇</a></p>
 
       </article>

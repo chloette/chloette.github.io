@@ -186,96 +186,82 @@
         </header>
         
         <p>一直想找时间好好理清楚Internet的基础，例如协议栈、例如http、例如tcp等等，但一直没整理。</p>
-
 <p>原因一个是这确实是自己的短板，知道的不少，但一直没有从上到下的整理过。</p>
-
 <p>再就是互联网协议从底到上，点太多，经常抓瞎，不知从何谈起。</p>
-
 <p>[BTW，本文尝试不用Q&amp;A的方式来展开试试看~]</p>
-
-<hr />
-
+<hr>
 <p>现在正好离职了，终于空了足够时间来整理一下~</p>
-
 <p>google+wiki的时候，找到了此文（<a href="http://www.ruanyifeng.com/blog/2012/05/internet_protocol_suite_part_i.html">上</a>，<a href="http://www.ruanyifeng.com/blog/2012/06/internet_protocol_suite_part_ii.html">下</a>），写的很浅显易懂。推荐~</p>
-
 <p>加上<a href="http://zh.wikipedia.org/wiki/TCP/IP%E5%8D%8F%E8%AE%AE%E6%97%8F">wiki</a></p>
-
-<p>上面引用的那位哥说了这么句话：
-&gt;前面说过，以太网数据包只包含MAC地址，并没有IP地址的栏位。那么是否需要修改数据定义，再添加一个栏位呢？</p>
-
+<p>上面引用的那位哥说了这么句话：</p>
 <blockquote>
-<p>回答是不需要，我们可以把IP数据包直接放进以太网数据包的&rdquo;数据&rdquo;部分，因此完全不用修改以太网的规格。这就是互联网分层结构的好处：上层的变动完全不涉及下层的结构。</p>
+<p>前面说过，以太网数据包只包含MAC地址，并没有IP地址的栏位。那么是否需要修改数据定义，再添加一个栏位呢？</p>
 </blockquote>
-
+<blockquote>
+<p>回答是不需要，我们可以把IP数据包直接放进以太网数据包的&quot;数据&quot;部分，因此完全不用修改以太网的规格。这就是互联网分层结构的好处：上层的变动完全不涉及下层的结构。</p>
+</blockquote>
 <p>这句话说得很好，其实不管<a href="http://zh.wikipedia.org/wiki/OSI%E6%A8%A1%E5%9E%8B">七层OSI</a>，还是成为实际标准的四层tcp/ip协议栈，关键的就是这样一个<strong>层级间的再封装以保持的层级无关（独立）性</strong>。</p>
-
 <p>这种无关性，才能保证整个行业，各自轻松愉快的向前发展，而不用过分关心协议外的耦合性。（有种回答“学计算机都会修电脑”这种问题的即视感。。。）</p>
-
 <p>下图（拼图）描述了从主机A到主机B的网络拓扑，可以清晰看到层与层之间的关系，同层级之间的联系，不同层级的数据格式、协议等：</p>
-
-<p><img src="/content/images/2015/03/ip_stack.png" alt="" /></p>
-
+<p><img src="/content/images/2015/03/ip_stack.png" alt=""></p>
 <p>层级之间，以一种简单方式封装实现的层级无关的数据包结构，wiki的原话相当到位：<strong>沿着不同的层应用数据的封装递减</strong>：
-<img src="/content/images/2015/03/udp_encapsulation.png" alt="" />
+<img src="/content/images/2015/03/udp_encapsulation.png" alt="">
 （当然，过分简单也就意味着无法兼顾安全。）</p>
-
-<hr />
-
+<hr>
 <p>想象下你是如何从主机A访问到这里的（类似的例子其实在<a href="http://www.ruanyifeng.com/blog/2012/06/internet_protocol_suite_part_ii.html">下</a>有提到）[这里会做很多简化]</p>
-
 <ul>
-<li><p>主机A首先用浏览器；输入nobodycare.me，敲回车；（这里忽略浏览器缓存等优化）</p></li>
-
-<li><p>浏览器会先去问dns服务器（一般DHCP会同样告知DNS服务器的IP），请求nobodycare.me的实际IP地址；</p></li>
-
-<li><p>DNS回复实际IP地址X（最初的<strong>GFW就是简单的DNS劫持/污染</strong>）；</p></li>
-
-<li><p>浏览器（这里跳过子网掩码这一步）通过主机A的端口N（1024-65535的某端口）向地址X的80端口（http）发出请求（request）；</p></li>
-
-<li><p>浏览器发出的请求的数据包（假设是TCP包），最终会如下分包：（TCP-&gt;IP-&gt;Ethernet）
-<img src="/content/images/2015/03/package_struct_example.png" alt="" />
-（这里说“分包”其实有一些歧义，<strong>因为TCP-&gt;IP-&gt;Ethernet的过程是不断加不同层报头的逐级封装递增</strong>，只是最后受限于ethernet的长度限制，才需要”分包“）</p></li>
-
-<li><p>请求经过多层路由，到达了地址X的这台主机B（一般称为服务器），再经过合包（Ethernet-&gt;IP-&gt;TCP），得到那个最初浏览器发出的请求；</p></li>
-
-<li><p>服务器开始处理这个请求：nginx转发-&gt;node.js+ghost处理并反馈（response）html数据；</p></li>
-
-<li><p>反馈也一样进行分包（TCP-&gt;IP-&gt;Ethernet）；</p></li>
-
-<li><p>这分包后的反馈同样经过多层路由，返回到主机A并同样合包（Ethernet-&gt;IP-&gt;TCP），然后数据回到端口N；</p></li>
-
-<li><p>浏览器通过端口N收到反馈（html数据），并开始按照html数据进行渲染；</p></li>
-
-<li><p>然后主机A的浏览器就显示了本站；</p></li>
+<li>
+<p>主机A首先用浏览器；输入nobodycare.me，敲回车；（这里忽略浏览器缓存等优化）</p>
+</li>
+<li>
+<p>浏览器会先去问dns服务器（一般DHCP会同样告知DNS服务器的IP），请求nobodycare.me的实际IP地址；</p>
+</li>
+<li>
+<p>DNS回复实际IP地址X（最初的<strong>GFW就是简单的DNS劫持/污染</strong>）；</p>
+</li>
+<li>
+<p>浏览器（这里跳过子网掩码这一步）通过主机A的端口N（1024-65535的某端口）向地址X的80端口（http）发出请求（request）；</p>
+</li>
+<li>
+<p>浏览器发出的请求的数据包（假设是TCP包），最终会如下分包：（TCP-&gt;IP-&gt;Ethernet）
+<img src="/content/images/2015/03/package_struct_example.png" alt="">
+（这里说“分包”其实有一些歧义，<strong>因为TCP-&gt;IP-&gt;Ethernet的过程是不断加不同层报头的逐级封装递增</strong>，只是最后受限于ethernet的长度限制，才需要”分包“）</p>
+</li>
+<li>
+<p>请求经过多层路由，到达了地址X的这台主机B（一般称为服务器），再经过合包（Ethernet-&gt;IP-&gt;TCP），得到那个最初浏览器发出的请求；</p>
+</li>
+<li>
+<p>服务器开始处理这个请求：nginx转发-&gt;node.js+ghost处理并反馈（response）html数据；</p>
+</li>
+<li>
+<p>反馈也一样进行分包（TCP-&gt;IP-&gt;Ethernet）；</p>
+</li>
+<li>
+<p>这分包后的反馈同样经过多层路由，返回到主机A并同样合包（Ethernet-&gt;IP-&gt;TCP），然后数据回到端口N；</p>
+</li>
+<li>
+<p>浏览器通过端口N收到反馈（html数据），并开始按照html数据进行渲染；</p>
+</li>
+<li>
+<p>然后主机A的浏览器就显示了本站；</p>
+</li>
 </ul>
-
-<hr />
-
+<hr>
 <p>再回去看那个网络拓扑（如Application层：浏览器 -&gt; node.js），就更加清晰明了了。</p>
-
-<hr />
-
+<hr>
 <p>上面这个例子也简单描述了<a href="http://en.wikipedia.org/wiki/Request%E2%80%93response">request/response模型</a></p>
-
-<hr />
-
+<hr>
 <p>顺便提一下，<a href="http://blog.csdn.net/huan_mie/article/details/6092469">http协议是无状态协议</a>，服务器甚至都不知道两次http请求是不是相互有关联，这其实并不适合大部分的业务逻辑，这时候就需要一种方式来“记录（保持）”状态 &ndash; Cookies和Session。
-
-&gt;客户端与服务器进行动态交互的Web应用程序出现之后，HTTP无状态的特性严重阻碍了这些应用程序的实现，毕竟交互是需要承前启后的，简单的购物车程序也要知道用户到底在之前选择了什么商品。于是，两种用于保持HTTP连接状态的技术就应运而生了，一个是Cookie，而另一个则是Session。HTTP本身是一个无状态的连接协议，为了支持客户端与服务器之间的交互，我们就需要通过不同的技术为交互存储状态，而这些不同的技术就是Cookie和Session了。</p>
-
-<hr />
-
+</p>
+<blockquote>
+<p>客户端与服务器进行动态交互的Web应用程序出现之后，HTTP无状态的特性严重阻碍了这些应用程序的实现，毕竟交互是需要承前启后的，简单的购物车程序也要知道用户到底在之前选择了什么商品。于是，两种用于保持HTTP连接状态的技术就应运而生了，一个是Cookie，而另一个则是Session。HTTP本身是一个无状态的连接协议，为了支持客户端与服务器之间的交互，我们就需要通过不同的技术为交互存储状态，而这些不同的技术就是Cookie和Session了。</p>
+</blockquote>
+<hr>
 <p>正是基于这一整套简单又很聪明的设计，构成了整个internet的基础。</p>
-
 <p>简单又干活。（码农毕生追求了吧~）</p>
-
-<hr />
-
+<hr>
 <p>在<a href="http://zh.wikipedia.org/wiki/TCP/IP%E5%8D%8F%E8%AE%AE%E6%97%8F">wiki</a>里同时看到这么一段有趣的历史（这才让我想起来确实曾有一些高昂的专用网络）：</p>
-
 <p>在长期的发展过程中，IP逐渐取代其他网络。这里是一个简单的解释。IP传输通用数据。数据能够用于任何目的，并且能够很轻易地取代以前由专有数据网络传输的数据。下面是一个普通的过程：</p>
-
 <ul>
 <li>一个专有的网络开发出来用于特定目的。如果它工作很好，用户将接受它。</li>
 <li>为了便利提供IP服务，经常用于访问电子邮件或者聊天，通常以某种方式通过专有网络隧道实现。隧道方式最初可能非常没有效率，因为电子邮件和聊天只需要很低的带宽。</li>
@@ -287,7 +273,6 @@
 IP带到专有网络上的大部分用户的不昂贵的传输媒介。</li>
 <li>大多数用户为了削减开销，专有网络被取消。</li>
 </ul>
-
 <p>新工作、新生活即将开始，就拿IP取代专属网络这种屌丝气死高富帅的故事来励志吧~</p>
 
       </article>

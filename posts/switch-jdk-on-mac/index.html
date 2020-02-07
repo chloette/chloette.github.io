@@ -186,23 +186,15 @@
         </header>
         
         <p>要切换回底层开发啦~</p>
-
 <p>android源码编译的话，L以上需要jdk1.7，以下需要jdk1.6（比2.3还低就要求jdk1.5了）</p>
-
 <p>所以如何方便快速的切换jdk就成了一个问题~</p>
-
-<hr />
-
+<hr>
 <p>Ubuntu上面可以直接用下面的方式来切换JDK：</p>
-
-<pre><code class="language-language-shell">
+<pre><code class="language-language-shell" data-lang="language-shell">
 sudo update-alternatives --config javac
 
-</code></pre>
-
-<p>但mac上就要用<code>java_home</code>了，找到了一个不错的<a href="http://www.jayway.com/2014/01/15/how-to-switch-jdk-version-on-mac-os-x-maverick/">脚本</a>：</p>
-
-<pre><code class="language-language-shell">function setjdk() {
+</code></pre><p>但mac上就要用<code>java_home</code>了，找到了一个不错的<a href="http://www.jayway.com/2014/01/15/how-to-switch-jdk-version-on-mac-os-x-maverick/">脚本</a>：</p>
+<pre><code class="language-language-shell" data-lang="language-shell">function setjdk() {
   if [ $# -ne 0 ]; then
    removeFromPath '/System/Library/Frameworks/JavaVM.framework/Home/bin'
    if [ -n &quot;${JAVA_HOME+x}&quot; ]; then
@@ -215,11 +207,8 @@ sudo update-alternatives --config javac
  function removeFromPath() {
   export PATH=$(echo $PATH | sed -E -e &quot;s;:$1;;&quot; -e &quot;s;$1:?;;&quot;)
  }
-</code></pre>
-
-<p>写到<code>./bash_profile</code>里面，然后直接setjdk 1.x就好了。
+</code></pre><p>写到<code>./bash_profile</code>里面，然后直接setjdk 1.x就好了。
 非常方便~</p>
-
 <p>感谢贡献~</p>
 
       </article>

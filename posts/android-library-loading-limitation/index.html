@@ -186,31 +186,18 @@
         </header>
         
         <p>Android上想调用native算法库（so的形式），只能走JNI的路（用NDK来编译）；</p>
-
 <p>加载so的时候一般是用<code>System.loadLibrary</code>或<code>System.load</code>；</p>
-
 <p>使用前者，则so只能提前push到系统目录或app对应目录下（不然找不到）；</p>
-
 <p>使用后者，一般情况下无路径的特别限制；这样便于控制app size（so可以单独下载到特定目录）；</p>
-
 <p>但是自从某个os版本后（确实不知道哪个版本后），sdcard卡上的so，也有了加载的限制。</p>
-
 <p>例如报错：<a href="http://stackoverflow.com/questions/6291087/android-load-library-error-failed-to-map-segment">Android load library error — failed to map segment</a></p>
-
 <p>该问题其实算是设备相关，某些内置卡的设备就不存在该问题；也正如stackoverflow上的回答，是权限问题；</p>
-
 <p>出现该问题的设备：</p>
-
-<p><img src="/content/images/2015/02/load-library-failed.png" alt="" /></p>
-
+<p><img src="/content/images/2015/02/load-library-failed.png" alt=""></p>
 <p>正常的设备：</p>
-
-<p><img src="/content/images/2015/02/load-library-succ.png" alt="" /></p>
-
+<p><img src="/content/images/2015/02/load-library-succ.png" alt=""></p>
 <p>可以明显看到权限差异。</p>
-
 <p>把so目录改到<code>context.getPackageManager().getApplicationInfo(context.getPackageName(), 0).dataDir</code>后，就OK了。</p>
-
 <p>记录一下，小坑怡情。</p>
 
       </article>

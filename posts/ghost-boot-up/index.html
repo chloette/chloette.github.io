@@ -186,38 +186,33 @@
         </header>
         
         <p>Ghost本身是基于node.js的，这意味着 &ndash; 常驻后台需要用到其他方式，例如<code>&amp;</code>或者<code>forever</code>（<a href="http://support.ghost.org/deploying-ghost/">官网建议</a>）</p>
-
 <p>但这样也需要使用类似<code>sudo start_ghost.sh</code>这种方式来启动，想开机启动的话还是需要使用<code>update-rc.d</code>或者<code>cron</code></p>
-
 <p>前者官网提供了一个说明，相当于自己写一个<a href="https://help.ubuntu.com/community/UbuntuBootupHowto">service</a></p>
-
 <p>后者比较强大，用在这里有点大材小用。</p>
-
 <p>简单点的做法就直接参考<a href="http://stackoverflow.com/questions/7221757/run-automatically-program-on-startup-under-linux-ubuntu">stackoverflow</a></p>
-
-<pre><code class="language-language-bash">sudo mv /filename /etc/init.d/
+<pre><code class="language-language-bash" data-lang="language-bash">sudo mv /filename /etc/init.d/
 sudo chmod +x /etc/init.d/filename 
 sudo update-rc.d filename defaults 
-</code></pre>
-
-<blockquote>
+</code></pre><blockquote>
 <p>Script should now start on boot. Note that this method also works with both hard links and symbolic links (ln).</p>
-
+</blockquote>
+<blockquote>
 <p><strong>Edit</strong></p>
-
+</blockquote>
+<blockquote>
 <p>At this point in the boot process PATH isn&rsquo;t set yet, so it is critical that absolute paths are used throughout. BUT, as pointed out in the comments by Steve HHH, explicitly declaring the full file path (/etc/init.d/filename) for the update-rc.d command is not valid in most versions of Linux. Per the manpage for update-rc.d, the second parameter is a script located in /etc/init.d/*. Updated above code to reflect this.</p>
-
+</blockquote>
+<blockquote>
 <p><strong>Another Edit</strong></p>
-
+</blockquote>
+<blockquote>
 <p>Also as pointed out in the comments (by Charles Brandt), /filename should be an init style script. A good template was also provided - <a href="https://github.com/fhd/init-script-template">https://github.com/fhd/init-script-template</a>.</p>
-
+</blockquote>
+<blockquote>
 <p>Another link to another article just to avoid possible link rot (although it would be saddening if GitHub died) - <a href="http://www.linux.com/learn/tutorials/442412-managing-linux-daemons-with-init-scripts">http://www.linux.com/learn/tutorials/442412-managing-linux-daemons-with-init-scripts</a></p>
 </blockquote>
-
 <p>不仅给出了回答，可能的坑，还给出了标准service的模版。。。</p>
-
 <p>stackoverflow果然神站啊～～</p>
-
 <p>简单记录一下，算是ghost安装必备流程之一吧。</p>
 
       </article>

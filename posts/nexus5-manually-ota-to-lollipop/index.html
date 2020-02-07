@@ -186,80 +186,70 @@
         </header>
         
         <p>美版刷了电信的Nexus5，11月13号就陆续概率发布的OTA，到现在都没收到，也是醉了。。。</p>
-
 <p>手贱决定线刷OTA（sideload）。参考<a href="http://bbs.gfan.com/android-7727302-1-1.html">机锋</a>教程</p>
-
 <p>其中有一个步骤可能会卡住，就是准备<code>adb sideload</code>的时候，报：</p>
-
-<pre><code class="language-language-bash">insufficient permissions for device
-</code></pre>
-
-<p>解决方法就是用sudo，找到adb的路径（adk的platform-tools下面）</p>
-
-<pre><code class="language-language-bash">sudo ./adb kill-server
+<pre><code class="language-language-bash" data-lang="language-bash">insufficient permissions for device
+</code></pre><p>解决方法就是用sudo，找到adb的路径（adk的platform-tools下面）</p>
+<pre><code class="language-language-bash" data-lang="language-bash">sudo ./adb kill-server
 sudo ./adb devices （这里会重启adb并列出对应的设备）
 sudo ./adb sideload 'xxx.zip'
-</code></pre>
-
-<p>然后就静静的等待吧。。。</p>
-
+</code></pre><p>然后就静静的等待吧。。。</p>
 <p>我还在等待 T_T</p>
-
-<hr />
-
+<hr>
 <p>杯具了。。连续杯具3天。原以为一步搞定的。。。</p>
-
 <p>电信的苦逼用户真是无可奈何。上了5.0，恢复EFS无效，最后迫不得已全清，然后从4.4.4开始刷。折腾快3天，系统从4.4.4刷到4.4.2又刷回5.0。。。</p>
-
 <p>最后看到电信3G冒出来的时候真是泪流满面啊。。。</p>
-
 <p>重新整理一下破解思路，如下：</p>
-
 <ol>
-<li><p>数据全清，重刷底包到4.4.4（数据自行备份，使用google身份验证器（基于OTP）的一定要备份，据我所知不止一个站点，支持了OTP但是在无原始OTP的情况下，不能重置）</p></li>
-
-<li><p>刷回4.4.4，启动系统后打开开发者模式。重启bootloader。</p></li>
-
-<li><p>刷TWRP的recovery，建议刷2.8.1的版本（这个版本在recovery模式下支持MTP，方便copy EFS的备份），重启会提示是否root，确认。</p></li>
-
-<li><p>重启系统后按照TWRP的提示，开始root。</p></li>
-
-<li><p>root后安装最新版的Nexus Field Test（需要最新版3.3；因为2.x的版本不支持4.4.3以上系统），DDD001（看过教程都懂的。）</p>
-
-<p>这里注意，新版本的NFT，如果要获取SPC的话，需要通过右上角-&gt;Setting(View)-&gt;LTE-&gt;Edit来获取。</p></li>
-
-<li><p>重启recovery，恢复EFS（<strong>同时恢复data更容易成功</strong>）或者<a href="http://bbs.gfan.com/android-7341605-1-1.html">重新破解</a>，来恢复电信通话/短信/3G功能。
+<li>
+<p>数据全清，重刷底包到4.4.4（数据自行备份，使用google身份验证器（基于OTP）的一定要备份，据我所知不止一个站点，支持了OTP但是在无原始OTP的情况下，不能重置）</p>
+</li>
+<li>
+<p>刷回4.4.4，启动系统后打开开发者模式。重启bootloader。</p>
+</li>
+<li>
+<p>刷TWRP的recovery，建议刷2.8.1的版本（这个版本在recovery模式下支持MTP，方便copy EFS的备份），重启会提示是否root，确认。</p>
+</li>
+<li>
+<p>重启系统后按照TWRP的提示，开始root。</p>
+</li>
+<li>
+<p>root后安装最新版的Nexus Field Test（需要最新版3.3；因为2.x的版本不支持4.4.3以上系统），DDD001（看过教程都懂的。）</p>
+<p>这里注意，新版本的NFT，如果要获取SPC的话，需要通过右上角-&gt;Setting(View)-&gt;LTE-&gt;Edit来获取。</p>
+</li>
+<li>
+<p>重启recovery，恢复EFS（<strong>同时恢复data更容易成功</strong>）或者<a href="http://bbs.gfan.com/android-7341605-1-1.html">重新破解</a>，来恢复电信通话/短信/3G功能。
 <strong>注意事项：</strong></p>
-
 <ul>
 <li>破解时，ruim only总是被重置的话，建议用cdma workshop 来写。</li>
 <li>破解时，cdma hdr总是被重置的话，建议插卡破解</li>
 <li>破解时，每次重启建议通过锁屏键关机再重启，而不是用命令。目测关机时，基带也有一个关闭的过程，可能会记录一些状态来方便快速重启，如果直接命令关机可能导致重启后reset。</li>
 <li><a href="http://www.cdmatool.com/">DFS</a>可以使用新版本。</li>
-</ul></li>
+</ul>
+</li>
 </ol>
-
 <p><strong>&ndash;&gt;到这里，4.4.4的电信就算破解完毕了。如果已经到了5.0，电信掉了还不死心的，请从这里开始看</strong></p>
-
 <ol>
-<li><p>重启bootloader，直接线刷5.0（切记：数据备份，EFS备份），要保留数据的出门左转，我的数据已经清掉了所以也没办法试了。</p>
-
+<li>
+<p>重启bootloader，直接线刷5.0（切记：数据备份，EFS备份），要保留数据的出门左转，我的数据已经清掉了所以也没办法试了。</p>
 <p>注意：线刷有一些不同的版本，都是为了保留数据，有的教程是用修改flash版本的img来sideload的，有的教程说去掉-w的方法来update img，有的教程是只手动flash了boot/system/cache img；</p>
-
-<p>我用的是版本是后者，但是接着就<strong>恢复出厂设置</strong>了。（所以<strong>和完整刷5.0底包没区别</strong>）【目测有些运气不错的同学，保留了数据又吃上了棒棒糖，给力～】</p></li>
-
-<li><p>恢复出厂设置后重启，并（<strong>想保留数据的，从这里开始看</strong>）重新root（即通过recovery刷supersu的2.37 zip包）</p></li>
-
-<li><p>重新安装NFT3.3版本，重新设置LTE，到DDD001（注意手动选择移动网络到3G，不然第一个选项可能无法disable）</p></li>
-
-<li><p>重点来了：关机-&gt;拔卡-&gt;恢复EFS-&gt;开机-&gt;插卡。如果3G信号+感叹号出来了，就意味着搞定了（我是一次搞定，回想之前刷失败的原因，应该就是忘记去设置DDD001）。
+<p>我用的是版本是后者，但是接着就<strong>恢复出厂设置</strong>了。（所以<strong>和完整刷5.0底包没区别</strong>）【目测有些运气不错的同学，保留了数据又吃上了棒棒糖，给力～】</p>
+</li>
+<li>
+<p>恢复出厂设置后重启，并（<strong>想保留数据的，从这里开始看</strong>）重新root（即通过recovery刷supersu的2.37 zip包）</p>
+</li>
+<li>
+<p>重新安装NFT3.3版本，重新设置LTE，到DDD001（注意手动选择移动网络到3G，不然第一个选项可能无法disable）</p>
+</li>
+<li>
+<p>重点来了：关机-&gt;拔卡-&gt;恢复EFS-&gt;开机-&gt;插卡。如果3G信号+感叹号出来了，就意味着搞定了（我是一次搞定，回想之前刷失败的原因，应该就是忘记去设置DDD001）。
 <strong>注意事项：</strong></p>
-
 <ul>
 <li>有的教程说注意“禁止漫游指示符”，“无信号”，“无服务”等等的，我基本都遇到过。但是没影响。</li>
 <li>关机就使用锁屏键。不要使用命令行。</li>
 <li>重启后可能出现破解失败的情况（就是电信掉了），解决方法是启动NFT，确认是不是DDD001（在某些case下，band25会变成enable）。自测多次重启无压力。</li>
-</ul></li>
+</ul>
+</li>
 </ol>
 
       </article>

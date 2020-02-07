@@ -186,51 +186,45 @@
         </header>
         
         <p>最近抽时间看了一下android插件化的东西。</p>
-
 <p>也稍微研究了一下。总结一下权当记录。</p>
-
 <p>同时也把研究过程中的testbed上传到<a href="https://github.com/chloette/how-to-demo/tree/master/android_load_res_dynamically">github</a>了，造福后人吧。</p>
-
 <p>####为什么需要插件化？</p>
-
 <p>最简单的原因大概就是为了避免过大的体积（rom size），以加速下载和安装。</p>
-
 <p>更多的原因例如插件化后可以单独升级避免每次一个小改动就app体量的升级，为了针对不同区域不同用户做不同的适配，为了市场更高的单app评分（插件的差评不算主app中）等等。</p>
-
 <p>####哪些可以插件化？</p>
-
 <p>大部分的功能性代码/资源及非自定义的布局</p>
-
 <p>####可用插件化方案：
 这里仅讨论：以apk（在插件化的前提下，相比较jar，apk要灵活的多）的形式插件化的方案。</p>
-
 <p>这里不讨论：自行定义数据格式，并自行实现解析器（parser或LayoutInflater）的方案。（因为造这种轮子总让我想起曾经一个叫XXUI的垃圾框架。。。）</p>
-
 <ul>
-<li><p>已安装插件apk的情况下：</p>
-
+<li>
+<p>已安装插件apk的情况下：</p>
 <ul>
-<li><p>读取静态资源（如png/jpg等）
-可以通过AIDL的方式直接获取，这里不赘述。</p></li>
-
-<li><p>读取并执行功能函数：
-同上。参数不可序列化的情况，可参考下面“不安装插件apk的情况”</p></li>
-
-<li><p>读取布局
-简单布局同上，自定义布局不确定是否可行（不过已经安装了，这就不重要了）。</p></li>
-
-<li><p>直接启动activity
-因为已安装，所以直接intent去start acitivty即可。</p></li>
-</ul></li>
-
-<li><p>未安装插件apk的情况下：</p>
-
+<li>
+<p>读取静态资源（如png/jpg等）
+可以通过AIDL的方式直接获取，这里不赘述。</p>
+</li>
+<li>
+<p>读取并执行功能函数：
+同上。参数不可序列化的情况，可参考下面“不安装插件apk的情况”</p>
+</li>
+<li>
+<p>读取布局
+简单布局同上，自定义布局不确定是否可行（不过已经安装了，这就不重要了）。</p>
+</li>
+<li>
+<p>直接启动activity
+因为已安装，所以直接intent去start acitivty即可。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>未安装插件apk的情况下：</p>
 <ul>
-<li><p>读取静态资源（如png/jpg等）</p>
-
+<li>
+<p>读取静态资源（如png/jpg等）</p>
 <p>例如从包名<code>com.example.plugin</code>里，读取名为<code>test</code>的<code>drawable</code>资源</p>
-
-<pre><code class="language-language-java">String libPath = Environment.getExternalStorageDirectory() + &quot;/Plugin.apk&quot;;
+<pre><code class="language-language-java" data-lang="language-java">String libPath = Environment.getExternalStorageDirectory() + &quot;/Plugin.apk&quot;;
 try {
     AssetManager assetManager = AssetManager.class.newInstance();
     Method addAssetPath = assetManager.getClass().getMethod(
@@ -246,12 +240,10 @@ mResources = new Resources(mAssetManager, superRes.getDisplayMetrics(),
         superRes.getConfiguration());
 Drawable temp = mResources.getDrawable(mResources.getIdentifier(&quot;test&quot;, &quot;drawable&quot;, &quot;com.example.plugin&quot;));
 </code></pre></li>
-
-<li><p>读取并执行功能函数：</p>
-
+<li>
+<p>读取并执行功能函数：</p>
 <p>例如从卡上的<code>Plugin.apk</code>中，读取<code>com.example.plugin.MainActivity</code>中的一个<code>String md5(String path)</code>的函数并执行：</p>
-
-<pre><code class="language-language-java">DexClassLoader mClassLoader = null;
+<pre><code class="language-language-java" data-lang="language-java">DexClassLoader mClassLoader = null;
 String libPath = Environment.getExternalStorageDirectory() + &quot;/Plugin.apk&quot;;
 File tmpDir = getDir(&quot;dex&quot;, 0);
 mClassLoader = new DexClassLoader(libPath, tmpDir.getAbsolutePath(),
@@ -263,84 +255,55 @@ Method[] ms = classToLoad.getDeclaredMethods();
 Method md5 = classToLoad.getMethod(&quot;md5&quot;, String.class);
 String xxx = (String) md5.invoke(myInstance, libPath);
 </code></pre></li>
-
-<li><p>读取布局</p>
-
+<li>
+<p>读取布局</p>
 <p>例如从卡上的<code>Plugin.apk</code>中，读取<code>com.example.plugin</code>中的一个<code>test_layout</code>的xml并inflate成view：</p>
-
 <p>这里需要自己generate一个假的Context，代码较多，可以直接参考<a href="https://github.com/chloette/how-to-demo/tree/master/android_load_res_dynamically">android_load_res_dynamically</a>里TestApk里的TargetContext（为了这个还建一个工程也是醉了。。。），有几个关键的函数需要重载掉：</p>
-
+</li>
+</ul>
 <ul>
 <li>getSystemService</li>
 <li>getResources</li>
 <li>getAssets</li>
 <li>getClassLoader</li>
 <li>getTheme</li>
-<li>getPackageName
-<br /></li>
-</ul></li>
+<li>getPackageName</li>
 </ul>
-
 <p>具体的参考TargetContext就好了。然后类似读取资源的时候，只不过context换成了target context：</p>
+<pre><code class="language-language-java" data-lang="language-java">LayoutInflater inflater = (LayoutInflater) targetContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+   return inflater.inflate(mResource.getLayout(mResources.getIdentifier(&quot;test_layout&quot;, &quot;id&quot;, &quot;com.example.plugin&quot;)), null);
+   ```
+这里也尝试了一下加载自定义的view（如继承自ImageView的），但是失败了（理论上Context提供的classloader正确就应该可行，但是会报错。没有继续深入。）
 
-<p><code>language-java
- LayoutInflater inflater = (LayoutInflater) targetContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-    return inflater.inflate(mResource.getLayout(mResources.getIdentifier(&quot;test_layout&quot;, &quot;id&quot;, &quot;com.example.plugin&quot;)), null);
-</code>
-这里也尝试了一下加载自定义的view（如继承自ImageView的），但是失败了（理论上Context提供的classloader正确就应该可行，但是会报错。没有继续深入。）</p>
+* 直接启动activity
+     
+   可以参考https://github.com/singwhatiwanna/dynamic-load-apk。
 
-<ul>
-<li><p>直接启动activity</p>
-
-<p>可以参考<a href="https://github.com/singwhatiwanna/dynamic-load-apk。">https://github.com/singwhatiwanna/dynamic-load-apk。</a></p></li>
+</code></pre></li>
 </ul>
-
-<hr />
-
+<hr>
 <p>综上，要加载插件化的资源/函数/activity等，对于已安装的apk可以用aidl，intent等各种系统提供的“普遍”方法；未安装的apk就是用反射去先获取到Resource和Asset等Context，再加载。</p>
-
 <p>个人认为，不管apk是安装还是不安装，都不建议单独插件化布局（毕竟涉及界面交互（如点击/回调等），设置个listener都很麻烦）。</p>
-
 <p>而对于涉及界面交互的插件（其实算功能），建议使用“直接启动activity”的方式。</p>
-
 <p>Start activity虽然会造成界面跳转之间的闪烁和卡顿，但是相比较生硬的反射，不管是从实现复杂度还是从代码可维护性上来说，都是利大于弊的；更不用说用了反射（依赖name），代码混淆就比较尴尬了。 （BTW，Android设计activity的初衷，就是作为一个自治单元）</p>
-
 <p>另外目前也有一些成型的插件化框架可以直接使用，如</p>
-
 <p><a href="http://www.apkplug.com/">http://www.apkplug.com/</a></p>
-
 <p><a href="https://github.com/singwhatiwanna/dynamic-load-apk">https://github.com/singwhatiwanna/dynamic-load-apk</a></p>
-
 <p>另外注意一点，上面的code必须要有卡读写权限（<a href="http://developer.android.com/reference/dalvik/system/DexClassLoader.html">其实文档建议是最好别放外部存储上</a>）：</p>
-
 <p><code>&lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot;/&gt;</code></p>
-
 <p>差不多就这些了～ 有遗漏和更新再补充。</p>
-
-<hr />
-
+<hr>
 <p>本文参考了各位前人的经验（排名不分先后）：</p>
-
 <p>@Siddharth Naik</p>
-
 <p><a href="http://stackoverflow.com/questions/13218819/load-resource-layout-from-another-apk-dynamically">Load resource (layout) from another apk dynamically</a></p>
-
 <p>@singwhatiwanna</p>
-
 <p><a href="https://github.com/singwhatiwanna/dynamic-load-apk">DL : Apk动态加载框架@Github</a></p>
-
 <p><a href="http://blog.csdn.net/singwhatiwanna/article/details/39937639">APK动态加载框架（DL）解析</a></p>
-
 <p><a href="http://blog.csdn.net/singwhatiwanna/article/details/22597587">Android apk动态加载机制的研究</a></p>
-
 <p>@tabolt</p>
-
 <p><a href="http://blog.csdn.net/tabolt/article/details/17800973">获取未安装资源apk种的资源文件</a></p>
-
 <p>@jefferyyangkai</p>
-
-<p><a href="http://blog.csdn.net/jefferyyangkai/article/details/9260841">qq游戏大厅中解析不安装apk的研究</a></p></li>
-</ul>
+<p><a href="http://blog.csdn.net/jefferyyangkai/article/details/9260841">qq游戏大厅中解析不安装apk的研究</a></p>
 
       </article>
       

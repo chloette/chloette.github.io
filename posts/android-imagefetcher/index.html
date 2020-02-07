@@ -186,75 +186,50 @@
         </header>
         
         <p>Google完善文档后，也提供了一大批优秀的源代码。</p>
-
 <p><a href="https://developer.android.com/samples/DisplayingBitmaps/src/com.example.android.displayingbitmaps/util/ImageFetcher.html">ImageFetcher</a>就是其中之一，这货非常简洁的实现了用ImageView来异步加载网页图片，同时对图片进行二级缓存的功能。</p>
-
 <p>稍微改改就可以轻松适配任何图片资源（例如本地，例如需特殊条件（如宽高，比例，透明度等）等）了。</p>
-
 <p>主体代码构成：
-<img src="/content/images/2015/01/android-image-fetcher.png" alt="" /></p>
-
+<img src="/content/images/2015/01/android-image-fetcher.png" alt=""></p>
 <p>外部调用如下：</p>
-
 <ul>
-<li><p>New：</p>
-
-<pre><code class="language-language-java">ImageFetcher imageFetcher = new ImageFetcher(context, width, height);
-</code></pre>
-
-<p>就可以了。</p></li>
+<li>New：</li>
 </ul>
-
+<pre><code class="language-language-java" data-lang="language-java">ImageFetcher imageFetcher = new ImageFetcher(context, width, height);
+</code></pre><p>就可以了。</p>
 <p>当然这里一般都会改动；</p>
-
 <p>例如为了区分cache目录，会把unique folder name作为参数传入进去）。</p>
-
 <p>例如为了替换默认图，把图标传进去。</p>
-
 <p>例如为了适配任何图片资源，增加自定义的ImageProvider，也在初始化的时候传进去。</p>
-
 <ul>
-<li><p>Load bitmap：</p>
-
-<pre><code class="language-language-java">imageFetcher.loadImage(pathString, (ImageView) view.findViewById(R.id.thumbnail));
-</code></pre></li>
+<li>Load bitmap：</li>
 </ul>
-
-<p>这样这个ImageView就会在图片通过异步下载好（并缓存）以后，自己加载显示出来了～</p>
-
+<pre><code class="language-language-java" data-lang="language-java">imageFetcher.loadImage(pathString, (ImageView) view.findViewById(R.id.thumbnail));
+</code></pre><p>这样这个ImageView就会在图片通过异步下载好（并缓存）以后，自己加载显示出来了～</p>
 <ul>
-<li><p>Close cache：</p>
-
-<pre><code class="language-language-java">imageFetcher.setPauseWork(false);
+<li>Close cache：</li>
+</ul>
+<pre><code class="language-language-java" data-lang="language-java">imageFetcher.setPauseWork(false);
 imageFetcher.closeCache();
-</code></pre></li>
-</ul>
-
-<p>就是这么简单任性～</p>
-
+</code></pre><p>就是这么简单任性～</p>
 <p>内部逻辑重点的几个：</p>
-
 <ul>
-<li><p>对Download下来的图片，使用DiskLruCache来本地缓存，使用LruCache作为内存缓存；</p></li>
-
-<li><p>使用AsyncTask（WeakReference）来异步download图片；结束后对ImageView（WeakReference）进行setImageDrawable（AsyncDrawable）；这里的AsyncDrawable内部有正在处理自身的AsyncTask的WeakReference，所以可以避免重复execute的情况；每次都会先cancel之前的。</p></li>
-
-<li><p>AsyncTask跑在Executor（线程池）中。</p></li>
+<li>
+<p>对Download下来的图片，使用DiskLruCache来本地缓存，使用LruCache作为内存缓存；</p>
+</li>
+<li>
+<p>使用AsyncTask（WeakReference）来异步download图片；结束后对ImageView（WeakReference）进行setImageDrawable（AsyncDrawable）；这里的AsyncDrawable内部有正在处理自身的AsyncTask的WeakReference，所以可以避免重复execute的情况；每次都会先cancel之前的。</p>
+</li>
+<li>
+<p>AsyncTask跑在Executor（线程池）中。</p>
+</li>
 </ul>
-
 <p>主要原理就是这样，其中一些细节可以自己翻源码～～ 非常方便使用和扩展～ 基本已经成为搭项目时必备库之一。</p>
-
-<hr />
-
+<hr>
 <p><em>但是这里有一点，需要注意！</em></p>
-
-<p><strong><em>谨慎使用<code>ImageFetcher.setPauseWork</code></em></strong></p>
-
+<p><em><strong>谨慎使用<code>ImageFetcher.setPauseWork</code></strong></em></p>
 <p><a href="https://developer.android.com/samples/DisplayingBitmaps/src/com.example.android.displayingbitmaps/ui/ImageGridFragment.html">官方Sample</a>给出了两个用法，看起来前后有一点矛盾：</p>
-
 <p>一个是在Grid滑动的时候：</p>
-
-<pre><code class="language-language-java">public void onScrollStateChanged(AbsListView absListView, int scrollState) {
+<pre><code class="language-language-java" data-lang="language-java">public void onScrollStateChanged(AbsListView absListView, int scrollState) {
   // Pause fetcher to ensure smoother scrolling when flinging
   if (scrollState == AbsListView.OnScrollListener.SCROLL_STATE_FLING) {
   	// Before Honeycomb pause image loading on scroll to help with performance
@@ -265,51 +240,30 @@ imageFetcher.closeCache();
   	mImageFetcher.setPauseWork(false);
   }
 }
-</code></pre>
-
-<p>滑动的时候为了避免UI错误刷新（这要说到Grid中实际绘制的Item如何重复利用了，算是基本概念，不再深入；同样会想起来曾经写过的“滚筒洗衣机”，里面用<code>%</code>操作拿Item index的公式，也是有趣的回忆～ LOL～），来Pause住ImageFetcher，无疑问。</p>
-
+</code></pre><p>滑动的时候为了避免UI错误刷新（这要说到Grid中实际绘制的Item如何重复利用了，算是基本概念，不再深入；同样会想起来曾经写过的“滚筒洗衣机”，里面用<code>%</code>操作拿Item index的公式，也是有趣的回忆～ LOL～），来Pause住ImageFetcher，无疑问。</p>
 <p>再就是onPause的时候，调用的是：</p>
-
-<pre><code class="language-language-java">	@Override
+<pre><code class="language-language-java" data-lang="language-java">	@Override
     public void onPause() {
         super.onPause();
         mImageFetcher.setPauseWork(false);
         mImageFetcher.setExitTasksEarly(true);
         mImageFetcher.flushCache();
     }
-</code></pre>
-
-<p>居然是<strong><em><code>setPauseWork(false)</code></em></strong>!难道不是<code>setPauseWork(true)</code>更正确么？</p>
-
+</code></pre><p>居然是<em><strong><code>setPauseWork(false)</code></strong></em>!难道不是<code>setPauseWork(true)</code>更正确么？</p>
 <p>但如果你那么做了，恭喜你，你陷入了Fetcher的坑。</p>
-
 <p>setPauseWork为true后，后台即将开始跑的AsyncTask会wait(类比lock)住，来等setPauseWork(false)中的notifyAll（类比unlock）；</p>
-
 <p>如果在onPause的时候，是<code>setPauseWork(true)</code>，这样导致的问题就是，这个AsyncTask一直wait下去，占用住了线程池（Executor）的一块资源；假设这个时候还有AsyncTask在线程池（Executor）中排队等着运行的话，那么就永远等不到了；因为线程池很容易就会没有可用资源。</p>
-
 <p>而且一般情况下，线程池都是static，全局共享的。这就导致了其他也在使用线程池来调度的AsyncTask，均无法正常运行的情况。</p>
-
 <p>从app表现上来看，一般就是Grid的thumbnail再也获取不到了；除非退出程序再启动。</p>
-
 <p>其实setPauseWork做的事情，类似对整个Fetcher的lock和unlock，从这个角度理解，就很容易明白为什么需要在onPause的时候setPauseWork(false)了；不得不承认，叫setPauseWork确实和onPause看起来有点字面含义冲突。</p>
-
 <p>此坑不深，翻翻源码和Sample就明白为什么了。也许直接改成lock/unlock更合适吧～ LOL～</p>
-
-<hr />
-
+<hr>
 <p>再加一点；</p>
-
 <p>由于ImageFetcher本身是为了loading network image，所以这里不仅仅是二级缓存，其实本地缓存就做了两套，一个是thumb的缓存（ImageWorker），一个是origin的缓存（ImageFetcher）；</p>
-
 <p>一般界面pause后，会调用closeCache()；</p>
-
 <p>closeCache()是一个异步操作（单独起了一个AsyncTask），在实际closeCache的过程中，会lock并开始I/O；而且这里对于已经打开的两套缓存，是独立的两个锁；</p>
-
 <p>而AsyncTask是有一个线程池的；</p>
-
 <p>那么问题来了，init/close频繁的情况下（例如界面切换频繁），容易出现lock长耗时而导致imageView不刷新的情况。</p>
-
 <p>解决办法，尝试改成一个锁（这种单线程顺序执行的case用两个锁干嘛啊）。</p>
 
       </article>

@@ -186,63 +186,39 @@
         </header>
         
         <p>Ghost本身的代码高亮是很粗糙的，如下：</p>
-
 <pre><code>//This is code sample
 int x = 0;
 int y = 1;
 x = y++;
 ...
-</code></pre>
-
-<p>但是代码至少应该像下面这样才好看啊！</p>
-
-<pre><code class="language-language-c">//This is code sample
+</code></pre><p>但是代码至少应该像下面这样才好看啊！</p>
+<pre><code class="language-language-c" data-lang="language-c">//This is code sample
 int x = 0;
 int y = 1;
 x = y++;
 ...
-</code></pre>
-
-<p>翻了翻ghost的论坛，发现了prism，使用可以参考<a href="http://blog.barouhandpartners.com/add-syntax-highlighting-to-ghost-with-prism-js/">这里</a></p>
-
+</code></pre><p>翻了翻ghost的论坛，发现了prism，使用可以参考<a href="http://blog.barouhandpartners.com/add-syntax-highlighting-to-ghost-with-prism-js/">这里</a></p>
 <p><a href="http://prismjs.com/download.html">下载</a>css/js的时候可以选择自己需要的高亮语言等。</p>
-
 <p>这样就又需要修改server上用来更新ghost的bash了：</p>
-
-<pre><code class="language-language-bash">#copy prism js/css to content and use it (to highlight codes)
+<pre><code class="language-language-bash" data-lang="language-bash">#copy prism js/css to content and use it (to highlight codes)
 cp ~/prism/prism.js ./content/themes/casper/assets/js/
 cp ~/prism/prism.css ./cotent/themes/casper/assets/css/
 sed -i 's~&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;{{asset &quot;css/screen.css&quot;}}&quot; /&gt;~&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;{{asset &quot;css/screen.css&quot;}}&quot; /&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;{{asset &quot;css/prism.css&quot;}}&quot; /&gt;~g' ./content/themes/casper/default.hbs
 sed -i 's~&lt;script type=&quot;text/javascript&quot; src=&quot;{{asset &quot;js/index.js&quot;}}&quot;&gt;&lt;/script&gt;~&lt;script type=&quot;text/javascript&quot; src=&quot;{{asset &quot;js/index.js&quot;}}&quot;&gt;&lt;/script&gt;&lt;script type=&quot;text/javascript&quot; src=&quot;{{asset &quot;js/prism.js&quot;}}&quot;&gt;&lt;/script&gt;~g' ./content/themes/casper/default.hbs
-</code></pre>
-
-<p><strong><em>~Tada~</em></strong></p>
-
+</code></pre><p><em><strong>~Tada~</strong></em></p>
 <p>开始愉快的贴代码吧~</p>
-
-<hr />
-
+<hr>
 <p>其实这里和ghost是有一点冲突的。</p>
-
 <p>在ghost里，markdown对code的语法是：</p>
+<pre><code class="language-language-markdown" data-lang="language-markdown"> ```language-markdown
+ code here
+</code></pre><pre><code>（**注意**：Prism依赖language；而Ghost对language的识别，要求起始和结束的```前面不能有tab/空格，不然就遇到了下面的情况）
 
-<pre><code class="language-language-markdown"></code></pre>
-
-<p>language-markdown
- code here</p>
-
-<pre><code></code></pre>
-
-<p>（<strong>注意</strong>：Prism依赖language；而Ghost对language的识别，要求起始和结束的```前面不能有tab/空格，不然就遇到了下面的情况）</p>
-
-<p>或者</p>
-
-<pre><code class="language-language-markdown">	code（注意前面的tab/空格）
-</code></pre>
-
-<p>这一般情况下OK，但是markdown还有分组的语法也是通过tab/空格，如下</p>
-
-<pre><code class="language-language-markdown">- A
+或者
+```language-markdown
+	code（注意前面的tab/空格）
+</code></pre><p>这一般情况下OK，但是markdown还有分组的语法也是通过tab/空格，如下</p>
+<pre><code class="language-language-markdown" data-lang="language-markdown">- A
 	- Aa
     - Ab
 - B
@@ -251,10 +227,7 @@ sed -i 's~&lt;script type=&quot;text/javascript&quot; src=&quot;{{asset &quot;js
 - C
 	-Ca
     -Cb
-</code></pre>
-
-<p>所以冲突就在这里：在<strong>分组</strong>里面的code，如果想高亮（用prism）的话，就需要打破用于<strong>标识分组的tab/空格</strong>，而这会导致后续的分组显示不正确（尤其是在使用<strong>数字标号</strong>来分组的情况下，数字的累加就重置了）。</p>
-
+</code></pre><p>所以冲突就在这里：在<strong>分组</strong>里面的code，如果想高亮（用prism）的话，就需要打破用于<strong>标识分组的tab/空格</strong>，而这会导致后续的分组显示不正确（尤其是在使用<strong>数字标号</strong>来分组的情况下，数字的累加就重置了）。</p>
 <p>从冲突的优先级来看（识别language &lt; tab/空格来标识code），Ghost应该不会改了。。。T_T</p>
 
       </article>
