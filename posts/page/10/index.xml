@@ -6,11 +6,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>来自某个八零后</copyright>
-    <lastBuildDate>Sat, 08 Feb 2020 00:39:36 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 11 Feb 2020 16:53:13 +0800</lastBuildDate>
     
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Android Studio export Jar</title>
+      <link>/posts/android-studio-export-jar/</link>
+      <pubDate>Wed, 04 Feb 2015 09:52:35 +0000</pubDate>
+      
+      <guid>/posts/android-studio-export-jar/</guid>
+      <description></description>
+    </item><item>
       <title>谈谈微信和支付宝</title>
       <link>/posts/about-weixin-and-alipay/</link>
       <pubDate>Thu, 22 Jan 2015 09:27:46 +0000</pubDate>
@@ -37,13 +44,6 @@
       <pubDate>Tue, 20 Jan 2015 06:54:26 +0000</pubDate>
       
       <guid>/posts/ec2-devxvda1-should-be-checked-for-errors/</guid>
-      <description></description>
-    </item><item>
-      <title>Proguard混淆</title>
-      <link>/posts/proguard-obfuscation/</link>
-      <pubDate>Sat, 17 Jan 2015 08:01:38 +0000</pubDate>
-      
-      <guid>/posts/proguard-obfuscation/</guid>
       <description></description>
     </item>
   </channel>
