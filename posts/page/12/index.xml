@@ -6,11 +6,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>来自某个八零后</copyright>
-    <lastBuildDate>Tue, 11 Feb 2020 16:53:13 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 18 Feb 2020 19:44:53 +0800</lastBuildDate>
     
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Android LinearLayout动态增加item时Weight的设置</title>
+      <link>/posts/android-linear-layout-weight-setting-when-adding-child-dynamically/</link>
+      <pubDate>Fri, 09 Jan 2015 04:50:13 +0000</pubDate>
+      
+      <guid>/posts/android-linear-layout-weight-setting-when-adding-child-dynamically/</guid>
+      <description></description>
+    </item><item>
       <title>Ghost开机启动</title>
       <link>/posts/ghost-boot-up/</link>
       <pubDate>Thu, 08 Jan 2015 02:30:07 +0000</pubDate>
@@ -37,13 +44,6 @@
       <pubDate>Wed, 31 Dec 2014 13:10:19 +0000</pubDate>
       
       <guid>/posts/about-charset/</guid>
-      <description></description>
-    </item><item>
-      <title>同步云服务</title>
-      <link>/posts/cloud-sync/</link>
-      <pubDate>Fri, 26 Dec 2014 12:34:27 +0000</pubDate>
-      
-      <guid>/posts/cloud-sync/</guid>
       <description></description>
     </item>
   </channel>

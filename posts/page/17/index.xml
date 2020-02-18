@@ -6,11 +6,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>来自某个八零后</copyright>
-    <lastBuildDate>Tue, 11 Feb 2020 16:53:13 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 18 Feb 2020 19:44:53 +0800</lastBuildDate>
     
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>关于Android如何动态加载res</title>
+      <link>/posts/about-loading-res-from-apk-directly/</link>
+      <pubDate>Fri, 07 Nov 2014 03:15:58 +0000</pubDate>
+      
+      <guid>/posts/about-loading-res-from-apk-directly/</guid>
+      <description></description>
+    </item><item>
       <title>快件骗局</title>
       <link>/posts/lie-to-delivery/</link>
       <pubDate>Thu, 06 Nov 2014 08:22:09 +0000</pubDate>
@@ -37,13 +44,6 @@
       <pubDate>Wed, 22 Oct 2014 04:19:39 +0000</pubDate>
       
       <guid>/posts/ji-xing-bi-dou-yan/</guid>
-      <description></description>
-    </item><item>
-      <title>Ghost upgrade to 0.5.3</title>
-      <link>/posts/ghost-upgrade-to-0-5-3/</link>
-      <pubDate>Wed, 22 Oct 2014 03:52:40 +0000</pubDate>
-      
-      <guid>/posts/ghost-upgrade-to-0-5-3/</guid>
       <description></description>
     </item>
   </channel>

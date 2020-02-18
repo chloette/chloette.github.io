@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>树莓派走起 &middot; 你好，世界</title>
+  <meta name="description" content="" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  
+  
+  
+  
+  
+  <link href="/css/concated.min.css" rel="stylesheet">
+  
+  
+</head>
+
+  <body class="single-body">
+    <nav class="nav-bar side-padding">
+  <h1 class="nav-header"><a href="/" class="nav-text">你好，世界</a></h1>
+  <div class="hamburger-menu">
+    <button onclick="hamburgerMenuPressed.call(this)" aria-haspopup="true" aria-expanded="false" aria-controls="menu" aria-label="Menu">
+      <span></span>
+      <span></span>
+    </button>
+    <ul id="menu" class="hamburger-menu-overlay">
+      <li><a href="/" class="hamburger-menu-overlay-link">Home</a></li>
+      
+      <li><a href="/categories/12306/" class="hamburger-menu-overlay-link">12306</a></li>
+      
+      <li><a href="/categories/android/" class="hamburger-menu-overlay-link">Android</a></li>
+      
+      <li><a href="/categories/android-studio/" class="hamburger-menu-overlay-link">android studio</a></li>
+      
+      <li><a href="/categories/apk-expansion/" class="hamburger-menu-overlay-link">APK Expansion</a></li>
+      
+      <li><a href="/categories/bash/" class="hamburger-menu-overlay-link">bash</a></li>
+      
+      <li><a href="/categories/bitcoin/" class="hamburger-menu-overlay-link">bitcoin</a></li>
+      
+      <li><a href="/categories/bitlocker/" class="hamburger-menu-overlay-link">bitlocker</a></li>
+      
+      <li><a href="/categories/btc/" class="hamburger-menu-overlay-link">btc</a></li>
+      
+      <li><a href="/categories/byte-alignment/" class="hamburger-menu-overlay-link">Byte alignment</a></li>
+      
+      <li><a href="/categories/c/" class="hamburger-menu-overlay-link">C</a></li>
+      
+      <li><a href="/categories/camera/" class="hamburger-menu-overlay-link">Camera</a></li>
+      
+      <li><a href="/categories/charset/" class="hamburger-menu-overlay-link">charset</a></li>
+      
+      <li><a href="/categories/chrome/" class="hamburger-menu-overlay-link">chrome</a></li>
+      
+      <li><a href="/categories/classnotfound/" class="hamburger-menu-overlay-link">ClassNotFound</a></li>
+      
+      <li><a href="/categories/d/" class="hamburger-menu-overlay-link">d</a></li>
+      
+      <li><a href="/categories/ddos/" class="hamburger-menu-overlay-link">ddos</a></li>
+      
+      <li><a href="/categories/ebola/" class="hamburger-menu-overlay-link">Ebola</a></li>
+      
+      <li><a href="/categories/ec2/" class="hamburger-menu-overlay-link">EC2</a></li>
+      
+      <li><a href="/categories/eva/" class="hamburger-menu-overlay-link">EVA</a></li>
+      
+      <li><a href="/categories/ffmpeg/" class="hamburger-menu-overlay-link">ffmpeg</a></li>
+      
+      <li><a href="/categories/fonts.googleapis.com/" class="hamburger-menu-overlay-link">fonts.googleapis.com</a></li>
+      
+      <li><a href="/categories/forget-password/" class="hamburger-menu-overlay-link">forget password</a></li>
+      
+      <li><a href="/categories/gallery/" class="hamburger-menu-overlay-link">Gallery</a></li>
+      
+      <li><a href="/categories/ghost/" class="hamburger-menu-overlay-link">ghost</a></li>
+      
+      <li><a href="/categories/git/" class="hamburger-menu-overlay-link">git</a></li>
+      
+      <li><a href="/categories/gpl/" class="hamburger-menu-overlay-link">gpl</a></li>
+      
+      <li><a href="/categories/gradle/" class="hamburger-menu-overlay-link">Gradle</a></li>
+      
+      <li><a href="/categories/gta/" class="hamburger-menu-overlay-link">GTA</a></li>
+      
+      <li><a href="/categories/hal/" class="hamburger-menu-overlay-link">HAL</a></li>
+      
+      <li><a href="/categories/hardware-requirement/" class="hamburger-menu-overlay-link">hardware requirement</a></li>
+      
+      <li><a href="/categories/hexo&#43;/" class="hamburger-menu-overlay-link">Hexo&#43;</a></li>
+      
+      <li><a href="/categories/highlight-syntax/" class="hamburger-menu-overlay-link">highlight syntax</a></li>
+      
+      <li><a href="/categories/imagefetcher/" class="hamburger-menu-overlay-link">ImageFetcher</a></li>
+      
+      <li><a href="/categories/internet/" class="hamburger-menu-overlay-link">Internet</a></li>
+      
+      <li><a href="/categories/jenkins/" class="hamburger-menu-overlay-link">Jenkins</a></li>
+      
+      <li><a href="/categories/kickstarter/" class="hamburger-menu-overlay-link">kickstarter</a></li>
+      
+      <li><a href="/categories/limits/" class="hamburger-menu-overlay-link">limits</a></li>
+      
+      <li><a href="/categories/link/" class="hamburger-menu-overlay-link">link</a></li>
+      
+      <li><a href="/categories/linux/" class="hamburger-menu-overlay-link">linux</a></li>
+      
+      <li><a href="/categories/load-library/" class="hamburger-menu-overlay-link">load library</a></li>
+      
+      <li><a href="/categories/logo/" class="hamburger-menu-overlay-link">logo</a></li>
+      
+      <li><a href="/categories/ltc/" class="hamburger-menu-overlay-link">ltc</a></li>
+      
+      <li><a href="/categories/monkeyrunner/" class="hamburger-menu-overlay-link">monkeyrunner</a></li>
+      
+      <li><a href="/categories/multi-path/" class="hamburger-menu-overlay-link">multi-path</a></li>
+      
+      <li><a href="/categories/nerv/" class="hamburger-menu-overlay-link">NERV</a></li>
+      
+      <li><a href="/categories/node.js/" class="hamburger-menu-overlay-link">node.js</a></li>
+      
+      <li><a href="/categories/okcoin/" class="hamburger-menu-overlay-link">okcoin</a></li>
+      
+      <li><a href="/categories/os/" class="hamburger-menu-overlay-link">OS</a></li>
+      
+      <li><a href="/categories/out-of-memory/" class="hamburger-menu-overlay-link">out of memory</a></li>
+      
+      <li><a href="/categories/performance/" class="hamburger-menu-overlay-link">performance</a></li>
+      
+      <li><a href="/categories/proguard/" class="hamburger-menu-overlay-link">proguard</a></li>
+      
+      <li><a href="/categories/putty/" class="hamburger-menu-overlay-link">putty</a></li>
+      
+      <li><a href="/categories/python/" class="hamburger-menu-overlay-link">python</a></li>
+      
+      <li><a href="/categories/qq/" class="hamburger-menu-overlay-link">QQ</a></li>
+      
+      <li><a href="/categories/relativelayout/" class="hamburger-menu-overlay-link">RelativeLayout</a></li>
+      
+      <li><a href="/categories/script/" class="hamburger-menu-overlay-link">script</a></li>
+      
+      <li><a href="/categories/selinux/" class="hamburger-menu-overlay-link">Selinux</a></li>
+      
+      <li><a href="/categories/sensor/" class="hamburger-menu-overlay-link">sensor</a></li>
+      
+      <li><a href="/categories/sepolicy/" class="hamburger-menu-overlay-link">Sepolicy</a></li>
+      
+      <li><a href="/categories/shellshock/" class="hamburger-menu-overlay-link">Shellshock</a></li>
+      
+      <li><a href="/categories/sparsearray/" class="hamburger-menu-overlay-link">SparseArray</a></li>
+      
+      <li><a href="/categories/sync/" class="hamburger-menu-overlay-link">sync</a></li>
+      
+      <li><a href="/categories/ted/" class="hamburger-menu-overlay-link">TED</a></li>
+      
+      <li><a href="/categories/tips/" class="hamburger-menu-overlay-link">tips</a></li>
+      
+      <li><a href="/categories/ubuntu/" class="hamburger-menu-overlay-link">Ubuntu</a></li>
+      
+      <li><a href="/categories/understanding-node.js/" class="hamburger-menu-overlay-link">Understanding node.js</a></li>
+      
+      <li><a href="/categories/undo/" class="hamburger-menu-overlay-link">undo</a></li>
+      
+      <li><a href="/categories/upgrade/" class="hamburger-menu-overlay-link">upgrade</a></li>
+      
+      <li><a href="/categories/view/" class="hamburger-menu-overlay-link">View</a></li>
+      
+      <li><a href="/categories/windows/" class="hamburger-menu-overlay-link">windows</a></li>
+      
+      <li><a href="/categories/wordpress/" class="hamburger-menu-overlay-link">wordpress</a></li>
+      
+      <li><a href="/categories/zsh/" class="hamburger-menu-overlay-link">zsh</a></li>
+      
+      
+    </ul>
+  </div>
+</nav>
+
+    <main class="content side-text-padding">
+      <article class="post dropcase">
+        <header class="post-header">
+        	<h1 class="post-title">树莓派走起</h1>
+          <p class="post-date">Posted <time datetime="2020-02-18">Feb 18, 2020</time></p>
+        </header>
+        
+        <p><img src="/img/pi-plug-in.gif" alt=""></p>
+<p>随着疫情的加重，隔离+远程办公，又有了不少折腾的时间。</p>
+<p>偶然看到树莓派4代的配置，颇为心动。</p>
+<p>之前觉得就是玩具，目前看起来可以做成简易的NAS了。</p>
+<p>对我而言关键两个功能：「远程的Time Machine」+ 「可以DLNA的小姐姐们」，心动不如行动，走起</p>
+<p><strong>第一步：淘宝买一个Headless的带套带卡带线的套装回来「不要鼠标键盘，不要显示屏」</strong></p>
+<p><strong>第二步：跟着<a href="https://www.raspberrypi.org/documentation/installation/installing-images/mac.md">官网</a>一步步<a href="https://www.raspberrypi.org/downloads/">下载</a>后烧录；</strong></p>
+<p>注意，因为选择了Headless，所以<em>不要考虑NOOBS版本</em>了。「省钱就得花时间，是吧」</p>
+<p><strong>第三步：插卡上电开机「<a href="https://blog.twofei.com/772/">记得参考这里先“打开”SSH和“配置”WIFI</a>」</strong></p>
+<p>「3.1」通过路由器里的设备列表找到树莓派的IP，通过IP来SSH连接；「省了键盘鼠标💰！」</p>
+<p>「3.2」配置VNC来远程桌面访问，记得<em>设置分辨率</em>。</p>
+<p>「3.3」发现了小米wifi的掉包率还是很惊人的，就又剁手了网件的大杀器「等等。。不是说好省钱的么？」</p>
+<p>「3.4」记得先更新<a href="https://www.jianshu.com/p/93ef6bace0a4">源</a></p>
+<p><strong>第四步：参考<a href="https://www.jerryfans.com/?p=7">这里</a>配置Time Machine，本文中配置avahi的部分可以忽略，已不适用了</strong></p>
+<p>「4.1」<em>不建议把mount的目录放在user目录下，在自动挂载的时候会遇到权限问题「例如root:root的mount点」</em></p>
+<p>「4.2」正常情况下服务都启动后，Mac上打开Time Machine去Select Disk的时候，是可以直接看到可选磁盘的。「不用输入IP」</p>
+<p><strong>第五步：参考<a href="https://www.jianshu.com/p/7dc8f2a01c27">这里</a>安装Samba和minidlna并配置，任务完成</strong></p>
+<p>「5.1」注意访问目录权限问题</p>
+<p>「5.2」samba用户是独立的，密码也是</p>
+<hr>
+<p>第一阶段目标达成，能看小姐姐，能备份，还腾出了笔记本不少空间。棒呆！</p>
+<p>下一步就是下载/爬虫/自动化了，继续折腾。</p>
+
+      </article>
+      
+    </main>
+    <nav class="end-nav side-padding">
+      
+      <a ontouchstart="cardPressed.call(this)" ontouchend="cardReleased.call(this)" ontouchmove="cardReleased.call(this)" 
+  href="/posts/2020birthday/" class="card blog-card" rel="bookmark" >
+  
+  <article class="card-body">
+    <h2 class="card-title">又到生日啦？</h2>
+    <p class="card-text"></p>
+    <div class="card-subtext muted-text">
+      <p>Posted <time datetime="2020-02-11 211:00">Feb 11, 2020</time></p>
+      <p></p>
+    </div>
+  </article>
+</a>
+      
+      <a ontouchstart="cardPressed.call(this)" ontouchend="cardReleased.call(this)" ontouchmove="cardReleased.call(this)" 
+  href="/" class="card home-card" style="background-image: url( /img/grey-cloud.jpg )" rel="bookmark" >
+  Home
+</a>
+    </nav>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+  
+  <script src="/js/core.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+
+  </body>
+</html>
