@@ -202,6 +202,7 @@
 <p>「4.1」<em>不建议把mount的目录放在user目录下，在自动挂载的时候会遇到权限问题「例如root:root的mount点」</em></p>
 <p>「4.2」正常情况下服务都启动后，Mac上打开Time Machine去Select Disk的时候，是可以直接看到可选磁盘的。「不用输入IP」</p>
 <p>「4.3」外接硬盘挂载的时候，记得加上nofail。否则拔掉硬盘树莓派就开不了机啦！</p>
+<p>「4.4」如果遇到了硬盘“只读”，那其实是hfsplus的小bug（没umount，掉电后立刻上电容易遇到）。解决方法是执行<code>sudo fsck -y /磁盘mount点</code>确认磁盘没问题后，umount掉相关磁盘再重启（先umount掉再上电）</p>
 <p><strong>第五步：参考<a href="https://www.jianshu.com/p/7dc8f2a01c27">这里</a>安装Samba和minidlna并配置，任务完成</strong></p>
 <p>「5.1」注意访问目录权限问题</p>
 <p>「5.2」samba用户是独立的，密码也是</p>
