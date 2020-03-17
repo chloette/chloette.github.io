@@ -6,11 +6,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>来自某个八零后</copyright>
-    <lastBuildDate>Tue, 18 Feb 2020 19:44:53 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 17 Mar 2020 20:15:38 +0800</lastBuildDate>
     
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>不同OS个人体验</title>
+      <link>/posts/different-os/</link>
+      <pubDate>Mon, 09 Feb 2015 10:37:17 +0000</pubDate>
+      
+      <guid>/posts/different-os/</guid>
+      <description></description>
+    </item><item>
       <title>Photo gallery from folder</title>
       <link>/posts/photo-gallery-from-folder/</link>
       <pubDate>Mon, 09 Feb 2015 07:26:01 +0000</pubDate>
@@ -37,13 +44,6 @@
       <pubDate>Wed, 21 Jan 2015 12:07:06 +0000</pubDate>
       
       <guid>/posts/script-to-modify-ghost-screen-css/</guid>
-      <description></description>
-    </item><item>
-      <title>Android ImageFetcher</title>
-      <link>/posts/android-imagefetcher/</link>
-      <pubDate>Wed, 21 Jan 2015 06:15:21 +0000</pubDate>
-      
-      <guid>/posts/android-imagefetcher/</guid>
       <description></description>
     </item>
   </channel>

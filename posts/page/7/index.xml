@@ -6,11 +6,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>来自某个八零后</copyright>
-    <lastBuildDate>Tue, 18 Feb 2020 19:44:53 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 17 Mar 2020 20:15:38 +0800</lastBuildDate>
     
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Working holiday visa of NewZealand</title>
+      <link>/posts/working-holiday-visa-of-newzealand/</link>
+      <pubDate>Mon, 09 Mar 2015 12:00:00 +0000</pubDate>
+      
+      <guid>/posts/working-holiday-visa-of-newzealand/</guid>
+      <description></description>
+    </item><item>
       <title>关于Internet的基础</title>
       <link>/posts/about-internet-basis/</link>
       <pubDate>Sat, 07 Mar 2015 10:58:42 +0000</pubDate>
@@ -37,13 +44,6 @@
       <pubDate>Tue, 03 Mar 2015 06:39:21 +0000</pubDate>
       
       <guid>/posts/osx-qq-display-error/</guid>
-      <description></description>
-    </item><item>
-      <title>计算 -- 万物理论</title>
-      <link>/posts/computing-a-theory-of-everything/</link>
-      <pubDate>Tue, 03 Mar 2015 05:35:47 +0000</pubDate>
-      
-      <guid>/posts/computing-a-theory-of-everything/</guid>
       <description></description>
     </item>
   </channel>

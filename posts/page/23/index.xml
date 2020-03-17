@@ -6,11 +6,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>来自某个八零后</copyright>
-    <lastBuildDate>Tue, 18 Feb 2020 19:44:53 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 17 Mar 2020 20:15:38 +0800</lastBuildDate>
     
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>再一次的选择</title>
+      <link>/posts/zai-yi-ci-de-xuan-ze/</link>
+      <pubDate>Thu, 27 Mar 2014 23:22:09 +0000</pubDate>
+      
+      <guid>/posts/zai-yi-ci-de-xuan-ze/</guid>
+      <description></description>
+    </item><item>
       <title>纪念在高通奋战的一年</title>
       <link>/posts/when-i-am-at-qualcomm/</link>
       <pubDate>Mon, 24 Mar 2014 13:45:03 +0000</pubDate>
@@ -37,13 +44,6 @@
       <pubDate>Sat, 18 Jan 2014 18:20:02 +0000</pubDate>
       
       <guid>/posts/mei-you-wan-mei/</guid>
-      <description></description>
-    </item><item>
-      <title>关于比特币，从交易平台盈利继续说（II）</title>
-      <link>/posts/guan-yu-bi-te-bi-cong-jiao-yi-ping-tai-ying-li-ji-xu-shuo-ii/</link>
-      <pubDate>Wed, 04 Dec 2013 23:35:18 +0000</pubDate>
-      
-      <guid>/posts/guan-yu-bi-te-bi-cong-jiao-yi-ping-tai-ying-li-ji-xu-shuo-ii/</guid>
       <description></description>
     </item>
   </channel>

@@ -6,11 +6,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>来自某个八零后</copyright>
-    <lastBuildDate>Tue, 18 Feb 2020 19:44:53 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 17 Mar 2020 20:15:38 +0800</lastBuildDate>
     
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Android ImageFetcher</title>
+      <link>/posts/android-imagefetcher/</link>
+      <pubDate>Wed, 21 Jan 2015 06:15:21 +0000</pubDate>
+      
+      <guid>/posts/android-imagefetcher/</guid>
+      <description></description>
+    </item><item>
       <title>EC2 /dev/xvda1 should be checked for errors</title>
       <link>/posts/ec2-devxvda1-should-be-checked-for-errors/</link>
       <pubDate>Tue, 20 Jan 2015 06:54:26 +0000</pubDate>
@@ -37,13 +44,6 @@
       <pubDate>Tue, 13 Jan 2015 12:55:43 +0000</pubDate>
       
       <guid>/posts/android-sparsearray-indexofvalue-return-negative-1/</guid>
-      <description></description>
-    </item><item>
-      <title>Android RelativeLayout中wrap_content和alignParentBottom的冲突</title>
-      <link>/posts/android-conflict-of-relativelayout-between-wrapcontent-and-alignparentbottom/</link>
-      <pubDate>Mon, 12 Jan 2015 08:25:33 +0000</pubDate>
-      
-      <guid>/posts/android-conflict-of-relativelayout-between-wrapcontent-and-alignparentbottom/</guid>
       <description></description>
     </item>
   </channel>
