@@ -6,11 +6,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>来自某个八零后</copyright>
-    <lastBuildDate>Tue, 17 Mar 2020 20:15:38 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 06 Dec 2020 21:19:24 +0800</lastBuildDate>
     
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Android studio 1.0 RC (更新)</title>
+      <link>/posts/android-studio-1-0-rc/</link>
+      <pubDate>Fri, 21 Nov 2014 07:00:33 +0000</pubDate>
+      
+      <guid>/posts/android-studio-1-0-rc/</guid>
+      <description></description>
+    </item><item>
       <title>Android java.lang.ClassNotFoundException</title>
       <link>/posts/android-java-lang-classnotfoundexception/</link>
       <pubDate>Wed, 19 Nov 2014 09:07:32 +0000</pubDate>
@@ -37,13 +44,6 @@
       <pubDate>Wed, 12 Nov 2014 02:40:06 +0000</pubDate>
       
       <guid>/posts/help-fight-ebola/</guid>
-      <description></description>
-    </item><item>
-      <title>关于Bitlocker</title>
-      <link>/posts/about-bitlocker-remake-u-key-disk/</link>
-      <pubDate>Mon, 10 Nov 2014 03:51:50 +0000</pubDate>
-      
-      <guid>/posts/about-bitlocker-remake-u-key-disk/</guid>
       <description></description>
     </item>
   </channel>

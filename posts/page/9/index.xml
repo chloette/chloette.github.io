@@ -6,11 +6,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>来自某个八零后</copyright>
-    <lastBuildDate>Tue, 17 Mar 2020 20:15:38 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 06 Dec 2020 21:19:24 +0800</lastBuildDate>
     
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>大年三十</title>
+      <link>/posts/last-day-of-year/</link>
+      <pubDate>Wed, 18 Feb 2015 06:55:12 +0000</pubDate>
+      
+      <guid>/posts/last-day-of-year/</guid>
+      <description></description>
+    </item><item>
       <title>美亚速度</title>
       <link>/posts/amazon-speed/</link>
       <pubDate>Thu, 12 Feb 2015 10:08:36 +0000</pubDate>
@@ -37,13 +44,6 @@
       <pubDate>Wed, 11 Feb 2015 07:17:39 +0000</pubDate>
       
       <guid>/posts/apk-expansion-limitation/</guid>
-      <description></description>
-    </item><item>
-      <title>zsh &#43; oh-my-zsh &gt; default shell</title>
-      <link>/posts/zsh-oh-my-zsh/</link>
-      <pubDate>Tue, 10 Feb 2015 07:12:29 +0000</pubDate>
-      
-      <guid>/posts/zsh-oh-my-zsh/</guid>
       <description></description>
     </item>
   </channel>

@@ -249,7 +249,7 @@ imageFetcher.closeCache();
         mImageFetcher.setExitTasksEarly(true);
         mImageFetcher.flushCache();
     }
-</code></pre><p>居然是<em><strong><code>setPauseWork(false)</code></strong></em>!难道不是<code>setPauseWork(true)</code>更正确么？</p>
+</code></pre><p>居然是***<code>setPauseWork(false)</code>***!难道不是<code>setPauseWork(true)</code>更正确么？</p>
 <p>但如果你那么做了，恭喜你，你陷入了Fetcher的坑。</p>
 <p>setPauseWork为true后，后台即将开始跑的AsyncTask会wait(类比lock)住，来等setPauseWork(false)中的notifyAll（类比unlock）；</p>
 <p>如果在onPause的时候，是<code>setPauseWork(true)</code>，这样导致的问题就是，这个AsyncTask一直wait下去，占用住了线程池（Executor）的一块资源；假设这个时候还有AsyncTask在线程池（Executor）中排队等着运行的话，那么就永远等不到了；因为线程池很容易就会没有可用资源。</p>

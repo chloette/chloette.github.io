@@ -194,7 +194,7 @@
 <p>一开始还以为可能是线程安全相关的问题，还打算加锁来着。结果。。。</p>
 <p>原因<a href="http://developer.android.com/reference/android/util/SparseArray.html#indexOfValue%28E%29">在于</a>：</p>
 <blockquote>
-<p>Note also that unlike most collections&rsquo; indexOf methods, this method compares values <em><strong>using == rather than equals</strong></em>.</p>
+<p>Note also that unlike most collections' indexOf methods, this method compares values <em><strong>using == rather than equals</strong></em>.</p>
 </blockquote>
 <p>源码如下：</p>
 <pre><code class="language-language-java" data-lang="language-java">public int indexOfValue(E value) {

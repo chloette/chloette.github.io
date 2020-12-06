@@ -6,11 +6,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>来自某个八零后</copyright>
-    <lastBuildDate>Tue, 17 Mar 2020 20:15:38 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 06 Dec 2020 21:19:24 +0800</lastBuildDate>
     
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>没有完美</title>
+      <link>/posts/mei-you-wan-mei/</link>
+      <pubDate>Sat, 18 Jan 2014 18:20:02 +0000</pubDate>
+      
+      <guid>/posts/mei-you-wan-mei/</guid>
+      <description></description>
+    </item><item>
       <title>关于比特币，从交易平台盈利继续说（II）</title>
       <link>/posts/guan-yu-bi-te-bi-cong-jiao-yi-ping-tai-ying-li-ji-xu-shuo-ii/</link>
       <pubDate>Wed, 04 Dec 2013 23:35:18 +0000</pubDate>
@@ -37,13 +44,6 @@
       <pubDate>Sat, 24 Aug 2013 21:31:11 +0000</pubDate>
       
       <guid>/posts/be-care-of-the-byte-alignment-in-type-cast/</guid>
-      <description></description>
-    </item><item>
-      <title>无节操的电信团购站</title>
-      <link>/posts/wu-jie-cao-de-dian-xin-tuan-gou-zhan/</link>
-      <pubDate>Mon, 12 Aug 2013 10:50:24 +0000</pubDate>
-      
-      <guid>/posts/wu-jie-cao-de-dian-xin-tuan-gou-zhan/</guid>
       <description></description>
     </item>
   </channel>

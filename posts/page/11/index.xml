@@ -6,11 +6,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>来自某个八零后</copyright>
-    <lastBuildDate>Tue, 17 Mar 2020 20:15:38 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 06 Dec 2020 21:19:24 +0800</lastBuildDate>
     
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Ghost修改screen.css的脚本</title>
+      <link>/posts/script-to-modify-ghost-screen-css/</link>
+      <pubDate>Wed, 21 Jan 2015 12:07:06 +0000</pubDate>
+      
+      <guid>/posts/script-to-modify-ghost-screen-css/</guid>
+      <description></description>
+    </item><item>
       <title>Android ImageFetcher</title>
       <link>/posts/android-imagefetcher/</link>
       <pubDate>Wed, 21 Jan 2015 06:15:21 +0000</pubDate>
@@ -37,13 +44,6 @@
       <pubDate>Thu, 15 Jan 2015 13:17:06 +0000</pubDate>
       
       <guid>/posts/jenkins-github-gradle-android/</guid>
-      <description></description>
-    </item><item>
-      <title>Android SparseArray中indexOfValue返回-1</title>
-      <link>/posts/android-sparsearray-indexofvalue-return-negative-1/</link>
-      <pubDate>Tue, 13 Jan 2015 12:55:43 +0000</pubDate>
-      
-      <guid>/posts/android-sparsearray-indexofvalue-return-negative-1/</guid>
       <description></description>
     </item>
   </channel>
