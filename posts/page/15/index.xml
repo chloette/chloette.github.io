@@ -6,11 +6,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>来自某个八零后</copyright>
-    <lastBuildDate>Sun, 06 Dec 2020 21:19:24 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 31 Dec 2020 20:59:59 +0800</lastBuildDate>
     
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>《设计心理学》</title>
+      <link>/posts/the-design-of-everyday-things/</link>
+      <pubDate>Mon, 22 Dec 2014 03:25:03 +0000</pubDate>
+      
+      <guid>/posts/the-design-of-everyday-things/</guid>
+      <description></description>
+    </item><item>
       <title>Chrome cannot open profile correctly</title>
       <link>/posts/chrome-cannot-open-profile-correctly/</link>
       <pubDate>Fri, 19 Dec 2014 14:57:26 +0000</pubDate>
@@ -37,13 +44,6 @@
       <pubDate>Fri, 12 Dec 2014 11:50:10 +0000</pubDate>
       
       <guid>/posts/ski-at-cbs/</guid>
-      <description></description>
-    </item><item>
-      <title>等不到OTA的Nexus5</title>
-      <link>/posts/nexus5-manually-ota-to-lollipop/</link>
-      <pubDate>Mon, 08 Dec 2014 12:59:04 +0000</pubDate>
-      
-      <guid>/posts/nexus5-manually-ota-to-lollipop/</guid>
       <description></description>
     </item>
   </channel>

@@ -6,11 +6,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>来自某个八零后</copyright>
-    <lastBuildDate>Sun, 06 Dec 2020 21:19:24 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 31 Dec 2020 20:59:59 +0800</lastBuildDate>
     
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>指纹，想说爱你不容易...</title>
+      <link>/posts/zhi-wen-xiang-shuo-ai-ni-bu-rong-yi/</link>
+      <pubDate>Sat, 20 Sep 2014 11:31:48 +0000</pubDate>
+      
+      <guid>/posts/zhi-wen-xiang-shuo-ai-ni-bu-rong-yi/</guid>
+      <description></description>
+    </item><item>
       <title>阿里巴巴的狂欢</title>
       <link>/posts/a-li-ba-ba-de-kuang-huan/</link>
       <pubDate>Sat, 20 Sep 2014 02:42:15 +0000</pubDate>
@@ -37,13 +44,6 @@
       <pubDate>Wed, 17 Sep 2014 05:21:54 +0000</pubDate>
       
       <guid>/posts/understanding-node-js-xia-fan-yi/</guid>
-      <description></description>
-    </item><item>
-      <title>Hexo&#43; !!!</title>
-      <link>/posts/hexo/</link>
-      <pubDate>Tue, 16 Sep 2014 12:12:41 +0000</pubDate>
-      
-      <guid>/posts/hexo/</guid>
       <description></description>
     </item>
   </channel>

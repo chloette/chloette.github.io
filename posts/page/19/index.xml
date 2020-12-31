@@ -6,11 +6,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>来自某个八零后</copyright>
-    <lastBuildDate>Sun, 06 Dec 2020 21:19:24 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 31 Dec 2020 20:59:59 +0800</lastBuildDate>
     
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>FFmpeg提供给OPW一个实习岗位</title>
+      <link>/posts/ffmpeg-secure-a-place-in-opw/</link>
+      <pubDate>Sat, 11 Oct 2014 07:40:35 +0000</pubDate>
+      
+      <guid>/posts/ffmpeg-secure-a-place-in-opw/</guid>
+      <description></description>
+    </item><item>
       <title>Ghost图片上传大小限制</title>
       <link>/posts/ghost-image-upload-limitation/</link>
       <pubDate>Thu, 09 Oct 2014 06:37:34 +0000</pubDate>
@@ -37,13 +44,6 @@
       <pubDate>Tue, 30 Sep 2014 03:43:46 +0000</pubDate>
       
       <guid>/posts/about-bitcoin-calculate-algorithm-manually/</guid>
-      <description></description>
-    </item><item>
-      <title>关于FFmpeg（基础）</title>
-      <link>/posts/about-ffmpeg-basic/</link>
-      <pubDate>Mon, 29 Sep 2014 12:35:21 +0000</pubDate>
-      
-      <guid>/posts/about-ffmpeg-basic/</guid>
       <description></description>
     </item>
   </channel>

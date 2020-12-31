@@ -6,11 +6,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>来自某个八零后</copyright>
-    <lastBuildDate>Sun, 06 Dec 2020 21:19:24 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 31 Dec 2020 20:59:59 +0800</lastBuildDate>
     
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Jenkins&#43;Github&#43;Gradle&#43;Android</title>
+      <link>/posts/jenkins-github-gradle-android/</link>
+      <pubDate>Thu, 15 Jan 2015 13:17:06 +0000</pubDate>
+      
+      <guid>/posts/jenkins-github-gradle-android/</guid>
+      <description></description>
+    </item><item>
       <title>Android SparseArray中indexOfValue返回-1</title>
       <link>/posts/android-sparsearray-indexofvalue-return-negative-1/</link>
       <pubDate>Tue, 13 Jan 2015 12:55:43 +0000</pubDate>
@@ -37,13 +44,6 @@
       <pubDate>Thu, 08 Jan 2015 02:30:07 +0000</pubDate>
       
       <guid>/posts/ghost-boot-up/</guid>
-      <description></description>
-    </item><item>
-      <title>Ghost首页图片限制宽高</title>
-      <link>/posts/ghost-limit-image-width/</link>
-      <pubDate>Tue, 06 Jan 2015 03:26:26 +0000</pubDate>
-      
-      <guid>/posts/ghost-limit-image-width/</guid>
       <description></description>
     </item>
   </channel>
