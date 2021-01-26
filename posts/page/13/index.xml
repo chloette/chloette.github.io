@@ -6,11 +6,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>来自某个八零后</copyright>
-    <lastBuildDate>Thu, 31 Dec 2020 22:56:39 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 26 Jan 2021 17:21:48 +0800</lastBuildDate>
     
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Ghost开机启动</title>
+      <link>/posts/ghost-boot-up/</link>
+      <pubDate>Thu, 08 Jan 2015 02:30:07 +0000</pubDate>
+      
+      <guid>/posts/ghost-boot-up/</guid>
+      <description></description>
+    </item><item>
       <title>Ghost首页图片限制宽高</title>
       <link>/posts/ghost-limit-image-width/</link>
       <pubDate>Tue, 06 Jan 2015 03:26:26 +0000</pubDate>
@@ -37,13 +44,6 @@
       <pubDate>Fri, 26 Dec 2014 12:34:27 +0000</pubDate>
       
       <guid>/posts/cloud-sync/</guid>
-      <description></description>
-    </item><item>
-      <title>谈谈12306的数据泄露</title>
-      <link>/posts/about-data-leak-from-12306/</link>
-      <pubDate>Thu, 25 Dec 2014 09:51:13 +0000</pubDate>
-      
-      <guid>/posts/about-data-leak-from-12306/</guid>
       <description></description>
     </item>
   </channel>

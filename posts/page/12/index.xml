@@ -6,11 +6,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>来自某个八零后</copyright>
-    <lastBuildDate>Thu, 31 Dec 2020 22:56:39 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 26 Jan 2021 17:21:48 +0800</lastBuildDate>
     
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Proguard混淆</title>
+      <link>/posts/proguard-obfuscation/</link>
+      <pubDate>Sat, 17 Jan 2015 08:01:38 +0000</pubDate>
+      
+      <guid>/posts/proguard-obfuscation/</guid>
+      <description></description>
+    </item><item>
       <title>Jenkins&#43;Github&#43;Gradle&#43;Android</title>
       <link>/posts/jenkins-github-gradle-android/</link>
       <pubDate>Thu, 15 Jan 2015 13:17:06 +0000</pubDate>
@@ -37,13 +44,6 @@
       <pubDate>Fri, 09 Jan 2015 04:50:13 +0000</pubDate>
       
       <guid>/posts/android-linear-layout-weight-setting-when-adding-child-dynamically/</guid>
-      <description></description>
-    </item><item>
-      <title>Ghost开机启动</title>
-      <link>/posts/ghost-boot-up/</link>
-      <pubDate>Thu, 08 Jan 2015 02:30:07 +0000</pubDate>
-      
-      <guid>/posts/ghost-boot-up/</guid>
       <description></description>
     </item>
   </channel>

@@ -6,11 +6,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>来自某个八零后</copyright>
-    <lastBuildDate>Thu, 31 Dec 2020 22:56:39 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 26 Jan 2021 17:21:48 +0800</lastBuildDate>
     
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Ghost在首页显示图片而非摘要</title>
+      <link>/posts/ghost-display-post-images-on-home-page/</link>
+      <pubDate>Mon, 22 Sep 2014 04:07:00 +0000</pubDate>
+      
+      <guid>/posts/ghost-display-post-images-on-home-page/</guid>
+      <description></description>
+    </item><item>
       <title>指纹，想说爱你不容易...</title>
       <link>/posts/zhi-wen-xiang-shuo-ai-ni-bu-rong-yi/</link>
       <pubDate>Sat, 20 Sep 2014 11:31:48 +0000</pubDate>
@@ -37,13 +44,6 @@
       <pubDate>Fri, 19 Sep 2014 09:16:23 +0000</pubDate>
       
       <guid>/posts/jenkins-android-auto-build-problems/</guid>
-      <description></description>
-    </item><item>
-      <title>Understanding node.js 瞎翻译</title>
-      <link>/posts/understanding-node-js-xia-fan-yi/</link>
-      <pubDate>Wed, 17 Sep 2014 05:21:54 +0000</pubDate>
-      
-      <guid>/posts/understanding-node-js-xia-fan-yi/</guid>
       <description></description>
     </item>
   </channel>

@@ -6,11 +6,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>来自某个八零后</copyright>
-    <lastBuildDate>Thu, 31 Dec 2020 22:56:39 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 26 Jan 2021 17:21:48 +0800</lastBuildDate>
     
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>离开小米</title>
+      <link>/posts/likaixiaomi/</link>
+      <pubDate>Wed, 28 Aug 2019 12:00:00 +0800</pubDate>
+      
+      <guid>/posts/likaixiaomi/</guid>
+      <description></description>
+    </item><item>
       <title>🔞 非成人误入 - 露脸就会被人肉</title>
       <link>/posts/yingyuhuazi/</link>
       <pubDate>Sun, 28 Jul 2019 23:01:43 +0800</pubDate>
@@ -37,13 +44,6 @@
       <pubDate>Sat, 13 Jul 2019 19:28:05 +0800</pubDate>
       
       <guid>/posts/xiangqiyixieren/</guid>
-      <description></description>
-    </item><item>
-      <title>How to compile AOSP on Mac 10.13</title>
-      <link>/posts/how-to-compile-aosp-on-mac-s/</link>
-      <pubDate>Sun, 04 Mar 2018 22:34:32 +0000</pubDate>
-      
-      <guid>/posts/how-to-compile-aosp-on-mac-s/</guid>
       <description></description>
     </item>
   </channel>

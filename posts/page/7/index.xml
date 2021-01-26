@@ -6,11 +6,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>来自某个八零后</copyright>
-    <lastBuildDate>Thu, 31 Dec 2020 22:56:39 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 26 Jan 2021 17:21:48 +0800</lastBuildDate>
     
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Repo sync failed through ssh</title>
+      <link>/posts/repo-sync-failed-through-ssh/</link>
+      <pubDate>Wed, 25 Mar 2015 13:48:55 +0000</pubDate>
+      
+      <guid>/posts/repo-sync-failed-through-ssh/</guid>
+      <description></description>
+    </item><item>
       <title>Switch JDK on mac</title>
       <link>/posts/switch-jdk-on-mac/</link>
       <pubDate>Mon, 23 Mar 2015 12:56:54 +0000</pubDate>
@@ -37,13 +44,6 @@
       <pubDate>Sat, 07 Mar 2015 10:58:42 +0000</pubDate>
       
       <guid>/posts/about-internet-basis/</guid>
-      <description></description>
-    </item><item>
-      <title>My ghost upgrade script</title>
-      <link>/posts/my-ghost-upgrade-script/</link>
-      <pubDate>Fri, 06 Mar 2015 05:09:09 +0000</pubDate>
-      
-      <guid>/posts/my-ghost-upgrade-script/</guid>
       <description></description>
     </item>
   </channel>
