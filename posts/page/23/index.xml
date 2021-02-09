@@ -6,11 +6,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>来自某个八零后</copyright>
-    <lastBuildDate>Tue, 26 Jan 2021 17:21:48 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 09 Feb 2021 23:59:59 +0800</lastBuildDate>
     
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Wordpress插入代码失效</title>
+      <link>/posts/wordpress-cha-ru-dai-ma-shi-xiao/</link>
+      <pubDate>Sat, 06 Sep 2014 12:30:36 +0000</pubDate>
+      
+      <guid>/posts/wordpress-cha-ru-dai-ma-shi-xiao/</guid>
+      <description></description>
+    </item><item>
       <title>Wordpress插入链接无效或者不显示标题</title>
       <link>/posts/wordpress-cha-ru-lian-jie-wu-xiao-huo-zhe-bu-xian-shi-biao-ti/</link>
       <pubDate>Sat, 06 Sep 2014 11:51:57 +0000</pubDate>
@@ -37,13 +44,6 @@
       <pubDate>Thu, 27 Mar 2014 23:22:09 +0000</pubDate>
       
       <guid>/posts/zai-yi-ci-de-xuan-ze/</guid>
-      <description></description>
-    </item><item>
-      <title>纪念在高通奋战的一年</title>
-      <link>/posts/when-i-am-at-qualcomm/</link>
-      <pubDate>Mon, 24 Mar 2014 13:45:03 +0000</pubDate>
-      
-      <guid>/posts/when-i-am-at-qualcomm/</guid>
       <description></description>
     </item>
   </channel>

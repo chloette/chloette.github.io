@@ -6,11 +6,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>来自某个八零后</copyright>
-    <lastBuildDate>Tue, 26 Jan 2021 17:21:48 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 09 Feb 2021 23:59:59 +0800</lastBuildDate>
     
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Jenkins android 自动化编译的一些坑</title>
+      <link>/posts/jenkins-android-auto-build-problems/</link>
+      <pubDate>Fri, 19 Sep 2014 09:16:23 +0000</pubDate>
+      
+      <guid>/posts/jenkins-android-auto-build-problems/</guid>
+      <description></description>
+    </item><item>
       <title>Understanding node.js 瞎翻译</title>
       <link>/posts/understanding-node-js-xia-fan-yi/</link>
       <pubDate>Wed, 17 Sep 2014 05:21:54 +0000</pubDate>
@@ -37,13 +44,6 @@
       <pubDate>Sun, 14 Sep 2014 16:27:10 +0000</pubDate>
       
       <guid>/posts/from-wordpress-to-ghost/</guid>
-      <description></description>
-    </item><item>
-      <title>Wordpress插入代码失效</title>
-      <link>/posts/wordpress-cha-ru-dai-ma-shi-xiao/</link>
-      <pubDate>Sat, 06 Sep 2014 12:30:36 +0000</pubDate>
-      
-      <guid>/posts/wordpress-cha-ru-dai-ma-shi-xiao/</guid>
       <description></description>
     </item>
   </channel>

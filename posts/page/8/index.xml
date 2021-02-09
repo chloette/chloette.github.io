@@ -6,11 +6,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>来自某个八零后</copyright>
-    <lastBuildDate>Tue, 26 Jan 2021 17:21:48 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 09 Feb 2021 23:59:59 +0800</lastBuildDate>
     
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>关于Internet的基础</title>
+      <link>/posts/about-internet-basis/</link>
+      <pubDate>Sat, 07 Mar 2015 10:58:42 +0000</pubDate>
+      
+      <guid>/posts/about-internet-basis/</guid>
+      <description></description>
+    </item><item>
       <title>My ghost upgrade script</title>
       <link>/posts/my-ghost-upgrade-script/</link>
       <pubDate>Fri, 06 Mar 2015 05:09:09 +0000</pubDate>
@@ -37,13 +44,6 @@
       <pubDate>Tue, 03 Mar 2015 05:35:47 +0000</pubDate>
       
       <guid>/posts/computing-a-theory-of-everything/</guid>
-      <description></description>
-    </item><item>
-      <title>将离（我要滚犊子啦）</title>
-      <link>/posts/leaving-cm/</link>
-      <pubDate>Sat, 28 Feb 2015 07:49:03 +0000</pubDate>
-      
-      <guid>/posts/leaving-cm/</guid>
       <description></description>
     </item>
   </channel>

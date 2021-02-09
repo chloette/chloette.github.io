@@ -6,11 +6,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>来自某个八零后</copyright>
-    <lastBuildDate>Tue, 26 Jan 2021 17:21:48 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 09 Feb 2021 23:59:59 +0800</lastBuildDate>
     
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>MonkeyRunner script</title>
+      <link>/posts/monkeyrunner-click-script/</link>
+      <pubDate>Sun, 05 Apr 2015 10:54:28 +0000</pubDate>
+      
+      <guid>/posts/monkeyrunner-click-script/</guid>
+      <description></description>
+    </item><item>
       <title>Repo sync failed through ssh</title>
       <link>/posts/repo-sync-failed-through-ssh/</link>
       <pubDate>Wed, 25 Mar 2015 13:48:55 +0000</pubDate>
@@ -37,13 +44,6 @@
       <pubDate>Mon, 09 Mar 2015 12:00:00 +0000</pubDate>
       
       <guid>/posts/working-holiday-visa-of-newzealand/</guid>
-      <description></description>
-    </item><item>
-      <title>关于Internet的基础</title>
-      <link>/posts/about-internet-basis/</link>
-      <pubDate>Sat, 07 Mar 2015 10:58:42 +0000</pubDate>
-      
-      <guid>/posts/about-internet-basis/</guid>
       <description></description>
     </item>
   </channel>

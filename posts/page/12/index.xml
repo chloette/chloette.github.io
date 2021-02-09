@@ -6,11 +6,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>来自某个八零后</copyright>
-    <lastBuildDate>Tue, 26 Jan 2021 17:21:48 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 09 Feb 2021 23:59:59 +0800</lastBuildDate>
     
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>EC2 /dev/xvda1 should be checked for errors</title>
+      <link>/posts/ec2-devxvda1-should-be-checked-for-errors/</link>
+      <pubDate>Tue, 20 Jan 2015 06:54:26 +0000</pubDate>
+      
+      <guid>/posts/ec2-devxvda1-should-be-checked-for-errors/</guid>
+      <description></description>
+    </item><item>
       <title>Proguard混淆</title>
       <link>/posts/proguard-obfuscation/</link>
       <pubDate>Sat, 17 Jan 2015 08:01:38 +0000</pubDate>
@@ -37,13 +44,6 @@
       <pubDate>Mon, 12 Jan 2015 08:25:33 +0000</pubDate>
       
       <guid>/posts/android-conflict-of-relativelayout-between-wrapcontent-and-alignparentbottom/</guid>
-      <description></description>
-    </item><item>
-      <title>Android LinearLayout动态增加item时Weight的设置</title>
-      <link>/posts/android-linear-layout-weight-setting-when-adding-child-dynamically/</link>
-      <pubDate>Fri, 09 Jan 2015 04:50:13 +0000</pubDate>
-      
-      <guid>/posts/android-linear-layout-weight-setting-when-adding-child-dynamically/</guid>
       <description></description>
     </item>
   </channel>

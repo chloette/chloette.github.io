@@ -6,11 +6,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>来自某个八零后</copyright>
-    <lastBuildDate>Tue, 26 Jan 2021 17:21:48 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 09 Feb 2021 23:59:59 +0800</lastBuildDate>
     
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>纪念在高通奋战的一年</title>
+      <link>/posts/when-i-am-at-qualcomm/</link>
+      <pubDate>Mon, 24 Mar 2014 13:45:03 +0000</pubDate>
+      
+      <guid>/posts/when-i-am-at-qualcomm/</guid>
+      <description></description>
+    </item><item>
       <title>选择</title>
       <link>/posts/xuan-ze/</link>
       <pubDate>Fri, 14 Feb 2014 17:21:17 +0000</pubDate>
@@ -37,13 +44,6 @@
       <pubDate>Wed, 04 Dec 2013 23:35:18 +0000</pubDate>
       
       <guid>/posts/guan-yu-bi-te-bi-cong-jiao-yi-ping-tai-ying-li-ji-xu-shuo-ii/</guid>
-      <description></description>
-    </item><item>
-      <title>关于比特币,从51%攻击说开了去 （I）</title>
-      <link>/posts/guan-yu-bi-te-bi-cong-51-gong-ji-shuo-kai-le-qu-i/</link>
-      <pubDate>Sun, 01 Dec 2013 13:58:00 +0000</pubDate>
-      
-      <guid>/posts/guan-yu-bi-te-bi-cong-51-gong-ji-shuo-kai-le-qu-i/</guid>
       <description></description>
     </item>
   </channel>
